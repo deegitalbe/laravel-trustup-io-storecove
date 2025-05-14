@@ -1,0 +1,22 @@
+{
+  "name": "@deegitalbe/laravel-trustup-io-storecove",
+  "version": "0.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "release": "changeset publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deegitalbe/laravel-trustup-io-storecove.git"
+  },
+  "author": "Henrotay Mathieu <mathieu.henrotay@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/deegitalbe/laravel-trustup-io-storecove/issues"
+  },
+  "homepage": "https://github.com/deegitalbe/laravel-trustup-io-storecove#readme",
+  "devDependencies": {
+    "@changesets/cli": "^2.26.1"
+  }
+}

@@ -10,7 +10,8 @@
     }
   ],
   "require": {
-    "henrotaym/laravel-package-versioning-config": "^1.3"
+    "henrotaym/laravel-package-versioning-config": "^1.3",
+    "guzzlehttp/guzzle": "^7.9"
   },
   "require-dev": {
     "orchestra/testbench": "^8.0",

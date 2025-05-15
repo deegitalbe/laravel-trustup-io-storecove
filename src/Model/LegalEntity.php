@@ -30,7 +30,7 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use Swagger\Client\ObjectSerializer;
+use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * LegalEntity Class Doc Comment

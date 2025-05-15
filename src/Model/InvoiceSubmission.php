@@ -31,7 +31,7 @@
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
 use ArrayAccess;
-use Swagger\Client\ObjectSerializer;
+use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * InvoiceSubmission Class Doc Comment

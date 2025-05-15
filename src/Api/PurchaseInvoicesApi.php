@@ -36,9 +36,9 @@ use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Deegitalbe\LaravelTrustupIoStorecove\ApiException;
-use Swagger\Client\Configuration;
-use Swagger\Client\HeaderSelector;
-use Swagger\Client\ObjectSerializer;
+use Deegitalbe\LaravelTrustupIoStorecove\Configuration;
+use Deegitalbe\LaravelTrustupIoStorecove\HeaderSelector;
+use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * PurchaseInvoicesApi Class Doc Comment

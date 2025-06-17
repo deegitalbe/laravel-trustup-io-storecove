@@ -1,5 +1,11 @@
 # @deegitalbe/laravel-trustup-io-storecove
 
+## 0.1.2
+
+### Patch Changes
+
+- 1905ffa: handling storecove errors.
+
 ## 0.1.1
 
 ### Patch Changes

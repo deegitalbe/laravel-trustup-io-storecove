@@ -30,6 +30,9 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove;
 
+use Exception;
+use Illuminate\Support\Facades\Log;
+
 /**
  * ObjectSerializer Class Doc Comment
  *
@@ -246,7 +249,11 @@ class ObjectSerializer
         } elseif (strcasecmp(substr($class, -2), '[]') === 0) {
             $subClass = substr($class, 0, -2);
             $values = [];
-            // dd($data);
+
+           Log::error('storecove-validaiton', ['errors' => $data]);
+            throw new Exception('storecove-validation-error');
+            dump($data);
+
             foreach ($data as $key => $value) {
                 $values[] = self::deserialize($value, $subClass, null);
             }

@@ -30,6 +30,7 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove;
 
+use Deegitalbe\LaravelTrustupIoStorecove\Exceptions\RequestRelatedException;
 use Exception;
 use Illuminate\Support\Facades\Log;
 
@@ -232,6 +233,13 @@ class ObjectSerializer
     public static function deserialize($data, $class, $httpHeaders = null)
     {
 
+        if (is_string($data)) {
+            $decoded = json_decode($data, true);
+
+            if (json_last_error() === JSON_ERROR_NONE && isset($decoded['errors'])) {
+                throw (new RequestRelatedException('Storecove API returned validation errors.'))->setRequest(request())->setResponse($decoded['errors']);
+            }
+        }
         if ($data === null) {
             return null;
         } elseif (substr($class, 0, 4) === 'map[') { // for associative array e.g. map[string,int]
@@ -249,10 +257,6 @@ class ObjectSerializer
         } elseif (strcasecmp(substr($class, -2), '[]') === 0) {
             $subClass = substr($class, 0, -2);
             $values = [];
-
-           Log::error('storecove-validaiton', ['errors' => $data]);
-            throw new Exception('storecove-validation-error');
-            dump($data);
 
             foreach ($data as $key => $value) {
                 $values[] = self::deserialize($value, $subClass, null);

@@ -1,5 +1,11 @@
 # @deegitalbe/laravel-trustup-io-storecove
 
+## 0.2.1
+
+### Patch Changes
+
+- ad78ed2: Returning callback value.
+
 ## 0.2.0
 
 ### Minor Changes

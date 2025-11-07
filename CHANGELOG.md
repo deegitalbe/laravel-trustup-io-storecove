@@ -1,5 +1,11 @@
 # @deegitalbe/laravel-trustup-io-storecove
 
+## 0.2.0
+
+### Minor Changes
+
+- c49afa3: Throws storecove formated errors.
+
 ## 0.1.3
 
 ### Patch Changes

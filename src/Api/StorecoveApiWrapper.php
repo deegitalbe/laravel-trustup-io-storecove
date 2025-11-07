@@ -25,7 +25,7 @@ class StorecoveApiWrapper
      */
     public function send($callback) {
         try {
-            $callback();
+            return $callback();
         } catch (ApiException $exception) {
             $this->setException($exception)
                 ->throw();

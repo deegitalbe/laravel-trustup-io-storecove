@@ -9,7 +9,7 @@ use Deegitalbe\LaravelTrustupIoStorecove\Tests\TestCase;
 
 class ExampleFeatureTest extends TestCase
 {
-    public function test_it_can_catch_storecove_api_error_and_format_properly()
+    public function test_wrapper_can_catch_storecove_api_error_and_format_properly()
     {
         $additional = ['test' => 'yup'];
         $legalEntityId = 1;
@@ -63,5 +63,13 @@ class ExampleFeatureTest extends TestCase
         } catch (StorecoveApiWrapperException $exception) {
             $this->assertEquals($expected, $exception->context());
         }
+    }
+
+    public function test_wrappers_can_retrieve_response()
+    {
+        /** @var StorecoveApiWrapper */
+        $wrapper = $this->app->make(StorecoveApiWrapper::class);
+
+        $this->assertTrue($wrapper->send(fn () => true));
     }
 }

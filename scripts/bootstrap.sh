@@ -12,4 +12,4 @@ docker run --rm \
     -w /var/www/html \
     laravelsail/php82-composer:latest \
     composer install --ignore-platform-reqs && \
-docker-compose build --no-cache
+docker compose build --no-cache

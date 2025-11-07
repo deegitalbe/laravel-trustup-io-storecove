@@ -30,10 +30,6 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove;
 
-use Deegitalbe\LaravelTrustupIoStorecove\Exceptions\RequestRelatedException;
-use Exception;
-use Illuminate\Support\Facades\Log;
-
 /**
  * ObjectSerializer Class Doc Comment
  *
@@ -235,9 +231,8 @@ class ObjectSerializer
 
         if (is_string($data)) {
             $decoded = json_decode($data, true);
-
             if (json_last_error() === JSON_ERROR_NONE && isset($decoded['errors'])) {
-                throw (new RequestRelatedException('Storecove API returned validation errors.'))->setRequest(request())->setResponse($decoded['errors']);
+                return $decoded;
             }
         }
         if ($data === null) {

@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,55 +29,53 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * Transportable Class Doc Comment
  *
  * @category Class
- *
  * @description A transportable document. Currently only used for receiving.
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Transportable implements ArrayAccess, ModelInterface
+class Transportable implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'Transportable';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'legal_entity_id' => 'int',
         'direction' => 'string',
         'guid' => 'string',
         'original' => 'string',
-        'document' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\ReceivableDocument',
+        'document' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\ReceivableDocument'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'legal_entity_id' => null,
         'direction' => null,
         'guid' => null,
         'original' => null,
-        'document' => null,
+        'document' => null
     ];
 
     /**
@@ -112,7 +109,7 @@ class Transportable implements ArrayAccess, ModelInterface
         'direction' => 'direction',
         'guid' => 'guid',
         'original' => 'original',
-        'document' => 'document',
+        'document' => 'document'
     ];
 
     /**
@@ -125,7 +122,7 @@ class Transportable implements ArrayAccess, ModelInterface
         'direction' => 'setDirection',
         'guid' => 'setGuid',
         'original' => 'setOriginal',
-        'document' => 'setDocument',
+        'document' => 'setDocument'
     ];
 
     /**
@@ -138,7 +135,7 @@ class Transportable implements ArrayAccess, ModelInterface
         'direction' => 'getDirection',
         'guid' => 'getGuid',
         'original' => 'getOriginal',
-        'document' => 'getDocument',
+        'document' => 'getDocument'
     ];
 
     /**
@@ -183,9 +180,10 @@ class Transportable implements ArrayAccess, ModelInterface
     }
 
     const DIRECTION_IN = 'in';
-
     const DIRECTION_OUT = 'out';
+    
 
+    
     /**
      * Gets allowable values of the enum
      *
@@ -198,6 +196,7 @@ class Transportable implements ArrayAccess, ModelInterface
             self::DIRECTION_OUT,
         ];
     }
+    
 
     /**
      * Associative array for storing property values
@@ -209,10 +208,10 @@ class Transportable implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['legal_entity_id'] = isset($data['legal_entity_id']) ? $data['legal_entity_id'] : null;
         $this->container['direction'] = isset($data['direction']) ? $data['direction'] : null;
@@ -231,7 +230,7 @@ class Transportable implements ArrayAccess, ModelInterface
         $invalidProperties = [];
 
         $allowedValues = $this->getDirectionAllowableValues();
-        if (! is_null($this->container['direction']) && ! in_array($this->container['direction'], $allowedValues, true)) {
+        if (!is_null($this->container['direction']) && !in_array($this->container['direction'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'direction', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -252,6 +251,7 @@ class Transportable implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets legal_entity_id
      *
@@ -265,7 +265,8 @@ class Transportable implements ArrayAccess, ModelInterface
     /**
      * Sets legal_entity_id
      *
-     * @param  int  $legal_entity_id  The id of the LegalEntity this document should be sent on behalf of or was received for.
+     * @param int $legal_entity_id The id of the LegalEntity this document should be sent on behalf of or was received for.
+     *
      * @return $this
      */
     public function setLegalEntityId($legal_entity_id)
@@ -288,13 +289,14 @@ class Transportable implements ArrayAccess, ModelInterface
     /**
      * Sets direction
      *
-     * @param  string  $direction  The direction of the document.
+     * @param string $direction The direction of the document.
+     *
      * @return $this
      */
     public function setDirection($direction)
     {
         $allowedValues = $this->getDirectionAllowableValues();
-        if (! is_null($direction) && ! in_array($direction, $allowedValues, true)) {
+        if (!is_null($direction) && !in_array($direction, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'direction', must be one of '%s'",
@@ -320,7 +322,8 @@ class Transportable implements ArrayAccess, ModelInterface
     /**
      * Sets guid
      *
-     * @param  string  $guid  The GUID of the document that was received
+     * @param string $guid The GUID of the document that was received
+     *
      * @return $this
      */
     public function setGuid($guid)
@@ -343,7 +346,8 @@ class Transportable implements ArrayAccess, ModelInterface
     /**
      * Sets original
      *
-     * @param  string  $original  The document as originally received. Process this as a blob. Only present if requested.
+     * @param string $original The document as originally received. Process this as a blob. Only present if requested.
+     *
      * @return $this
      */
     public function setOriginal($original)
@@ -366,7 +370,8 @@ class Transportable implements ArrayAccess, ModelInterface
     /**
      * Sets document
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\ReceivableDocument  $document  The parsed received document. Not present if the original was requested.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\ReceivableDocument $document The parsed received document. Not present if the original was requested.
+     *
      * @return $this
      */
     public function setDocument($document)
@@ -375,12 +380,12 @@ class Transportable implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -390,7 +395,8 @@ class Transportable implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -401,8 +407,9 @@ class Transportable implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -417,7 +424,8 @@ class Transportable implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -442,3 +450,5 @@ class Transportable implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,53 +29,51 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * DocumentInvoiceResponse Class Doc Comment
  *
  * @category Class
- *
  * @description The invoice response to send or received.
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class DocumentInvoiceResponse implements ArrayAccess, ModelInterface
+class DocumentInvoiceResponse implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'DocumentInvoiceResponse';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'clarifications' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\InvoiceResponseClarification[]',
         'effective_date' => 'string',
         'note' => 'string',
-        'response_code' => 'string',
+        'response_code' => 'string'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'clarifications' => null,
         'effective_date' => null,
         'note' => null,
-        'response_code' => null,
+        'response_code' => null
     ];
 
     /**
@@ -109,7 +106,7 @@ class DocumentInvoiceResponse implements ArrayAccess, ModelInterface
         'clarifications' => 'clarifications',
         'effective_date' => 'effectiveDate',
         'note' => 'note',
-        'response_code' => 'responseCode',
+        'response_code' => 'responseCode'
     ];
 
     /**
@@ -121,7 +118,7 @@ class DocumentInvoiceResponse implements ArrayAccess, ModelInterface
         'clarifications' => 'setClarifications',
         'effective_date' => 'setEffectiveDate',
         'note' => 'setNote',
-        'response_code' => 'setResponseCode',
+        'response_code' => 'setResponseCode'
     ];
 
     /**
@@ -133,7 +130,7 @@ class DocumentInvoiceResponse implements ArrayAccess, ModelInterface
         'clarifications' => 'getClarifications',
         'effective_date' => 'getEffectiveDate',
         'note' => 'getNote',
-        'response_code' => 'getResponseCode',
+        'response_code' => 'getResponseCode'
     ];
 
     /**
@@ -178,19 +175,15 @@ class DocumentInvoiceResponse implements ArrayAccess, ModelInterface
     }
 
     const RESPONSE_CODE_AB = 'AB';
-
     const RESPONSE_CODE_IP = 'IP';
-
     const RESPONSE_CODE_UQ = 'UQ';
-
     const RESPONSE_CODE_CA = 'CA';
-
     const RESPONSE_CODE_RE = 'RE';
-
     const RESPONSE_CODE_AP = 'AP';
-
     const RESPONSE_CODE_PD = 'PD';
+    
 
+    
     /**
      * Gets allowable values of the enum
      *
@@ -208,6 +201,7 @@ class DocumentInvoiceResponse implements ArrayAccess, ModelInterface
             self::RESPONSE_CODE_PD,
         ];
     }
+    
 
     /**
      * Associative array for storing property values
@@ -219,10 +213,10 @@ class DocumentInvoiceResponse implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['clarifications'] = isset($data['clarifications']) ? $data['clarifications'] : null;
         $this->container['effective_date'] = isset($data['effective_date']) ? $data['effective_date'] : null;
@@ -239,7 +233,7 @@ class DocumentInvoiceResponse implements ArrayAccess, ModelInterface
     {
         $invalidProperties = [];
 
-        if (! is_null($this->container['effective_date']) && ! preg_match('/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/', $this->container['effective_date'])) {
+        if (!is_null($this->container['effective_date']) && !preg_match("/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/", $this->container['effective_date'])) {
             $invalidProperties[] = "invalid value for 'effective_date', must be conform to the pattern /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/.";
         }
 
@@ -247,7 +241,7 @@ class DocumentInvoiceResponse implements ArrayAccess, ModelInterface
             $invalidProperties[] = "'response_code' can't be null";
         }
         $allowedValues = $this->getResponseCodeAllowableValues();
-        if (! is_null($this->container['response_code']) && ! in_array($this->container['response_code'], $allowedValues, true)) {
+        if (!is_null($this->container['response_code']) && !in_array($this->container['response_code'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'response_code', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -268,6 +262,7 @@ class DocumentInvoiceResponse implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets clarifications
      *
@@ -281,7 +276,8 @@ class DocumentInvoiceResponse implements ArrayAccess, ModelInterface
     /**
      * Sets clarifications
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\InvoiceResponseClarification[]  $clarifications  A list of clarifications why a received invoice was rejected (RE) or under query (UQ) and what action to take.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\InvoiceResponseClarification[] $clarifications A list of clarifications why a received invoice was rejected (RE) or under query (UQ) and what action to take.
+     *
      * @return $this
      */
     public function setClarifications($clarifications)
@@ -304,13 +300,14 @@ class DocumentInvoiceResponse implements ArrayAccess, ModelInterface
     /**
      * Sets effective_date
      *
-     * @param  string  $effective_date  The date when the status became effective. Format: yyyy-mm-dd.
+     * @param string $effective_date The date when the status became effective. Format: yyyy-mm-dd.
+     *
      * @return $this
      */
     public function setEffectiveDate($effective_date)
     {
 
-        if (! is_null($effective_date) && (! preg_match('/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/', $effective_date))) {
+        if (!is_null($effective_date) && (!preg_match("/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/", $effective_date))) {
             throw new \InvalidArgumentException("invalid value for $effective_date when calling DocumentInvoiceResponse., must conform to the pattern /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/.");
         }
 
@@ -332,7 +329,8 @@ class DocumentInvoiceResponse implements ArrayAccess, ModelInterface
     /**
      * Sets note
      *
-     * @param  string  $note  A note to add to the invoice reponse
+     * @param string $note A note to add to the invoice reponse
+     *
      * @return $this
      */
     public function setNote($note)
@@ -355,13 +353,14 @@ class DocumentInvoiceResponse implements ArrayAccess, ModelInterface
     /**
      * Sets response_code
      *
-     * @param  string  $response_code  The response code. For details see https://docs.peppol.eu/poacc/upgrade-3/codelist/UNCL4343-T111/
+     * @param string $response_code The response code. For details see https://docs.peppol.eu/poacc/upgrade-3/codelist/UNCL4343-T111/
+     *
      * @return $this
      */
     public function setResponseCode($response_code)
     {
         $allowedValues = $this->getResponseCodeAllowableValues();
-        if (! in_array($response_code, $allowedValues, true)) {
+        if (!in_array($response_code, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'response_code', must be one of '%s'",
@@ -373,12 +372,12 @@ class DocumentInvoiceResponse implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -388,7 +387,8 @@ class DocumentInvoiceResponse implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -399,8 +399,9 @@ class DocumentInvoiceResponse implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -415,7 +416,8 @@ class DocumentInvoiceResponse implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -440,3 +442,5 @@ class DocumentInvoiceResponse implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

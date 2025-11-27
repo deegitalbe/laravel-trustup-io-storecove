@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,36 +29,34 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * InvoiceSubmission Class Doc Comment
  *
  * @category Class
- *
  * @description DEPRECATED. The invoice you want Storecove to process, with some meta-data.
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class InvoiceSubmission implements ArrayAccess, ModelInterface
+class InvoiceSubmission implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'InvoiceSubmission';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'create_primary_image' => 'bool',
         'mode' => 'string',
@@ -73,14 +70,14 @@ class InvoiceSubmission implements ArrayAccess, ModelInterface
         'document' => 'string',
         'document_url' => 'string',
         'invoice' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\Invoice',
-        'invoice_data' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\InvoiceData',
+        'invoice_data' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\InvoiceData'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'create_primary_image' => null,
         'mode' => null,
@@ -94,7 +91,7 @@ class InvoiceSubmission implements ArrayAccess, ModelInterface
         'document' => null,
         'document_url' => 'uri',
         'invoice' => null,
-        'invoice_data' => null,
+        'invoice_data' => null
     ];
 
     /**
@@ -136,7 +133,7 @@ class InvoiceSubmission implements ArrayAccess, ModelInterface
         'document' => 'document',
         'document_url' => 'documentUrl',
         'invoice' => 'invoice',
-        'invoice_data' => 'invoiceData',
+        'invoice_data' => 'invoiceData'
     ];
 
     /**
@@ -157,7 +154,7 @@ class InvoiceSubmission implements ArrayAccess, ModelInterface
         'document' => 'setDocument',
         'document_url' => 'setDocumentUrl',
         'invoice' => 'setInvoice',
-        'invoice_data' => 'setInvoiceData',
+        'invoice_data' => 'setInvoiceData'
     ];
 
     /**
@@ -178,7 +175,7 @@ class InvoiceSubmission implements ArrayAccess, ModelInterface
         'document' => 'getDocument',
         'document_url' => 'getDocumentUrl',
         'invoice' => 'getInvoice',
-        'invoice_data' => 'getInvoiceData',
+        'invoice_data' => 'getInvoiceData'
     ];
 
     /**
@@ -223,7 +220,9 @@ class InvoiceSubmission implements ArrayAccess, ModelInterface
     }
 
     const MODE_DIRECT = 'direct';
+    
 
+    
     /**
      * Gets allowable values of the enum
      *
@@ -235,6 +234,7 @@ class InvoiceSubmission implements ArrayAccess, ModelInterface
             self::MODE_DIRECT,
         ];
     }
+    
 
     /**
      * Associative array for storing property values
@@ -246,10 +246,10 @@ class InvoiceSubmission implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['create_primary_image'] = isset($data['create_primary_image']) ? $data['create_primary_image'] : null;
         $this->container['mode'] = isset($data['mode']) ? $data['mode'] : null;
@@ -276,18 +276,18 @@ class InvoiceSubmission implements ArrayAccess, ModelInterface
         $invalidProperties = [];
 
         $allowedValues = $this->getModeAllowableValues();
-        if (! is_null($this->container['mode']) && ! in_array($this->container['mode'], $allowedValues, true)) {
+        if (!is_null($this->container['mode']) && !in_array($this->container['mode'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'mode', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
 
-        if (! is_null($this->container['idempotency_guid']) && (mb_strlen($this->container['idempotency_guid']) > 36)) {
+        if (!is_null($this->container['idempotency_guid']) && (mb_strlen($this->container['idempotency_guid']) > 36)) {
             $invalidProperties[] = "invalid value for 'idempotency_guid', the character length must be smaller than or equal to 36.";
         }
 
-        if (! is_null($this->container['idempotency_guid']) && (mb_strlen($this->container['idempotency_guid']) < 36)) {
+        if (!is_null($this->container['idempotency_guid']) && (mb_strlen($this->container['idempotency_guid']) < 36)) {
             $invalidProperties[] = "invalid value for 'idempotency_guid', the character length must be bigger than or equal to 36.";
         }
 
@@ -305,6 +305,7 @@ class InvoiceSubmission implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets create_primary_image
      *
@@ -318,7 +319,8 @@ class InvoiceSubmission implements ArrayAccess, ModelInterface
     /**
      * Sets create_primary_image
      *
-     * @param  bool  $create_primary_image  DEPRECATED. In the future we will no longer support creating PDF invoices. Whether or not to create a primary image (PDF) if one is not provided. For customers who started from December 1st 2022, the default is false. For customers who started before that, the default is true.
+     * @param bool $create_primary_image DEPRECATED. In the future we will no longer support creating PDF invoices. Whether or not to create a primary image (PDF) if one is not provided. For customers who started from December 1st 2022, the default is false. For customers who started before that, the default is true.
+     *
      * @return $this
      */
     public function setCreatePrimaryImage($create_primary_image)
@@ -341,13 +343,14 @@ class InvoiceSubmission implements ArrayAccess, ModelInterface
     /**
      * Sets mode
      *
-     * @param  string  $mode  DEPRECATED.
+     * @param string $mode DEPRECATED.
+     *
      * @return $this
      */
     public function setMode($mode)
     {
         $allowedValues = $this->getModeAllowableValues();
-        if (! is_null($mode) && ! in_array($mode, $allowedValues, true)) {
+        if (!is_null($mode) && !in_array($mode, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'mode', must be one of '%s'",
@@ -373,7 +376,8 @@ class InvoiceSubmission implements ArrayAccess, ModelInterface
     /**
      * Sets supplier_id
      *
-     * @param  int  $supplier_id  DEPRECATED.
+     * @param int $supplier_id DEPRECATED.
+     *
      * @return $this
      */
     public function setSupplierId($supplier_id)
@@ -396,7 +400,8 @@ class InvoiceSubmission implements ArrayAccess, ModelInterface
     /**
      * Sets legal_supplier_id
      *
-     * @param  int  $legal_supplier_id  DEPRECATED. Use legalEntityId
+     * @param int $legal_supplier_id DEPRECATED. Use legalEntityId
+     *
      * @return $this
      */
     public function setLegalSupplierId($legal_supplier_id)
@@ -419,7 +424,8 @@ class InvoiceSubmission implements ArrayAccess, ModelInterface
     /**
      * Sets legal_entity_id
      *
-     * @param  int  $legal_entity_id  The id of the LegalEntity this invoice should be sent for.
+     * @param int $legal_entity_id The id of the LegalEntity this invoice should be sent for.
+     *
      * @return $this
      */
     public function setLegalEntityId($legal_entity_id)
@@ -442,15 +448,16 @@ class InvoiceSubmission implements ArrayAccess, ModelInterface
     /**
      * Sets idempotency_guid
      *
-     * @param  string  $idempotency_guid  A guid that you generated for this InvoiceSubmission to achieve idempotency. If you submit multiple documents with the same idempotencyGuid, only the first one will be processed.
+     * @param string $idempotency_guid A guid that you generated for this InvoiceSubmission to achieve idempotency. If you submit multiple documents with the same idempotencyGuid, only the first one will be processed.
+     *
      * @return $this
      */
     public function setIdempotencyGuid($idempotency_guid)
     {
-        if (! is_null($idempotency_guid) && (mb_strlen($idempotency_guid) > 36)) {
+        if (!is_null($idempotency_guid) && (mb_strlen($idempotency_guid) > 36)) {
             throw new \InvalidArgumentException('invalid length for $idempotency_guid when calling InvoiceSubmission., must be smaller than or equal to 36.');
         }
-        if (! is_null($idempotency_guid) && (mb_strlen($idempotency_guid) < 36)) {
+        if (!is_null($idempotency_guid) && (mb_strlen($idempotency_guid) < 36)) {
             throw new \InvalidArgumentException('invalid length for $idempotency_guid when calling InvoiceSubmission., must be bigger than or equal to 36.');
         }
 
@@ -472,7 +479,8 @@ class InvoiceSubmission implements ArrayAccess, ModelInterface
     /**
      * Sets invoice_recipient
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\InvoiceRecipient  $invoice_recipient  DEPRECATED. Use the routing and accountingCustomerParty.publicIdentifiers properties.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\InvoiceRecipient $invoice_recipient DEPRECATED. Use the routing and accountingCustomerParty.publicIdentifiers properties.
+     *
      * @return $this
      */
     public function setInvoiceRecipient($invoice_recipient)
@@ -495,7 +503,8 @@ class InvoiceSubmission implements ArrayAccess, ModelInterface
     /**
      * Sets routing
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\Routing  $routing  Specifies where the invoice is to be sent. Can be electronic identifiers or email addresses.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\Routing $routing Specifies where the invoice is to be sent. Can be electronic identifiers or email addresses.
+     *
      * @return $this
      */
     public function setRouting($routing)
@@ -518,7 +527,8 @@ class InvoiceSubmission implements ArrayAccess, ModelInterface
     /**
      * Sets attachments
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\Attachment[]  $attachments  An array of attachments. You may provide up to 10 attchments, but the total size must not exceed 100MB after Base64 encoding.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\Attachment[] $attachments An array of attachments. You may provide up to 10 attchments, but the total size must not exceed 100MB after Base64 encoding.
+     *
      * @return $this
      */
     public function setAttachments($attachments)
@@ -541,7 +551,8 @@ class InvoiceSubmission implements ArrayAccess, ModelInterface
     /**
      * Sets document
      *
-     * @param  string  $document  DEPRECATED. Use attachments.
+     * @param string $document DEPRECATED. Use attachments.
+     *
      * @return $this
      */
     public function setDocument($document)
@@ -564,7 +575,8 @@ class InvoiceSubmission implements ArrayAccess, ModelInterface
     /**
      * Sets document_url
      *
-     * @param  string  $document_url  DEPRECATED. Use attachments.
+     * @param string $document_url DEPRECATED. Use attachments.
+     *
      * @return $this
      */
     public function setDocumentUrl($document_url)
@@ -587,7 +599,8 @@ class InvoiceSubmission implements ArrayAccess, ModelInterface
     /**
      * Sets invoice
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\Invoice  $invoice  invoice
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\Invoice $invoice invoice
+     *
      * @return $this
      */
     public function setInvoice($invoice)
@@ -610,7 +623,8 @@ class InvoiceSubmission implements ArrayAccess, ModelInterface
     /**
      * Sets invoice_data
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\InvoiceData  $invoice_data  invoice_data
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\InvoiceData $invoice_data invoice_data
+     *
      * @return $this
      */
     public function setInvoiceData($invoice_data)
@@ -619,12 +633,12 @@ class InvoiceSubmission implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -634,7 +648,8 @@ class InvoiceSubmission implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -645,8 +660,9 @@ class InvoiceSubmission implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -661,7 +677,8 @@ class InvoiceSubmission implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -686,3 +703,5 @@ class InvoiceSubmission implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

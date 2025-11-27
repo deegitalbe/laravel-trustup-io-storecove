@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,57 +29,55 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * DiscoverableParticipant Class Doc Comment
  *
  * @category Class
- *
  * @description A participant to be discovered.
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class DiscoverableParticipant implements ArrayAccess, ModelInterface
+class DiscoverableParticipant implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'DiscoverableParticipant';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'document_types' => 'string[]',
         'network' => 'string',
         'flags' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\DiscoveryFlag',
         'meta_scheme' => 'string',
         'scheme' => 'string',
-        'identifier' => 'string',
+        'identifier' => 'string'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'document_types' => null,
         'network' => null,
         'flags' => null,
         'meta_scheme' => null,
         'scheme' => null,
-        'identifier' => null,
+        'identifier' => null
     ];
 
     /**
@@ -115,7 +112,7 @@ class DiscoverableParticipant implements ArrayAccess, ModelInterface
         'flags' => 'flags',
         'meta_scheme' => 'metaScheme',
         'scheme' => 'scheme',
-        'identifier' => 'identifier',
+        'identifier' => 'identifier'
     ];
 
     /**
@@ -129,7 +126,7 @@ class DiscoverableParticipant implements ArrayAccess, ModelInterface
         'flags' => 'setFlags',
         'meta_scheme' => 'setMetaScheme',
         'scheme' => 'setScheme',
-        'identifier' => 'setIdentifier',
+        'identifier' => 'setIdentifier'
     ];
 
     /**
@@ -143,7 +140,7 @@ class DiscoverableParticipant implements ArrayAccess, ModelInterface
         'flags' => 'getFlags',
         'meta_scheme' => 'getMetaScheme',
         'scheme' => 'getScheme',
-        'identifier' => 'getIdentifier',
+        'identifier' => 'getIdentifier'
     ];
 
     /**
@@ -188,17 +185,14 @@ class DiscoverableParticipant implements ArrayAccess, ModelInterface
     }
 
     const DOCUMENT_TYPES_INVOICE = 'invoice';
-
     const DOCUMENT_TYPES_CREDITNOTE = 'creditnote';
-
     const DOCUMENT_TYPES_INVOICE_RESPONSE = 'invoice_response';
-
     const DOCUMENT_TYPES_ORDER = 'order';
-
     const DOCUMENT_TYPES_ORDERING = 'ordering';
-
     const DOCUMENT_TYPES_ORDER_RESPONSE = 'order_response';
+    
 
+    
     /**
      * Gets allowable values of the enum
      *
@@ -215,6 +209,7 @@ class DiscoverableParticipant implements ArrayAccess, ModelInterface
             self::DOCUMENT_TYPES_ORDER_RESPONSE,
         ];
     }
+    
 
     /**
      * Associative array for storing property values
@@ -226,10 +221,10 @@ class DiscoverableParticipant implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['document_types'] = isset($data['document_types']) ? $data['document_types'] : null;
         $this->container['network'] = isset($data['network']) ? $data['network'] : 'peppol';
@@ -248,11 +243,11 @@ class DiscoverableParticipant implements ArrayAccess, ModelInterface
     {
         $invalidProperties = [];
 
-        if (! is_null($this->container['network']) && (mb_strlen($this->container['network']) < 3)) {
+        if (!is_null($this->container['network']) && (mb_strlen($this->container['network']) < 3)) {
             $invalidProperties[] = "invalid value for 'network', the character length must be bigger than or equal to 3.";
         }
 
-        if (! is_null($this->container['meta_scheme']) && (mb_strlen($this->container['meta_scheme']) < 3)) {
+        if (!is_null($this->container['meta_scheme']) && (mb_strlen($this->container['meta_scheme']) < 3)) {
             $invalidProperties[] = "invalid value for 'meta_scheme', the character length must be bigger than or equal to 3.";
         }
 
@@ -284,6 +279,7 @@ class DiscoverableParticipant implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets document_types
      *
@@ -297,13 +293,14 @@ class DiscoverableParticipant implements ArrayAccess, ModelInterface
     /**
      * Sets document_types
      *
-     * @param  string[]  $document_types  An array of document types to discover. The default is '[\"invoice\", \"creditnote\"]'. This is ignored when only checking existence.
+     * @param string[] $document_types An array of document types to discover. The default is '[\"invoice\", \"creditnote\"]'. This is ignored when only checking existence.
+     *
      * @return $this
      */
     public function setDocumentTypes($document_types)
     {
         $allowedValues = $this->getDocumentTypesAllowableValues();
-        if (! is_null($document_types) && array_diff($document_types, $allowedValues)) {
+        if (!is_null($document_types) && array_diff($document_types, $allowedValues)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'document_types', must be one of '%s'",
@@ -329,13 +326,14 @@ class DiscoverableParticipant implements ArrayAccess, ModelInterface
     /**
      * Sets network
      *
-     * @param  string  $network  The network to check. Currently only 'peppol' is supported.
+     * @param string $network The network to check. Currently only 'peppol' is supported.
+     *
      * @return $this
      */
     public function setNetwork($network)
     {
 
-        if (! is_null($network) && (mb_strlen($network) < 3)) {
+        if (!is_null($network) && (mb_strlen($network) < 3)) {
             throw new \InvalidArgumentException('invalid length for $network when calling DiscoverableParticipant., must be bigger than or equal to 3.');
         }
 
@@ -357,7 +355,8 @@ class DiscoverableParticipant implements ArrayAccess, ModelInterface
     /**
      * Sets flags
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\DiscoveryFlag  $flags  The flags for the check.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\DiscoveryFlag $flags The flags for the check.
+     *
      * @return $this
      */
     public function setFlags($flags)
@@ -380,13 +379,14 @@ class DiscoverableParticipant implements ArrayAccess, ModelInterface
     /**
      * Sets meta_scheme
      *
-     * @param  string  $meta_scheme  The meta scheme of the identifier. For Peppol this is always 'iso6523-actorid-upis'.
+     * @param string $meta_scheme The meta scheme of the identifier. For Peppol this is always 'iso6523-actorid-upis'.
+     *
      * @return $this
      */
     public function setMetaScheme($meta_scheme)
     {
 
-        if (! is_null($meta_scheme) && (mb_strlen($meta_scheme) < 3)) {
+        if (!is_null($meta_scheme) && (mb_strlen($meta_scheme) < 3)) {
             throw new \InvalidArgumentException('invalid length for $meta_scheme when calling DiscoverableParticipant., must be bigger than or equal to 3.');
         }
 
@@ -408,7 +408,8 @@ class DiscoverableParticipant implements ArrayAccess, ModelInterface
     /**
      * Sets scheme
      *
-     * @param  string  $scheme  The scheme of the identifier. See <<_receiver_identifiers_list>> for a list.
+     * @param string $scheme The scheme of the identifier. See <<_receiver_identifiers_list>> for a list.
+     *
      * @return $this
      */
     public function setScheme($scheme)
@@ -436,7 +437,8 @@ class DiscoverableParticipant implements ArrayAccess, ModelInterface
     /**
      * Sets identifier
      *
-     * @param  string  $identifier  The actual identifier.
+     * @param string $identifier The actual identifier.
+     *
      * @return $this
      */
     public function setIdentifier($identifier)
@@ -450,12 +452,12 @@ class DiscoverableParticipant implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -465,7 +467,8 @@ class DiscoverableParticipant implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -476,8 +479,9 @@ class DiscoverableParticipant implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -492,7 +496,8 @@ class DiscoverableParticipant implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -517,3 +522,5 @@ class DiscoverableParticipant implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

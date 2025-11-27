@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,36 +29,34 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * Location Class Doc Comment
  *
  * @category Class
- *
  * @description The location the goods/services were delivered to.
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Location implements ArrayAccess, ModelInterface
+class Location implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'Location';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'id' => 'string',
         'scheme_id' => 'string',
@@ -72,14 +69,14 @@ class Location implements ArrayAccess, ModelInterface
         'secondary_number' => 'string',
         'neighborhood' => 'string',
         'county' => 'string',
-        'country' => 'string',
+        'country' => 'string'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'id' => null,
         'scheme_id' => null,
@@ -92,7 +89,7 @@ class Location implements ArrayAccess, ModelInterface
         'secondary_number' => null,
         'neighborhood' => null,
         'county' => null,
-        'country' => null,
+        'country' => null
     ];
 
     /**
@@ -133,7 +130,7 @@ class Location implements ArrayAccess, ModelInterface
         'secondary_number' => 'secondary_number',
         'neighborhood' => 'neighborhood',
         'county' => 'county',
-        'country' => 'country',
+        'country' => 'country'
     ];
 
     /**
@@ -153,7 +150,7 @@ class Location implements ArrayAccess, ModelInterface
         'secondary_number' => 'setSecondaryNumber',
         'neighborhood' => 'setNeighborhood',
         'county' => 'setCounty',
-        'country' => 'setCountry',
+        'country' => 'setCountry'
     ];
 
     /**
@@ -173,7 +170,7 @@ class Location implements ArrayAccess, ModelInterface
         'secondary_number' => 'getSecondaryNumber',
         'neighborhood' => 'getNeighborhood',
         'county' => 'getCounty',
-        'country' => 'getCountry',
+        'country' => 'getCountry'
     ];
 
     /**
@@ -217,6 +214,10 @@ class Location implements ArrayAccess, ModelInterface
         return self::$swaggerModelName;
     }
 
+    
+
+    
+
     /**
      * Associative array for storing property values
      *
@@ -227,10 +228,10 @@ class Location implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['scheme_id'] = isset($data['scheme_id']) ? $data['scheme_id'] : null;
@@ -269,6 +270,7 @@ class Location implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets id
      *
@@ -282,7 +284,8 @@ class Location implements ArrayAccess, ModelInterface
     /**
      * Sets id
      *
-     * @param  string  $id  The id of the location.
+     * @param string $id The id of the location.
+     *
      * @return $this
      */
     public function setId($id)
@@ -305,7 +308,8 @@ class Location implements ArrayAccess, ModelInterface
     /**
      * Sets scheme_id
      *
-     * @param  string  $scheme_id  The scheme id for the id of the location.
+     * @param string $scheme_id The scheme id for the id of the location.
+     *
      * @return $this
      */
     public function setSchemeId($scheme_id)
@@ -328,7 +332,8 @@ class Location implements ArrayAccess, ModelInterface
     /**
      * Sets department
      *
-     * @param  string  $department  Department name.
+     * @param string $department Department name.
+     *
      * @return $this
      */
     public function setDepartment($department)
@@ -351,7 +356,8 @@ class Location implements ArrayAccess, ModelInterface
     /**
      * Sets line1
      *
-     * @param  string  $line1  Address line 1.
+     * @param string $line1 Address line 1.
+     *
      * @return $this
      */
     public function setLine1($line1)
@@ -374,7 +380,8 @@ class Location implements ArrayAccess, ModelInterface
     /**
      * Sets line2
      *
-     * @param  string  $line2  Address line 2.
+     * @param string $line2 Address line 2.
+     *
      * @return $this
      */
     public function setLine2($line2)
@@ -397,7 +404,8 @@ class Location implements ArrayAccess, ModelInterface
     /**
      * Sets zip
      *
-     * @param  string  $zip  Address zip code
+     * @param string $zip Address zip code
+     *
      * @return $this
      */
     public function setZip($zip)
@@ -420,7 +428,8 @@ class Location implements ArrayAccess, ModelInterface
     /**
      * Sets city
      *
-     * @param  string  $city  Address city.
+     * @param string $city Address city.
+     *
      * @return $this
      */
     public function setCity($city)
@@ -443,7 +452,8 @@ class Location implements ArrayAccess, ModelInterface
     /**
      * Sets building_number
      *
-     * @param  string  $building_number  The building number. Used in SA.
+     * @param string $building_number The building number. Used in SA.
+     *
      * @return $this
      */
     public function setBuildingNumber($building_number)
@@ -466,7 +476,8 @@ class Location implements ArrayAccess, ModelInterface
     /**
      * Sets secondary_number
      *
-     * @param  string  $secondary_number  The secondary number. Used in SA.
+     * @param string $secondary_number The secondary number. Used in SA.
+     *
      * @return $this
      */
     public function setSecondaryNumber($secondary_number)
@@ -489,7 +500,8 @@ class Location implements ArrayAccess, ModelInterface
     /**
      * Sets neighborhood
      *
-     * @param  string  $neighborhood  The neighborhood. Used in SA.
+     * @param string $neighborhood The neighborhood. Used in SA.
+     *
      * @return $this
      */
     public function setNeighborhood($neighborhood)
@@ -512,7 +524,8 @@ class Location implements ArrayAccess, ModelInterface
     /**
      * Sets county
      *
-     * @param  string  $county  Address county.
+     * @param string $county Address county.
+     *
      * @return $this
      */
     public function setCounty($county)
@@ -535,7 +548,8 @@ class Location implements ArrayAccess, ModelInterface
     /**
      * Sets country
      *
-     * @param  string  $country  Address country.
+     * @param string $country Address country.
+     *
      * @return $this
      */
     public function setCountry($country)
@@ -544,12 +558,12 @@ class Location implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -559,7 +573,8 @@ class Location implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -570,8 +585,9 @@ class Location implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -586,7 +602,8 @@ class Location implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -611,3 +628,5 @@ class Location implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

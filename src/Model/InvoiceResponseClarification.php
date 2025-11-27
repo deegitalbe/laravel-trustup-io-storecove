@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,53 +29,51 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * InvoiceResponseClarification Class Doc Comment
  *
  * @category Class
- *
  * @description A clarification for why a received invoice was rejected (RE) or under query (UQ) and what action to take.
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class InvoiceResponseClarification implements ArrayAccess, ModelInterface
+class InvoiceResponseClarification implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'InvoiceResponseClarification';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'clarification_code_type' => 'string',
         'clarification_code' => 'string',
         'clarification' => 'string',
-        'conditions' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\InvoiceResponseCondition[]',
+        'conditions' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\InvoiceResponseCondition[]'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'clarification_code_type' => null,
         'clarification_code' => null,
         'clarification' => null,
-        'conditions' => null,
+        'conditions' => null
     ];
 
     /**
@@ -109,7 +106,7 @@ class InvoiceResponseClarification implements ArrayAccess, ModelInterface
         'clarification_code_type' => 'clarificationCodeType',
         'clarification_code' => 'clarificationCode',
         'clarification' => 'clarification',
-        'conditions' => 'conditions',
+        'conditions' => 'conditions'
     ];
 
     /**
@@ -121,7 +118,7 @@ class InvoiceResponseClarification implements ArrayAccess, ModelInterface
         'clarification_code_type' => 'setClarificationCodeType',
         'clarification_code' => 'setClarificationCode',
         'clarification' => 'setClarification',
-        'conditions' => 'setConditions',
+        'conditions' => 'setConditions'
     ];
 
     /**
@@ -133,7 +130,7 @@ class InvoiceResponseClarification implements ArrayAccess, ModelInterface
         'clarification_code_type' => 'getClarificationCodeType',
         'clarification_code' => 'getClarificationCode',
         'clarification' => 'getClarification',
-        'conditions' => 'getConditions',
+        'conditions' => 'getConditions'
     ];
 
     /**
@@ -178,49 +175,30 @@ class InvoiceResponseClarification implements ArrayAccess, ModelInterface
     }
 
     const CLARIFICATION_CODE_TYPE_OP_STATUS_REASON = 'OPStatusReason';
-
     const CLARIFICATION_CODE_TYPE_OP_STATUS_ACTION = 'OPStatusAction';
-
     const CLARIFICATION_CODE_NON = 'NON';
-
     const CLARIFICATION_CODE_REF = 'REF';
-
     const CLARIFICATION_CODE_LEG = 'LEG';
-
     const CLARIFICATION_CODE_REC = 'REC';
-
     const CLARIFICATION_CODE_QUA = 'QUA';
-
     const CLARIFICATION_CODE_DEL = 'DEL';
-
     const CLARIFICATION_CODE_PRI = 'PRI';
-
     const CLARIFICATION_CODE_QTY = 'QTY';
-
     const CLARIFICATION_CODE_ITM = 'ITM';
-
     const CLARIFICATION_CODE_PAY = 'PAY';
-
     const CLARIFICATION_CODE_UNR = 'UNR';
-
     const CLARIFICATION_CODE_FIN = 'FIN';
-
     const CLARIFICATION_CODE_PPD = 'PPD';
-
     const CLARIFICATION_CODE_OTH = 'OTH';
-
     const CLARIFICATION_CODE_NOA = 'NOA';
-
     const CLARIFICATION_CODE_PIN = 'PIN';
-
     const CLARIFICATION_CODE_NIN = 'NIN';
-
     const CLARIFICATION_CODE_CNF = 'CNF';
-
     const CLARIFICATION_CODE_CNP = 'CNP';
-
     const CLARIFICATION_CODE_CNA = 'CNA';
+    
 
+    
     /**
      * Gets allowable values of the enum
      *
@@ -233,7 +211,7 @@ class InvoiceResponseClarification implements ArrayAccess, ModelInterface
             self::CLARIFICATION_CODE_TYPE_OP_STATUS_ACTION,
         ];
     }
-
+    
     /**
      * Gets allowable values of the enum
      *
@@ -264,6 +242,7 @@ class InvoiceResponseClarification implements ArrayAccess, ModelInterface
             self::CLARIFICATION_CODE_CNA,
         ];
     }
+    
 
     /**
      * Associative array for storing property values
@@ -275,10 +254,10 @@ class InvoiceResponseClarification implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['clarification_code_type'] = isset($data['clarification_code_type']) ? $data['clarification_code_type'] : null;
         $this->container['clarification_code'] = isset($data['clarification_code']) ? $data['clarification_code'] : null;
@@ -296,7 +275,7 @@ class InvoiceResponseClarification implements ArrayAccess, ModelInterface
         $invalidProperties = [];
 
         $allowedValues = $this->getClarificationCodeTypeAllowableValues();
-        if (! is_null($this->container['clarification_code_type']) && ! in_array($this->container['clarification_code_type'], $allowedValues, true)) {
+        if (!is_null($this->container['clarification_code_type']) && !in_array($this->container['clarification_code_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'clarification_code_type', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -304,7 +283,7 @@ class InvoiceResponseClarification implements ArrayAccess, ModelInterface
         }
 
         $allowedValues = $this->getClarificationCodeAllowableValues();
-        if (! is_null($this->container['clarification_code']) && ! in_array($this->container['clarification_code'], $allowedValues, true)) {
+        if (!is_null($this->container['clarification_code']) && !in_array($this->container['clarification_code'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'clarification_code', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -325,6 +304,7 @@ class InvoiceResponseClarification implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets clarification_code_type
      *
@@ -338,13 +318,14 @@ class InvoiceResponseClarification implements ArrayAccess, ModelInterface
     /**
      * Sets clarification_code_type
      *
-     * @param  string  $clarification_code_type  The type of the clarification.
+     * @param string $clarification_code_type The type of the clarification.
+     *
      * @return $this
      */
     public function setClarificationCodeType($clarification_code_type)
     {
         $allowedValues = $this->getClarificationCodeTypeAllowableValues();
-        if (! is_null($clarification_code_type) && ! in_array($clarification_code_type, $allowedValues, true)) {
+        if (!is_null($clarification_code_type) && !in_array($clarification_code_type, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'clarification_code_type', must be one of '%s'",
@@ -370,13 +351,14 @@ class InvoiceResponseClarification implements ArrayAccess, ModelInterface
     /**
      * Sets clarification_code
      *
-     * @param  string  $clarification_code  The code for the clarification. For details see https://docs.peppol.eu/poacc/upgrade-3/codelist/OPStatusReason/ and https://docs.peppol.eu/poacc/upgrade-3/codelist/OPStatusAction/
+     * @param string $clarification_code The code for the clarification. For details see https://docs.peppol.eu/poacc/upgrade-3/codelist/OPStatusReason/ and https://docs.peppol.eu/poacc/upgrade-3/codelist/OPStatusAction/
+     *
      * @return $this
      */
     public function setClarificationCode($clarification_code)
     {
         $allowedValues = $this->getClarificationCodeAllowableValues();
-        if (! is_null($clarification_code) && ! in_array($clarification_code, $allowedValues, true)) {
+        if (!is_null($clarification_code) && !in_array($clarification_code, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'clarification_code', must be one of '%s'",
@@ -402,7 +384,8 @@ class InvoiceResponseClarification implements ArrayAccess, ModelInterface
     /**
      * Sets clarification
      *
-     * @param  string  $clarification  A textual description of the clarification
+     * @param string $clarification A textual description of the clarification
+     *
      * @return $this
      */
     public function setClarification($clarification)
@@ -425,7 +408,8 @@ class InvoiceResponseClarification implements ArrayAccess, ModelInterface
     /**
      * Sets conditions
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\InvoiceResponseCondition[]  $conditions  A list of conditions that triggered the error. This is only included for receiving in webhooks. You cannot currently send these conditions.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\InvoiceResponseCondition[] $conditions A list of conditions that triggered the error. This is only included for receiving in webhooks. You cannot currently send these conditions.
+     *
      * @return $this
      */
     public function setConditions($conditions)
@@ -434,12 +418,12 @@ class InvoiceResponseClarification implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -449,7 +433,8 @@ class InvoiceResponseClarification implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -460,8 +445,9 @@ class InvoiceResponseClarification implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -476,7 +462,8 @@ class InvoiceResponseClarification implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -501,3 +488,5 @@ class InvoiceResponseClarification implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

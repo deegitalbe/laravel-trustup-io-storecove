@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,51 +29,49 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * RoutingIdentifier Class Doc Comment
  *
  * @category Class
- *
  * @description An electronic routing identifier.
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class RoutingIdentifier implements ArrayAccess, ModelInterface
+class RoutingIdentifier implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'RoutingIdentifier';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'scheme' => 'string',
         'id' => 'string',
-        'role' => 'string',
+        'role' => 'string'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'scheme' => null,
         'id' => null,
-        'role' => null,
+        'role' => null
     ];
 
     /**
@@ -106,7 +103,7 @@ class RoutingIdentifier implements ArrayAccess, ModelInterface
     protected static $attributeMap = [
         'scheme' => 'scheme',
         'id' => 'id',
-        'role' => 'role',
+        'role' => 'role'
     ];
 
     /**
@@ -117,7 +114,7 @@ class RoutingIdentifier implements ArrayAccess, ModelInterface
     protected static $setters = [
         'scheme' => 'setScheme',
         'id' => 'setId',
-        'role' => 'setRole',
+        'role' => 'setRole'
     ];
 
     /**
@@ -128,7 +125,7 @@ class RoutingIdentifier implements ArrayAccess, ModelInterface
     protected static $getters = [
         'scheme' => 'getScheme',
         'id' => 'getId',
-        'role' => 'getRole',
+        'role' => 'getRole'
     ];
 
     /**
@@ -173,11 +170,11 @@ class RoutingIdentifier implements ArrayAccess, ModelInterface
     }
 
     const ROLE__01_FISCAL = 'es_01_fiscal';
-
     const ROLE__02_RECEPTOR = 'es_02_receptor';
-
     const ROLE__03_PAGADOR = 'es_03_pagador';
+    
 
+    
     /**
      * Gets allowable values of the enum
      *
@@ -191,6 +188,7 @@ class RoutingIdentifier implements ArrayAccess, ModelInterface
             self::ROLE__03_PAGADOR,
         ];
     }
+    
 
     /**
      * Associative array for storing property values
@@ -202,10 +200,10 @@ class RoutingIdentifier implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['scheme'] = isset($data['scheme']) ? $data['scheme'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
@@ -236,7 +234,7 @@ class RoutingIdentifier implements ArrayAccess, ModelInterface
         }
 
         $allowedValues = $this->getRoleAllowableValues();
-        if (! is_null($this->container['role']) && ! in_array($this->container['role'], $allowedValues, true)) {
+        if (!is_null($this->container['role']) && !in_array($this->container['role'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'role', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -257,6 +255,7 @@ class RoutingIdentifier implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets scheme
      *
@@ -270,7 +269,8 @@ class RoutingIdentifier implements ArrayAccess, ModelInterface
     /**
      * Sets scheme
      *
-     * @param  string  $scheme  The scheme of the identifier. See <<_receiver_identifiers_list>> for a list.
+     * @param string $scheme The scheme of the identifier. See <<_receiver_identifiers_list>> for a list.
+     *
      * @return $this
      */
     public function setScheme($scheme)
@@ -298,7 +298,8 @@ class RoutingIdentifier implements ArrayAccess, ModelInterface
     /**
      * Sets id
      *
-     * @param  string  $id  The actual identifier.
+     * @param string $id The actual identifier.
+     *
      * @return $this
      */
     public function setId($id)
@@ -326,13 +327,14 @@ class RoutingIdentifier implements ArrayAccess, ModelInterface
     /**
      * Sets role
      *
-     * @param  string  $role  The role of the identifier. Only used for B2G sending to ES.
+     * @param string $role The role of the identifier. Only used for B2G sending to ES.
+     *
      * @return $this
      */
     public function setRole($role)
     {
         $allowedValues = $this->getRoleAllowableValues();
-        if (! is_null($role) && ! in_array($role, $allowedValues, true)) {
+        if (!is_null($role) && !in_array($role, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'role', must be one of '%s'",
@@ -344,12 +346,12 @@ class RoutingIdentifier implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -359,7 +361,8 @@ class RoutingIdentifier implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -370,8 +373,9 @@ class RoutingIdentifier implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -386,7 +390,8 @@ class RoutingIdentifier implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -411,3 +416,5 @@ class RoutingIdentifier implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

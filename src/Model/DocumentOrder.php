@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,36 +29,34 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * DocumentOrder Class Doc Comment
  *
  * @category Class
- *
  * @description The order to send.
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class DocumentOrder implements ArrayAccess, ModelInterface
+class DocumentOrder implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'DocumentOrder';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'tax_system' => 'string',
         'document_number' => 'string',
@@ -80,14 +77,14 @@ class DocumentOrder implements ArrayAccess, ModelInterface
         'allowance_charges' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\AllowanceCharge[]',
         'order_lines' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\OrderLine[]',
         'amount_including_tax' => 'float',
-        'attachments' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\Attachment[]',
+        'attachments' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\Attachment[]'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'tax_system' => null,
         'document_number' => null,
@@ -108,7 +105,7 @@ class DocumentOrder implements ArrayAccess, ModelInterface
         'allowance_charges' => null,
         'order_lines' => null,
         'amount_including_tax' => null,
-        'attachments' => null,
+        'attachments' => null
     ];
 
     /**
@@ -157,7 +154,7 @@ class DocumentOrder implements ArrayAccess, ModelInterface
         'allowance_charges' => 'allowanceCharges',
         'order_lines' => 'orderLines',
         'amount_including_tax' => 'amountIncludingTax',
-        'attachments' => 'attachments',
+        'attachments' => 'attachments'
     ];
 
     /**
@@ -185,7 +182,7 @@ class DocumentOrder implements ArrayAccess, ModelInterface
         'allowance_charges' => 'setAllowanceCharges',
         'order_lines' => 'setOrderLines',
         'amount_including_tax' => 'setAmountIncludingTax',
-        'attachments' => 'setAttachments',
+        'attachments' => 'setAttachments'
     ];
 
     /**
@@ -213,7 +210,7 @@ class DocumentOrder implements ArrayAccess, ModelInterface
         'allowance_charges' => 'getAllowanceCharges',
         'order_lines' => 'getOrderLines',
         'amount_including_tax' => 'getAmountIncludingTax',
-        'attachments' => 'getAttachments',
+        'attachments' => 'getAttachments'
     ];
 
     /**
@@ -258,11 +255,11 @@ class DocumentOrder implements ArrayAccess, ModelInterface
     }
 
     const TAX_SYSTEM_TAX_LINE_PERCENTAGES = 'tax_line_percentages';
-
     const ORDER_TYPE_REGULAR = 'regular';
-
     const ORDER_TYPE_CONSIGNMENT = 'consignment';
+    
 
+    
     /**
      * Gets allowable values of the enum
      *
@@ -274,7 +271,7 @@ class DocumentOrder implements ArrayAccess, ModelInterface
             self::TAX_SYSTEM_TAX_LINE_PERCENTAGES,
         ];
     }
-
+    
     /**
      * Gets allowable values of the enum
      *
@@ -287,6 +284,7 @@ class DocumentOrder implements ArrayAccess, ModelInterface
             self::ORDER_TYPE_CONSIGNMENT,
         ];
     }
+    
 
     /**
      * Associative array for storing property values
@@ -298,10 +296,10 @@ class DocumentOrder implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['tax_system'] = isset($data['tax_system']) ? $data['tax_system'] : 'tax_line_percentages';
         $this->container['document_number'] = isset($data['document_number']) ? $data['document_number'] : null;
@@ -335,7 +333,7 @@ class DocumentOrder implements ArrayAccess, ModelInterface
         $invalidProperties = [];
 
         $allowedValues = $this->getTaxSystemAllowableValues();
-        if (! is_null($this->container['tax_system']) && ! in_array($this->container['tax_system'], $allowedValues, true)) {
+        if (!is_null($this->container['tax_system']) && !in_array($this->container['tax_system'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'tax_system', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -352,35 +350,35 @@ class DocumentOrder implements ArrayAccess, ModelInterface
         if ($this->container['issue_date'] === null) {
             $invalidProperties[] = "'issue_date' can't be null";
         }
-        if (! preg_match('/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/', $this->container['issue_date'])) {
+        if (!preg_match("/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/", $this->container['issue_date'])) {
             $invalidProperties[] = "invalid value for 'issue_date', must be conform to the pattern /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/.";
         }
 
-        if (! is_null($this->container['issue_time']) && ! preg_match('/^[0-9]{2}:[0-9]{2}:[0-9]{2}$/', $this->container['issue_time'])) {
+        if (!is_null($this->container['issue_time']) && !preg_match("/^[0-9]{2}:[0-9]{2}:[0-9]{2}$/", $this->container['issue_time'])) {
             $invalidProperties[] = "invalid value for 'issue_time', must be conform to the pattern /^[0-9]{2}:[0-9]{2}:[0-9]{2}$/.";
         }
 
-        if (! is_null($this->container['time_zone']) && ! preg_match('/^[+-]\\d{4}$/', $this->container['time_zone'])) {
+        if (!is_null($this->container['time_zone']) && !preg_match("/^[+-]\\d{4}$/", $this->container['time_zone'])) {
             $invalidProperties[] = "invalid value for 'time_zone', must be conform to the pattern /^[+-]\\d{4}$/.";
         }
 
         $allowedValues = $this->getOrderTypeAllowableValues();
-        if (! is_null($this->container['order_type']) && ! in_array($this->container['order_type'], $allowedValues, true)) {
+        if (!is_null($this->container['order_type']) && !in_array($this->container['order_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'order_type', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
 
-        if (! is_null($this->container['note']) && (mb_strlen($this->container['note']) > 255)) {
+        if (!is_null($this->container['note']) && (mb_strlen($this->container['note']) > 255)) {
             $invalidProperties[] = "invalid value for 'note', the character length must be smaller than or equal to 255.";
         }
 
-        if (! is_null($this->container['accounting_cost']) && (mb_strlen($this->container['accounting_cost']) < 1)) {
+        if (!is_null($this->container['accounting_cost']) && (mb_strlen($this->container['accounting_cost']) < 1)) {
             $invalidProperties[] = "invalid value for 'accounting_cost', the character length must be bigger than or equal to 1.";
         }
 
-        if (! is_null($this->container['validity_period']) && ! preg_match('/^[0-9]{4}-[0-9]{2}-[0-9]{2} - [0-9]{4}-[0-9]{2}-[0-9]{2}$/', $this->container['validity_period'])) {
+        if (!is_null($this->container['validity_period']) && !preg_match("/^[0-9]{4}-[0-9]{2}-[0-9]{2} - [0-9]{4}-[0-9]{2}-[0-9]{2}$/", $this->container['validity_period'])) {
             $invalidProperties[] = "invalid value for 'validity_period', must be conform to the pattern /^[0-9]{4}-[0-9]{2}-[0-9]{2} - [0-9]{4}-[0-9]{2}-[0-9]{2}$/.";
         }
 
@@ -393,7 +391,6 @@ class DocumentOrder implements ArrayAccess, ModelInterface
         if ($this->container['amount_including_tax'] === null) {
             $invalidProperties[] = "'amount_including_tax' can't be null";
         }
-
         return $invalidProperties;
     }
 
@@ -408,6 +405,7 @@ class DocumentOrder implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets tax_system
      *
@@ -421,13 +419,14 @@ class DocumentOrder implements ArrayAccess, ModelInterface
     /**
      * Sets tax_system
      *
-     * @param  string  $tax_system  The tax system used for the invoice. The system 'tax_line_percentages' is the only one currently supported.
+     * @param string $tax_system The tax system used for the invoice. The system 'tax_line_percentages' is the only one currently supported.
+     *
      * @return $this
      */
     public function setTaxSystem($tax_system)
     {
         $allowedValues = $this->getTaxSystemAllowableValues();
-        if (! is_null($tax_system) && ! in_array($tax_system, $allowedValues, true)) {
+        if (!is_null($tax_system) && !in_array($tax_system, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'tax_system', must be one of '%s'",
@@ -453,7 +452,8 @@ class DocumentOrder implements ArrayAccess, ModelInterface
     /**
      * Sets document_number
      *
-     * @param  string  $document_number  The number you assigned to the document.
+     * @param string $document_number The number you assigned to the document.
+     *
      * @return $this
      */
     public function setDocumentNumber($document_number)
@@ -481,7 +481,8 @@ class DocumentOrder implements ArrayAccess, ModelInterface
     /**
      * Sets references
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\Reference[]  $references  An array of references to other documents. Note that many syntaxes do not support multiple references of the same type in which case they will be concatenated with ','. Also, not all syntaxes and doucments support all documentTypes.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\Reference[] $references An array of references to other documents. Note that many syntaxes do not support multiple references of the same type in which case they will be concatenated with ','. Also, not all syntaxes and doucments support all documentTypes.
+     *
      * @return $this
      */
     public function setReferences($references)
@@ -504,13 +505,14 @@ class DocumentOrder implements ArrayAccess, ModelInterface
     /**
      * Sets issue_date
      *
-     * @param  string  $issue_date  Format: yyyy-mm-dd.
+     * @param string $issue_date Format: yyyy-mm-dd.
+     *
      * @return $this
      */
     public function setIssueDate($issue_date)
     {
 
-        if ((! preg_match('/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/', $issue_date))) {
+        if ((!preg_match("/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/", $issue_date))) {
             throw new \InvalidArgumentException("invalid value for $issue_date when calling DocumentOrder., must conform to the pattern /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/.");
         }
 
@@ -532,13 +534,14 @@ class DocumentOrder implements ArrayAccess, ModelInterface
     /**
      * Sets issue_time
      *
-     * @param  string  $issue_time  Format: hh:mm:ss
+     * @param string $issue_time Format: hh:mm:ss
+     *
      * @return $this
      */
     public function setIssueTime($issue_time)
     {
 
-        if (! is_null($issue_time) && (! preg_match('/^[0-9]{2}:[0-9]{2}:[0-9]{2}$/', $issue_time))) {
+        if (!is_null($issue_time) && (!preg_match("/^[0-9]{2}:[0-9]{2}:[0-9]{2}$/", $issue_time))) {
             throw new \InvalidArgumentException("invalid value for $issue_time when calling DocumentOrder., must conform to the pattern /^[0-9]{2}:[0-9]{2}:[0-9]{2}$/.");
         }
 
@@ -560,13 +563,14 @@ class DocumentOrder implements ArrayAccess, ModelInterface
     /**
      * Sets time_zone
      *
-     * @param  string  $time_zone  Format: ±zzzz, where ±zzzz is the difference from UTC, e.g. +0100 or -0900 etc. The timezone will also apply to the document issue date if this field is provided.
+     * @param string $time_zone Format: ±zzzz, where ±zzzz is the difference from UTC, e.g. +0100 or -0900 etc. The timezone will also apply to the document issue date if this field is provided.
+     *
      * @return $this
      */
     public function setTimeZone($time_zone)
     {
 
-        if (! is_null($time_zone) && (! preg_match('/^[+-]\\d{4}$/', $time_zone))) {
+        if (!is_null($time_zone) && (!preg_match("/^[+-]\\d{4}$/", $time_zone))) {
             throw new \InvalidArgumentException("invalid value for $time_zone when calling DocumentOrder., must conform to the pattern /^[+-]\\d{4}$/.");
         }
 
@@ -588,13 +592,14 @@ class DocumentOrder implements ArrayAccess, ModelInterface
     /**
      * Sets order_type
      *
-     * @param  string  $order_type  The type of this order.
+     * @param string $order_type The type of this order.
+     *
      * @return $this
      */
     public function setOrderType($order_type)
     {
         $allowedValues = $this->getOrderTypeAllowableValues();
-        if (! is_null($order_type) && ! in_array($order_type, $allowedValues, true)) {
+        if (!is_null($order_type) && !in_array($order_type, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'order_type', must be one of '%s'",
@@ -620,12 +625,13 @@ class DocumentOrder implements ArrayAccess, ModelInterface
     /**
      * Sets note
      *
-     * @param  string  $note  A note to add to the document
+     * @param string $note A note to add to the document
+     *
      * @return $this
      */
     public function setNote($note)
     {
-        if (! is_null($note) && (mb_strlen($note) > 255)) {
+        if (!is_null($note) && (mb_strlen($note) > 255)) {
             throw new \InvalidArgumentException('invalid length for $note when calling DocumentOrder., must be smaller than or equal to 255.');
         }
 
@@ -647,7 +653,8 @@ class DocumentOrder implements ArrayAccess, ModelInterface
     /**
      * Sets document_currency_code
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\CurrencyCode  $document_currency_code  The documentCurrencyCode is the currency for the entire invoice. We currently do not support invoices in multiple currencies. If left out, will default to EUR
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\CurrencyCode $document_currency_code The documentCurrencyCode is the currency for the entire invoice. We currently do not support invoices in multiple currencies. If left out, will default to EUR
+     *
      * @return $this
      */
     public function setDocumentCurrencyCode($document_currency_code)
@@ -670,13 +677,14 @@ class DocumentOrder implements ArrayAccess, ModelInterface
     /**
      * Sets accounting_cost
      *
-     * @param  string  $accounting_cost  The buyer's accounting cost centre for this document.
+     * @param string $accounting_cost The buyer's accounting cost centre for this document.
+     *
      * @return $this
      */
     public function setAccountingCost($accounting_cost)
     {
 
-        if (! is_null($accounting_cost) && (mb_strlen($accounting_cost) < 1)) {
+        if (!is_null($accounting_cost) && (mb_strlen($accounting_cost) < 1)) {
             throw new \InvalidArgumentException('invalid length for $accounting_cost when calling DocumentOrder., must be bigger than or equal to 1.');
         }
 
@@ -698,13 +706,14 @@ class DocumentOrder implements ArrayAccess, ModelInterface
     /**
      * Sets validity_period
      *
-     * @param  string  $validity_period  The period (or specific date) to which the invoice applies. Format: yyyy-mm-dd - yyyy-mm-dd.
+     * @param string $validity_period The period (or specific date) to which the invoice applies. Format: yyyy-mm-dd - yyyy-mm-dd.
+     *
      * @return $this
      */
     public function setValidityPeriod($validity_period)
     {
 
-        if (! is_null($validity_period) && (! preg_match('/^[0-9]{4}-[0-9]{2}-[0-9]{2} - [0-9]{4}-[0-9]{2}-[0-9]{2}$/', $validity_period))) {
+        if (!is_null($validity_period) && (!preg_match("/^[0-9]{4}-[0-9]{2}-[0-9]{2} - [0-9]{4}-[0-9]{2}-[0-9]{2}$/", $validity_period))) {
             throw new \InvalidArgumentException("invalid value for $validity_period when calling DocumentOrder., must conform to the pattern /^[0-9]{4}-[0-9]{2}-[0-9]{2} - [0-9]{4}-[0-9]{2}-[0-9]{2}$/.");
         }
 
@@ -726,7 +735,8 @@ class DocumentOrder implements ArrayAccess, ModelInterface
     /**
      * Sets buyer_customer_party
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\BuyerCustomerPartyOrder  $buyer_customer_party  The party sending the order. Most data for the BuyerCustomerParty is taken from the Storecove database, where your sender identity resides and has been validated. However, we provide a limited number of fields (mainly contact fields) here that you can specify on a document-by-document basis.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\BuyerCustomerPartyOrder $buyer_customer_party The party sending the order. Most data for the BuyerCustomerParty is taken from the Storecove database, where your sender identity resides and has been validated. However, we provide a limited number of fields (mainly contact fields) here that you can specify on a document-by-document basis.
+     *
      * @return $this
      */
     public function setBuyerCustomerParty($buyer_customer_party)
@@ -749,7 +759,8 @@ class DocumentOrder implements ArrayAccess, ModelInterface
     /**
      * Sets seller_supplier_party
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\SellerSupplierParty  $seller_supplier_party  The seller supplier party. This info will be added to the LegalEntity provided through the legalEntityId.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\SellerSupplierParty $seller_supplier_party The seller supplier party. This info will be added to the LegalEntity provided through the legalEntityId.
+     *
      * @return $this
      */
     public function setSellerSupplierParty($seller_supplier_party)
@@ -772,7 +783,8 @@ class DocumentOrder implements ArrayAccess, ModelInterface
     /**
      * Sets delivery
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\Delivery  $delivery  The delivery information for the document.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\Delivery $delivery The delivery information for the document.
+     *
      * @return $this
      */
     public function setDelivery($delivery)
@@ -795,7 +807,8 @@ class DocumentOrder implements ArrayAccess, ModelInterface
     /**
      * Sets delivery_terms
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\DeliveryTerms  $delivery_terms  The terms of delivery for the document.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\DeliveryTerms $delivery_terms The terms of delivery for the document.
+     *
      * @return $this
      */
     public function setDeliveryTerms($delivery_terms)
@@ -818,7 +831,8 @@ class DocumentOrder implements ArrayAccess, ModelInterface
     /**
      * Sets payment_terms
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\PaymentTerms  $payment_terms  The payment terms of the document.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\PaymentTerms $payment_terms The payment terms of the document.
+     *
      * @return $this
      */
     public function setPaymentTerms($payment_terms)
@@ -841,7 +855,8 @@ class DocumentOrder implements ArrayAccess, ModelInterface
     /**
      * Sets allowance_charges
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\AllowanceCharge[]  $allowance_charges  An array of allowance charges.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\AllowanceCharge[] $allowance_charges An array of allowance charges.
+     *
      * @return $this
      */
     public function setAllowanceCharges($allowance_charges)
@@ -864,7 +879,8 @@ class DocumentOrder implements ArrayAccess, ModelInterface
     /**
      * Sets order_lines
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\OrderLine[]  $order_lines  An array of order lines.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\OrderLine[] $order_lines An array of order lines.
+     *
      * @return $this
      */
     public function setOrderLines($order_lines)
@@ -887,7 +903,8 @@ class DocumentOrder implements ArrayAccess, ModelInterface
     /**
      * Sets amount_including_tax
      *
-     * @param  float  $amount_including_tax  Total amount including Tax.
+     * @param float $amount_including_tax Total amount including Tax.
+     *
      * @return $this
      */
     public function setAmountIncludingTax($amount_including_tax)
@@ -910,7 +927,8 @@ class DocumentOrder implements ArrayAccess, ModelInterface
     /**
      * Sets attachments
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\Attachment[]  $attachments  An array of attachments. You may provide up to 10 attchments, but the total size must not exceed 100MB after Base64 encoding.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\Attachment[] $attachments An array of attachments. You may provide up to 10 attchments, but the total size must not exceed 100MB after Base64 encoding.
+     *
      * @return $this
      */
     public function setAttachments($attachments)
@@ -919,12 +937,12 @@ class DocumentOrder implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -934,7 +952,8 @@ class DocumentOrder implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -945,8 +964,9 @@ class DocumentOrder implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -961,7 +981,8 @@ class DocumentOrder implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -986,3 +1007,5 @@ class DocumentOrder implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

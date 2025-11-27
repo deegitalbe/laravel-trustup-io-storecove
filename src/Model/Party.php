@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,55 +29,53 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * Party Class Doc Comment
  *
  * @category Class
- *
  * @description A party that can receive or send invoices
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Party implements ArrayAccess, ModelInterface
+class Party implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'Party';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'company_name' => 'string',
         'registration_name' => 'string',
         'classification_code' => 'string',
         'address' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\Address',
-        'contact' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\Contact',
+        'contact' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\Contact'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'company_name' => null,
         'registration_name' => null,
         'classification_code' => null,
         'address' => null,
-        'contact' => null,
+        'contact' => null
     ];
 
     /**
@@ -112,7 +109,7 @@ class Party implements ArrayAccess, ModelInterface
         'registration_name' => 'registrationName',
         'classification_code' => 'classificationCode',
         'address' => 'address',
-        'contact' => 'contact',
+        'contact' => 'contact'
     ];
 
     /**
@@ -125,7 +122,7 @@ class Party implements ArrayAccess, ModelInterface
         'registration_name' => 'setRegistrationName',
         'classification_code' => 'setClassificationCode',
         'address' => 'setAddress',
-        'contact' => 'setContact',
+        'contact' => 'setContact'
     ];
 
     /**
@@ -138,7 +135,7 @@ class Party implements ArrayAccess, ModelInterface
         'registration_name' => 'getRegistrationName',
         'classification_code' => 'getClassificationCode',
         'address' => 'getAddress',
-        'contact' => 'getContact',
+        'contact' => 'getContact'
     ];
 
     /**
@@ -182,6 +179,10 @@ class Party implements ArrayAccess, ModelInterface
         return self::$swaggerModelName;
     }
 
+    
+
+    
+
     /**
      * Associative array for storing property values
      *
@@ -192,10 +193,10 @@ class Party implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['company_name'] = isset($data['company_name']) ? $data['company_name'] : null;
         $this->container['registration_name'] = isset($data['registration_name']) ? $data['registration_name'] : null;
@@ -213,11 +214,11 @@ class Party implements ArrayAccess, ModelInterface
     {
         $invalidProperties = [];
 
-        if (! is_null($this->container['company_name']) && (mb_strlen($this->container['company_name']) < 2)) {
+        if (!is_null($this->container['company_name']) && (mb_strlen($this->container['company_name']) < 2)) {
             $invalidProperties[] = "invalid value for 'company_name', the character length must be bigger than or equal to 2.";
         }
 
-        if (! is_null($this->container['classification_code']) && ! preg_match('/^[0-9]{5}$/', $this->container['classification_code'])) {
+        if (!is_null($this->container['classification_code']) && !preg_match("/^[0-9]{5}$/", $this->container['classification_code'])) {
             $invalidProperties[] = "invalid value for 'classification_code', must be conform to the pattern /^[0-9]{5}$/.";
         }
 
@@ -235,6 +236,7 @@ class Party implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets company_name
      *
@@ -248,13 +250,14 @@ class Party implements ArrayAccess, ModelInterface
     /**
      * Sets company_name
      *
-     * @param  string  $company_name  The name of the company transporting the invoice
+     * @param string $company_name The name of the company transporting the invoice
+     *
      * @return $this
      */
     public function setCompanyName($company_name)
     {
 
-        if (! is_null($company_name) && (mb_strlen($company_name) < 2)) {
+        if (!is_null($company_name) && (mb_strlen($company_name) < 2)) {
             throw new \InvalidArgumentException('invalid length for $company_name when calling Party., must be bigger than or equal to 2.');
         }
 
@@ -276,7 +279,8 @@ class Party implements ArrayAccess, ModelInterface
     /**
      * Sets registration_name
      *
-     * @param  string  $registration_name  The registration name of the company transporting the invoice
+     * @param string $registration_name The registration name of the company transporting the invoice
+     *
      * @return $this
      */
     public function setRegistrationName($registration_name)
@@ -299,13 +303,14 @@ class Party implements ArrayAccess, ModelInterface
     /**
      * Sets classification_code
      *
-     * @param  string  $classification_code  The classification code of the company transporting the invoice. This currently is used only for the Malaysia LHDNM application in selfBillingMode. In that case, it becomes the MSIC of the sender of the purchase invoice.
+     * @param string $classification_code The classification code of the company transporting the invoice. This currently is used only for the Malaysia LHDNM application in selfBillingMode. In that case, it becomes the MSIC of the sender of the purchase invoice.
+     *
      * @return $this
      */
     public function setClassificationCode($classification_code)
     {
 
-        if (! is_null($classification_code) && (! preg_match('/^[0-9]{5}$/', $classification_code))) {
+        if (!is_null($classification_code) && (!preg_match("/^[0-9]{5}$/", $classification_code))) {
             throw new \InvalidArgumentException("invalid value for $classification_code when calling Party., must conform to the pattern /^[0-9]{5}$/.");
         }
 
@@ -327,7 +332,8 @@ class Party implements ArrayAccess, ModelInterface
     /**
      * Sets address
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\Address  $address  address
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\Address $address address
+     *
      * @return $this
      */
     public function setAddress($address)
@@ -350,7 +356,8 @@ class Party implements ArrayAccess, ModelInterface
     /**
      * Sets contact
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\Contact  $contact  contact
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\Contact $contact contact
+     *
      * @return $this
      */
     public function setContact($contact)
@@ -359,12 +366,12 @@ class Party implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -374,7 +381,8 @@ class Party implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -385,8 +393,9 @@ class Party implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -401,7 +410,8 @@ class Party implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -426,3 +436,5 @@ class Party implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

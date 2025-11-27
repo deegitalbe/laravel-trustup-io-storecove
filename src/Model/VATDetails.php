@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,51 +29,49 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * VATDetails Class Doc Comment
  *
  * @category Class
- *
  * @description DEPRECATED - use tax. The VAT details for the invoice line.
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class VATDetails implements ArrayAccess, ModelInterface
+class VATDetails implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'VAT Details';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'amount' => 'float',
         'percentage' => 'float',
-        'country' => 'string',
+        'country' => 'string'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'amount' => null,
         'percentage' => null,
-        'country' => null,
+        'country' => null
     ];
 
     /**
@@ -106,7 +103,7 @@ class VATDetails implements ArrayAccess, ModelInterface
     protected static $attributeMap = [
         'amount' => 'amount',
         'percentage' => 'percentage',
-        'country' => 'country',
+        'country' => 'country'
     ];
 
     /**
@@ -117,7 +114,7 @@ class VATDetails implements ArrayAccess, ModelInterface
     protected static $setters = [
         'amount' => 'setAmount',
         'percentage' => 'setPercentage',
-        'country' => 'setCountry',
+        'country' => 'setCountry'
     ];
 
     /**
@@ -128,7 +125,7 @@ class VATDetails implements ArrayAccess, ModelInterface
     protected static $getters = [
         'amount' => 'getAmount',
         'percentage' => 'getPercentage',
-        'country' => 'getCountry',
+        'country' => 'getCountry'
     ];
 
     /**
@@ -172,6 +169,10 @@ class VATDetails implements ArrayAccess, ModelInterface
         return self::$swaggerModelName;
     }
 
+    
+
+    
+
     /**
      * Associative array for storing property values
      *
@@ -182,10 +183,10 @@ class VATDetails implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
         $this->container['percentage'] = isset($data['percentage']) ? $data['percentage'] : null;
@@ -215,6 +216,7 @@ class VATDetails implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets amount
      *
@@ -228,7 +230,8 @@ class VATDetails implements ArrayAccess, ModelInterface
     /**
      * Sets amount
      *
-     * @param  float  $amount  The amount of VAT for the invoice line.
+     * @param float $amount The amount of VAT for the invoice line.
+     *
      * @return $this
      */
     public function setAmount($amount)
@@ -251,7 +254,8 @@ class VATDetails implements ArrayAccess, ModelInterface
     /**
      * Sets percentage
      *
-     * @param  float  $percentage  The percentage of VAT for the invoice line.
+     * @param float $percentage The percentage of VAT for the invoice line.
+     *
      * @return $this
      */
     public function setPercentage($percentage)
@@ -274,7 +278,8 @@ class VATDetails implements ArrayAccess, ModelInterface
     /**
      * Sets country
      *
-     * @param  string  $country  The ISO 3166 country of the VAT for the invoice line.
+     * @param string $country The ISO 3166 country of the VAT for the invoice line.
+     *
      * @return $this
      */
     public function setCountry($country)
@@ -283,12 +288,12 @@ class VATDetails implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -298,7 +303,8 @@ class VATDetails implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -309,8 +315,9 @@ class VATDetails implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -325,7 +332,8 @@ class VATDetails implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -350,3 +358,5 @@ class VATDetails implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

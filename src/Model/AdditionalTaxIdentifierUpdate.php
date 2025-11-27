@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,49 +29,48 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * AdditionalTaxIdentifierUpdate Class Doc Comment
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class AdditionalTaxIdentifierUpdate implements ArrayAccess, ModelInterface
+class AdditionalTaxIdentifierUpdate implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'AdditionalTaxIdentifierUpdate';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'identifier' => 'string',
         'third_party_username' => 'string',
-        'third_party_password' => 'string',
+        'third_party_password' => 'string'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'identifier' => null,
         'third_party_username' => null,
-        'third_party_password' => null,
+        'third_party_password' => null
     ];
 
     /**
@@ -104,7 +102,7 @@ class AdditionalTaxIdentifierUpdate implements ArrayAccess, ModelInterface
     protected static $attributeMap = [
         'identifier' => 'identifier',
         'third_party_username' => 'third_party_username',
-        'third_party_password' => 'third_party_password',
+        'third_party_password' => 'third_party_password'
     ];
 
     /**
@@ -115,7 +113,7 @@ class AdditionalTaxIdentifierUpdate implements ArrayAccess, ModelInterface
     protected static $setters = [
         'identifier' => 'setIdentifier',
         'third_party_username' => 'setThirdPartyUsername',
-        'third_party_password' => 'setThirdPartyPassword',
+        'third_party_password' => 'setThirdPartyPassword'
     ];
 
     /**
@@ -126,7 +124,7 @@ class AdditionalTaxIdentifierUpdate implements ArrayAccess, ModelInterface
     protected static $getters = [
         'identifier' => 'getIdentifier',
         'third_party_username' => 'getThirdPartyUsername',
-        'third_party_password' => 'getThirdPartyPassword',
+        'third_party_password' => 'getThirdPartyPassword'
     ];
 
     /**
@@ -170,6 +168,10 @@ class AdditionalTaxIdentifierUpdate implements ArrayAccess, ModelInterface
         return self::$swaggerModelName;
     }
 
+    
+
+    
+
     /**
      * Associative array for storing property values
      *
@@ -180,10 +182,10 @@ class AdditionalTaxIdentifierUpdate implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
         $this->container['third_party_username'] = isset($data['third_party_username']) ? $data['third_party_username'] : null;
@@ -202,19 +204,19 @@ class AdditionalTaxIdentifierUpdate implements ArrayAccess, ModelInterface
         if ($this->container['identifier'] === null) {
             $invalidProperties[] = "'identifier' can't be null";
         }
-        if (! is_null($this->container['third_party_username']) && (mb_strlen($this->container['third_party_username']) > 64)) {
+        if (!is_null($this->container['third_party_username']) && (mb_strlen($this->container['third_party_username']) > 64)) {
             $invalidProperties[] = "invalid value for 'third_party_username', the character length must be smaller than or equal to 64.";
         }
 
-        if (! is_null($this->container['third_party_username']) && (mb_strlen($this->container['third_party_username']) < 2)) {
+        if (!is_null($this->container['third_party_username']) && (mb_strlen($this->container['third_party_username']) < 2)) {
             $invalidProperties[] = "invalid value for 'third_party_username', the character length must be bigger than or equal to 2.";
         }
 
-        if (! is_null($this->container['third_party_password']) && (mb_strlen($this->container['third_party_password']) > 64)) {
+        if (!is_null($this->container['third_party_password']) && (mb_strlen($this->container['third_party_password']) > 64)) {
             $invalidProperties[] = "invalid value for 'third_party_password', the character length must be smaller than or equal to 64.";
         }
 
-        if (! is_null($this->container['third_party_password']) && (mb_strlen($this->container['third_party_password']) < 2)) {
+        if (!is_null($this->container['third_party_password']) && (mb_strlen($this->container['third_party_password']) < 2)) {
             $invalidProperties[] = "invalid value for 'third_party_password', the character length must be bigger than or equal to 2.";
         }
 
@@ -232,6 +234,7 @@ class AdditionalTaxIdentifierUpdate implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets identifier
      *
@@ -245,7 +248,8 @@ class AdditionalTaxIdentifierUpdate implements ArrayAccess, ModelInterface
     /**
      * Sets identifier
      *
-     * @param  string  $identifier  The identifier.
+     * @param string $identifier The identifier.
+     *
      * @return $this
      */
     public function setIdentifier($identifier)
@@ -268,15 +272,16 @@ class AdditionalTaxIdentifierUpdate implements ArrayAccess, ModelInterface
     /**
      * Sets third_party_username
      *
-     * @param  string  $third_party_username  The username to use to authenticate to a system through which to send the document, or to obtain tax authority approval to send it. This field is currently relevant only for India and mandatory when creating an IN tax identifier.
+     * @param string $third_party_username The username to use to authenticate to a system through which to send the document, or to obtain tax authority approval to send it. This field is currently relevant only for India and mandatory when creating an IN tax identifier.
+     *
      * @return $this
      */
     public function setThirdPartyUsername($third_party_username)
     {
-        if (! is_null($third_party_username) && (mb_strlen($third_party_username) > 64)) {
+        if (!is_null($third_party_username) && (mb_strlen($third_party_username) > 64)) {
             throw new \InvalidArgumentException('invalid length for $third_party_username when calling AdditionalTaxIdentifierUpdate., must be smaller than or equal to 64.');
         }
-        if (! is_null($third_party_username) && (mb_strlen($third_party_username) < 2)) {
+        if (!is_null($third_party_username) && (mb_strlen($third_party_username) < 2)) {
             throw new \InvalidArgumentException('invalid length for $third_party_username when calling AdditionalTaxIdentifierUpdate., must be bigger than or equal to 2.');
         }
 
@@ -298,15 +303,16 @@ class AdditionalTaxIdentifierUpdate implements ArrayAccess, ModelInterface
     /**
      * Sets third_party_password
      *
-     * @param  string  $third_party_password  The password to use to authenticate to a system through which to send the document, or to obtain tax authority approval to send it. This field is currently relevant only for India and mandatory when creating an IN tax identifier.
+     * @param string $third_party_password The password to use to authenticate to a system through which to send the document, or to obtain tax authority approval to send it. This field is currently relevant only for India and mandatory when creating an IN tax identifier.
+     *
      * @return $this
      */
     public function setThirdPartyPassword($third_party_password)
     {
-        if (! is_null($third_party_password) && (mb_strlen($third_party_password) > 64)) {
+        if (!is_null($third_party_password) && (mb_strlen($third_party_password) > 64)) {
             throw new \InvalidArgumentException('invalid length for $third_party_password when calling AdditionalTaxIdentifierUpdate., must be smaller than or equal to 64.');
         }
-        if (! is_null($third_party_password) && (mb_strlen($third_party_password) < 2)) {
+        if (!is_null($third_party_password) && (mb_strlen($third_party_password) < 2)) {
             throw new \InvalidArgumentException('invalid length for $third_party_password when calling AdditionalTaxIdentifierUpdate., must be bigger than or equal to 2.');
         }
 
@@ -314,12 +320,12 @@ class AdditionalTaxIdentifierUpdate implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -329,7 +335,8 @@ class AdditionalTaxIdentifierUpdate implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -340,8 +347,9 @@ class AdditionalTaxIdentifierUpdate implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -356,7 +364,8 @@ class AdditionalTaxIdentifierUpdate implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -381,3 +390,5 @@ class AdditionalTaxIdentifierUpdate implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

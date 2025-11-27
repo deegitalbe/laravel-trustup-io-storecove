@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,51 +29,50 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * PurchaseInvoiceTaxSubtotal Class Doc Comment
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PurchaseInvoiceTaxSubtotal implements ArrayAccess, ModelInterface
+class PurchaseInvoiceTaxSubtotal implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'PurchaseInvoiceTaxSubtotal';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'amount_excluding_vat' => 'string',
         'vat' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoiceVat',
         'amount_excluding_tax' => 'float',
-        'tax' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoiceTax',
+        'tax' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoiceTax'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'amount_excluding_vat' => null,
         'vat' => null,
         'amount_excluding_tax' => null,
-        'tax' => null,
+        'tax' => null
     ];
 
     /**
@@ -107,7 +105,7 @@ class PurchaseInvoiceTaxSubtotal implements ArrayAccess, ModelInterface
         'amount_excluding_vat' => 'amount_excluding_vat',
         'vat' => 'vat',
         'amount_excluding_tax' => 'amount_excluding_tax',
-        'tax' => 'tax',
+        'tax' => 'tax'
     ];
 
     /**
@@ -119,7 +117,7 @@ class PurchaseInvoiceTaxSubtotal implements ArrayAccess, ModelInterface
         'amount_excluding_vat' => 'setAmountExcludingVat',
         'vat' => 'setVat',
         'amount_excluding_tax' => 'setAmountExcludingTax',
-        'tax' => 'setTax',
+        'tax' => 'setTax'
     ];
 
     /**
@@ -131,7 +129,7 @@ class PurchaseInvoiceTaxSubtotal implements ArrayAccess, ModelInterface
         'amount_excluding_vat' => 'getAmountExcludingVat',
         'vat' => 'getVat',
         'amount_excluding_tax' => 'getAmountExcludingTax',
-        'tax' => 'getTax',
+        'tax' => 'getTax'
     ];
 
     /**
@@ -175,6 +173,10 @@ class PurchaseInvoiceTaxSubtotal implements ArrayAccess, ModelInterface
         return self::$swaggerModelName;
     }
 
+    
+
+    
+
     /**
      * Associative array for storing property values
      *
@@ -185,10 +187,10 @@ class PurchaseInvoiceTaxSubtotal implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['amount_excluding_vat'] = isset($data['amount_excluding_vat']) ? $data['amount_excluding_vat'] : null;
         $this->container['vat'] = isset($data['vat']) ? $data['vat'] : null;
@@ -219,6 +221,7 @@ class PurchaseInvoiceTaxSubtotal implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets amount_excluding_vat
      *
@@ -232,7 +235,8 @@ class PurchaseInvoiceTaxSubtotal implements ArrayAccess, ModelInterface
     /**
      * Sets amount_excluding_vat
      *
-     * @param  string  $amount_excluding_vat  DEPRECATED - use amount_excluding_tax.
+     * @param string $amount_excluding_vat DEPRECATED - use amount_excluding_tax.
+     *
      * @return $this
      */
     public function setAmountExcludingVat($amount_excluding_vat)
@@ -255,7 +259,8 @@ class PurchaseInvoiceTaxSubtotal implements ArrayAccess, ModelInterface
     /**
      * Sets vat
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoiceVat  $vat  DEPRECATED.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoiceVat $vat DEPRECATED.
+     *
      * @return $this
      */
     public function setVat($vat)
@@ -278,7 +283,8 @@ class PurchaseInvoiceTaxSubtotal implements ArrayAccess, ModelInterface
     /**
      * Sets amount_excluding_tax
      *
-     * @param  float  $amount_excluding_tax  The amount excluding tax.
+     * @param float $amount_excluding_tax The amount excluding tax.
+     *
      * @return $this
      */
     public function setAmountExcludingTax($amount_excluding_tax)
@@ -301,7 +307,8 @@ class PurchaseInvoiceTaxSubtotal implements ArrayAccess, ModelInterface
     /**
      * Sets tax
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoiceTax  $tax  tax
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoiceTax $tax tax
+     *
      * @return $this
      */
     public function setTax($tax)
@@ -310,12 +317,12 @@ class PurchaseInvoiceTaxSubtotal implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -325,7 +332,8 @@ class PurchaseInvoiceTaxSubtotal implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -336,8 +344,9 @@ class PurchaseInvoiceTaxSubtotal implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -352,7 +361,8 @@ class PurchaseInvoiceTaxSubtotal implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -377,3 +387,5 @@ class PurchaseInvoiceTaxSubtotal implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

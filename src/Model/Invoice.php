@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,36 +29,34 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * Invoice Class Doc Comment
  *
  * @category Class
- *
  * @description The invoice to send. Provide either invoice, or invoiceData, but not both.
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Invoice implements ArrayAccess, ModelInterface
+class Invoice implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'Invoice';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'accounting_cost' => 'string',
         'accounting_currency_exchange_rate' => 'float',
@@ -100,6 +97,7 @@ class Invoice implements ArrayAccess, ModelInterface
         'taxes_duties_fees' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\Tax[]',
         'time_zone' => 'string',
         'transaction_type' => 'string',
+        'tax_authority' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\TaxAuthority',
         'ubl_extensions' => 'string[]',
         'x2y' => 'string',
         'vat_reverse_charge' => 'bool',
@@ -114,14 +112,14 @@ class Invoice implements ArrayAccess, ModelInterface
         'payment_means_iban' => 'string',
         'payment_means_bic' => 'string',
         'payment_means_code' => 'string',
-        'payment_means_payment_id' => 'string',
+        'payment_means_payment_id' => 'string'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'accounting_cost' => null,
         'accounting_currency_exchange_rate' => null,
@@ -162,6 +160,7 @@ class Invoice implements ArrayAccess, ModelInterface
         'taxes_duties_fees' => null,
         'time_zone' => null,
         'transaction_type' => null,
+        'tax_authority' => null,
         'ubl_extensions' => null,
         'x2y' => null,
         'vat_reverse_charge' => null,
@@ -176,7 +175,7 @@ class Invoice implements ArrayAccess, ModelInterface
         'payment_means_iban' => null,
         'payment_means_bic' => null,
         'payment_means_code' => null,
-        'payment_means_payment_id' => null,
+        'payment_means_payment_id' => null
     ];
 
     /**
@@ -245,6 +244,7 @@ class Invoice implements ArrayAccess, ModelInterface
         'taxes_duties_fees' => 'taxesDutiesFees',
         'time_zone' => 'timeZone',
         'transaction_type' => 'transactionType',
+        'tax_authority' => 'taxAuthority',
         'ubl_extensions' => 'ublExtensions',
         'x2y' => 'x2y',
         'vat_reverse_charge' => 'vatReverseCharge',
@@ -259,7 +259,7 @@ class Invoice implements ArrayAccess, ModelInterface
         'payment_means_iban' => 'paymentMeansIban',
         'payment_means_bic' => 'paymentMeansBic',
         'payment_means_code' => 'paymentMeansCode',
-        'payment_means_payment_id' => 'paymentMeansPaymentId',
+        'payment_means_payment_id' => 'paymentMeansPaymentId'
     ];
 
     /**
@@ -307,6 +307,7 @@ class Invoice implements ArrayAccess, ModelInterface
         'taxes_duties_fees' => 'setTaxesDutiesFees',
         'time_zone' => 'setTimeZone',
         'transaction_type' => 'setTransactionType',
+        'tax_authority' => 'setTaxAuthority',
         'ubl_extensions' => 'setUblExtensions',
         'x2y' => 'setX2y',
         'vat_reverse_charge' => 'setVatReverseCharge',
@@ -321,7 +322,7 @@ class Invoice implements ArrayAccess, ModelInterface
         'payment_means_iban' => 'setPaymentMeansIban',
         'payment_means_bic' => 'setPaymentMeansBic',
         'payment_means_code' => 'setPaymentMeansCode',
-        'payment_means_payment_id' => 'setPaymentMeansPaymentId',
+        'payment_means_payment_id' => 'setPaymentMeansPaymentId'
     ];
 
     /**
@@ -369,6 +370,7 @@ class Invoice implements ArrayAccess, ModelInterface
         'taxes_duties_fees' => 'getTaxesDutiesFees',
         'time_zone' => 'getTimeZone',
         'transaction_type' => 'getTransactionType',
+        'tax_authority' => 'getTaxAuthority',
         'ubl_extensions' => 'getUblExtensions',
         'x2y' => 'getX2y',
         'vat_reverse_charge' => 'getVatReverseCharge',
@@ -383,7 +385,7 @@ class Invoice implements ArrayAccess, ModelInterface
         'payment_means_iban' => 'getPaymentMeansIban',
         'payment_means_bic' => 'getPaymentMeansBic',
         'payment_means_code' => 'getPaymentMeansCode',
-        'payment_means_payment_id' => 'getPaymentMeansPaymentId',
+        'payment_means_payment_id' => 'getPaymentMeansPaymentId'
     ];
 
     /**
@@ -428,125 +430,68 @@ class Invoice implements ArrayAccess, ModelInterface
     }
 
     const PREFERRED_INVOICE_TYPE_AUTODETECT = 'prefer_autodetect';
-
     const PREFERRED_INVOICE_TYPE_INVOICE = 'prefer_invoice';
-
     const PREFERRED_INVOICE_TYPE_CREDITNOTE = 'prefer_creditnote';
-
     const PREFERRED_INVOICE_TYPE_DEBITNOTE = 'prefer_debitnote';
-
     const PREFERRED_INVOICE_TYPE_REFUNDNOTE = 'prefer_refundnote';
-
     const PREFERRED_INVOICE_TYPE_CORRECTED_INVOICE = 'prefer_corrected_invoice';
-
     const PREFERRED_INVOICE_TYPE_IT_TD02 = 'prefer_it_td02';
-
     const PREFERRED_INVOICE_TYPE_IT_TD19 = 'prefer_it_td19';
-
     const PREFERRED_INVOICE_TYPE_IT_TD24 = 'prefer_it_td24';
-
     const PRICE_MODE_NET = 'price_mode_net';
-
     const PRICE_MODE_GROSS = 'price_mode_gross';
-
     const SUB_TYPE_INVOICE = 'invoice';
-
     const SUB_TYPE_CREDITNOTE = 'creditnote';
-
     const SUB_TYPE_DEBITNOTE = 'debitnote';
-
     const SUB_TYPE_CORRECTIONINVOICE = 'correctioninvoice';
-
     const SUB_TYPE_SELFBILLING = 'selfbilling';
-
     const TAX_SYSTEM_AMOUNTS = 'tax_line_amounts';
-
     const TAX_SYSTEM_PERCENTAGES = 'tax_line_percentages';
-
     const TRANSACTION_TYPE_B2B = 'b2b';
-
     const TRANSACTION_TYPE_SEZWP = 'sezwp';
-
     const TRANSACTION_TYPE_SEZWOP = 'sezwop';
-
     const TRANSACTION_TYPE_EXPWP = 'expwp';
-
     const TRANSACTION_TYPE_EXPWOP = 'expwop';
-
     const TRANSACTION_TYPE_DEXP = 'dexp';
-
     const X2Y_B2B = 'b2b';
-
     const X2Y_B2G = 'b2g';
-
     const X2Y_B2C = 'b2c';
-
     const X2Y_B2B_SEZ = 'b2b_sez';
-
     const X2Y_PETTY_CASH = 'petty_cash';
-
     const X2Y_B2C_POINT_OF_SALE = 'b2c_point_of_sale';
-
     const X2Y_B2C_SIMPLIFIED_TAX_INVOICE = 'b2c_simplified_tax_invoice';
-
     const X2Y_B2C_PETTY_CASH = 'b2c_petty_cash';
-
     const TAX_EXEMPT_REASON_EXPORT = 'export';
-
     const TAX_EXEMPT_REASON_REVERSE_CHARGE = 'reverse_charge';
-
     const TAX_EXEMPT_REASON_ZERO_RATED = 'zero_rated';
-
     const TAX_EXEMPT_REASON_EXEMPT = 'exempt';
-
     const TAX_EXEMPT_REASON_OUTSIDE_SCOPE = 'outside_scope';
-
     const TAX_EXEMPT_REASON_INTRA_COMMUNITY = 'intra_community';
-
     const INVOICE_TYPE__380 = '380';
-
     const INVOICE_TYPE__381 = '381';
-
     const INVOICE_TYPE__383 = '383';
-
     const INVOICE_TYPE__384 = '384';
-
     const INVOICE_TYPE__389 = '389';
-
     const PAYMENT_MEANS_CODE_ONLINE_PAYMENT_SERVICE = 'online_payment_service';
-
     const PAYMENT_MEANS_CODE_BANK_CARD = 'bank_card';
-
     const PAYMENT_MEANS_CODE_DIRECT_DEBIT = 'direct_debit';
-
     const PAYMENT_MEANS_CODE_STANDING_AGREEMENT = 'standing_agreement';
-
     const PAYMENT_MEANS_CODE_CREDIT_TRANSFER = 'credit_transfer';
-
     const PAYMENT_MEANS_CODE_SE_BANKGIRO = 'se_bankgiro';
-
     const PAYMENT_MEANS_CODE_SE_PLUSGIRO = 'se_plusgiro';
-
     const PAYMENT_MEANS_CODE_AUNZ_NPP = 'aunz_npp';
-
     const PAYMENT_MEANS_CODE_EMPTY = '';
-
     const PAYMENT_MEANS_CODE__1 = '1';
-
     const PAYMENT_MEANS_CODE__30 = '30';
-
     const PAYMENT_MEANS_CODE__31 = '31';
-
     const PAYMENT_MEANS_CODE__42 = '42';
-
     const PAYMENT_MEANS_CODE__48 = '48';
-
     const PAYMENT_MEANS_CODE__49 = '49';
-
     const PAYMENT_MEANS_CODE__57 = '57';
-
     const PAYMENT_MEANS_CODE__58 = '58';
+    
 
+    
     /**
      * Gets allowable values of the enum
      *
@@ -566,7 +511,7 @@ class Invoice implements ArrayAccess, ModelInterface
             self::PREFERRED_INVOICE_TYPE_IT_TD24,
         ];
     }
-
+    
     /**
      * Gets allowable values of the enum
      *
@@ -579,7 +524,7 @@ class Invoice implements ArrayAccess, ModelInterface
             self::PRICE_MODE_GROSS,
         ];
     }
-
+    
     /**
      * Gets allowable values of the enum
      *
@@ -595,7 +540,7 @@ class Invoice implements ArrayAccess, ModelInterface
             self::SUB_TYPE_SELFBILLING,
         ];
     }
-
+    
     /**
      * Gets allowable values of the enum
      *
@@ -608,7 +553,7 @@ class Invoice implements ArrayAccess, ModelInterface
             self::TAX_SYSTEM_PERCENTAGES,
         ];
     }
-
+    
     /**
      * Gets allowable values of the enum
      *
@@ -625,7 +570,7 @@ class Invoice implements ArrayAccess, ModelInterface
             self::TRANSACTION_TYPE_DEXP,
         ];
     }
-
+    
     /**
      * Gets allowable values of the enum
      *
@@ -644,7 +589,7 @@ class Invoice implements ArrayAccess, ModelInterface
             self::X2Y_B2C_PETTY_CASH,
         ];
     }
-
+    
     /**
      * Gets allowable values of the enum
      *
@@ -661,7 +606,7 @@ class Invoice implements ArrayAccess, ModelInterface
             self::TAX_EXEMPT_REASON_INTRA_COMMUNITY,
         ];
     }
-
+    
     /**
      * Gets allowable values of the enum
      *
@@ -677,7 +622,7 @@ class Invoice implements ArrayAccess, ModelInterface
             self::INVOICE_TYPE__389,
         ];
     }
-
+    
     /**
      * Gets allowable values of the enum
      *
@@ -705,6 +650,7 @@ class Invoice implements ArrayAccess, ModelInterface
             self::PAYMENT_MEANS_CODE__58,
         ];
     }
+    
 
     /**
      * Associative array for storing property values
@@ -716,10 +662,10 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['accounting_cost'] = isset($data['accounting_cost']) ? $data['accounting_cost'] : null;
         $this->container['accounting_currency_exchange_rate'] = isset($data['accounting_currency_exchange_rate']) ? $data['accounting_currency_exchange_rate'] : null;
@@ -760,6 +706,7 @@ class Invoice implements ArrayAccess, ModelInterface
         $this->container['taxes_duties_fees'] = isset($data['taxes_duties_fees']) ? $data['taxes_duties_fees'] : null;
         $this->container['time_zone'] = isset($data['time_zone']) ? $data['time_zone'] : null;
         $this->container['transaction_type'] = isset($data['transaction_type']) ? $data['transaction_type'] : null;
+        $this->container['tax_authority'] = isset($data['tax_authority']) ? $data['tax_authority'] : null;
         $this->container['ubl_extensions'] = isset($data['ubl_extensions']) ? $data['ubl_extensions'] : null;
         $this->container['x2y'] = isset($data['x2y']) ? $data['x2y'] : 'b2b';
         $this->container['vat_reverse_charge'] = isset($data['vat_reverse_charge']) ? $data['vat_reverse_charge'] : false;
@@ -786,14 +733,14 @@ class Invoice implements ArrayAccess, ModelInterface
     {
         $invalidProperties = [];
 
-        if (! is_null($this->container['accounting_cost']) && (mb_strlen($this->container['accounting_cost']) < 1)) {
+        if (!is_null($this->container['accounting_cost']) && (mb_strlen($this->container['accounting_cost']) < 1)) {
             $invalidProperties[] = "invalid value for 'accounting_cost', the character length must be bigger than or equal to 1.";
         }
 
         if ($this->container['accounting_customer_party'] === null) {
             $invalidProperties[] = "'accounting_customer_party' can't be null";
         }
-        if (! is_null($this->container['due_date']) && ! preg_match('/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/', $this->container['due_date'])) {
+        if (!is_null($this->container['due_date']) && !preg_match("/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/", $this->container['due_date'])) {
             $invalidProperties[] = "invalid value for 'due_date', must be conform to the pattern /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/.";
         }
 
@@ -807,23 +754,23 @@ class Invoice implements ArrayAccess, ModelInterface
             $invalidProperties[] = "invalid value for 'invoice_number', the character length must be bigger than or equal to 1.";
         }
 
-        if (! is_null($this->container['invoice_period']) && ! preg_match('/^[0-9]{4}-[0-9]{2}-[0-9]{2} - [0-9]{4}-[0-9]{2}-[0-9]{2}$/', $this->container['invoice_period'])) {
+        if (!is_null($this->container['invoice_period']) && !preg_match("/^[0-9]{4}-[0-9]{2}-[0-9]{2} - [0-9]{4}-[0-9]{2}-[0-9]{2}$/", $this->container['invoice_period'])) {
             $invalidProperties[] = "invalid value for 'invoice_period', must be conform to the pattern /^[0-9]{4}-[0-9]{2}-[0-9]{2} - [0-9]{4}-[0-9]{2}-[0-9]{2}$/.";
         }
 
         if ($this->container['issue_date'] === null) {
             $invalidProperties[] = "'issue_date' can't be null";
         }
-        if (! preg_match('/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/', $this->container['issue_date'])) {
+        if (!preg_match("/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/", $this->container['issue_date'])) {
             $invalidProperties[] = "invalid value for 'issue_date', must be conform to the pattern /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/.";
         }
 
-        if (! is_null($this->container['issue_time']) && ! preg_match('/^[0-9]{2}:[0-9]{2}:[0-9]{2}$/', $this->container['issue_time'])) {
+        if (!is_null($this->container['issue_time']) && !preg_match("/^[0-9]{2}:[0-9]{2}:[0-9]{2}$/", $this->container['issue_time'])) {
             $invalidProperties[] = "invalid value for 'issue_time', must be conform to the pattern /^[0-9]{2}:[0-9]{2}:[0-9]{2}$/.";
         }
 
         $allowedValues = $this->getPreferredInvoiceTypeAllowableValues();
-        if (! is_null($this->container['preferred_invoice_type']) && ! in_array($this->container['preferred_invoice_type'], $allowedValues, true)) {
+        if (!is_null($this->container['preferred_invoice_type']) && !in_array($this->container['preferred_invoice_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'preferred_invoice_type', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -831,7 +778,7 @@ class Invoice implements ArrayAccess, ModelInterface
         }
 
         $allowedValues = $this->getPriceModeAllowableValues();
-        if (! is_null($this->container['price_mode']) && ! in_array($this->container['price_mode'], $allowedValues, true)) {
+        if (!is_null($this->container['price_mode']) && !in_array($this->container['price_mode'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'price_mode', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -839,31 +786,31 @@ class Invoice implements ArrayAccess, ModelInterface
         }
 
         $allowedValues = $this->getSubTypeAllowableValues();
-        if (! is_null($this->container['sub_type']) && ! in_array($this->container['sub_type'], $allowedValues, true)) {
+        if (!is_null($this->container['sub_type']) && !in_array($this->container['sub_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'sub_type', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
 
-        if (! is_null($this->container['tax_point_date']) && ! preg_match('/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/', $this->container['tax_point_date'])) {
+        if (!is_null($this->container['tax_point_date']) && !preg_match("/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/", $this->container['tax_point_date'])) {
             $invalidProperties[] = "invalid value for 'tax_point_date', must be conform to the pattern /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/.";
         }
 
         $allowedValues = $this->getTaxSystemAllowableValues();
-        if (! is_null($this->container['tax_system']) && ! in_array($this->container['tax_system'], $allowedValues, true)) {
+        if (!is_null($this->container['tax_system']) && !in_array($this->container['tax_system'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'tax_system', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
 
-        if (! is_null($this->container['time_zone']) && ! preg_match('/^[+-]\\d{4}$/', $this->container['time_zone'])) {
+        if (!is_null($this->container['time_zone']) && !preg_match("/^[+-]\\d{4}$/", $this->container['time_zone'])) {
             $invalidProperties[] = "invalid value for 'time_zone', must be conform to the pattern /^[+-]\\d{4}$/.";
         }
 
         $allowedValues = $this->getTransactionTypeAllowableValues();
-        if (! is_null($this->container['transaction_type']) && ! in_array($this->container['transaction_type'], $allowedValues, true)) {
+        if (!is_null($this->container['transaction_type']) && !in_array($this->container['transaction_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'transaction_type', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -871,7 +818,7 @@ class Invoice implements ArrayAccess, ModelInterface
         }
 
         $allowedValues = $this->getX2yAllowableValues();
-        if (! is_null($this->container['x2y']) && ! in_array($this->container['x2y'], $allowedValues, true)) {
+        if (!is_null($this->container['x2y']) && !in_array($this->container['x2y'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'x2y', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -879,7 +826,7 @@ class Invoice implements ArrayAccess, ModelInterface
         }
 
         $allowedValues = $this->getTaxExemptReasonAllowableValues();
-        if (! is_null($this->container['tax_exempt_reason']) && ! in_array($this->container['tax_exempt_reason'], $allowedValues, true)) {
+        if (!is_null($this->container['tax_exempt_reason']) && !in_array($this->container['tax_exempt_reason'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'tax_exempt_reason', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -887,19 +834,19 @@ class Invoice implements ArrayAccess, ModelInterface
         }
 
         $allowedValues = $this->getInvoiceTypeAllowableValues();
-        if (! is_null($this->container['invoice_type']) && ! in_array($this->container['invoice_type'], $allowedValues, true)) {
+        if (!is_null($this->container['invoice_type']) && !in_array($this->container['invoice_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'invoice_type', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
 
-        if (! is_null($this->container['payment_means_bic']) && ! preg_match('/^[A-Z]{6}[2-9A-Z][0-9A-NP-Z]([A-Z0-9]{3}|X{3})?$/', $this->container['payment_means_bic'])) {
+        if (!is_null($this->container['payment_means_bic']) && !preg_match("/^[A-Z]{6}[2-9A-Z][0-9A-NP-Z]([A-Z0-9]{3}|X{3})?$/", $this->container['payment_means_bic'])) {
             $invalidProperties[] = "invalid value for 'payment_means_bic', must be conform to the pattern /^[A-Z]{6}[2-9A-Z][0-9A-NP-Z]([A-Z0-9]{3}|X{3})?$/.";
         }
 
         $allowedValues = $this->getPaymentMeansCodeAllowableValues();
-        if (! is_null($this->container['payment_means_code']) && ! in_array($this->container['payment_means_code'], $allowedValues, true)) {
+        if (!is_null($this->container['payment_means_code']) && !in_array($this->container['payment_means_code'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'payment_means_code', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -920,6 +867,7 @@ class Invoice implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets accounting_cost
      *
@@ -933,13 +881,14 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Sets accounting_cost
      *
-     * @param  string  $accounting_cost  The buyer's accounting cost centre for this invoice, expressed as text.
+     * @param string $accounting_cost The buyer's accounting cost centre for this invoice, expressed as text.
+     *
      * @return $this
      */
     public function setAccountingCost($accounting_cost)
     {
 
-        if (! is_null($accounting_cost) && (mb_strlen($accounting_cost) < 1)) {
+        if (!is_null($accounting_cost) && (mb_strlen($accounting_cost) < 1)) {
             throw new \InvalidArgumentException('invalid length for $accounting_cost when calling Invoice., must be bigger than or equal to 1.');
         }
 
@@ -961,7 +910,8 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Sets accounting_currency_exchange_rate
      *
-     * @param  float  $accounting_currency_exchange_rate  Rate at which the document currency must be multiplied to convert it into the accounting currency. If included, must be non-zero.
+     * @param float $accounting_currency_exchange_rate Rate at which the document currency must be multiplied to convert it into the accounting currency. If included, must be non-zero.
+     *
      * @return $this
      */
     public function setAccountingCurrencyExchangeRate($accounting_currency_exchange_rate)
@@ -984,7 +934,8 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Sets accounting_currency_taxable_amount
      *
-     * @param  float  $accounting_currency_taxable_amount  The taxable amount in the accounting currency. If included, must be non-zero.
+     * @param float $accounting_currency_taxable_amount The taxable amount in the accounting currency. If included, must be non-zero.
+     *
      * @return $this
      */
     public function setAccountingCurrencyTaxableAmount($accounting_currency_taxable_amount)
@@ -1007,7 +958,8 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Sets accounting_currency_tax_amount
      *
-     * @param  float  $accounting_currency_tax_amount  The total amount of tax in the accounting currency. If included, must be non-zero.
+     * @param float $accounting_currency_tax_amount The total amount of tax in the accounting currency. If included, must be non-zero.
+     *
      * @return $this
      */
     public function setAccountingCurrencyTaxAmount($accounting_currency_tax_amount)
@@ -1030,7 +982,8 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Sets accounting_currency_tax_amount_currency
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\CurrencyCode  $accounting_currency_tax_amount_currency  The currency of the accountingCurrencyTaxAmount. This MUST be different from the documentCurrencyCode, since it makes no sense including this othterwise. Mandatory if accountingCurrencyTaxAmount is provided.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\CurrencyCode $accounting_currency_tax_amount_currency The currency of the accountingCurrencyTaxAmount. This MUST be different from the documentCurrencyCode, since it makes no sense including this othterwise. Mandatory if accountingCurrencyTaxAmount is provided.
+     *
      * @return $this
      */
     public function setAccountingCurrencyTaxAmountCurrency($accounting_currency_tax_amount_currency)
@@ -1053,7 +1006,8 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Sets accounting_customer_party
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\AccountingCustomerParty  $accounting_customer_party  The party the invoice is sent to.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\AccountingCustomerParty $accounting_customer_party The party the invoice is sent to.
+     *
      * @return $this
      */
     public function setAccountingCustomerParty($accounting_customer_party)
@@ -1076,7 +1030,8 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Sets payee_party
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\PayeeParty  $payee_party  The party to whom the invoice will be paid.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\PayeeParty $payee_party The party to whom the invoice will be paid.
+     *
      * @return $this
      */
     public function setPayeeParty($payee_party)
@@ -1099,7 +1054,8 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Sets accounting_supplier_party
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\AccountingSupplierParty  $accounting_supplier_party  The party sending the invoice. When you are sending, most data for the AccountingSupplierParty is taken from the LegalEntity in the Storecove database, where your sender identity resides and has been validated. However, we provide a limited number of fields (mainly contact fields) here that you can specify on a document-by-document basis. For receiving, the full party object can be received.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\AccountingSupplierParty $accounting_supplier_party The party sending the invoice. When you are sending, most data for the AccountingSupplierParty is taken from the LegalEntity in the Storecove database, where your sender identity resides and has been validated. However, we provide a limited number of fields (mainly contact fields) here that you can specify on a document-by-document basis. For receiving, the full party object can be received.
+     *
      * @return $this
      */
     public function setAccountingSupplierParty($accounting_supplier_party)
@@ -1122,7 +1078,8 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Sets allowance_charges
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\AllowanceCharge[]  $allowance_charges  An array of allowance charges.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\AllowanceCharge[] $allowance_charges An array of allowance charges.
+     *
      * @return $this
      */
     public function setAllowanceCharges($allowance_charges)
@@ -1145,7 +1102,8 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Sets amount_including_tax
      *
-     * @param  float  $amount_including_tax  EXPERIMENTAL for sending. The amountIncludingTax is the payable amount, but not corrected for the prepaid amount.
+     * @param float $amount_including_tax EXPERIMENTAL for sending. The amountIncludingTax is the payable amount, but not corrected for the prepaid amount.
+     *
      * @return $this
      */
     public function setAmountIncludingTax($amount_including_tax)
@@ -1168,7 +1126,8 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Sets amount_including_vat
      *
-     * @param  float  $amount_including_vat  The amountIncludingVat is payable amount, but not corrected for the prepaid amount. We encourage you to use the amountIncludingTax for sending. For receiving, always use amountIncludingTax.
+     * @param float $amount_including_vat The amountIncludingVat is payable amount, but not corrected for the prepaid amount. We encourage you to use the amountIncludingTax for sending. For receiving, always use amountIncludingTax.
+     *
      * @return $this
      */
     public function setAmountIncludingVat($amount_including_vat)
@@ -1191,7 +1150,8 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Sets attachments
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\Attachment[]  $attachments  An array of attachments. You may provide up to 10 attchments, but the total size must not exceed 100MB after Base64 encoding.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\Attachment[] $attachments An array of attachments. You may provide up to 10 attchments, but the total size must not exceed 100MB after Base64 encoding.
+     *
      * @return $this
      */
     public function setAttachments($attachments)
@@ -1214,7 +1174,8 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Sets consumer_tax_mode
      *
-     * @param  bool  $consumer_tax_mode  Whether or not to process the invoice in consumer tax mode. In this mode, the VAT identifier of the sender will not be the default VAT identifier, but the one that matches with the country of the receiving consumer, if that additional VAT identifier for that country is available. These additional VAT identifiers need to be added to the sending LegalEntity by Storecove, so if you need to send invoices in this mode, please contact us. Not used for receiving.
+     * @param bool $consumer_tax_mode Whether or not to process the invoice in consumer tax mode. In this mode, the VAT identifier of the sender will not be the default VAT identifier, but the one that matches with the country of the receiving consumer, if that additional VAT identifier for that country is available. These additional VAT identifiers need to be added to the sending LegalEntity by Storecove, so if you need to send invoices in this mode, please contact us. Not used for receiving.
+     *
      * @return $this
      */
     public function setConsumerTaxMode($consumer_tax_mode)
@@ -1237,7 +1198,8 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Sets delivery
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\Delivery  $delivery  The delivery of the invoice.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\Delivery $delivery The delivery of the invoice.
+     *
      * @return $this
      */
     public function setDelivery($delivery)
@@ -1260,7 +1222,8 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Sets delivery_terms
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\DeliveryTerms  $delivery_terms  The terms of delivery for the document. This is currently only used for MY LHDNM.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\DeliveryTerms $delivery_terms The terms of delivery for the document. This is currently only used for MY LHDNM.
+     *
      * @return $this
      */
     public function setDeliveryTerms($delivery_terms)
@@ -1283,7 +1246,8 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Sets document_currency_code
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\CurrencyCode  $document_currency_code  The documentCurrencyCode is the currency for the entire invoice. We currently do not support invoices in multiple currencies. If left out, will default to EUR
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\CurrencyCode $document_currency_code The documentCurrencyCode is the currency for the entire invoice. We currently do not support invoices in multiple currencies. If left out, will default to EUR
+     *
      * @return $this
      */
     public function setDocumentCurrencyCode($document_currency_code)
@@ -1306,13 +1270,14 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Sets due_date
      *
-     * @param  string  $due_date  Format: yyyy-mm-dd.
+     * @param string $due_date Format: yyyy-mm-dd.
+     *
      * @return $this
      */
     public function setDueDate($due_date)
     {
 
-        if (! is_null($due_date) && (! preg_match('/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/', $due_date))) {
+        if (!is_null($due_date) && (!preg_match("/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/", $due_date))) {
             throw new \InvalidArgumentException("invalid value for $due_date when calling Invoice., must conform to the pattern /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/.");
         }
 
@@ -1334,7 +1299,8 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Sets invoice_lines
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\InvoiceLine[]  $invoice_lines  An array of invoice lines.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\InvoiceLine[] $invoice_lines An array of invoice lines.
+     *
      * @return $this
      */
     public function setInvoiceLines($invoice_lines)
@@ -1357,7 +1323,8 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Sets invoice_number
      *
-     * @param  string  $invoice_number  The invoice number you assigned to the invoice. The invoiceNumber should be unique for the legalEntityId and year of the issueDate. This means invoice numbers can be reused in different years, as is customary in some countries.
+     * @param string $invoice_number The invoice number you assigned to the invoice. The invoiceNumber should be unique for the legalEntityId and year of the issueDate. This means invoice numbers can be reused in different years, as is customary in some countries.
+     *
      * @return $this
      */
     public function setInvoiceNumber($invoice_number)
@@ -1385,13 +1352,14 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Sets invoice_period
      *
-     * @param  string  $invoice_period  The period (or specific date) to which the invoice applies. Format: yyyy-mm-dd - yyyy-mm-dd.
+     * @param string $invoice_period The period (or specific date) to which the invoice applies. Format: yyyy-mm-dd - yyyy-mm-dd.
+     *
      * @return $this
      */
     public function setInvoicePeriod($invoice_period)
     {
 
-        if (! is_null($invoice_period) && (! preg_match('/^[0-9]{4}-[0-9]{2}-[0-9]{2} - [0-9]{4}-[0-9]{2}-[0-9]{2}$/', $invoice_period))) {
+        if (!is_null($invoice_period) && (!preg_match("/^[0-9]{4}-[0-9]{2}-[0-9]{2} - [0-9]{4}-[0-9]{2}-[0-9]{2}$/", $invoice_period))) {
             throw new \InvalidArgumentException("invalid value for $invoice_period when calling Invoice., must conform to the pattern /^[0-9]{4}-[0-9]{2}-[0-9]{2} - [0-9]{4}-[0-9]{2}-[0-9]{2}$/.");
         }
 
@@ -1413,13 +1381,14 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Sets issue_date
      *
-     * @param  string  $issue_date  Format: yyyy-mm-dd.
+     * @param string $issue_date Format: yyyy-mm-dd.
+     *
      * @return $this
      */
     public function setIssueDate($issue_date)
     {
 
-        if ((! preg_match('/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/', $issue_date))) {
+        if ((!preg_match("/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/", $issue_date))) {
             throw new \InvalidArgumentException("invalid value for $issue_date when calling Invoice., must conform to the pattern /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/.");
         }
 
@@ -1441,7 +1410,8 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Sets issue_reasons
      *
-     * @param  string[]  $issue_reasons  An array reasons for issuing the invoice.
+     * @param string[] $issue_reasons An array reasons for issuing the invoice.
+     *
      * @return $this
      */
     public function setIssueReasons($issue_reasons)
@@ -1464,13 +1434,14 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Sets issue_time
      *
-     * @param  string  $issue_time  Format: hh:mm:ss
+     * @param string $issue_time Format: hh:mm:ss
+     *
      * @return $this
      */
     public function setIssueTime($issue_time)
     {
 
-        if (! is_null($issue_time) && (! preg_match('/^[0-9]{2}:[0-9]{2}:[0-9]{2}$/', $issue_time))) {
+        if (!is_null($issue_time) && (!preg_match("/^[0-9]{2}:[0-9]{2}:[0-9]{2}$/", $issue_time))) {
             throw new \InvalidArgumentException("invalid value for $issue_time when calling Invoice., must conform to the pattern /^[0-9]{2}:[0-9]{2}:[0-9]{2}$/.");
         }
 
@@ -1492,7 +1463,8 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Sets note
      *
-     * @param  string  $note  A note to add to the invoice
+     * @param string $note A note to add to the invoice
+     *
      * @return $this
      */
     public function setNote($note)
@@ -1515,7 +1487,8 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Sets payable_rounding_amount
      *
-     * @param  float  $payable_rounding_amount  The rounding amount for the payable amount. This amount is calulated automatically from the invoiceLines, allowanceCharges and the taxSubtotals. If you provide this field, it must be exactly what we would have calculated. We recommend not using this field for sending. For receiving, it is always present.
+     * @param float $payable_rounding_amount The rounding amount for the payable amount. This amount is calulated automatically from the invoiceLines, allowanceCharges and the taxSubtotals. If you provide this field, it must be exactly what we would have calculated. We recommend not using this field for sending. For receiving, it is always present.
+     *
      * @return $this
      */
     public function setPayableRoundingAmount($payable_rounding_amount)
@@ -1538,7 +1511,8 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Sets payment_means_array
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\PaymentMeans[]  $payment_means_array  An array of payment means (ways to pay the invoice).
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\PaymentMeans[] $payment_means_array An array of payment means (ways to pay the invoice).
+     *
      * @return $this
      */
     public function setPaymentMeansArray($payment_means_array)
@@ -1561,7 +1535,8 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Sets payment_terms
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\PaymentTerms  $payment_terms  The payment terms of the invoice.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\PaymentTerms $payment_terms The payment terms of the invoice.
+     *
      * @return $this
      */
     public function setPaymentTerms($payment_terms)
@@ -1584,13 +1559,14 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Sets preferred_invoice_type
      *
-     * @param  string  $preferred_invoice_type  In autodetect mode, the choice is made by Storecove based on what is appropriate for the receiver and the receiver country, in combination with the invoice amount sign. If you wish to state a preference, use this field. It is not guaranteed that the preference will be used, since it depends also on the receiver's document capabilities. Only used for sending, not for receiving. For Peppol, only invoice and creditnote are supported. For LHDNM, also debitnote and refundnote are supported. Anything starting it_td* can only be used for SDI. Only used for sending, not present for receiving.
+     * @param string $preferred_invoice_type In autodetect mode, the choice is made by Storecove based on what is appropriate for the receiver and the receiver country, in combination with the invoice amount sign. If you wish to state a preference, use this field. It is not guaranteed that the preference will be used, since it depends also on the receiver's document capabilities. Only used for sending, not for receiving. For Peppol, only invoice and creditnote are supported. For LHDNM, also debitnote and refundnote are supported. Anything starting it_td* can only be used for SDI. Only used for sending, not present for receiving.
+     *
      * @return $this
      */
     public function setPreferredInvoiceType($preferred_invoice_type)
     {
         $allowedValues = $this->getPreferredInvoiceTypeAllowableValues();
-        if (! is_null($preferred_invoice_type) && ! in_array($preferred_invoice_type, $allowedValues, true)) {
+        if (!is_null($preferred_invoice_type) && !in_array($preferred_invoice_type, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'preferred_invoice_type', must be one of '%s'",
@@ -1616,7 +1592,8 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Sets prepaid_amount
      *
-     * @param  float  $prepaid_amount  The amount already paid. The amountInclucingTax - prepaidAmount is the amount remaining to be paid.
+     * @param float $prepaid_amount The amount already paid. The amountInclucingTax - prepaidAmount is the amount remaining to be paid.
+     *
      * @return $this
      */
     public function setPrepaidAmount($prepaid_amount)
@@ -1639,13 +1616,14 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Sets price_mode
      *
-     * @param  string  $price_mode  The price mode. This is used to determine whether the prices are net or gross. Price Mode 'price_mode_gross' can only be used for sender countries ES, IT and PT, \"clearWithoutSending\": true and \"taxSystem\": \"tax_line_percentages\". Only used for sending, not present for receiving.
+     * @param string $price_mode The price mode. This is used to determine whether the prices are net or gross. Price Mode 'price_mode_gross' can only be used for sender countries ES, IT and PT, \"clearWithoutSending\": true and \"taxSystem\": \"tax_line_percentages\". Only used for sending, not present for receiving.
+     *
      * @return $this
      */
     public function setPriceMode($price_mode)
     {
         $allowedValues = $this->getPriceModeAllowableValues();
-        if (! is_null($price_mode) && ! in_array($price_mode, $allowedValues, true)) {
+        if (!is_null($price_mode) && !in_array($price_mode, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'price_mode', must be one of '%s'",
@@ -1671,7 +1649,8 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Sets references
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\Reference[]  $references  An array of references to other documents. Note that many syntaxes do not support multiple references of the same type in which case they will be concatenated with ','. Also, not all syntaxes support all documentTypes.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\Reference[] $references An array of references to other documents. Note that many syntaxes do not support multiple references of the same type in which case they will be concatenated with ','. Also, not all syntaxes support all documentTypes.
+     *
      * @return $this
      */
     public function setReferences($references)
@@ -1694,7 +1673,8 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Sets self_billing_mode
      *
-     * @param  bool  $self_billing_mode  +++ <p>        There are two reasons for using self billing mode:</p><ol>        <li>                The buyer generated the invoice and it needs to be sent to the seller. When sending via Peppol, the receiver needs to support this by advertising a special \"self-billing\" document type. Otherwise, an email will be sent.        </li>        <li>                An invoice was received that needs to be reported as a purchase invoice to a tax authority.        </li></ol><p>        When sending in this mode the buyer (\"AccountingCustomerParty\") and the seller (\"AccountingSupplierParty\") are automatically switched. That means you still provide the same legalEntityId for the sender (who is now the buyer) and the accountingCustomerParty object is still the receiver (but it is now the seller). That means no changes to the JSON are necessary.</p><p>        When reporting a received invoice to a tax authority, set the \"clearWithoutSending\": true flag. Otherwise, the invoice will be reported _and_ sent back to the sender!</p><p>        This field is only used for sending. We currently do not set this for receiving although that is on the roadmap.</p> +++
+     * @param bool $self_billing_mode +++ <p>        There are two reasons for using self billing mode:</p><ol>        <li>                The buyer generated the invoice and it needs to be sent to the seller. When sending via Peppol, the receiver needs to support this by advertising a special \"self-billing\" document type. Otherwise, an email will be sent.        </li>        <li>                An invoice was received that needs to be reported as a purchase invoice to a tax authority.        </li></ol><p>        When sending in this mode the buyer (\"AccountingCustomerParty\") and the seller (\"AccountingSupplierParty\") are automatically switched. That means you still provide the same legalEntityId for the sender (who is now the buyer) and the accountingCustomerParty object is still the receiver (but it is now the seller). That means no changes to the JSON are necessary.</p><p>        When reporting a received invoice to a tax authority, set the \"clearWithoutSending\": true flag. Otherwise, the invoice will be reported _and_ sent back to the sender!</p><p>        This field is only used for sending. We currently do not set this for receiving although that is on the roadmap.</p> +++
+     *
      * @return $this
      */
     public function setSelfBillingMode($self_billing_mode)
@@ -1717,13 +1697,14 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Sets sub_type
      *
-     * @param  string  $sub_type  The document subtype. Only used for received invoices, not for sending.
+     * @param string $sub_type The document subtype. Only used for received invoices, not for sending.
+     *
      * @return $this
      */
     public function setSubType($sub_type)
     {
         $allowedValues = $this->getSubTypeAllowableValues();
-        if (! is_null($sub_type) && ! in_array($sub_type, $allowedValues, true)) {
+        if (!is_null($sub_type) && !in_array($sub_type, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'sub_type', must be one of '%s'",
@@ -1749,13 +1730,14 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Sets tax_point_date
      *
-     * @param  string  $tax_point_date  The tax date is the date on which the supply of goods or of services was made or completed or the date on which the payment on account was made insofar as that date can be determined and differs from the date of the issue of the invoice. EU 2006-112 Article 226 Point 7. Note: For the Dutch TAX authorities the tac date should be the same as the issue date.
+     * @param string $tax_point_date The tax date is the date on which the supply of goods or of services was made or completed or the date on which the payment on account was made insofar as that date can be determined and differs from the date of the issue of the invoice. EU 2006-112 Article 226 Point 7. Note: For the Dutch TAX authorities the tac date should be the same as the issue date.
+     *
      * @return $this
      */
     public function setTaxPointDate($tax_point_date)
     {
 
-        if (! is_null($tax_point_date) && (! preg_match('/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/', $tax_point_date))) {
+        if (!is_null($tax_point_date) && (!preg_match("/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/", $tax_point_date))) {
             throw new \InvalidArgumentException("invalid value for $tax_point_date when calling Invoice., must conform to the pattern /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/.");
         }
 
@@ -1777,7 +1759,8 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Sets tax_subtotals
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\TaxSubtotal[]  $tax_subtotals  An array of tax subtotals. This element is mandatory for taxSystem 'tax_line_percentages'.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\TaxSubtotal[] $tax_subtotals An array of tax subtotals. This element is mandatory for taxSystem 'tax_line_percentages'.
+     *
      * @return $this
      */
     public function setTaxSubtotals($tax_subtotals)
@@ -1800,13 +1783,14 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Sets tax_system
      *
-     * @param  string  $tax_system  The tax system used for the invoice. The system 'tax_line_percentages' is preferred, but for historic purposes 'tax_line_amounts' is supported and the default. Since not all invoice formats that we are required to send support 'tax_line_amounts' we will need to convert the invoice to the 'tax_line_percentags' system if we are forced to send the invoice in that tax system. Note that an invoice must always contain tax information, even if that is 0% or an item or sender is exempt or tax is completely outside scope. In that case, use the correct tax categories (see <<_openapi_tax>>)
+     * @param string $tax_system The tax system used for the invoice. The system 'tax_line_percentages' is preferred, but for historic purposes 'tax_line_amounts' is supported and the default. Since not all invoice formats that we are required to send support 'tax_line_amounts' we will need to convert the invoice to the 'tax_line_percentags' system if we are forced to send the invoice in that tax system. Note that an invoice must always contain tax information, even if that is 0% or an item or sender is exempt or tax is completely outside scope. In that case, use the correct tax categories (see <<_openapi_tax>>)
+     *
      * @return $this
      */
     public function setTaxSystem($tax_system)
     {
         $allowedValues = $this->getTaxSystemAllowableValues();
-        if (! is_null($tax_system) && ! in_array($tax_system, $allowedValues, true)) {
+        if (!is_null($tax_system) && !in_array($tax_system, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'tax_system', must be one of '%s'",
@@ -1832,7 +1816,8 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Sets taxes_duties_fees
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\Tax[]  $taxes_duties_fees  An array of taxes, duties and fees for this invoice. At this moment, the only invoice level tax allowed is the Italian '€2 bollo virtuale'
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\Tax[] $taxes_duties_fees An array of taxes, duties and fees for this invoice. At this moment, the only invoice level tax allowed is the Italian '€2 bollo virtuale'
+     *
      * @return $this
      */
     public function setTaxesDutiesFees($taxes_duties_fees)
@@ -1855,13 +1840,14 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Sets time_zone
      *
-     * @param  string  $time_zone  Format: ±zzzz, where ±zzzz is the difference from UTC, e.g. +0100 or -0900 etc. The timezone will also apply to the document issue date if this field is provided.
+     * @param string $time_zone Format: ±zzzz, where ±zzzz is the difference from UTC, e.g. +0100 or -0900 etc. The timezone will also apply to the document issue date if this field is provided.
+     *
      * @return $this
      */
     public function setTimeZone($time_zone)
     {
 
-        if (! is_null($time_zone) && (! preg_match('/^[+-]\\d{4}$/', $time_zone))) {
+        if (!is_null($time_zone) && (!preg_match("/^[+-]\\d{4}$/", $time_zone))) {
             throw new \InvalidArgumentException("invalid value for $time_zone when calling Invoice., must conform to the pattern /^[+-]\\d{4}$/.");
         }
 
@@ -1883,13 +1869,14 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Sets transaction_type
      *
-     * @param  string  $transaction_type  The type of transaction. Currently used only for India.
+     * @param string $transaction_type The type of transaction. Currently used only for India.
+     *
      * @return $this
      */
     public function setTransactionType($transaction_type)
     {
         $allowedValues = $this->getTransactionTypeAllowableValues();
-        if (! is_null($transaction_type) && ! in_array($transaction_type, $allowedValues, true)) {
+        if (!is_null($transaction_type) && !in_array($transaction_type, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'transaction_type', must be one of '%s'",
@@ -1898,6 +1885,30 @@ class Invoice implements ArrayAccess, ModelInterface
             );
         }
         $this->container['transaction_type'] = $transaction_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets tax_authority
+     *
+     * @return \Deegitalbe\LaravelTrustupIoStorecove\Model\TaxAuthority
+     */
+    public function getTaxAuthority()
+    {
+        return $this->container['tax_authority'];
+    }
+
+    /**
+     * Sets tax_authority
+     *
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\TaxAuthority $tax_authority Information relating to a tax authority.
+     *
+     * @return $this
+     */
+    public function setTaxAuthority($tax_authority)
+    {
+        $this->container['tax_authority'] = $tax_authority;
 
         return $this;
     }
@@ -1915,7 +1926,8 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Sets ubl_extensions
      *
-     * @param  string[]  $ubl_extensions  An array of ubl extensions.
+     * @param string[] $ubl_extensions An array of ubl extensions.
+     *
      * @return $this
      */
     public function setUblExtensions($ubl_extensions)
@@ -1938,13 +1950,14 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Sets x2y
      *
-     * @param  string  $x2y  The type of entities the document is sent from/to: b2b (business-to-business), b2g (business-to-government) or b2c (business-to-consumer). This field does not have a default, but it in mose cases it will be treated as b2b. Only when you explicitly specify b2g or b2c OR when it is clear from the context will a different value be used. For instance, when we see the document is being routed to DE:LWID or NL:OINO number, this tells us it is b2g. But in many cases we are unable to determine this and so it is best to always specify this field. Note that b2b_sez is for use inside India only. This field is for sending only. Note that b2c_petty_cash (deprecated: petty_cash) is for use in Singapore only and is for reporting petty cash transactions in selfBillingMode. Also note that the categories b2c_point_of_sale and b2c_simplified_tax_invoice are for use in Singapore only and are for reporting point of sale transactions and simplified tax invoices respectively.
+     * @param string $x2y The type of entities the document is sent from/to: b2b (business-to-business), b2g (business-to-government) or b2c (business-to-consumer). This field does not have a default, but it in mose cases it will be treated as b2b. Only when you explicitly specify b2g or b2c OR when it is clear from the context will a different value be used. For instance, when we see the document is being routed to DE:LWID or NL:OINO number, this tells us it is b2g. But in many cases we are unable to determine this and so it is best to always specify this field. Note that b2b_sez is for use inside India only. This field is for sending only. Note that b2c_petty_cash (deprecated: petty_cash) is for use in Singapore only and is for reporting petty cash transactions in selfBillingMode. Also note that the categories b2c_point_of_sale and b2c_simplified_tax_invoice are for use in Singapore only and are for reporting point of sale transactions and simplified tax invoices respectively.
+     *
      * @return $this
      */
     public function setX2y($x2y)
     {
         $allowedValues = $this->getX2yAllowableValues();
-        if (! is_null($x2y) && ! in_array($x2y, $allowedValues, true)) {
+        if (!is_null($x2y) && !in_array($x2y, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'x2y', must be one of '%s'",
@@ -1970,7 +1983,8 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Sets vat_reverse_charge
      *
-     * @param  bool  $vat_reverse_charge  DEPRECATED. Use taxExemptReason.
+     * @param bool $vat_reverse_charge DEPRECATED. Use taxExemptReason.
+     *
      * @return $this
      */
     public function setVatReverseCharge($vat_reverse_charge)
@@ -1993,13 +2007,14 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Sets tax_exempt_reason
      *
-     * @param  string  $tax_exempt_reason  DEPRECATED. Use Tax/category and specify this per invoice line. If you do specify this field, it will be applied to all invoice lines and it is an error to specify a Tax/category at the invoice line level. This field holds the reason no tax is present in the invoice. Note that this is an invoice level field and you cannot specify it per invoice line. This field is mandatory unless tax is present in the invoice.
+     * @param string $tax_exempt_reason DEPRECATED. Use Tax/category and specify this per invoice line. If you do specify this field, it will be applied to all invoice lines and it is an error to specify a Tax/category at the invoice line level. This field holds the reason no tax is present in the invoice. Note that this is an invoice level field and you cannot specify it per invoice line. This field is mandatory unless tax is present in the invoice.
+     *
      * @return $this
      */
     public function setTaxExemptReason($tax_exempt_reason)
     {
         $allowedValues = $this->getTaxExemptReasonAllowableValues();
-        if (! is_null($tax_exempt_reason) && ! in_array($tax_exempt_reason, $allowedValues, true)) {
+        if (!is_null($tax_exempt_reason) && !in_array($tax_exempt_reason, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'tax_exempt_reason', must be one of '%s'",
@@ -2025,13 +2040,14 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Sets invoice_type
      *
-     * @param  string  $invoice_type  DEPRECATED. Do not use. This field is available for legacy reasons only. If you want to send a regular invoice (aka UBL type '380'), make sure you have a positive invoice amount. For a credit note (aka UBL type '381'), simply provide a negative invoice amount. If you, in addition to a negative invoice amount, also specify a billingReferences, your invoice will become a corrective invoice (aka UBL type '384'). If your invoice is not sent in the UBL syntax, Storecove will provide the appropriate type for the syntax the invoice is sent in.
+     * @param string $invoice_type DEPRECATED. Do not use. This field is available for legacy reasons only. If you want to send a regular invoice (aka UBL type '380'), make sure you have a positive invoice amount. For a credit note (aka UBL type '381'), simply provide a negative invoice amount. If you, in addition to a negative invoice amount, also specify a billingReferences, your invoice will become a corrective invoice (aka UBL type '384'). If your invoice is not sent in the UBL syntax, Storecove will provide the appropriate type for the syntax the invoice is sent in.
+     *
      * @return $this
      */
     public function setInvoiceType($invoice_type)
     {
         $allowedValues = $this->getInvoiceTypeAllowableValues();
-        if (! is_null($invoice_type) && ! in_array($invoice_type, $allowedValues, true)) {
+        if (!is_null($invoice_type) && !in_array($invoice_type, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'invoice_type', must be one of '%s'",
@@ -2057,7 +2073,8 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Sets buyer_reference
      *
-     * @param  string  $buyer_reference  DEPRECATED. Use a reference object with a documentType 'buyer_reference'. A reference provided by the buyer used for internal routing of the document.
+     * @param string $buyer_reference DEPRECATED. Use a reference object with a documentType 'buyer_reference'. A reference provided by the buyer used for internal routing of the document.
+     *
      * @return $this
      */
     public function setBuyerReference($buyer_reference)
@@ -2080,7 +2097,8 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Sets order_reference
      *
-     * @param  string  $order_reference  DEPRECATED. Use a reference object with a documentType 'purchase_order'. A reference to an order for this invoice, assigned by the buyer. Note that this often is a key field, since many receivers of invoices will use this field to automatically match the invoice to an order they placed. Many receivers refuse invoices that cannot be automatically matched, in particular government agencies. So it is highly recommended to fill this field whenever possible.
+     * @param string $order_reference DEPRECATED. Use a reference object with a documentType 'purchase_order'. A reference to an order for this invoice, assigned by the buyer. Note that this often is a key field, since many receivers of invoices will use this field to automatically match the invoice to an order they placed. Many receivers refuse invoices that cannot be automatically matched, in particular government agencies. So it is highly recommended to fill this field whenever possible.
+     *
      * @return $this
      */
     public function setOrderReference($order_reference)
@@ -2103,7 +2121,8 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Sets sales_order_id
      *
-     * @param  string  $sales_order_id  DEPRECATED. Use a reference object with a documentType 'sales_order'. A reference to an order for this invoice, assigned by the seller.
+     * @param string $sales_order_id DEPRECATED. Use a reference object with a documentType 'sales_order'. A reference to an order for this invoice, assigned by the seller.
+     *
      * @return $this
      */
     public function setSalesOrderId($sales_order_id)
@@ -2126,7 +2145,8 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Sets billing_reference
      *
-     * @param  string  $billing_reference  DEPRECATED. Use a reference object with a documentType 'billing'. A reference to a commercial invoice or corrective invoice of which the current invoice is a correction. This field is mandatory when sending invoiceType 384.
+     * @param string $billing_reference DEPRECATED. Use a reference object with a documentType 'billing'. A reference to a commercial invoice or corrective invoice of which the current invoice is a correction. This field is mandatory when sending invoiceType 384.
+     *
      * @return $this
      */
     public function setBillingReference($billing_reference)
@@ -2149,7 +2169,8 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Sets contract_document_reference
      *
-     * @param  string  $contract_document_reference  DEPRECATED. Use a reference object with a documentType 'contract'. A reference to a contract or framework agreement that this invoice relates to.
+     * @param string $contract_document_reference DEPRECATED. Use a reference object with a documentType 'contract'. A reference to a contract or framework agreement that this invoice relates to.
+     *
      * @return $this
      */
     public function setContractDocumentReference($contract_document_reference)
@@ -2172,7 +2193,8 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Sets project_reference
      *
-     * @param  string  $project_reference  DEPRECATED. Information about the project this invoice relates to.
+     * @param string $project_reference DEPRECATED. Information about the project this invoice relates to.
+     *
      * @return $this
      */
     public function setProjectReference($project_reference)
@@ -2195,7 +2217,8 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Sets payment_means_iban
      *
-     * @param  string  $payment_means_iban  DEPRECATED. Use paymentMeansArray. The IBAN the amount payable should be transferred to
+     * @param string $payment_means_iban DEPRECATED. Use paymentMeansArray. The IBAN the amount payable should be transferred to
+     *
      * @return $this
      */
     public function setPaymentMeansIban($payment_means_iban)
@@ -2218,13 +2241,14 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Sets payment_means_bic
      *
-     * @param  string  $payment_means_bic  DEPRECATED. Use paymentMeansArray. The BIC (Swift) of the bank where the amount payable should be transferred to
+     * @param string $payment_means_bic DEPRECATED. Use paymentMeansArray. The BIC (Swift) of the bank where the amount payable should be transferred to
+     *
      * @return $this
      */
     public function setPaymentMeansBic($payment_means_bic)
     {
 
-        if (! is_null($payment_means_bic) && (! preg_match('/^[A-Z]{6}[2-9A-Z][0-9A-NP-Z]([A-Z0-9]{3}|X{3})?$/', $payment_means_bic))) {
+        if (!is_null($payment_means_bic) && (!preg_match("/^[A-Z]{6}[2-9A-Z][0-9A-NP-Z]([A-Z0-9]{3}|X{3})?$/", $payment_means_bic))) {
             throw new \InvalidArgumentException("invalid value for $payment_means_bic when calling Invoice., must conform to the pattern /^[A-Z]{6}[2-9A-Z][0-9A-NP-Z]([A-Z0-9]{3}|X{3})?$/.");
         }
 
@@ -2246,13 +2270,14 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Sets payment_means_code
      *
-     * @param  string  $payment_means_code  DEPRECATED. Use paymentMeansArray. How the invoice has been / will be paid. Use only online_payment_service (payment will be made or has been made by an online payment service), bank_card (e.g. debit card, credit card), direct_debit (the amount has been / will be taken out of the client's bank account), standing_agreement (an unspecified payment means known to both buyer and seller) or credit_transfer (the buyer will do / has done a bank transfer). The numeric codes are for legacy purposes, they should not be used.
+     * @param string $payment_means_code DEPRECATED. Use paymentMeansArray. How the invoice has been / will be paid. Use only online_payment_service (payment will be made or has been made by an online payment service), bank_card (e.g. debit card, credit card), direct_debit (the amount has been / will be taken out of the client's bank account), standing_agreement (an unspecified payment means known to both buyer and seller) or credit_transfer (the buyer will do / has done a bank transfer). The numeric codes are for legacy purposes, they should not be used.
+     *
      * @return $this
      */
     public function setPaymentMeansCode($payment_means_code)
     {
         $allowedValues = $this->getPaymentMeansCodeAllowableValues();
-        if (! is_null($payment_means_code) && ! in_array($payment_means_code, $allowedValues, true)) {
+        if (!is_null($payment_means_code) && !in_array($payment_means_code, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'payment_means_code', must be one of '%s'",
@@ -2278,7 +2303,8 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Sets payment_means_payment_id
      *
-     * @param  string  $payment_means_payment_id  DEPRECATED. Use the paymentId in the individual PaymentMeans object. The payment id that you will use to match the payment against the invoice.
+     * @param string $payment_means_payment_id DEPRECATED. Use the paymentId in the individual PaymentMeans object. The payment id that you will use to match the payment against the invoice.
+     *
      * @return $this
      */
     public function setPaymentMeansPaymentId($payment_means_payment_id)
@@ -2287,12 +2313,12 @@ class Invoice implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -2302,7 +2328,8 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -2313,8 +2340,9 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -2329,7 +2357,8 @@ class Invoice implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -2354,3 +2383,5 @@ class Invoice implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

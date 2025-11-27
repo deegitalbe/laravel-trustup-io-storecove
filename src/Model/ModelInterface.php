@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove\Model
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -33,6 +32,7 @@ namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 /**
  * Interface abstracting model access.
  *
+ * @package Deegitalbe\LaravelTrustupIoStorecove\Model
  * @author  Swagger Codegen team
  */
 interface ModelInterface

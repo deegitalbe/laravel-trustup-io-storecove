@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,34 +29,33 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * AdditionalTaxIdentifierCreate Class Doc Comment
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class AdditionalTaxIdentifierCreate implements ArrayAccess, ModelInterface
+class AdditionalTaxIdentifierCreate implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'AdditionalTaxIdentifierCreate';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'country' => 'string',
         'county' => 'string',
@@ -65,14 +63,14 @@ class AdditionalTaxIdentifierCreate implements ArrayAccess, ModelInterface
         'scheme' => 'string',
         'identifier' => 'string',
         'third_party_username' => 'string',
-        'third_party_password' => 'string',
+        'third_party_password' => 'string'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'country' => null,
         'county' => null,
@@ -80,7 +78,7 @@ class AdditionalTaxIdentifierCreate implements ArrayAccess, ModelInterface
         'scheme' => null,
         'identifier' => null,
         'third_party_username' => null,
-        'third_party_password' => null,
+        'third_party_password' => null
     ];
 
     /**
@@ -116,7 +114,7 @@ class AdditionalTaxIdentifierCreate implements ArrayAccess, ModelInterface
         'scheme' => 'scheme',
         'identifier' => 'identifier',
         'third_party_username' => 'third_party_username',
-        'third_party_password' => 'third_party_password',
+        'third_party_password' => 'third_party_password'
     ];
 
     /**
@@ -131,7 +129,7 @@ class AdditionalTaxIdentifierCreate implements ArrayAccess, ModelInterface
         'scheme' => 'setScheme',
         'identifier' => 'setIdentifier',
         'third_party_username' => 'setThirdPartyUsername',
-        'third_party_password' => 'setThirdPartyPassword',
+        'third_party_password' => 'setThirdPartyPassword'
     ];
 
     /**
@@ -146,7 +144,7 @@ class AdditionalTaxIdentifierCreate implements ArrayAccess, ModelInterface
         'scheme' => 'getScheme',
         'identifier' => 'getIdentifier',
         'third_party_username' => 'getThirdPartyUsername',
-        'third_party_password' => 'getThirdPartyPassword',
+        'third_party_password' => 'getThirdPartyPassword'
     ];
 
     /**
@@ -190,6 +188,10 @@ class AdditionalTaxIdentifierCreate implements ArrayAccess, ModelInterface
         return self::$swaggerModelName;
     }
 
+    
+
+    
+
     /**
      * Associative array for storing property values
      *
@@ -200,10 +202,10 @@ class AdditionalTaxIdentifierCreate implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['country'] = isset($data['country']) ? $data['country'] : null;
         $this->container['county'] = isset($data['county']) ? $data['county'] : null;
@@ -234,11 +236,11 @@ class AdditionalTaxIdentifierCreate implements ArrayAccess, ModelInterface
             $invalidProperties[] = "invalid value for 'country', the character length must be bigger than or equal to 2.";
         }
 
-        if (! is_null($this->container['county']) && (mb_strlen($this->container['county']) > 2)) {
+        if (!is_null($this->container['county']) && (mb_strlen($this->container['county']) > 2)) {
             $invalidProperties[] = "invalid value for 'county', the character length must be smaller than or equal to 2.";
         }
 
-        if (! is_null($this->container['county']) && (mb_strlen($this->container['county']) < 2)) {
+        if (!is_null($this->container['county']) && (mb_strlen($this->container['county']) < 2)) {
             $invalidProperties[] = "invalid value for 'county', the character length must be bigger than or equal to 2.";
         }
 
@@ -267,19 +269,19 @@ class AdditionalTaxIdentifierCreate implements ArrayAccess, ModelInterface
         if ($this->container['identifier'] === null) {
             $invalidProperties[] = "'identifier' can't be null";
         }
-        if (! is_null($this->container['third_party_username']) && (mb_strlen($this->container['third_party_username']) > 64)) {
+        if (!is_null($this->container['third_party_username']) && (mb_strlen($this->container['third_party_username']) > 64)) {
             $invalidProperties[] = "invalid value for 'third_party_username', the character length must be smaller than or equal to 64.";
         }
 
-        if (! is_null($this->container['third_party_username']) && (mb_strlen($this->container['third_party_username']) < 2)) {
+        if (!is_null($this->container['third_party_username']) && (mb_strlen($this->container['third_party_username']) < 2)) {
             $invalidProperties[] = "invalid value for 'third_party_username', the character length must be bigger than or equal to 2.";
         }
 
-        if (! is_null($this->container['third_party_password']) && (mb_strlen($this->container['third_party_password']) > 64)) {
+        if (!is_null($this->container['third_party_password']) && (mb_strlen($this->container['third_party_password']) > 64)) {
             $invalidProperties[] = "invalid value for 'third_party_password', the character length must be smaller than or equal to 64.";
         }
 
-        if (! is_null($this->container['third_party_password']) && (mb_strlen($this->container['third_party_password']) < 2)) {
+        if (!is_null($this->container['third_party_password']) && (mb_strlen($this->container['third_party_password']) < 2)) {
             $invalidProperties[] = "invalid value for 'third_party_password', the character length must be bigger than or equal to 2.";
         }
 
@@ -297,6 +299,7 @@ class AdditionalTaxIdentifierCreate implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets country
      *
@@ -310,7 +313,8 @@ class AdditionalTaxIdentifierCreate implements ArrayAccess, ModelInterface
     /**
      * Sets country
      *
-     * @param  string  $country  The ISO3166 country code to use this identifier for in case of consumerTaxMode.
+     * @param string $country The ISO3166 country code to use this identifier for in case of consumerTaxMode.
+     *
      * @return $this
      */
     public function setCountry($country)
@@ -340,15 +344,16 @@ class AdditionalTaxIdentifierCreate implements ArrayAccess, ModelInterface
     /**
      * Sets county
      *
-     * @param  string  $county  The county/state inside the country code to use this identifier for in case of consumerTaxMode. Leave empty to create an additional tax identifier for the entire country. For India, use the two last characters of ISO 3166-2:IN (https://en.wikipedia.org/wiki/States_and_union_territories_of_India).
+     * @param string $county The county/state inside the country code to use this identifier for in case of consumerTaxMode. Leave empty to create an additional tax identifier for the entire country. For India, use the two last characters of ISO 3166-2:IN (https://en.wikipedia.org/wiki/States_and_union_territories_of_India).
+     *
      * @return $this
      */
     public function setCounty($county)
     {
-        if (! is_null($county) && (mb_strlen($county) > 2)) {
+        if (!is_null($county) && (mb_strlen($county) > 2)) {
             throw new \InvalidArgumentException('invalid length for $county when calling AdditionalTaxIdentifierCreate., must be smaller than or equal to 2.');
         }
-        if (! is_null($county) && (mb_strlen($county) < 2)) {
+        if (!is_null($county) && (mb_strlen($county) < 2)) {
             throw new \InvalidArgumentException('invalid length for $county when calling AdditionalTaxIdentifierCreate., must be bigger than or equal to 2.');
         }
 
@@ -370,7 +375,8 @@ class AdditionalTaxIdentifierCreate implements ArrayAccess, ModelInterface
     /**
      * Sets superscheme
      *
-     * @param  string  $superscheme  The superscheme of the identifier. Should always be \"iso6523-actorid-upis\".
+     * @param string $superscheme The superscheme of the identifier. Should always be \"iso6523-actorid-upis\".
+     *
      * @return $this
      */
     public function setSuperscheme($superscheme)
@@ -400,7 +406,8 @@ class AdditionalTaxIdentifierCreate implements ArrayAccess, ModelInterface
     /**
      * Sets scheme
      *
-     * @param  string  $scheme  The scheme of the identifier.
+     * @param string $scheme The scheme of the identifier.
+     *
      * @return $this
      */
     public function setScheme($scheme)
@@ -430,7 +437,8 @@ class AdditionalTaxIdentifierCreate implements ArrayAccess, ModelInterface
     /**
      * Sets identifier
      *
-     * @param  string  $identifier  The identifier.
+     * @param string $identifier The identifier.
+     *
      * @return $this
      */
     public function setIdentifier($identifier)
@@ -453,15 +461,16 @@ class AdditionalTaxIdentifierCreate implements ArrayAccess, ModelInterface
     /**
      * Sets third_party_username
      *
-     * @param  string  $third_party_username  The username to use to authenticate to a system through which to send the document, or to obtain tax authority approval to send it. This field is currently relevant only for India and mandatory when creating an IN tax identifier.
+     * @param string $third_party_username The username to use to authenticate to a system through which to send the document, or to obtain tax authority approval to send it. This field is currently relevant only for India and mandatory when creating an IN tax identifier.
+     *
      * @return $this
      */
     public function setThirdPartyUsername($third_party_username)
     {
-        if (! is_null($third_party_username) && (mb_strlen($third_party_username) > 64)) {
+        if (!is_null($third_party_username) && (mb_strlen($third_party_username) > 64)) {
             throw new \InvalidArgumentException('invalid length for $third_party_username when calling AdditionalTaxIdentifierCreate., must be smaller than or equal to 64.');
         }
-        if (! is_null($third_party_username) && (mb_strlen($third_party_username) < 2)) {
+        if (!is_null($third_party_username) && (mb_strlen($third_party_username) < 2)) {
             throw new \InvalidArgumentException('invalid length for $third_party_username when calling AdditionalTaxIdentifierCreate., must be bigger than or equal to 2.');
         }
 
@@ -483,15 +492,16 @@ class AdditionalTaxIdentifierCreate implements ArrayAccess, ModelInterface
     /**
      * Sets third_party_password
      *
-     * @param  string  $third_party_password  The password to use to authenticate to a system through which to send the document, or to obtain tax authority approval to send it. This field is currently relevant only for India and mandatory when creating an IN tax identifier.
+     * @param string $third_party_password The password to use to authenticate to a system through which to send the document, or to obtain tax authority approval to send it. This field is currently relevant only for India and mandatory when creating an IN tax identifier.
+     *
      * @return $this
      */
     public function setThirdPartyPassword($third_party_password)
     {
-        if (! is_null($third_party_password) && (mb_strlen($third_party_password) > 64)) {
+        if (!is_null($third_party_password) && (mb_strlen($third_party_password) > 64)) {
             throw new \InvalidArgumentException('invalid length for $third_party_password when calling AdditionalTaxIdentifierCreate., must be smaller than or equal to 64.');
         }
-        if (! is_null($third_party_password) && (mb_strlen($third_party_password) < 2)) {
+        if (!is_null($third_party_password) && (mb_strlen($third_party_password) < 2)) {
             throw new \InvalidArgumentException('invalid length for $third_party_password when calling AdditionalTaxIdentifierCreate., must be bigger than or equal to 2.');
         }
 
@@ -499,12 +509,12 @@ class AdditionalTaxIdentifierCreate implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -514,7 +524,8 @@ class AdditionalTaxIdentifierCreate implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -525,8 +536,9 @@ class AdditionalTaxIdentifierCreate implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -541,7 +553,8 @@ class AdditionalTaxIdentifierCreate implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -566,3 +579,5 @@ class AdditionalTaxIdentifierCreate implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

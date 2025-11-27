@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,34 +29,33 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * CorpPass Class Doc Comment
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class CorpPass implements ArrayAccess, ModelInterface
+class CorpPass implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'CorpPass';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'enabled' => 'bool',
         'flow_type' => 'string',
@@ -67,14 +65,14 @@ class CorpPass implements ArrayAccess, ModelInterface
         'client_redirect_fail_url' => 'string',
         'corppass_url' => 'string',
         'status' => 'string',
-        'simulate_corppass' => 'bool',
+        'simulate_corppass' => 'bool'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'enabled' => null,
         'flow_type' => null,
@@ -84,7 +82,7 @@ class CorpPass implements ArrayAccess, ModelInterface
         'client_redirect_fail_url' => null,
         'corppass_url' => null,
         'status' => null,
-        'simulate_corppass' => null,
+        'simulate_corppass' => null
     ];
 
     /**
@@ -122,7 +120,7 @@ class CorpPass implements ArrayAccess, ModelInterface
         'client_redirect_fail_url' => 'client_redirect_fail_url',
         'corppass_url' => 'corppass_url',
         'status' => 'status',
-        'simulate_corppass' => 'simulate_corppass',
+        'simulate_corppass' => 'simulate_corppass'
     ];
 
     /**
@@ -139,7 +137,7 @@ class CorpPass implements ArrayAccess, ModelInterface
         'client_redirect_fail_url' => 'setClientRedirectFailUrl',
         'corppass_url' => 'setCorppassUrl',
         'status' => 'setStatus',
-        'simulate_corppass' => 'setSimulateCorppass',
+        'simulate_corppass' => 'setSimulateCorppass'
     ];
 
     /**
@@ -156,7 +154,7 @@ class CorpPass implements ArrayAccess, ModelInterface
         'client_redirect_fail_url' => 'getClientRedirectFailUrl',
         'corppass_url' => 'getCorppassUrl',
         'status' => 'getStatus',
-        'simulate_corppass' => 'getSimulateCorppass',
+        'simulate_corppass' => 'getSimulateCorppass'
     ];
 
     /**
@@ -201,21 +199,16 @@ class CorpPass implements ArrayAccess, ModelInterface
     }
 
     const FLOW_TYPE_REDIRECT = 'corppass_flow_redirect';
-
     const FLOW_TYPE_EMAIL = 'corppass_flow_email';
-
     const FLOW_TYPE_PDF = 'corppass_flow_pdf';
-
     const STATUS_NO_STATUS = 'corppass_no_status';
-
     const STATUS_INITIATED = 'corppass_initiated';
-
     const STATUS_CANCELLED = 'corppass_cancelled';
-
     const STATUS_FAILED = 'corppass_failed';
-
     const STATUS_SUCCEEDED = 'corppass_succeeded';
+    
 
+    
     /**
      * Gets allowable values of the enum
      *
@@ -229,7 +222,7 @@ class CorpPass implements ArrayAccess, ModelInterface
             self::FLOW_TYPE_PDF,
         ];
     }
-
+    
     /**
      * Gets allowable values of the enum
      *
@@ -245,6 +238,7 @@ class CorpPass implements ArrayAccess, ModelInterface
             self::STATUS_SUCCEEDED,
         ];
     }
+    
 
     /**
      * Associative array for storing property values
@@ -256,10 +250,10 @@ class CorpPass implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['enabled'] = isset($data['enabled']) ? $data['enabled'] : false;
         $this->container['flow_type'] = isset($data['flow_type']) ? $data['flow_type'] : null;
@@ -282,55 +276,55 @@ class CorpPass implements ArrayAccess, ModelInterface
         $invalidProperties = [];
 
         $allowedValues = $this->getFlowTypeAllowableValues();
-        if (! is_null($this->container['flow_type']) && ! in_array($this->container['flow_type'], $allowedValues, true)) {
+        if (!is_null($this->container['flow_type']) && !in_array($this->container['flow_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'flow_type', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
 
-        if (! is_null($this->container['signer_name']) && (mb_strlen($this->container['signer_name']) > 64)) {
+        if (!is_null($this->container['signer_name']) && (mb_strlen($this->container['signer_name']) > 64)) {
             $invalidProperties[] = "invalid value for 'signer_name', the character length must be smaller than or equal to 64.";
         }
 
-        if (! is_null($this->container['signer_name']) && (mb_strlen($this->container['signer_name']) < 2)) {
+        if (!is_null($this->container['signer_name']) && (mb_strlen($this->container['signer_name']) < 2)) {
             $invalidProperties[] = "invalid value for 'signer_name', the character length must be bigger than or equal to 2.";
         }
 
-        if (! is_null($this->container['signer_email']) && (mb_strlen($this->container['signer_email']) > 128)) {
+        if (!is_null($this->container['signer_email']) && (mb_strlen($this->container['signer_email']) > 128)) {
             $invalidProperties[] = "invalid value for 'signer_email', the character length must be smaller than or equal to 128.";
         }
 
-        if (! is_null($this->container['signer_email']) && (mb_strlen($this->container['signer_email']) < 2)) {
+        if (!is_null($this->container['signer_email']) && (mb_strlen($this->container['signer_email']) < 2)) {
             $invalidProperties[] = "invalid value for 'signer_email', the character length must be bigger than or equal to 2.";
         }
 
-        if (! is_null($this->container['client_redirect_success_url']) && (mb_strlen($this->container['client_redirect_success_url']) > 255)) {
+        if (!is_null($this->container['client_redirect_success_url']) && (mb_strlen($this->container['client_redirect_success_url']) > 255)) {
             $invalidProperties[] = "invalid value for 'client_redirect_success_url', the character length must be smaller than or equal to 255.";
         }
 
-        if (! is_null($this->container['client_redirect_success_url']) && (mb_strlen($this->container['client_redirect_success_url']) < 11)) {
+        if (!is_null($this->container['client_redirect_success_url']) && (mb_strlen($this->container['client_redirect_success_url']) < 11)) {
             $invalidProperties[] = "invalid value for 'client_redirect_success_url', the character length must be bigger than or equal to 11.";
         }
 
-        if (! is_null($this->container['client_redirect_fail_url']) && (mb_strlen($this->container['client_redirect_fail_url']) > 255)) {
+        if (!is_null($this->container['client_redirect_fail_url']) && (mb_strlen($this->container['client_redirect_fail_url']) > 255)) {
             $invalidProperties[] = "invalid value for 'client_redirect_fail_url', the character length must be smaller than or equal to 255.";
         }
 
-        if (! is_null($this->container['client_redirect_fail_url']) && (mb_strlen($this->container['client_redirect_fail_url']) < 11)) {
+        if (!is_null($this->container['client_redirect_fail_url']) && (mb_strlen($this->container['client_redirect_fail_url']) < 11)) {
             $invalidProperties[] = "invalid value for 'client_redirect_fail_url', the character length must be bigger than or equal to 11.";
         }
 
-        if (! is_null($this->container['corppass_url']) && (mb_strlen($this->container['corppass_url']) > 255)) {
+        if (!is_null($this->container['corppass_url']) && (mb_strlen($this->container['corppass_url']) > 255)) {
             $invalidProperties[] = "invalid value for 'corppass_url', the character length must be smaller than or equal to 255.";
         }
 
-        if (! is_null($this->container['corppass_url']) && (mb_strlen($this->container['corppass_url']) < 11)) {
+        if (!is_null($this->container['corppass_url']) && (mb_strlen($this->container['corppass_url']) < 11)) {
             $invalidProperties[] = "invalid value for 'corppass_url', the character length must be bigger than or equal to 11.";
         }
 
         $allowedValues = $this->getStatusAllowableValues();
-        if (! is_null($this->container['status']) && ! in_array($this->container['status'], $allowedValues, true)) {
+        if (!is_null($this->container['status']) && !in_array($this->container['status'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'status', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -351,6 +345,7 @@ class CorpPass implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets enabled
      *
@@ -364,7 +359,8 @@ class CorpPass implements ArrayAccess, ModelInterface
     /**
      * Sets enabled
      *
-     * @param  bool  $enabled  Whether or not the CorpPass flow is enabled.
+     * @param bool $enabled Whether or not the CorpPass flow is enabled.
+     *
      * @return $this
      */
     public function setEnabled($enabled)
@@ -387,13 +383,14 @@ class CorpPass implements ArrayAccess, ModelInterface
     /**
      * Sets flow_type
      *
-     * @param  string  $flow_type  The CorpPass flow type.
+     * @param string $flow_type The CorpPass flow type.
+     *
      * @return $this
      */
     public function setFlowType($flow_type)
     {
         $allowedValues = $this->getFlowTypeAllowableValues();
-        if (! is_null($flow_type) && ! in_array($flow_type, $allowedValues, true)) {
+        if (!is_null($flow_type) && !in_array($flow_type, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'flow_type', must be one of '%s'",
@@ -419,15 +416,16 @@ class CorpPass implements ArrayAccess, ModelInterface
     /**
      * Sets signer_name
      *
-     * @param  string  $signer_name  The name of the person who is going to perform the CorpPass process.
+     * @param string $signer_name The name of the person who is going to perform the CorpPass process.
+     *
      * @return $this
      */
     public function setSignerName($signer_name)
     {
-        if (! is_null($signer_name) && (mb_strlen($signer_name) > 64)) {
+        if (!is_null($signer_name) && (mb_strlen($signer_name) > 64)) {
             throw new \InvalidArgumentException('invalid length for $signer_name when calling CorpPass., must be smaller than or equal to 64.');
         }
-        if (! is_null($signer_name) && (mb_strlen($signer_name) < 2)) {
+        if (!is_null($signer_name) && (mb_strlen($signer_name) < 2)) {
             throw new \InvalidArgumentException('invalid length for $signer_name when calling CorpPass., must be bigger than or equal to 2.');
         }
 
@@ -449,15 +447,16 @@ class CorpPass implements ArrayAccess, ModelInterface
     /**
      * Sets signer_email
      *
-     * @param  string  $signer_email  The email of the person who is going to perform the CorpPass process.
+     * @param string $signer_email The email of the person who is going to perform the CorpPass process.
+     *
      * @return $this
      */
     public function setSignerEmail($signer_email)
     {
-        if (! is_null($signer_email) && (mb_strlen($signer_email) > 128)) {
+        if (!is_null($signer_email) && (mb_strlen($signer_email) > 128)) {
             throw new \InvalidArgumentException('invalid length for $signer_email when calling CorpPass., must be smaller than or equal to 128.');
         }
-        if (! is_null($signer_email) && (mb_strlen($signer_email) < 2)) {
+        if (!is_null($signer_email) && (mb_strlen($signer_email) < 2)) {
             throw new \InvalidArgumentException('invalid length for $signer_email when calling CorpPass., must be bigger than or equal to 2.');
         }
 
@@ -479,15 +478,16 @@ class CorpPass implements ArrayAccess, ModelInterface
     /**
      * Sets client_redirect_success_url
      *
-     * @param  string  $client_redirect_success_url  The URL the CorpPass system will redirect to in case of successful identity verfication.
+     * @param string $client_redirect_success_url The URL the CorpPass system will redirect to in case of successful identity verfication.
+     *
      * @return $this
      */
     public function setClientRedirectSuccessUrl($client_redirect_success_url)
     {
-        if (! is_null($client_redirect_success_url) && (mb_strlen($client_redirect_success_url) > 255)) {
+        if (!is_null($client_redirect_success_url) && (mb_strlen($client_redirect_success_url) > 255)) {
             throw new \InvalidArgumentException('invalid length for $client_redirect_success_url when calling CorpPass., must be smaller than or equal to 255.');
         }
-        if (! is_null($client_redirect_success_url) && (mb_strlen($client_redirect_success_url) < 11)) {
+        if (!is_null($client_redirect_success_url) && (mb_strlen($client_redirect_success_url) < 11)) {
             throw new \InvalidArgumentException('invalid length for $client_redirect_success_url when calling CorpPass., must be bigger than or equal to 11.');
         }
 
@@ -509,15 +509,16 @@ class CorpPass implements ArrayAccess, ModelInterface
     /**
      * Sets client_redirect_fail_url
      *
-     * @param  string  $client_redirect_fail_url  The URL the CorpPass system will redirect to in case of a failure to perform identity verfication.
+     * @param string $client_redirect_fail_url The URL the CorpPass system will redirect to in case of a failure to perform identity verfication.
+     *
      * @return $this
      */
     public function setClientRedirectFailUrl($client_redirect_fail_url)
     {
-        if (! is_null($client_redirect_fail_url) && (mb_strlen($client_redirect_fail_url) > 255)) {
+        if (!is_null($client_redirect_fail_url) && (mb_strlen($client_redirect_fail_url) > 255)) {
             throw new \InvalidArgumentException('invalid length for $client_redirect_fail_url when calling CorpPass., must be smaller than or equal to 255.');
         }
-        if (! is_null($client_redirect_fail_url) && (mb_strlen($client_redirect_fail_url) < 11)) {
+        if (!is_null($client_redirect_fail_url) && (mb_strlen($client_redirect_fail_url) < 11)) {
             throw new \InvalidArgumentException('invalid length for $client_redirect_fail_url when calling CorpPass., must be bigger than or equal to 11.');
         }
 
@@ -539,15 +540,16 @@ class CorpPass implements ArrayAccess, ModelInterface
     /**
      * Sets corppass_url
      *
-     * @param  string  $corppass_url  The CorpPass redirect URL.
+     * @param string $corppass_url The CorpPass redirect URL.
+     *
      * @return $this
      */
     public function setCorppassUrl($corppass_url)
     {
-        if (! is_null($corppass_url) && (mb_strlen($corppass_url) > 255)) {
+        if (!is_null($corppass_url) && (mb_strlen($corppass_url) > 255)) {
             throw new \InvalidArgumentException('invalid length for $corppass_url when calling CorpPass., must be smaller than or equal to 255.');
         }
-        if (! is_null($corppass_url) && (mb_strlen($corppass_url) < 11)) {
+        if (!is_null($corppass_url) && (mb_strlen($corppass_url) < 11)) {
             throw new \InvalidArgumentException('invalid length for $corppass_url when calling CorpPass., must be bigger than or equal to 11.');
         }
 
@@ -569,13 +571,14 @@ class CorpPass implements ArrayAccess, ModelInterface
     /**
      * Sets status
      *
-     * @param  string  $status  The status of the CorpPass process.
+     * @param string $status The status of the CorpPass process.
+     *
      * @return $this
      */
     public function setStatus($status)
     {
         $allowedValues = $this->getStatusAllowableValues();
-        if (! is_null($status) && ! in_array($status, $allowedValues, true)) {
+        if (!is_null($status) && !in_array($status, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'status', must be one of '%s'",
@@ -601,7 +604,8 @@ class CorpPass implements ArrayAccess, ModelInterface
     /**
      * Sets simulate_corppass
      *
-     * @param  bool  $simulate_corppass  Whether or not CorpPass is being simulated.
+     * @param bool $simulate_corppass Whether or not CorpPass is being simulated.
+     *
      * @return $this
      */
     public function setSimulateCorppass($simulate_corppass)
@@ -610,12 +614,12 @@ class CorpPass implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -625,7 +629,8 @@ class CorpPass implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -636,8 +641,9 @@ class CorpPass implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -652,7 +658,8 @@ class CorpPass implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -677,3 +684,5 @@ class CorpPass implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

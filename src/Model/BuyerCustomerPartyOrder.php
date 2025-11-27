@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,47 +29,45 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * BuyerCustomerPartyOrder Class Doc Comment
  *
  * @category Class
- *
  * @description The buyer sending the order.
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class BuyerCustomerPartyOrder implements ArrayAccess, ModelInterface
+class BuyerCustomerPartyOrder implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'BuyerCustomerPartyOrder';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
-        'party' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\SenderParty',
+        'party' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\SenderParty'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
-        'party' => null,
+        'party' => null
     ];
 
     /**
@@ -100,7 +97,7 @@ class BuyerCustomerPartyOrder implements ArrayAccess, ModelInterface
      * @var string[]
      */
     protected static $attributeMap = [
-        'party' => 'party',
+        'party' => 'party'
     ];
 
     /**
@@ -109,7 +106,7 @@ class BuyerCustomerPartyOrder implements ArrayAccess, ModelInterface
      * @var string[]
      */
     protected static $setters = [
-        'party' => 'setParty',
+        'party' => 'setParty'
     ];
 
     /**
@@ -118,7 +115,7 @@ class BuyerCustomerPartyOrder implements ArrayAccess, ModelInterface
      * @var string[]
      */
     protected static $getters = [
-        'party' => 'getParty',
+        'party' => 'getParty'
     ];
 
     /**
@@ -162,6 +159,10 @@ class BuyerCustomerPartyOrder implements ArrayAccess, ModelInterface
         return self::$swaggerModelName;
     }
 
+    
+
+    
+
     /**
      * Associative array for storing property values
      *
@@ -172,10 +173,10 @@ class BuyerCustomerPartyOrder implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['party'] = isset($data['party']) ? $data['party'] : null;
     }
@@ -192,7 +193,6 @@ class BuyerCustomerPartyOrder implements ArrayAccess, ModelInterface
         if ($this->container['party'] === null) {
             $invalidProperties[] = "'party' can't be null";
         }
-
         return $invalidProperties;
     }
 
@@ -207,6 +207,7 @@ class BuyerCustomerPartyOrder implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets party
      *
@@ -220,7 +221,8 @@ class BuyerCustomerPartyOrder implements ArrayAccess, ModelInterface
     /**
      * Sets party
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\SenderParty  $party  party
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\SenderParty $party party
+     *
      * @return $this
      */
     public function setParty($party)
@@ -229,12 +231,12 @@ class BuyerCustomerPartyOrder implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -244,7 +246,8 @@ class BuyerCustomerPartyOrder implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -255,8 +258,9 @@ class BuyerCustomerPartyOrder implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -271,7 +275,8 @@ class BuyerCustomerPartyOrder implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -296,3 +301,5 @@ class BuyerCustomerPartyOrder implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

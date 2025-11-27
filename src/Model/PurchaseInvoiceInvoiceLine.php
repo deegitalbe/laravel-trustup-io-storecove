@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,34 +29,33 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * PurchaseInvoiceInvoiceLine Class Doc Comment
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PurchaseInvoiceInvoiceLine implements ArrayAccess, ModelInterface
+class PurchaseInvoiceInvoiceLine implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'PurchaseInvoiceInvoiceLine';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'name' => 'string',
         'allowance_charge' => 'float',
@@ -72,14 +70,14 @@ class PurchaseInvoiceInvoiceLine implements ArrayAccess, ModelInterface
         'units' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoiceInvoiceLineItem',
         'amount_excluding_tax' => 'float',
         'tax' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoiceTax',
-        'accounting' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoiceAccountingDetails',
+        'accounting' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoiceAccountingDetails'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'name' => null,
         'allowance_charge' => null,
@@ -94,7 +92,7 @@ class PurchaseInvoiceInvoiceLine implements ArrayAccess, ModelInterface
         'units' => null,
         'amount_excluding_tax' => null,
         'tax' => null,
-        'accounting' => null,
+        'accounting' => null
     ];
 
     /**
@@ -137,7 +135,7 @@ class PurchaseInvoiceInvoiceLine implements ArrayAccess, ModelInterface
         'units' => 'units',
         'amount_excluding_tax' => 'amount_excluding_tax',
         'tax' => 'tax',
-        'accounting' => 'accounting',
+        'accounting' => 'accounting'
     ];
 
     /**
@@ -159,7 +157,7 @@ class PurchaseInvoiceInvoiceLine implements ArrayAccess, ModelInterface
         'units' => 'setUnits',
         'amount_excluding_tax' => 'setAmountExcludingTax',
         'tax' => 'setTax',
-        'accounting' => 'setAccounting',
+        'accounting' => 'setAccounting'
     ];
 
     /**
@@ -181,7 +179,7 @@ class PurchaseInvoiceInvoiceLine implements ArrayAccess, ModelInterface
         'units' => 'getUnits',
         'amount_excluding_tax' => 'getAmountExcludingTax',
         'tax' => 'getTax',
-        'accounting' => 'getAccounting',
+        'accounting' => 'getAccounting'
     ];
 
     /**
@@ -225,6 +223,10 @@ class PurchaseInvoiceInvoiceLine implements ArrayAccess, ModelInterface
         return self::$swaggerModelName;
     }
 
+    
+
+    
+
     /**
      * Associative array for storing property values
      *
@@ -235,10 +237,10 @@ class PurchaseInvoiceInvoiceLine implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['allowance_charge'] = isset($data['allowance_charge']) ? $data['allowance_charge'] : null;
@@ -279,6 +281,7 @@ class PurchaseInvoiceInvoiceLine implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets name
      *
@@ -292,7 +295,8 @@ class PurchaseInvoiceInvoiceLine implements ArrayAccess, ModelInterface
     /**
      * Sets name
      *
-     * @param  string  $name  A short name for the invoice line.
+     * @param string $name A short name for the invoice line.
+     *
      * @return $this
      */
     public function setName($name)
@@ -315,7 +319,8 @@ class PurchaseInvoiceInvoiceLine implements ArrayAccess, ModelInterface
     /**
      * Sets allowance_charge
      *
-     * @param  float  $allowance_charge  DEPRECATED - use allowance_charges.
+     * @param float $allowance_charge DEPRECATED - use allowance_charges.
+     *
      * @return $this
      */
     public function setAllowanceCharge($allowance_charge)
@@ -338,7 +343,8 @@ class PurchaseInvoiceInvoiceLine implements ArrayAccess, ModelInterface
     /**
      * Sets amount_excluding_vat
      *
-     * @param  float  $amount_excluding_vat  DEPRECATED - use amount_excluding_tax. The amount excluding VAT.
+     * @param float $amount_excluding_vat DEPRECATED - use amount_excluding_tax. The amount excluding VAT.
+     *
      * @return $this
      */
     public function setAmountExcludingVat($amount_excluding_vat)
@@ -361,7 +367,8 @@ class PurchaseInvoiceInvoiceLine implements ArrayAccess, ModelInterface
     /**
      * Sets vat
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\VATDetails  $vat  vat
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\VATDetails $vat vat
+     *
      * @return $this
      */
     public function setVat($vat)
@@ -384,7 +391,8 @@ class PurchaseInvoiceInvoiceLine implements ArrayAccess, ModelInterface
     /**
      * Sets description
      *
-     * @param  string  $description  The description for the invoice line.
+     * @param string $description The description for the invoice line.
+     *
      * @return $this
      */
     public function setDescription($description)
@@ -407,7 +415,8 @@ class PurchaseInvoiceInvoiceLine implements ArrayAccess, ModelInterface
     /**
      * Sets period_start
      *
-     * @param  string  $period_start  The start date of the period this invoice line relates to. Format \"YYYY-MM-DD\".
+     * @param string $period_start The start date of the period this invoice line relates to. Format \"YYYY-MM-DD\".
+     *
      * @return $this
      */
     public function setPeriodStart($period_start)
@@ -430,7 +439,8 @@ class PurchaseInvoiceInvoiceLine implements ArrayAccess, ModelInterface
     /**
      * Sets period_end
      *
-     * @param  string  $period_end  The end date of the period this invoice line relates to. Format \"YYYY-MM-DD\".
+     * @param string $period_end The end date of the period this invoice line relates to. Format \"YYYY-MM-DD\".
+     *
      * @return $this
      */
     public function setPeriodEnd($period_end)
@@ -453,7 +463,8 @@ class PurchaseInvoiceInvoiceLine implements ArrayAccess, ModelInterface
     /**
      * Sets allowance_charge_array
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoiceInvoiceLineAllowanceCharge[]  $allowance_charge_array  allowance_charge_array
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoiceInvoiceLineAllowanceCharge[] $allowance_charge_array allowance_charge_array
+     *
      * @return $this
      */
     public function setAllowanceChargeArray($allowance_charge_array)
@@ -476,7 +487,8 @@ class PurchaseInvoiceInvoiceLine implements ArrayAccess, ModelInterface
     /**
      * Sets allowance_charges
      *
-     * @param  float[]  $allowance_charges  Deprecated.
+     * @param float[] $allowance_charges Deprecated.
+     *
      * @return $this
      */
     public function setAllowanceCharges($allowance_charges)
@@ -499,7 +511,8 @@ class PurchaseInvoiceInvoiceLine implements ArrayAccess, ModelInterface
     /**
      * Sets price
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoiceInvoiceLinePrice  $price  The price for one item, excluding VAT.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoiceInvoiceLinePrice $price The price for one item, excluding VAT.
+     *
      * @return $this
      */
     public function setPrice($price)
@@ -522,7 +535,8 @@ class PurchaseInvoiceInvoiceLine implements ArrayAccess, ModelInterface
     /**
      * Sets units
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoiceInvoiceLineItem  $units  The number of items
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoiceInvoiceLineItem $units The number of items
+     *
      * @return $this
      */
     public function setUnits($units)
@@ -545,7 +559,8 @@ class PurchaseInvoiceInvoiceLine implements ArrayAccess, ModelInterface
     /**
      * Sets amount_excluding_tax
      *
-     * @param  float  $amount_excluding_tax  The amount excluding Tax. This is equal to quantity x price_amount + ∑ allowance_charges.
+     * @param float $amount_excluding_tax The amount excluding Tax. This is equal to quantity x price_amount + ∑ allowance_charges.
+     *
      * @return $this
      */
     public function setAmountExcludingTax($amount_excluding_tax)
@@ -568,7 +583,8 @@ class PurchaseInvoiceInvoiceLine implements ArrayAccess, ModelInterface
     /**
      * Sets tax
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoiceTax  $tax  The tax details for the invoice line.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoiceTax $tax The tax details for the invoice line.
+     *
      * @return $this
      */
     public function setTax($tax)
@@ -591,7 +607,8 @@ class PurchaseInvoiceInvoiceLine implements ArrayAccess, ModelInterface
     /**
      * Sets accounting
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoiceAccountingDetails  $accounting  The accounting details for the invoice line.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoiceAccountingDetails $accounting The accounting details for the invoice line.
+     *
      * @return $this
      */
     public function setAccounting($accounting)
@@ -600,12 +617,12 @@ class PurchaseInvoiceInvoiceLine implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -615,7 +632,8 @@ class PurchaseInvoiceInvoiceLine implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -626,8 +644,9 @@ class PurchaseInvoiceInvoiceLine implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -642,7 +661,8 @@ class PurchaseInvoiceInvoiceLine implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -667,3 +687,5 @@ class PurchaseInvoiceInvoiceLine implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

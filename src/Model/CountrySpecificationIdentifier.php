@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,34 +29,33 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * CountrySpecificationIdentifier Class Doc Comment
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class CountrySpecificationIdentifier implements ArrayAccess, ModelInterface
+class CountrySpecificationIdentifier implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'CountrySpecificationIdentifier';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'scheme_type' => 'string',
         'scheme' => 'string',
@@ -65,14 +63,14 @@ class CountrySpecificationIdentifier implements ArrayAccess, ModelInterface
         'description' => 'string',
         'centralized' => 'bool',
         'centralized_identifier' => 'string',
-        'centalized_identifier_test' => 'string',
+        'centalized_identifier_test' => 'string'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'scheme_type' => null,
         'scheme' => null,
@@ -80,7 +78,7 @@ class CountrySpecificationIdentifier implements ArrayAccess, ModelInterface
         'description' => null,
         'centralized' => null,
         'centralized_identifier' => null,
-        'centalized_identifier_test' => null,
+        'centalized_identifier_test' => null
     ];
 
     /**
@@ -116,7 +114,7 @@ class CountrySpecificationIdentifier implements ArrayAccess, ModelInterface
         'description' => 'description',
         'centralized' => 'centralized',
         'centralized_identifier' => 'centralized_identifier',
-        'centalized_identifier_test' => 'centalized_identifier_test',
+        'centalized_identifier_test' => 'centalized_identifier_test'
     ];
 
     /**
@@ -131,7 +129,7 @@ class CountrySpecificationIdentifier implements ArrayAccess, ModelInterface
         'description' => 'setDescription',
         'centralized' => 'setCentralized',
         'centralized_identifier' => 'setCentralizedIdentifier',
-        'centalized_identifier_test' => 'setCentalizedIdentifierTest',
+        'centalized_identifier_test' => 'setCentalizedIdentifierTest'
     ];
 
     /**
@@ -146,7 +144,7 @@ class CountrySpecificationIdentifier implements ArrayAccess, ModelInterface
         'description' => 'getDescription',
         'centralized' => 'getCentralized',
         'centralized_identifier' => 'getCentralizedIdentifier',
-        'centalized_identifier_test' => 'getCentalizedIdentifierTest',
+        'centalized_identifier_test' => 'getCentalizedIdentifierTest'
     ];
 
     /**
@@ -191,7 +189,9 @@ class CountrySpecificationIdentifier implements ArrayAccess, ModelInterface
     }
 
     const SCHEME_TYPE_ISO6523_ACTORID_UPIS = 'iso6523-actorid-upis';
+    
 
+    
     /**
      * Gets allowable values of the enum
      *
@@ -203,6 +203,7 @@ class CountrySpecificationIdentifier implements ArrayAccess, ModelInterface
             self::SCHEME_TYPE_ISO6523_ACTORID_UPIS,
         ];
     }
+    
 
     /**
      * Associative array for storing property values
@@ -214,10 +215,10 @@ class CountrySpecificationIdentifier implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['scheme_type'] = isset($data['scheme_type']) ? $data['scheme_type'] : null;
         $this->container['scheme'] = isset($data['scheme']) ? $data['scheme'] : null;
@@ -238,7 +239,7 @@ class CountrySpecificationIdentifier implements ArrayAccess, ModelInterface
         $invalidProperties = [];
 
         $allowedValues = $this->getSchemeTypeAllowableValues();
-        if (! is_null($this->container['scheme_type']) && ! in_array($this->container['scheme_type'], $allowedValues, true)) {
+        if (!is_null($this->container['scheme_type']) && !in_array($this->container['scheme_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'scheme_type', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -259,6 +260,7 @@ class CountrySpecificationIdentifier implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets scheme_type
      *
@@ -272,13 +274,14 @@ class CountrySpecificationIdentifier implements ArrayAccess, ModelInterface
     /**
      * Sets scheme_type
      *
-     * @param  string  $scheme_type  The scheme type of the identifier. Currently always \"iso6523-actorid-upis\"
+     * @param string $scheme_type The scheme type of the identifier. Currently always \"iso6523-actorid-upis\"
+     *
      * @return $this
      */
     public function setSchemeType($scheme_type)
     {
         $allowedValues = $this->getSchemeTypeAllowableValues();
-        if (! is_null($scheme_type) && ! in_array($scheme_type, $allowedValues, true)) {
+        if (!is_null($scheme_type) && !in_array($scheme_type, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'scheme_type', must be one of '%s'",
@@ -304,7 +307,8 @@ class CountrySpecificationIdentifier implements ArrayAccess, ModelInterface
     /**
      * Sets scheme
      *
-     * @param  string  $scheme  The scheme of the identifier
+     * @param string $scheme The scheme of the identifier
+     *
      * @return $this
      */
     public function setScheme($scheme)
@@ -327,7 +331,8 @@ class CountrySpecificationIdentifier implements ArrayAccess, ModelInterface
     /**
      * Sets scheme_numercial
      *
-     * @param  string  $scheme_numercial  The numerical version of the scheme of the identifier
+     * @param string $scheme_numercial The numerical version of the scheme of the identifier
+     *
      * @return $this
      */
     public function setSchemeNumercial($scheme_numercial)
@@ -350,7 +355,8 @@ class CountrySpecificationIdentifier implements ArrayAccess, ModelInterface
     /**
      * Sets description
      *
-     * @param  string  $description  Identifier description.
+     * @param string $description Identifier description.
+     *
      * @return $this
      */
     public function setDescription($description)
@@ -373,7 +379,8 @@ class CountrySpecificationIdentifier implements ArrayAccess, ModelInterface
     /**
      * Sets centralized
      *
-     * @param  bool  $centralized  Whether or not the identifier represents a centralized routing identifier. This is used in SG, AT and FR where all government invoices are routed to a central accesspoint with a single identifier. This field can only be present for routing identifiers.
+     * @param bool $centralized Whether or not the identifier represents a centralized routing identifier. This is used in SG, AT and FR where all government invoices are routed to a central accesspoint with a single identifier. This field can only be present for routing identifiers.
+     *
      * @return $this
      */
     public function setCentralized($centralized)
@@ -396,7 +403,8 @@ class CountrySpecificationIdentifier implements ArrayAccess, ModelInterface
     /**
      * Sets centralized_identifier
      *
-     * @param  string  $centralized_identifier  The centralized identifier to use for routing, if the \"centralized\" proprerty is true.
+     * @param string $centralized_identifier The centralized identifier to use for routing, if the \"centralized\" proprerty is true.
+     *
      * @return $this
      */
     public function setCentralizedIdentifier($centralized_identifier)
@@ -419,7 +427,8 @@ class CountrySpecificationIdentifier implements ArrayAccess, ModelInterface
     /**
      * Sets centalized_identifier_test
      *
-     * @param  string  $centalized_identifier_test  The centralized identifier to use for routing in test cases, if the \"centralized\" proprerty is true. May not always be available depending on the country and network.
+     * @param string $centalized_identifier_test The centralized identifier to use for routing in test cases, if the \"centralized\" proprerty is true. May not always be available depending on the country and network.
+     *
      * @return $this
      */
     public function setCentalizedIdentifierTest($centalized_identifier_test)
@@ -428,12 +437,12 @@ class CountrySpecificationIdentifier implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -443,7 +452,8 @@ class CountrySpecificationIdentifier implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -454,8 +464,9 @@ class CountrySpecificationIdentifier implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -470,7 +481,8 @@ class CountrySpecificationIdentifier implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -495,3 +507,5 @@ class CountrySpecificationIdentifier implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

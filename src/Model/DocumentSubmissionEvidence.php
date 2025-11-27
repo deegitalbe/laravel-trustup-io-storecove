@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,55 +29,54 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * DocumentSubmissionEvidence Class Doc Comment
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class DocumentSubmissionEvidence implements ArrayAccess, ModelInterface
+class DocumentSubmissionEvidence implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'DocumentSubmissionEvidence';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'guid' => 'string',
         'sender' => 'string',
         'receiver' => 'string',
         'network' => 'string',
         'documents' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\DocumentSubmissionEvidenceDocument[]',
-        'evidence' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\DocumentSubmissionEvidenceEvidence',
+        'evidence' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\DocumentSubmissionEvidenceEvidence'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'guid' => null,
         'sender' => null,
         'receiver' => null,
         'network' => null,
         'documents' => null,
-        'evidence' => null,
+        'evidence' => null
     ];
 
     /**
@@ -113,7 +111,7 @@ class DocumentSubmissionEvidence implements ArrayAccess, ModelInterface
         'receiver' => 'receiver',
         'network' => 'network',
         'documents' => 'documents',
-        'evidence' => 'evidence',
+        'evidence' => 'evidence'
     ];
 
     /**
@@ -127,7 +125,7 @@ class DocumentSubmissionEvidence implements ArrayAccess, ModelInterface
         'receiver' => 'setReceiver',
         'network' => 'setNetwork',
         'documents' => 'setDocuments',
-        'evidence' => 'setEvidence',
+        'evidence' => 'setEvidence'
     ];
 
     /**
@@ -141,7 +139,7 @@ class DocumentSubmissionEvidence implements ArrayAccess, ModelInterface
         'receiver' => 'getReceiver',
         'network' => 'getNetwork',
         'documents' => 'getDocuments',
-        'evidence' => 'getEvidence',
+        'evidence' => 'getEvidence'
     ];
 
     /**
@@ -186,33 +184,22 @@ class DocumentSubmissionEvidence implements ArrayAccess, ModelInterface
     }
 
     const NETWORK_STORECOVE = 'storecove';
-
     const NETWORK_AS2 = 'as2';
-
     const NETWORK_EMAIL = 'email';
-
     const NETWORK_PEPPOL = 'peppol';
-
     const NETWORK_DBNALLIANCE = 'dbnalliance';
-
     const NETWORK_SDI = 'sdi';
-
     const NETWORK_IN_IRP = 'in-irp';
-
     const NETWORK_PT_B2B = 'pt-b2b';
-
     const NETWORK_CH_QRBILL = 'ch-qrbill';
-
     const NETWORK_FINVOICE = 'finvoice';
-
     const NETWORK_PL_KSEF = 'pl-ksef';
-
     const NETWORK_SPAIN_FACE = 'spain-face';
-
     const NETWORK_SPAIN_FACEB2B = 'spain-faceb2b';
-
     const NETWORK_MY_LHDNM = 'my-lhdnm';
+    
 
+    
     /**
      * Gets allowable values of the enum
      *
@@ -237,6 +224,7 @@ class DocumentSubmissionEvidence implements ArrayAccess, ModelInterface
             self::NETWORK_MY_LHDNM,
         ];
     }
+    
 
     /**
      * Associative array for storing property values
@@ -248,10 +236,10 @@ class DocumentSubmissionEvidence implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['guid'] = isset($data['guid']) ? $data['guid'] : null;
         $this->container['sender'] = isset($data['sender']) ? $data['sender'] : null;
@@ -271,7 +259,7 @@ class DocumentSubmissionEvidence implements ArrayAccess, ModelInterface
         $invalidProperties = [];
 
         $allowedValues = $this->getNetworkAllowableValues();
-        if (! is_null($this->container['network']) && ! in_array($this->container['network'], $allowedValues, true)) {
+        if (!is_null($this->container['network']) && !in_array($this->container['network'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'network', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -292,6 +280,7 @@ class DocumentSubmissionEvidence implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets guid
      *
@@ -305,7 +294,8 @@ class DocumentSubmissionEvidence implements ArrayAccess, ModelInterface
     /**
      * Sets guid
      *
-     * @param  string  $guid  The guid for the InvoiceSubmission.
+     * @param string $guid The guid for the InvoiceSubmission.
+     *
      * @return $this
      */
     public function setGuid($guid)
@@ -328,7 +318,8 @@ class DocumentSubmissionEvidence implements ArrayAccess, ModelInterface
     /**
      * Sets sender
      *
-     * @param  string  $sender  The legal identifier of the sender, or the tax identifier if there is no legal identifier.
+     * @param string $sender The legal identifier of the sender, or the tax identifier if there is no legal identifier.
+     *
      * @return $this
      */
     public function setSender($sender)
@@ -351,7 +342,8 @@ class DocumentSubmissionEvidence implements ArrayAccess, ModelInterface
     /**
      * Sets receiver
      *
-     * @param  string  $receiver  The legal identifier of the receiver, or the tax identifier if there is no legal identifier.
+     * @param string $receiver The legal identifier of the receiver, or the tax identifier if there is no legal identifier.
+     *
      * @return $this
      */
     public function setReceiver($receiver)
@@ -374,13 +366,14 @@ class DocumentSubmissionEvidence implements ArrayAccess, ModelInterface
     /**
      * Sets network
      *
-     * @param  string  $network  The network that was used to clear or send the document
+     * @param string $network The network that was used to clear or send the document
+     *
      * @return $this
      */
     public function setNetwork($network)
     {
         $allowedValues = $this->getNetworkAllowableValues();
-        if (! is_null($network) && ! in_array($network, $allowedValues, true)) {
+        if (!is_null($network) && !in_array($network, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'network', must be one of '%s'",
@@ -406,7 +399,8 @@ class DocumentSubmissionEvidence implements ArrayAccess, ModelInterface
     /**
      * Sets documents
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\DocumentSubmissionEvidenceDocument[]  $documents  An array of documents that were sent. For OpenPeppol, this is always a single document (it may contain a PDF inside). For Email, the number of documents depends on the number of attachments, which in turn depends on the country of the receiver. For email, the raw email in RFC822 format is also included.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\DocumentSubmissionEvidenceDocument[] $documents An array of documents that were sent. For OpenPeppol, this is always a single document (it may contain a PDF inside). For Email, the number of documents depends on the number of attachments, which in turn depends on the country of the receiver. For email, the raw email in RFC822 format is also included.
+     *
      * @return $this
      */
     public function setDocuments($documents)
@@ -429,7 +423,8 @@ class DocumentSubmissionEvidence implements ArrayAccess, ModelInterface
     /**
      * Sets evidence
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\DocumentSubmissionEvidenceEvidence  $evidence  The evidence for this transmission.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\DocumentSubmissionEvidenceEvidence $evidence The evidence for this transmission.
+     *
      * @return $this
      */
     public function setEvidence($evidence)
@@ -438,12 +433,12 @@ class DocumentSubmissionEvidence implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -453,7 +448,8 @@ class DocumentSubmissionEvidence implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -464,8 +460,9 @@ class DocumentSubmissionEvidence implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -480,7 +477,8 @@ class DocumentSubmissionEvidence implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -505,3 +503,5 @@ class DocumentSubmissionEvidence implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

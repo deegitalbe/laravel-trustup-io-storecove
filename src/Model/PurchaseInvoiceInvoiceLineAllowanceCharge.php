@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,47 +29,46 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * PurchaseInvoiceInvoiceLineAllowanceCharge Class Doc Comment
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PurchaseInvoiceInvoiceLineAllowanceCharge implements ArrayAccess, ModelInterface
+class PurchaseInvoiceInvoiceLineAllowanceCharge implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'PurchaseInvoiceInvoiceLineAllowanceCharge';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'amount' => 'float',
-        'reason' => 'string',
+        'reason' => 'string'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'amount' => null,
-        'reason' => null,
+        'reason' => null
     ];
 
     /**
@@ -101,7 +99,7 @@ class PurchaseInvoiceInvoiceLineAllowanceCharge implements ArrayAccess, ModelInt
      */
     protected static $attributeMap = [
         'amount' => 'amount',
-        'reason' => 'reason',
+        'reason' => 'reason'
     ];
 
     /**
@@ -111,7 +109,7 @@ class PurchaseInvoiceInvoiceLineAllowanceCharge implements ArrayAccess, ModelInt
      */
     protected static $setters = [
         'amount' => 'setAmount',
-        'reason' => 'setReason',
+        'reason' => 'setReason'
     ];
 
     /**
@@ -121,7 +119,7 @@ class PurchaseInvoiceInvoiceLineAllowanceCharge implements ArrayAccess, ModelInt
      */
     protected static $getters = [
         'amount' => 'getAmount',
-        'reason' => 'getReason',
+        'reason' => 'getReason'
     ];
 
     /**
@@ -165,6 +163,10 @@ class PurchaseInvoiceInvoiceLineAllowanceCharge implements ArrayAccess, ModelInt
         return self::$swaggerModelName;
     }
 
+    
+
+    
+
     /**
      * Associative array for storing property values
      *
@@ -175,10 +177,10 @@ class PurchaseInvoiceInvoiceLineAllowanceCharge implements ArrayAccess, ModelInt
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
         $this->container['reason'] = isset($data['reason']) ? $data['reason'] : null;
@@ -207,6 +209,7 @@ class PurchaseInvoiceInvoiceLineAllowanceCharge implements ArrayAccess, ModelInt
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets amount
      *
@@ -220,7 +223,8 @@ class PurchaseInvoiceInvoiceLineAllowanceCharge implements ArrayAccess, ModelInt
     /**
      * Sets amount
      *
-     * @param  float  $amount  The amount of the allowance or charge.
+     * @param float $amount The amount of the allowance or charge.
+     *
      * @return $this
      */
     public function setAmount($amount)
@@ -243,7 +247,8 @@ class PurchaseInvoiceInvoiceLineAllowanceCharge implements ArrayAccess, ModelInt
     /**
      * Sets reason
      *
-     * @param  string  $reason  The reason for the allowance or charge.
+     * @param string $reason The reason for the allowance or charge.
+     *
      * @return $this
      */
     public function setReason($reason)
@@ -252,12 +257,12 @@ class PurchaseInvoiceInvoiceLineAllowanceCharge implements ArrayAccess, ModelInt
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -267,7 +272,8 @@ class PurchaseInvoiceInvoiceLineAllowanceCharge implements ArrayAccess, ModelInt
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -278,8 +284,9 @@ class PurchaseInvoiceInvoiceLineAllowanceCharge implements ArrayAccess, ModelInt
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -294,7 +301,8 @@ class PurchaseInvoiceInvoiceLineAllowanceCharge implements ArrayAccess, ModelInt
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -319,3 +327,5 @@ class PurchaseInvoiceInvoiceLineAllowanceCharge implements ArrayAccess, ModelInt
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

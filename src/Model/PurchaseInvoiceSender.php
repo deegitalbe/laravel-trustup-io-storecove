@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,34 +29,33 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * PurchaseInvoiceSender Class Doc Comment
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PurchaseInvoiceSender implements ArrayAccess, ModelInterface
+class PurchaseInvoiceSender implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'PurchaseInvoiceSender';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'peppol_identifiers' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\PeppolIdentifier',
         'party_name' => 'string',
@@ -73,14 +71,14 @@ class PurchaseInvoiceSender implements ArrayAccess, ModelInterface
         'county' => 'string',
         'country' => 'string',
         'billing_contact' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoiceSenderBillingContact',
-        'identifiers' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\PeppolIdentifier[]',
+        'identifiers' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\PeppolIdentifier[]'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'peppol_identifiers' => null,
         'party_name' => null,
@@ -96,7 +94,7 @@ class PurchaseInvoiceSender implements ArrayAccess, ModelInterface
         'county' => null,
         'country' => null,
         'billing_contact' => null,
-        'identifiers' => null,
+        'identifiers' => null
     ];
 
     /**
@@ -140,7 +138,7 @@ class PurchaseInvoiceSender implements ArrayAccess, ModelInterface
         'county' => 'county',
         'country' => 'country',
         'billing_contact' => 'billing_contact',
-        'identifiers' => 'identifiers',
+        'identifiers' => 'identifiers'
     ];
 
     /**
@@ -163,7 +161,7 @@ class PurchaseInvoiceSender implements ArrayAccess, ModelInterface
         'county' => 'setCounty',
         'country' => 'setCountry',
         'billing_contact' => 'setBillingContact',
-        'identifiers' => 'setIdentifiers',
+        'identifiers' => 'setIdentifiers'
     ];
 
     /**
@@ -186,7 +184,7 @@ class PurchaseInvoiceSender implements ArrayAccess, ModelInterface
         'county' => 'getCounty',
         'country' => 'getCountry',
         'billing_contact' => 'getBillingContact',
-        'identifiers' => 'getIdentifiers',
+        'identifiers' => 'getIdentifiers'
     ];
 
     /**
@@ -230,6 +228,10 @@ class PurchaseInvoiceSender implements ArrayAccess, ModelInterface
         return self::$swaggerModelName;
     }
 
+    
+
+    
+
     /**
      * Associative array for storing property values
      *
@@ -240,10 +242,10 @@ class PurchaseInvoiceSender implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['peppol_identifiers'] = isset($data['peppol_identifiers']) ? $data['peppol_identifiers'] : null;
         $this->container['party_name'] = isset($data['party_name']) ? $data['party_name'] : null;
@@ -285,6 +287,7 @@ class PurchaseInvoiceSender implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets peppol_identifiers
      *
@@ -298,7 +301,8 @@ class PurchaseInvoiceSender implements ArrayAccess, ModelInterface
     /**
      * Sets peppol_identifiers
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\PeppolIdentifier  $peppol_identifiers  DEPRECATED - Use the identifiers array.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\PeppolIdentifier $peppol_identifiers DEPRECATED - Use the identifiers array.
+     *
      * @return $this
      */
     public function setPeppolIdentifiers($peppol_identifiers)
@@ -321,7 +325,8 @@ class PurchaseInvoiceSender implements ArrayAccess, ModelInterface
     /**
      * Sets party_name
      *
-     * @param  string  $party_name  The party who sent the invoice.
+     * @param string $party_name The party who sent the invoice.
+     *
      * @return $this
      */
     public function setPartyName($party_name)
@@ -344,7 +349,8 @@ class PurchaseInvoiceSender implements ArrayAccess, ModelInterface
     /**
      * Sets legal_name
      *
-     * @param  string  $legal_name  The legal name of the party who sent the invoice.
+     * @param string $legal_name The legal name of the party who sent the invoice.
+     *
      * @return $this
      */
     public function setLegalName($legal_name)
@@ -367,7 +373,8 @@ class PurchaseInvoiceSender implements ArrayAccess, ModelInterface
     /**
      * Sets department
      *
-     * @param  string  $department  The department who sent the invoice.
+     * @param string $department The department who sent the invoice.
+     *
      * @return $this
      */
     public function setDepartment($department)
@@ -390,7 +397,8 @@ class PurchaseInvoiceSender implements ArrayAccess, ModelInterface
     /**
      * Sets line1
      *
-     * @param  string  $line1  The address
+     * @param string $line1 The address
+     *
      * @return $this
      */
     public function setLine1($line1)
@@ -413,7 +421,8 @@ class PurchaseInvoiceSender implements ArrayAccess, ModelInterface
     /**
      * Sets line2
      *
-     * @param  string  $line2  The address, line 2
+     * @param string $line2 The address, line 2
+     *
      * @return $this
      */
     public function setLine2($line2)
@@ -436,7 +445,8 @@ class PurchaseInvoiceSender implements ArrayAccess, ModelInterface
     /**
      * Sets zip
      *
-     * @param  string  $zip  The zip code.
+     * @param string $zip The zip code.
+     *
      * @return $this
      */
     public function setZip($zip)
@@ -459,7 +469,8 @@ class PurchaseInvoiceSender implements ArrayAccess, ModelInterface
     /**
      * Sets city
      *
-     * @param  string  $city  The city.
+     * @param string $city The city.
+     *
      * @return $this
      */
     public function setCity($city)
@@ -482,7 +493,8 @@ class PurchaseInvoiceSender implements ArrayAccess, ModelInterface
     /**
      * Sets building_number
      *
-     * @param  string  $building_number  The building number. Used in SA.
+     * @param string $building_number The building number. Used in SA.
+     *
      * @return $this
      */
     public function setBuildingNumber($building_number)
@@ -505,7 +517,8 @@ class PurchaseInvoiceSender implements ArrayAccess, ModelInterface
     /**
      * Sets secondary_number
      *
-     * @param  string  $secondary_number  The secondary number. Used in SA.
+     * @param string $secondary_number The secondary number. Used in SA.
+     *
      * @return $this
      */
     public function setSecondaryNumber($secondary_number)
@@ -528,7 +541,8 @@ class PurchaseInvoiceSender implements ArrayAccess, ModelInterface
     /**
      * Sets neighborhood
      *
-     * @param  string  $neighborhood  The neighborhood. Used in SA.
+     * @param string $neighborhood The neighborhood. Used in SA.
+     *
      * @return $this
      */
     public function setNeighborhood($neighborhood)
@@ -551,7 +565,8 @@ class PurchaseInvoiceSender implements ArrayAccess, ModelInterface
     /**
      * Sets county
      *
-     * @param  string  $county  The county.
+     * @param string $county The county.
+     *
      * @return $this
      */
     public function setCounty($county)
@@ -574,7 +589,8 @@ class PurchaseInvoiceSender implements ArrayAccess, ModelInterface
     /**
      * Sets country
      *
-     * @param  string  $country  The country.
+     * @param string $country The country.
+     *
      * @return $this
      */
     public function setCountry($country)
@@ -597,7 +613,8 @@ class PurchaseInvoiceSender implements ArrayAccess, ModelInterface
     /**
      * Sets billing_contact
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoiceSenderBillingContact  $billing_contact  The billing contact for the invoice.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoiceSenderBillingContact $billing_contact The billing contact for the invoice.
+     *
      * @return $this
      */
     public function setBillingContact($billing_contact)
@@ -620,7 +637,8 @@ class PurchaseInvoiceSender implements ArrayAccess, ModelInterface
     /**
      * Sets identifiers
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\PeppolIdentifier[]  $identifiers  The array of identifiers for this sender.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\PeppolIdentifier[] $identifiers The array of identifiers for this sender.
+     *
      * @return $this
      */
     public function setIdentifiers($identifiers)
@@ -629,12 +647,12 @@ class PurchaseInvoiceSender implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -644,7 +662,8 @@ class PurchaseInvoiceSender implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -655,8 +674,9 @@ class PurchaseInvoiceSender implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -671,7 +691,8 @@ class PurchaseInvoiceSender implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -696,3 +717,5 @@ class PurchaseInvoiceSender implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

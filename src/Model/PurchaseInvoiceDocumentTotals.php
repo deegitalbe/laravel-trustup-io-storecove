@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,51 +29,50 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * PurchaseInvoiceDocumentTotals Class Doc Comment
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PurchaseInvoiceDocumentTotals implements ArrayAccess, ModelInterface
+class PurchaseInvoiceDocumentTotals implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'PurchaseInvoiceDocumentTotals';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'total' => 'float',
         'rounding' => 'float',
         'prepaid' => 'float',
-        'payable' => 'float',
+        'payable' => 'float'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'total' => null,
         'rounding' => null,
         'prepaid' => null,
-        'payable' => null,
+        'payable' => null
     ];
 
     /**
@@ -107,7 +105,7 @@ class PurchaseInvoiceDocumentTotals implements ArrayAccess, ModelInterface
         'total' => 'total',
         'rounding' => 'rounding',
         'prepaid' => 'prepaid',
-        'payable' => 'payable',
+        'payable' => 'payable'
     ];
 
     /**
@@ -119,7 +117,7 @@ class PurchaseInvoiceDocumentTotals implements ArrayAccess, ModelInterface
         'total' => 'setTotal',
         'rounding' => 'setRounding',
         'prepaid' => 'setPrepaid',
-        'payable' => 'setPayable',
+        'payable' => 'setPayable'
     ];
 
     /**
@@ -131,7 +129,7 @@ class PurchaseInvoiceDocumentTotals implements ArrayAccess, ModelInterface
         'total' => 'getTotal',
         'rounding' => 'getRounding',
         'prepaid' => 'getPrepaid',
-        'payable' => 'getPayable',
+        'payable' => 'getPayable'
     ];
 
     /**
@@ -175,6 +173,10 @@ class PurchaseInvoiceDocumentTotals implements ArrayAccess, ModelInterface
         return self::$swaggerModelName;
     }
 
+    
+
+    
+
     /**
      * Associative array for storing property values
      *
@@ -185,10 +187,10 @@ class PurchaseInvoiceDocumentTotals implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['total'] = isset($data['total']) ? $data['total'] : null;
         $this->container['rounding'] = isset($data['rounding']) ? $data['rounding'] : null;
@@ -219,6 +221,7 @@ class PurchaseInvoiceDocumentTotals implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets total
      *
@@ -232,7 +235,8 @@ class PurchaseInvoiceDocumentTotals implements ArrayAccess, ModelInterface
     /**
      * Sets total
      *
-     * @param  float  $total  The total invoice amount, including tax. This is equal to the sum of the invoice_lines (amount_excluding_tax + tax.amount) and the allowances and charges.
+     * @param float $total The total invoice amount, including tax. This is equal to the sum of the invoice_lines (amount_excluding_tax + tax.amount) and the allowances and charges.
+     *
      * @return $this
      */
     public function setTotal($total)
@@ -255,7 +259,8 @@ class PurchaseInvoiceDocumentTotals implements ArrayAccess, ModelInterface
     /**
      * Sets rounding
      *
-     * @param  float  $rounding  The difference between the payable amount and the total invoice amount including tax.
+     * @param float $rounding The difference between the payable amount and the total invoice amount including tax.
+     *
      * @return $this
      */
     public function setRounding($rounding)
@@ -278,7 +283,8 @@ class PurchaseInvoiceDocumentTotals implements ArrayAccess, ModelInterface
     /**
      * Sets prepaid
      *
-     * @param  float  $prepaid  The amount already paid.
+     * @param float $prepaid The amount already paid.
+     *
      * @return $this
      */
     public function setPrepaid($prepaid)
@@ -301,7 +307,8 @@ class PurchaseInvoiceDocumentTotals implements ArrayAccess, ModelInterface
     /**
      * Sets payable
      *
-     * @param  float  $payable  The total invoice amount payable including tax.
+     * @param float $payable The total invoice amount payable including tax.
+     *
      * @return $this
      */
     public function setPayable($payable)
@@ -310,12 +317,12 @@ class PurchaseInvoiceDocumentTotals implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -325,7 +332,8 @@ class PurchaseInvoiceDocumentTotals implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -336,8 +344,9 @@ class PurchaseInvoiceDocumentTotals implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -352,7 +361,8 @@ class PurchaseInvoiceDocumentTotals implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -377,3 +387,5 @@ class PurchaseInvoiceDocumentTotals implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,45 +29,44 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * CountrySpecifications Class Doc Comment
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class CountrySpecifications implements ArrayAccess, ModelInterface
+class CountrySpecifications implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'CountrySpecifications';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
-        'countries' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\CountrySpecification[]',
+        'countries' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\CountrySpecification[]'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
-        'countries' => null,
+        'countries' => null
     ];
 
     /**
@@ -98,7 +96,7 @@ class CountrySpecifications implements ArrayAccess, ModelInterface
      * @var string[]
      */
     protected static $attributeMap = [
-        'countries' => 'countries',
+        'countries' => 'countries'
     ];
 
     /**
@@ -107,7 +105,7 @@ class CountrySpecifications implements ArrayAccess, ModelInterface
      * @var string[]
      */
     protected static $setters = [
-        'countries' => 'setCountries',
+        'countries' => 'setCountries'
     ];
 
     /**
@@ -116,7 +114,7 @@ class CountrySpecifications implements ArrayAccess, ModelInterface
      * @var string[]
      */
     protected static $getters = [
-        'countries' => 'getCountries',
+        'countries' => 'getCountries'
     ];
 
     /**
@@ -160,6 +158,10 @@ class CountrySpecifications implements ArrayAccess, ModelInterface
         return self::$swaggerModelName;
     }
 
+    
+
+    
+
     /**
      * Associative array for storing property values
      *
@@ -170,10 +172,10 @@ class CountrySpecifications implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['countries'] = isset($data['countries']) ? $data['countries'] : null;
     }
@@ -201,6 +203,7 @@ class CountrySpecifications implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets countries
      *
@@ -214,7 +217,8 @@ class CountrySpecifications implements ArrayAccess, ModelInterface
     /**
      * Sets countries
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\CountrySpecification[]  $countries  countries
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\CountrySpecification[] $countries countries
+     *
      * @return $this
      */
     public function setCountries($countries)
@@ -223,12 +227,12 @@ class CountrySpecifications implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -238,7 +242,8 @@ class CountrySpecifications implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -249,8 +254,9 @@ class CountrySpecifications implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -265,7 +271,8 @@ class CountrySpecifications implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -290,3 +297,5 @@ class CountrySpecifications implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

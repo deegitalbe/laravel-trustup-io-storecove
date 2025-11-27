@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,34 +29,33 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * InvoiceLine Class Doc Comment
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class InvoiceLine implements ArrayAccess, ModelInterface
+class InvoiceLine implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'InvoiceLine';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'line_id' => 'string',
         'description' => 'string',
@@ -83,14 +81,14 @@ class InvoiceLine implements ArrayAccess, ModelInterface
         'standard_item_identification' => 'string',
         'standard_item_identification_scheme_id' => 'string',
         'standard_item_identification_scheme_agency_id' => 'string',
-        'note' => 'string',
+        'note' => 'string'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'line_id' => null,
         'description' => null,
@@ -116,7 +114,7 @@ class InvoiceLine implements ArrayAccess, ModelInterface
         'standard_item_identification' => null,
         'standard_item_identification_scheme_id' => null,
         'standard_item_identification_scheme_agency_id' => null,
-        'note' => null,
+        'note' => null
     ];
 
     /**
@@ -170,7 +168,7 @@ class InvoiceLine implements ArrayAccess, ModelInterface
         'standard_item_identification' => 'standardItemIdentification',
         'standard_item_identification_scheme_id' => 'standardItemIdentificationSchemeId',
         'standard_item_identification_scheme_agency_id' => 'standardItemIdentificationSchemeAgencyId',
-        'note' => 'note',
+        'note' => 'note'
     ];
 
     /**
@@ -203,7 +201,7 @@ class InvoiceLine implements ArrayAccess, ModelInterface
         'standard_item_identification' => 'setStandardItemIdentification',
         'standard_item_identification_scheme_id' => 'setStandardItemIdentificationSchemeId',
         'standard_item_identification_scheme_agency_id' => 'setStandardItemIdentificationSchemeAgencyId',
-        'note' => 'setNote',
+        'note' => 'setNote'
     ];
 
     /**
@@ -236,7 +234,7 @@ class InvoiceLine implements ArrayAccess, ModelInterface
         'standard_item_identification' => 'getStandardItemIdentification',
         'standard_item_identification_scheme_id' => 'getStandardItemIdentificationSchemeId',
         'standard_item_identification_scheme_agency_id' => 'getStandardItemIdentificationSchemeAgencyId',
-        'note' => 'getNote',
+        'note' => 'getNote'
     ];
 
     /**
@@ -281,4963 +279,2487 @@ class InvoiceLine implements ArrayAccess, ModelInterface
     }
 
     const QUANTITY_UNIT_CODE_LOT = 'LOT';
-
     const QUANTITY_UNIT_CODE__10 = '10';
-
     const QUANTITY_UNIT_CODE__11 = '11';
-
     const QUANTITY_UNIT_CODE__13 = '13';
-
     const QUANTITY_UNIT_CODE__14 = '14';
-
     const QUANTITY_UNIT_CODE__15 = '15';
-
     const QUANTITY_UNIT_CODE__20 = '20';
-
     const QUANTITY_UNIT_CODE__21 = '21';
-
     const QUANTITY_UNIT_CODE__22 = '22';
-
     const QUANTITY_UNIT_CODE__23 = '23';
-
     const QUANTITY_UNIT_CODE__24 = '24';
-
     const QUANTITY_UNIT_CODE__25 = '25';
-
     const QUANTITY_UNIT_CODE__27 = '27';
-
     const QUANTITY_UNIT_CODE__28 = '28';
-
     const QUANTITY_UNIT_CODE__33 = '33';
-
     const QUANTITY_UNIT_CODE__34 = '34';
-
     const QUANTITY_UNIT_CODE__35 = '35';
-
     const QUANTITY_UNIT_CODE__37 = '37';
-
     const QUANTITY_UNIT_CODE__38 = '38';
-
     const QUANTITY_UNIT_CODE__40 = '40';
-
     const QUANTITY_UNIT_CODE__41 = '41';
-
     const QUANTITY_UNIT_CODE__56 = '56';
-
     const QUANTITY_UNIT_CODE__57 = '57';
-
     const QUANTITY_UNIT_CODE__58 = '58';
-
     const QUANTITY_UNIT_CODE__59 = '59';
-
     const QUANTITY_UNIT_CODE__60 = '60';
-
     const QUANTITY_UNIT_CODE__61 = '61';
-
     const QUANTITY_UNIT_CODE__74 = '74';
-
     const QUANTITY_UNIT_CODE__77 = '77';
-
     const QUANTITY_UNIT_CODE__80 = '80';
-
     const QUANTITY_UNIT_CODE__81 = '81';
-
     const QUANTITY_UNIT_CODE__85 = '85';
-
     const QUANTITY_UNIT_CODE__87 = '87';
-
     const QUANTITY_UNIT_CODE__89 = '89';
-
     const QUANTITY_UNIT_CODE__91 = '91';
-
     const QUANTITY_UNIT_CODE__1_I = '1I';
-
     const QUANTITY_UNIT_CODE__2_A = '2A';
-
     const QUANTITY_UNIT_CODE__2_B = '2B';
-
     const QUANTITY_UNIT_CODE__2_C = '2C';
-
     const QUANTITY_UNIT_CODE__2_G = '2G';
-
     const QUANTITY_UNIT_CODE__2_H = '2H';
-
     const QUANTITY_UNIT_CODE__2_I = '2I';
-
     const QUANTITY_UNIT_CODE__2_J = '2J';
-
     const QUANTITY_UNIT_CODE__2_K = '2K';
-
     const QUANTITY_UNIT_CODE__2_L = '2L';
-
     const QUANTITY_UNIT_CODE__2_M = '2M';
-
     const QUANTITY_UNIT_CODE__2_N = '2N';
-
     const QUANTITY_UNIT_CODE__2_P = '2P';
-
     const QUANTITY_UNIT_CODE__2_Q = '2Q';
-
     const QUANTITY_UNIT_CODE__2_R = '2R';
-
     const QUANTITY_UNIT_CODE__2_U = '2U';
-
     const QUANTITY_UNIT_CODE__2_X = '2X';
-
     const QUANTITY_UNIT_CODE__2_Y = '2Y';
-
     const QUANTITY_UNIT_CODE__2_Z = '2Z';
-
     const QUANTITY_UNIT_CODE__3_B = '3B';
-
     const QUANTITY_UNIT_CODE__3_C = '3C';
-
     const QUANTITY_UNIT_CODE__4_C = '4C';
-
     const QUANTITY_UNIT_CODE__4_G = '4G';
-
     const QUANTITY_UNIT_CODE__4_H = '4H';
-
     const QUANTITY_UNIT_CODE__4_K = '4K';
-
     const QUANTITY_UNIT_CODE__4_L = '4L';
-
     const QUANTITY_UNIT_CODE__4_M = '4M';
-
     const QUANTITY_UNIT_CODE__4_N = '4N';
-
     const QUANTITY_UNIT_CODE__4_O = '4O';
-
     const QUANTITY_UNIT_CODE__4_P = '4P';
-
     const QUANTITY_UNIT_CODE__4_Q = '4Q';
-
     const QUANTITY_UNIT_CODE__4_R = '4R';
-
     const QUANTITY_UNIT_CODE__4_T = '4T';
-
     const QUANTITY_UNIT_CODE__4_U = '4U';
-
     const QUANTITY_UNIT_CODE__4_W = '4W';
-
     const QUANTITY_UNIT_CODE__4_X = '4X';
-
     const QUANTITY_UNIT_CODE__5_A = '5A';
-
     const QUANTITY_UNIT_CODE__5_B = '5B';
-
     const QUANTITY_UNIT_CODE__5_E = '5E';
-
     const QUANTITY_UNIT_CODE__5_J = '5J';
-
     const QUANTITY_UNIT_CODE_A10 = 'A10';
-
     const QUANTITY_UNIT_CODE_A11 = 'A11';
-
     const QUANTITY_UNIT_CODE_A12 = 'A12';
-
     const QUANTITY_UNIT_CODE_A13 = 'A13';
-
     const QUANTITY_UNIT_CODE_A14 = 'A14';
-
     const QUANTITY_UNIT_CODE_A15 = 'A15';
-
     const QUANTITY_UNIT_CODE_A16 = 'A16';
-
     const QUANTITY_UNIT_CODE_A17 = 'A17';
-
     const QUANTITY_UNIT_CODE_A18 = 'A18';
-
     const QUANTITY_UNIT_CODE_A19 = 'A19';
-
     const QUANTITY_UNIT_CODE_A2 = 'A2';
-
     const QUANTITY_UNIT_CODE_A20 = 'A20';
-
     const QUANTITY_UNIT_CODE_A21 = 'A21';
-
     const QUANTITY_UNIT_CODE_A22 = 'A22';
-
     const QUANTITY_UNIT_CODE_A23 = 'A23';
-
     const QUANTITY_UNIT_CODE_A24 = 'A24';
-
     const QUANTITY_UNIT_CODE_A26 = 'A26';
-
     const QUANTITY_UNIT_CODE_A27 = 'A27';
-
     const QUANTITY_UNIT_CODE_A28 = 'A28';
-
     const QUANTITY_UNIT_CODE_A29 = 'A29';
-
     const QUANTITY_UNIT_CODE_A3 = 'A3';
-
     const QUANTITY_UNIT_CODE_A30 = 'A30';
-
     const QUANTITY_UNIT_CODE_A31 = 'A31';
-
     const QUANTITY_UNIT_CODE_A32 = 'A32';
-
     const QUANTITY_UNIT_CODE_A33 = 'A33';
-
     const QUANTITY_UNIT_CODE_A34 = 'A34';
-
     const QUANTITY_UNIT_CODE_A35 = 'A35';
-
     const QUANTITY_UNIT_CODE_A36 = 'A36';
-
     const QUANTITY_UNIT_CODE_A37 = 'A37';
-
     const QUANTITY_UNIT_CODE_A38 = 'A38';
-
     const QUANTITY_UNIT_CODE_A39 = 'A39';
-
     const QUANTITY_UNIT_CODE_A4 = 'A4';
-
     const QUANTITY_UNIT_CODE_A40 = 'A40';
-
     const QUANTITY_UNIT_CODE_A41 = 'A41';
-
     const QUANTITY_UNIT_CODE_A42 = 'A42';
-
     const QUANTITY_UNIT_CODE_A43 = 'A43';
-
     const QUANTITY_UNIT_CODE_A44 = 'A44';
-
     const QUANTITY_UNIT_CODE_A45 = 'A45';
-
     const QUANTITY_UNIT_CODE_A47 = 'A47';
-
     const QUANTITY_UNIT_CODE_A48 = 'A48';
-
     const QUANTITY_UNIT_CODE_A49 = 'A49';
-
     const QUANTITY_UNIT_CODE_A5 = 'A5';
-
     const QUANTITY_UNIT_CODE_A53 = 'A53';
-
     const QUANTITY_UNIT_CODE_A54 = 'A54';
-
     const QUANTITY_UNIT_CODE_A55 = 'A55';
-
     const QUANTITY_UNIT_CODE_A56 = 'A56';
-
     const QUANTITY_UNIT_CODE_A59 = 'A59';
-
     const QUANTITY_UNIT_CODE_A6 = 'A6';
-
     const QUANTITY_UNIT_CODE_A68 = 'A68';
-
     const QUANTITY_UNIT_CODE_A69 = 'A69';
-
     const QUANTITY_UNIT_CODE_A7 = 'A7';
-
     const QUANTITY_UNIT_CODE_A70 = 'A70';
-
     const QUANTITY_UNIT_CODE_A71 = 'A71';
-
     const QUANTITY_UNIT_CODE_A73 = 'A73';
-
     const QUANTITY_UNIT_CODE_A74 = 'A74';
-
     const QUANTITY_UNIT_CODE_A75 = 'A75';
-
     const QUANTITY_UNIT_CODE_A76 = 'A76';
-
     const QUANTITY_UNIT_CODE_A8 = 'A8';
-
     const QUANTITY_UNIT_CODE_A84 = 'A84';
-
     const QUANTITY_UNIT_CODE_A85 = 'A85';
-
     const QUANTITY_UNIT_CODE_A86 = 'A86';
-
     const QUANTITY_UNIT_CODE_A87 = 'A87';
-
     const QUANTITY_UNIT_CODE_A88 = 'A88';
-
     const QUANTITY_UNIT_CODE_A89 = 'A89';
-
     const QUANTITY_UNIT_CODE_A9 = 'A9';
-
     const QUANTITY_UNIT_CODE_A90 = 'A90';
-
     const QUANTITY_UNIT_CODE_A91 = 'A91';
-
     const QUANTITY_UNIT_CODE_A93 = 'A93';
-
     const QUANTITY_UNIT_CODE_A94 = 'A94';
-
     const QUANTITY_UNIT_CODE_A95 = 'A95';
-
     const QUANTITY_UNIT_CODE_A96 = 'A96';
-
     const QUANTITY_UNIT_CODE_A97 = 'A97';
-
     const QUANTITY_UNIT_CODE_A98 = 'A98';
-
     const QUANTITY_UNIT_CODE_A99 = 'A99';
-
     const QUANTITY_UNIT_CODE_AA = 'AA';
-
     const QUANTITY_UNIT_CODE_AB = 'AB';
-
     const QUANTITY_UNIT_CODE_ACR = 'ACR';
-
     const QUANTITY_UNIT_CODE_ACT = 'ACT';
-
     const QUANTITY_UNIT_CODE_AD = 'AD';
-
     const QUANTITY_UNIT_CODE_AE = 'AE';
-
     const QUANTITY_UNIT_CODE_AH = 'AH';
-
     const QUANTITY_UNIT_CODE_AI = 'AI';
-
     const QUANTITY_UNIT_CODE_AK = 'AK';
-
     const QUANTITY_UNIT_CODE_AL = 'AL';
-
     const QUANTITY_UNIT_CODE_AMH = 'AMH';
-
     const QUANTITY_UNIT_CODE_AMP = 'AMP';
-
     const QUANTITY_UNIT_CODE_ANN = 'ANN';
-
     const QUANTITY_UNIT_CODE_APZ = 'APZ';
-
     const QUANTITY_UNIT_CODE_AQ = 'AQ';
-
     const QUANTITY_UNIT_CODE__AS = 'AS';
-
     const QUANTITY_UNIT_CODE_ASM = 'ASM';
-
     const QUANTITY_UNIT_CODE_ASU = 'ASU';
-
     const QUANTITY_UNIT_CODE_ATM = 'ATM';
-
     const QUANTITY_UNIT_CODE_AWG = 'AWG';
-
     const QUANTITY_UNIT_CODE_AY = 'AY';
-
     const QUANTITY_UNIT_CODE_AZ = 'AZ';
-
     const QUANTITY_UNIT_CODE_B1 = 'B1';
-
     const QUANTITY_UNIT_CODE_B10 = 'B10';
-
     const QUANTITY_UNIT_CODE_B11 = 'B11';
-
     const QUANTITY_UNIT_CODE_B12 = 'B12';
-
     const QUANTITY_UNIT_CODE_B13 = 'B13';
-
     const QUANTITY_UNIT_CODE_B14 = 'B14';
-
     const QUANTITY_UNIT_CODE_B15 = 'B15';
-
     const QUANTITY_UNIT_CODE_B16 = 'B16';
-
     const QUANTITY_UNIT_CODE_B17 = 'B17';
-
     const QUANTITY_UNIT_CODE_B18 = 'B18';
-
     const QUANTITY_UNIT_CODE_B19 = 'B19';
-
     const QUANTITY_UNIT_CODE_B20 = 'B20';
-
     const QUANTITY_UNIT_CODE_B21 = 'B21';
-
     const QUANTITY_UNIT_CODE_B22 = 'B22';
-
     const QUANTITY_UNIT_CODE_B23 = 'B23';
-
     const QUANTITY_UNIT_CODE_B24 = 'B24';
-
     const QUANTITY_UNIT_CODE_B25 = 'B25';
-
     const QUANTITY_UNIT_CODE_B26 = 'B26';
-
     const QUANTITY_UNIT_CODE_B27 = 'B27';
-
     const QUANTITY_UNIT_CODE_B28 = 'B28';
-
     const QUANTITY_UNIT_CODE_B29 = 'B29';
-
     const QUANTITY_UNIT_CODE_B3 = 'B3';
-
     const QUANTITY_UNIT_CODE_B30 = 'B30';
-
     const QUANTITY_UNIT_CODE_B31 = 'B31';
-
     const QUANTITY_UNIT_CODE_B32 = 'B32';
-
     const QUANTITY_UNIT_CODE_B33 = 'B33';
-
     const QUANTITY_UNIT_CODE_B34 = 'B34';
-
     const QUANTITY_UNIT_CODE_B35 = 'B35';
-
     const QUANTITY_UNIT_CODE_B4 = 'B4';
-
     const QUANTITY_UNIT_CODE_B41 = 'B41';
-
     const QUANTITY_UNIT_CODE_B42 = 'B42';
-
     const QUANTITY_UNIT_CODE_B43 = 'B43';
-
     const QUANTITY_UNIT_CODE_B44 = 'B44';
-
     const QUANTITY_UNIT_CODE_B45 = 'B45';
-
     const QUANTITY_UNIT_CODE_B46 = 'B46';
-
     const QUANTITY_UNIT_CODE_B47 = 'B47';
-
     const QUANTITY_UNIT_CODE_B48 = 'B48';
-
     const QUANTITY_UNIT_CODE_B49 = 'B49';
-
     const QUANTITY_UNIT_CODE_B50 = 'B50';
-
     const QUANTITY_UNIT_CODE_B52 = 'B52';
-
     const QUANTITY_UNIT_CODE_B53 = 'B53';
-
     const QUANTITY_UNIT_CODE_B54 = 'B54';
-
     const QUANTITY_UNIT_CODE_B55 = 'B55';
-
     const QUANTITY_UNIT_CODE_B56 = 'B56';
-
     const QUANTITY_UNIT_CODE_B57 = 'B57';
-
     const QUANTITY_UNIT_CODE_B58 = 'B58';
-
     const QUANTITY_UNIT_CODE_B59 = 'B59';
-
     const QUANTITY_UNIT_CODE_B60 = 'B60';
-
     const QUANTITY_UNIT_CODE_B61 = 'B61';
-
     const QUANTITY_UNIT_CODE_B62 = 'B62';
-
     const QUANTITY_UNIT_CODE_B63 = 'B63';
-
     const QUANTITY_UNIT_CODE_B64 = 'B64';
-
     const QUANTITY_UNIT_CODE_B66 = 'B66';
-
     const QUANTITY_UNIT_CODE_B67 = 'B67';
-
     const QUANTITY_UNIT_CODE_B68 = 'B68';
-
     const QUANTITY_UNIT_CODE_B69 = 'B69';
-
     const QUANTITY_UNIT_CODE_B7 = 'B7';
-
     const QUANTITY_UNIT_CODE_B70 = 'B70';
-
     const QUANTITY_UNIT_CODE_B71 = 'B71';
-
     const QUANTITY_UNIT_CODE_B72 = 'B72';
-
     const QUANTITY_UNIT_CODE_B73 = 'B73';
-
     const QUANTITY_UNIT_CODE_B74 = 'B74';
-
     const QUANTITY_UNIT_CODE_B75 = 'B75';
-
     const QUANTITY_UNIT_CODE_B76 = 'B76';
-
     const QUANTITY_UNIT_CODE_B77 = 'B77';
-
     const QUANTITY_UNIT_CODE_B78 = 'B78';
-
     const QUANTITY_UNIT_CODE_B79 = 'B79';
-
     const QUANTITY_UNIT_CODE_B8 = 'B8';
-
     const QUANTITY_UNIT_CODE_B80 = 'B80';
-
     const QUANTITY_UNIT_CODE_B81 = 'B81';
-
     const QUANTITY_UNIT_CODE_B82 = 'B82';
-
     const QUANTITY_UNIT_CODE_B83 = 'B83';
-
     const QUANTITY_UNIT_CODE_B84 = 'B84';
-
     const QUANTITY_UNIT_CODE_B85 = 'B85';
-
     const QUANTITY_UNIT_CODE_B86 = 'B86';
-
     const QUANTITY_UNIT_CODE_B87 = 'B87';
-
     const QUANTITY_UNIT_CODE_B88 = 'B88';
-
     const QUANTITY_UNIT_CODE_B89 = 'B89';
-
     const QUANTITY_UNIT_CODE_B90 = 'B90';
-
     const QUANTITY_UNIT_CODE_B91 = 'B91';
-
     const QUANTITY_UNIT_CODE_B92 = 'B92';
-
     const QUANTITY_UNIT_CODE_B93 = 'B93';
-
     const QUANTITY_UNIT_CODE_B94 = 'B94';
-
     const QUANTITY_UNIT_CODE_B95 = 'B95';
-
     const QUANTITY_UNIT_CODE_B96 = 'B96';
-
     const QUANTITY_UNIT_CODE_B97 = 'B97';
-
     const QUANTITY_UNIT_CODE_B98 = 'B98';
-
     const QUANTITY_UNIT_CODE_B99 = 'B99';
-
     const QUANTITY_UNIT_CODE_BAR = 'BAR';
-
     const QUANTITY_UNIT_CODE_BB = 'BB';
-
     const QUANTITY_UNIT_CODE_BFT = 'BFT';
-
     const QUANTITY_UNIT_CODE_BHP = 'BHP';
-
     const QUANTITY_UNIT_CODE_BIL = 'BIL';
-
     const QUANTITY_UNIT_CODE_BLD = 'BLD';
-
     const QUANTITY_UNIT_CODE_BLL = 'BLL';
-
     const QUANTITY_UNIT_CODE_BP = 'BP';
-
     const QUANTITY_UNIT_CODE_BPM = 'BPM';
-
     const QUANTITY_UNIT_CODE_BQL = 'BQL';
-
     const QUANTITY_UNIT_CODE_BTU = 'BTU';
-
     const QUANTITY_UNIT_CODE_BUA = 'BUA';
-
     const QUANTITY_UNIT_CODE_BUI = 'BUI';
-
     const QUANTITY_UNIT_CODE_C0 = 'C0';
-
     const QUANTITY_UNIT_CODE_C10 = 'C10';
-
     const QUANTITY_UNIT_CODE_C11 = 'C11';
-
     const QUANTITY_UNIT_CODE_C12 = 'C12';
-
     const QUANTITY_UNIT_CODE_C13 = 'C13';
-
     const QUANTITY_UNIT_CODE_C14 = 'C14';
-
     const QUANTITY_UNIT_CODE_C15 = 'C15';
-
     const QUANTITY_UNIT_CODE_C16 = 'C16';
-
     const QUANTITY_UNIT_CODE_C17 = 'C17';
-
     const QUANTITY_UNIT_CODE_C18 = 'C18';
-
     const QUANTITY_UNIT_CODE_C19 = 'C19';
-
     const QUANTITY_UNIT_CODE_C20 = 'C20';
-
     const QUANTITY_UNIT_CODE_C21 = 'C21';
-
     const QUANTITY_UNIT_CODE_C22 = 'C22';
-
     const QUANTITY_UNIT_CODE_C23 = 'C23';
-
     const QUANTITY_UNIT_CODE_C24 = 'C24';
-
     const QUANTITY_UNIT_CODE_C25 = 'C25';
-
     const QUANTITY_UNIT_CODE_C26 = 'C26';
-
     const QUANTITY_UNIT_CODE_C27 = 'C27';
-
     const QUANTITY_UNIT_CODE_C28 = 'C28';
-
     const QUANTITY_UNIT_CODE_C29 = 'C29';
-
     const QUANTITY_UNIT_CODE_C3 = 'C3';
-
     const QUANTITY_UNIT_CODE_C30 = 'C30';
-
     const QUANTITY_UNIT_CODE_C31 = 'C31';
-
     const QUANTITY_UNIT_CODE_C32 = 'C32';
-
     const QUANTITY_UNIT_CODE_C33 = 'C33';
-
     const QUANTITY_UNIT_CODE_C34 = 'C34';
-
     const QUANTITY_UNIT_CODE_C35 = 'C35';
-
     const QUANTITY_UNIT_CODE_C36 = 'C36';
-
     const QUANTITY_UNIT_CODE_C37 = 'C37';
-
     const QUANTITY_UNIT_CODE_C38 = 'C38';
-
     const QUANTITY_UNIT_CODE_C39 = 'C39';
-
     const QUANTITY_UNIT_CODE_C40 = 'C40';
-
     const QUANTITY_UNIT_CODE_C41 = 'C41';
-
     const QUANTITY_UNIT_CODE_C42 = 'C42';
-
     const QUANTITY_UNIT_CODE_C43 = 'C43';
-
     const QUANTITY_UNIT_CODE_C44 = 'C44';
-
     const QUANTITY_UNIT_CODE_C45 = 'C45';
-
     const QUANTITY_UNIT_CODE_C46 = 'C46';
-
     const QUANTITY_UNIT_CODE_C47 = 'C47';
-
     const QUANTITY_UNIT_CODE_C48 = 'C48';
-
     const QUANTITY_UNIT_CODE_C49 = 'C49';
-
     const QUANTITY_UNIT_CODE_C50 = 'C50';
-
     const QUANTITY_UNIT_CODE_C51 = 'C51';
-
     const QUANTITY_UNIT_CODE_C52 = 'C52';
-
     const QUANTITY_UNIT_CODE_C53 = 'C53';
-
     const QUANTITY_UNIT_CODE_C54 = 'C54';
-
     const QUANTITY_UNIT_CODE_C55 = 'C55';
-
     const QUANTITY_UNIT_CODE_C56 = 'C56';
-
     const QUANTITY_UNIT_CODE_C57 = 'C57';
-
     const QUANTITY_UNIT_CODE_C58 = 'C58';
-
     const QUANTITY_UNIT_CODE_C59 = 'C59';
-
     const QUANTITY_UNIT_CODE_C60 = 'C60';
-
     const QUANTITY_UNIT_CODE_C61 = 'C61';
-
     const QUANTITY_UNIT_CODE_C62 = 'C62';
-
     const QUANTITY_UNIT_CODE_C63 = 'C63';
-
     const QUANTITY_UNIT_CODE_C64 = 'C64';
-
     const QUANTITY_UNIT_CODE_C65 = 'C65';
-
     const QUANTITY_UNIT_CODE_C66 = 'C66';
-
     const QUANTITY_UNIT_CODE_C67 = 'C67';
-
     const QUANTITY_UNIT_CODE_C68 = 'C68';
-
     const QUANTITY_UNIT_CODE_C69 = 'C69';
-
     const QUANTITY_UNIT_CODE_C7 = 'C7';
-
     const QUANTITY_UNIT_CODE_C70 = 'C70';
-
     const QUANTITY_UNIT_CODE_C71 = 'C71';
-
     const QUANTITY_UNIT_CODE_C72 = 'C72';
-
     const QUANTITY_UNIT_CODE_C73 = 'C73';
-
     const QUANTITY_UNIT_CODE_C74 = 'C74';
-
     const QUANTITY_UNIT_CODE_C75 = 'C75';
-
     const QUANTITY_UNIT_CODE_C76 = 'C76';
-
     const QUANTITY_UNIT_CODE_C78 = 'C78';
-
     const QUANTITY_UNIT_CODE_C79 = 'C79';
-
     const QUANTITY_UNIT_CODE_C8 = 'C8';
-
     const QUANTITY_UNIT_CODE_C80 = 'C80';
-
     const QUANTITY_UNIT_CODE_C81 = 'C81';
-
     const QUANTITY_UNIT_CODE_C82 = 'C82';
-
     const QUANTITY_UNIT_CODE_C83 = 'C83';
-
     const QUANTITY_UNIT_CODE_C84 = 'C84';
-
     const QUANTITY_UNIT_CODE_C85 = 'C85';
-
     const QUANTITY_UNIT_CODE_C86 = 'C86';
-
     const QUANTITY_UNIT_CODE_C87 = 'C87';
-
     const QUANTITY_UNIT_CODE_C88 = 'C88';
-
     const QUANTITY_UNIT_CODE_C89 = 'C89';
-
     const QUANTITY_UNIT_CODE_C9 = 'C9';
-
     const QUANTITY_UNIT_CODE_C90 = 'C90';
-
     const QUANTITY_UNIT_CODE_C91 = 'C91';
-
     const QUANTITY_UNIT_CODE_C92 = 'C92';
-
     const QUANTITY_UNIT_CODE_C93 = 'C93';
-
     const QUANTITY_UNIT_CODE_C94 = 'C94';
-
     const QUANTITY_UNIT_CODE_C95 = 'C95';
-
     const QUANTITY_UNIT_CODE_C96 = 'C96';
-
     const QUANTITY_UNIT_CODE_C97 = 'C97';
-
     const QUANTITY_UNIT_CODE_C99 = 'C99';
-
     const QUANTITY_UNIT_CODE_CCT = 'CCT';
-
     const QUANTITY_UNIT_CODE_CDL = 'CDL';
-
     const QUANTITY_UNIT_CODE_CEL = 'CEL';
-
     const QUANTITY_UNIT_CODE_CEN = 'CEN';
-
     const QUANTITY_UNIT_CODE_CG = 'CG';
-
     const QUANTITY_UNIT_CODE_CGM = 'CGM';
-
     const QUANTITY_UNIT_CODE_CKG = 'CKG';
-
     const QUANTITY_UNIT_CODE_CLF = 'CLF';
-
     const QUANTITY_UNIT_CODE_CLT = 'CLT';
-
     const QUANTITY_UNIT_CODE_CMK = 'CMK';
-
     const QUANTITY_UNIT_CODE_CMQ = 'CMQ';
-
     const QUANTITY_UNIT_CODE_CMT = 'CMT';
-
     const QUANTITY_UNIT_CODE_CNP = 'CNP';
-
     const QUANTITY_UNIT_CODE_CNT = 'CNT';
-
     const QUANTITY_UNIT_CODE_COU = 'COU';
-
     const QUANTITY_UNIT_CODE_CTG = 'CTG';
-
     const QUANTITY_UNIT_CODE_CTM = 'CTM';
-
     const QUANTITY_UNIT_CODE_CTN = 'CTN';
-
     const QUANTITY_UNIT_CODE_CUR = 'CUR';
-
     const QUANTITY_UNIT_CODE_CWA = 'CWA';
-
     const QUANTITY_UNIT_CODE_CWI = 'CWI';
-
     const QUANTITY_UNIT_CODE_D03 = 'D03';
-
     const QUANTITY_UNIT_CODE_D04 = 'D04';
-
     const QUANTITY_UNIT_CODE_D1 = 'D1';
-
     const QUANTITY_UNIT_CODE_D10 = 'D10';
-
     const QUANTITY_UNIT_CODE_D11 = 'D11';
-
     const QUANTITY_UNIT_CODE_D12 = 'D12';
-
     const QUANTITY_UNIT_CODE_D13 = 'D13';
-
     const QUANTITY_UNIT_CODE_D15 = 'D15';
-
     const QUANTITY_UNIT_CODE_D16 = 'D16';
-
     const QUANTITY_UNIT_CODE_D17 = 'D17';
-
     const QUANTITY_UNIT_CODE_D18 = 'D18';
-
     const QUANTITY_UNIT_CODE_D19 = 'D19';
-
     const QUANTITY_UNIT_CODE_D2 = 'D2';
-
     const QUANTITY_UNIT_CODE_D20 = 'D20';
-
     const QUANTITY_UNIT_CODE_D21 = 'D21';
-
     const QUANTITY_UNIT_CODE_D22 = 'D22';
-
     const QUANTITY_UNIT_CODE_D23 = 'D23';
-
     const QUANTITY_UNIT_CODE_D24 = 'D24';
-
     const QUANTITY_UNIT_CODE_D25 = 'D25';
-
     const QUANTITY_UNIT_CODE_D26 = 'D26';
-
     const QUANTITY_UNIT_CODE_D27 = 'D27';
-
     const QUANTITY_UNIT_CODE_D29 = 'D29';
-
     const QUANTITY_UNIT_CODE_D30 = 'D30';
-
     const QUANTITY_UNIT_CODE_D31 = 'D31';
-
     const QUANTITY_UNIT_CODE_D32 = 'D32';
-
     const QUANTITY_UNIT_CODE_D33 = 'D33';
-
     const QUANTITY_UNIT_CODE_D34 = 'D34';
-
     const QUANTITY_UNIT_CODE_D36 = 'D36';
-
     const QUANTITY_UNIT_CODE_D41 = 'D41';
-
     const QUANTITY_UNIT_CODE_D42 = 'D42';
-
     const QUANTITY_UNIT_CODE_D43 = 'D43';
-
     const QUANTITY_UNIT_CODE_D44 = 'D44';
-
     const QUANTITY_UNIT_CODE_D45 = 'D45';
-
     const QUANTITY_UNIT_CODE_D46 = 'D46';
-
     const QUANTITY_UNIT_CODE_D47 = 'D47';
-
     const QUANTITY_UNIT_CODE_D48 = 'D48';
-
     const QUANTITY_UNIT_CODE_D49 = 'D49';
-
     const QUANTITY_UNIT_CODE_D5 = 'D5';
-
     const QUANTITY_UNIT_CODE_D50 = 'D50';
-
     const QUANTITY_UNIT_CODE_D51 = 'D51';
-
     const QUANTITY_UNIT_CODE_D52 = 'D52';
-
     const QUANTITY_UNIT_CODE_D53 = 'D53';
-
     const QUANTITY_UNIT_CODE_D54 = 'D54';
-
     const QUANTITY_UNIT_CODE_D55 = 'D55';
-
     const QUANTITY_UNIT_CODE_D56 = 'D56';
-
     const QUANTITY_UNIT_CODE_D57 = 'D57';
-
     const QUANTITY_UNIT_CODE_D58 = 'D58';
-
     const QUANTITY_UNIT_CODE_D59 = 'D59';
-
     const QUANTITY_UNIT_CODE_D6 = 'D6';
-
     const QUANTITY_UNIT_CODE_D60 = 'D60';
-
     const QUANTITY_UNIT_CODE_D61 = 'D61';
-
     const QUANTITY_UNIT_CODE_D62 = 'D62';
-
     const QUANTITY_UNIT_CODE_D63 = 'D63';
-
     const QUANTITY_UNIT_CODE_D65 = 'D65';
-
     const QUANTITY_UNIT_CODE_D68 = 'D68';
-
     const QUANTITY_UNIT_CODE_D69 = 'D69';
-
     const QUANTITY_UNIT_CODE_D73 = 'D73';
-
     const QUANTITY_UNIT_CODE_D74 = 'D74';
-
     const QUANTITY_UNIT_CODE_D77 = 'D77';
-
     const QUANTITY_UNIT_CODE_D78 = 'D78';
-
     const QUANTITY_UNIT_CODE_D80 = 'D80';
-
     const QUANTITY_UNIT_CODE_D81 = 'D81';
-
     const QUANTITY_UNIT_CODE_D82 = 'D82';
-
     const QUANTITY_UNIT_CODE_D83 = 'D83';
-
     const QUANTITY_UNIT_CODE_D85 = 'D85';
-
     const QUANTITY_UNIT_CODE_D86 = 'D86';
-
     const QUANTITY_UNIT_CODE_D87 = 'D87';
-
     const QUANTITY_UNIT_CODE_D88 = 'D88';
-
     const QUANTITY_UNIT_CODE_D89 = 'D89';
-
     const QUANTITY_UNIT_CODE_D91 = 'D91';
-
     const QUANTITY_UNIT_CODE_D93 = 'D93';
-
     const QUANTITY_UNIT_CODE_D94 = 'D94';
-
     const QUANTITY_UNIT_CODE_D95 = 'D95';
-
     const QUANTITY_UNIT_CODE_DAA = 'DAA';
-
     const QUANTITY_UNIT_CODE_DAD = 'DAD';
-
     const QUANTITY_UNIT_CODE_DAY = 'DAY';
-
     const QUANTITY_UNIT_CODE_DB = 'DB';
-
     const QUANTITY_UNIT_CODE_DD = 'DD';
-
     const QUANTITY_UNIT_CODE_DEC = 'DEC';
-
     const QUANTITY_UNIT_CODE_DG = 'DG';
-
     const QUANTITY_UNIT_CODE_DJ = 'DJ';
-
     const QUANTITY_UNIT_CODE_DLT = 'DLT';
-
     const QUANTITY_UNIT_CODE_DMA = 'DMA';
-
     const QUANTITY_UNIT_CODE_DMK = 'DMK';
-
     const QUANTITY_UNIT_CODE_DMO = 'DMO';
-
     const QUANTITY_UNIT_CODE_DMQ = 'DMQ';
-
     const QUANTITY_UNIT_CODE_DMT = 'DMT';
-
     const QUANTITY_UNIT_CODE_DN = 'DN';
-
     const QUANTITY_UNIT_CODE_DPC = 'DPC';
-
     const QUANTITY_UNIT_CODE_DPR = 'DPR';
-
     const QUANTITY_UNIT_CODE_DPT = 'DPT';
-
     const QUANTITY_UNIT_CODE_DRA = 'DRA';
-
     const QUANTITY_UNIT_CODE_DRI = 'DRI';
-
     const QUANTITY_UNIT_CODE_DRL = 'DRL';
-
     const QUANTITY_UNIT_CODE_DT = 'DT';
-
     const QUANTITY_UNIT_CODE_DTN = 'DTN';
-
     const QUANTITY_UNIT_CODE_DWT = 'DWT';
-
     const QUANTITY_UNIT_CODE_DZN = 'DZN';
-
     const QUANTITY_UNIT_CODE_DZP = 'DZP';
-
     const QUANTITY_UNIT_CODE_E01 = 'E01';
-
     const QUANTITY_UNIT_CODE_E07 = 'E07';
-
     const QUANTITY_UNIT_CODE_E08 = 'E08';
-
     const QUANTITY_UNIT_CODE_E09 = 'E09';
-
     const QUANTITY_UNIT_CODE_E10 = 'E10';
-
     const QUANTITY_UNIT_CODE_E12 = 'E12';
-
     const QUANTITY_UNIT_CODE_E14 = 'E14';
-
     const QUANTITY_UNIT_CODE_E15 = 'E15';
-
     const QUANTITY_UNIT_CODE_E16 = 'E16';
-
     const QUANTITY_UNIT_CODE_E17 = 'E17';
-
     const QUANTITY_UNIT_CODE_E18 = 'E18';
-
     const QUANTITY_UNIT_CODE_E19 = 'E19';
-
     const QUANTITY_UNIT_CODE_E20 = 'E20';
-
     const QUANTITY_UNIT_CODE_E21 = 'E21';
-
     const QUANTITY_UNIT_CODE_E22 = 'E22';
-
     const QUANTITY_UNIT_CODE_E23 = 'E23';
-
     const QUANTITY_UNIT_CODE_E25 = 'E25';
-
     const QUANTITY_UNIT_CODE_E27 = 'E27';
-
     const QUANTITY_UNIT_CODE_E28 = 'E28';
-
     const QUANTITY_UNIT_CODE_E30 = 'E30';
-
     const QUANTITY_UNIT_CODE_E31 = 'E31';
-
     const QUANTITY_UNIT_CODE_E32 = 'E32';
-
     const QUANTITY_UNIT_CODE_E33 = 'E33';
-
     const QUANTITY_UNIT_CODE_E34 = 'E34';
-
     const QUANTITY_UNIT_CODE_E35 = 'E35';
-
     const QUANTITY_UNIT_CODE_E36 = 'E36';
-
     const QUANTITY_UNIT_CODE_E37 = 'E37';
-
     const QUANTITY_UNIT_CODE_E38 = 'E38';
-
     const QUANTITY_UNIT_CODE_E39 = 'E39';
-
     const QUANTITY_UNIT_CODE_E4 = 'E4';
-
     const QUANTITY_UNIT_CODE_E40 = 'E40';
-
     const QUANTITY_UNIT_CODE_E41 = 'E41';
-
     const QUANTITY_UNIT_CODE_E42 = 'E42';
-
     const QUANTITY_UNIT_CODE_E43 = 'E43';
-
     const QUANTITY_UNIT_CODE_E44 = 'E44';
-
     const QUANTITY_UNIT_CODE_E45 = 'E45';
-
     const QUANTITY_UNIT_CODE_E46 = 'E46';
-
     const QUANTITY_UNIT_CODE_E47 = 'E47';
-
     const QUANTITY_UNIT_CODE_E48 = 'E48';
-
     const QUANTITY_UNIT_CODE_E49 = 'E49';
-
     const QUANTITY_UNIT_CODE_E50 = 'E50';
-
     const QUANTITY_UNIT_CODE_E51 = 'E51';
-
     const QUANTITY_UNIT_CODE_E52 = 'E52';
-
     const QUANTITY_UNIT_CODE_E53 = 'E53';
-
     const QUANTITY_UNIT_CODE_E54 = 'E54';
-
     const QUANTITY_UNIT_CODE_E55 = 'E55';
-
     const QUANTITY_UNIT_CODE_E56 = 'E56';
-
     const QUANTITY_UNIT_CODE_E57 = 'E57';
-
     const QUANTITY_UNIT_CODE_E58 = 'E58';
-
     const QUANTITY_UNIT_CODE_E59 = 'E59';
-
     const QUANTITY_UNIT_CODE_E60 = 'E60';
-
     const QUANTITY_UNIT_CODE_E61 = 'E61';
-
     const QUANTITY_UNIT_CODE_E62 = 'E62';
-
     const QUANTITY_UNIT_CODE_E63 = 'E63';
-
     const QUANTITY_UNIT_CODE_E64 = 'E64';
-
     const QUANTITY_UNIT_CODE_E65 = 'E65';
-
     const QUANTITY_UNIT_CODE_E66 = 'E66';
-
     const QUANTITY_UNIT_CODE_E67 = 'E67';
-
     const QUANTITY_UNIT_CODE_E68 = 'E68';
-
     const QUANTITY_UNIT_CODE_E69 = 'E69';
-
     const QUANTITY_UNIT_CODE_E70 = 'E70';
-
     const QUANTITY_UNIT_CODE_E71 = 'E71';
-
     const QUANTITY_UNIT_CODE_E72 = 'E72';
-
     const QUANTITY_UNIT_CODE_E73 = 'E73';
-
     const QUANTITY_UNIT_CODE_E74 = 'E74';
-
     const QUANTITY_UNIT_CODE_E75 = 'E75';
-
     const QUANTITY_UNIT_CODE_E76 = 'E76';
-
     const QUANTITY_UNIT_CODE_E77 = 'E77';
-
     const QUANTITY_UNIT_CODE_E78 = 'E78';
-
     const QUANTITY_UNIT_CODE_E79 = 'E79';
-
     const QUANTITY_UNIT_CODE_E80 = 'E80';
-
     const QUANTITY_UNIT_CODE_E81 = 'E81';
-
     const QUANTITY_UNIT_CODE_E82 = 'E82';
-
     const QUANTITY_UNIT_CODE_E83 = 'E83';
-
     const QUANTITY_UNIT_CODE_E84 = 'E84';
-
     const QUANTITY_UNIT_CODE_E85 = 'E85';
-
     const QUANTITY_UNIT_CODE_E86 = 'E86';
-
     const QUANTITY_UNIT_CODE_E87 = 'E87';
-
     const QUANTITY_UNIT_CODE_E88 = 'E88';
-
     const QUANTITY_UNIT_CODE_E89 = 'E89';
-
     const QUANTITY_UNIT_CODE_E90 = 'E90';
-
     const QUANTITY_UNIT_CODE_E91 = 'E91';
-
     const QUANTITY_UNIT_CODE_E92 = 'E92';
-
     const QUANTITY_UNIT_CODE_E93 = 'E93';
-
     const QUANTITY_UNIT_CODE_E94 = 'E94';
-
     const QUANTITY_UNIT_CODE_E95 = 'E95';
-
     const QUANTITY_UNIT_CODE_E96 = 'E96';
-
     const QUANTITY_UNIT_CODE_E97 = 'E97';
-
     const QUANTITY_UNIT_CODE_E98 = 'E98';
-
     const QUANTITY_UNIT_CODE_E99 = 'E99';
-
     const QUANTITY_UNIT_CODE_EA = 'EA';
-
     const QUANTITY_UNIT_CODE_EB = 'EB';
-
     const QUANTITY_UNIT_CODE_EQ = 'EQ';
-
     const QUANTITY_UNIT_CODE_F01 = 'F01';
-
     const QUANTITY_UNIT_CODE_F02 = 'F02';
-
     const QUANTITY_UNIT_CODE_F03 = 'F03';
-
     const QUANTITY_UNIT_CODE_F04 = 'F04';
-
     const QUANTITY_UNIT_CODE_F05 = 'F05';
-
     const QUANTITY_UNIT_CODE_F06 = 'F06';
-
     const QUANTITY_UNIT_CODE_F07 = 'F07';
-
     const QUANTITY_UNIT_CODE_F08 = 'F08';
-
     const QUANTITY_UNIT_CODE_F10 = 'F10';
-
     const QUANTITY_UNIT_CODE_F11 = 'F11';
-
     const QUANTITY_UNIT_CODE_F12 = 'F12';
-
     const QUANTITY_UNIT_CODE_F13 = 'F13';
-
     const QUANTITY_UNIT_CODE_F14 = 'F14';
-
     const QUANTITY_UNIT_CODE_F15 = 'F15';
-
     const QUANTITY_UNIT_CODE_F16 = 'F16';
-
     const QUANTITY_UNIT_CODE_F17 = 'F17';
-
     const QUANTITY_UNIT_CODE_F18 = 'F18';
-
     const QUANTITY_UNIT_CODE_F19 = 'F19';
-
     const QUANTITY_UNIT_CODE_F20 = 'F20';
-
     const QUANTITY_UNIT_CODE_F21 = 'F21';
-
     const QUANTITY_UNIT_CODE_F22 = 'F22';
-
     const QUANTITY_UNIT_CODE_F23 = 'F23';
-
     const QUANTITY_UNIT_CODE_F24 = 'F24';
-
     const QUANTITY_UNIT_CODE_F25 = 'F25';
-
     const QUANTITY_UNIT_CODE_F26 = 'F26';
-
     const QUANTITY_UNIT_CODE_F27 = 'F27';
-
     const QUANTITY_UNIT_CODE_F28 = 'F28';
-
     const QUANTITY_UNIT_CODE_F29 = 'F29';
-
     const QUANTITY_UNIT_CODE_F30 = 'F30';
-
     const QUANTITY_UNIT_CODE_F31 = 'F31';
-
     const QUANTITY_UNIT_CODE_F32 = 'F32';
-
     const QUANTITY_UNIT_CODE_F33 = 'F33';
-
     const QUANTITY_UNIT_CODE_F34 = 'F34';
-
     const QUANTITY_UNIT_CODE_F35 = 'F35';
-
     const QUANTITY_UNIT_CODE_F36 = 'F36';
-
     const QUANTITY_UNIT_CODE_F37 = 'F37';
-
     const QUANTITY_UNIT_CODE_F38 = 'F38';
-
     const QUANTITY_UNIT_CODE_F39 = 'F39';
-
     const QUANTITY_UNIT_CODE_F40 = 'F40';
-
     const QUANTITY_UNIT_CODE_F41 = 'F41';
-
     const QUANTITY_UNIT_CODE_F42 = 'F42';
-
     const QUANTITY_UNIT_CODE_F43 = 'F43';
-
     const QUANTITY_UNIT_CODE_F44 = 'F44';
-
     const QUANTITY_UNIT_CODE_F45 = 'F45';
-
     const QUANTITY_UNIT_CODE_F46 = 'F46';
-
     const QUANTITY_UNIT_CODE_F47 = 'F47';
-
     const QUANTITY_UNIT_CODE_F48 = 'F48';
-
     const QUANTITY_UNIT_CODE_F49 = 'F49';
-
     const QUANTITY_UNIT_CODE_F50 = 'F50';
-
     const QUANTITY_UNIT_CODE_F51 = 'F51';
-
     const QUANTITY_UNIT_CODE_F52 = 'F52';
-
     const QUANTITY_UNIT_CODE_F53 = 'F53';
-
     const QUANTITY_UNIT_CODE_F54 = 'F54';
-
     const QUANTITY_UNIT_CODE_F55 = 'F55';
-
     const QUANTITY_UNIT_CODE_F56 = 'F56';
-
     const QUANTITY_UNIT_CODE_F57 = 'F57';
-
     const QUANTITY_UNIT_CODE_F58 = 'F58';
-
     const QUANTITY_UNIT_CODE_F59 = 'F59';
-
     const QUANTITY_UNIT_CODE_F60 = 'F60';
-
     const QUANTITY_UNIT_CODE_F61 = 'F61';
-
     const QUANTITY_UNIT_CODE_F62 = 'F62';
-
     const QUANTITY_UNIT_CODE_F63 = 'F63';
-
     const QUANTITY_UNIT_CODE_F64 = 'F64';
-
     const QUANTITY_UNIT_CODE_F65 = 'F65';
-
     const QUANTITY_UNIT_CODE_F66 = 'F66';
-
     const QUANTITY_UNIT_CODE_F67 = 'F67';
-
     const QUANTITY_UNIT_CODE_F68 = 'F68';
-
     const QUANTITY_UNIT_CODE_F69 = 'F69';
-
     const QUANTITY_UNIT_CODE_F70 = 'F70';
-
     const QUANTITY_UNIT_CODE_F71 = 'F71';
-
     const QUANTITY_UNIT_CODE_F72 = 'F72';
-
     const QUANTITY_UNIT_CODE_F73 = 'F73';
-
     const QUANTITY_UNIT_CODE_F74 = 'F74';
-
     const QUANTITY_UNIT_CODE_F75 = 'F75';
-
     const QUANTITY_UNIT_CODE_F76 = 'F76';
-
     const QUANTITY_UNIT_CODE_F77 = 'F77';
-
     const QUANTITY_UNIT_CODE_F78 = 'F78';
-
     const QUANTITY_UNIT_CODE_F79 = 'F79';
-
     const QUANTITY_UNIT_CODE_F80 = 'F80';
-
     const QUANTITY_UNIT_CODE_F81 = 'F81';
-
     const QUANTITY_UNIT_CODE_F82 = 'F82';
-
     const QUANTITY_UNIT_CODE_F83 = 'F83';
-
     const QUANTITY_UNIT_CODE_F84 = 'F84';
-
     const QUANTITY_UNIT_CODE_F85 = 'F85';
-
     const QUANTITY_UNIT_CODE_F86 = 'F86';
-
     const QUANTITY_UNIT_CODE_F87 = 'F87';
-
     const QUANTITY_UNIT_CODE_F88 = 'F88';
-
     const QUANTITY_UNIT_CODE_F89 = 'F89';
-
     const QUANTITY_UNIT_CODE_F90 = 'F90';
-
     const QUANTITY_UNIT_CODE_F91 = 'F91';
-
     const QUANTITY_UNIT_CODE_F92 = 'F92';
-
     const QUANTITY_UNIT_CODE_F93 = 'F93';
-
     const QUANTITY_UNIT_CODE_F94 = 'F94';
-
     const QUANTITY_UNIT_CODE_F95 = 'F95';
-
     const QUANTITY_UNIT_CODE_F96 = 'F96';
-
     const QUANTITY_UNIT_CODE_F97 = 'F97';
-
     const QUANTITY_UNIT_CODE_F98 = 'F98';
-
     const QUANTITY_UNIT_CODE_F99 = 'F99';
-
     const QUANTITY_UNIT_CODE_FAH = 'FAH';
-
     const QUANTITY_UNIT_CODE_FAR = 'FAR';
-
     const QUANTITY_UNIT_CODE_FBM = 'FBM';
-
     const QUANTITY_UNIT_CODE_FC = 'FC';
-
     const QUANTITY_UNIT_CODE_FF = 'FF';
-
     const QUANTITY_UNIT_CODE_FH = 'FH';
-
     const QUANTITY_UNIT_CODE_FIT = 'FIT';
-
     const QUANTITY_UNIT_CODE_FL = 'FL';
-
     const QUANTITY_UNIT_CODE_FOT = 'FOT';
-
     const QUANTITY_UNIT_CODE_FP = 'FP';
-
     const QUANTITY_UNIT_CODE_FR = 'FR';
-
     const QUANTITY_UNIT_CODE_FS = 'FS';
-
     const QUANTITY_UNIT_CODE_FTK = 'FTK';
-
     const QUANTITY_UNIT_CODE_FTQ = 'FTQ';
-
     const QUANTITY_UNIT_CODE_G01 = 'G01';
-
     const QUANTITY_UNIT_CODE_G04 = 'G04';
-
     const QUANTITY_UNIT_CODE_G05 = 'G05';
-
     const QUANTITY_UNIT_CODE_G06 = 'G06';
-
     const QUANTITY_UNIT_CODE_G08 = 'G08';
-
     const QUANTITY_UNIT_CODE_G09 = 'G09';
-
     const QUANTITY_UNIT_CODE_G10 = 'G10';
-
     const QUANTITY_UNIT_CODE_G11 = 'G11';
-
     const QUANTITY_UNIT_CODE_G12 = 'G12';
-
     const QUANTITY_UNIT_CODE_G13 = 'G13';
-
     const QUANTITY_UNIT_CODE_G14 = 'G14';
-
     const QUANTITY_UNIT_CODE_G15 = 'G15';
-
     const QUANTITY_UNIT_CODE_G16 = 'G16';
-
     const QUANTITY_UNIT_CODE_G17 = 'G17';
-
     const QUANTITY_UNIT_CODE_G18 = 'G18';
-
     const QUANTITY_UNIT_CODE_G19 = 'G19';
-
     const QUANTITY_UNIT_CODE_G2 = 'G2';
-
     const QUANTITY_UNIT_CODE_G20 = 'G20';
-
     const QUANTITY_UNIT_CODE_G21 = 'G21';
-
     const QUANTITY_UNIT_CODE_G23 = 'G23';
-
     const QUANTITY_UNIT_CODE_G24 = 'G24';
-
     const QUANTITY_UNIT_CODE_G25 = 'G25';
-
     const QUANTITY_UNIT_CODE_G26 = 'G26';
-
     const QUANTITY_UNIT_CODE_G27 = 'G27';
-
     const QUANTITY_UNIT_CODE_G28 = 'G28';
-
     const QUANTITY_UNIT_CODE_G29 = 'G29';
-
     const QUANTITY_UNIT_CODE_G3 = 'G3';
-
     const QUANTITY_UNIT_CODE_G30 = 'G30';
-
     const QUANTITY_UNIT_CODE_G31 = 'G31';
-
     const QUANTITY_UNIT_CODE_G32 = 'G32';
-
     const QUANTITY_UNIT_CODE_G33 = 'G33';
-
     const QUANTITY_UNIT_CODE_G34 = 'G34';
-
     const QUANTITY_UNIT_CODE_G35 = 'G35';
-
     const QUANTITY_UNIT_CODE_G36 = 'G36';
-
     const QUANTITY_UNIT_CODE_G37 = 'G37';
-
     const QUANTITY_UNIT_CODE_G38 = 'G38';
-
     const QUANTITY_UNIT_CODE_G39 = 'G39';
-
     const QUANTITY_UNIT_CODE_G40 = 'G40';
-
     const QUANTITY_UNIT_CODE_G41 = 'G41';
-
     const QUANTITY_UNIT_CODE_G42 = 'G42';
-
     const QUANTITY_UNIT_CODE_G43 = 'G43';
-
     const QUANTITY_UNIT_CODE_G44 = 'G44';
-
     const QUANTITY_UNIT_CODE_G45 = 'G45';
-
     const QUANTITY_UNIT_CODE_G46 = 'G46';
-
     const QUANTITY_UNIT_CODE_G47 = 'G47';
-
     const QUANTITY_UNIT_CODE_G48 = 'G48';
-
     const QUANTITY_UNIT_CODE_G49 = 'G49';
-
     const QUANTITY_UNIT_CODE_G50 = 'G50';
-
     const QUANTITY_UNIT_CODE_G51 = 'G51';
-
     const QUANTITY_UNIT_CODE_G52 = 'G52';
-
     const QUANTITY_UNIT_CODE_G53 = 'G53';
-
     const QUANTITY_UNIT_CODE_G54 = 'G54';
-
     const QUANTITY_UNIT_CODE_G55 = 'G55';
-
     const QUANTITY_UNIT_CODE_G56 = 'G56';
-
     const QUANTITY_UNIT_CODE_G57 = 'G57';
-
     const QUANTITY_UNIT_CODE_G58 = 'G58';
-
     const QUANTITY_UNIT_CODE_G59 = 'G59';
-
     const QUANTITY_UNIT_CODE_G60 = 'G60';
-
     const QUANTITY_UNIT_CODE_G61 = 'G61';
-
     const QUANTITY_UNIT_CODE_G62 = 'G62';
-
     const QUANTITY_UNIT_CODE_G63 = 'G63';
-
     const QUANTITY_UNIT_CODE_G64 = 'G64';
-
     const QUANTITY_UNIT_CODE_G65 = 'G65';
-
     const QUANTITY_UNIT_CODE_G66 = 'G66';
-
     const QUANTITY_UNIT_CODE_G67 = 'G67';
-
     const QUANTITY_UNIT_CODE_G68 = 'G68';
-
     const QUANTITY_UNIT_CODE_G69 = 'G69';
-
     const QUANTITY_UNIT_CODE_G70 = 'G70';
-
     const QUANTITY_UNIT_CODE_G71 = 'G71';
-
     const QUANTITY_UNIT_CODE_G72 = 'G72';
-
     const QUANTITY_UNIT_CODE_G73 = 'G73';
-
     const QUANTITY_UNIT_CODE_G74 = 'G74';
-
     const QUANTITY_UNIT_CODE_G75 = 'G75';
-
     const QUANTITY_UNIT_CODE_G76 = 'G76';
-
     const QUANTITY_UNIT_CODE_G77 = 'G77';
-
     const QUANTITY_UNIT_CODE_G78 = 'G78';
-
     const QUANTITY_UNIT_CODE_G79 = 'G79';
-
     const QUANTITY_UNIT_CODE_G80 = 'G80';
-
     const QUANTITY_UNIT_CODE_G81 = 'G81';
-
     const QUANTITY_UNIT_CODE_G82 = 'G82';
-
     const QUANTITY_UNIT_CODE_G83 = 'G83';
-
     const QUANTITY_UNIT_CODE_G84 = 'G84';
-
     const QUANTITY_UNIT_CODE_G85 = 'G85';
-
     const QUANTITY_UNIT_CODE_G86 = 'G86';
-
     const QUANTITY_UNIT_CODE_G87 = 'G87';
-
     const QUANTITY_UNIT_CODE_G88 = 'G88';
-
     const QUANTITY_UNIT_CODE_G89 = 'G89';
-
     const QUANTITY_UNIT_CODE_G90 = 'G90';
-
     const QUANTITY_UNIT_CODE_G91 = 'G91';
-
     const QUANTITY_UNIT_CODE_G92 = 'G92';
-
     const QUANTITY_UNIT_CODE_G93 = 'G93';
-
     const QUANTITY_UNIT_CODE_G94 = 'G94';
-
     const QUANTITY_UNIT_CODE_G95 = 'G95';
-
     const QUANTITY_UNIT_CODE_G96 = 'G96';
-
     const QUANTITY_UNIT_CODE_G97 = 'G97';
-
     const QUANTITY_UNIT_CODE_G98 = 'G98';
-
     const QUANTITY_UNIT_CODE_G99 = 'G99';
-
     const QUANTITY_UNIT_CODE_GB = 'GB';
-
     const QUANTITY_UNIT_CODE_GBQ = 'GBQ';
-
     const QUANTITY_UNIT_CODE_GDW = 'GDW';
-
     const QUANTITY_UNIT_CODE_GE = 'GE';
-
     const QUANTITY_UNIT_CODE_GF = 'GF';
-
     const QUANTITY_UNIT_CODE_GFI = 'GFI';
-
     const QUANTITY_UNIT_CODE_GGR = 'GGR';
-
     const QUANTITY_UNIT_CODE_GIA = 'GIA';
-
     const QUANTITY_UNIT_CODE_GIC = 'GIC';
-
     const QUANTITY_UNIT_CODE_GII = 'GII';
-
     const QUANTITY_UNIT_CODE_GIP = 'GIP';
-
     const QUANTITY_UNIT_CODE_GJ = 'GJ';
-
     const QUANTITY_UNIT_CODE_GL = 'GL';
-
     const QUANTITY_UNIT_CODE_GLD = 'GLD';
-
     const QUANTITY_UNIT_CODE_GLI = 'GLI';
-
     const QUANTITY_UNIT_CODE_GLL = 'GLL';
-
     const QUANTITY_UNIT_CODE_GM = 'GM';
-
     const QUANTITY_UNIT_CODE_GO = 'GO';
-
     const QUANTITY_UNIT_CODE_GP = 'GP';
-
     const QUANTITY_UNIT_CODE_GQ = 'GQ';
-
     const QUANTITY_UNIT_CODE_GRM = 'GRM';
-
     const QUANTITY_UNIT_CODE_GRN = 'GRN';
-
     const QUANTITY_UNIT_CODE_GRO = 'GRO';
-
     const QUANTITY_UNIT_CODE_GV = 'GV';
-
     const QUANTITY_UNIT_CODE_GWH = 'GWH';
-
     const QUANTITY_UNIT_CODE_H03 = 'H03';
-
     const QUANTITY_UNIT_CODE_H04 = 'H04';
-
     const QUANTITY_UNIT_CODE_H05 = 'H05';
-
     const QUANTITY_UNIT_CODE_H06 = 'H06';
-
     const QUANTITY_UNIT_CODE_H07 = 'H07';
-
     const QUANTITY_UNIT_CODE_H08 = 'H08';
-
     const QUANTITY_UNIT_CODE_H09 = 'H09';
-
     const QUANTITY_UNIT_CODE_H10 = 'H10';
-
     const QUANTITY_UNIT_CODE_H11 = 'H11';
-
     const QUANTITY_UNIT_CODE_H12 = 'H12';
-
     const QUANTITY_UNIT_CODE_H13 = 'H13';
-
     const QUANTITY_UNIT_CODE_H14 = 'H14';
-
     const QUANTITY_UNIT_CODE_H15 = 'H15';
-
     const QUANTITY_UNIT_CODE_H16 = 'H16';
-
     const QUANTITY_UNIT_CODE_H18 = 'H18';
-
     const QUANTITY_UNIT_CODE_H19 = 'H19';
-
     const QUANTITY_UNIT_CODE_H20 = 'H20';
-
     const QUANTITY_UNIT_CODE_H21 = 'H21';
-
     const QUANTITY_UNIT_CODE_H22 = 'H22';
-
     const QUANTITY_UNIT_CODE_H23 = 'H23';
-
     const QUANTITY_UNIT_CODE_H24 = 'H24';
-
     const QUANTITY_UNIT_CODE_H25 = 'H25';
-
     const QUANTITY_UNIT_CODE_H26 = 'H26';
-
     const QUANTITY_UNIT_CODE_H27 = 'H27';
-
     const QUANTITY_UNIT_CODE_H28 = 'H28';
-
     const QUANTITY_UNIT_CODE_H29 = 'H29';
-
     const QUANTITY_UNIT_CODE_H30 = 'H30';
-
     const QUANTITY_UNIT_CODE_H31 = 'H31';
-
     const QUANTITY_UNIT_CODE_H32 = 'H32';
-
     const QUANTITY_UNIT_CODE_H33 = 'H33';
-
     const QUANTITY_UNIT_CODE_H34 = 'H34';
-
     const QUANTITY_UNIT_CODE_H35 = 'H35';
-
     const QUANTITY_UNIT_CODE_H36 = 'H36';
-
     const QUANTITY_UNIT_CODE_H37 = 'H37';
-
     const QUANTITY_UNIT_CODE_H38 = 'H38';
-
     const QUANTITY_UNIT_CODE_H39 = 'H39';
-
     const QUANTITY_UNIT_CODE_H40 = 'H40';
-
     const QUANTITY_UNIT_CODE_H41 = 'H41';
-
     const QUANTITY_UNIT_CODE_H42 = 'H42';
-
     const QUANTITY_UNIT_CODE_H43 = 'H43';
-
     const QUANTITY_UNIT_CODE_H44 = 'H44';
-
     const QUANTITY_UNIT_CODE_H45 = 'H45';
-
     const QUANTITY_UNIT_CODE_H46 = 'H46';
-
     const QUANTITY_UNIT_CODE_H47 = 'H47';
-
     const QUANTITY_UNIT_CODE_H48 = 'H48';
-
     const QUANTITY_UNIT_CODE_H49 = 'H49';
-
     const QUANTITY_UNIT_CODE_H50 = 'H50';
-
     const QUANTITY_UNIT_CODE_H51 = 'H51';
-
     const QUANTITY_UNIT_CODE_H52 = 'H52';
-
     const QUANTITY_UNIT_CODE_H53 = 'H53';
-
     const QUANTITY_UNIT_CODE_H54 = 'H54';
-
     const QUANTITY_UNIT_CODE_H55 = 'H55';
-
     const QUANTITY_UNIT_CODE_H56 = 'H56';
-
     const QUANTITY_UNIT_CODE_H57 = 'H57';
-
     const QUANTITY_UNIT_CODE_H58 = 'H58';
-
     const QUANTITY_UNIT_CODE_H59 = 'H59';
-
     const QUANTITY_UNIT_CODE_H60 = 'H60';
-
     const QUANTITY_UNIT_CODE_H61 = 'H61';
-
     const QUANTITY_UNIT_CODE_H62 = 'H62';
-
     const QUANTITY_UNIT_CODE_H63 = 'H63';
-
     const QUANTITY_UNIT_CODE_H64 = 'H64';
-
     const QUANTITY_UNIT_CODE_H65 = 'H65';
-
     const QUANTITY_UNIT_CODE_H66 = 'H66';
-
     const QUANTITY_UNIT_CODE_H67 = 'H67';
-
     const QUANTITY_UNIT_CODE_H68 = 'H68';
-
     const QUANTITY_UNIT_CODE_H69 = 'H69';
-
     const QUANTITY_UNIT_CODE_H70 = 'H70';
-
     const QUANTITY_UNIT_CODE_H71 = 'H71';
-
     const QUANTITY_UNIT_CODE_H72 = 'H72';
-
     const QUANTITY_UNIT_CODE_H73 = 'H73';
-
     const QUANTITY_UNIT_CODE_H74 = 'H74';
-
     const QUANTITY_UNIT_CODE_H75 = 'H75';
-
     const QUANTITY_UNIT_CODE_H76 = 'H76';
-
     const QUANTITY_UNIT_CODE_H77 = 'H77';
-
     const QUANTITY_UNIT_CODE_H79 = 'H79';
-
     const QUANTITY_UNIT_CODE_H80 = 'H80';
-
     const QUANTITY_UNIT_CODE_H81 = 'H81';
-
     const QUANTITY_UNIT_CODE_H82 = 'H82';
-
     const QUANTITY_UNIT_CODE_H83 = 'H83';
-
     const QUANTITY_UNIT_CODE_H84 = 'H84';
-
     const QUANTITY_UNIT_CODE_H85 = 'H85';
-
     const QUANTITY_UNIT_CODE_H87 = 'H87';
-
     const QUANTITY_UNIT_CODE_H88 = 'H88';
-
     const QUANTITY_UNIT_CODE_H89 = 'H89';
-
     const QUANTITY_UNIT_CODE_H90 = 'H90';
-
     const QUANTITY_UNIT_CODE_H91 = 'H91';
-
     const QUANTITY_UNIT_CODE_H92 = 'H92';
-
     const QUANTITY_UNIT_CODE_H93 = 'H93';
-
     const QUANTITY_UNIT_CODE_H94 = 'H94';
-
     const QUANTITY_UNIT_CODE_H95 = 'H95';
-
     const QUANTITY_UNIT_CODE_H96 = 'H96';
-
     const QUANTITY_UNIT_CODE_H98 = 'H98';
-
     const QUANTITY_UNIT_CODE_H99 = 'H99';
-
     const QUANTITY_UNIT_CODE_HA = 'HA';
-
     const QUANTITY_UNIT_CODE_HBA = 'HBA';
-
     const QUANTITY_UNIT_CODE_HBX = 'HBX';
-
     const QUANTITY_UNIT_CODE_HC = 'HC';
-
     const QUANTITY_UNIT_CODE_HDW = 'HDW';
-
     const QUANTITY_UNIT_CODE_HEA = 'HEA';
-
     const QUANTITY_UNIT_CODE_HGM = 'HGM';
-
     const QUANTITY_UNIT_CODE_HH = 'HH';
-
     const QUANTITY_UNIT_CODE_HIU = 'HIU';
-
     const QUANTITY_UNIT_CODE_HKM = 'HKM';
-
     const QUANTITY_UNIT_CODE_HLT = 'HLT';
-
     const QUANTITY_UNIT_CODE_HM = 'HM';
-
     const QUANTITY_UNIT_CODE_HMQ = 'HMQ';
-
     const QUANTITY_UNIT_CODE_HMT = 'HMT';
-
     const QUANTITY_UNIT_CODE_HPA = 'HPA';
-
     const QUANTITY_UNIT_CODE_HTZ = 'HTZ';
-
     const QUANTITY_UNIT_CODE_HUR = 'HUR';
-
     const QUANTITY_UNIT_CODE_IA = 'IA';
-
     const QUANTITY_UNIT_CODE_IE = 'IE';
-
     const QUANTITY_UNIT_CODE_INH = 'INH';
-
     const QUANTITY_UNIT_CODE_INK = 'INK';
-
     const QUANTITY_UNIT_CODE_INQ = 'INQ';
-
     const QUANTITY_UNIT_CODE_ISD = 'ISD';
-
     const QUANTITY_UNIT_CODE_IU = 'IU';
-
     const QUANTITY_UNIT_CODE_IV = 'IV';
-
     const QUANTITY_UNIT_CODE_J10 = 'J10';
-
     const QUANTITY_UNIT_CODE_J12 = 'J12';
-
     const QUANTITY_UNIT_CODE_J13 = 'J13';
-
     const QUANTITY_UNIT_CODE_J14 = 'J14';
-
     const QUANTITY_UNIT_CODE_J15 = 'J15';
-
     const QUANTITY_UNIT_CODE_J16 = 'J16';
-
     const QUANTITY_UNIT_CODE_J17 = 'J17';
-
     const QUANTITY_UNIT_CODE_J18 = 'J18';
-
     const QUANTITY_UNIT_CODE_J19 = 'J19';
-
     const QUANTITY_UNIT_CODE_J2 = 'J2';
-
     const QUANTITY_UNIT_CODE_J20 = 'J20';
-
     const QUANTITY_UNIT_CODE_J21 = 'J21';
-
     const QUANTITY_UNIT_CODE_J22 = 'J22';
-
     const QUANTITY_UNIT_CODE_J23 = 'J23';
-
     const QUANTITY_UNIT_CODE_J24 = 'J24';
-
     const QUANTITY_UNIT_CODE_J25 = 'J25';
-
     const QUANTITY_UNIT_CODE_J26 = 'J26';
-
     const QUANTITY_UNIT_CODE_J27 = 'J27';
-
     const QUANTITY_UNIT_CODE_J28 = 'J28';
-
     const QUANTITY_UNIT_CODE_J29 = 'J29';
-
     const QUANTITY_UNIT_CODE_J30 = 'J30';
-
     const QUANTITY_UNIT_CODE_J31 = 'J31';
-
     const QUANTITY_UNIT_CODE_J32 = 'J32';
-
     const QUANTITY_UNIT_CODE_J33 = 'J33';
-
     const QUANTITY_UNIT_CODE_J34 = 'J34';
-
     const QUANTITY_UNIT_CODE_J35 = 'J35';
-
     const QUANTITY_UNIT_CODE_J36 = 'J36';
-
     const QUANTITY_UNIT_CODE_J38 = 'J38';
-
     const QUANTITY_UNIT_CODE_J39 = 'J39';
-
     const QUANTITY_UNIT_CODE_J40 = 'J40';
-
     const QUANTITY_UNIT_CODE_J41 = 'J41';
-
     const QUANTITY_UNIT_CODE_J42 = 'J42';
-
     const QUANTITY_UNIT_CODE_J43 = 'J43';
-
     const QUANTITY_UNIT_CODE_J44 = 'J44';
-
     const QUANTITY_UNIT_CODE_J45 = 'J45';
-
     const QUANTITY_UNIT_CODE_J46 = 'J46';
-
     const QUANTITY_UNIT_CODE_J47 = 'J47';
-
     const QUANTITY_UNIT_CODE_J48 = 'J48';
-
     const QUANTITY_UNIT_CODE_J49 = 'J49';
-
     const QUANTITY_UNIT_CODE_J50 = 'J50';
-
     const QUANTITY_UNIT_CODE_J51 = 'J51';
-
     const QUANTITY_UNIT_CODE_J52 = 'J52';
-
     const QUANTITY_UNIT_CODE_J53 = 'J53';
-
     const QUANTITY_UNIT_CODE_J54 = 'J54';
-
     const QUANTITY_UNIT_CODE_J55 = 'J55';
-
     const QUANTITY_UNIT_CODE_J56 = 'J56';
-
     const QUANTITY_UNIT_CODE_J57 = 'J57';
-
     const QUANTITY_UNIT_CODE_J58 = 'J58';
-
     const QUANTITY_UNIT_CODE_J59 = 'J59';
-
     const QUANTITY_UNIT_CODE_J60 = 'J60';
-
     const QUANTITY_UNIT_CODE_J61 = 'J61';
-
     const QUANTITY_UNIT_CODE_J62 = 'J62';
-
     const QUANTITY_UNIT_CODE_J63 = 'J63';
-
     const QUANTITY_UNIT_CODE_J64 = 'J64';
-
     const QUANTITY_UNIT_CODE_J65 = 'J65';
-
     const QUANTITY_UNIT_CODE_J66 = 'J66';
-
     const QUANTITY_UNIT_CODE_J67 = 'J67';
-
     const QUANTITY_UNIT_CODE_J68 = 'J68';
-
     const QUANTITY_UNIT_CODE_J69 = 'J69';
-
     const QUANTITY_UNIT_CODE_J70 = 'J70';
-
     const QUANTITY_UNIT_CODE_J71 = 'J71';
-
     const QUANTITY_UNIT_CODE_J72 = 'J72';
-
     const QUANTITY_UNIT_CODE_J73 = 'J73';
-
     const QUANTITY_UNIT_CODE_J74 = 'J74';
-
     const QUANTITY_UNIT_CODE_J75 = 'J75';
-
     const QUANTITY_UNIT_CODE_J76 = 'J76';
-
     const QUANTITY_UNIT_CODE_J78 = 'J78';
-
     const QUANTITY_UNIT_CODE_J79 = 'J79';
-
     const QUANTITY_UNIT_CODE_J81 = 'J81';
-
     const QUANTITY_UNIT_CODE_J82 = 'J82';
-
     const QUANTITY_UNIT_CODE_J83 = 'J83';
-
     const QUANTITY_UNIT_CODE_J84 = 'J84';
-
     const QUANTITY_UNIT_CODE_J85 = 'J85';
-
     const QUANTITY_UNIT_CODE_J87 = 'J87';
-
     const QUANTITY_UNIT_CODE_J90 = 'J90';
-
     const QUANTITY_UNIT_CODE_J91 = 'J91';
-
     const QUANTITY_UNIT_CODE_J92 = 'J92';
-
     const QUANTITY_UNIT_CODE_J93 = 'J93';
-
     const QUANTITY_UNIT_CODE_J95 = 'J95';
-
     const QUANTITY_UNIT_CODE_J96 = 'J96';
-
     const QUANTITY_UNIT_CODE_J97 = 'J97';
-
     const QUANTITY_UNIT_CODE_J98 = 'J98';
-
     const QUANTITY_UNIT_CODE_J99 = 'J99';
-
     const QUANTITY_UNIT_CODE_JE = 'JE';
-
     const QUANTITY_UNIT_CODE_JK = 'JK';
-
     const QUANTITY_UNIT_CODE_JM = 'JM';
-
     const QUANTITY_UNIT_CODE_JNT = 'JNT';
-
     const QUANTITY_UNIT_CODE_JOU = 'JOU';
-
     const QUANTITY_UNIT_CODE_JPS = 'JPS';
-
     const QUANTITY_UNIT_CODE_JWL = 'JWL';
-
     const QUANTITY_UNIT_CODE_K1 = 'K1';
-
     const QUANTITY_UNIT_CODE_K10 = 'K10';
-
     const QUANTITY_UNIT_CODE_K11 = 'K11';
-
     const QUANTITY_UNIT_CODE_K12 = 'K12';
-
     const QUANTITY_UNIT_CODE_K13 = 'K13';
-
     const QUANTITY_UNIT_CODE_K14 = 'K14';
-
     const QUANTITY_UNIT_CODE_K15 = 'K15';
-
     const QUANTITY_UNIT_CODE_K16 = 'K16';
-
     const QUANTITY_UNIT_CODE_K17 = 'K17';
-
     const QUANTITY_UNIT_CODE_K18 = 'K18';
-
     const QUANTITY_UNIT_CODE_K19 = 'K19';
-
     const QUANTITY_UNIT_CODE_K2 = 'K2';
-
     const QUANTITY_UNIT_CODE_K20 = 'K20';
-
     const QUANTITY_UNIT_CODE_K21 = 'K21';
-
     const QUANTITY_UNIT_CODE_K22 = 'K22';
-
     const QUANTITY_UNIT_CODE_K23 = 'K23';
-
     const QUANTITY_UNIT_CODE_K26 = 'K26';
-
     const QUANTITY_UNIT_CODE_K27 = 'K27';
-
     const QUANTITY_UNIT_CODE_K28 = 'K28';
-
     const QUANTITY_UNIT_CODE_K3 = 'K3';
-
     const QUANTITY_UNIT_CODE_K30 = 'K30';
-
     const QUANTITY_UNIT_CODE_K31 = 'K31';
-
     const QUANTITY_UNIT_CODE_K32 = 'K32';
-
     const QUANTITY_UNIT_CODE_K33 = 'K33';
-
     const QUANTITY_UNIT_CODE_K34 = 'K34';
-
     const QUANTITY_UNIT_CODE_K35 = 'K35';
-
     const QUANTITY_UNIT_CODE_K36 = 'K36';
-
     const QUANTITY_UNIT_CODE_K37 = 'K37';
-
     const QUANTITY_UNIT_CODE_K38 = 'K38';
-
     const QUANTITY_UNIT_CODE_K39 = 'K39';
-
     const QUANTITY_UNIT_CODE_K40 = 'K40';
-
     const QUANTITY_UNIT_CODE_K41 = 'K41';
-
     const QUANTITY_UNIT_CODE_K42 = 'K42';
-
     const QUANTITY_UNIT_CODE_K43 = 'K43';
-
     const QUANTITY_UNIT_CODE_K45 = 'K45';
-
     const QUANTITY_UNIT_CODE_K46 = 'K46';
-
     const QUANTITY_UNIT_CODE_K47 = 'K47';
-
     const QUANTITY_UNIT_CODE_K48 = 'K48';
-
     const QUANTITY_UNIT_CODE_K49 = 'K49';
-
     const QUANTITY_UNIT_CODE_K50 = 'K50';
-
     const QUANTITY_UNIT_CODE_K51 = 'K51';
-
     const QUANTITY_UNIT_CODE_K52 = 'K52';
-
     const QUANTITY_UNIT_CODE_K53 = 'K53';
-
     const QUANTITY_UNIT_CODE_K54 = 'K54';
-
     const QUANTITY_UNIT_CODE_K55 = 'K55';
-
     const QUANTITY_UNIT_CODE_K58 = 'K58';
-
     const QUANTITY_UNIT_CODE_K59 = 'K59';
-
     const QUANTITY_UNIT_CODE_K6 = 'K6';
-
     const QUANTITY_UNIT_CODE_K60 = 'K60';
-
     const QUANTITY_UNIT_CODE_K61 = 'K61';
-
     const QUANTITY_UNIT_CODE_K62 = 'K62';
-
     const QUANTITY_UNIT_CODE_K63 = 'K63';
-
     const QUANTITY_UNIT_CODE_K64 = 'K64';
-
     const QUANTITY_UNIT_CODE_K65 = 'K65';
-
     const QUANTITY_UNIT_CODE_K66 = 'K66';
-
     const QUANTITY_UNIT_CODE_K67 = 'K67';
-
     const QUANTITY_UNIT_CODE_K68 = 'K68';
-
     const QUANTITY_UNIT_CODE_K69 = 'K69';
-
     const QUANTITY_UNIT_CODE_K70 = 'K70';
-
     const QUANTITY_UNIT_CODE_K71 = 'K71';
-
     const QUANTITY_UNIT_CODE_K73 = 'K73';
-
     const QUANTITY_UNIT_CODE_K74 = 'K74';
-
     const QUANTITY_UNIT_CODE_K75 = 'K75';
-
     const QUANTITY_UNIT_CODE_K76 = 'K76';
-
     const QUANTITY_UNIT_CODE_K77 = 'K77';
-
     const QUANTITY_UNIT_CODE_K78 = 'K78';
-
     const QUANTITY_UNIT_CODE_K79 = 'K79';
-
     const QUANTITY_UNIT_CODE_K80 = 'K80';
-
     const QUANTITY_UNIT_CODE_K81 = 'K81';
-
     const QUANTITY_UNIT_CODE_K82 = 'K82';
-
     const QUANTITY_UNIT_CODE_K83 = 'K83';
-
     const QUANTITY_UNIT_CODE_K84 = 'K84';
-
     const QUANTITY_UNIT_CODE_K85 = 'K85';
-
     const QUANTITY_UNIT_CODE_K86 = 'K86';
-
     const QUANTITY_UNIT_CODE_K87 = 'K87';
-
     const QUANTITY_UNIT_CODE_K88 = 'K88';
-
     const QUANTITY_UNIT_CODE_K89 = 'K89';
-
     const QUANTITY_UNIT_CODE_K90 = 'K90';
-
     const QUANTITY_UNIT_CODE_K91 = 'K91';
-
     const QUANTITY_UNIT_CODE_K92 = 'K92';
-
     const QUANTITY_UNIT_CODE_K93 = 'K93';
-
     const QUANTITY_UNIT_CODE_K94 = 'K94';
-
     const QUANTITY_UNIT_CODE_K95 = 'K95';
-
     const QUANTITY_UNIT_CODE_K96 = 'K96';
-
     const QUANTITY_UNIT_CODE_K97 = 'K97';
-
     const QUANTITY_UNIT_CODE_K98 = 'K98';
-
     const QUANTITY_UNIT_CODE_K99 = 'K99';
-
     const QUANTITY_UNIT_CODE_KA = 'KA';
-
     const QUANTITY_UNIT_CODE_KAT = 'KAT';
-
     const QUANTITY_UNIT_CODE_KB = 'KB';
-
     const QUANTITY_UNIT_CODE_KBA = 'KBA';
-
     const QUANTITY_UNIT_CODE_KCC = 'KCC';
-
     const QUANTITY_UNIT_CODE_KDW = 'KDW';
-
     const QUANTITY_UNIT_CODE_KEL = 'KEL';
-
     const QUANTITY_UNIT_CODE_KGM = 'KGM';
-
     const QUANTITY_UNIT_CODE_KGS = 'KGS';
-
     const QUANTITY_UNIT_CODE_KHY = 'KHY';
-
     const QUANTITY_UNIT_CODE_KHZ = 'KHZ';
-
     const QUANTITY_UNIT_CODE_KI = 'KI';
-
     const QUANTITY_UNIT_CODE_KIC = 'KIC';
-
     const QUANTITY_UNIT_CODE_KIP = 'KIP';
-
     const QUANTITY_UNIT_CODE_KJ = 'KJ';
-
     const QUANTITY_UNIT_CODE_KJO = 'KJO';
-
     const QUANTITY_UNIT_CODE_KL = 'KL';
-
     const QUANTITY_UNIT_CODE_KLK = 'KLK';
-
     const QUANTITY_UNIT_CODE_KLX = 'KLX';
-
     const QUANTITY_UNIT_CODE_KMA = 'KMA';
-
     const QUANTITY_UNIT_CODE_KMH = 'KMH';
-
     const QUANTITY_UNIT_CODE_KMK = 'KMK';
-
     const QUANTITY_UNIT_CODE_KMQ = 'KMQ';
-
     const QUANTITY_UNIT_CODE_KMT = 'KMT';
-
     const QUANTITY_UNIT_CODE_KNI = 'KNI';
-
     const QUANTITY_UNIT_CODE_KNM = 'KNM';
-
     const QUANTITY_UNIT_CODE_KNS = 'KNS';
-
     const QUANTITY_UNIT_CODE_KNT = 'KNT';
-
     const QUANTITY_UNIT_CODE_KO = 'KO';
-
     const QUANTITY_UNIT_CODE_KPA = 'KPA';
-
     const QUANTITY_UNIT_CODE_KPH = 'KPH';
-
     const QUANTITY_UNIT_CODE_KPO = 'KPO';
-
     const QUANTITY_UNIT_CODE_KPP = 'KPP';
-
     const QUANTITY_UNIT_CODE_KR = 'KR';
-
     const QUANTITY_UNIT_CODE_KSD = 'KSD';
-
     const QUANTITY_UNIT_CODE_KSH = 'KSH';
-
     const QUANTITY_UNIT_CODE_KT = 'KT';
-
     const QUANTITY_UNIT_CODE_KTN = 'KTN';
-
     const QUANTITY_UNIT_CODE_KUR = 'KUR';
-
     const QUANTITY_UNIT_CODE_KVA = 'KVA';
-
     const QUANTITY_UNIT_CODE_KVR = 'KVR';
-
     const QUANTITY_UNIT_CODE_KVT = 'KVT';
-
     const QUANTITY_UNIT_CODE_KW = 'KW';
-
     const QUANTITY_UNIT_CODE_KWH = 'KWH';
-
     const QUANTITY_UNIT_CODE_KWO = 'KWO';
-
     const QUANTITY_UNIT_CODE_KWT = 'KWT';
-
     const QUANTITY_UNIT_CODE_KX = 'KX';
-
     const QUANTITY_UNIT_CODE_L10 = 'L10';
-
     const QUANTITY_UNIT_CODE_L11 = 'L11';
-
     const QUANTITY_UNIT_CODE_L12 = 'L12';
-
     const QUANTITY_UNIT_CODE_L13 = 'L13';
-
     const QUANTITY_UNIT_CODE_L14 = 'L14';
-
     const QUANTITY_UNIT_CODE_L15 = 'L15';
-
     const QUANTITY_UNIT_CODE_L16 = 'L16';
-
     const QUANTITY_UNIT_CODE_L17 = 'L17';
-
     const QUANTITY_UNIT_CODE_L18 = 'L18';
-
     const QUANTITY_UNIT_CODE_L19 = 'L19';
-
     const QUANTITY_UNIT_CODE_L2 = 'L2';
-
     const QUANTITY_UNIT_CODE_L20 = 'L20';
-
     const QUANTITY_UNIT_CODE_L21 = 'L21';
-
     const QUANTITY_UNIT_CODE_L23 = 'L23';
-
     const QUANTITY_UNIT_CODE_L24 = 'L24';
-
     const QUANTITY_UNIT_CODE_L25 = 'L25';
-
     const QUANTITY_UNIT_CODE_L26 = 'L26';
-
     const QUANTITY_UNIT_CODE_L27 = 'L27';
-
     const QUANTITY_UNIT_CODE_L28 = 'L28';
-
     const QUANTITY_UNIT_CODE_L29 = 'L29';
-
     const QUANTITY_UNIT_CODE_L30 = 'L30';
-
     const QUANTITY_UNIT_CODE_L31 = 'L31';
-
     const QUANTITY_UNIT_CODE_L32 = 'L32';
-
     const QUANTITY_UNIT_CODE_L33 = 'L33';
-
     const QUANTITY_UNIT_CODE_L34 = 'L34';
-
     const QUANTITY_UNIT_CODE_L35 = 'L35';
-
     const QUANTITY_UNIT_CODE_L36 = 'L36';
-
     const QUANTITY_UNIT_CODE_L37 = 'L37';
-
     const QUANTITY_UNIT_CODE_L38 = 'L38';
-
     const QUANTITY_UNIT_CODE_L39 = 'L39';
-
     const QUANTITY_UNIT_CODE_L40 = 'L40';
-
     const QUANTITY_UNIT_CODE_L41 = 'L41';
-
     const QUANTITY_UNIT_CODE_L42 = 'L42';
-
     const QUANTITY_UNIT_CODE_L43 = 'L43';
-
     const QUANTITY_UNIT_CODE_L44 = 'L44';
-
     const QUANTITY_UNIT_CODE_L45 = 'L45';
-
     const QUANTITY_UNIT_CODE_L46 = 'L46';
-
     const QUANTITY_UNIT_CODE_L47 = 'L47';
-
     const QUANTITY_UNIT_CODE_L48 = 'L48';
-
     const QUANTITY_UNIT_CODE_L49 = 'L49';
-
     const QUANTITY_UNIT_CODE_L50 = 'L50';
-
     const QUANTITY_UNIT_CODE_L51 = 'L51';
-
     const QUANTITY_UNIT_CODE_L52 = 'L52';
-
     const QUANTITY_UNIT_CODE_L53 = 'L53';
-
     const QUANTITY_UNIT_CODE_L54 = 'L54';
-
     const QUANTITY_UNIT_CODE_L55 = 'L55';
-
     const QUANTITY_UNIT_CODE_L56 = 'L56';
-
     const QUANTITY_UNIT_CODE_L57 = 'L57';
-
     const QUANTITY_UNIT_CODE_L58 = 'L58';
-
     const QUANTITY_UNIT_CODE_L59 = 'L59';
-
     const QUANTITY_UNIT_CODE_L60 = 'L60';
-
     const QUANTITY_UNIT_CODE_L63 = 'L63';
-
     const QUANTITY_UNIT_CODE_L64 = 'L64';
-
     const QUANTITY_UNIT_CODE_L65 = 'L65';
-
     const QUANTITY_UNIT_CODE_L66 = 'L66';
-
     const QUANTITY_UNIT_CODE_L67 = 'L67';
-
     const QUANTITY_UNIT_CODE_L68 = 'L68';
-
     const QUANTITY_UNIT_CODE_L69 = 'L69';
-
     const QUANTITY_UNIT_CODE_L70 = 'L70';
-
     const QUANTITY_UNIT_CODE_L71 = 'L71';
-
     const QUANTITY_UNIT_CODE_L72 = 'L72';
-
     const QUANTITY_UNIT_CODE_L73 = 'L73';
-
     const QUANTITY_UNIT_CODE_L74 = 'L74';
-
     const QUANTITY_UNIT_CODE_L75 = 'L75';
-
     const QUANTITY_UNIT_CODE_L76 = 'L76';
-
     const QUANTITY_UNIT_CODE_L77 = 'L77';
-
     const QUANTITY_UNIT_CODE_L78 = 'L78';
-
     const QUANTITY_UNIT_CODE_L79 = 'L79';
-
     const QUANTITY_UNIT_CODE_L80 = 'L80';
-
     const QUANTITY_UNIT_CODE_L81 = 'L81';
-
     const QUANTITY_UNIT_CODE_L82 = 'L82';
-
     const QUANTITY_UNIT_CODE_L83 = 'L83';
-
     const QUANTITY_UNIT_CODE_L84 = 'L84';
-
     const QUANTITY_UNIT_CODE_L85 = 'L85';
-
     const QUANTITY_UNIT_CODE_L86 = 'L86';
-
     const QUANTITY_UNIT_CODE_L87 = 'L87';
-
     const QUANTITY_UNIT_CODE_L88 = 'L88';
-
     const QUANTITY_UNIT_CODE_L89 = 'L89';
-
     const QUANTITY_UNIT_CODE_L90 = 'L90';
-
     const QUANTITY_UNIT_CODE_L91 = 'L91';
-
     const QUANTITY_UNIT_CODE_L92 = 'L92';
-
     const QUANTITY_UNIT_CODE_L93 = 'L93';
-
     const QUANTITY_UNIT_CODE_L94 = 'L94';
-
     const QUANTITY_UNIT_CODE_L95 = 'L95';
-
     const QUANTITY_UNIT_CODE_L96 = 'L96';
-
     const QUANTITY_UNIT_CODE_L98 = 'L98';
-
     const QUANTITY_UNIT_CODE_L99 = 'L99';
-
     const QUANTITY_UNIT_CODE_LA = 'LA';
-
     const QUANTITY_UNIT_CODE_LAC = 'LAC';
-
     const QUANTITY_UNIT_CODE_LBR = 'LBR';
-
     const QUANTITY_UNIT_CODE_LBT = 'LBT';
-
     const QUANTITY_UNIT_CODE_LD = 'LD';
-
     const QUANTITY_UNIT_CODE_LEF = 'LEF';
-
     const QUANTITY_UNIT_CODE_LF = 'LF';
-
     const QUANTITY_UNIT_CODE_LH = 'LH';
-
     const QUANTITY_UNIT_CODE_LK = 'LK';
-
     const QUANTITY_UNIT_CODE_LM = 'LM';
-
     const QUANTITY_UNIT_CODE_LN = 'LN';
-
     const QUANTITY_UNIT_CODE_LO = 'LO';
-
     const QUANTITY_UNIT_CODE_LP = 'LP';
-
     const QUANTITY_UNIT_CODE_LPA = 'LPA';
-
     const QUANTITY_UNIT_CODE_LR = 'LR';
-
     const QUANTITY_UNIT_CODE_LS = 'LS';
-
     const QUANTITY_UNIT_CODE_LTN = 'LTN';
-
     const QUANTITY_UNIT_CODE_LTR = 'LTR';
-
     const QUANTITY_UNIT_CODE_LUB = 'LUB';
-
     const QUANTITY_UNIT_CODE_LUM = 'LUM';
-
     const QUANTITY_UNIT_CODE_LUX = 'LUX';
-
     const QUANTITY_UNIT_CODE_LY = 'LY';
-
     const QUANTITY_UNIT_CODE_M1 = 'M1';
-
     const QUANTITY_UNIT_CODE_M10 = 'M10';
-
     const QUANTITY_UNIT_CODE_M11 = 'M11';
-
     const QUANTITY_UNIT_CODE_M12 = 'M12';
-
     const QUANTITY_UNIT_CODE_M13 = 'M13';
-
     const QUANTITY_UNIT_CODE_M14 = 'M14';
-
     const QUANTITY_UNIT_CODE_M15 = 'M15';
-
     const QUANTITY_UNIT_CODE_M16 = 'M16';
-
     const QUANTITY_UNIT_CODE_M17 = 'M17';
-
     const QUANTITY_UNIT_CODE_M18 = 'M18';
-
     const QUANTITY_UNIT_CODE_M19 = 'M19';
-
     const QUANTITY_UNIT_CODE_M20 = 'M20';
-
     const QUANTITY_UNIT_CODE_M21 = 'M21';
-
     const QUANTITY_UNIT_CODE_M22 = 'M22';
-
     const QUANTITY_UNIT_CODE_M23 = 'M23';
-
     const QUANTITY_UNIT_CODE_M24 = 'M24';
-
     const QUANTITY_UNIT_CODE_M25 = 'M25';
-
     const QUANTITY_UNIT_CODE_M26 = 'M26';
-
     const QUANTITY_UNIT_CODE_M27 = 'M27';
-
     const QUANTITY_UNIT_CODE_M29 = 'M29';
-
     const QUANTITY_UNIT_CODE_M30 = 'M30';
-
     const QUANTITY_UNIT_CODE_M31 = 'M31';
-
     const QUANTITY_UNIT_CODE_M32 = 'M32';
-
     const QUANTITY_UNIT_CODE_M33 = 'M33';
-
     const QUANTITY_UNIT_CODE_M34 = 'M34';
-
     const QUANTITY_UNIT_CODE_M35 = 'M35';
-
     const QUANTITY_UNIT_CODE_M36 = 'M36';
-
     const QUANTITY_UNIT_CODE_M37 = 'M37';
-
     const QUANTITY_UNIT_CODE_M38 = 'M38';
-
     const QUANTITY_UNIT_CODE_M39 = 'M39';
-
     const QUANTITY_UNIT_CODE_M4 = 'M4';
-
     const QUANTITY_UNIT_CODE_M40 = 'M40';
-
     const QUANTITY_UNIT_CODE_M41 = 'M41';
-
     const QUANTITY_UNIT_CODE_M42 = 'M42';
-
     const QUANTITY_UNIT_CODE_M43 = 'M43';
-
     const QUANTITY_UNIT_CODE_M44 = 'M44';
-
     const QUANTITY_UNIT_CODE_M45 = 'M45';
-
     const QUANTITY_UNIT_CODE_M46 = 'M46';
-
     const QUANTITY_UNIT_CODE_M47 = 'M47';
-
     const QUANTITY_UNIT_CODE_M48 = 'M48';
-
     const QUANTITY_UNIT_CODE_M49 = 'M49';
-
     const QUANTITY_UNIT_CODE_M5 = 'M5';
-
     const QUANTITY_UNIT_CODE_M50 = 'M50';
-
     const QUANTITY_UNIT_CODE_M51 = 'M51';
-
     const QUANTITY_UNIT_CODE_M52 = 'M52';
-
     const QUANTITY_UNIT_CODE_M53 = 'M53';
-
     const QUANTITY_UNIT_CODE_M55 = 'M55';
-
     const QUANTITY_UNIT_CODE_M56 = 'M56';
-
     const QUANTITY_UNIT_CODE_M57 = 'M57';
-
     const QUANTITY_UNIT_CODE_M58 = 'M58';
-
     const QUANTITY_UNIT_CODE_M59 = 'M59';
-
     const QUANTITY_UNIT_CODE_M60 = 'M60';
-
     const QUANTITY_UNIT_CODE_M61 = 'M61';
-
     const QUANTITY_UNIT_CODE_M62 = 'M62';
-
     const QUANTITY_UNIT_CODE_M63 = 'M63';
-
     const QUANTITY_UNIT_CODE_M64 = 'M64';
-
     const QUANTITY_UNIT_CODE_M65 = 'M65';
-
     const QUANTITY_UNIT_CODE_M66 = 'M66';
-
     const QUANTITY_UNIT_CODE_M67 = 'M67';
-
     const QUANTITY_UNIT_CODE_M68 = 'M68';
-
     const QUANTITY_UNIT_CODE_M69 = 'M69';
-
     const QUANTITY_UNIT_CODE_M7 = 'M7';
-
     const QUANTITY_UNIT_CODE_M70 = 'M70';
-
     const QUANTITY_UNIT_CODE_M71 = 'M71';
-
     const QUANTITY_UNIT_CODE_M72 = 'M72';
-
     const QUANTITY_UNIT_CODE_M73 = 'M73';
-
     const QUANTITY_UNIT_CODE_M74 = 'M74';
-
     const QUANTITY_UNIT_CODE_M75 = 'M75';
-
     const QUANTITY_UNIT_CODE_M76 = 'M76';
-
     const QUANTITY_UNIT_CODE_M77 = 'M77';
-
     const QUANTITY_UNIT_CODE_M78 = 'M78';
-
     const QUANTITY_UNIT_CODE_M79 = 'M79';
-
     const QUANTITY_UNIT_CODE_M80 = 'M80';
-
     const QUANTITY_UNIT_CODE_M81 = 'M81';
-
     const QUANTITY_UNIT_CODE_M82 = 'M82';
-
     const QUANTITY_UNIT_CODE_M83 = 'M83';
-
     const QUANTITY_UNIT_CODE_M84 = 'M84';
-
     const QUANTITY_UNIT_CODE_M85 = 'M85';
-
     const QUANTITY_UNIT_CODE_M86 = 'M86';
-
     const QUANTITY_UNIT_CODE_M87 = 'M87';
-
     const QUANTITY_UNIT_CODE_M88 = 'M88';
-
     const QUANTITY_UNIT_CODE_M89 = 'M89';
-
     const QUANTITY_UNIT_CODE_M9 = 'M9';
-
     const QUANTITY_UNIT_CODE_M90 = 'M90';
-
     const QUANTITY_UNIT_CODE_M91 = 'M91';
-
     const QUANTITY_UNIT_CODE_M92 = 'M92';
-
     const QUANTITY_UNIT_CODE_M93 = 'M93';
-
     const QUANTITY_UNIT_CODE_M94 = 'M94';
-
     const QUANTITY_UNIT_CODE_M95 = 'M95';
-
     const QUANTITY_UNIT_CODE_M96 = 'M96';
-
     const QUANTITY_UNIT_CODE_M97 = 'M97';
-
     const QUANTITY_UNIT_CODE_M98 = 'M98';
-
     const QUANTITY_UNIT_CODE_M99 = 'M99';
-
     const QUANTITY_UNIT_CODE_MAH = 'MAH';
-
     const QUANTITY_UNIT_CODE_MAL = 'MAL';
-
     const QUANTITY_UNIT_CODE_MAM = 'MAM';
-
     const QUANTITY_UNIT_CODE_MAR = 'MAR';
-
     const QUANTITY_UNIT_CODE_MAW = 'MAW';
-
     const QUANTITY_UNIT_CODE_MBE = 'MBE';
-
     const QUANTITY_UNIT_CODE_MBF = 'MBF';
-
     const QUANTITY_UNIT_CODE_MBR = 'MBR';
-
     const QUANTITY_UNIT_CODE_MC = 'MC';
-
     const QUANTITY_UNIT_CODE_MCU = 'MCU';
-
     const QUANTITY_UNIT_CODE_MD = 'MD';
-
     const QUANTITY_UNIT_CODE_MGM = 'MGM';
-
     const QUANTITY_UNIT_CODE_MHZ = 'MHZ';
-
     const QUANTITY_UNIT_CODE_MIK = 'MIK';
-
     const QUANTITY_UNIT_CODE_MIL = 'MIL';
-
     const QUANTITY_UNIT_CODE_MIN = 'MIN';
-
     const QUANTITY_UNIT_CODE_MIO = 'MIO';
-
     const QUANTITY_UNIT_CODE_MIU = 'MIU';
-
     const QUANTITY_UNIT_CODE_MLD = 'MLD';
-
     const QUANTITY_UNIT_CODE_MLT = 'MLT';
-
     const QUANTITY_UNIT_CODE_MMK = 'MMK';
-
     const QUANTITY_UNIT_CODE_MMQ = 'MMQ';
-
     const QUANTITY_UNIT_CODE_MMT = 'MMT';
-
     const QUANTITY_UNIT_CODE_MND = 'MND';
-
     const QUANTITY_UNIT_CODE_MON = 'MON';
-
     const QUANTITY_UNIT_CODE_MPA = 'MPA';
-
     const QUANTITY_UNIT_CODE_MQH = 'MQH';
-
     const QUANTITY_UNIT_CODE_MQS = 'MQS';
-
     const QUANTITY_UNIT_CODE_MSK = 'MSK';
-
     const QUANTITY_UNIT_CODE_MTK = 'MTK';
-
     const QUANTITY_UNIT_CODE_MTQ = 'MTQ';
-
     const QUANTITY_UNIT_CODE_MTR = 'MTR';
-
     const QUANTITY_UNIT_CODE_MTS = 'MTS';
-
     const QUANTITY_UNIT_CODE_MVA = 'MVA';
-
     const QUANTITY_UNIT_CODE_MWH = 'MWH';
-
     const QUANTITY_UNIT_CODE_N1 = 'N1';
-
     const QUANTITY_UNIT_CODE_N10 = 'N10';
-
     const QUANTITY_UNIT_CODE_N11 = 'N11';
-
     const QUANTITY_UNIT_CODE_N12 = 'N12';
-
     const QUANTITY_UNIT_CODE_N13 = 'N13';
-
     const QUANTITY_UNIT_CODE_N14 = 'N14';
-
     const QUANTITY_UNIT_CODE_N15 = 'N15';
-
     const QUANTITY_UNIT_CODE_N16 = 'N16';
-
     const QUANTITY_UNIT_CODE_N17 = 'N17';
-
     const QUANTITY_UNIT_CODE_N18 = 'N18';
-
     const QUANTITY_UNIT_CODE_N19 = 'N19';
-
     const QUANTITY_UNIT_CODE_N20 = 'N20';
-
     const QUANTITY_UNIT_CODE_N21 = 'N21';
-
     const QUANTITY_UNIT_CODE_N22 = 'N22';
-
     const QUANTITY_UNIT_CODE_N23 = 'N23';
-
     const QUANTITY_UNIT_CODE_N24 = 'N24';
-
     const QUANTITY_UNIT_CODE_N25 = 'N25';
-
     const QUANTITY_UNIT_CODE_N26 = 'N26';
-
     const QUANTITY_UNIT_CODE_N27 = 'N27';
-
     const QUANTITY_UNIT_CODE_N28 = 'N28';
-
     const QUANTITY_UNIT_CODE_N29 = 'N29';
-
     const QUANTITY_UNIT_CODE_N3 = 'N3';
-
     const QUANTITY_UNIT_CODE_N30 = 'N30';
-
     const QUANTITY_UNIT_CODE_N31 = 'N31';
-
     const QUANTITY_UNIT_CODE_N32 = 'N32';
-
     const QUANTITY_UNIT_CODE_N33 = 'N33';
-
     const QUANTITY_UNIT_CODE_N34 = 'N34';
-
     const QUANTITY_UNIT_CODE_N35 = 'N35';
-
     const QUANTITY_UNIT_CODE_N36 = 'N36';
-
     const QUANTITY_UNIT_CODE_N37 = 'N37';
-
     const QUANTITY_UNIT_CODE_N38 = 'N38';
-
     const QUANTITY_UNIT_CODE_N39 = 'N39';
-
     const QUANTITY_UNIT_CODE_N40 = 'N40';
-
     const QUANTITY_UNIT_CODE_N41 = 'N41';
-
     const QUANTITY_UNIT_CODE_N42 = 'N42';
-
     const QUANTITY_UNIT_CODE_N43 = 'N43';
-
     const QUANTITY_UNIT_CODE_N44 = 'N44';
-
     const QUANTITY_UNIT_CODE_N45 = 'N45';
-
     const QUANTITY_UNIT_CODE_N46 = 'N46';
-
     const QUANTITY_UNIT_CODE_N47 = 'N47';
-
     const QUANTITY_UNIT_CODE_N48 = 'N48';
-
     const QUANTITY_UNIT_CODE_N49 = 'N49';
-
     const QUANTITY_UNIT_CODE_N50 = 'N50';
-
     const QUANTITY_UNIT_CODE_N51 = 'N51';
-
     const QUANTITY_UNIT_CODE_N52 = 'N52';
-
     const QUANTITY_UNIT_CODE_N53 = 'N53';
-
     const QUANTITY_UNIT_CODE_N54 = 'N54';
-
     const QUANTITY_UNIT_CODE_N55 = 'N55';
-
     const QUANTITY_UNIT_CODE_N56 = 'N56';
-
     const QUANTITY_UNIT_CODE_N57 = 'N57';
-
     const QUANTITY_UNIT_CODE_N58 = 'N58';
-
     const QUANTITY_UNIT_CODE_N59 = 'N59';
-
     const QUANTITY_UNIT_CODE_N60 = 'N60';
-
     const QUANTITY_UNIT_CODE_N61 = 'N61';
-
     const QUANTITY_UNIT_CODE_N62 = 'N62';
-
     const QUANTITY_UNIT_CODE_N63 = 'N63';
-
     const QUANTITY_UNIT_CODE_N64 = 'N64';
-
     const QUANTITY_UNIT_CODE_N65 = 'N65';
-
     const QUANTITY_UNIT_CODE_N66 = 'N66';
-
     const QUANTITY_UNIT_CODE_N67 = 'N67';
-
     const QUANTITY_UNIT_CODE_N68 = 'N68';
-
     const QUANTITY_UNIT_CODE_N69 = 'N69';
-
     const QUANTITY_UNIT_CODE_N70 = 'N70';
-
     const QUANTITY_UNIT_CODE_N71 = 'N71';
-
     const QUANTITY_UNIT_CODE_N72 = 'N72';
-
     const QUANTITY_UNIT_CODE_N73 = 'N73';
-
     const QUANTITY_UNIT_CODE_N74 = 'N74';
-
     const QUANTITY_UNIT_CODE_N75 = 'N75';
-
     const QUANTITY_UNIT_CODE_N76 = 'N76';
-
     const QUANTITY_UNIT_CODE_N77 = 'N77';
-
     const QUANTITY_UNIT_CODE_N78 = 'N78';
-
     const QUANTITY_UNIT_CODE_N79 = 'N79';
-
     const QUANTITY_UNIT_CODE_N80 = 'N80';
-
     const QUANTITY_UNIT_CODE_N81 = 'N81';
-
     const QUANTITY_UNIT_CODE_N82 = 'N82';
-
     const QUANTITY_UNIT_CODE_N83 = 'N83';
-
     const QUANTITY_UNIT_CODE_N84 = 'N84';
-
     const QUANTITY_UNIT_CODE_N85 = 'N85';
-
     const QUANTITY_UNIT_CODE_N86 = 'N86';
-
     const QUANTITY_UNIT_CODE_N87 = 'N87';
-
     const QUANTITY_UNIT_CODE_N88 = 'N88';
-
     const QUANTITY_UNIT_CODE_N89 = 'N89';
-
     const QUANTITY_UNIT_CODE_N90 = 'N90';
-
     const QUANTITY_UNIT_CODE_N91 = 'N91';
-
     const QUANTITY_UNIT_CODE_N92 = 'N92';
-
     const QUANTITY_UNIT_CODE_N93 = 'N93';
-
     const QUANTITY_UNIT_CODE_N94 = 'N94';
-
     const QUANTITY_UNIT_CODE_N95 = 'N95';
-
     const QUANTITY_UNIT_CODE_N96 = 'N96';
-
     const QUANTITY_UNIT_CODE_N97 = 'N97';
-
     const QUANTITY_UNIT_CODE_N98 = 'N98';
-
     const QUANTITY_UNIT_CODE_N99 = 'N99';
-
     const QUANTITY_UNIT_CODE_NA = 'NA';
-
     const QUANTITY_UNIT_CODE_NAR = 'NAR';
-
     const QUANTITY_UNIT_CODE_NCL = 'NCL';
-
     const QUANTITY_UNIT_CODE__NEW = 'NEW';
-
     const QUANTITY_UNIT_CODE_NF = 'NF';
-
     const QUANTITY_UNIT_CODE_NIL = 'NIL';
-
     const QUANTITY_UNIT_CODE_NIU = 'NIU';
-
     const QUANTITY_UNIT_CODE_NL = 'NL';
-
     const QUANTITY_UNIT_CODE_NM3 = 'NM3';
-
     const QUANTITY_UNIT_CODE_NMI = 'NMI';
-
     const QUANTITY_UNIT_CODE_NMP = 'NMP';
-
     const QUANTITY_UNIT_CODE_NPT = 'NPT';
-
     const QUANTITY_UNIT_CODE_NT = 'NT';
-
     const QUANTITY_UNIT_CODE_NU = 'NU';
-
     const QUANTITY_UNIT_CODE_NX = 'NX';
-
     const QUANTITY_UNIT_CODE_OA = 'OA';
-
     const QUANTITY_UNIT_CODE_ODE = 'ODE';
-
     const QUANTITY_UNIT_CODE_OHM = 'OHM';
-
     const QUANTITY_UNIT_CODE_ON = 'ON';
-
     const QUANTITY_UNIT_CODE_ONZ = 'ONZ';
-
     const QUANTITY_UNIT_CODE_OPM = 'OPM';
-
     const QUANTITY_UNIT_CODE_OT = 'OT';
-
     const QUANTITY_UNIT_CODE_OZA = 'OZA';
-
     const QUANTITY_UNIT_CODE_OZI = 'OZI';
-
     const QUANTITY_UNIT_CODE_P1 = 'P1';
-
     const QUANTITY_UNIT_CODE_P10 = 'P10';
-
     const QUANTITY_UNIT_CODE_P11 = 'P11';
-
     const QUANTITY_UNIT_CODE_P12 = 'P12';
-
     const QUANTITY_UNIT_CODE_P13 = 'P13';
-
     const QUANTITY_UNIT_CODE_P14 = 'P14';
-
     const QUANTITY_UNIT_CODE_P15 = 'P15';
-
     const QUANTITY_UNIT_CODE_P16 = 'P16';
-
     const QUANTITY_UNIT_CODE_P17 = 'P17';
-
     const QUANTITY_UNIT_CODE_P18 = 'P18';
-
     const QUANTITY_UNIT_CODE_P19 = 'P19';
-
     const QUANTITY_UNIT_CODE_P2 = 'P2';
-
     const QUANTITY_UNIT_CODE_P20 = 'P20';
-
     const QUANTITY_UNIT_CODE_P21 = 'P21';
-
     const QUANTITY_UNIT_CODE_P22 = 'P22';
-
     const QUANTITY_UNIT_CODE_P23 = 'P23';
-
     const QUANTITY_UNIT_CODE_P24 = 'P24';
-
     const QUANTITY_UNIT_CODE_P25 = 'P25';
-
     const QUANTITY_UNIT_CODE_P26 = 'P26';
-
     const QUANTITY_UNIT_CODE_P27 = 'P27';
-
     const QUANTITY_UNIT_CODE_P28 = 'P28';
-
     const QUANTITY_UNIT_CODE_P29 = 'P29';
-
     const QUANTITY_UNIT_CODE_P30 = 'P30';
-
     const QUANTITY_UNIT_CODE_P31 = 'P31';
-
     const QUANTITY_UNIT_CODE_P32 = 'P32';
-
     const QUANTITY_UNIT_CODE_P33 = 'P33';
-
     const QUANTITY_UNIT_CODE_P34 = 'P34';
-
     const QUANTITY_UNIT_CODE_P35 = 'P35';
-
     const QUANTITY_UNIT_CODE_P36 = 'P36';
-
     const QUANTITY_UNIT_CODE_P37 = 'P37';
-
     const QUANTITY_UNIT_CODE_P38 = 'P38';
-
     const QUANTITY_UNIT_CODE_P39 = 'P39';
-
     const QUANTITY_UNIT_CODE_P40 = 'P40';
-
     const QUANTITY_UNIT_CODE_P41 = 'P41';
-
     const QUANTITY_UNIT_CODE_P42 = 'P42';
-
     const QUANTITY_UNIT_CODE_P43 = 'P43';
-
     const QUANTITY_UNIT_CODE_P44 = 'P44';
-
     const QUANTITY_UNIT_CODE_P45 = 'P45';
-
     const QUANTITY_UNIT_CODE_P46 = 'P46';
-
     const QUANTITY_UNIT_CODE_P47 = 'P47';
-
     const QUANTITY_UNIT_CODE_P48 = 'P48';
-
     const QUANTITY_UNIT_CODE_P49 = 'P49';
-
     const QUANTITY_UNIT_CODE_P5 = 'P5';
-
     const QUANTITY_UNIT_CODE_P50 = 'P50';
-
     const QUANTITY_UNIT_CODE_P51 = 'P51';
-
     const QUANTITY_UNIT_CODE_P52 = 'P52';
-
     const QUANTITY_UNIT_CODE_P53 = 'P53';
-
     const QUANTITY_UNIT_CODE_P54 = 'P54';
-
     const QUANTITY_UNIT_CODE_P55 = 'P55';
-
     const QUANTITY_UNIT_CODE_P56 = 'P56';
-
     const QUANTITY_UNIT_CODE_P57 = 'P57';
-
     const QUANTITY_UNIT_CODE_P58 = 'P58';
-
     const QUANTITY_UNIT_CODE_P59 = 'P59';
-
     const QUANTITY_UNIT_CODE_P60 = 'P60';
-
     const QUANTITY_UNIT_CODE_P61 = 'P61';
-
     const QUANTITY_UNIT_CODE_P62 = 'P62';
-
     const QUANTITY_UNIT_CODE_P63 = 'P63';
-
     const QUANTITY_UNIT_CODE_P64 = 'P64';
-
     const QUANTITY_UNIT_CODE_P65 = 'P65';
-
     const QUANTITY_UNIT_CODE_P66 = 'P66';
-
     const QUANTITY_UNIT_CODE_P67 = 'P67';
-
     const QUANTITY_UNIT_CODE_P68 = 'P68';
-
     const QUANTITY_UNIT_CODE_P69 = 'P69';
-
     const QUANTITY_UNIT_CODE_P70 = 'P70';
-
     const QUANTITY_UNIT_CODE_P71 = 'P71';
-
     const QUANTITY_UNIT_CODE_P72 = 'P72';
-
     const QUANTITY_UNIT_CODE_P73 = 'P73';
-
     const QUANTITY_UNIT_CODE_P74 = 'P74';
-
     const QUANTITY_UNIT_CODE_P75 = 'P75';
-
     const QUANTITY_UNIT_CODE_P76 = 'P76';
-
     const QUANTITY_UNIT_CODE_P77 = 'P77';
-
     const QUANTITY_UNIT_CODE_P78 = 'P78';
-
     const QUANTITY_UNIT_CODE_P79 = 'P79';
-
     const QUANTITY_UNIT_CODE_P80 = 'P80';
-
     const QUANTITY_UNIT_CODE_P81 = 'P81';
-
     const QUANTITY_UNIT_CODE_P82 = 'P82';
-
     const QUANTITY_UNIT_CODE_P83 = 'P83';
-
     const QUANTITY_UNIT_CODE_P84 = 'P84';
-
     const QUANTITY_UNIT_CODE_P85 = 'P85';
-
     const QUANTITY_UNIT_CODE_P86 = 'P86';
-
     const QUANTITY_UNIT_CODE_P87 = 'P87';
-
     const QUANTITY_UNIT_CODE_P88 = 'P88';
-
     const QUANTITY_UNIT_CODE_P89 = 'P89';
-
     const QUANTITY_UNIT_CODE_P90 = 'P90';
-
     const QUANTITY_UNIT_CODE_P91 = 'P91';
-
     const QUANTITY_UNIT_CODE_P92 = 'P92';
-
     const QUANTITY_UNIT_CODE_P93 = 'P93';
-
     const QUANTITY_UNIT_CODE_P94 = 'P94';
-
     const QUANTITY_UNIT_CODE_P95 = 'P95';
-
     const QUANTITY_UNIT_CODE_P96 = 'P96';
-
     const QUANTITY_UNIT_CODE_P97 = 'P97';
-
     const QUANTITY_UNIT_CODE_P98 = 'P98';
-
     const QUANTITY_UNIT_CODE_P99 = 'P99';
-
     const QUANTITY_UNIT_CODE_PAL = 'PAL';
-
     const QUANTITY_UNIT_CODE_PD = 'PD';
-
     const QUANTITY_UNIT_CODE_PFL = 'PFL';
-
     const QUANTITY_UNIT_CODE_PGL = 'PGL';
-
     const QUANTITY_UNIT_CODE_PI = 'PI';
-
     const QUANTITY_UNIT_CODE_PLA = 'PLA';
-
     const QUANTITY_UNIT_CODE_PO = 'PO';
-
     const QUANTITY_UNIT_CODE_PQ = 'PQ';
-
     const QUANTITY_UNIT_CODE_PR = 'PR';
-
     const QUANTITY_UNIT_CODE_PS = 'PS';
-
     const QUANTITY_UNIT_CODE_PTD = 'PTD';
-
     const QUANTITY_UNIT_CODE_PTI = 'PTI';
-
     const QUANTITY_UNIT_CODE_PTL = 'PTL';
-
     const QUANTITY_UNIT_CODE_PTN = 'PTN';
-
     const QUANTITY_UNIT_CODE_Q10 = 'Q10';
-
     const QUANTITY_UNIT_CODE_Q11 = 'Q11';
-
     const QUANTITY_UNIT_CODE_Q12 = 'Q12';
-
     const QUANTITY_UNIT_CODE_Q13 = 'Q13';
-
     const QUANTITY_UNIT_CODE_Q14 = 'Q14';
-
     const QUANTITY_UNIT_CODE_Q15 = 'Q15';
-
     const QUANTITY_UNIT_CODE_Q16 = 'Q16';
-
     const QUANTITY_UNIT_CODE_Q17 = 'Q17';
-
     const QUANTITY_UNIT_CODE_Q18 = 'Q18';
-
     const QUANTITY_UNIT_CODE_Q19 = 'Q19';
-
     const QUANTITY_UNIT_CODE_Q20 = 'Q20';
-
     const QUANTITY_UNIT_CODE_Q21 = 'Q21';
-
     const QUANTITY_UNIT_CODE_Q22 = 'Q22';
-
     const QUANTITY_UNIT_CODE_Q23 = 'Q23';
-
     const QUANTITY_UNIT_CODE_Q24 = 'Q24';
-
     const QUANTITY_UNIT_CODE_Q25 = 'Q25';
-
     const QUANTITY_UNIT_CODE_Q26 = 'Q26';
-
     const QUANTITY_UNIT_CODE_Q27 = 'Q27';
-
     const QUANTITY_UNIT_CODE_Q28 = 'Q28';
-
     const QUANTITY_UNIT_CODE_Q29 = 'Q29';
-
     const QUANTITY_UNIT_CODE_Q30 = 'Q30';
-
     const QUANTITY_UNIT_CODE_Q31 = 'Q31';
-
     const QUANTITY_UNIT_CODE_Q32 = 'Q32';
-
     const QUANTITY_UNIT_CODE_Q33 = 'Q33';
-
     const QUANTITY_UNIT_CODE_Q34 = 'Q34';
-
     const QUANTITY_UNIT_CODE_Q35 = 'Q35';
-
     const QUANTITY_UNIT_CODE_Q36 = 'Q36';
-
     const QUANTITY_UNIT_CODE_Q37 = 'Q37';
-
     const QUANTITY_UNIT_CODE_Q38 = 'Q38';
-
     const QUANTITY_UNIT_CODE_Q39 = 'Q39';
-
     const QUANTITY_UNIT_CODE_Q40 = 'Q40';
-
     const QUANTITY_UNIT_CODE_Q3 = 'Q3';
-
     const QUANTITY_UNIT_CODE_QA = 'QA';
-
     const QUANTITY_UNIT_CODE_QAN = 'QAN';
-
     const QUANTITY_UNIT_CODE_QB = 'QB';
-
     const QUANTITY_UNIT_CODE_QR = 'QR';
-
     const QUANTITY_UNIT_CODE_QTD = 'QTD';
-
     const QUANTITY_UNIT_CODE_QTI = 'QTI';
-
     const QUANTITY_UNIT_CODE_QTL = 'QTL';
-
     const QUANTITY_UNIT_CODE_QTR = 'QTR';
-
     const QUANTITY_UNIT_CODE_R1 = 'R1';
-
     const QUANTITY_UNIT_CODE_R9 = 'R9';
-
     const QUANTITY_UNIT_CODE_RH = 'RH';
-
     const QUANTITY_UNIT_CODE_RM = 'RM';
-
     const QUANTITY_UNIT_CODE_ROM = 'ROM';
-
     const QUANTITY_UNIT_CODE_RP = 'RP';
-
     const QUANTITY_UNIT_CODE_RPM = 'RPM';
-
     const QUANTITY_UNIT_CODE_RPS = 'RPS';
-
     const QUANTITY_UNIT_CODE_RT = 'RT';
-
     const QUANTITY_UNIT_CODE_S3 = 'S3';
-
     const QUANTITY_UNIT_CODE_S4 = 'S4';
-
     const QUANTITY_UNIT_CODE_SAN = 'SAN';
-
     const QUANTITY_UNIT_CODE_SCO = 'SCO';
-
     const QUANTITY_UNIT_CODE_SCR = 'SCR';
-
     const QUANTITY_UNIT_CODE_SEC = 'SEC';
-
     const QUANTITY_UNIT_CODE_SET = 'SET';
-
     const QUANTITY_UNIT_CODE_SG = 'SG';
-
     const QUANTITY_UNIT_CODE_SIE = 'SIE';
-
     const QUANTITY_UNIT_CODE_SM3 = 'SM3';
-
     const QUANTITY_UNIT_CODE_SMI = 'SMI';
-
     const QUANTITY_UNIT_CODE_SQ = 'SQ';
-
     const QUANTITY_UNIT_CODE_SQR = 'SQR';
-
     const QUANTITY_UNIT_CODE_SR = 'SR';
-
     const QUANTITY_UNIT_CODE_STC = 'STC';
-
     const QUANTITY_UNIT_CODE_STI = 'STI';
-
     const QUANTITY_UNIT_CODE_STK = 'STK';
-
     const QUANTITY_UNIT_CODE_STL = 'STL';
-
     const QUANTITY_UNIT_CODE_STN = 'STN';
-
     const QUANTITY_UNIT_CODE_STW = 'STW';
-
     const QUANTITY_UNIT_CODE_SW = 'SW';
-
     const QUANTITY_UNIT_CODE_SX = 'SX';
-
     const QUANTITY_UNIT_CODE_SYR = 'SYR';
-
     const QUANTITY_UNIT_CODE_T0 = 'T0';
-
     const QUANTITY_UNIT_CODE_T3 = 'T3';
-
     const QUANTITY_UNIT_CODE_TAH = 'TAH';
-
     const QUANTITY_UNIT_CODE_TAN = 'TAN';
-
     const QUANTITY_UNIT_CODE_TI = 'TI';
-
     const QUANTITY_UNIT_CODE_TIC = 'TIC';
-
     const QUANTITY_UNIT_CODE_TIP = 'TIP';
-
     const QUANTITY_UNIT_CODE_TKM = 'TKM';
-
     const QUANTITY_UNIT_CODE_TMS = 'TMS';
-
     const QUANTITY_UNIT_CODE_TNE = 'TNE';
-
     const QUANTITY_UNIT_CODE_TP = 'TP';
-
     const QUANTITY_UNIT_CODE_TPI = 'TPI';
-
     const QUANTITY_UNIT_CODE_TPR = 'TPR';
-
     const QUANTITY_UNIT_CODE_TQD = 'TQD';
-
     const QUANTITY_UNIT_CODE_TRL = 'TRL';
-
     const QUANTITY_UNIT_CODE_TST = 'TST';
-
     const QUANTITY_UNIT_CODE_TTS = 'TTS';
-
     const QUANTITY_UNIT_CODE_U1 = 'U1';
-
     const QUANTITY_UNIT_CODE_U2 = 'U2';
-
     const QUANTITY_UNIT_CODE_UB = 'UB';
-
     const QUANTITY_UNIT_CODE_UC = 'UC';
-
     const QUANTITY_UNIT_CODE_VA = 'VA';
-
     const QUANTITY_UNIT_CODE_VLT = 'VLT';
-
     const QUANTITY_UNIT_CODE_VP = 'VP';
-
     const QUANTITY_UNIT_CODE_W2 = 'W2';
-
     const QUANTITY_UNIT_CODE_WA = 'WA';
-
     const QUANTITY_UNIT_CODE_WB = 'WB';
-
     const QUANTITY_UNIT_CODE_WCD = 'WCD';
-
     const QUANTITY_UNIT_CODE_WE = 'WE';
-
     const QUANTITY_UNIT_CODE_WEB = 'WEB';
-
     const QUANTITY_UNIT_CODE_WEE = 'WEE';
-
     const QUANTITY_UNIT_CODE_WG = 'WG';
-
     const QUANTITY_UNIT_CODE_WHR = 'WHR';
-
     const QUANTITY_UNIT_CODE_WM = 'WM';
-
     const QUANTITY_UNIT_CODE_WSD = 'WSD';
-
     const QUANTITY_UNIT_CODE_WTT = 'WTT';
-
     const QUANTITY_UNIT_CODE_X1 = 'X1';
-
     const QUANTITY_UNIT_CODE_YDK = 'YDK';
-
     const QUANTITY_UNIT_CODE_YDQ = 'YDQ';
-
     const QUANTITY_UNIT_CODE_YRD = 'YRD';
-
     const QUANTITY_UNIT_CODE_Z11 = 'Z11';
-
     const QUANTITY_UNIT_CODE_ZP = 'ZP';
-
     const QUANTITY_UNIT_CODE_ZZ = 'ZZ';
-
     const QUANTITY_UNIT_CODE_X1_A = 'X1A';
-
     const QUANTITY_UNIT_CODE_X1_B = 'X1B';
-
     const QUANTITY_UNIT_CODE_X1_D = 'X1D';
-
     const QUANTITY_UNIT_CODE_X1_F = 'X1F';
-
     const QUANTITY_UNIT_CODE_X1_G = 'X1G';
-
     const QUANTITY_UNIT_CODE_X1_W = 'X1W';
-
     const QUANTITY_UNIT_CODE_X2_C = 'X2C';
-
     const QUANTITY_UNIT_CODE_X3_A = 'X3A';
-
     const QUANTITY_UNIT_CODE_X3_H = 'X3H';
-
     const QUANTITY_UNIT_CODE_X43 = 'X43';
-
     const QUANTITY_UNIT_CODE_X44 = 'X44';
-
     const QUANTITY_UNIT_CODE_X4_A = 'X4A';
-
     const QUANTITY_UNIT_CODE_X4_B = 'X4B';
-
     const QUANTITY_UNIT_CODE_X4_C = 'X4C';
-
     const QUANTITY_UNIT_CODE_X4_D = 'X4D';
-
     const QUANTITY_UNIT_CODE_X4_F = 'X4F';
-
     const QUANTITY_UNIT_CODE_X4_G = 'X4G';
-
     const QUANTITY_UNIT_CODE_X4_H = 'X4H';
-
     const QUANTITY_UNIT_CODE_X5_H = 'X5H';
-
     const QUANTITY_UNIT_CODE_X5_L = 'X5L';
-
     const QUANTITY_UNIT_CODE_X5_M = 'X5M';
-
     const QUANTITY_UNIT_CODE_X6_H = 'X6H';
-
     const QUANTITY_UNIT_CODE_X6_P = 'X6P';
-
     const QUANTITY_UNIT_CODE_X7_A = 'X7A';
-
     const QUANTITY_UNIT_CODE_X7_B = 'X7B';
-
     const QUANTITY_UNIT_CODE_X8_A = 'X8A';
-
     const QUANTITY_UNIT_CODE_X8_B = 'X8B';
-
     const QUANTITY_UNIT_CODE_X8_C = 'X8C';
-
     const QUANTITY_UNIT_CODE_XAA = 'XAA';
-
     const QUANTITY_UNIT_CODE_XAB = 'XAB';
-
     const QUANTITY_UNIT_CODE_XAC = 'XAC';
-
     const QUANTITY_UNIT_CODE_XAD = 'XAD';
-
     const QUANTITY_UNIT_CODE_XAE = 'XAE';
-
     const QUANTITY_UNIT_CODE_XAF = 'XAF';
-
     const QUANTITY_UNIT_CODE_XAG = 'XAG';
-
     const QUANTITY_UNIT_CODE_XAH = 'XAH';
-
     const QUANTITY_UNIT_CODE_XAI = 'XAI';
-
     const QUANTITY_UNIT_CODE_XAJ = 'XAJ';
-
     const QUANTITY_UNIT_CODE_XAL = 'XAL';
-
     const QUANTITY_UNIT_CODE_XAM = 'XAM';
-
     const QUANTITY_UNIT_CODE_XAP = 'XAP';
-
     const QUANTITY_UNIT_CODE_XAT = 'XAT';
-
     const QUANTITY_UNIT_CODE_XAV = 'XAV';
-
     const QUANTITY_UNIT_CODE_XB4 = 'XB4';
-
     const QUANTITY_UNIT_CODE_XBA = 'XBA';
-
     const QUANTITY_UNIT_CODE_XBB = 'XBB';
-
     const QUANTITY_UNIT_CODE_XBC = 'XBC';
-
     const QUANTITY_UNIT_CODE_XBD = 'XBD';
-
     const QUANTITY_UNIT_CODE_XBE = 'XBE';
-
     const QUANTITY_UNIT_CODE_XBF = 'XBF';
-
     const QUANTITY_UNIT_CODE_XBG = 'XBG';
-
     const QUANTITY_UNIT_CODE_XBH = 'XBH';
-
     const QUANTITY_UNIT_CODE_XBI = 'XBI';
-
     const QUANTITY_UNIT_CODE_XBJ = 'XBJ';
-
     const QUANTITY_UNIT_CODE_XBK = 'XBK';
-
     const QUANTITY_UNIT_CODE_XBL = 'XBL';
-
     const QUANTITY_UNIT_CODE_XBM = 'XBM';
-
     const QUANTITY_UNIT_CODE_XBN = 'XBN';
-
     const QUANTITY_UNIT_CODE_XBO = 'XBO';
-
     const QUANTITY_UNIT_CODE_XBP = 'XBP';
-
     const QUANTITY_UNIT_CODE_XBQ = 'XBQ';
-
     const QUANTITY_UNIT_CODE_XBR = 'XBR';
-
     const QUANTITY_UNIT_CODE_XBS = 'XBS';
-
     const QUANTITY_UNIT_CODE_XBT = 'XBT';
-
     const QUANTITY_UNIT_CODE_XBU = 'XBU';
-
     const QUANTITY_UNIT_CODE_XBV = 'XBV';
-
     const QUANTITY_UNIT_CODE_XBW = 'XBW';
-
     const QUANTITY_UNIT_CODE_XBX = 'XBX';
-
     const QUANTITY_UNIT_CODE_XBY = 'XBY';
-
     const QUANTITY_UNIT_CODE_XBZ = 'XBZ';
-
     const QUANTITY_UNIT_CODE_XCA = 'XCA';
-
     const QUANTITY_UNIT_CODE_XCB = 'XCB';
-
     const QUANTITY_UNIT_CODE_XCC = 'XCC';
-
     const QUANTITY_UNIT_CODE_XCD = 'XCD';
-
     const QUANTITY_UNIT_CODE_XCE = 'XCE';
-
     const QUANTITY_UNIT_CODE_XCF = 'XCF';
-
     const QUANTITY_UNIT_CODE_XCG = 'XCG';
-
     const QUANTITY_UNIT_CODE_XCH = 'XCH';
-
     const QUANTITY_UNIT_CODE_XCI = 'XCI';
-
     const QUANTITY_UNIT_CODE_XCJ = 'XCJ';
-
     const QUANTITY_UNIT_CODE_XCK = 'XCK';
-
     const QUANTITY_UNIT_CODE_XCL = 'XCL';
-
     const QUANTITY_UNIT_CODE_XCM = 'XCM';
-
     const QUANTITY_UNIT_CODE_XCN = 'XCN';
-
     const QUANTITY_UNIT_CODE_XCO = 'XCO';
-
     const QUANTITY_UNIT_CODE_XCP = 'XCP';
-
     const QUANTITY_UNIT_CODE_XCQ = 'XCQ';
-
     const QUANTITY_UNIT_CODE_XCR = 'XCR';
-
     const QUANTITY_UNIT_CODE_XCS = 'XCS';
-
     const QUANTITY_UNIT_CODE_XCT = 'XCT';
-
     const QUANTITY_UNIT_CODE_XCU = 'XCU';
-
     const QUANTITY_UNIT_CODE_XCV = 'XCV';
-
     const QUANTITY_UNIT_CODE_XCW = 'XCW';
-
     const QUANTITY_UNIT_CODE_XCX = 'XCX';
-
     const QUANTITY_UNIT_CODE_XCY = 'XCY';
-
     const QUANTITY_UNIT_CODE_XCZ = 'XCZ';
-
     const QUANTITY_UNIT_CODE_XDA = 'XDA';
-
     const QUANTITY_UNIT_CODE_XDB = 'XDB';
-
     const QUANTITY_UNIT_CODE_XDC = 'XDC';
-
     const QUANTITY_UNIT_CODE_XDG = 'XDG';
-
     const QUANTITY_UNIT_CODE_XDH = 'XDH';
-
     const QUANTITY_UNIT_CODE_XDI = 'XDI';
-
     const QUANTITY_UNIT_CODE_XDJ = 'XDJ';
-
     const QUANTITY_UNIT_CODE_XDK = 'XDK';
-
     const QUANTITY_UNIT_CODE_XDL = 'XDL';
-
     const QUANTITY_UNIT_CODE_XDM = 'XDM';
-
     const QUANTITY_UNIT_CODE_XDN = 'XDN';
-
     const QUANTITY_UNIT_CODE_XDP = 'XDP';
-
     const QUANTITY_UNIT_CODE_XDR = 'XDR';
-
     const QUANTITY_UNIT_CODE_XDS = 'XDS';
-
     const QUANTITY_UNIT_CODE_XDT = 'XDT';
-
     const QUANTITY_UNIT_CODE_XDU = 'XDU';
-
     const QUANTITY_UNIT_CODE_XDV = 'XDV';
-
     const QUANTITY_UNIT_CODE_XDW = 'XDW';
-
     const QUANTITY_UNIT_CODE_XDX = 'XDX';
-
     const QUANTITY_UNIT_CODE_XDY = 'XDY';
-
     const QUANTITY_UNIT_CODE_XEC = 'XEC';
-
     const QUANTITY_UNIT_CODE_XED = 'XED';
-
     const QUANTITY_UNIT_CODE_XEE = 'XEE';
-
     const QUANTITY_UNIT_CODE_XEF = 'XEF';
-
     const QUANTITY_UNIT_CODE_XEG = 'XEG';
-
     const QUANTITY_UNIT_CODE_XEH = 'XEH';
-
     const QUANTITY_UNIT_CODE_XEI = 'XEI';
-
     const QUANTITY_UNIT_CODE_XEN = 'XEN';
-
     const QUANTITY_UNIT_CODE_XFB = 'XFB';
-
     const QUANTITY_UNIT_CODE_XFC = 'XFC';
-
     const QUANTITY_UNIT_CODE_XFD = 'XFD';
-
     const QUANTITY_UNIT_CODE_XFE = 'XFE';
-
     const QUANTITY_UNIT_CODE_XFI = 'XFI';
-
     const QUANTITY_UNIT_CODE_XFL = 'XFL';
-
     const QUANTITY_UNIT_CODE_XFO = 'XFO';
-
     const QUANTITY_UNIT_CODE_XFP = 'XFP';
-
     const QUANTITY_UNIT_CODE_XFR = 'XFR';
-
     const QUANTITY_UNIT_CODE_XFT = 'XFT';
-
     const QUANTITY_UNIT_CODE_XFW = 'XFW';
-
     const QUANTITY_UNIT_CODE_XFX = 'XFX';
-
     const QUANTITY_UNIT_CODE_XGB = 'XGB';
-
     const QUANTITY_UNIT_CODE_XGI = 'XGI';
-
     const QUANTITY_UNIT_CODE_XGL = 'XGL';
-
     const QUANTITY_UNIT_CODE_XGR = 'XGR';
-
     const QUANTITY_UNIT_CODE_XGU = 'XGU';
-
     const QUANTITY_UNIT_CODE_XGY = 'XGY';
-
     const QUANTITY_UNIT_CODE_XGZ = 'XGZ';
-
     const QUANTITY_UNIT_CODE_XHA = 'XHA';
-
     const QUANTITY_UNIT_CODE_XHB = 'XHB';
-
     const QUANTITY_UNIT_CODE_XHC = 'XHC';
-
     const QUANTITY_UNIT_CODE_XHG = 'XHG';
-
     const QUANTITY_UNIT_CODE_XHN = 'XHN';
-
     const QUANTITY_UNIT_CODE_XHR = 'XHR';
-
     const QUANTITY_UNIT_CODE_XIA = 'XIA';
-
     const QUANTITY_UNIT_CODE_XIB = 'XIB';
-
     const QUANTITY_UNIT_CODE_XIC = 'XIC';
-
     const QUANTITY_UNIT_CODE_XID = 'XID';
-
     const QUANTITY_UNIT_CODE_XIE = 'XIE';
-
     const QUANTITY_UNIT_CODE_XIF = 'XIF';
-
     const QUANTITY_UNIT_CODE_XIG = 'XIG';
-
     const QUANTITY_UNIT_CODE_XIH = 'XIH';
-
     const QUANTITY_UNIT_CODE_XIK = 'XIK';
-
     const QUANTITY_UNIT_CODE_XIL = 'XIL';
-
     const QUANTITY_UNIT_CODE_XIN = 'XIN';
-
     const QUANTITY_UNIT_CODE_XIZ = 'XIZ';
-
     const QUANTITY_UNIT_CODE_XJB = 'XJB';
-
     const QUANTITY_UNIT_CODE_XJC = 'XJC';
-
     const QUANTITY_UNIT_CODE_XJG = 'XJG';
-
     const QUANTITY_UNIT_CODE_XJR = 'XJR';
-
     const QUANTITY_UNIT_CODE_XJT = 'XJT';
-
     const QUANTITY_UNIT_CODE_XJY = 'XJY';
-
     const QUANTITY_UNIT_CODE_XKG = 'XKG';
-
     const QUANTITY_UNIT_CODE_XKI = 'XKI';
-
     const QUANTITY_UNIT_CODE_XLE = 'XLE';
-
     const QUANTITY_UNIT_CODE_XLG = 'XLG';
-
     const QUANTITY_UNIT_CODE_XLT = 'XLT';
-
     const QUANTITY_UNIT_CODE_XLU = 'XLU';
-
     const QUANTITY_UNIT_CODE_XLV = 'XLV';
-
     const QUANTITY_UNIT_CODE_XLZ = 'XLZ';
-
     const QUANTITY_UNIT_CODE_XMA = 'XMA';
-
     const QUANTITY_UNIT_CODE_XMB = 'XMB';
-
     const QUANTITY_UNIT_CODE_XMC = 'XMC';
-
     const QUANTITY_UNIT_CODE_XME = 'XME';
-
     const QUANTITY_UNIT_CODE_XMR = 'XMR';
-
     const QUANTITY_UNIT_CODE_XMS = 'XMS';
-
     const QUANTITY_UNIT_CODE_XMT = 'XMT';
-
     const QUANTITY_UNIT_CODE_XMW = 'XMW';
-
     const QUANTITY_UNIT_CODE_XMX = 'XMX';
-
     const QUANTITY_UNIT_CODE_XNA = 'XNA';
-
     const QUANTITY_UNIT_CODE_XNE = 'XNE';
-
     const QUANTITY_UNIT_CODE_XNF = 'XNF';
-
     const QUANTITY_UNIT_CODE_XNG = 'XNG';
-
     const QUANTITY_UNIT_CODE_XNS = 'XNS';
-
     const QUANTITY_UNIT_CODE_XNT = 'XNT';
-
     const QUANTITY_UNIT_CODE_XNU = 'XNU';
-
     const QUANTITY_UNIT_CODE_XNV = 'XNV';
-
     const QUANTITY_UNIT_CODE_XOA = 'XOA';
-
     const QUANTITY_UNIT_CODE_XOB = 'XOB';
-
     const QUANTITY_UNIT_CODE_XOC = 'XOC';
-
     const QUANTITY_UNIT_CODE_XOD = 'XOD';
-
     const QUANTITY_UNIT_CODE_XOE = 'XOE';
-
     const QUANTITY_UNIT_CODE_XOF = 'XOF';
-
     const QUANTITY_UNIT_CODE_XOK = 'XOK';
-
     const QUANTITY_UNIT_CODE_XOT = 'XOT';
-
     const QUANTITY_UNIT_CODE_XOU = 'XOU';
-
     const QUANTITY_UNIT_CODE_XP2 = 'XP2';
-
     const QUANTITY_UNIT_CODE_XPA = 'XPA';
-
     const QUANTITY_UNIT_CODE_XPB = 'XPB';
-
     const QUANTITY_UNIT_CODE_XPC = 'XPC';
-
     const QUANTITY_UNIT_CODE_XPD = 'XPD';
-
     const QUANTITY_UNIT_CODE_XPE = 'XPE';
-
     const QUANTITY_UNIT_CODE_XPF = 'XPF';
-
     const QUANTITY_UNIT_CODE_XPG = 'XPG';
-
     const QUANTITY_UNIT_CODE_XPH = 'XPH';
-
     const QUANTITY_UNIT_CODE_XPI = 'XPI';
-
     const QUANTITY_UNIT_CODE_XPJ = 'XPJ';
-
     const QUANTITY_UNIT_CODE_XPK = 'XPK';
-
     const QUANTITY_UNIT_CODE_XPL = 'XPL';
-
     const QUANTITY_UNIT_CODE_XPN = 'XPN';
-
     const QUANTITY_UNIT_CODE_XPO = 'XPO';
-
     const QUANTITY_UNIT_CODE_XPP = 'XPP';
-
     const QUANTITY_UNIT_CODE_XPR = 'XPR';
-
     const QUANTITY_UNIT_CODE_XPT = 'XPT';
-
     const QUANTITY_UNIT_CODE_XPU = 'XPU';
-
     const QUANTITY_UNIT_CODE_XPV = 'XPV';
-
     const QUANTITY_UNIT_CODE_XPX = 'XPX';
-
     const QUANTITY_UNIT_CODE_XPY = 'XPY';
-
     const QUANTITY_UNIT_CODE_XPZ = 'XPZ';
-
     const QUANTITY_UNIT_CODE_XQA = 'XQA';
-
     const QUANTITY_UNIT_CODE_XQB = 'XQB';
-
     const QUANTITY_UNIT_CODE_XQC = 'XQC';
-
     const QUANTITY_UNIT_CODE_XQD = 'XQD';
-
     const QUANTITY_UNIT_CODE_XQF = 'XQF';
-
     const QUANTITY_UNIT_CODE_XQG = 'XQG';
-
     const QUANTITY_UNIT_CODE_XQH = 'XQH';
-
     const QUANTITY_UNIT_CODE_XQJ = 'XQJ';
-
     const QUANTITY_UNIT_CODE_XQK = 'XQK';
-
     const QUANTITY_UNIT_CODE_XQL = 'XQL';
-
     const QUANTITY_UNIT_CODE_XQM = 'XQM';
-
     const QUANTITY_UNIT_CODE_XQN = 'XQN';
-
     const QUANTITY_UNIT_CODE_XQP = 'XQP';
-
     const QUANTITY_UNIT_CODE_XQQ = 'XQQ';
-
     const QUANTITY_UNIT_CODE_XQR = 'XQR';
-
     const QUANTITY_UNIT_CODE_XQS = 'XQS';
-
     const QUANTITY_UNIT_CODE_XRD = 'XRD';
-
     const QUANTITY_UNIT_CODE_XRG = 'XRG';
-
     const QUANTITY_UNIT_CODE_XRJ = 'XRJ';
-
     const QUANTITY_UNIT_CODE_XRK = 'XRK';
-
     const QUANTITY_UNIT_CODE_XRL = 'XRL';
-
     const QUANTITY_UNIT_CODE_XRO = 'XRO';
-
     const QUANTITY_UNIT_CODE_XRT = 'XRT';
-
     const QUANTITY_UNIT_CODE_XRZ = 'XRZ';
-
     const QUANTITY_UNIT_CODE_XSA = 'XSA';
-
     const QUANTITY_UNIT_CODE_XSB = 'XSB';
-
     const QUANTITY_UNIT_CODE_XSC = 'XSC';
-
     const QUANTITY_UNIT_CODE_XSD = 'XSD';
-
     const QUANTITY_UNIT_CODE_XSE = 'XSE';
-
     const QUANTITY_UNIT_CODE_XSH = 'XSH';
-
     const QUANTITY_UNIT_CODE_XSI = 'XSI';
-
     const QUANTITY_UNIT_CODE_XSK = 'XSK';
-
     const QUANTITY_UNIT_CODE_XSL = 'XSL';
-
     const QUANTITY_UNIT_CODE_XSM = 'XSM';
-
     const QUANTITY_UNIT_CODE_XSO = 'XSO';
-
     const QUANTITY_UNIT_CODE_XSP = 'XSP';
-
     const QUANTITY_UNIT_CODE_XSS = 'XSS';
-
     const QUANTITY_UNIT_CODE_XST = 'XST';
-
     const QUANTITY_UNIT_CODE_XSU = 'XSU';
-
     const QUANTITY_UNIT_CODE_XSV = 'XSV';
-
     const QUANTITY_UNIT_CODE_XSW = 'XSW';
-
     const QUANTITY_UNIT_CODE_XSX = 'XSX';
-
     const QUANTITY_UNIT_CODE_XSY = 'XSY';
-
     const QUANTITY_UNIT_CODE_XSZ = 'XSZ';
-
     const QUANTITY_UNIT_CODE_XT1 = 'XT1';
-
     const QUANTITY_UNIT_CODE_XTB = 'XTB';
-
     const QUANTITY_UNIT_CODE_XTC = 'XTC';
-
     const QUANTITY_UNIT_CODE_XTD = 'XTD';
-
     const QUANTITY_UNIT_CODE_XTE = 'XTE';
-
     const QUANTITY_UNIT_CODE_XTG = 'XTG';
-
     const QUANTITY_UNIT_CODE_XTI = 'XTI';
-
     const QUANTITY_UNIT_CODE_XTK = 'XTK';
-
     const QUANTITY_UNIT_CODE_XTL = 'XTL';
-
     const QUANTITY_UNIT_CODE_XTN = 'XTN';
-
     const QUANTITY_UNIT_CODE_XTO = 'XTO';
-
     const QUANTITY_UNIT_CODE_XTR = 'XTR';
-
     const QUANTITY_UNIT_CODE_XTS = 'XTS';
-
     const QUANTITY_UNIT_CODE_XTT = 'XTT';
-
     const QUANTITY_UNIT_CODE_XTU = 'XTU';
-
     const QUANTITY_UNIT_CODE_XTV = 'XTV';
-
     const QUANTITY_UNIT_CODE_XTW = 'XTW';
-
     const QUANTITY_UNIT_CODE_XTY = 'XTY';
-
     const QUANTITY_UNIT_CODE_XTZ = 'XTZ';
-
     const QUANTITY_UNIT_CODE_XUC = 'XUC';
-
     const QUANTITY_UNIT_CODE_XUN = 'XUN';
-
     const QUANTITY_UNIT_CODE_XVA = 'XVA';
-
     const QUANTITY_UNIT_CODE_XVG = 'XVG';
-
     const QUANTITY_UNIT_CODE_XVI = 'XVI';
-
     const QUANTITY_UNIT_CODE_XVK = 'XVK';
-
     const QUANTITY_UNIT_CODE_XVL = 'XVL';
-
     const QUANTITY_UNIT_CODE_XVO = 'XVO';
-
     const QUANTITY_UNIT_CODE_XVP = 'XVP';
-
     const QUANTITY_UNIT_CODE_XVQ = 'XVQ';
-
     const QUANTITY_UNIT_CODE_XVN = 'XVN';
-
     const QUANTITY_UNIT_CODE_XVR = 'XVR';
-
     const QUANTITY_UNIT_CODE_XVS = 'XVS';
-
     const QUANTITY_UNIT_CODE_XVY = 'XVY';
-
     const QUANTITY_UNIT_CODE_XWA = 'XWA';
-
     const QUANTITY_UNIT_CODE_XWB = 'XWB';
-
     const QUANTITY_UNIT_CODE_XWC = 'XWC';
-
     const QUANTITY_UNIT_CODE_XWD = 'XWD';
-
     const QUANTITY_UNIT_CODE_XWF = 'XWF';
-
     const QUANTITY_UNIT_CODE_XWG = 'XWG';
-
     const QUANTITY_UNIT_CODE_XWH = 'XWH';
-
     const QUANTITY_UNIT_CODE_XWJ = 'XWJ';
-
     const QUANTITY_UNIT_CODE_XWK = 'XWK';
-
     const QUANTITY_UNIT_CODE_XWL = 'XWL';
-
     const QUANTITY_UNIT_CODE_XWM = 'XWM';
-
     const QUANTITY_UNIT_CODE_XWN = 'XWN';
-
     const QUANTITY_UNIT_CODE_XWP = 'XWP';
-
     const QUANTITY_UNIT_CODE_XWQ = 'XWQ';
-
     const QUANTITY_UNIT_CODE_XWR = 'XWR';
-
     const QUANTITY_UNIT_CODE_XWS = 'XWS';
-
     const QUANTITY_UNIT_CODE_XWT = 'XWT';
-
     const QUANTITY_UNIT_CODE_XWU = 'XWU';
-
     const QUANTITY_UNIT_CODE_XWV = 'XWV';
-
     const QUANTITY_UNIT_CODE_XWW = 'XWW';
-
     const QUANTITY_UNIT_CODE_XWX = 'XWX';
-
     const QUANTITY_UNIT_CODE_XWY = 'XWY';
-
     const QUANTITY_UNIT_CODE_XWZ = 'XWZ';
-
     const QUANTITY_UNIT_CODE_XXA = 'XXA';
-
     const QUANTITY_UNIT_CODE_XXB = 'XXB';
-
     const QUANTITY_UNIT_CODE_XXC = 'XXC';
-
     const QUANTITY_UNIT_CODE_XXD = 'XXD';
-
     const QUANTITY_UNIT_CODE_XXF = 'XXF';
-
     const QUANTITY_UNIT_CODE_XXG = 'XXG';
-
     const QUANTITY_UNIT_CODE_XXH = 'XXH';
-
     const QUANTITY_UNIT_CODE_XXJ = 'XXJ';
-
     const QUANTITY_UNIT_CODE_XXK = 'XXK';
-
     const QUANTITY_UNIT_CODE_XYA = 'XYA';
-
     const QUANTITY_UNIT_CODE_XYB = 'XYB';
-
     const QUANTITY_UNIT_CODE_XYC = 'XYC';
-
     const QUANTITY_UNIT_CODE_XYD = 'XYD';
-
     const QUANTITY_UNIT_CODE_XYF = 'XYF';
-
     const QUANTITY_UNIT_CODE_XYG = 'XYG';
-
     const QUANTITY_UNIT_CODE_XYH = 'XYH';
-
     const QUANTITY_UNIT_CODE_XYJ = 'XYJ';
-
     const QUANTITY_UNIT_CODE_XYK = 'XYK';
-
     const QUANTITY_UNIT_CODE_XYL = 'XYL';
-
     const QUANTITY_UNIT_CODE_XYM = 'XYM';
-
     const QUANTITY_UNIT_CODE_XYN = 'XYN';
-
     const QUANTITY_UNIT_CODE_XYP = 'XYP';
-
     const QUANTITY_UNIT_CODE_XYQ = 'XYQ';
-
     const QUANTITY_UNIT_CODE_XYR = 'XYR';
-
     const QUANTITY_UNIT_CODE_XYS = 'XYS';
-
     const QUANTITY_UNIT_CODE_XYT = 'XYT';
-
     const QUANTITY_UNIT_CODE_XYV = 'XYV';
-
     const QUANTITY_UNIT_CODE_XYW = 'XYW';
-
     const QUANTITY_UNIT_CODE_XYX = 'XYX';
-
     const QUANTITY_UNIT_CODE_XYY = 'XYY';
-
     const QUANTITY_UNIT_CODE_XYZ = 'XYZ';
-
     const QUANTITY_UNIT_CODE_XZA = 'XZA';
-
     const QUANTITY_UNIT_CODE_XZB = 'XZB';
-
     const QUANTITY_UNIT_CODE_XZC = 'XZC';
-
     const QUANTITY_UNIT_CODE_XZD = 'XZD';
-
     const QUANTITY_UNIT_CODE_XZF = 'XZF';
-
     const QUANTITY_UNIT_CODE_XZG = 'XZG';
-
     const QUANTITY_UNIT_CODE_XZH = 'XZH';
-
     const QUANTITY_UNIT_CODE_XZJ = 'XZJ';
-
     const QUANTITY_UNIT_CODE_XZK = 'XZK';
-
     const QUANTITY_UNIT_CODE_XZL = 'XZL';
-
     const QUANTITY_UNIT_CODE_XZM = 'XZM';
-
     const QUANTITY_UNIT_CODE_XZN = 'XZN';
-
     const QUANTITY_UNIT_CODE_XZP = 'XZP';
-
     const QUANTITY_UNIT_CODE_XZQ = 'XZQ';
-
     const QUANTITY_UNIT_CODE_XZR = 'XZR';
-
     const QUANTITY_UNIT_CODE_XZS = 'XZS';
-
     const QUANTITY_UNIT_CODE_XZT = 'XZT';
-
     const QUANTITY_UNIT_CODE_XZU = 'XZU';
-
     const QUANTITY_UNIT_CODE_XZV = 'XZV';
-
     const QUANTITY_UNIT_CODE_XZW = 'XZW';
-
     const QUANTITY_UNIT_CODE_XZX = 'XZX';
-
     const QUANTITY_UNIT_CODE_XZY = 'XZY';
-
     const QUANTITY_UNIT_CODE_XZZ = 'XZZ';
-
     const QUANTITY_UNIT_CODE__04 = '04';
-
     const QUANTITY_UNIT_CODE__05 = '05';
-
     const QUANTITY_UNIT_CODE__08 = '08';
-
     const QUANTITY_UNIT_CODE__16 = '16';
-
     const QUANTITY_UNIT_CODE__17 = '17';
-
     const QUANTITY_UNIT_CODE__18 = '18';
-
     const QUANTITY_UNIT_CODE__19 = '19';
-
     const QUANTITY_UNIT_CODE__26 = '26';
-
     const QUANTITY_UNIT_CODE__29 = '29';
-
     const QUANTITY_UNIT_CODE__30 = '30';
-
     const QUANTITY_UNIT_CODE__31 = '31';
-
     const QUANTITY_UNIT_CODE__32 = '32';
-
     const QUANTITY_UNIT_CODE__36 = '36';
-
     const QUANTITY_UNIT_CODE__43 = '43';
-
     const QUANTITY_UNIT_CODE__44 = '44';
-
     const QUANTITY_UNIT_CODE__45 = '45';
-
     const QUANTITY_UNIT_CODE__46 = '46';
-
     const QUANTITY_UNIT_CODE__47 = '47';
-
     const QUANTITY_UNIT_CODE__48 = '48';
-
     const QUANTITY_UNIT_CODE__53 = '53';
-
     const QUANTITY_UNIT_CODE__54 = '54';
-
     const QUANTITY_UNIT_CODE__62 = '62';
-
     const QUANTITY_UNIT_CODE__63 = '63';
-
     const QUANTITY_UNIT_CODE__64 = '64';
-
     const QUANTITY_UNIT_CODE__66 = '66';
-
     const QUANTITY_UNIT_CODE__69 = '69';
-
     const QUANTITY_UNIT_CODE__71 = '71';
-
     const QUANTITY_UNIT_CODE__72 = '72';
-
     const QUANTITY_UNIT_CODE__73 = '73';
-
     const QUANTITY_UNIT_CODE__76 = '76';
-
     const QUANTITY_UNIT_CODE__78 = '78';
-
     const QUANTITY_UNIT_CODE__84 = '84';
-
     const QUANTITY_UNIT_CODE__90 = '90';
-
     const QUANTITY_UNIT_CODE__92 = '92';
-
     const QUANTITY_UNIT_CODE__93 = '93';
-
     const QUANTITY_UNIT_CODE__94 = '94';
-
     const QUANTITY_UNIT_CODE__95 = '95';
-
     const QUANTITY_UNIT_CODE__96 = '96';
-
     const QUANTITY_UNIT_CODE__97 = '97';
-
     const QUANTITY_UNIT_CODE__98 = '98';
-
     const QUANTITY_UNIT_CODE__1_A = '1A';
-
     const QUANTITY_UNIT_CODE__1_B = '1B';
-
     const QUANTITY_UNIT_CODE__1_C = '1C';
-
     const QUANTITY_UNIT_CODE__1_D = '1D';
-
     const QUANTITY_UNIT_CODE__1_E = '1E';
-
     const QUANTITY_UNIT_CODE__1_F = '1F';
-
     const QUANTITY_UNIT_CODE__1_G = '1G';
-
     const QUANTITY_UNIT_CODE__1_H = '1H';
-
     const QUANTITY_UNIT_CODE__1_J = '1J';
-
     const QUANTITY_UNIT_CODE__1_K = '1K';
-
     const QUANTITY_UNIT_CODE__1_L = '1L';
-
     const QUANTITY_UNIT_CODE__1_M = '1M';
-
     const QUANTITY_UNIT_CODE__1_X = '1X';
-
     const QUANTITY_UNIT_CODE__2_V = '2V';
-
     const QUANTITY_UNIT_CODE__2_W = '2W';
-
     const QUANTITY_UNIT_CODE__3_E = '3E';
-
     const QUANTITY_UNIT_CODE__3_G = '3G';
-
     const QUANTITY_UNIT_CODE__3_H = '3H';
-
     const QUANTITY_UNIT_CODE__3_I = '3I';
-
     const QUANTITY_UNIT_CODE__4_A = '4A';
-
     const QUANTITY_UNIT_CODE__4_B = '4B';
-
     const QUANTITY_UNIT_CODE__4_E = '4E';
-
     const QUANTITY_UNIT_CODE__5_C = '5C';
-
     const QUANTITY_UNIT_CODE__5_F = '5F';
-
     const QUANTITY_UNIT_CODE__5_G = '5G';
-
     const QUANTITY_UNIT_CODE__5_H = '5H';
-
     const QUANTITY_UNIT_CODE__5_I = '5I';
-
     const QUANTITY_UNIT_CODE__5_K = '5K';
-
     const QUANTITY_UNIT_CODE__5_P = '5P';
-
     const QUANTITY_UNIT_CODE__5_Q = '5Q';
-
     const QUANTITY_UNIT_CODE_A1 = 'A1';
-
     const QUANTITY_UNIT_CODE_A25 = 'A25';
-
     const QUANTITY_UNIT_CODE_A50 = 'A50';
-
     const QUANTITY_UNIT_CODE_A51 = 'A51';
-
     const QUANTITY_UNIT_CODE_A52 = 'A52';
-
     const QUANTITY_UNIT_CODE_A57 = 'A57';
-
     const QUANTITY_UNIT_CODE_A58 = 'A58';
-
     const QUANTITY_UNIT_CODE_A60 = 'A60';
-
     const QUANTITY_UNIT_CODE_A61 = 'A61';
-
     const QUANTITY_UNIT_CODE_A62 = 'A62';
-
     const QUANTITY_UNIT_CODE_A63 = 'A63';
-
     const QUANTITY_UNIT_CODE_A64 = 'A64';
-
     const QUANTITY_UNIT_CODE_A65 = 'A65';
-
     const QUANTITY_UNIT_CODE_A66 = 'A66';
-
     const QUANTITY_UNIT_CODE_A67 = 'A67';
-
     const QUANTITY_UNIT_CODE_A77 = 'A77';
-
     const QUANTITY_UNIT_CODE_A78 = 'A78';
-
     const QUANTITY_UNIT_CODE_A79 = 'A79';
-
     const QUANTITY_UNIT_CODE_A80 = 'A80';
-
     const QUANTITY_UNIT_CODE_A81 = 'A81';
-
     const QUANTITY_UNIT_CODE_A82 = 'A82';
-
     const QUANTITY_UNIT_CODE_A83 = 'A83';
-
     const QUANTITY_UNIT_CODE_AJ = 'AJ';
-
     const QUANTITY_UNIT_CODE_AM = 'AM';
-
     const QUANTITY_UNIT_CODE_AP = 'AP';
-
     const QUANTITY_UNIT_CODE_AR = 'AR';
-
     const QUANTITY_UNIT_CODE_ARE = 'ARE';
-
     const QUANTITY_UNIT_CODE_ATT = 'ATT';
-
     const QUANTITY_UNIT_CODE_AV = 'AV';
-
     const QUANTITY_UNIT_CODE_AW = 'AW';
-
     const QUANTITY_UNIT_CODE_B0 = 'B0';
-
     const QUANTITY_UNIT_CODE_B2 = 'B2';
-
     const QUANTITY_UNIT_CODE_B36 = 'B36';
-
     const QUANTITY_UNIT_CODE_B37 = 'B37';
-
     const QUANTITY_UNIT_CODE_B38 = 'B38';
-
     const QUANTITY_UNIT_CODE_B39 = 'B39';
-
     const QUANTITY_UNIT_CODE_B40 = 'B40';
-
     const QUANTITY_UNIT_CODE_B5 = 'B5';
-
     const QUANTITY_UNIT_CODE_B51 = 'B51';
-
     const QUANTITY_UNIT_CODE_B6 = 'B6';
-
     const QUANTITY_UNIT_CODE_B65 = 'B65';
-
     const QUANTITY_UNIT_CODE_B9 = 'B9';
-
     const QUANTITY_UNIT_CODE_BD = 'BD';
-
     const QUANTITY_UNIT_CODE_BE = 'BE';
-
     const QUANTITY_UNIT_CODE_BG = 'BG';
-
     const QUANTITY_UNIT_CODE_BH = 'BH';
-
     const QUANTITY_UNIT_CODE_BJ = 'BJ';
-
     const QUANTITY_UNIT_CODE_BK = 'BK';
-
     const QUANTITY_UNIT_CODE_BL = 'BL';
-
     const QUANTITY_UNIT_CODE_BO = 'BO';
-
     const QUANTITY_UNIT_CODE_BR = 'BR';
-
     const QUANTITY_UNIT_CODE_BT = 'BT';
-
     const QUANTITY_UNIT_CODE_BW = 'BW';
-
     const QUANTITY_UNIT_CODE_BX = 'BX';
-
     const QUANTITY_UNIT_CODE_BZ = 'BZ';
-
     const QUANTITY_UNIT_CODE_C1 = 'C1';
-
     const QUANTITY_UNIT_CODE_C2 = 'C2';
-
     const QUANTITY_UNIT_CODE_C4 = 'C4';
-
     const QUANTITY_UNIT_CODE_C5 = 'C5';
-
     const QUANTITY_UNIT_CODE_C6 = 'C6';
-
     const QUANTITY_UNIT_CODE_C77 = 'C77';
-
     const QUANTITY_UNIT_CODE_C98 = 'C98';
-
     const QUANTITY_UNIT_CODE_CA = 'CA';
-
     const QUANTITY_UNIT_CODE_CH = 'CH';
-
     const QUANTITY_UNIT_CODE_CJ = 'CJ';
-
     const QUANTITY_UNIT_CODE_CK = 'CK';
-
     const QUANTITY_UNIT_CODE_CL = 'CL';
-
     const QUANTITY_UNIT_CODE_CO = 'CO';
-
     const QUANTITY_UNIT_CODE_CQ = 'CQ';
-
     const QUANTITY_UNIT_CODE_CR = 'CR';
-
     const QUANTITY_UNIT_CODE_CS = 'CS';
-
     const QUANTITY_UNIT_CODE_CT = 'CT';
-
     const QUANTITY_UNIT_CODE_CU = 'CU';
-
     const QUANTITY_UNIT_CODE_CV = 'CV';
-
     const QUANTITY_UNIT_CODE_CY = 'CY';
-
     const QUANTITY_UNIT_CODE_CZ = 'CZ';
-
     const QUANTITY_UNIT_CODE_D14 = 'D14';
-
     const QUANTITY_UNIT_CODE_D28 = 'D28';
-
     const QUANTITY_UNIT_CODE_D35 = 'D35';
-
     const QUANTITY_UNIT_CODE_D37 = 'D37';
-
     const QUANTITY_UNIT_CODE_D38 = 'D38';
-
     const QUANTITY_UNIT_CODE_D39 = 'D39';
-
     const QUANTITY_UNIT_CODE_D40 = 'D40';
-
     const QUANTITY_UNIT_CODE_D64 = 'D64';
-
     const QUANTITY_UNIT_CODE_D66 = 'D66';
-
     const QUANTITY_UNIT_CODE_D67 = 'D67';
-
     const QUANTITY_UNIT_CODE_D7 = 'D7';
-
     const QUANTITY_UNIT_CODE_D70 = 'D70';
-
     const QUANTITY_UNIT_CODE_D71 = 'D71';
-
     const QUANTITY_UNIT_CODE_D72 = 'D72';
-
     const QUANTITY_UNIT_CODE_D75 = 'D75';
-
     const QUANTITY_UNIT_CODE_D76 = 'D76';
-
     const QUANTITY_UNIT_CODE_D79 = 'D79';
-
     const QUANTITY_UNIT_CODE_D8 = 'D8';
-
     const QUANTITY_UNIT_CODE_D9 = 'D9';
-
     const QUANTITY_UNIT_CODE_D90 = 'D90';
-
     const QUANTITY_UNIT_CODE_D92 = 'D92';
-
     const QUANTITY_UNIT_CODE_D96 = 'D96';
-
     const QUANTITY_UNIT_CODE_D97 = 'D97';
-
     const QUANTITY_UNIT_CODE_D98 = 'D98';
-
     const QUANTITY_UNIT_CODE_D99 = 'D99';
-
     const QUANTITY_UNIT_CODE_DC = 'DC';
-
     const QUANTITY_UNIT_CODE_DE = 'DE';
-
     const QUANTITY_UNIT_CODE_DI = 'DI';
-
     const QUANTITY_UNIT_CODE_DQ = 'DQ';
-
     const QUANTITY_UNIT_CODE_DR = 'DR';
-
     const QUANTITY_UNIT_CODE_DRM = 'DRM';
-
     const QUANTITY_UNIT_CODE_DS = 'DS';
-
     const QUANTITY_UNIT_CODE_DU = 'DU';
-
     const QUANTITY_UNIT_CODE_DX = 'DX';
-
     const QUANTITY_UNIT_CODE_DY = 'DY';
-
     const QUANTITY_UNIT_CODE_E2 = 'E2';
-
     const QUANTITY_UNIT_CODE_E3 = 'E3';
-
     const QUANTITY_UNIT_CODE_E5 = 'E5';
-
     const QUANTITY_UNIT_CODE_EC = 'EC';
-
     const QUANTITY_UNIT_CODE_EP = 'EP';
-
     const QUANTITY_UNIT_CODE_EV = 'EV';
-
     const QUANTITY_UNIT_CODE_F1 = 'F1';
-
     const QUANTITY_UNIT_CODE_F9 = 'F9';
-
     const QUANTITY_UNIT_CODE_FB = 'FB';
-
     const QUANTITY_UNIT_CODE_FD = 'FD';
-
     const QUANTITY_UNIT_CODE_FE = 'FE';
-
     const QUANTITY_UNIT_CODE_FG = 'FG';
-
     const QUANTITY_UNIT_CODE_FM = 'FM';
-
     const QUANTITY_UNIT_CODE_G7 = 'G7';
-
     const QUANTITY_UNIT_CODE_GC = 'GC';
-
     const QUANTITY_UNIT_CODE_GD = 'GD';
-
     const QUANTITY_UNIT_CODE_GH = 'GH';
-
     const QUANTITY_UNIT_CODE_GK = 'GK';
-
     const QUANTITY_UNIT_CODE_GN = 'GN';
-
     const QUANTITY_UNIT_CODE_GRT = 'GRT';
-
     const QUANTITY_UNIT_CODE_GT = 'GT';
-
     const QUANTITY_UNIT_CODE_GW = 'GW';
-
     const QUANTITY_UNIT_CODE_GY = 'GY';
-
     const QUANTITY_UNIT_CODE_GZ = 'GZ';
-
     const QUANTITY_UNIT_CODE_H1 = 'H1';
-
     const QUANTITY_UNIT_CODE_H2 = 'H2';
-
     const QUANTITY_UNIT_CODE_HAR = 'HAR';
-
     const QUANTITY_UNIT_CODE_HD = 'HD';
-
     const QUANTITY_UNIT_CODE_HE = 'HE';
-
     const QUANTITY_UNIT_CODE_HF = 'HF';
-
     const QUANTITY_UNIT_CODE_HI = 'HI';
-
     const QUANTITY_UNIT_CODE_HJ = 'HJ';
-
     const QUANTITY_UNIT_CODE_HK = 'HK';
-
     const QUANTITY_UNIT_CODE_HL = 'HL';
-
     const QUANTITY_UNIT_CODE_HN = 'HN';
-
     const QUANTITY_UNIT_CODE_HO = 'HO';
-
     const QUANTITY_UNIT_CODE_HP = 'HP';
-
     const QUANTITY_UNIT_CODE_HS = 'HS';
-
     const QUANTITY_UNIT_CODE_HT = 'HT';
-
     const QUANTITY_UNIT_CODE_HY = 'HY';
-
     const QUANTITY_UNIT_CODE_IC = 'IC';
-
     const QUANTITY_UNIT_CODE__IF = 'IF';
-
     const QUANTITY_UNIT_CODE_II = 'II';
-
     const QUANTITY_UNIT_CODE_IL = 'IL';
-
     const QUANTITY_UNIT_CODE_IM = 'IM';
-
     const QUANTITY_UNIT_CODE_IP = 'IP';
-
     const QUANTITY_UNIT_CODE_IT = 'IT';
-
     const QUANTITY_UNIT_CODE_JB = 'JB';
-
     const QUANTITY_UNIT_CODE_JG = 'JG';
-
     const QUANTITY_UNIT_CODE_JO = 'JO';
-
     const QUANTITY_UNIT_CODE_JR = 'JR';
-
     const QUANTITY_UNIT_CODE_K5 = 'K5';
-
     const QUANTITY_UNIT_CODE_KD = 'KD';
-
     const QUANTITY_UNIT_CODE_KF = 'KF';
-
     const QUANTITY_UNIT_CODE_KG = 'KG';
-
     const QUANTITY_UNIT_CODE_KS = 'KS';
-
     const QUANTITY_UNIT_CODE_KTM = 'KTM';
-
     const QUANTITY_UNIT_CODE_LC = 'LC';
-
     const QUANTITY_UNIT_CODE_LE = 'LE';
-
     const QUANTITY_UNIT_CODE_LI = 'LI';
-
     const QUANTITY_UNIT_CODE_LJ = 'LJ';
-
     const QUANTITY_UNIT_CODE_LX = 'LX';
-
     const QUANTITY_UNIT_CODE_M0 = 'M0';
-
     const QUANTITY_UNIT_CODE_MA = 'MA';
-
     const QUANTITY_UNIT_CODE_MF = 'MF';
-
     const QUANTITY_UNIT_CODE_MK = 'MK';
-
     const QUANTITY_UNIT_CODE_MQ = 'MQ';
-
     const QUANTITY_UNIT_CODE_MT = 'MT';
-
     const QUANTITY_UNIT_CODE_MV = 'MV';
-
     const QUANTITY_UNIT_CODE_N2 = 'N2';
-
     const QUANTITY_UNIT_CODE_NB = 'NB';
-
     const QUANTITY_UNIT_CODE_NBB = 'NBB';
-
     const QUANTITY_UNIT_CODE_NC = 'NC';
-
     const QUANTITY_UNIT_CODE_ND = 'ND';
-
     const QUANTITY_UNIT_CODE_NE = 'NE';
-
     const QUANTITY_UNIT_CODE_NG = 'NG';
-
     const QUANTITY_UNIT_CODE_NH = 'NH';
-
     const QUANTITY_UNIT_CODE_NI = 'NI';
-
     const QUANTITY_UNIT_CODE_NJ = 'NJ';
-
     const QUANTITY_UNIT_CODE_NN = 'NN';
-
     const QUANTITY_UNIT_CODE_NPL = 'NPL';
-
     const QUANTITY_UNIT_CODE_NPR = 'NPR';
-
     const QUANTITY_UNIT_CODE_NQ = 'NQ';
-
     const QUANTITY_UNIT_CODE_NR = 'NR';
-
     const QUANTITY_UNIT_CODE_NRL = 'NRL';
-
     const QUANTITY_UNIT_CODE_NTT = 'NTT';
-
     const QUANTITY_UNIT_CODE_NV = 'NV';
-
     const QUANTITY_UNIT_CODE_NY = 'NY';
-
     const QUANTITY_UNIT_CODE_OP = 'OP';
-
     const QUANTITY_UNIT_CODE_OZ = 'OZ';
-
     const QUANTITY_UNIT_CODE_P0 = 'P0';
-
     const QUANTITY_UNIT_CODE_P3 = 'P3';
-
     const QUANTITY_UNIT_CODE_P4 = 'P4';
-
     const QUANTITY_UNIT_CODE_P6 = 'P6';
-
     const QUANTITY_UNIT_CODE_P7 = 'P7';
-
     const QUANTITY_UNIT_CODE_P8 = 'P8';
-
     const QUANTITY_UNIT_CODE_P9 = 'P9';
-
     const QUANTITY_UNIT_CODE_PA = 'PA';
-
     const QUANTITY_UNIT_CODE_PB = 'PB';
-
     const QUANTITY_UNIT_CODE_PE = 'PE';
-
     const QUANTITY_UNIT_CODE_PF = 'PF';
-
     const QUANTITY_UNIT_CODE_PG = 'PG';
-
     const QUANTITY_UNIT_CODE_PK = 'PK';
-
     const QUANTITY_UNIT_CODE_PL = 'PL';
-
     const QUANTITY_UNIT_CODE_PM = 'PM';
-
     const QUANTITY_UNIT_CODE_PN = 'PN';
-
     const QUANTITY_UNIT_CODE_PT = 'PT';
-
     const QUANTITY_UNIT_CODE_PU = 'PU';
-
     const QUANTITY_UNIT_CODE_PV = 'PV';
-
     const QUANTITY_UNIT_CODE_PW = 'PW';
-
     const QUANTITY_UNIT_CODE_PY = 'PY';
-
     const QUANTITY_UNIT_CODE_PZ = 'PZ';
-
     const QUANTITY_UNIT_CODE_QD = 'QD';
-
     const QUANTITY_UNIT_CODE_QH = 'QH';
-
     const QUANTITY_UNIT_CODE_QK = 'QK';
-
     const QUANTITY_UNIT_CODE_QT = 'QT';
-
     const QUANTITY_UNIT_CODE_R4 = 'R4';
-
     const QUANTITY_UNIT_CODE_RA = 'RA';
-
     const QUANTITY_UNIT_CODE_RD = 'RD';
-
     const QUANTITY_UNIT_CODE_RG = 'RG';
-
     const QUANTITY_UNIT_CODE_RK = 'RK';
-
     const QUANTITY_UNIT_CODE_RL = 'RL';
-
     const QUANTITY_UNIT_CODE_RN = 'RN';
-
     const QUANTITY_UNIT_CODE_RO = 'RO';
-
     const QUANTITY_UNIT_CODE_RS = 'RS';
-
     const QUANTITY_UNIT_CODE_RU = 'RU';
-
     const QUANTITY_UNIT_CODE_S5 = 'S5';
-
     const QUANTITY_UNIT_CODE_S6 = 'S6';
-
     const QUANTITY_UNIT_CODE_S7 = 'S7';
-
     const QUANTITY_UNIT_CODE_S8 = 'S8';
-
     const QUANTITY_UNIT_CODE_SA = 'SA';
-
     const QUANTITY_UNIT_CODE_SD = 'SD';
-
     const QUANTITY_UNIT_CODE_SE = 'SE';
-
     const QUANTITY_UNIT_CODE_SHT = 'SHT';
-
     const QUANTITY_UNIT_CODE_SK = 'SK';
-
     const QUANTITY_UNIT_CODE_SL = 'SL';
-
     const QUANTITY_UNIT_CODE_SN = 'SN';
-
     const QUANTITY_UNIT_CODE_SO = 'SO';
-
     const QUANTITY_UNIT_CODE_SP = 'SP';
-
     const QUANTITY_UNIT_CODE_SS = 'SS';
-
     const QUANTITY_UNIT_CODE_SST = 'SST';
-
     const QUANTITY_UNIT_CODE_ST = 'ST';
-
     const QUANTITY_UNIT_CODE_SV = 'SV';
-
     const QUANTITY_UNIT_CODE_T1 = 'T1';
-
     const QUANTITY_UNIT_CODE_T4 = 'T4';
-
     const QUANTITY_UNIT_CODE_T5 = 'T5';
-
     const QUANTITY_UNIT_CODE_T6 = 'T6';
-
     const QUANTITY_UNIT_CODE_T7 = 'T7';
-
     const QUANTITY_UNIT_CODE_T8 = 'T8';
-
     const QUANTITY_UNIT_CODE_TA = 'TA';
-
     const QUANTITY_UNIT_CODE_TC = 'TC';
-
     const QUANTITY_UNIT_CODE_TD = 'TD';
-
     const QUANTITY_UNIT_CODE_TE = 'TE';
-
     const QUANTITY_UNIT_CODE_TF = 'TF';
-
     const QUANTITY_UNIT_CODE_TJ = 'TJ';
-
     const QUANTITY_UNIT_CODE_TK = 'TK';
-
     const QUANTITY_UNIT_CODE_TL = 'TL';
-
     const QUANTITY_UNIT_CODE_TN = 'TN';
-
     const QUANTITY_UNIT_CODE_TQ = 'TQ';
-
     const QUANTITY_UNIT_CODE_TR = 'TR';
-
     const QUANTITY_UNIT_CODE_TS = 'TS';
-
     const QUANTITY_UNIT_CODE_TSD = 'TSD';
-
     const QUANTITY_UNIT_CODE_TSH = 'TSH';
-
     const QUANTITY_UNIT_CODE_TT = 'TT';
-
     const QUANTITY_UNIT_CODE_TU = 'TU';
-
     const QUANTITY_UNIT_CODE_TV = 'TV';
-
     const QUANTITY_UNIT_CODE_TW = 'TW';
-
     const QUANTITY_UNIT_CODE_TY = 'TY';
-
     const QUANTITY_UNIT_CODE_UA = 'UA';
-
     const QUANTITY_UNIT_CODE_UD = 'UD';
-
     const QUANTITY_UNIT_CODE_UE = 'UE';
-
     const QUANTITY_UNIT_CODE_UF = 'UF';
-
     const QUANTITY_UNIT_CODE_UH = 'UH';
-
     const QUANTITY_UNIT_CODE_UM = 'UM';
-
     const QUANTITY_UNIT_CODE_VI = 'VI';
-
     const QUANTITY_UNIT_CODE_VQ = 'VQ';
-
     const QUANTITY_UNIT_CODE_VS = 'VS';
-
     const QUANTITY_UNIT_CODE_W4 = 'W4';
-
     const QUANTITY_UNIT_CODE_WH = 'WH';
-
     const QUANTITY_UNIT_CODE_WI = 'WI';
-
     const QUANTITY_UNIT_CODE_WR = 'WR';
-
     const QUANTITY_UNIT_CODE_WW = 'WW';
-
     const QUANTITY_UNIT_CODE_YL = 'YL';
-
     const QUANTITY_UNIT_CODE_YT = 'YT';
-
     const QUANTITY_UNIT_CODE_Z1 = 'Z1';
-
     const QUANTITY_UNIT_CODE_Z2 = 'Z2';
-
     const QUANTITY_UNIT_CODE_Z3 = 'Z3';
-
     const QUANTITY_UNIT_CODE_Z4 = 'Z4';
-
     const QUANTITY_UNIT_CODE_Z5 = 'Z5';
-
     const QUANTITY_UNIT_CODE_Z6 = 'Z6';
-
     const QUANTITY_UNIT_CODE_Z8 = 'Z8';
+    
 
+    
     /**
      * Gets allowable values of the enum
      *
@@ -7727,6 +5249,7 @@ class InvoiceLine implements ArrayAccess, ModelInterface
             self::QUANTITY_UNIT_CODE_Z8,
         ];
     }
+    
 
     /**
      * Associative array for storing property values
@@ -7738,10 +5261,10 @@ class InvoiceLine implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['line_id'] = isset($data['line_id']) ? $data['line_id'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
@@ -7779,59 +5302,59 @@ class InvoiceLine implements ArrayAccess, ModelInterface
     {
         $invalidProperties = [];
 
-        if (! is_null($this->container['line_id']) && (mb_strlen($this->container['line_id']) > 36)) {
+        if (!is_null($this->container['line_id']) && (mb_strlen($this->container['line_id']) > 36)) {
             $invalidProperties[] = "invalid value for 'line_id', the character length must be smaller than or equal to 36.";
         }
 
-        if (! is_null($this->container['line_id']) && (mb_strlen($this->container['line_id']) < 1)) {
+        if (!is_null($this->container['line_id']) && (mb_strlen($this->container['line_id']) < 1)) {
             $invalidProperties[] = "invalid value for 'line_id', the character length must be bigger than or equal to 1.";
         }
 
-        if (! is_null($this->container['description']) && (mb_strlen($this->container['description']) < 1)) {
+        if (!is_null($this->container['description']) && (mb_strlen($this->container['description']) < 1)) {
             $invalidProperties[] = "invalid value for 'description', the character length must be bigger than or equal to 1.";
         }
 
-        if (! is_null($this->container['name']) && (mb_strlen($this->container['name']) < 1)) {
+        if (!is_null($this->container['name']) && (mb_strlen($this->container['name']) < 1)) {
             $invalidProperties[] = "invalid value for 'name', the character length must be bigger than or equal to 1.";
         }
 
-        if (! is_null($this->container['order_line_reference_line_id']) && (mb_strlen($this->container['order_line_reference_line_id']) < 1)) {
+        if (!is_null($this->container['order_line_reference_line_id']) && (mb_strlen($this->container['order_line_reference_line_id']) < 1)) {
             $invalidProperties[] = "invalid value for 'order_line_reference_line_id', the character length must be bigger than or equal to 1.";
         }
 
-        if (! is_null($this->container['invoice_period']) && ! preg_match('/^[0-9]{4}-[0-9]{2}-[0-9]{2} - [0-9]{4}-[0-9]{2}-[0-9]{2}$/', $this->container['invoice_period'])) {
+        if (!is_null($this->container['invoice_period']) && !preg_match("/^[0-9]{4}-[0-9]{2}-[0-9]{2} - [0-9]{4}-[0-9]{2}-[0-9]{2}$/", $this->container['invoice_period'])) {
             $invalidProperties[] = "invalid value for 'invoice_period', must be conform to the pattern /^[0-9]{4}-[0-9]{2}-[0-9]{2} - [0-9]{4}-[0-9]{2}-[0-9]{2}$/.";
         }
 
         $allowedValues = $this->getQuantityUnitCodeAllowableValues();
-        if (! is_null($this->container['quantity_unit_code']) && ! in_array($this->container['quantity_unit_code'], $allowedValues, true)) {
+        if (!is_null($this->container['quantity_unit_code']) && !in_array($this->container['quantity_unit_code'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'quantity_unit_code', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
 
-        if (! is_null($this->container['accounting_cost']) && (mb_strlen($this->container['accounting_cost']) < 1)) {
+        if (!is_null($this->container['accounting_cost']) && (mb_strlen($this->container['accounting_cost']) < 1)) {
             $invalidProperties[] = "invalid value for 'accounting_cost', the character length must be bigger than or equal to 1.";
         }
 
-        if (! is_null($this->container['sellers_item_identification']) && (mb_strlen($this->container['sellers_item_identification']) < 1)) {
+        if (!is_null($this->container['sellers_item_identification']) && (mb_strlen($this->container['sellers_item_identification']) < 1)) {
             $invalidProperties[] = "invalid value for 'sellers_item_identification', the character length must be bigger than or equal to 1.";
         }
 
-        if (! is_null($this->container['buyers_item_identification']) && (mb_strlen($this->container['buyers_item_identification']) < 1)) {
+        if (!is_null($this->container['buyers_item_identification']) && (mb_strlen($this->container['buyers_item_identification']) < 1)) {
             $invalidProperties[] = "invalid value for 'buyers_item_identification', the character length must be bigger than or equal to 1.";
         }
 
-        if (! is_null($this->container['standard_item_identification']) && (mb_strlen($this->container['standard_item_identification']) < 1)) {
+        if (!is_null($this->container['standard_item_identification']) && (mb_strlen($this->container['standard_item_identification']) < 1)) {
             $invalidProperties[] = "invalid value for 'standard_item_identification', the character length must be bigger than or equal to 1.";
         }
 
-        if (! is_null($this->container['standard_item_identification_scheme_id']) && (mb_strlen($this->container['standard_item_identification_scheme_id']) < 1)) {
+        if (!is_null($this->container['standard_item_identification_scheme_id']) && (mb_strlen($this->container['standard_item_identification_scheme_id']) < 1)) {
             $invalidProperties[] = "invalid value for 'standard_item_identification_scheme_id', the character length must be bigger than or equal to 1.";
         }
 
-        if (! is_null($this->container['standard_item_identification_scheme_agency_id']) && (mb_strlen($this->container['standard_item_identification_scheme_agency_id']) < 1)) {
+        if (!is_null($this->container['standard_item_identification_scheme_agency_id']) && (mb_strlen($this->container['standard_item_identification_scheme_agency_id']) < 1)) {
             $invalidProperties[] = "invalid value for 'standard_item_identification_scheme_agency_id', the character length must be bigger than or equal to 1.";
         }
 
@@ -7849,6 +5372,7 @@ class InvoiceLine implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets line_id
      *
@@ -7862,15 +5386,16 @@ class InvoiceLine implements ArrayAccess, ModelInterface
     /**
      * Sets line_id
      *
-     * @param  string  $line_id  The id for this invoice line.
+     * @param string $line_id The id for this invoice line.
+     *
      * @return $this
      */
     public function setLineId($line_id)
     {
-        if (! is_null($line_id) && (mb_strlen($line_id) > 36)) {
+        if (!is_null($line_id) && (mb_strlen($line_id) > 36)) {
             throw new \InvalidArgumentException('invalid length for $line_id when calling InvoiceLine., must be smaller than or equal to 36.');
         }
-        if (! is_null($line_id) && (mb_strlen($line_id) < 1)) {
+        if (!is_null($line_id) && (mb_strlen($line_id) < 1)) {
             throw new \InvalidArgumentException('invalid length for $line_id when calling InvoiceLine., must be bigger than or equal to 1.');
         }
 
@@ -7892,13 +5417,14 @@ class InvoiceLine implements ArrayAccess, ModelInterface
     /**
      * Sets description
      *
-     * @param  string  $description  The description for this invoice line.
+     * @param string $description The description for this invoice line.
+     *
      * @return $this
      */
     public function setDescription($description)
     {
 
-        if (! is_null($description) && (mb_strlen($description) < 1)) {
+        if (!is_null($description) && (mb_strlen($description) < 1)) {
             throw new \InvalidArgumentException('invalid length for $description when calling InvoiceLine., must be bigger than or equal to 1.');
         }
 
@@ -7920,13 +5446,14 @@ class InvoiceLine implements ArrayAccess, ModelInterface
     /**
      * Sets name
      *
-     * @param  string  $name  A short name for this invoice line. If not provided, it will be taken from description and description will be set to an emtpy string.
+     * @param string $name A short name for this invoice line. If not provided, it will be taken from description and description will be set to an emtpy string.
+     *
      * @return $this
      */
     public function setName($name)
     {
 
-        if (! is_null($name) && (mb_strlen($name) < 1)) {
+        if (!is_null($name) && (mb_strlen($name) < 1)) {
             throw new \InvalidArgumentException('invalid length for $name when calling InvoiceLine., must be bigger than or equal to 1.');
         }
 
@@ -7948,13 +5475,14 @@ class InvoiceLine implements ArrayAccess, ModelInterface
     /**
      * Sets order_line_reference_line_id
      *
-     * @param  string  $order_line_reference_line_id  DEPRECATED. Use a reference with type 'line_purchase_order'. A reference to the LineID of the order. The order itself is specified as the orderReference at the invoice level. It is not possible to specify an orderReference at the invoice line level. An invoice MUST at this time be for a single order only.
+     * @param string $order_line_reference_line_id DEPRECATED. Use a reference with type 'line_purchase_order'. A reference to the LineID of the order. The order itself is specified as the orderReference at the invoice level. It is not possible to specify an orderReference at the invoice line level. An invoice MUST at this time be for a single order only.
+     *
      * @return $this
      */
     public function setOrderLineReferenceLineId($order_line_reference_line_id)
     {
 
-        if (! is_null($order_line_reference_line_id) && (mb_strlen($order_line_reference_line_id) < 1)) {
+        if (!is_null($order_line_reference_line_id) && (mb_strlen($order_line_reference_line_id) < 1)) {
             throw new \InvalidArgumentException('invalid length for $order_line_reference_line_id when calling InvoiceLine., must be bigger than or equal to 1.');
         }
 
@@ -7976,13 +5504,14 @@ class InvoiceLine implements ArrayAccess, ModelInterface
     /**
      * Sets invoice_period
      *
-     * @param  string  $invoice_period  The period (or specific date) to which the invoice line applies. Format: yyyy-mm-dd - yyyy-mm-dd.
+     * @param string $invoice_period The period (or specific date) to which the invoice line applies. Format: yyyy-mm-dd - yyyy-mm-dd.
+     *
      * @return $this
      */
     public function setInvoicePeriod($invoice_period)
     {
 
-        if (! is_null($invoice_period) && (! preg_match('/^[0-9]{4}-[0-9]{2}-[0-9]{2} - [0-9]{4}-[0-9]{2}-[0-9]{2}$/', $invoice_period))) {
+        if (!is_null($invoice_period) && (!preg_match("/^[0-9]{4}-[0-9]{2}-[0-9]{2} - [0-9]{4}-[0-9]{2}-[0-9]{2}$/", $invoice_period))) {
             throw new \InvalidArgumentException("invalid value for $invoice_period when calling InvoiceLine., must conform to the pattern /^[0-9]{4}-[0-9]{2}-[0-9]{2} - [0-9]{4}-[0-9]{2}-[0-9]{2}$/.");
         }
 
@@ -8004,7 +5533,8 @@ class InvoiceLine implements ArrayAccess, ModelInterface
     /**
      * Sets item_price
      *
-     * @param  float  $item_price  The price per item (may be fractional)
+     * @param float $item_price The price per item (may be fractional)
+     *
      * @return $this
      */
     public function setItemPrice($item_price)
@@ -8027,7 +5557,8 @@ class InvoiceLine implements ArrayAccess, ModelInterface
     /**
      * Sets quantity
      *
-     * @param  float  $quantity  The number of items (may be fractional).
+     * @param float $quantity The number of items (may be fractional).
+     *
      * @return $this
      */
     public function setQuantity($quantity)
@@ -8050,7 +5581,8 @@ class InvoiceLine implements ArrayAccess, ModelInterface
     /**
      * Sets base_quantity
      *
-     * @param  float  $base_quantity  The number of items (may be fractional) the itemPrice is for.
+     * @param float $base_quantity The number of items (may be fractional) the itemPrice is for.
+     *
      * @return $this
      */
     public function setBaseQuantity($base_quantity)
@@ -8073,13 +5605,14 @@ class InvoiceLine implements ArrayAccess, ModelInterface
     /**
      * Sets quantity_unit_code
      *
-     * @param  string  $quantity_unit_code  The unit of measure that applies to the invoiced quantity. Codes for unit of packaging from UNECE Recommendation No. 21 can be used in accordance with the descriptions in the \"Intro\" section of UN/ECE Recommendation 20, Revision 11 (2015): The 2 character alphanumeric code values in UNECE Recommendation 21 shall be used. To avoid duplication with existing code values in UNECE Recommendation No. 20, each code value from UNECE Recommendation 21 shall be prefixed with an “X”, resulting in a 3 alphanumeric code when used as a unit of measure. Note that the following additionally allowed codes are deprecated and will be converted to C62: 04, 05, 08, 16, 17, 18, 19, 26, 29, 30, 31, 32, 36, 43, 44, 45, 46, 47, 48, 53, 54, 62, 63, 64, 66, 69, 71, 72, 73, 76, 78, 84, 90, 92, 93, 94, 95, 96, 97, 98, 1A, 1B, 1C, 1D, 1E, 1F, 1G, 1H, 1J, 1K, 1L, 1M, 1X, 2V, 2W, 3E, 3G, 3H, 3I, 4A, 4B, 4E, 5C, 5F, 5G, 5H, 5I, 5K, 5P, 5Q, A1, A25, A50, A51, A52, A57, A58, A60, A61, A62, A63, A64, A65, A66, A67, A77, A78, A79, A80, A81, A82, A83, AJ, AM, AP, AR, ARE, ATT, AV, AW, B0, B2, B36, B37, B38, B39, B40, B5, B51, B6, B65, B9, BD, BE, BG, BH, BJ, BK, BL, BO, BR, BT, BW, BX, BZ, C1, C2, C4, C5, C6, C77, C98, CA, CH, CJ, CK, CL, CO, CQ, CR, CS, CT, CU, CV, CY, CZ, D14, D28, D35, D37, D38, D39, D40, D64, D66, D67, D7, D70, D71, D72, D75, D76, D79, D8, D9, D90, D92, D96, D97, D98, D99, DC, DE, DI, DQ, DR, DRM, DS, DU, DX, DY, E2, E3, E5, EC, EP, EV, F1, F9, FB, FD, FE, FG, FM, G7, GC, GD, GH, GK, GN, GRT, GT, GW, GY, GZ, H1, H2, HAR, HD, HE, HF, HI, HJ, HK, HL, HN, HO, HP, HS, HT, HY, IC, IF, II, IL, IM, IP, IT, JB, JG, JO, JR, K5, KD, KF, KG, KS, KTM, LC, LE, LI, LJ, LX, M0, MA, MF, MK, MQ, MT, MV, N2, NB, NBB, NC, ND, NE, NG, NH, NI, NJ, NN, NPL, NPR, NQ, NR, NRL, NTT, NV, NY, OP, OZ, P0, P3, P4, P6, P7, P8, P9, PA, PB, PE, PF, PG, PK, PL, PM, PN, PT, PU, PV, PW, PY, PZ, QD, QH, QK, QT, R4, RA, RD, RG, RK, RL, RN, RO, RS, RU, S5, S6, S7, S8, SA, SD, SE, SHT, SK, SL, SN, SO, SP, SS, SST, ST, SV, T1, T4, T5, T6, T7, T8, TA, TC, TD, TE, TF, TJ, TK, TL, TN, TQ, TR, TS, TSD, TSH, TT, TU, TV, TW, TY, UA, UD, UE, UF, UH, UM, VI, VQ, VS, W4, WH, WI, WR, WW, YL, YT, Z1, Z2, Z3, Z4, Z5, Z6, Z8. Also, LOT can only be used for SG-IRAS invoices.
+     * @param string $quantity_unit_code The unit of measure that applies to the invoiced quantity. Codes for unit of packaging from UNECE Recommendation No. 21 can be used in accordance with the descriptions in the \"Intro\" section of UN/ECE Recommendation 20, Revision 11 (2015): The 2 character alphanumeric code values in UNECE Recommendation 21 shall be used. To avoid duplication with existing code values in UNECE Recommendation No. 20, each code value from UNECE Recommendation 21 shall be prefixed with an “X”, resulting in a 3 alphanumeric code when used as a unit of measure. Note that the following additionally allowed codes are deprecated and will be converted to C62: 04, 05, 08, 16, 17, 18, 19, 26, 29, 30, 31, 32, 36, 43, 44, 45, 46, 47, 48, 53, 54, 62, 63, 64, 66, 69, 71, 72, 73, 76, 78, 84, 90, 92, 93, 94, 95, 96, 97, 98, 1A, 1B, 1C, 1D, 1E, 1F, 1G, 1H, 1J, 1K, 1L, 1M, 1X, 2V, 2W, 3E, 3G, 3H, 3I, 4A, 4B, 4E, 5C, 5F, 5G, 5H, 5I, 5K, 5P, 5Q, A1, A25, A50, A51, A52, A57, A58, A60, A61, A62, A63, A64, A65, A66, A67, A77, A78, A79, A80, A81, A82, A83, AJ, AM, AP, AR, ARE, ATT, AV, AW, B0, B2, B36, B37, B38, B39, B40, B5, B51, B6, B65, B9, BD, BE, BG, BH, BJ, BK, BL, BO, BR, BT, BW, BX, BZ, C1, C2, C4, C5, C6, C77, C98, CA, CH, CJ, CK, CL, CO, CQ, CR, CS, CT, CU, CV, CY, CZ, D14, D28, D35, D37, D38, D39, D40, D64, D66, D67, D7, D70, D71, D72, D75, D76, D79, D8, D9, D90, D92, D96, D97, D98, D99, DC, DE, DI, DQ, DR, DRM, DS, DU, DX, DY, E2, E3, E5, EC, EP, EV, F1, F9, FB, FD, FE, FG, FM, G7, GC, GD, GH, GK, GN, GRT, GT, GW, GY, GZ, H1, H2, HAR, HD, HE, HF, HI, HJ, HK, HL, HN, HO, HP, HS, HT, HY, IC, IF, II, IL, IM, IP, IT, JB, JG, JO, JR, K5, KD, KF, KG, KS, KTM, LC, LE, LI, LJ, LX, M0, MA, MF, MK, MQ, MT, MV, N2, NB, NBB, NC, ND, NE, NG, NH, NI, NJ, NN, NPL, NPR, NQ, NR, NRL, NTT, NV, NY, OP, OZ, P0, P3, P4, P6, P7, P8, P9, PA, PB, PE, PF, PG, PK, PL, PM, PN, PT, PU, PV, PW, PY, PZ, QD, QH, QK, QT, R4, RA, RD, RG, RK, RL, RN, RO, RS, RU, S5, S6, S7, S8, SA, SD, SE, SHT, SK, SL, SN, SO, SP, SS, SST, ST, SV, T1, T4, T5, T6, T7, T8, TA, TC, TD, TE, TF, TJ, TK, TL, TN, TQ, TR, TS, TSD, TSH, TT, TU, TV, TW, TY, UA, UD, UE, UF, UH, UM, VI, VQ, VS, W4, WH, WI, WR, WW, YL, YT, Z1, Z2, Z3, Z4, Z5, Z6, Z8. Also, LOT can only be used for SG-IRAS invoices.
+     *
      * @return $this
      */
     public function setQuantityUnitCode($quantity_unit_code)
     {
         $allowedValues = $this->getQuantityUnitCodeAllowableValues();
-        if (! is_null($quantity_unit_code) && ! in_array($quantity_unit_code, $allowedValues, true)) {
+        if (!is_null($quantity_unit_code) && !in_array($quantity_unit_code, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'quantity_unit_code', must be one of '%s'",
@@ -8105,7 +5638,8 @@ class InvoiceLine implements ArrayAccess, ModelInterface
     /**
      * Sets allowance_charge
      *
-     * @param  float  $allowance_charge  DEPRECATED. Use allowanceCharges. The discount or surcharge on this item. Should be negative for discounts
+     * @param float $allowance_charge DEPRECATED. Use allowanceCharges. The discount or surcharge on this item. Should be negative for discounts
+     *
      * @return $this
      */
     public function setAllowanceCharge($allowance_charge)
@@ -8128,7 +5662,8 @@ class InvoiceLine implements ArrayAccess, ModelInterface
     /**
      * Sets allowance_charges
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\LineAllowanceCharge[]  $allowance_charges  An array of allowances and charges.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\LineAllowanceCharge[] $allowance_charges An array of allowances and charges.
+     *
      * @return $this
      */
     public function setAllowanceCharges($allowance_charges)
@@ -8151,7 +5686,8 @@ class InvoiceLine implements ArrayAccess, ModelInterface
     /**
      * Sets amount_excluding_vat
      *
-     * @param  float  $amount_excluding_vat  The amount excluding tax. Should equal quantity x itemPrice + allowanceCharge.
+     * @param float $amount_excluding_vat The amount excluding tax. Should equal quantity x itemPrice + allowanceCharge.
+     *
      * @return $this
      */
     public function setAmountExcludingVat($amount_excluding_vat)
@@ -8174,7 +5710,8 @@ class InvoiceLine implements ArrayAccess, ModelInterface
     /**
      * Sets amount_excluding_tax
      *
-     * @param  float  $amount_excluding_tax  The amount excluding tax. EXPERIMENTAL for sending. Should equal quantity x itemPrice + allowanceCharge.
+     * @param float $amount_excluding_tax The amount excluding tax. EXPERIMENTAL for sending. Should equal quantity x itemPrice + allowanceCharge.
+     *
      * @return $this
      */
     public function setAmountExcludingTax($amount_excluding_tax)
@@ -8197,7 +5734,8 @@ class InvoiceLine implements ArrayAccess, ModelInterface
     /**
      * Sets amount_including_tax
      *
-     * @param  float  $amount_including_tax  The amount including tax. Can only be used for \"priceMode\": \"price_mode_gross\". Use either this property or amountExcludingTax (amountExcludingVat).
+     * @param float $amount_including_tax The amount including tax. Can only be used for \"priceMode\": \"price_mode_gross\". Use either this property or amountExcludingTax (amountExcludingVat).
+     *
      * @return $this
      */
     public function setAmountIncludingTax($amount_including_tax)
@@ -8220,7 +5758,8 @@ class InvoiceLine implements ArrayAccess, ModelInterface
     /**
      * Sets tax
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\Tax  $tax  DEPRECATED. Use taxesDutiesFees. The tax for this invoice line.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\Tax $tax DEPRECATED. Use taxesDutiesFees. The tax for this invoice line.
+     *
      * @return $this
      */
     public function setTax($tax)
@@ -8243,7 +5782,8 @@ class InvoiceLine implements ArrayAccess, ModelInterface
     /**
      * Sets taxes_duties_fees
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\Tax[]  $taxes_duties_fees  An array of taxes, duties and fees for this invoice line. Multiple taxesDutiesFees items is allowed only for IN (India) and US (USA) taxes. All other countries can only have a single Tax item in this array.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\Tax[] $taxes_duties_fees An array of taxes, duties and fees for this invoice line. Multiple taxesDutiesFees items is allowed only for IN (India) and US (USA) taxes. All other countries can only have a single Tax item in this array.
+     *
      * @return $this
      */
     public function setTaxesDutiesFees($taxes_duties_fees)
@@ -8266,13 +5806,14 @@ class InvoiceLine implements ArrayAccess, ModelInterface
     /**
      * Sets accounting_cost
      *
-     * @param  string  $accounting_cost  The buyer's accounting cost centre for this invoice line, expressed as text.
+     * @param string $accounting_cost The buyer's accounting cost centre for this invoice line, expressed as text.
+     *
      * @return $this
      */
     public function setAccountingCost($accounting_cost)
     {
 
-        if (! is_null($accounting_cost) && (mb_strlen($accounting_cost) < 1)) {
+        if (!is_null($accounting_cost) && (mb_strlen($accounting_cost) < 1)) {
             throw new \InvalidArgumentException('invalid length for $accounting_cost when calling InvoiceLine., must be bigger than or equal to 1.');
         }
 
@@ -8294,7 +5835,8 @@ class InvoiceLine implements ArrayAccess, ModelInterface
     /**
      * Sets references
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\Reference[]  $references  An array of references to other documents or codes. Note that many syntaxes do not support multiple references of the same type in which case they will be concatenated with ','. Also, not all syntaxes support all documentTypes.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\Reference[] $references An array of references to other documents or codes. Note that many syntaxes do not support multiple references of the same type in which case they will be concatenated with ','. Also, not all syntaxes support all documentTypes.
+     *
      * @return $this
      */
     public function setReferences($references)
@@ -8317,7 +5859,8 @@ class InvoiceLine implements ArrayAccess, ModelInterface
     /**
      * Sets additional_item_properties
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\AdditionalItemProperty[]  $additional_item_properties  An array of additional item properties.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\AdditionalItemProperty[] $additional_item_properties An array of additional item properties.
+     *
      * @return $this
      */
     public function setAdditionalItemProperties($additional_item_properties)
@@ -8340,13 +5883,14 @@ class InvoiceLine implements ArrayAccess, ModelInterface
     /**
      * Sets sellers_item_identification
      *
-     * @param  string  $sellers_item_identification  DEPRECATED. Use the references array with 'line_sellers_item_identification' documentType. The ID the seller assigned to this item.
+     * @param string $sellers_item_identification DEPRECATED. Use the references array with 'line_sellers_item_identification' documentType. The ID the seller assigned to this item.
+     *
      * @return $this
      */
     public function setSellersItemIdentification($sellers_item_identification)
     {
 
-        if (! is_null($sellers_item_identification) && (mb_strlen($sellers_item_identification) < 1)) {
+        if (!is_null($sellers_item_identification) && (mb_strlen($sellers_item_identification) < 1)) {
             throw new \InvalidArgumentException('invalid length for $sellers_item_identification when calling InvoiceLine., must be bigger than or equal to 1.');
         }
 
@@ -8368,13 +5912,14 @@ class InvoiceLine implements ArrayAccess, ModelInterface
     /**
      * Sets buyers_item_identification
      *
-     * @param  string  $buyers_item_identification  DEPRECATED. Use the references array with 'line_buyers_item_identification' documentType. The ID the buyer assigned to this item.
+     * @param string $buyers_item_identification DEPRECATED. Use the references array with 'line_buyers_item_identification' documentType. The ID the buyer assigned to this item.
+     *
      * @return $this
      */
     public function setBuyersItemIdentification($buyers_item_identification)
     {
 
-        if (! is_null($buyers_item_identification) && (mb_strlen($buyers_item_identification) < 1)) {
+        if (!is_null($buyers_item_identification) && (mb_strlen($buyers_item_identification) < 1)) {
             throw new \InvalidArgumentException('invalid length for $buyers_item_identification when calling InvoiceLine., must be bigger than or equal to 1.');
         }
 
@@ -8396,13 +5941,14 @@ class InvoiceLine implements ArrayAccess, ModelInterface
     /**
      * Sets standard_item_identification
      *
-     * @param  string  $standard_item_identification  DEPRECATED. Use 'line_standard_item_identification'. Standardized ID for the item.
+     * @param string $standard_item_identification DEPRECATED. Use 'line_standard_item_identification'. Standardized ID for the item.
+     *
      * @return $this
      */
     public function setStandardItemIdentification($standard_item_identification)
     {
 
-        if (! is_null($standard_item_identification) && (mb_strlen($standard_item_identification) < 1)) {
+        if (!is_null($standard_item_identification) && (mb_strlen($standard_item_identification) < 1)) {
             throw new \InvalidArgumentException('invalid length for $standard_item_identification when calling InvoiceLine., must be bigger than or equal to 1.');
         }
 
@@ -8424,13 +5970,14 @@ class InvoiceLine implements ArrayAccess, ModelInterface
     /**
      * Sets standard_item_identification_scheme_id
      *
-     * @param  string  $standard_item_identification_scheme_id  DEPRECATED. Use the references array with 'line_standard_item_identification' documentType. The scheme for the standardized ID for the item.
+     * @param string $standard_item_identification_scheme_id DEPRECATED. Use the references array with 'line_standard_item_identification' documentType. The scheme for the standardized ID for the item.
+     *
      * @return $this
      */
     public function setStandardItemIdentificationSchemeId($standard_item_identification_scheme_id)
     {
 
-        if (! is_null($standard_item_identification_scheme_id) && (mb_strlen($standard_item_identification_scheme_id) < 1)) {
+        if (!is_null($standard_item_identification_scheme_id) && (mb_strlen($standard_item_identification_scheme_id) < 1)) {
             throw new \InvalidArgumentException('invalid length for $standard_item_identification_scheme_id when calling InvoiceLine., must be bigger than or equal to 1.');
         }
 
@@ -8452,13 +5999,14 @@ class InvoiceLine implements ArrayAccess, ModelInterface
     /**
      * Sets standard_item_identification_scheme_agency_id
      *
-     * @param  string  $standard_item_identification_scheme_agency_id  DEPRECATED. Use the references array with 'line_standard_item_identification' documentType. The scheme agency for the standardized ID for the item.
+     * @param string $standard_item_identification_scheme_agency_id DEPRECATED. Use the references array with 'line_standard_item_identification' documentType. The scheme agency for the standardized ID for the item.
+     *
      * @return $this
      */
     public function setStandardItemIdentificationSchemeAgencyId($standard_item_identification_scheme_agency_id)
     {
 
-        if (! is_null($standard_item_identification_scheme_agency_id) && (mb_strlen($standard_item_identification_scheme_agency_id) < 1)) {
+        if (!is_null($standard_item_identification_scheme_agency_id) && (mb_strlen($standard_item_identification_scheme_agency_id) < 1)) {
             throw new \InvalidArgumentException('invalid length for $standard_item_identification_scheme_agency_id when calling InvoiceLine., must be bigger than or equal to 1.');
         }
 
@@ -8480,7 +6028,8 @@ class InvoiceLine implements ArrayAccess, ModelInterface
     /**
      * Sets note
      *
-     * @param  string  $note  A note to add to the document line
+     * @param string $note A note to add to the document line
+     *
      * @return $this
      */
     public function setNote($note)
@@ -8489,12 +6038,12 @@ class InvoiceLine implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -8504,7 +6053,8 @@ class InvoiceLine implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -8515,8 +6065,9 @@ class InvoiceLine implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -8531,7 +6082,8 @@ class InvoiceLine implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -8556,3 +6108,5 @@ class InvoiceLine implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

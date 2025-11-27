@@ -4,9 +4,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -44,9 +43,8 @@ use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
  * LegalEntitiesApi Class Doc Comment
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 class LegalEntitiesApi
@@ -66,10 +64,15 @@ class LegalEntitiesApi
      */
     protected $headerSelector;
 
+    /**
+     * @param ClientInterface $client
+     * @param Configuration   $config
+     * @param HeaderSelector  $selector
+     */
     public function __construct(
-        ?ClientInterface $client = null,
-        ?Configuration $config = null,
-        ?HeaderSelector $selector = null
+        ClientInterface $client = null,
+        Configuration $config = null,
+        HeaderSelector $selector = null
     ) {
         $this->client = $client ?: new Client();
         $this->config = $config ?: new Configuration();
@@ -89,16 +92,15 @@ class LegalEntitiesApi
      *
      * Create a new LegalEntity
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\LegalEntityCreate  $legal_entity  LegalEntity to create (required)
-     * @return \Deegitalbe\LaravelTrustupIoStorecove\Model\LegalEntity
+     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\LegalEntityCreate $legal_entity LegalEntity to create (required)
      *
      * @throws \Deegitalbe\LaravelTrustupIoStorecove\ApiException on non-2xx response
      * @throws \InvalidArgumentException
+     * @return \Deegitalbe\LaravelTrustupIoStorecove\Model\LegalEntity
      */
     public function createLegalEntity($legal_entity)
     {
-        [$response] = $this->createLegalEntityWithHttpInfo($legal_entity);
-
+        list($response) = $this->createLegalEntityWithHttpInfo($legal_entity);
         return $response;
     }
 
@@ -107,11 +109,11 @@ class LegalEntitiesApi
      *
      * Create a new LegalEntity
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\LegalEntityCreate  $legal_entity  LegalEntity to create (required)
-     * @return array of \Deegitalbe\LaravelTrustupIoStorecove\Model\LegalEntity, HTTP status code, HTTP response headers (array of strings)
+     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\LegalEntityCreate $legal_entity LegalEntity to create (required)
      *
      * @throws \Deegitalbe\LaravelTrustupIoStorecove\ApiException on non-2xx response
      * @throws \InvalidArgumentException
+     * @return array of \Deegitalbe\LaravelTrustupIoStorecove\Model\LegalEntity, HTTP status code, HTTP response headers (array of strings)
      */
     public function createLegalEntityWithHttpInfo($legal_entity)
     {
@@ -159,7 +161,7 @@ class LegalEntitiesApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders(),
+                $response->getHeaders()
             ];
 
         } catch (ApiException $e) {
@@ -190,10 +192,10 @@ class LegalEntitiesApi
      *
      * Create a new LegalEntity
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\LegalEntityCreate  $legal_entity  LegalEntity to create (required)
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\LegalEntityCreate $legal_entity LegalEntity to create (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createLegalEntityAsync($legal_entity)
     {
@@ -210,10 +212,10 @@ class LegalEntitiesApi
      *
      * Create a new LegalEntity
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\LegalEntityCreate  $legal_entity  LegalEntity to create (required)
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\LegalEntityCreate $legal_entity LegalEntity to create (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createLegalEntityAsyncWithHttpInfo($legal_entity)
     {
@@ -237,7 +239,7 @@ class LegalEntitiesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders(),
+                        $response->getHeaders()
                     ];
                 },
                 function ($exception) {
@@ -260,10 +262,10 @@ class LegalEntitiesApi
     /**
      * Create request for operation 'createLegalEntity'
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\LegalEntityCreate  $legal_entity  LegalEntity to create (required)
-     * @return \GuzzleHttp\Psr7\Request
+     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\LegalEntityCreate $legal_entity LegalEntity to create (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
      */
     protected function createLegalEntityRequest($legal_entity)
     {
@@ -280,6 +282,8 @@ class LegalEntitiesApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
+
+
 
         // body params
         $_tempBody = null;
@@ -302,14 +306,14 @@ class LegalEntitiesApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-
-            if ($headers['Content-Type'] === 'application/json') {
+            
+            if($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
+                if(is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -319,7 +323,7 @@ class LegalEntitiesApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue,
+                        'contents' => $formParamValue
                     ];
                 }
                 // for HTTP post (form)
@@ -352,10 +356,9 @@ class LegalEntitiesApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
-
         return new Request(
             'POST',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -366,11 +369,11 @@ class LegalEntitiesApi
      *
      * Delete LegalEntity
      *
-     * @param  int  $id  legal_entity id (required)
-     * @return void
+     * @param  int $id legal_entity id (required)
      *
      * @throws \Deegitalbe\LaravelTrustupIoStorecove\ApiException on non-2xx response
      * @throws \InvalidArgumentException
+     * @return void
      */
     public function deleteLegalEntity($id)
     {
@@ -382,11 +385,11 @@ class LegalEntitiesApi
      *
      * Delete LegalEntity
      *
-     * @param  int  $id  legal_entity id (required)
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @param  int $id legal_entity id (required)
      *
      * @throws \Deegitalbe\LaravelTrustupIoStorecove\ApiException on non-2xx response
      * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteLegalEntityWithHttpInfo($id)
     {
@@ -435,10 +438,10 @@ class LegalEntitiesApi
      *
      * Delete LegalEntity
      *
-     * @param  int  $id  legal_entity id (required)
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @param  int $id legal_entity id (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteLegalEntityAsync($id)
     {
@@ -455,10 +458,10 @@ class LegalEntitiesApi
      *
      * Delete LegalEntity
      *
-     * @param  int  $id  legal_entity id (required)
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @param  int $id legal_entity id (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteLegalEntityAsyncWithHttpInfo($id)
     {
@@ -468,7 +471,7 @@ class LegalEntitiesApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) {
+                function ($response) use ($returnType) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -491,10 +494,10 @@ class LegalEntitiesApi
     /**
      * Create request for operation 'deleteLegalEntity'
      *
-     * @param  int  $id  legal_entity id (required)
-     * @return \GuzzleHttp\Psr7\Request
+     * @param  int $id legal_entity id (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
      */
     protected function deleteLegalEntityRequest($id)
     {
@@ -512,10 +515,11 @@ class LegalEntitiesApi
         $httpBody = '';
         $multipart = false;
 
+
         // path params
         if ($id !== null) {
             $resourcePath = str_replace(
-                '{'.'id'.'}',
+                '{' . 'id' . '}',
                 ObjectSerializer::toPathValue($id),
                 $resourcePath
             );
@@ -539,14 +543,14 @@ class LegalEntitiesApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-
-            if ($headers['Content-Type'] === 'application/json') {
+            
+            if($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
+                if(is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -556,7 +560,7 @@ class LegalEntitiesApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue,
+                        'contents' => $formParamValue
                     ];
                 }
                 // for HTTP post (form)
@@ -589,10 +593,9 @@ class LegalEntitiesApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
-
         return new Request(
             'DELETE',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -603,16 +606,15 @@ class LegalEntitiesApi
      *
      * Get LegalEntity
      *
-     * @param  int  $id  legal_entity id (required)
-     * @return \Deegitalbe\LaravelTrustupIoStorecove\Model\LegalEntity
+     * @param  int $id legal_entity id (required)
      *
      * @throws \Deegitalbe\LaravelTrustupIoStorecove\ApiException on non-2xx response
      * @throws \InvalidArgumentException
+     * @return \Deegitalbe\LaravelTrustupIoStorecove\Model\LegalEntity
      */
     public function getLegalEntity($id)
     {
-        [$response] = $this->getLegalEntityWithHttpInfo($id);
-
+        list($response) = $this->getLegalEntityWithHttpInfo($id);
         return $response;
     }
 
@@ -621,11 +623,11 @@ class LegalEntitiesApi
      *
      * Get LegalEntity
      *
-     * @param  int  $id  legal_entity id (required)
-     * @return array of \Deegitalbe\LaravelTrustupIoStorecove\Model\LegalEntity, HTTP status code, HTTP response headers (array of strings)
+     * @param  int $id legal_entity id (required)
      *
      * @throws \Deegitalbe\LaravelTrustupIoStorecove\ApiException on non-2xx response
      * @throws \InvalidArgumentException
+     * @return array of \Deegitalbe\LaravelTrustupIoStorecove\Model\LegalEntity, HTTP status code, HTTP response headers (array of strings)
      */
     public function getLegalEntityWithHttpInfo($id)
     {
@@ -673,7 +675,7 @@ class LegalEntitiesApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders(),
+                $response->getHeaders()
             ];
 
         } catch (ApiException $e) {
@@ -696,10 +698,10 @@ class LegalEntitiesApi
      *
      * Get LegalEntity
      *
-     * @param  int  $id  legal_entity id (required)
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @param  int $id legal_entity id (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getLegalEntityAsync($id)
     {
@@ -716,10 +718,10 @@ class LegalEntitiesApi
      *
      * Get LegalEntity
      *
-     * @param  int  $id  legal_entity id (required)
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @param  int $id legal_entity id (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getLegalEntityAsyncWithHttpInfo($id)
     {
@@ -743,7 +745,7 @@ class LegalEntitiesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders(),
+                        $response->getHeaders()
                     ];
                 },
                 function ($exception) {
@@ -766,10 +768,10 @@ class LegalEntitiesApi
     /**
      * Create request for operation 'getLegalEntity'
      *
-     * @param  int  $id  legal_entity id (required)
-     * @return \GuzzleHttp\Psr7\Request
+     * @param  int $id legal_entity id (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
      */
     protected function getLegalEntityRequest($id)
     {
@@ -787,10 +789,11 @@ class LegalEntitiesApi
         $httpBody = '';
         $multipart = false;
 
+
         // path params
         if ($id !== null) {
             $resourcePath = str_replace(
-                '{'.'id'.'}',
+                '{' . 'id' . '}',
                 ObjectSerializer::toPathValue($id),
                 $resourcePath
             );
@@ -814,14 +817,14 @@ class LegalEntitiesApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-
-            if ($headers['Content-Type'] === 'application/json') {
+            
+            if($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
+                if(is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -831,7 +834,7 @@ class LegalEntitiesApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue,
+                        'contents' => $formParamValue
                     ];
                 }
                 // for HTTP post (form)
@@ -864,10 +867,9 @@ class LegalEntitiesApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
-
         return new Request(
             'GET',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -878,17 +880,16 @@ class LegalEntitiesApi
      *
      * Update LegalEntity
      *
-     * @param  int  $id  legal_entity id (required)
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\LegalEntityUpdate  $legal_entity  LegalEntity updates (required)
-     * @return \Deegitalbe\LaravelTrustupIoStorecove\Model\LegalEntity
+     * @param  int $id legal_entity id (required)
+     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\LegalEntityUpdate $legal_entity LegalEntity updates (required)
      *
      * @throws \Deegitalbe\LaravelTrustupIoStorecove\ApiException on non-2xx response
      * @throws \InvalidArgumentException
+     * @return \Deegitalbe\LaravelTrustupIoStorecove\Model\LegalEntity
      */
     public function updateLegalEntity($id, $legal_entity)
     {
-        [$response] = $this->updateLegalEntityWithHttpInfo($id, $legal_entity);
-
+        list($response) = $this->updateLegalEntityWithHttpInfo($id, $legal_entity);
         return $response;
     }
 
@@ -897,12 +898,12 @@ class LegalEntitiesApi
      *
      * Update LegalEntity
      *
-     * @param  int  $id  legal_entity id (required)
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\LegalEntityUpdate  $legal_entity  LegalEntity updates (required)
-     * @return array of \Deegitalbe\LaravelTrustupIoStorecove\Model\LegalEntity, HTTP status code, HTTP response headers (array of strings)
+     * @param  int $id legal_entity id (required)
+     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\LegalEntityUpdate $legal_entity LegalEntity updates (required)
      *
      * @throws \Deegitalbe\LaravelTrustupIoStorecove\ApiException on non-2xx response
      * @throws \InvalidArgumentException
+     * @return array of \Deegitalbe\LaravelTrustupIoStorecove\Model\LegalEntity, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateLegalEntityWithHttpInfo($id, $legal_entity)
     {
@@ -950,7 +951,7 @@ class LegalEntitiesApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders(),
+                $response->getHeaders()
             ];
 
         } catch (ApiException $e) {
@@ -981,11 +982,11 @@ class LegalEntitiesApi
      *
      * Update LegalEntity
      *
-     * @param  int  $id  legal_entity id (required)
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\LegalEntityUpdate  $legal_entity  LegalEntity updates (required)
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @param  int $id legal_entity id (required)
+     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\LegalEntityUpdate $legal_entity LegalEntity updates (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateLegalEntityAsync($id, $legal_entity)
     {
@@ -1002,11 +1003,11 @@ class LegalEntitiesApi
      *
      * Update LegalEntity
      *
-     * @param  int  $id  legal_entity id (required)
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\LegalEntityUpdate  $legal_entity  LegalEntity updates (required)
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @param  int $id legal_entity id (required)
+     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\LegalEntityUpdate $legal_entity LegalEntity updates (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateLegalEntityAsyncWithHttpInfo($id, $legal_entity)
     {
@@ -1030,7 +1031,7 @@ class LegalEntitiesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders(),
+                        $response->getHeaders()
                     ];
                 },
                 function ($exception) {
@@ -1053,11 +1054,11 @@ class LegalEntitiesApi
     /**
      * Create request for operation 'updateLegalEntity'
      *
-     * @param  int  $id  legal_entity id (required)
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\LegalEntityUpdate  $legal_entity  LegalEntity updates (required)
-     * @return \GuzzleHttp\Psr7\Request
+     * @param  int $id legal_entity id (required)
+     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\LegalEntityUpdate $legal_entity LegalEntity updates (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
      */
     protected function updateLegalEntityRequest($id, $legal_entity)
     {
@@ -1081,10 +1082,11 @@ class LegalEntitiesApi
         $httpBody = '';
         $multipart = false;
 
+
         // path params
         if ($id !== null) {
             $resourcePath = str_replace(
-                '{'.'id'.'}',
+                '{' . 'id' . '}',
                 ObjectSerializer::toPathValue($id),
                 $resourcePath
             );
@@ -1111,14 +1113,14 @@ class LegalEntitiesApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-
-            if ($headers['Content-Type'] === 'application/json') {
+            
+            if($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
+                if(is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -1128,7 +1130,7 @@ class LegalEntitiesApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue,
+                        'contents' => $formParamValue
                     ];
                 }
                 // for HTTP post (form)
@@ -1161,10 +1163,9 @@ class LegalEntitiesApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
-
         return new Request(
             'PATCH',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1173,17 +1174,16 @@ class LegalEntitiesApi
     /**
      * Create http client option
      *
-     * @return array of http client options
-     *
      * @throws \RuntimeException on file opening failure
+     * @return array of http client options
      */
     protected function createHttpClientOption()
     {
         $options = [];
         if ($this->config->getDebug()) {
             $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
-            if (! $options[RequestOptions::DEBUG]) {
-                throw new \RuntimeException('Failed to open the debug file: '.$this->config->getDebugFile());
+            if (!$options[RequestOptions::DEBUG]) {
+                throw new \RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
             }
         }
 

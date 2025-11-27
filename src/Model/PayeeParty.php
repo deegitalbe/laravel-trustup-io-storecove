@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,49 +29,47 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * PayeeParty Class Doc Comment
  *
  * @category Class
- *
  * @description The party to whom the invoice will be paid. Use this only if necessary, for instance in case of factoring (payment is to the factoring company), bankruptcy (payment is to the bankruptcy estate) or in other special cases.
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PayeeParty implements ArrayAccess, ModelInterface
+class PayeeParty implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'PayeeParty';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'party' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\Party',
-        'public_identifiers' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\PublicIdentifier[]',
+        'public_identifiers' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\PublicIdentifier[]'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'party' => null,
-        'public_identifiers' => null,
+        'public_identifiers' => null
     ];
 
     /**
@@ -103,7 +100,7 @@ class PayeeParty implements ArrayAccess, ModelInterface
      */
     protected static $attributeMap = [
         'party' => 'party',
-        'public_identifiers' => 'publicIdentifiers',
+        'public_identifiers' => 'publicIdentifiers'
     ];
 
     /**
@@ -113,7 +110,7 @@ class PayeeParty implements ArrayAccess, ModelInterface
      */
     protected static $setters = [
         'party' => 'setParty',
-        'public_identifiers' => 'setPublicIdentifiers',
+        'public_identifiers' => 'setPublicIdentifiers'
     ];
 
     /**
@@ -123,7 +120,7 @@ class PayeeParty implements ArrayAccess, ModelInterface
      */
     protected static $getters = [
         'party' => 'getParty',
-        'public_identifiers' => 'getPublicIdentifiers',
+        'public_identifiers' => 'getPublicIdentifiers'
     ];
 
     /**
@@ -167,6 +164,10 @@ class PayeeParty implements ArrayAccess, ModelInterface
         return self::$swaggerModelName;
     }
 
+    
+
+    
+
     /**
      * Associative array for storing property values
      *
@@ -177,10 +178,10 @@ class PayeeParty implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['party'] = isset($data['party']) ? $data['party'] : null;
         $this->container['public_identifiers'] = isset($data['public_identifiers']) ? $data['public_identifiers'] : null;
@@ -198,7 +199,6 @@ class PayeeParty implements ArrayAccess, ModelInterface
         if ($this->container['party'] === null) {
             $invalidProperties[] = "'party' can't be null";
         }
-
         return $invalidProperties;
     }
 
@@ -213,6 +213,7 @@ class PayeeParty implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets party
      *
@@ -226,7 +227,8 @@ class PayeeParty implements ArrayAccess, ModelInterface
     /**
      * Sets party
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\Party  $party  party
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\Party $party party
+     *
      * @return $this
      */
     public function setParty($party)
@@ -249,7 +251,8 @@ class PayeeParty implements ArrayAccess, ModelInterface
     /**
      * Sets public_identifiers
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\PublicIdentifier[]  $public_identifiers  A list of legal and tax identifiers for this party.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\PublicIdentifier[] $public_identifiers A list of legal and tax identifiers for this party.
+     *
      * @return $this
      */
     public function setPublicIdentifiers($public_identifiers)
@@ -258,12 +261,12 @@ class PayeeParty implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -273,7 +276,8 @@ class PayeeParty implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -284,8 +288,9 @@ class PayeeParty implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -300,7 +305,8 @@ class PayeeParty implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -325,3 +331,5 @@ class PayeeParty implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

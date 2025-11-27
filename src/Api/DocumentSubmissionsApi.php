@@ -4,9 +4,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -44,9 +43,8 @@ use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
  * DocumentSubmissionsApi Class Doc Comment
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 class DocumentSubmissionsApi
@@ -66,10 +64,15 @@ class DocumentSubmissionsApi
      */
     protected $headerSelector;
 
+    /**
+     * @param ClientInterface $client
+     * @param Configuration   $config
+     * @param HeaderSelector  $selector
+     */
     public function __construct(
-        ?ClientInterface $client = null,
-        ?Configuration $config = null,
-        ?HeaderSelector $selector = null
+        ClientInterface $client = null,
+        Configuration $config = null,
+        HeaderSelector $selector = null
     ) {
         $this->client = $client ?: new Client();
         $this->config = $config ?: new Configuration();
@@ -89,16 +92,15 @@ class DocumentSubmissionsApi
      *
      * Submit a new document.
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\DocumentSubmission  $document_submission  Document to submit (required)
-     * @return \Deegitalbe\LaravelTrustupIoStorecove\Model\DocumentSubmissionResult
+     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\DocumentSubmission $document_submission Document to submit (required)
      *
      * @throws \Deegitalbe\LaravelTrustupIoStorecove\ApiException on non-2xx response
      * @throws \InvalidArgumentException
+     * @return \Deegitalbe\LaravelTrustupIoStorecove\Model\DocumentSubmissionResult
      */
     public function createDocumentSubmission($document_submission)
     {
-        [$response] = $this->createDocumentSubmissionWithHttpInfo($document_submission);
-
+        list($response) = $this->createDocumentSubmissionWithHttpInfo($document_submission);
         return $response;
     }
 
@@ -107,11 +109,11 @@ class DocumentSubmissionsApi
      *
      * Submit a new document.
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\DocumentSubmission  $document_submission  Document to submit (required)
-     * @return array of \Deegitalbe\LaravelTrustupIoStorecove\Model\DocumentSubmissionResult, HTTP status code, HTTP response headers (array of strings)
+     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\DocumentSubmission $document_submission Document to submit (required)
      *
      * @throws \Deegitalbe\LaravelTrustupIoStorecove\ApiException on non-2xx response
      * @throws \InvalidArgumentException
+     * @return array of \Deegitalbe\LaravelTrustupIoStorecove\Model\DocumentSubmissionResult, HTTP status code, HTTP response headers (array of strings)
      */
     public function createDocumentSubmissionWithHttpInfo($document_submission)
     {
@@ -159,7 +161,7 @@ class DocumentSubmissionsApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders(),
+                $response->getHeaders()
             ];
 
         } catch (ApiException $e) {
@@ -190,10 +192,10 @@ class DocumentSubmissionsApi
      *
      * Submit a new document.
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\DocumentSubmission  $document_submission  Document to submit (required)
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\DocumentSubmission $document_submission Document to submit (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createDocumentSubmissionAsync($document_submission)
     {
@@ -210,10 +212,10 @@ class DocumentSubmissionsApi
      *
      * Submit a new document.
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\DocumentSubmission  $document_submission  Document to submit (required)
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\DocumentSubmission $document_submission Document to submit (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createDocumentSubmissionAsyncWithHttpInfo($document_submission)
     {
@@ -237,7 +239,7 @@ class DocumentSubmissionsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders(),
+                        $response->getHeaders()
                     ];
                 },
                 function ($exception) {
@@ -260,10 +262,10 @@ class DocumentSubmissionsApi
     /**
      * Create request for operation 'createDocumentSubmission'
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\DocumentSubmission  $document_submission  Document to submit (required)
-     * @return \GuzzleHttp\Psr7\Request
+     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\DocumentSubmission $document_submission Document to submit (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
      */
     protected function createDocumentSubmissionRequest($document_submission)
     {
@@ -280,6 +282,8 @@ class DocumentSubmissionsApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
+
+
 
         // body params
         $_tempBody = null;
@@ -302,14 +306,14 @@ class DocumentSubmissionsApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-
-            if ($headers['Content-Type'] === 'application/json') {
+            
+            if($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
+                if(is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -319,7 +323,7 @@ class DocumentSubmissionsApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue,
+                        'contents' => $formParamValue
                     ];
                 }
                 // for HTTP post (form)
@@ -352,10 +356,9 @@ class DocumentSubmissionsApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
-
         return new Request(
             'POST',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -366,17 +369,16 @@ class DocumentSubmissionsApi
      *
      * Get DocumentSubmission Evidence
      *
-     * @param  string  $guid  DocumentSubmission GUID (required)
-     * @param  string  $evidence_type  Type of evidence requested (required)
-     * @return \Deegitalbe\LaravelTrustupIoStorecove\Model\DocumentSubmissionEvidence
+     * @param  string $guid DocumentSubmission GUID (required)
+     * @param  string $evidence_type Type of evidence requested (required)
      *
      * @throws \Deegitalbe\LaravelTrustupIoStorecove\ApiException on non-2xx response
      * @throws \InvalidArgumentException
+     * @return \Deegitalbe\LaravelTrustupIoStorecove\Model\DocumentSubmissionEvidence
      */
     public function showDocumentSubmissionEvidence($guid, $evidence_type)
     {
-        [$response] = $this->showDocumentSubmissionEvidenceWithHttpInfo($guid, $evidence_type);
-
+        list($response) = $this->showDocumentSubmissionEvidenceWithHttpInfo($guid, $evidence_type);
         return $response;
     }
 
@@ -385,12 +387,12 @@ class DocumentSubmissionsApi
      *
      * Get DocumentSubmission Evidence
      *
-     * @param  string  $guid  DocumentSubmission GUID (required)
-     * @param  string  $evidence_type  Type of evidence requested (required)
-     * @return array of \Deegitalbe\LaravelTrustupIoStorecove\Model\DocumentSubmissionEvidence, HTTP status code, HTTP response headers (array of strings)
+     * @param  string $guid DocumentSubmission GUID (required)
+     * @param  string $evidence_type Type of evidence requested (required)
      *
      * @throws \Deegitalbe\LaravelTrustupIoStorecove\ApiException on non-2xx response
      * @throws \InvalidArgumentException
+     * @return array of \Deegitalbe\LaravelTrustupIoStorecove\Model\DocumentSubmissionEvidence, HTTP status code, HTTP response headers (array of strings)
      */
     public function showDocumentSubmissionEvidenceWithHttpInfo($guid, $evidence_type)
     {
@@ -438,7 +440,7 @@ class DocumentSubmissionsApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders(),
+                $response->getHeaders()
             ];
 
         } catch (ApiException $e) {
@@ -461,11 +463,11 @@ class DocumentSubmissionsApi
      *
      * Get DocumentSubmission Evidence
      *
-     * @param  string  $guid  DocumentSubmission GUID (required)
-     * @param  string  $evidence_type  Type of evidence requested (required)
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @param  string $guid DocumentSubmission GUID (required)
+     * @param  string $evidence_type Type of evidence requested (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function showDocumentSubmissionEvidenceAsync($guid, $evidence_type)
     {
@@ -482,11 +484,11 @@ class DocumentSubmissionsApi
      *
      * Get DocumentSubmission Evidence
      *
-     * @param  string  $guid  DocumentSubmission GUID (required)
-     * @param  string  $evidence_type  Type of evidence requested (required)
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @param  string $guid DocumentSubmission GUID (required)
+     * @param  string $evidence_type Type of evidence requested (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function showDocumentSubmissionEvidenceAsyncWithHttpInfo($guid, $evidence_type)
     {
@@ -510,7 +512,7 @@ class DocumentSubmissionsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders(),
+                        $response->getHeaders()
                     ];
                 },
                 function ($exception) {
@@ -533,11 +535,11 @@ class DocumentSubmissionsApi
     /**
      * Create request for operation 'showDocumentSubmissionEvidence'
      *
-     * @param  string  $guid  DocumentSubmission GUID (required)
-     * @param  string  $evidence_type  Type of evidence requested (required)
-     * @return \GuzzleHttp\Psr7\Request
+     * @param  string $guid DocumentSubmission GUID (required)
+     * @param  string $evidence_type Type of evidence requested (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
      */
     protected function showDocumentSubmissionEvidenceRequest($guid, $evidence_type)
     {
@@ -561,10 +563,11 @@ class DocumentSubmissionsApi
         $httpBody = '';
         $multipart = false;
 
+
         // path params
         if ($guid !== null) {
             $resourcePath = str_replace(
-                '{'.'guid'.'}',
+                '{' . 'guid' . '}',
                 ObjectSerializer::toPathValue($guid),
                 $resourcePath
             );
@@ -572,7 +575,7 @@ class DocumentSubmissionsApi
         // path params
         if ($evidence_type !== null) {
             $resourcePath = str_replace(
-                '{'.'evidence_type'.'}',
+                '{' . 'evidence_type' . '}',
                 ObjectSerializer::toPathValue($evidence_type),
                 $resourcePath
             );
@@ -596,14 +599,14 @@ class DocumentSubmissionsApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-
-            if ($headers['Content-Type'] === 'application/json') {
+            
+            if($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
+                if(is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -613,7 +616,7 @@ class DocumentSubmissionsApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue,
+                        'contents' => $formParamValue
                     ];
                 }
                 // for HTTP post (form)
@@ -646,10 +649,9 @@ class DocumentSubmissionsApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
-
         return new Request(
             'GET',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -658,17 +660,16 @@ class DocumentSubmissionsApi
     /**
      * Create http client option
      *
-     * @return array of http client options
-     *
      * @throws \RuntimeException on file opening failure
+     * @return array of http client options
      */
     protected function createHttpClientOption()
     {
         $options = [];
         if ($this->config->getDebug()) {
             $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
-            if (! $options[RequestOptions::DEBUG]) {
-                throw new \RuntimeException('Failed to open the debug file: '.$this->config->getDebugFile());
+            if (!$options[RequestOptions::DEBUG]) {
+                throw new \RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
             }
         }
 

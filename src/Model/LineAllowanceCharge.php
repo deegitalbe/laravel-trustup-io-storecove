@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,51 +29,50 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * LineAllowanceCharge Class Doc Comment
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class LineAllowanceCharge implements ArrayAccess, ModelInterface
+class LineAllowanceCharge implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'LineAllowanceCharge';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'amount_excluding_tax' => 'float',
         'base_amount_excluding_tax' => 'float',
         'reason' => 'string',
-        'reason_code' => 'string',
+        'reason_code' => 'string'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'amount_excluding_tax' => null,
         'base_amount_excluding_tax' => null,
         'reason' => null,
-        'reason_code' => null,
+        'reason_code' => null
     ];
 
     /**
@@ -107,7 +105,7 @@ class LineAllowanceCharge implements ArrayAccess, ModelInterface
         'amount_excluding_tax' => 'amountExcludingTax',
         'base_amount_excluding_tax' => 'baseAmountExcludingTax',
         'reason' => 'reason',
-        'reason_code' => 'reasonCode',
+        'reason_code' => 'reasonCode'
     ];
 
     /**
@@ -119,7 +117,7 @@ class LineAllowanceCharge implements ArrayAccess, ModelInterface
         'amount_excluding_tax' => 'setAmountExcludingTax',
         'base_amount_excluding_tax' => 'setBaseAmountExcludingTax',
         'reason' => 'setReason',
-        'reason_code' => 'setReasonCode',
+        'reason_code' => 'setReasonCode'
     ];
 
     /**
@@ -131,7 +129,7 @@ class LineAllowanceCharge implements ArrayAccess, ModelInterface
         'amount_excluding_tax' => 'getAmountExcludingTax',
         'base_amount_excluding_tax' => 'getBaseAmountExcludingTax',
         'reason' => 'getReason',
-        'reason_code' => 'getReasonCode',
+        'reason_code' => 'getReasonCode'
     ];
 
     /**
@@ -175,6 +173,10 @@ class LineAllowanceCharge implements ArrayAccess, ModelInterface
         return self::$swaggerModelName;
     }
 
+    
+
+    
+
     /**
      * Associative array for storing property values
      *
@@ -185,10 +187,10 @@ class LineAllowanceCharge implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['amount_excluding_tax'] = isset($data['amount_excluding_tax']) ? $data['amount_excluding_tax'] : null;
         $this->container['base_amount_excluding_tax'] = isset($data['base_amount_excluding_tax']) ? $data['base_amount_excluding_tax'] : null;
@@ -208,7 +210,6 @@ class LineAllowanceCharge implements ArrayAccess, ModelInterface
         if ($this->container['amount_excluding_tax'] === null) {
             $invalidProperties[] = "'amount_excluding_tax' can't be null";
         }
-
         return $invalidProperties;
     }
 
@@ -223,6 +224,7 @@ class LineAllowanceCharge implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets amount_excluding_tax
      *
@@ -236,7 +238,8 @@ class LineAllowanceCharge implements ArrayAccess, ModelInterface
     /**
      * Sets amount_excluding_tax
      *
-     * @param  float  $amount_excluding_tax  The amount for the allowance or charge, excluding tax.
+     * @param float $amount_excluding_tax The amount for the allowance or charge, excluding tax.
+     *
      * @return $this
      */
     public function setAmountExcludingTax($amount_excluding_tax)
@@ -259,7 +262,8 @@ class LineAllowanceCharge implements ArrayAccess, ModelInterface
     /**
      * Sets base_amount_excluding_tax
      *
-     * @param  float  $base_amount_excluding_tax  The base amount for the allowance or charge, excluding tax.
+     * @param float $base_amount_excluding_tax The base amount for the allowance or charge, excluding tax.
+     *
      * @return $this
      */
     public function setBaseAmountExcludingTax($base_amount_excluding_tax)
@@ -282,7 +286,8 @@ class LineAllowanceCharge implements ArrayAccess, ModelInterface
     /**
      * Sets reason
      *
-     * @param  string  $reason  The reason for the allowance or charge, free text
+     * @param string $reason The reason for the allowance or charge, free text
+     *
      * @return $this
      */
     public function setReason($reason)
@@ -305,7 +310,8 @@ class LineAllowanceCharge implements ArrayAccess, ModelInterface
     /**
      * Sets reason_code
      *
-     * @param  string  $reason_code  DEPRECATED. Do not use. Contact Storecove first if you want to use this field.
+     * @param string $reason_code DEPRECATED. Do not use. Contact Storecove first if you want to use this field.
+     *
      * @return $this
      */
     public function setReasonCode($reason_code)
@@ -314,12 +320,12 @@ class LineAllowanceCharge implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -329,7 +335,8 @@ class LineAllowanceCharge implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -340,8 +347,9 @@ class LineAllowanceCharge implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -356,7 +364,8 @@ class LineAllowanceCharge implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -381,3 +390,5 @@ class LineAllowanceCharge implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

@@ -1,6 +1,6 @@
 <?php
 /**
- * InvoiceData
+ * TaxAuthority
  *
  * PHP version 5
  *
@@ -33,15 +33,15 @@ use \ArrayAccess;
 use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
- * InvoiceData Class Doc Comment
+ * TaxAuthority Class Doc Comment
  *
  * @category Class
- * @description DEPRECATED. Use RawDocumentData. The invoice to send, in base64 encoded format. Provide either invoice, or invoiceData, but not both.
+ * @description Information relating to a tax authority.
  * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class InvoiceData implements ModelInterface, ArrayAccess
+class TaxAuthority implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class InvoiceData implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'InvoiceData';
+    protected static $swaggerModelName = 'TaxAuthority';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,8 +58,9 @@ class InvoiceData implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'conversion_strategy' => 'string',
-        'document' => 'string'
+        'uuid' => 'string',
+        'uri' => 'string',
+        'validated_at' => 'string'
     ];
 
     /**
@@ -68,8 +69,9 @@ class InvoiceData implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'conversion_strategy' => null,
-        'document' => null
+        'uuid' => null,
+        'uri' => null,
+        'validated_at' => null
     ];
 
     /**
@@ -99,8 +101,9 @@ class InvoiceData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'conversion_strategy' => 'conversionStrategy',
-        'document' => 'document'
+        'uuid' => 'uuid',
+        'uri' => 'uri',
+        'validated_at' => 'validatedAt'
     ];
 
     /**
@@ -109,8 +112,9 @@ class InvoiceData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'conversion_strategy' => 'setConversionStrategy',
-        'document' => 'setDocument'
+        'uuid' => 'setUuid',
+        'uri' => 'setUri',
+        'validated_at' => 'setValidatedAt'
     ];
 
     /**
@@ -119,8 +123,9 @@ class InvoiceData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'conversion_strategy' => 'getConversionStrategy',
-        'document' => 'getDocument'
+        'uuid' => 'getUuid',
+        'uri' => 'getUri',
+        'validated_at' => 'getValidatedAt'
     ];
 
     /**
@@ -164,27 +169,8 @@ class InvoiceData implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const CONVERSION_STRATEGY_UBL = 'ubl';
-    const CONVERSION_STRATEGY_CII = 'cii';
-    const CONVERSION_STRATEGY_IDOC = 'idoc';
-    const CONVERSION_STRATEGY_SETU14 = 'setu14';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getConversionStrategyAllowableValues()
-    {
-        return [
-            self::CONVERSION_STRATEGY_UBL,
-            self::CONVERSION_STRATEGY_CII,
-            self::CONVERSION_STRATEGY_IDOC,
-            self::CONVERSION_STRATEGY_SETU14,
-        ];
-    }
     
 
     /**
@@ -202,8 +188,9 @@ class InvoiceData implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['conversion_strategy'] = isset($data['conversion_strategy']) ? $data['conversion_strategy'] : null;
-        $this->container['document'] = isset($data['document']) ? $data['document'] : null;
+        $this->container['uuid'] = isset($data['uuid']) ? $data['uuid'] : null;
+        $this->container['uri'] = isset($data['uri']) ? $data['uri'] : null;
+        $this->container['validated_at'] = isset($data['validated_at']) ? $data['validated_at'] : null;
     }
 
     /**
@@ -215,16 +202,16 @@ class InvoiceData implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        $allowedValues = $this->getConversionStrategyAllowableValues();
-        if (!is_null($this->container['conversion_strategy']) && !in_array($this->container['conversion_strategy'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'conversion_strategy', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
+        if (!is_null($this->container['uuid']) && (mb_strlen($this->container['uuid']) < 3)) {
+            $invalidProperties[] = "invalid value for 'uuid', the character length must be bigger than or equal to 3.";
         }
 
-        if (!is_null($this->container['document']) && (mb_strlen($this->container['document']) < 5)) {
-            $invalidProperties[] = "invalid value for 'document', the character length must be bigger than or equal to 5.";
+        if (!is_null($this->container['uri']) && (mb_strlen($this->container['uri']) < 3)) {
+            $invalidProperties[] = "invalid value for 'uri', the character length must be bigger than or equal to 3.";
+        }
+
+        if (!is_null($this->container['validated_at']) && (mb_strlen($this->container['validated_at']) < 3)) {
+            $invalidProperties[] = "invalid value for 'validated_at', the character length must be bigger than or equal to 3.";
         }
 
         return $invalidProperties;
@@ -243,63 +230,88 @@ class InvoiceData implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets conversion_strategy
+     * Gets uuid
      *
      * @return string
      */
-    public function getConversionStrategy()
+    public function getUuid()
     {
-        return $this->container['conversion_strategy'];
+        return $this->container['uuid'];
     }
 
     /**
-     * Sets conversion_strategy
+     * Sets uuid
      *
-     * @param string $conversion_strategy How to interpret the document.
+     * @param string $uuid The uuid assigned by the tax authority upon validation.
      *
      * @return $this
      */
-    public function setConversionStrategy($conversion_strategy)
+    public function setUuid($uuid)
     {
-        $allowedValues = $this->getConversionStrategyAllowableValues();
-        if (!is_null($conversion_strategy) && !in_array($conversion_strategy, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'conversion_strategy', must be one of '%s'",
-                    implode("', '", $allowedValues)
-                )
-            );
+
+        if (!is_null($uuid) && (mb_strlen($uuid) < 3)) {
+            throw new \InvalidArgumentException('invalid length for $uuid when calling TaxAuthority., must be bigger than or equal to 3.');
         }
-        $this->container['conversion_strategy'] = $conversion_strategy;
+
+        $this->container['uuid'] = $uuid;
 
         return $this;
     }
 
     /**
-     * Gets document
+     * Gets uri
      *
      * @return string
      */
-    public function getDocument()
+    public function getUri()
     {
-        return $this->container['document'];
+        return $this->container['uri'];
     }
 
     /**
-     * Sets document
+     * Sets uri
      *
-     * @param string $document The base64 encoded version of the document.
+     * @param string $uri A URI (deep link) to the document with the tax authority.
      *
      * @return $this
      */
-    public function setDocument($document)
+    public function setUri($uri)
     {
 
-        if (!is_null($document) && (mb_strlen($document) < 5)) {
-            throw new \InvalidArgumentException('invalid length for $document when calling InvoiceData., must be bigger than or equal to 5.');
+        if (!is_null($uri) && (mb_strlen($uri) < 3)) {
+            throw new \InvalidArgumentException('invalid length for $uri when calling TaxAuthority., must be bigger than or equal to 3.');
         }
 
-        $this->container['document'] = $document;
+        $this->container['uri'] = $uri;
+
+        return $this;
+    }
+
+    /**
+     * Gets validated_at
+     *
+     * @return string
+     */
+    public function getValidatedAt()
+    {
+        return $this->container['validated_at'];
+    }
+
+    /**
+     * Sets validated_at
+     *
+     * @param string $validated_at The datetime when the document was validated by the tax authority.
+     *
+     * @return $this
+     */
+    public function setValidatedAt($validated_at)
+    {
+
+        if (!is_null($validated_at) && (mb_strlen($validated_at) < 3)) {
+            throw new \InvalidArgumentException('invalid length for $validated_at when calling TaxAuthority., must be bigger than or equal to 3.');
+        }
+
+        $this->container['validated_at'] = $validated_at;
 
         return $this;
     }

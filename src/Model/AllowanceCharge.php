@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,34 +29,33 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * AllowanceCharge Class Doc Comment
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class AllowanceCharge implements ArrayAccess, ModelInterface
+class AllowanceCharge implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'AllowanceCharge';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'amount_excluding_vat' => 'float',
         'amount_excluding_tax' => 'float',
@@ -67,14 +65,14 @@ class AllowanceCharge implements ArrayAccess, ModelInterface
         'tax' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\Tax',
         'taxes_duties_fees' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\Tax[]',
         'reason' => 'string',
-        'reason_code' => 'string',
+        'reason_code' => 'string'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'amount_excluding_vat' => null,
         'amount_excluding_tax' => null,
@@ -84,7 +82,7 @@ class AllowanceCharge implements ArrayAccess, ModelInterface
         'tax' => null,
         'taxes_duties_fees' => null,
         'reason' => null,
-        'reason_code' => null,
+        'reason_code' => null
     ];
 
     /**
@@ -122,7 +120,7 @@ class AllowanceCharge implements ArrayAccess, ModelInterface
         'tax' => 'tax',
         'taxes_duties_fees' => 'taxesDutiesFees',
         'reason' => 'reason',
-        'reason_code' => 'reasonCode',
+        'reason_code' => 'reasonCode'
     ];
 
     /**
@@ -139,7 +137,7 @@ class AllowanceCharge implements ArrayAccess, ModelInterface
         'tax' => 'setTax',
         'taxes_duties_fees' => 'setTaxesDutiesFees',
         'reason' => 'setReason',
-        'reason_code' => 'setReasonCode',
+        'reason_code' => 'setReasonCode'
     ];
 
     /**
@@ -156,7 +154,7 @@ class AllowanceCharge implements ArrayAccess, ModelInterface
         'tax' => 'getTax',
         'taxes_duties_fees' => 'getTaxesDutiesFees',
         'reason' => 'getReason',
-        'reason_code' => 'getReasonCode',
+        'reason_code' => 'getReasonCode'
     ];
 
     /**
@@ -200,6 +198,10 @@ class AllowanceCharge implements ArrayAccess, ModelInterface
         return self::$swaggerModelName;
     }
 
+    
+
+    
+
     /**
      * Associative array for storing property values
      *
@@ -210,10 +212,10 @@ class AllowanceCharge implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['amount_excluding_vat'] = isset($data['amount_excluding_vat']) ? $data['amount_excluding_vat'] : null;
         $this->container['amount_excluding_tax'] = isset($data['amount_excluding_tax']) ? $data['amount_excluding_tax'] : null;
@@ -249,6 +251,7 @@ class AllowanceCharge implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets amount_excluding_vat
      *
@@ -262,7 +265,8 @@ class AllowanceCharge implements ArrayAccess, ModelInterface
     /**
      * Sets amount_excluding_vat
      *
-     * @param  float  $amount_excluding_vat  DEPRECATED. Use amountExcludingTax. The amount for the allowance or charge, excluding VAT.
+     * @param float $amount_excluding_vat DEPRECATED. Use amountExcludingTax. The amount for the allowance or charge, excluding VAT.
+     *
      * @return $this
      */
     public function setAmountExcludingVat($amount_excluding_vat)
@@ -285,7 +289,8 @@ class AllowanceCharge implements ArrayAccess, ModelInterface
     /**
      * Sets amount_excluding_tax
      *
-     * @param  float  $amount_excluding_tax  The amount for the allowance or charge, excluding tax.
+     * @param float $amount_excluding_tax The amount for the allowance or charge, excluding tax.
+     *
      * @return $this
      */
     public function setAmountExcludingTax($amount_excluding_tax)
@@ -308,7 +313,8 @@ class AllowanceCharge implements ArrayAccess, ModelInterface
     /**
      * Sets base_amount_excluding_tax
      *
-     * @param  float  $base_amount_excluding_tax  The base amount for the allowance or charge, excluding tax.
+     * @param float $base_amount_excluding_tax The base amount for the allowance or charge, excluding tax.
+     *
      * @return $this
      */
     public function setBaseAmountExcludingTax($base_amount_excluding_tax)
@@ -331,7 +337,8 @@ class AllowanceCharge implements ArrayAccess, ModelInterface
     /**
      * Sets amount_including_tax
      *
-     * @param  float  $amount_including_tax  The amount for the allowance or charge, including tax.
+     * @param float $amount_including_tax The amount for the allowance or charge, including tax.
+     *
      * @return $this
      */
     public function setAmountIncludingTax($amount_including_tax)
@@ -354,7 +361,8 @@ class AllowanceCharge implements ArrayAccess, ModelInterface
     /**
      * Sets base_amount_including_tax
      *
-     * @param  float  $base_amount_including_tax  The base amount for the allowance or charge, including tax.
+     * @param float $base_amount_including_tax The base amount for the allowance or charge, including tax.
+     *
      * @return $this
      */
     public function setBaseAmountIncludingTax($base_amount_including_tax)
@@ -377,7 +385,8 @@ class AllowanceCharge implements ArrayAccess, ModelInterface
     /**
      * Sets tax
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\Tax  $tax  DEPRECATED. Use the taxesDutiesFees array. The tax for this allowance or charge.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\Tax $tax DEPRECATED. Use the taxesDutiesFees array. The tax for this allowance or charge.
+     *
      * @return $this
      */
     public function setTax($tax)
@@ -400,7 +409,8 @@ class AllowanceCharge implements ArrayAccess, ModelInterface
     /**
      * Sets taxes_duties_fees
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\Tax[]  $taxes_duties_fees  An array of taxes, duties and fees for this invoice line. At this moment, multiple Tax items is allowed only for IN (India) and US (USA) taxes. All other countries can only have a single Tax item in this array.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\Tax[] $taxes_duties_fees An array of taxes, duties and fees for this invoice line. At this moment, multiple Tax items is allowed only for IN (India) and US (USA) taxes. All other countries can only have a single Tax item in this array.
+     *
      * @return $this
      */
     public function setTaxesDutiesFees($taxes_duties_fees)
@@ -423,7 +433,8 @@ class AllowanceCharge implements ArrayAccess, ModelInterface
     /**
      * Sets reason
      *
-     * @param  string  $reason  The reason for the allowance or charge, free text
+     * @param string $reason The reason for the allowance or charge, free text
+     *
      * @return $this
      */
     public function setReason($reason)
@@ -446,7 +457,8 @@ class AllowanceCharge implements ArrayAccess, ModelInterface
     /**
      * Sets reason_code
      *
-     * @param  string  $reason_code  DEPRECATED. Do not use. Contact Storecove first if you want to use this field.
+     * @param string $reason_code DEPRECATED. Do not use. Contact Storecove first if you want to use this field.
+     *
      * @return $this
      */
     public function setReasonCode($reason_code)
@@ -455,12 +467,12 @@ class AllowanceCharge implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -470,7 +482,8 @@ class AllowanceCharge implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -481,8 +494,9 @@ class AllowanceCharge implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -497,7 +511,8 @@ class AllowanceCharge implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -522,3 +537,5 @@ class AllowanceCharge implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

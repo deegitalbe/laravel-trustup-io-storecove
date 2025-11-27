@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,49 +29,48 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * PurchaseInvoiceSenderBillingContact Class Doc Comment
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PurchaseInvoiceSenderBillingContact implements ArrayAccess, ModelInterface
+class PurchaseInvoiceSenderBillingContact implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'PurchaseInvoiceSenderBillingContact';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'first_name' => 'string',
         'last_name' => 'string',
-        'email' => 'string',
+        'email' => 'string'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'first_name' => null,
         'last_name' => null,
-        'email' => null,
+        'email' => null
     ];
 
     /**
@@ -104,7 +102,7 @@ class PurchaseInvoiceSenderBillingContact implements ArrayAccess, ModelInterface
     protected static $attributeMap = [
         'first_name' => 'first_name',
         'last_name' => 'last_name',
-        'email' => 'email',
+        'email' => 'email'
     ];
 
     /**
@@ -115,7 +113,7 @@ class PurchaseInvoiceSenderBillingContact implements ArrayAccess, ModelInterface
     protected static $setters = [
         'first_name' => 'setFirstName',
         'last_name' => 'setLastName',
-        'email' => 'setEmail',
+        'email' => 'setEmail'
     ];
 
     /**
@@ -126,7 +124,7 @@ class PurchaseInvoiceSenderBillingContact implements ArrayAccess, ModelInterface
     protected static $getters = [
         'first_name' => 'getFirstName',
         'last_name' => 'getLastName',
-        'email' => 'getEmail',
+        'email' => 'getEmail'
     ];
 
     /**
@@ -170,6 +168,10 @@ class PurchaseInvoiceSenderBillingContact implements ArrayAccess, ModelInterface
         return self::$swaggerModelName;
     }
 
+    
+
+    
+
     /**
      * Associative array for storing property values
      *
@@ -180,10 +182,10 @@ class PurchaseInvoiceSenderBillingContact implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['first_name'] = isset($data['first_name']) ? $data['first_name'] : null;
         $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
@@ -213,6 +215,7 @@ class PurchaseInvoiceSenderBillingContact implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets first_name
      *
@@ -226,7 +229,8 @@ class PurchaseInvoiceSenderBillingContact implements ArrayAccess, ModelInterface
     /**
      * Sets first_name
      *
-     * @param  string  $first_name  The first name of the billing contact.
+     * @param string $first_name The first name of the billing contact.
+     *
      * @return $this
      */
     public function setFirstName($first_name)
@@ -249,7 +253,8 @@ class PurchaseInvoiceSenderBillingContact implements ArrayAccess, ModelInterface
     /**
      * Sets last_name
      *
-     * @param  string  $last_name  The last name of the billing contact.
+     * @param string $last_name The last name of the billing contact.
+     *
      * @return $this
      */
     public function setLastName($last_name)
@@ -272,7 +277,8 @@ class PurchaseInvoiceSenderBillingContact implements ArrayAccess, ModelInterface
     /**
      * Sets email
      *
-     * @param  string  $email  The email of the billing contact.
+     * @param string $email The email of the billing contact.
+     *
      * @return $this
      */
     public function setEmail($email)
@@ -281,12 +287,12 @@ class PurchaseInvoiceSenderBillingContact implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -296,7 +302,8 @@ class PurchaseInvoiceSenderBillingContact implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -307,8 +314,9 @@ class PurchaseInvoiceSenderBillingContact implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -323,7 +331,8 @@ class PurchaseInvoiceSenderBillingContact implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -348,3 +357,5 @@ class PurchaseInvoiceSenderBillingContact implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

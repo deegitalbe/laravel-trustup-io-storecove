@@ -4,9 +4,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -44,9 +43,8 @@ use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
  * PurchaseInvoicesApi Class Doc Comment
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 class PurchaseInvoicesApi
@@ -66,10 +64,15 @@ class PurchaseInvoicesApi
      */
     protected $headerSelector;
 
+    /**
+     * @param ClientInterface $client
+     * @param Configuration   $config
+     * @param HeaderSelector  $selector
+     */
     public function __construct(
-        ?ClientInterface $client = null,
-        ?Configuration $config = null,
-        ?HeaderSelector $selector = null
+        ClientInterface $client = null,
+        Configuration $config = null,
+        HeaderSelector $selector = null
     ) {
         $this->client = $client ?: new Client();
         $this->config = $config ?: new Configuration();
@@ -89,18 +92,17 @@ class PurchaseInvoicesApi
      *
      * DEPRECATED. Get Purchase invoice data as JSON
      *
-     * @param  string  $guid  The guid of the purchase invoice, from the webhook. (required)
-     * @param  string  $pmv  DEPRECATED. The PaymentMeans version. The default (and deprecated) version 1.0 will give BankPaymentMean, DirectDebitPaymentMean, CardPaymentMean, NppPaymentMean, SeBankGiroPaymentMean, SePlusGiroPaymentMean, SgCardPaymentMean, SgGiroPaymentMean, SgPaynowPaymentMean.  Version 2.0 deprecates BankPaymentMean (now CreditTransferPaymentMean), CardPaymentMean (now CreditCardPaymentMean), NppPaymentMean (now AunzNppPayidPaymentMean), SeBankGiroPaymentMean (now SeBankgiroPaymentMean  -- note the lower &#39;g&#39; in &#39;bankgiro&#39;). It also adds OnlinePaymentServicePaymentMean, StandingAgreementPaymentMean, AunzNppPaytoPaymentMean, AunzBpayPaymentMean, AunzPostbillpayPaymentMean, AunzUriPaymentMean. (optional, default to 1.0)
-     * @param  string  $version  The JSON content version date. The default is &#39;1970-01-01&#39; meaning you get all deprecated elements since nothing was deprecated before that ;). If you do not want deprecated elements, use a later date. Do not use a dynamic date, because that means when we deprecate elements they will disappear from our responses. (optional, default to 1970-01-01)
-     * @return \Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoice
+     * @param  string $guid The guid of the purchase invoice, from the webhook. (required)
+     * @param  string $pmv DEPRECATED. The PaymentMeans version. The default (and deprecated) version 1.0 will give BankPaymentMean, DirectDebitPaymentMean, CardPaymentMean, NppPaymentMean, SeBankGiroPaymentMean, SePlusGiroPaymentMean, SgCardPaymentMean, SgGiroPaymentMean, SgPaynowPaymentMean.  Version 2.0 deprecates BankPaymentMean (now CreditTransferPaymentMean), CardPaymentMean (now CreditCardPaymentMean), NppPaymentMean (now AunzNppPayidPaymentMean), SeBankGiroPaymentMean (now SeBankgiroPaymentMean  -- note the lower &#39;g&#39; in &#39;bankgiro&#39;). It also adds OnlinePaymentServicePaymentMean, StandingAgreementPaymentMean, AunzNppPaytoPaymentMean, AunzBpayPaymentMean, AunzPostbillpayPaymentMean, AunzUriPaymentMean. (optional, default to 1.0)
+     * @param  string $version The JSON content version date. The default is &#39;1970-01-01&#39; meaning you get all deprecated elements since nothing was deprecated before that ;). If you do not want deprecated elements, use a later date. Do not use a dynamic date, because that means when we deprecate elements they will disappear from our responses. (optional, default to 1970-01-01)
      *
      * @throws \Deegitalbe\LaravelTrustupIoStorecove\ApiException on non-2xx response
      * @throws \InvalidArgumentException
+     * @return \Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoice
      */
     public function getInvoiceJson($guid, $pmv = '1.0', $version = '1970-01-01')
     {
-        [$response] = $this->getInvoiceJsonWithHttpInfo($guid, $pmv, $version);
-
+        list($response) = $this->getInvoiceJsonWithHttpInfo($guid, $pmv, $version);
         return $response;
     }
 
@@ -109,13 +111,13 @@ class PurchaseInvoicesApi
      *
      * DEPRECATED. Get Purchase invoice data as JSON
      *
-     * @param  string  $guid  The guid of the purchase invoice, from the webhook. (required)
-     * @param  string  $pmv  DEPRECATED. The PaymentMeans version. The default (and deprecated) version 1.0 will give BankPaymentMean, DirectDebitPaymentMean, CardPaymentMean, NppPaymentMean, SeBankGiroPaymentMean, SePlusGiroPaymentMean, SgCardPaymentMean, SgGiroPaymentMean, SgPaynowPaymentMean.  Version 2.0 deprecates BankPaymentMean (now CreditTransferPaymentMean), CardPaymentMean (now CreditCardPaymentMean), NppPaymentMean (now AunzNppPayidPaymentMean), SeBankGiroPaymentMean (now SeBankgiroPaymentMean  -- note the lower &#39;g&#39; in &#39;bankgiro&#39;). It also adds OnlinePaymentServicePaymentMean, StandingAgreementPaymentMean, AunzNppPaytoPaymentMean, AunzBpayPaymentMean, AunzPostbillpayPaymentMean, AunzUriPaymentMean. (optional, default to 1.0)
-     * @param  string  $version  The JSON content version date. The default is &#39;1970-01-01&#39; meaning you get all deprecated elements since nothing was deprecated before that ;). If you do not want deprecated elements, use a later date. Do not use a dynamic date, because that means when we deprecate elements they will disappear from our responses. (optional, default to 1970-01-01)
-     * @return array of \Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoice, HTTP status code, HTTP response headers (array of strings)
+     * @param  string $guid The guid of the purchase invoice, from the webhook. (required)
+     * @param  string $pmv DEPRECATED. The PaymentMeans version. The default (and deprecated) version 1.0 will give BankPaymentMean, DirectDebitPaymentMean, CardPaymentMean, NppPaymentMean, SeBankGiroPaymentMean, SePlusGiroPaymentMean, SgCardPaymentMean, SgGiroPaymentMean, SgPaynowPaymentMean.  Version 2.0 deprecates BankPaymentMean (now CreditTransferPaymentMean), CardPaymentMean (now CreditCardPaymentMean), NppPaymentMean (now AunzNppPayidPaymentMean), SeBankGiroPaymentMean (now SeBankgiroPaymentMean  -- note the lower &#39;g&#39; in &#39;bankgiro&#39;). It also adds OnlinePaymentServicePaymentMean, StandingAgreementPaymentMean, AunzNppPaytoPaymentMean, AunzBpayPaymentMean, AunzPostbillpayPaymentMean, AunzUriPaymentMean. (optional, default to 1.0)
+     * @param  string $version The JSON content version date. The default is &#39;1970-01-01&#39; meaning you get all deprecated elements since nothing was deprecated before that ;). If you do not want deprecated elements, use a later date. Do not use a dynamic date, because that means when we deprecate elements they will disappear from our responses. (optional, default to 1970-01-01)
      *
      * @throws \Deegitalbe\LaravelTrustupIoStorecove\ApiException on non-2xx response
      * @throws \InvalidArgumentException
+     * @return array of \Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoice, HTTP status code, HTTP response headers (array of strings)
      */
     public function getInvoiceJsonWithHttpInfo($guid, $pmv = '1.0', $version = '1970-01-01')
     {
@@ -163,7 +165,7 @@ class PurchaseInvoicesApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders(),
+                $response->getHeaders()
             ];
 
         } catch (ApiException $e) {
@@ -186,12 +188,12 @@ class PurchaseInvoicesApi
      *
      * DEPRECATED. Get Purchase invoice data as JSON
      *
-     * @param  string  $guid  The guid of the purchase invoice, from the webhook. (required)
-     * @param  string  $pmv  DEPRECATED. The PaymentMeans version. The default (and deprecated) version 1.0 will give BankPaymentMean, DirectDebitPaymentMean, CardPaymentMean, NppPaymentMean, SeBankGiroPaymentMean, SePlusGiroPaymentMean, SgCardPaymentMean, SgGiroPaymentMean, SgPaynowPaymentMean.  Version 2.0 deprecates BankPaymentMean (now CreditTransferPaymentMean), CardPaymentMean (now CreditCardPaymentMean), NppPaymentMean (now AunzNppPayidPaymentMean), SeBankGiroPaymentMean (now SeBankgiroPaymentMean  -- note the lower &#39;g&#39; in &#39;bankgiro&#39;). It also adds OnlinePaymentServicePaymentMean, StandingAgreementPaymentMean, AunzNppPaytoPaymentMean, AunzBpayPaymentMean, AunzPostbillpayPaymentMean, AunzUriPaymentMean. (optional, default to 1.0)
-     * @param  string  $version  The JSON content version date. The default is &#39;1970-01-01&#39; meaning you get all deprecated elements since nothing was deprecated before that ;). If you do not want deprecated elements, use a later date. Do not use a dynamic date, because that means when we deprecate elements they will disappear from our responses. (optional, default to 1970-01-01)
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @param  string $guid The guid of the purchase invoice, from the webhook. (required)
+     * @param  string $pmv DEPRECATED. The PaymentMeans version. The default (and deprecated) version 1.0 will give BankPaymentMean, DirectDebitPaymentMean, CardPaymentMean, NppPaymentMean, SeBankGiroPaymentMean, SePlusGiroPaymentMean, SgCardPaymentMean, SgGiroPaymentMean, SgPaynowPaymentMean.  Version 2.0 deprecates BankPaymentMean (now CreditTransferPaymentMean), CardPaymentMean (now CreditCardPaymentMean), NppPaymentMean (now AunzNppPayidPaymentMean), SeBankGiroPaymentMean (now SeBankgiroPaymentMean  -- note the lower &#39;g&#39; in &#39;bankgiro&#39;). It also adds OnlinePaymentServicePaymentMean, StandingAgreementPaymentMean, AunzNppPaytoPaymentMean, AunzBpayPaymentMean, AunzPostbillpayPaymentMean, AunzUriPaymentMean. (optional, default to 1.0)
+     * @param  string $version The JSON content version date. The default is &#39;1970-01-01&#39; meaning you get all deprecated elements since nothing was deprecated before that ;). If you do not want deprecated elements, use a later date. Do not use a dynamic date, because that means when we deprecate elements they will disappear from our responses. (optional, default to 1970-01-01)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getInvoiceJsonAsync($guid, $pmv = '1.0', $version = '1970-01-01')
     {
@@ -208,12 +210,12 @@ class PurchaseInvoicesApi
      *
      * DEPRECATED. Get Purchase invoice data as JSON
      *
-     * @param  string  $guid  The guid of the purchase invoice, from the webhook. (required)
-     * @param  string  $pmv  DEPRECATED. The PaymentMeans version. The default (and deprecated) version 1.0 will give BankPaymentMean, DirectDebitPaymentMean, CardPaymentMean, NppPaymentMean, SeBankGiroPaymentMean, SePlusGiroPaymentMean, SgCardPaymentMean, SgGiroPaymentMean, SgPaynowPaymentMean.  Version 2.0 deprecates BankPaymentMean (now CreditTransferPaymentMean), CardPaymentMean (now CreditCardPaymentMean), NppPaymentMean (now AunzNppPayidPaymentMean), SeBankGiroPaymentMean (now SeBankgiroPaymentMean  -- note the lower &#39;g&#39; in &#39;bankgiro&#39;). It also adds OnlinePaymentServicePaymentMean, StandingAgreementPaymentMean, AunzNppPaytoPaymentMean, AunzBpayPaymentMean, AunzPostbillpayPaymentMean, AunzUriPaymentMean. (optional, default to 1.0)
-     * @param  string  $version  The JSON content version date. The default is &#39;1970-01-01&#39; meaning you get all deprecated elements since nothing was deprecated before that ;). If you do not want deprecated elements, use a later date. Do not use a dynamic date, because that means when we deprecate elements they will disappear from our responses. (optional, default to 1970-01-01)
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @param  string $guid The guid of the purchase invoice, from the webhook. (required)
+     * @param  string $pmv DEPRECATED. The PaymentMeans version. The default (and deprecated) version 1.0 will give BankPaymentMean, DirectDebitPaymentMean, CardPaymentMean, NppPaymentMean, SeBankGiroPaymentMean, SePlusGiroPaymentMean, SgCardPaymentMean, SgGiroPaymentMean, SgPaynowPaymentMean.  Version 2.0 deprecates BankPaymentMean (now CreditTransferPaymentMean), CardPaymentMean (now CreditCardPaymentMean), NppPaymentMean (now AunzNppPayidPaymentMean), SeBankGiroPaymentMean (now SeBankgiroPaymentMean  -- note the lower &#39;g&#39; in &#39;bankgiro&#39;). It also adds OnlinePaymentServicePaymentMean, StandingAgreementPaymentMean, AunzNppPaytoPaymentMean, AunzBpayPaymentMean, AunzPostbillpayPaymentMean, AunzUriPaymentMean. (optional, default to 1.0)
+     * @param  string $version The JSON content version date. The default is &#39;1970-01-01&#39; meaning you get all deprecated elements since nothing was deprecated before that ;). If you do not want deprecated elements, use a later date. Do not use a dynamic date, because that means when we deprecate elements they will disappear from our responses. (optional, default to 1970-01-01)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getInvoiceJsonAsyncWithHttpInfo($guid, $pmv = '1.0', $version = '1970-01-01')
     {
@@ -237,7 +239,7 @@ class PurchaseInvoicesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders(),
+                        $response->getHeaders()
                     ];
                 },
                 function ($exception) {
@@ -260,12 +262,12 @@ class PurchaseInvoicesApi
     /**
      * Create request for operation 'getInvoiceJson'
      *
-     * @param  string  $guid  The guid of the purchase invoice, from the webhook. (required)
-     * @param  string  $pmv  DEPRECATED. The PaymentMeans version. The default (and deprecated) version 1.0 will give BankPaymentMean, DirectDebitPaymentMean, CardPaymentMean, NppPaymentMean, SeBankGiroPaymentMean, SePlusGiroPaymentMean, SgCardPaymentMean, SgGiroPaymentMean, SgPaynowPaymentMean.  Version 2.0 deprecates BankPaymentMean (now CreditTransferPaymentMean), CardPaymentMean (now CreditCardPaymentMean), NppPaymentMean (now AunzNppPayidPaymentMean), SeBankGiroPaymentMean (now SeBankgiroPaymentMean  -- note the lower &#39;g&#39; in &#39;bankgiro&#39;). It also adds OnlinePaymentServicePaymentMean, StandingAgreementPaymentMean, AunzNppPaytoPaymentMean, AunzBpayPaymentMean, AunzPostbillpayPaymentMean, AunzUriPaymentMean. (optional, default to 1.0)
-     * @param  string  $version  The JSON content version date. The default is &#39;1970-01-01&#39; meaning you get all deprecated elements since nothing was deprecated before that ;). If you do not want deprecated elements, use a later date. Do not use a dynamic date, because that means when we deprecate elements they will disappear from our responses. (optional, default to 1970-01-01)
-     * @return \GuzzleHttp\Psr7\Request
+     * @param  string $guid The guid of the purchase invoice, from the webhook. (required)
+     * @param  string $pmv DEPRECATED. The PaymentMeans version. The default (and deprecated) version 1.0 will give BankPaymentMean, DirectDebitPaymentMean, CardPaymentMean, NppPaymentMean, SeBankGiroPaymentMean, SePlusGiroPaymentMean, SgCardPaymentMean, SgGiroPaymentMean, SgPaynowPaymentMean.  Version 2.0 deprecates BankPaymentMean (now CreditTransferPaymentMean), CardPaymentMean (now CreditCardPaymentMean), NppPaymentMean (now AunzNppPayidPaymentMean), SeBankGiroPaymentMean (now SeBankgiroPaymentMean  -- note the lower &#39;g&#39; in &#39;bankgiro&#39;). It also adds OnlinePaymentServicePaymentMean, StandingAgreementPaymentMean, AunzNppPaytoPaymentMean, AunzBpayPaymentMean, AunzPostbillpayPaymentMean, AunzUriPaymentMean. (optional, default to 1.0)
+     * @param  string $version The JSON content version date. The default is &#39;1970-01-01&#39; meaning you get all deprecated elements since nothing was deprecated before that ;). If you do not want deprecated elements, use a later date. Do not use a dynamic date, because that means when we deprecate elements they will disappear from our responses. (optional, default to 1970-01-01)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
      */
     protected function getInvoiceJsonRequest($guid, $pmv = '1.0', $version = '1970-01-01')
     {
@@ -275,9 +277,10 @@ class PurchaseInvoicesApi
                 'Missing the required parameter $guid when calling getInvoiceJson'
             );
         }
-        if ($version !== null && ! preg_match('/^d{4}-d{2}-d{2}$/', $version)) {
-            throw new \InvalidArgumentException('invalid value for "version" when calling PurchaseInvoicesApi.getInvoiceJson, must conform to the pattern /^d{4}-d{2}-d{2}$/.');
+        if ($version !== null && !preg_match("/^d{4}-d{2}-d{2}$/", $version)) {
+            throw new \InvalidArgumentException("invalid value for \"version\" when calling PurchaseInvoicesApi.getInvoiceJson, must conform to the pattern /^d{4}-d{2}-d{2}$/.");
         }
+
 
         $resourcePath = '/purchase_invoices/{guid}';
         $formParams = [];
@@ -298,7 +301,7 @@ class PurchaseInvoicesApi
         // path params
         if ($guid !== null) {
             $resourcePath = str_replace(
-                '{'.'guid'.'}',
+                '{' . 'guid' . '}',
                 ObjectSerializer::toPathValue($guid),
                 $resourcePath
             );
@@ -322,14 +325,14 @@ class PurchaseInvoicesApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-
-            if ($headers['Content-Type'] === 'application/json') {
+            
+            if($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
+                if(is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -339,7 +342,7 @@ class PurchaseInvoicesApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue,
+                        'contents' => $formParamValue
                     ];
                 }
                 // for HTTP post (form)
@@ -372,10 +375,9 @@ class PurchaseInvoicesApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
-
         return new Request(
             'GET',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -386,19 +388,18 @@ class PurchaseInvoicesApi
      *
      * DEPRECATED. Get Purchase invoice data in a selectable format
      *
-     * @param  string  $guid  purchase invoice guid (required)
-     * @param  string  $packaging  How to package the purchase invoice. Note that \&quot;ubl\&quot; is deprecated. (required)
-     * @param  string  $pmv  DEPRECATED. The PaymentMeans version. The default (and deprecated) version 1.0 will give BankPaymentMean, DirectDebitPaymentMean, CardPaymentMean, NppPaymentMean, SeBankGiroPaymentMean, SePlusGiroPaymentMean, SgCardPaymentMean, SgGiroPaymentMean, SgPaynowPaymentMean.  Version 2.0 deprecates BankPaymentMean (now CreditTransferPaymentMean), CardPaymentMean (now CreditCardPaymentMean), NppPaymentMean (now AunzNppPayidPaymentMean), SeBankGiroPaymentMean (now SeBankgiroPaymentMean  -- note the lower &#39;g&#39; in &#39;bankgiro&#39;). It also adds OnlinePaymentServicePaymentMean, StandingAgreementPaymentMean, AunzNppPaytoPaymentMean, AunzBpayPaymentMean, AunzPostbillpayPaymentMean, AunzUriPaymentMean. (optional, default to 1.0)
-     * @param  string  $version  The JSON content version date. The default is &#39;1970-01-01&#39; meaning you get all deprecated elements since nothing was deprecated before that ;). If you do not want deprecated elements, use a later date. Do not use a dynamic date, because that means when we deprecate elements they will disappear from our responses. Only used for &#39;json&#39; packaging, not for &#39;original&#39;. (optional, default to 1970-01-01)
-     * @return \Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoiceUbl
+     * @param  string $guid purchase invoice guid (required)
+     * @param  string $packaging How to package the purchase invoice. Note that \&quot;ubl\&quot; is deprecated. (required)
+     * @param  string $pmv DEPRECATED. The PaymentMeans version. The default (and deprecated) version 1.0 will give BankPaymentMean, DirectDebitPaymentMean, CardPaymentMean, NppPaymentMean, SeBankGiroPaymentMean, SePlusGiroPaymentMean, SgCardPaymentMean, SgGiroPaymentMean, SgPaynowPaymentMean.  Version 2.0 deprecates BankPaymentMean (now CreditTransferPaymentMean), CardPaymentMean (now CreditCardPaymentMean), NppPaymentMean (now AunzNppPayidPaymentMean), SeBankGiroPaymentMean (now SeBankgiroPaymentMean  -- note the lower &#39;g&#39; in &#39;bankgiro&#39;). It also adds OnlinePaymentServicePaymentMean, StandingAgreementPaymentMean, AunzNppPaytoPaymentMean, AunzBpayPaymentMean, AunzPostbillpayPaymentMean, AunzUriPaymentMean. (optional, default to 1.0)
+     * @param  string $version The JSON content version date. The default is &#39;1970-01-01&#39; meaning you get all deprecated elements since nothing was deprecated before that ;). If you do not want deprecated elements, use a later date. Do not use a dynamic date, because that means when we deprecate elements they will disappear from our responses. Only used for &#39;json&#39; packaging, not for &#39;original&#39;. (optional, default to 1970-01-01)
      *
      * @throws \Deegitalbe\LaravelTrustupIoStorecove\ApiException on non-2xx response
      * @throws \InvalidArgumentException
+     * @return \Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoiceUbl
      */
     public function getInvoiceUbl($guid, $packaging, $pmv = '1.0', $version = '1970-01-01')
     {
-        [$response] = $this->getInvoiceUblWithHttpInfo($guid, $packaging, $pmv, $version);
-
+        list($response) = $this->getInvoiceUblWithHttpInfo($guid, $packaging, $pmv, $version);
         return $response;
     }
 
@@ -407,14 +408,14 @@ class PurchaseInvoicesApi
      *
      * DEPRECATED. Get Purchase invoice data in a selectable format
      *
-     * @param  string  $guid  purchase invoice guid (required)
-     * @param  string  $packaging  How to package the purchase invoice. Note that \&quot;ubl\&quot; is deprecated. (required)
-     * @param  string  $pmv  DEPRECATED. The PaymentMeans version. The default (and deprecated) version 1.0 will give BankPaymentMean, DirectDebitPaymentMean, CardPaymentMean, NppPaymentMean, SeBankGiroPaymentMean, SePlusGiroPaymentMean, SgCardPaymentMean, SgGiroPaymentMean, SgPaynowPaymentMean.  Version 2.0 deprecates BankPaymentMean (now CreditTransferPaymentMean), CardPaymentMean (now CreditCardPaymentMean), NppPaymentMean (now AunzNppPayidPaymentMean), SeBankGiroPaymentMean (now SeBankgiroPaymentMean  -- note the lower &#39;g&#39; in &#39;bankgiro&#39;). It also adds OnlinePaymentServicePaymentMean, StandingAgreementPaymentMean, AunzNppPaytoPaymentMean, AunzBpayPaymentMean, AunzPostbillpayPaymentMean, AunzUriPaymentMean. (optional, default to 1.0)
-     * @param  string  $version  The JSON content version date. The default is &#39;1970-01-01&#39; meaning you get all deprecated elements since nothing was deprecated before that ;). If you do not want deprecated elements, use a later date. Do not use a dynamic date, because that means when we deprecate elements they will disappear from our responses. Only used for &#39;json&#39; packaging, not for &#39;original&#39;. (optional, default to 1970-01-01)
-     * @return array of \Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoiceUbl, HTTP status code, HTTP response headers (array of strings)
+     * @param  string $guid purchase invoice guid (required)
+     * @param  string $packaging How to package the purchase invoice. Note that \&quot;ubl\&quot; is deprecated. (required)
+     * @param  string $pmv DEPRECATED. The PaymentMeans version. The default (and deprecated) version 1.0 will give BankPaymentMean, DirectDebitPaymentMean, CardPaymentMean, NppPaymentMean, SeBankGiroPaymentMean, SePlusGiroPaymentMean, SgCardPaymentMean, SgGiroPaymentMean, SgPaynowPaymentMean.  Version 2.0 deprecates BankPaymentMean (now CreditTransferPaymentMean), CardPaymentMean (now CreditCardPaymentMean), NppPaymentMean (now AunzNppPayidPaymentMean), SeBankGiroPaymentMean (now SeBankgiroPaymentMean  -- note the lower &#39;g&#39; in &#39;bankgiro&#39;). It also adds OnlinePaymentServicePaymentMean, StandingAgreementPaymentMean, AunzNppPaytoPaymentMean, AunzBpayPaymentMean, AunzPostbillpayPaymentMean, AunzUriPaymentMean. (optional, default to 1.0)
+     * @param  string $version The JSON content version date. The default is &#39;1970-01-01&#39; meaning you get all deprecated elements since nothing was deprecated before that ;). If you do not want deprecated elements, use a later date. Do not use a dynamic date, because that means when we deprecate elements they will disappear from our responses. Only used for &#39;json&#39; packaging, not for &#39;original&#39;. (optional, default to 1970-01-01)
      *
      * @throws \Deegitalbe\LaravelTrustupIoStorecove\ApiException on non-2xx response
      * @throws \InvalidArgumentException
+     * @return array of \Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoiceUbl, HTTP status code, HTTP response headers (array of strings)
      */
     public function getInvoiceUblWithHttpInfo($guid, $packaging, $pmv = '1.0', $version = '1970-01-01')
     {
@@ -462,7 +463,7 @@ class PurchaseInvoicesApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders(),
+                $response->getHeaders()
             ];
 
         } catch (ApiException $e) {
@@ -485,13 +486,13 @@ class PurchaseInvoicesApi
      *
      * DEPRECATED. Get Purchase invoice data in a selectable format
      *
-     * @param  string  $guid  purchase invoice guid (required)
-     * @param  string  $packaging  How to package the purchase invoice. Note that \&quot;ubl\&quot; is deprecated. (required)
-     * @param  string  $pmv  DEPRECATED. The PaymentMeans version. The default (and deprecated) version 1.0 will give BankPaymentMean, DirectDebitPaymentMean, CardPaymentMean, NppPaymentMean, SeBankGiroPaymentMean, SePlusGiroPaymentMean, SgCardPaymentMean, SgGiroPaymentMean, SgPaynowPaymentMean.  Version 2.0 deprecates BankPaymentMean (now CreditTransferPaymentMean), CardPaymentMean (now CreditCardPaymentMean), NppPaymentMean (now AunzNppPayidPaymentMean), SeBankGiroPaymentMean (now SeBankgiroPaymentMean  -- note the lower &#39;g&#39; in &#39;bankgiro&#39;). It also adds OnlinePaymentServicePaymentMean, StandingAgreementPaymentMean, AunzNppPaytoPaymentMean, AunzBpayPaymentMean, AunzPostbillpayPaymentMean, AunzUriPaymentMean. (optional, default to 1.0)
-     * @param  string  $version  The JSON content version date. The default is &#39;1970-01-01&#39; meaning you get all deprecated elements since nothing was deprecated before that ;). If you do not want deprecated elements, use a later date. Do not use a dynamic date, because that means when we deprecate elements they will disappear from our responses. Only used for &#39;json&#39; packaging, not for &#39;original&#39;. (optional, default to 1970-01-01)
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @param  string $guid purchase invoice guid (required)
+     * @param  string $packaging How to package the purchase invoice. Note that \&quot;ubl\&quot; is deprecated. (required)
+     * @param  string $pmv DEPRECATED. The PaymentMeans version. The default (and deprecated) version 1.0 will give BankPaymentMean, DirectDebitPaymentMean, CardPaymentMean, NppPaymentMean, SeBankGiroPaymentMean, SePlusGiroPaymentMean, SgCardPaymentMean, SgGiroPaymentMean, SgPaynowPaymentMean.  Version 2.0 deprecates BankPaymentMean (now CreditTransferPaymentMean), CardPaymentMean (now CreditCardPaymentMean), NppPaymentMean (now AunzNppPayidPaymentMean), SeBankGiroPaymentMean (now SeBankgiroPaymentMean  -- note the lower &#39;g&#39; in &#39;bankgiro&#39;). It also adds OnlinePaymentServicePaymentMean, StandingAgreementPaymentMean, AunzNppPaytoPaymentMean, AunzBpayPaymentMean, AunzPostbillpayPaymentMean, AunzUriPaymentMean. (optional, default to 1.0)
+     * @param  string $version The JSON content version date. The default is &#39;1970-01-01&#39; meaning you get all deprecated elements since nothing was deprecated before that ;). If you do not want deprecated elements, use a later date. Do not use a dynamic date, because that means when we deprecate elements they will disappear from our responses. Only used for &#39;json&#39; packaging, not for &#39;original&#39;. (optional, default to 1970-01-01)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getInvoiceUblAsync($guid, $packaging, $pmv = '1.0', $version = '1970-01-01')
     {
@@ -508,13 +509,13 @@ class PurchaseInvoicesApi
      *
      * DEPRECATED. Get Purchase invoice data in a selectable format
      *
-     * @param  string  $guid  purchase invoice guid (required)
-     * @param  string  $packaging  How to package the purchase invoice. Note that \&quot;ubl\&quot; is deprecated. (required)
-     * @param  string  $pmv  DEPRECATED. The PaymentMeans version. The default (and deprecated) version 1.0 will give BankPaymentMean, DirectDebitPaymentMean, CardPaymentMean, NppPaymentMean, SeBankGiroPaymentMean, SePlusGiroPaymentMean, SgCardPaymentMean, SgGiroPaymentMean, SgPaynowPaymentMean.  Version 2.0 deprecates BankPaymentMean (now CreditTransferPaymentMean), CardPaymentMean (now CreditCardPaymentMean), NppPaymentMean (now AunzNppPayidPaymentMean), SeBankGiroPaymentMean (now SeBankgiroPaymentMean  -- note the lower &#39;g&#39; in &#39;bankgiro&#39;). It also adds OnlinePaymentServicePaymentMean, StandingAgreementPaymentMean, AunzNppPaytoPaymentMean, AunzBpayPaymentMean, AunzPostbillpayPaymentMean, AunzUriPaymentMean. (optional, default to 1.0)
-     * @param  string  $version  The JSON content version date. The default is &#39;1970-01-01&#39; meaning you get all deprecated elements since nothing was deprecated before that ;). If you do not want deprecated elements, use a later date. Do not use a dynamic date, because that means when we deprecate elements they will disappear from our responses. Only used for &#39;json&#39; packaging, not for &#39;original&#39;. (optional, default to 1970-01-01)
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @param  string $guid purchase invoice guid (required)
+     * @param  string $packaging How to package the purchase invoice. Note that \&quot;ubl\&quot; is deprecated. (required)
+     * @param  string $pmv DEPRECATED. The PaymentMeans version. The default (and deprecated) version 1.0 will give BankPaymentMean, DirectDebitPaymentMean, CardPaymentMean, NppPaymentMean, SeBankGiroPaymentMean, SePlusGiroPaymentMean, SgCardPaymentMean, SgGiroPaymentMean, SgPaynowPaymentMean.  Version 2.0 deprecates BankPaymentMean (now CreditTransferPaymentMean), CardPaymentMean (now CreditCardPaymentMean), NppPaymentMean (now AunzNppPayidPaymentMean), SeBankGiroPaymentMean (now SeBankgiroPaymentMean  -- note the lower &#39;g&#39; in &#39;bankgiro&#39;). It also adds OnlinePaymentServicePaymentMean, StandingAgreementPaymentMean, AunzNppPaytoPaymentMean, AunzBpayPaymentMean, AunzPostbillpayPaymentMean, AunzUriPaymentMean. (optional, default to 1.0)
+     * @param  string $version The JSON content version date. The default is &#39;1970-01-01&#39; meaning you get all deprecated elements since nothing was deprecated before that ;). If you do not want deprecated elements, use a later date. Do not use a dynamic date, because that means when we deprecate elements they will disappear from our responses. Only used for &#39;json&#39; packaging, not for &#39;original&#39;. (optional, default to 1970-01-01)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getInvoiceUblAsyncWithHttpInfo($guid, $packaging, $pmv = '1.0', $version = '1970-01-01')
     {
@@ -538,7 +539,7 @@ class PurchaseInvoicesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders(),
+                        $response->getHeaders()
                     ];
                 },
                 function ($exception) {
@@ -561,13 +562,13 @@ class PurchaseInvoicesApi
     /**
      * Create request for operation 'getInvoiceUbl'
      *
-     * @param  string  $guid  purchase invoice guid (required)
-     * @param  string  $packaging  How to package the purchase invoice. Note that \&quot;ubl\&quot; is deprecated. (required)
-     * @param  string  $pmv  DEPRECATED. The PaymentMeans version. The default (and deprecated) version 1.0 will give BankPaymentMean, DirectDebitPaymentMean, CardPaymentMean, NppPaymentMean, SeBankGiroPaymentMean, SePlusGiroPaymentMean, SgCardPaymentMean, SgGiroPaymentMean, SgPaynowPaymentMean.  Version 2.0 deprecates BankPaymentMean (now CreditTransferPaymentMean), CardPaymentMean (now CreditCardPaymentMean), NppPaymentMean (now AunzNppPayidPaymentMean), SeBankGiroPaymentMean (now SeBankgiroPaymentMean  -- note the lower &#39;g&#39; in &#39;bankgiro&#39;). It also adds OnlinePaymentServicePaymentMean, StandingAgreementPaymentMean, AunzNppPaytoPaymentMean, AunzBpayPaymentMean, AunzPostbillpayPaymentMean, AunzUriPaymentMean. (optional, default to 1.0)
-     * @param  string  $version  The JSON content version date. The default is &#39;1970-01-01&#39; meaning you get all deprecated elements since nothing was deprecated before that ;). If you do not want deprecated elements, use a later date. Do not use a dynamic date, because that means when we deprecate elements they will disappear from our responses. Only used for &#39;json&#39; packaging, not for &#39;original&#39;. (optional, default to 1970-01-01)
-     * @return \GuzzleHttp\Psr7\Request
+     * @param  string $guid purchase invoice guid (required)
+     * @param  string $packaging How to package the purchase invoice. Note that \&quot;ubl\&quot; is deprecated. (required)
+     * @param  string $pmv DEPRECATED. The PaymentMeans version. The default (and deprecated) version 1.0 will give BankPaymentMean, DirectDebitPaymentMean, CardPaymentMean, NppPaymentMean, SeBankGiroPaymentMean, SePlusGiroPaymentMean, SgCardPaymentMean, SgGiroPaymentMean, SgPaynowPaymentMean.  Version 2.0 deprecates BankPaymentMean (now CreditTransferPaymentMean), CardPaymentMean (now CreditCardPaymentMean), NppPaymentMean (now AunzNppPayidPaymentMean), SeBankGiroPaymentMean (now SeBankgiroPaymentMean  -- note the lower &#39;g&#39; in &#39;bankgiro&#39;). It also adds OnlinePaymentServicePaymentMean, StandingAgreementPaymentMean, AunzNppPaytoPaymentMean, AunzBpayPaymentMean, AunzPostbillpayPaymentMean, AunzUriPaymentMean. (optional, default to 1.0)
+     * @param  string $version The JSON content version date. The default is &#39;1970-01-01&#39; meaning you get all deprecated elements since nothing was deprecated before that ;). If you do not want deprecated elements, use a later date. Do not use a dynamic date, because that means when we deprecate elements they will disappear from our responses. Only used for &#39;json&#39; packaging, not for &#39;original&#39;. (optional, default to 1970-01-01)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
      */
     protected function getInvoiceUblRequest($guid, $packaging, $pmv = '1.0', $version = '1970-01-01')
     {
@@ -583,9 +584,10 @@ class PurchaseInvoicesApi
                 'Missing the required parameter $packaging when calling getInvoiceUbl'
             );
         }
-        if ($version !== null && ! preg_match('/^d{4}-d{2}-d{2}$/', $version)) {
-            throw new \InvalidArgumentException('invalid value for "version" when calling PurchaseInvoicesApi.getInvoiceUbl, must conform to the pattern /^d{4}-d{2}-d{2}$/.');
+        if ($version !== null && !preg_match("/^d{4}-d{2}-d{2}$/", $version)) {
+            throw new \InvalidArgumentException("invalid value for \"version\" when calling PurchaseInvoicesApi.getInvoiceUbl, must conform to the pattern /^d{4}-d{2}-d{2}$/.");
         }
+
 
         $resourcePath = '/purchase_invoices/{guid}/{packaging}';
         $formParams = [];
@@ -606,7 +608,7 @@ class PurchaseInvoicesApi
         // path params
         if ($guid !== null) {
             $resourcePath = str_replace(
-                '{'.'guid'.'}',
+                '{' . 'guid' . '}',
                 ObjectSerializer::toPathValue($guid),
                 $resourcePath
             );
@@ -614,7 +616,7 @@ class PurchaseInvoicesApi
         // path params
         if ($packaging !== null) {
             $resourcePath = str_replace(
-                '{'.'packaging'.'}',
+                '{' . 'packaging' . '}',
                 ObjectSerializer::toPathValue($packaging),
                 $resourcePath
             );
@@ -638,14 +640,14 @@ class PurchaseInvoicesApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-
-            if ($headers['Content-Type'] === 'application/json') {
+            
+            if($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
+                if(is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -655,7 +657,7 @@ class PurchaseInvoicesApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue,
+                        'contents' => $formParamValue
                     ];
                 }
                 // for HTTP post (form)
@@ -688,10 +690,9 @@ class PurchaseInvoicesApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
-
         return new Request(
             'GET',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -702,18 +703,17 @@ class PurchaseInvoicesApi
      *
      * DEPRECATED. Get Purchase invoice data as JSON with a Base64-encoded UBL string in the specified version
      *
-     * @param  string  $guid  purchase invoice guid (required)
-     * @param  string  $packaging  How to package the purchase invoice. (required)
-     * @param  string  $package_version  The version of the package. (required)
-     * @return \Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoiceUbl
+     * @param  string $guid purchase invoice guid (required)
+     * @param  string $packaging How to package the purchase invoice. (required)
+     * @param  string $package_version The version of the package. (required)
      *
      * @throws \Deegitalbe\LaravelTrustupIoStorecove\ApiException on non-2xx response
      * @throws \InvalidArgumentException
+     * @return \Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoiceUbl
      */
     public function getInvoiceUblVersioned($guid, $packaging, $package_version)
     {
-        [$response] = $this->getInvoiceUblVersionedWithHttpInfo($guid, $packaging, $package_version);
-
+        list($response) = $this->getInvoiceUblVersionedWithHttpInfo($guid, $packaging, $package_version);
         return $response;
     }
 
@@ -722,13 +722,13 @@ class PurchaseInvoicesApi
      *
      * DEPRECATED. Get Purchase invoice data as JSON with a Base64-encoded UBL string in the specified version
      *
-     * @param  string  $guid  purchase invoice guid (required)
-     * @param  string  $packaging  How to package the purchase invoice. (required)
-     * @param  string  $package_version  The version of the package. (required)
-     * @return array of \Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoiceUbl, HTTP status code, HTTP response headers (array of strings)
+     * @param  string $guid purchase invoice guid (required)
+     * @param  string $packaging How to package the purchase invoice. (required)
+     * @param  string $package_version The version of the package. (required)
      *
      * @throws \Deegitalbe\LaravelTrustupIoStorecove\ApiException on non-2xx response
      * @throws \InvalidArgumentException
+     * @return array of \Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoiceUbl, HTTP status code, HTTP response headers (array of strings)
      */
     public function getInvoiceUblVersionedWithHttpInfo($guid, $packaging, $package_version)
     {
@@ -776,7 +776,7 @@ class PurchaseInvoicesApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders(),
+                $response->getHeaders()
             ];
 
         } catch (ApiException $e) {
@@ -799,12 +799,12 @@ class PurchaseInvoicesApi
      *
      * DEPRECATED. Get Purchase invoice data as JSON with a Base64-encoded UBL string in the specified version
      *
-     * @param  string  $guid  purchase invoice guid (required)
-     * @param  string  $packaging  How to package the purchase invoice. (required)
-     * @param  string  $package_version  The version of the package. (required)
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @param  string $guid purchase invoice guid (required)
+     * @param  string $packaging How to package the purchase invoice. (required)
+     * @param  string $package_version The version of the package. (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getInvoiceUblVersionedAsync($guid, $packaging, $package_version)
     {
@@ -821,12 +821,12 @@ class PurchaseInvoicesApi
      *
      * DEPRECATED. Get Purchase invoice data as JSON with a Base64-encoded UBL string in the specified version
      *
-     * @param  string  $guid  purchase invoice guid (required)
-     * @param  string  $packaging  How to package the purchase invoice. (required)
-     * @param  string  $package_version  The version of the package. (required)
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @param  string $guid purchase invoice guid (required)
+     * @param  string $packaging How to package the purchase invoice. (required)
+     * @param  string $package_version The version of the package. (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getInvoiceUblVersionedAsyncWithHttpInfo($guid, $packaging, $package_version)
     {
@@ -850,7 +850,7 @@ class PurchaseInvoicesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders(),
+                        $response->getHeaders()
                     ];
                 },
                 function ($exception) {
@@ -873,12 +873,12 @@ class PurchaseInvoicesApi
     /**
      * Create request for operation 'getInvoiceUblVersioned'
      *
-     * @param  string  $guid  purchase invoice guid (required)
-     * @param  string  $packaging  How to package the purchase invoice. (required)
-     * @param  string  $package_version  The version of the package. (required)
-     * @return \GuzzleHttp\Psr7\Request
+     * @param  string $guid purchase invoice guid (required)
+     * @param  string $packaging How to package the purchase invoice. (required)
+     * @param  string $package_version The version of the package. (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
      */
     protected function getInvoiceUblVersionedRequest($guid, $packaging, $package_version)
     {
@@ -908,10 +908,11 @@ class PurchaseInvoicesApi
         $httpBody = '';
         $multipart = false;
 
+
         // path params
         if ($guid !== null) {
             $resourcePath = str_replace(
-                '{'.'guid'.'}',
+                '{' . 'guid' . '}',
                 ObjectSerializer::toPathValue($guid),
                 $resourcePath
             );
@@ -919,7 +920,7 @@ class PurchaseInvoicesApi
         // path params
         if ($packaging !== null) {
             $resourcePath = str_replace(
-                '{'.'packaging'.'}',
+                '{' . 'packaging' . '}',
                 ObjectSerializer::toPathValue($packaging),
                 $resourcePath
             );
@@ -927,7 +928,7 @@ class PurchaseInvoicesApi
         // path params
         if ($package_version !== null) {
             $resourcePath = str_replace(
-                '{'.'package_version'.'}',
+                '{' . 'package_version' . '}',
                 ObjectSerializer::toPathValue($package_version),
                 $resourcePath
             );
@@ -951,14 +952,14 @@ class PurchaseInvoicesApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-
-            if ($headers['Content-Type'] === 'application/json') {
+            
+            if($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
+                if(is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -968,7 +969,7 @@ class PurchaseInvoicesApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue,
+                        'contents' => $formParamValue
                     ];
                 }
                 // for HTTP post (form)
@@ -1001,10 +1002,9 @@ class PurchaseInvoicesApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
-
         return new Request(
             'GET',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1013,17 +1013,16 @@ class PurchaseInvoicesApi
     /**
      * Create http client option
      *
-     * @return array of http client options
-     *
      * @throws \RuntimeException on file opening failure
+     * @return array of http client options
      */
     protected function createHttpClientOption()
     {
         $options = [];
         if ($this->config->getDebug()) {
             $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
-            if (! $options[RequestOptions::DEBUG]) {
-                throw new \RuntimeException('Failed to open the debug file: '.$this->config->getDebugFile());
+            if (!$options[RequestOptions::DEBUG]) {
+                throw new \RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
             }
         }
 

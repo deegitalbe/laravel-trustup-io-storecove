@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,51 +29,49 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * C5EmailCancellationRequest Class Doc Comment
  *
  * @category Class
- *
  * @description The C5 email cancellation request object
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class C5EmailCancellationRequest implements ArrayAccess, ModelInterface
+class C5EmailCancellationRequest implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'C5EmailCancellationRequest';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'identifier' => 'string',
         'scheme' => 'string',
-        'superscheme' => 'string',
+        'superscheme' => 'string'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'identifier' => null,
         'scheme' => null,
-        'superscheme' => null,
+        'superscheme' => null
     ];
 
     /**
@@ -106,7 +103,7 @@ class C5EmailCancellationRequest implements ArrayAccess, ModelInterface
     protected static $attributeMap = [
         'identifier' => 'identifier',
         'scheme' => 'scheme',
-        'superscheme' => 'superscheme',
+        'superscheme' => 'superscheme'
     ];
 
     /**
@@ -117,7 +114,7 @@ class C5EmailCancellationRequest implements ArrayAccess, ModelInterface
     protected static $setters = [
         'identifier' => 'setIdentifier',
         'scheme' => 'setScheme',
-        'superscheme' => 'setSuperscheme',
+        'superscheme' => 'setSuperscheme'
     ];
 
     /**
@@ -128,7 +125,7 @@ class C5EmailCancellationRequest implements ArrayAccess, ModelInterface
     protected static $getters = [
         'identifier' => 'getIdentifier',
         'scheme' => 'getScheme',
-        'superscheme' => 'getSuperscheme',
+        'superscheme' => 'getSuperscheme'
     ];
 
     /**
@@ -173,9 +170,10 @@ class C5EmailCancellationRequest implements ArrayAccess, ModelInterface
     }
 
     const SCHEME_SGUEN = 'SG:UEN';
-
     const SUPERSCHEME_ISO6523_ACTORID_UPIS = 'iso6523-actorid-upis';
+    
 
+    
     /**
      * Gets allowable values of the enum
      *
@@ -187,7 +185,7 @@ class C5EmailCancellationRequest implements ArrayAccess, ModelInterface
             self::SCHEME_SGUEN,
         ];
     }
-
+    
     /**
      * Gets allowable values of the enum
      *
@@ -199,6 +197,7 @@ class C5EmailCancellationRequest implements ArrayAccess, ModelInterface
             self::SUPERSCHEME_ISO6523_ACTORID_UPIS,
         ];
     }
+    
 
     /**
      * Associative array for storing property values
@@ -210,10 +209,10 @@ class C5EmailCancellationRequest implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
         $this->container['scheme'] = isset($data['scheme']) ? $data['scheme'] : null;
@@ -236,7 +235,7 @@ class C5EmailCancellationRequest implements ArrayAccess, ModelInterface
             $invalidProperties[] = "'scheme' can't be null";
         }
         $allowedValues = $this->getSchemeAllowableValues();
-        if (! is_null($this->container['scheme']) && ! in_array($this->container['scheme'], $allowedValues, true)) {
+        if (!is_null($this->container['scheme']) && !in_array($this->container['scheme'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'scheme', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -247,7 +246,7 @@ class C5EmailCancellationRequest implements ArrayAccess, ModelInterface
             $invalidProperties[] = "'superscheme' can't be null";
         }
         $allowedValues = $this->getSuperschemeAllowableValues();
-        if (! is_null($this->container['superscheme']) && ! in_array($this->container['superscheme'], $allowedValues, true)) {
+        if (!is_null($this->container['superscheme']) && !in_array($this->container['superscheme'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'superscheme', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -268,6 +267,7 @@ class C5EmailCancellationRequest implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets identifier
      *
@@ -281,7 +281,8 @@ class C5EmailCancellationRequest implements ArrayAccess, ModelInterface
     /**
      * Sets identifier
      *
-     * @param  string  $identifier  The identifier
+     * @param string $identifier The identifier
+     *
      * @return $this
      */
     public function setIdentifier($identifier)
@@ -304,13 +305,14 @@ class C5EmailCancellationRequest implements ArrayAccess, ModelInterface
     /**
      * Sets scheme
      *
-     * @param  string  $scheme  The scheme
+     * @param string $scheme The scheme
+     *
      * @return $this
      */
     public function setScheme($scheme)
     {
         $allowedValues = $this->getSchemeAllowableValues();
-        if (! in_array($scheme, $allowedValues, true)) {
+        if (!in_array($scheme, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'scheme', must be one of '%s'",
@@ -336,13 +338,14 @@ class C5EmailCancellationRequest implements ArrayAccess, ModelInterface
     /**
      * Sets superscheme
      *
-     * @param  string  $superscheme  The superscheme
+     * @param string $superscheme The superscheme
+     *
      * @return $this
      */
     public function setSuperscheme($superscheme)
     {
         $allowedValues = $this->getSuperschemeAllowableValues();
-        if (! in_array($superscheme, $allowedValues, true)) {
+        if (!in_array($superscheme, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'superscheme', must be one of '%s'",
@@ -354,12 +357,12 @@ class C5EmailCancellationRequest implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -369,7 +372,8 @@ class C5EmailCancellationRequest implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -380,8 +384,9 @@ class C5EmailCancellationRequest implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -396,7 +401,8 @@ class C5EmailCancellationRequest implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -421,3 +427,5 @@ class C5EmailCancellationRequest implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

@@ -4,9 +4,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -44,9 +43,8 @@ use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
  * WebhookInstancesApi Class Doc Comment
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 class WebhookInstancesApi
@@ -66,10 +64,15 @@ class WebhookInstancesApi
      */
     protected $headerSelector;
 
+    /**
+     * @param ClientInterface $client
+     * @param Configuration   $config
+     * @param HeaderSelector  $selector
+     */
     public function __construct(
-        ?ClientInterface $client = null,
-        ?Configuration $config = null,
-        ?HeaderSelector $selector = null
+        ClientInterface $client = null,
+        Configuration $config = null,
+        HeaderSelector $selector = null
     ) {
         $this->client = $client ?: new Client();
         $this->config = $config ?: new Configuration();
@@ -89,11 +92,11 @@ class WebhookInstancesApi
      *
      * DELETE a WebhookInstance
      *
-     * @param  string  $guid  WebhookInstance guid (required)
-     * @return void
+     * @param  string $guid WebhookInstance guid (required)
      *
      * @throws \Deegitalbe\LaravelTrustupIoStorecove\ApiException on non-2xx response
      * @throws \InvalidArgumentException
+     * @return void
      */
     public function deleteWebhookInstance($guid)
     {
@@ -105,11 +108,11 @@ class WebhookInstancesApi
      *
      * DELETE a WebhookInstance
      *
-     * @param  string  $guid  WebhookInstance guid (required)
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @param  string $guid WebhookInstance guid (required)
      *
      * @throws \Deegitalbe\LaravelTrustupIoStorecove\ApiException on non-2xx response
      * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteWebhookInstanceWithHttpInfo($guid)
     {
@@ -158,10 +161,10 @@ class WebhookInstancesApi
      *
      * DELETE a WebhookInstance
      *
-     * @param  string  $guid  WebhookInstance guid (required)
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @param  string $guid WebhookInstance guid (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteWebhookInstanceAsync($guid)
     {
@@ -178,10 +181,10 @@ class WebhookInstancesApi
      *
      * DELETE a WebhookInstance
      *
-     * @param  string  $guid  WebhookInstance guid (required)
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @param  string $guid WebhookInstance guid (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteWebhookInstanceAsyncWithHttpInfo($guid)
     {
@@ -191,7 +194,7 @@ class WebhookInstancesApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) {
+                function ($response) use ($returnType) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -214,10 +217,10 @@ class WebhookInstancesApi
     /**
      * Create request for operation 'deleteWebhookInstance'
      *
-     * @param  string  $guid  WebhookInstance guid (required)
-     * @return \GuzzleHttp\Psr7\Request
+     * @param  string $guid WebhookInstance guid (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
      */
     protected function deleteWebhookInstanceRequest($guid)
     {
@@ -235,10 +238,11 @@ class WebhookInstancesApi
         $httpBody = '';
         $multipart = false;
 
+
         // path params
         if ($guid !== null) {
             $resourcePath = str_replace(
-                '{'.'guid'.'}',
+                '{' . 'guid' . '}',
                 ObjectSerializer::toPathValue($guid),
                 $resourcePath
             );
@@ -262,14 +266,14 @@ class WebhookInstancesApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-
-            if ($headers['Content-Type'] === 'application/json') {
+            
+            if($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
+                if(is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -279,7 +283,7 @@ class WebhookInstancesApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue,
+                        'contents' => $formParamValue
                     ];
                 }
                 // for HTTP post (form)
@@ -312,10 +316,9 @@ class WebhookInstancesApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
-
         return new Request(
             'DELETE',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -327,15 +330,13 @@ class WebhookInstancesApi
      * GET a WebhookInstance
      *
      *
-     * @return \Deegitalbe\LaravelTrustupIoStorecove\Model\WebhookInstance
-     *
      * @throws \Deegitalbe\LaravelTrustupIoStorecove\ApiException on non-2xx response
      * @throws \InvalidArgumentException
+     * @return \Deegitalbe\LaravelTrustupIoStorecove\Model\WebhookInstance
      */
     public function getWebhookInstances()
     {
-        [$response] = $this->getWebhookInstancesWithHttpInfo();
-
+        list($response) = $this->getWebhookInstancesWithHttpInfo();
         return $response;
     }
 
@@ -345,10 +346,9 @@ class WebhookInstancesApi
      * GET a WebhookInstance
      *
      *
-     * @return array of \Deegitalbe\LaravelTrustupIoStorecove\Model\WebhookInstance, HTTP status code, HTTP response headers (array of strings)
-     *
      * @throws \Deegitalbe\LaravelTrustupIoStorecove\ApiException on non-2xx response
      * @throws \InvalidArgumentException
+     * @return array of \Deegitalbe\LaravelTrustupIoStorecove\Model\WebhookInstance, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebhookInstancesWithHttpInfo()
     {
@@ -396,7 +396,7 @@ class WebhookInstancesApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders(),
+                $response->getHeaders()
             ];
 
         } catch (ApiException $e) {
@@ -420,9 +420,8 @@ class WebhookInstancesApi
      * GET a WebhookInstance
      *
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebhookInstancesAsync()
     {
@@ -440,9 +439,8 @@ class WebhookInstancesApi
      * GET a WebhookInstance
      *
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebhookInstancesAsyncWithHttpInfo()
     {
@@ -466,7 +464,7 @@ class WebhookInstancesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders(),
+                        $response->getHeaders()
                     ];
                 },
                 function ($exception) {
@@ -490,9 +488,8 @@ class WebhookInstancesApi
      * Create request for operation 'getWebhookInstances'
      *
      *
-     * @return \GuzzleHttp\Psr7\Request
-     *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
      */
     protected function getWebhookInstancesRequest()
     {
@@ -503,6 +500,8 @@ class WebhookInstancesApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
+
+
 
         // body params
         $_tempBody = null;
@@ -522,14 +521,14 @@ class WebhookInstancesApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-
-            if ($headers['Content-Type'] === 'application/json') {
+            
+            if($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
+                if(is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -539,7 +538,7 @@ class WebhookInstancesApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue,
+                        'contents' => $formParamValue
                     ];
                 }
                 // for HTTP post (form)
@@ -572,10 +571,9 @@ class WebhookInstancesApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
-
         return new Request(
             'GET',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -584,17 +582,16 @@ class WebhookInstancesApi
     /**
      * Create http client option
      *
-     * @return array of http client options
-     *
      * @throws \RuntimeException on file opening failure
+     * @return array of http client options
      */
     protected function createHttpClientOption()
     {
         $options = [];
         if ($this->config->getDebug()) {
             $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
-            if (! $options[RequestOptions::DEBUG]) {
-                throw new \RuntimeException('Failed to open the debug file: '.$this->config->getDebugFile());
+            if (!$options[RequestOptions::DEBUG]) {
+                throw new \RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
             }
         }
 

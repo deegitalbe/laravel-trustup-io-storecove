@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,53 +29,52 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * DeliveryDeliveryLocation Class Doc Comment
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class DeliveryDeliveryLocation implements ArrayAccess, ModelInterface
+class DeliveryDeliveryLocation implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'Delivery_deliveryLocation';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'id' => 'string',
         'scheme_id' => 'string',
         'scheme_agency_id' => 'string',
         'location_name' => 'string',
-        'address' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\Address',
+        'address' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\Address'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'id' => null,
         'scheme_id' => null,
         'scheme_agency_id' => null,
         'location_name' => null,
-        'address' => null,
+        'address' => null
     ];
 
     /**
@@ -110,7 +108,7 @@ class DeliveryDeliveryLocation implements ArrayAccess, ModelInterface
         'scheme_id' => 'schemeId',
         'scheme_agency_id' => 'schemeAgencyId',
         'location_name' => 'locationName',
-        'address' => 'address',
+        'address' => 'address'
     ];
 
     /**
@@ -123,7 +121,7 @@ class DeliveryDeliveryLocation implements ArrayAccess, ModelInterface
         'scheme_id' => 'setSchemeId',
         'scheme_agency_id' => 'setSchemeAgencyId',
         'location_name' => 'setLocationName',
-        'address' => 'setAddress',
+        'address' => 'setAddress'
     ];
 
     /**
@@ -136,7 +134,7 @@ class DeliveryDeliveryLocation implements ArrayAccess, ModelInterface
         'scheme_id' => 'getSchemeId',
         'scheme_agency_id' => 'getSchemeAgencyId',
         'location_name' => 'getLocationName',
-        'address' => 'getAddress',
+        'address' => 'getAddress'
     ];
 
     /**
@@ -180,6 +178,10 @@ class DeliveryDeliveryLocation implements ArrayAccess, ModelInterface
         return self::$swaggerModelName;
     }
 
+    
+
+    
+
     /**
      * Associative array for storing property values
      *
@@ -190,10 +192,10 @@ class DeliveryDeliveryLocation implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['scheme_id'] = isset($data['scheme_id']) ? $data['scheme_id'] : null;
@@ -211,11 +213,11 @@ class DeliveryDeliveryLocation implements ArrayAccess, ModelInterface
     {
         $invalidProperties = [];
 
-        if (! is_null($this->container['id']) && (mb_strlen($this->container['id']) < 2)) {
+        if (!is_null($this->container['id']) && (mb_strlen($this->container['id']) < 2)) {
             $invalidProperties[] = "invalid value for 'id', the character length must be bigger than or equal to 2.";
         }
 
-        if (! is_null($this->container['location_name']) && (mb_strlen($this->container['location_name']) > 128)) {
+        if (!is_null($this->container['location_name']) && (mb_strlen($this->container['location_name']) > 128)) {
             $invalidProperties[] = "invalid value for 'location_name', the character length must be smaller than or equal to 128.";
         }
 
@@ -233,6 +235,7 @@ class DeliveryDeliveryLocation implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets id
      *
@@ -246,13 +249,14 @@ class DeliveryDeliveryLocation implements ArrayAccess, ModelInterface
     /**
      * Sets id
      *
-     * @param  string  $id  The location identifier.
+     * @param string $id The location identifier.
+     *
      * @return $this
      */
     public function setId($id)
     {
 
-        if (! is_null($id) && (mb_strlen($id) < 2)) {
+        if (!is_null($id) && (mb_strlen($id) < 2)) {
             throw new \InvalidArgumentException('invalid length for $id when calling DeliveryDeliveryLocation., must be bigger than or equal to 2.');
         }
 
@@ -274,7 +278,8 @@ class DeliveryDeliveryLocation implements ArrayAccess, ModelInterface
     /**
      * Sets scheme_id
      *
-     * @param  string  $scheme_id  The schemeId of the location identifier (e.g. 'EAN')
+     * @param string $scheme_id The schemeId of the location identifier (e.g. 'EAN')
+     *
      * @return $this
      */
     public function setSchemeId($scheme_id)
@@ -297,7 +302,8 @@ class DeliveryDeliveryLocation implements ArrayAccess, ModelInterface
     /**
      * Sets scheme_agency_id
      *
-     * @param  string  $scheme_agency_id  DEPRECATED. The schemeAgencyId of the location identifier (e.g. 'ZZZ')
+     * @param string $scheme_agency_id DEPRECATED. The schemeAgencyId of the location identifier (e.g. 'ZZZ')
+     *
      * @return $this
      */
     public function setSchemeAgencyId($scheme_agency_id)
@@ -320,12 +326,13 @@ class DeliveryDeliveryLocation implements ArrayAccess, ModelInterface
     /**
      * Sets location_name
      *
-     * @param  string  $location_name  The name of the delivery location. Only used for DocumentOrder.
+     * @param string $location_name The name of the delivery location. Only used for DocumentOrder.
+     *
      * @return $this
      */
     public function setLocationName($location_name)
     {
-        if (! is_null($location_name) && (mb_strlen($location_name) > 128)) {
+        if (!is_null($location_name) && (mb_strlen($location_name) > 128)) {
             throw new \InvalidArgumentException('invalid length for $location_name when calling DeliveryDeliveryLocation., must be smaller than or equal to 128.');
         }
 
@@ -347,7 +354,8 @@ class DeliveryDeliveryLocation implements ArrayAccess, ModelInterface
     /**
      * Sets address
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\Address  $address  The address of the delivery location.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\Address $address The address of the delivery location.
+     *
      * @return $this
      */
     public function setAddress($address)
@@ -356,12 +364,12 @@ class DeliveryDeliveryLocation implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -371,7 +379,8 @@ class DeliveryDeliveryLocation implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -382,8 +391,9 @@ class DeliveryDeliveryLocation implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -398,7 +408,8 @@ class DeliveryDeliveryLocation implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -423,3 +434,5 @@ class DeliveryDeliveryLocation implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

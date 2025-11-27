@@ -4,9 +4,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -27,22 +26,24 @@
  * Do not edit the class manually.
  */
 
- namespace Deegitalbe\LaravelTrustupIoStorecove;
+namespace Deegitalbe\LaravelTrustupIoStorecove;
+
+use \Exception;
 
 /**
  * ApiException Class Doc Comment
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 class HeaderSelector
 {
+
     /**
-     * @param  string[]  $accept
-     * @param  string[]  $contentTypes
+     * @param string[] $accept
+     * @param string[] $contentTypes
      * @return array
      */
     public function selectHeaders($accept, $contentTypes)
@@ -55,12 +56,11 @@ class HeaderSelector
         }
 
         $headers['Content-Type'] = $this->selectContentTypeHeader($contentTypes);
-
         return $headers;
     }
 
     /**
-     * @param  string[]  $accept
+     * @param string[] $accept
      * @return array
      */
     public function selectHeadersForMultipart($accept)
@@ -68,14 +68,14 @@ class HeaderSelector
         $headers = $this->selectHeaders($accept, []);
 
         unset($headers['Content-Type']);
-
         return $headers;
     }
 
     /**
      * Return the header 'Accept' based on an array of Accept provided
      *
-     * @param  string[]  $accept  Array of header
+     * @param string[] $accept Array of header
+     *
      * @return string Accept (e.g. application/json)
      */
     private function selectAcceptHeader($accept)
@@ -92,7 +92,8 @@ class HeaderSelector
     /**
      * Return the content type based on an array of content-type provided
      *
-     * @param  string[]  $contentType  Array fo content-type
+     * @param string[] $contentType Array fo content-type
+     *
      * @return string Content-Type (e.g. application/json)
      */
     private function selectContentTypeHeader($contentType)

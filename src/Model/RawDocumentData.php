@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,55 +29,49 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * RawDocumentData Class Doc Comment
  *
  * @category Class
- *
  * @description A document to send, in base64 encoded format.
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class RawDocumentData implements ArrayAccess, ModelInterface
+class RawDocumentData implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'RawDocumentData';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'parse' => 'bool',
         'parse_strategy' => 'string',
-        'process_id' => 'string',
-        'document_type_id' => 'string',
-        'document' => 'string',
+        'document' => 'string'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'parse' => null,
         'parse_strategy' => null,
-        'process_id' => null,
-        'document_type_id' => null,
-        'document' => null,
+        'document' => null
     ];
 
     /**
@@ -110,9 +103,7 @@ class RawDocumentData implements ArrayAccess, ModelInterface
     protected static $attributeMap = [
         'parse' => 'parse',
         'parse_strategy' => 'parseStrategy',
-        'process_id' => 'processId',
-        'document_type_id' => 'documentTypeId',
-        'document' => 'document',
+        'document' => 'document'
     ];
 
     /**
@@ -123,9 +114,7 @@ class RawDocumentData implements ArrayAccess, ModelInterface
     protected static $setters = [
         'parse' => 'setParse',
         'parse_strategy' => 'setParseStrategy',
-        'process_id' => 'setProcessId',
-        'document_type_id' => 'setDocumentTypeId',
-        'document' => 'setDocument',
+        'document' => 'setDocument'
     ];
 
     /**
@@ -136,9 +125,7 @@ class RawDocumentData implements ArrayAccess, ModelInterface
     protected static $getters = [
         'parse' => 'getParse',
         'parse_strategy' => 'getParseStrategy',
-        'process_id' => 'getProcessId',
-        'document_type_id' => 'getDocumentTypeId',
-        'document' => 'getDocument',
+        'document' => 'getDocument'
     ];
 
     /**
@@ -183,13 +170,12 @@ class RawDocumentData implements ArrayAccess, ModelInterface
     }
 
     const PARSE_STRATEGY_UBL = 'ubl';
-
     const PARSE_STRATEGY_CII = 'cii';
-
     const PARSE_STRATEGY_IDOC = 'idoc';
-
     const PARSE_STRATEGY_SETU14 = 'setu14';
+    
 
+    
     /**
      * Gets allowable values of the enum
      *
@@ -204,6 +190,7 @@ class RawDocumentData implements ArrayAccess, ModelInterface
             self::PARSE_STRATEGY_SETU14,
         ];
     }
+    
 
     /**
      * Associative array for storing property values
@@ -215,15 +202,13 @@ class RawDocumentData implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['parse'] = isset($data['parse']) ? $data['parse'] : true;
         $this->container['parse_strategy'] = isset($data['parse_strategy']) ? $data['parse_strategy'] : null;
-        $this->container['process_id'] = isset($data['process_id']) ? $data['process_id'] : null;
-        $this->container['document_type_id'] = isset($data['document_type_id']) ? $data['document_type_id'] : null;
         $this->container['document'] = isset($data['document']) ? $data['document'] : null;
     }
 
@@ -237,7 +222,7 @@ class RawDocumentData implements ArrayAccess, ModelInterface
         $invalidProperties = [];
 
         $allowedValues = $this->getParseStrategyAllowableValues();
-        if (! is_null($this->container['parse_strategy']) && ! in_array($this->container['parse_strategy'], $allowedValues, true)) {
+        if (!is_null($this->container['parse_strategy']) && !in_array($this->container['parse_strategy'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'parse_strategy', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -265,6 +250,7 @@ class RawDocumentData implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets parse
      *
@@ -278,7 +264,8 @@ class RawDocumentData implements ArrayAccess, ModelInterface
     /**
      * Sets parse
      *
-     * @param  bool  $parse  If true, the data will be extracted from the document and used to create the JSON that is used in our API. Only parse == true is currently supported.
+     * @param bool $parse DEPRECATED. Will be ignored.
+     *
      * @return $this
      */
     public function setParse($parse)
@@ -301,13 +288,14 @@ class RawDocumentData implements ArrayAccess, ModelInterface
     /**
      * Sets parse_strategy
      *
-     * @param  string  $parse_strategy  How to parse the document. Only needed when parse == true.
+     * @param string $parse_strategy How to parse the document.
+     *
      * @return $this
      */
     public function setParseStrategy($parse_strategy)
     {
         $allowedValues = $this->getParseStrategyAllowableValues();
-        if (! is_null($parse_strategy) && ! in_array($parse_strategy, $allowedValues, true)) {
+        if (!is_null($parse_strategy) && !in_array($parse_strategy, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'parse_strategy', must be one of '%s'",
@@ -316,52 +304,6 @@ class RawDocumentData implements ArrayAccess, ModelInterface
             );
         }
         $this->container['parse_strategy'] = $parse_strategy;
-
-        return $this;
-    }
-
-    /**
-     * Gets process_id
-     *
-     * @return string
-     */
-    public function getProcessId()
-    {
-        return $this->container['process_id'];
-    }
-
-    /**
-     * Sets process_id
-     *
-     * @param  string  $process_id  DEPRECATED. The process id of the document. Required when parse == false.
-     * @return $this
-     */
-    public function setProcessId($process_id)
-    {
-        $this->container['process_id'] = $process_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets document_type_id
-     *
-     * @return string
-     */
-    public function getDocumentTypeId()
-    {
-        return $this->container['document_type_id'];
-    }
-
-    /**
-     * Sets document_type_id
-     *
-     * @param  string  $document_type_id  DEPRECATED. The document type id of the document. Required when parse == false.
-     * @return $this
-     */
-    public function setDocumentTypeId($document_type_id)
-    {
-        $this->container['document_type_id'] = $document_type_id;
 
         return $this;
     }
@@ -379,7 +321,8 @@ class RawDocumentData implements ArrayAccess, ModelInterface
     /**
      * Sets document
      *
-     * @param  string  $document  The base64 encoded version of the document.
+     * @param string $document The base64 encoded version of the document.
+     *
      * @return $this
      */
     public function setDocument($document)
@@ -393,12 +336,12 @@ class RawDocumentData implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -408,7 +351,8 @@ class RawDocumentData implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -419,8 +363,9 @@ class RawDocumentData implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -435,7 +380,8 @@ class RawDocumentData implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -460,3 +406,5 @@ class RawDocumentData implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

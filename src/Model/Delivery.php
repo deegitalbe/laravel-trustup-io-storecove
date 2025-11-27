@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,34 +29,33 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * Delivery Class Doc Comment
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Delivery implements ArrayAccess, ModelInterface
+class Delivery implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'Delivery';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'delivery_location' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\DeliveryDeliveryLocation',
         'requested_delivery_period' => 'string',
@@ -66,14 +64,14 @@ class Delivery implements ArrayAccess, ModelInterface
         'delivery_party_name' => 'string',
         'delivery_party' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\DeliveryParty',
         'shipment' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\Shipment',
-        'shipping_marks' => 'string',
+        'shipping_marks' => 'string'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'delivery_location' => null,
         'requested_delivery_period' => null,
@@ -82,7 +80,7 @@ class Delivery implements ArrayAccess, ModelInterface
         'delivery_party_name' => null,
         'delivery_party' => null,
         'shipment' => null,
-        'shipping_marks' => null,
+        'shipping_marks' => null
     ];
 
     /**
@@ -119,7 +117,7 @@ class Delivery implements ArrayAccess, ModelInterface
         'delivery_party_name' => 'deliveryPartyName',
         'delivery_party' => 'deliveryParty',
         'shipment' => 'shipment',
-        'shipping_marks' => 'shippingMarks',
+        'shipping_marks' => 'shippingMarks'
     ];
 
     /**
@@ -135,7 +133,7 @@ class Delivery implements ArrayAccess, ModelInterface
         'delivery_party_name' => 'setDeliveryPartyName',
         'delivery_party' => 'setDeliveryParty',
         'shipment' => 'setShipment',
-        'shipping_marks' => 'setShippingMarks',
+        'shipping_marks' => 'setShippingMarks'
     ];
 
     /**
@@ -151,7 +149,7 @@ class Delivery implements ArrayAccess, ModelInterface
         'delivery_party_name' => 'getDeliveryPartyName',
         'delivery_party' => 'getDeliveryParty',
         'shipment' => 'getShipment',
-        'shipping_marks' => 'getShippingMarks',
+        'shipping_marks' => 'getShippingMarks'
     ];
 
     /**
@@ -195,6 +193,10 @@ class Delivery implements ArrayAccess, ModelInterface
         return self::$swaggerModelName;
     }
 
+    
+
+    
+
     /**
      * Associative array for storing property values
      *
@@ -205,10 +207,10 @@ class Delivery implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['delivery_location'] = isset($data['delivery_location']) ? $data['delivery_location'] : null;
         $this->container['requested_delivery_period'] = isset($data['requested_delivery_period']) ? $data['requested_delivery_period'] : null;
@@ -229,15 +231,15 @@ class Delivery implements ArrayAccess, ModelInterface
     {
         $invalidProperties = [];
 
-        if (! is_null($this->container['requested_delivery_period']) && ! preg_match('/^[0-9]{4}-[0-9]{2}-[0-9]{2} - [0-9]{4}-[0-9]{2}-[0-9]{2}$/', $this->container['requested_delivery_period'])) {
+        if (!is_null($this->container['requested_delivery_period']) && !preg_match("/^[0-9]{4}-[0-9]{2}-[0-9]{2} - [0-9]{4}-[0-9]{2}-[0-9]{2}$/", $this->container['requested_delivery_period'])) {
             $invalidProperties[] = "invalid value for 'requested_delivery_period', must be conform to the pattern /^[0-9]{4}-[0-9]{2}-[0-9]{2} - [0-9]{4}-[0-9]{2}-[0-9]{2}$/.";
         }
 
-        if (! is_null($this->container['actual_delivery_date']) && ! preg_match('/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/', $this->container['actual_delivery_date'])) {
+        if (!is_null($this->container['actual_delivery_date']) && !preg_match("/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/", $this->container['actual_delivery_date'])) {
             $invalidProperties[] = "invalid value for 'actual_delivery_date', must be conform to the pattern /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/.";
         }
 
-        if (! is_null($this->container['shipping_marks']) && (mb_strlen($this->container['shipping_marks']) > 128)) {
+        if (!is_null($this->container['shipping_marks']) && (mb_strlen($this->container['shipping_marks']) > 128)) {
             $invalidProperties[] = "invalid value for 'shipping_marks', the character length must be smaller than or equal to 128.";
         }
 
@@ -255,6 +257,7 @@ class Delivery implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets delivery_location
      *
@@ -268,7 +271,8 @@ class Delivery implements ArrayAccess, ModelInterface
     /**
      * Sets delivery_location
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\DeliveryDeliveryLocation  $delivery_location  delivery_location
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\DeliveryDeliveryLocation $delivery_location delivery_location
+     *
      * @return $this
      */
     public function setDeliveryLocation($delivery_location)
@@ -291,13 +295,14 @@ class Delivery implements ArrayAccess, ModelInterface
     /**
      * Sets requested_delivery_period
      *
-     * @param  string  $requested_delivery_period  The requested delivery period. Used only for DocumentOrder. Will also be used for DocumentOrder order lines, if that order line does not specify its own delivery period.
+     * @param string $requested_delivery_period The requested delivery period. Used only for DocumentOrder. Will also be used for DocumentOrder order lines, if that order line does not specify its own delivery period.
+     *
      * @return $this
      */
     public function setRequestedDeliveryPeriod($requested_delivery_period)
     {
 
-        if (! is_null($requested_delivery_period) && (! preg_match('/^[0-9]{4}-[0-9]{2}-[0-9]{2} - [0-9]{4}-[0-9]{2}-[0-9]{2}$/', $requested_delivery_period))) {
+        if (!is_null($requested_delivery_period) && (!preg_match("/^[0-9]{4}-[0-9]{2}-[0-9]{2} - [0-9]{4}-[0-9]{2}-[0-9]{2}$/", $requested_delivery_period))) {
             throw new \InvalidArgumentException("invalid value for $requested_delivery_period when calling Delivery., must conform to the pattern /^[0-9]{4}-[0-9]{2}-[0-9]{2} - [0-9]{4}-[0-9]{2}-[0-9]{2}$/.");
         }
 
@@ -319,13 +324,14 @@ class Delivery implements ArrayAccess, ModelInterface
     /**
      * Sets actual_delivery_date
      *
-     * @param  string  $actual_delivery_date  The actual date of the delivery. Used only for Invoice
+     * @param string $actual_delivery_date The actual date of the delivery. Used only for Invoice
+     *
      * @return $this
      */
     public function setActualDeliveryDate($actual_delivery_date)
     {
 
-        if (! is_null($actual_delivery_date) && (! preg_match('/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/', $actual_delivery_date))) {
+        if (!is_null($actual_delivery_date) && (!preg_match("/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/", $actual_delivery_date))) {
             throw new \InvalidArgumentException("invalid value for $actual_delivery_date when calling Delivery., must conform to the pattern /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/.");
         }
 
@@ -347,7 +353,8 @@ class Delivery implements ArrayAccess, ModelInterface
     /**
      * Sets quantity
      *
-     * @param  float  $quantity  The quantity of the delivery. Used only for Invoice
+     * @param float $quantity The quantity of the delivery. Used only for Invoice
+     *
      * @return $this
      */
     public function setQuantity($quantity)
@@ -370,7 +377,8 @@ class Delivery implements ArrayAccess, ModelInterface
     /**
      * Sets delivery_party_name
      *
-     * @param  string  $delivery_party_name  DEPRECATED. Use deliveryParty. The name of the party that took delivery. Used only for Invoice
+     * @param string $delivery_party_name DEPRECATED. Use deliveryParty. The name of the party that took delivery. Used only for Invoice
+     *
      * @return $this
      */
     public function setDeliveryPartyName($delivery_party_name)
@@ -393,7 +401,8 @@ class Delivery implements ArrayAccess, ModelInterface
     /**
      * Sets delivery_party
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\DeliveryParty  $delivery_party  The party to whom the delivery takes place.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\DeliveryParty $delivery_party The party to whom the delivery takes place.
+     *
      * @return $this
      */
     public function setDeliveryParty($delivery_party)
@@ -416,7 +425,8 @@ class Delivery implements ArrayAccess, ModelInterface
     /**
      * Sets shipment
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\Shipment  $shipment  The shipment for the delivery.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\Shipment $shipment The shipment for the delivery.
+     *
      * @return $this
      */
     public function setShipment($shipment)
@@ -439,12 +449,13 @@ class Delivery implements ArrayAccess, ModelInterface
     /**
      * Sets shipping_marks
      *
-     * @param  string  $shipping_marks  DEPRECATED. Use the shipment object. A text that the buyer requests to be printed on the packing labels. Used only for DocumentOrder.
+     * @param string $shipping_marks DEPRECATED. Use the shipment object. A text that the buyer requests to be printed on the packing labels. Used only for DocumentOrder.
+     *
      * @return $this
      */
     public function setShippingMarks($shipping_marks)
     {
-        if (! is_null($shipping_marks) && (mb_strlen($shipping_marks) > 128)) {
+        if (!is_null($shipping_marks) && (mb_strlen($shipping_marks) > 128)) {
             throw new \InvalidArgumentException('invalid length for $shipping_marks when calling Delivery., must be smaller than or equal to 128.');
         }
 
@@ -452,12 +463,12 @@ class Delivery implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -467,7 +478,8 @@ class Delivery implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -478,8 +490,9 @@ class Delivery implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -494,7 +507,8 @@ class Delivery implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -519,3 +533,5 @@ class Delivery implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

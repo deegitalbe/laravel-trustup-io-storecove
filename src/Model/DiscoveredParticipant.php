@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,49 +29,47 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * DiscoveredParticipant Class Doc Comment
  *
  * @category Class
- *
  * @description A public identifier for this customer.
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class DiscoveredParticipant implements ArrayAccess, ModelInterface
+class DiscoveredParticipant implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'DiscoveredParticipant';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'code' => 'string',
-        'email' => 'bool',
+        'email' => 'bool'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'code' => null,
-        'email' => null,
+        'email' => null
     ];
 
     /**
@@ -103,7 +100,7 @@ class DiscoveredParticipant implements ArrayAccess, ModelInterface
      */
     protected static $attributeMap = [
         'code' => 'code',
-        'email' => 'email',
+        'email' => 'email'
     ];
 
     /**
@@ -113,7 +110,7 @@ class DiscoveredParticipant implements ArrayAccess, ModelInterface
      */
     protected static $setters = [
         'code' => 'setCode',
-        'email' => 'setEmail',
+        'email' => 'setEmail'
     ];
 
     /**
@@ -123,7 +120,7 @@ class DiscoveredParticipant implements ArrayAccess, ModelInterface
      */
     protected static $getters = [
         'code' => 'getCode',
-        'email' => 'getEmail',
+        'email' => 'getEmail'
     ];
 
     /**
@@ -168,9 +165,10 @@ class DiscoveredParticipant implements ArrayAccess, ModelInterface
     }
 
     const CODE_OK = 'OK';
-
     const CODE_NOK = 'NOK';
+    
 
+    
     /**
      * Gets allowable values of the enum
      *
@@ -183,6 +181,7 @@ class DiscoveredParticipant implements ArrayAccess, ModelInterface
             self::CODE_NOK,
         ];
     }
+    
 
     /**
      * Associative array for storing property values
@@ -194,10 +193,10 @@ class DiscoveredParticipant implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['code'] = isset($data['code']) ? $data['code'] : null;
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
@@ -213,7 +212,7 @@ class DiscoveredParticipant implements ArrayAccess, ModelInterface
         $invalidProperties = [];
 
         $allowedValues = $this->getCodeAllowableValues();
-        if (! is_null($this->container['code']) && ! in_array($this->container['code'], $allowedValues, true)) {
+        if (!is_null($this->container['code']) && !in_array($this->container['code'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'code', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -234,6 +233,7 @@ class DiscoveredParticipant implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets code
      *
@@ -247,13 +247,14 @@ class DiscoveredParticipant implements ArrayAccess, ModelInterface
     /**
      * Sets code
      *
-     * @param  string  $code  The response code.
+     * @param string $code The response code.
+     *
      * @return $this
      */
     public function setCode($code)
     {
         $allowedValues = $this->getCodeAllowableValues();
-        if (! is_null($code) && ! in_array($code, $allowedValues, true)) {
+        if (!is_null($code) && !in_array($code, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'code', must be one of '%s'",
@@ -279,7 +280,8 @@ class DiscoveredParticipant implements ArrayAccess, ModelInterface
     /**
      * Sets email
      *
-     * @param  bool  $email  Whether or not an 'OK' response means the document will be sent via Peppol, but delivered by email. This happens in the Belgian Hermes system where all identifiers have been registered, but if the receiver hasn't registered with a service provider, the Hermes system will send a PDF created from the electronic invoice and email that. The electronic document will itself not be emailed. Also see https://einvoice.belgium.be/en/article/send-structured-invoices-all-your-customers-hermes[Hermes^].
+     * @param bool $email Whether or not an 'OK' response means the document will be sent via Peppol, but delivered by email. This happens in the Belgian Hermes system where all identifiers have been registered, but if the receiver hasn't registered with a service provider, the Hermes system will send a PDF created from the electronic invoice and email that. The electronic document will itself not be emailed. Also see https://einvoice.belgium.be/en/article/send-structured-invoices-all-your-customers-hermes[Hermes^].
+     *
      * @return $this
      */
     public function setEmail($email)
@@ -288,12 +290,12 @@ class DiscoveredParticipant implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -303,7 +305,8 @@ class DiscoveredParticipant implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -314,8 +317,9 @@ class DiscoveredParticipant implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -330,7 +334,8 @@ class DiscoveredParticipant implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -355,3 +360,5 @@ class DiscoveredParticipant implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

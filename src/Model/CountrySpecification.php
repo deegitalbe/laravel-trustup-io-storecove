@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,51 +29,50 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * CountrySpecification Class Doc Comment
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class CountrySpecification implements ArrayAccess, ModelInterface
+class CountrySpecification implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'CountrySpecification';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'country' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\Country',
         'region' => 'string',
         'sender' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\Sender',
-        'receiver' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\Receiver',
+        'receiver' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\Receiver'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'country' => null,
         'region' => null,
         'sender' => null,
-        'receiver' => null,
+        'receiver' => null
     ];
 
     /**
@@ -107,7 +105,7 @@ class CountrySpecification implements ArrayAccess, ModelInterface
         'country' => 'country',
         'region' => 'region',
         'sender' => 'sender',
-        'receiver' => 'receiver',
+        'receiver' => 'receiver'
     ];
 
     /**
@@ -119,7 +117,7 @@ class CountrySpecification implements ArrayAccess, ModelInterface
         'country' => 'setCountry',
         'region' => 'setRegion',
         'sender' => 'setSender',
-        'receiver' => 'setReceiver',
+        'receiver' => 'setReceiver'
     ];
 
     /**
@@ -131,7 +129,7 @@ class CountrySpecification implements ArrayAccess, ModelInterface
         'country' => 'getCountry',
         'region' => 'getRegion',
         'sender' => 'getSender',
-        'receiver' => 'getReceiver',
+        'receiver' => 'getReceiver'
     ];
 
     /**
@@ -176,15 +174,13 @@ class CountrySpecification implements ArrayAccess, ModelInterface
     }
 
     const REGION_EU_EEA = 'eu_eea';
-
     const REGION_SG = 'sg';
-
     const REGION_AUNZ = 'aunz';
-
     const REGION_IN = 'in';
-
     const REGION_WORLD = 'world';
+    
 
+    
     /**
      * Gets allowable values of the enum
      *
@@ -200,6 +196,7 @@ class CountrySpecification implements ArrayAccess, ModelInterface
             self::REGION_WORLD,
         ];
     }
+    
 
     /**
      * Associative array for storing property values
@@ -211,10 +208,10 @@ class CountrySpecification implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['country'] = isset($data['country']) ? $data['country'] : null;
         $this->container['region'] = isset($data['region']) ? $data['region'] : null;
@@ -232,7 +229,7 @@ class CountrySpecification implements ArrayAccess, ModelInterface
         $invalidProperties = [];
 
         $allowedValues = $this->getRegionAllowableValues();
-        if (! is_null($this->container['region']) && ! in_array($this->container['region'], $allowedValues, true)) {
+        if (!is_null($this->container['region']) && !in_array($this->container['region'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'region', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -253,6 +250,7 @@ class CountrySpecification implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets country
      *
@@ -266,7 +264,8 @@ class CountrySpecification implements ArrayAccess, ModelInterface
     /**
      * Sets country
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\Country  $country  The ISO 3166-2 country this specification is for.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\Country $country The ISO 3166-2 country this specification is for.
+     *
      * @return $this
      */
     public function setCountry($country)
@@ -289,13 +288,14 @@ class CountrySpecification implements ArrayAccess, ModelInterface
     /**
      * Sets region
      *
-     * @param  string  $region  The region this country belongs to. Within this region exchanging invoices is well defined. Between regions some care needs to be taken and Storecove may help in automatically converting some items. Contact us for details of inter-regional document exchange.
+     * @param string $region The region this country belongs to. Within this region exchanging invoices is well defined. Between regions some care needs to be taken and Storecove may help in automatically converting some items. Contact us for details of inter-regional document exchange.
+     *
      * @return $this
      */
     public function setRegion($region)
     {
         $allowedValues = $this->getRegionAllowableValues();
-        if (! is_null($region) && ! in_array($region, $allowedValues, true)) {
+        if (!is_null($region) && !in_array($region, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'region', must be one of '%s'",
@@ -321,7 +321,8 @@ class CountrySpecification implements ArrayAccess, ModelInterface
     /**
      * Sets sender
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\Sender  $sender  sender
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\Sender $sender sender
+     *
      * @return $this
      */
     public function setSender($sender)
@@ -344,7 +345,8 @@ class CountrySpecification implements ArrayAccess, ModelInterface
     /**
      * Sets receiver
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\Receiver  $receiver  receiver
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\Receiver $receiver receiver
+     *
      * @return $this
      */
     public function setReceiver($receiver)
@@ -353,12 +355,12 @@ class CountrySpecification implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -368,7 +370,8 @@ class CountrySpecification implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -379,8 +382,9 @@ class CountrySpecification implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -395,7 +399,8 @@ class CountrySpecification implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -420,3 +425,5 @@ class CountrySpecification implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

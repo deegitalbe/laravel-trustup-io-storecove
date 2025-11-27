@@ -4,9 +4,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -40,14 +39,12 @@ use Deegitalbe\LaravelTrustupIoStorecove\Configuration;
 use Deegitalbe\LaravelTrustupIoStorecove\HeaderSelector;
 use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
-
 /**
  * AdditionalTaxIdentifiersApi Class Doc Comment
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 class AdditionalTaxIdentifiersApi
@@ -67,10 +64,15 @@ class AdditionalTaxIdentifiersApi
      */
     protected $headerSelector;
 
+    /**
+     * @param ClientInterface $client
+     * @param Configuration   $config
+     * @param HeaderSelector  $selector
+     */
     public function __construct(
-        ?ClientInterface $client = null,
-        ?Configuration $config = null,
-        ?HeaderSelector $selector = null
+        ClientInterface $client = null,
+        Configuration $config = null,
+        HeaderSelector $selector = null
     ) {
         $this->client = $client ?: new Client();
         $this->config = $config ?: new Configuration();
@@ -90,17 +92,16 @@ class AdditionalTaxIdentifiersApi
      *
      * Create a new AdditionalTaxIdentifier
      *
-     * @param  int  $legal_entity_id  The id of the LegalEntity for which to create the AdditionalTaxIdentifier (required)
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\AdditionalTaxIdentifierCreate  $additional_tax_identifier  AdditionalTaxIdentifier to create (required)
-     * @return \Deegitalbe\LaravelTrustupIoStorecove\Model\AdditionalTaxIdentifier
+     * @param  int $legal_entity_id The id of the LegalEntity for which to create the AdditionalTaxIdentifier (required)
+     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\AdditionalTaxIdentifierCreate $additional_tax_identifier AdditionalTaxIdentifier to create (required)
      *
      * @throws \Deegitalbe\LaravelTrustupIoStorecove\ApiException on non-2xx response
      * @throws \InvalidArgumentException
+     * @return \Deegitalbe\LaravelTrustupIoStorecove\Model\AdditionalTaxIdentifier
      */
     public function createAdditionalTaxIdentifier($legal_entity_id, $additional_tax_identifier)
     {
-        [$response] = $this->createAdditionalTaxIdentifierWithHttpInfo($legal_entity_id, $additional_tax_identifier);
-
+        list($response) = $this->createAdditionalTaxIdentifierWithHttpInfo($legal_entity_id, $additional_tax_identifier);
         return $response;
     }
 
@@ -109,12 +110,12 @@ class AdditionalTaxIdentifiersApi
      *
      * Create a new AdditionalTaxIdentifier
      *
-     * @param  int  $legal_entity_id  The id of the LegalEntity for which to create the AdditionalTaxIdentifier (required)
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\AdditionalTaxIdentifierCreate  $additional_tax_identifier  AdditionalTaxIdentifier to create (required)
-     * @return array of \Deegitalbe\LaravelTrustupIoStorecove\Model\AdditionalTaxIdentifier, HTTP status code, HTTP response headers (array of strings)
+     * @param  int $legal_entity_id The id of the LegalEntity for which to create the AdditionalTaxIdentifier (required)
+     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\AdditionalTaxIdentifierCreate $additional_tax_identifier AdditionalTaxIdentifier to create (required)
      *
      * @throws \Deegitalbe\LaravelTrustupIoStorecove\ApiException on non-2xx response
      * @throws \InvalidArgumentException
+     * @return array of \Deegitalbe\LaravelTrustupIoStorecove\Model\AdditionalTaxIdentifier, HTTP status code, HTTP response headers (array of strings)
      */
     public function createAdditionalTaxIdentifierWithHttpInfo($legal_entity_id, $additional_tax_identifier)
     {
@@ -162,7 +163,7 @@ class AdditionalTaxIdentifiersApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders(),
+                $response->getHeaders()
             ];
 
         } catch (ApiException $e) {
@@ -193,11 +194,11 @@ class AdditionalTaxIdentifiersApi
      *
      * Create a new AdditionalTaxIdentifier
      *
-     * @param  int  $legal_entity_id  The id of the LegalEntity for which to create the AdditionalTaxIdentifier (required)
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\AdditionalTaxIdentifierCreate  $additional_tax_identifier  AdditionalTaxIdentifier to create (required)
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @param  int $legal_entity_id The id of the LegalEntity for which to create the AdditionalTaxIdentifier (required)
+     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\AdditionalTaxIdentifierCreate $additional_tax_identifier AdditionalTaxIdentifier to create (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createAdditionalTaxIdentifierAsync($legal_entity_id, $additional_tax_identifier)
     {
@@ -214,11 +215,11 @@ class AdditionalTaxIdentifiersApi
      *
      * Create a new AdditionalTaxIdentifier
      *
-     * @param  int  $legal_entity_id  The id of the LegalEntity for which to create the AdditionalTaxIdentifier (required)
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\AdditionalTaxIdentifierCreate  $additional_tax_identifier  AdditionalTaxIdentifier to create (required)
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @param  int $legal_entity_id The id of the LegalEntity for which to create the AdditionalTaxIdentifier (required)
+     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\AdditionalTaxIdentifierCreate $additional_tax_identifier AdditionalTaxIdentifier to create (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createAdditionalTaxIdentifierAsyncWithHttpInfo($legal_entity_id, $additional_tax_identifier)
     {
@@ -242,7 +243,7 @@ class AdditionalTaxIdentifiersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders(),
+                        $response->getHeaders()
                     ];
                 },
                 function ($exception) {
@@ -265,11 +266,11 @@ class AdditionalTaxIdentifiersApi
     /**
      * Create request for operation 'createAdditionalTaxIdentifier'
      *
-     * @param  int  $legal_entity_id  The id of the LegalEntity for which to create the AdditionalTaxIdentifier (required)
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\AdditionalTaxIdentifierCreate  $additional_tax_identifier  AdditionalTaxIdentifier to create (required)
-     * @return \GuzzleHttp\Psr7\Request
+     * @param  int $legal_entity_id The id of the LegalEntity for which to create the AdditionalTaxIdentifier (required)
+     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\AdditionalTaxIdentifierCreate $additional_tax_identifier AdditionalTaxIdentifier to create (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
      */
     protected function createAdditionalTaxIdentifierRequest($legal_entity_id, $additional_tax_identifier)
     {
@@ -293,10 +294,11 @@ class AdditionalTaxIdentifiersApi
         $httpBody = '';
         $multipart = false;
 
+
         // path params
         if ($legal_entity_id !== null) {
             $resourcePath = str_replace(
-                '{'.'legal_entity_id'.'}',
+                '{' . 'legal_entity_id' . '}',
                 ObjectSerializer::toPathValue($legal_entity_id),
                 $resourcePath
             );
@@ -323,14 +325,14 @@ class AdditionalTaxIdentifiersApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-
-            if ($headers['Content-Type'] === 'application/json') {
+            
+            if($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
+                if(is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -340,7 +342,7 @@ class AdditionalTaxIdentifiersApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue,
+                        'contents' => $formParamValue
                     ];
                 }
                 // for HTTP post (form)
@@ -373,10 +375,9 @@ class AdditionalTaxIdentifiersApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
-
         return new Request(
             'POST',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -387,12 +388,12 @@ class AdditionalTaxIdentifiersApi
      *
      * Delete AdditionalTaxIdentifier
      *
-     * @param  int  $legal_entity_id  The id of the LegalEntity the AdditionalTaxIdentifier belongs to (required)
-     * @param  int  $id  The id of the AdditionalTaxIdentifier (required)
-     * @return void
+     * @param  int $legal_entity_id The id of the LegalEntity the AdditionalTaxIdentifier belongs to (required)
+     * @param  int $id The id of the AdditionalTaxIdentifier (required)
      *
      * @throws \Deegitalbe\LaravelTrustupIoStorecove\ApiException on non-2xx response
      * @throws \InvalidArgumentException
+     * @return void
      */
     public function deleteAdditionalTaxIdentifier($legal_entity_id, $id)
     {
@@ -404,12 +405,12 @@ class AdditionalTaxIdentifiersApi
      *
      * Delete AdditionalTaxIdentifier
      *
-     * @param  int  $legal_entity_id  The id of the LegalEntity the AdditionalTaxIdentifier belongs to (required)
-     * @param  int  $id  The id of the AdditionalTaxIdentifier (required)
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @param  int $legal_entity_id The id of the LegalEntity the AdditionalTaxIdentifier belongs to (required)
+     * @param  int $id The id of the AdditionalTaxIdentifier (required)
      *
      * @throws \Deegitalbe\LaravelTrustupIoStorecove\ApiException on non-2xx response
      * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteAdditionalTaxIdentifierWithHttpInfo($legal_entity_id, $id)
     {
@@ -458,11 +459,11 @@ class AdditionalTaxIdentifiersApi
      *
      * Delete AdditionalTaxIdentifier
      *
-     * @param  int  $legal_entity_id  The id of the LegalEntity the AdditionalTaxIdentifier belongs to (required)
-     * @param  int  $id  The id of the AdditionalTaxIdentifier (required)
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @param  int $legal_entity_id The id of the LegalEntity the AdditionalTaxIdentifier belongs to (required)
+     * @param  int $id The id of the AdditionalTaxIdentifier (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteAdditionalTaxIdentifierAsync($legal_entity_id, $id)
     {
@@ -479,11 +480,11 @@ class AdditionalTaxIdentifiersApi
      *
      * Delete AdditionalTaxIdentifier
      *
-     * @param  int  $legal_entity_id  The id of the LegalEntity the AdditionalTaxIdentifier belongs to (required)
-     * @param  int  $id  The id of the AdditionalTaxIdentifier (required)
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @param  int $legal_entity_id The id of the LegalEntity the AdditionalTaxIdentifier belongs to (required)
+     * @param  int $id The id of the AdditionalTaxIdentifier (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteAdditionalTaxIdentifierAsyncWithHttpInfo($legal_entity_id, $id)
     {
@@ -493,7 +494,7 @@ class AdditionalTaxIdentifiersApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) {
+                function ($response) use ($returnType) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -516,11 +517,11 @@ class AdditionalTaxIdentifiersApi
     /**
      * Create request for operation 'deleteAdditionalTaxIdentifier'
      *
-     * @param  int  $legal_entity_id  The id of the LegalEntity the AdditionalTaxIdentifier belongs to (required)
-     * @param  int  $id  The id of the AdditionalTaxIdentifier (required)
-     * @return \GuzzleHttp\Psr7\Request
+     * @param  int $legal_entity_id The id of the LegalEntity the AdditionalTaxIdentifier belongs to (required)
+     * @param  int $id The id of the AdditionalTaxIdentifier (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
      */
     protected function deleteAdditionalTaxIdentifierRequest($legal_entity_id, $id)
     {
@@ -544,10 +545,11 @@ class AdditionalTaxIdentifiersApi
         $httpBody = '';
         $multipart = false;
 
+
         // path params
         if ($legal_entity_id !== null) {
             $resourcePath = str_replace(
-                '{'.'legal_entity_id'.'}',
+                '{' . 'legal_entity_id' . '}',
                 ObjectSerializer::toPathValue($legal_entity_id),
                 $resourcePath
             );
@@ -555,7 +557,7 @@ class AdditionalTaxIdentifiersApi
         // path params
         if ($id !== null) {
             $resourcePath = str_replace(
-                '{'.'id'.'}',
+                '{' . 'id' . '}',
                 ObjectSerializer::toPathValue($id),
                 $resourcePath
             );
@@ -579,14 +581,14 @@ class AdditionalTaxIdentifiersApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-
-            if ($headers['Content-Type'] === 'application/json') {
+            
+            if($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
+                if(is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -596,7 +598,7 @@ class AdditionalTaxIdentifiersApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue,
+                        'contents' => $formParamValue
                     ];
                 }
                 // for HTTP post (form)
@@ -629,10 +631,9 @@ class AdditionalTaxIdentifiersApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
-
         return new Request(
             'DELETE',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -643,17 +644,16 @@ class AdditionalTaxIdentifiersApi
      *
      * Get AdditionalTaxIdentifier
      *
-     * @param  int  $legal_entity_id  The id of the LegalEntity the AdditionalTaxIdentifier belongs to (required)
-     * @param  int  $id  The id of the AdditionalTaxIdentifier (required)
-     * @return \Deegitalbe\LaravelTrustupIoStorecove\Model\AdditionalTaxIdentifier
+     * @param  int $legal_entity_id The id of the LegalEntity the AdditionalTaxIdentifier belongs to (required)
+     * @param  int $id The id of the AdditionalTaxIdentifier (required)
      *
      * @throws \Deegitalbe\LaravelTrustupIoStorecove\ApiException on non-2xx response
      * @throws \InvalidArgumentException
+     * @return \Deegitalbe\LaravelTrustupIoStorecove\Model\AdditionalTaxIdentifier
      */
     public function getAdditionalTaxIdentifier($legal_entity_id, $id)
     {
-        [$response] = $this->getAdditionalTaxIdentifierWithHttpInfo($legal_entity_id, $id);
-
+        list($response) = $this->getAdditionalTaxIdentifierWithHttpInfo($legal_entity_id, $id);
         return $response;
     }
 
@@ -662,12 +662,12 @@ class AdditionalTaxIdentifiersApi
      *
      * Get AdditionalTaxIdentifier
      *
-     * @param  int  $legal_entity_id  The id of the LegalEntity the AdditionalTaxIdentifier belongs to (required)
-     * @param  int  $id  The id of the AdditionalTaxIdentifier (required)
-     * @return array of \Deegitalbe\LaravelTrustupIoStorecove\Model\AdditionalTaxIdentifier, HTTP status code, HTTP response headers (array of strings)
+     * @param  int $legal_entity_id The id of the LegalEntity the AdditionalTaxIdentifier belongs to (required)
+     * @param  int $id The id of the AdditionalTaxIdentifier (required)
      *
      * @throws \Deegitalbe\LaravelTrustupIoStorecove\ApiException on non-2xx response
      * @throws \InvalidArgumentException
+     * @return array of \Deegitalbe\LaravelTrustupIoStorecove\Model\AdditionalTaxIdentifier, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAdditionalTaxIdentifierWithHttpInfo($legal_entity_id, $id)
     {
@@ -715,7 +715,7 @@ class AdditionalTaxIdentifiersApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders(),
+                $response->getHeaders()
             ];
 
         } catch (ApiException $e) {
@@ -738,11 +738,11 @@ class AdditionalTaxIdentifiersApi
      *
      * Get AdditionalTaxIdentifier
      *
-     * @param  int  $legal_entity_id  The id of the LegalEntity the AdditionalTaxIdentifier belongs to (required)
-     * @param  int  $id  The id of the AdditionalTaxIdentifier (required)
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @param  int $legal_entity_id The id of the LegalEntity the AdditionalTaxIdentifier belongs to (required)
+     * @param  int $id The id of the AdditionalTaxIdentifier (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getAdditionalTaxIdentifierAsync($legal_entity_id, $id)
     {
@@ -759,11 +759,11 @@ class AdditionalTaxIdentifiersApi
      *
      * Get AdditionalTaxIdentifier
      *
-     * @param  int  $legal_entity_id  The id of the LegalEntity the AdditionalTaxIdentifier belongs to (required)
-     * @param  int  $id  The id of the AdditionalTaxIdentifier (required)
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @param  int $legal_entity_id The id of the LegalEntity the AdditionalTaxIdentifier belongs to (required)
+     * @param  int $id The id of the AdditionalTaxIdentifier (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getAdditionalTaxIdentifierAsyncWithHttpInfo($legal_entity_id, $id)
     {
@@ -787,7 +787,7 @@ class AdditionalTaxIdentifiersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders(),
+                        $response->getHeaders()
                     ];
                 },
                 function ($exception) {
@@ -810,11 +810,11 @@ class AdditionalTaxIdentifiersApi
     /**
      * Create request for operation 'getAdditionalTaxIdentifier'
      *
-     * @param  int  $legal_entity_id  The id of the LegalEntity the AdditionalTaxIdentifier belongs to (required)
-     * @param  int  $id  The id of the AdditionalTaxIdentifier (required)
-     * @return \GuzzleHttp\Psr7\Request
+     * @param  int $legal_entity_id The id of the LegalEntity the AdditionalTaxIdentifier belongs to (required)
+     * @param  int $id The id of the AdditionalTaxIdentifier (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
      */
     protected function getAdditionalTaxIdentifierRequest($legal_entity_id, $id)
     {
@@ -838,10 +838,11 @@ class AdditionalTaxIdentifiersApi
         $httpBody = '';
         $multipart = false;
 
+
         // path params
         if ($legal_entity_id !== null) {
             $resourcePath = str_replace(
-                '{'.'legal_entity_id'.'}',
+                '{' . 'legal_entity_id' . '}',
                 ObjectSerializer::toPathValue($legal_entity_id),
                 $resourcePath
             );
@@ -849,7 +850,7 @@ class AdditionalTaxIdentifiersApi
         // path params
         if ($id !== null) {
             $resourcePath = str_replace(
-                '{'.'id'.'}',
+                '{' . 'id' . '}',
                 ObjectSerializer::toPathValue($id),
                 $resourcePath
             );
@@ -873,14 +874,14 @@ class AdditionalTaxIdentifiersApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-
-            if ($headers['Content-Type'] === 'application/json') {
+            
+            if($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
+                if(is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -890,7 +891,7 @@ class AdditionalTaxIdentifiersApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue,
+                        'contents' => $formParamValue
                     ];
                 }
                 // for HTTP post (form)
@@ -923,10 +924,9 @@ class AdditionalTaxIdentifiersApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
-
         return new Request(
             'GET',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -937,18 +937,17 @@ class AdditionalTaxIdentifiersApi
      *
      * Update AdditionalTaxIdentifier
      *
-     * @param  int  $legal_entity_id  The id of the LegalEntity the AdditionalTaxIdentifier belongs to (required)
-     * @param  int  $id  The id of the AdditionalTaxIdentifier to be updated (required)
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\AdditionalTaxIdentifierUpdate  $additional_tax_identifier  AdditionalTaxIdentifier to update (required)
-     * @return \Deegitalbe\LaravelTrustupIoStorecove\Model\AdditionalTaxIdentifier
+     * @param  int $legal_entity_id The id of the LegalEntity the AdditionalTaxIdentifier belongs to (required)
+     * @param  int $id The id of the AdditionalTaxIdentifier to be updated (required)
+     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\AdditionalTaxIdentifierUpdate $additional_tax_identifier AdditionalTaxIdentifier to update (required)
      *
      * @throws \Deegitalbe\LaravelTrustupIoStorecove\ApiException on non-2xx response
      * @throws \InvalidArgumentException
+     * @return \Deegitalbe\LaravelTrustupIoStorecove\Model\AdditionalTaxIdentifier
      */
     public function updateAdditionalTaxIdentifier($legal_entity_id, $id, $additional_tax_identifier)
     {
-        [$response] = $this->updateAdditionalTaxIdentifierWithHttpInfo($legal_entity_id, $id, $additional_tax_identifier);
-
+        list($response) = $this->updateAdditionalTaxIdentifierWithHttpInfo($legal_entity_id, $id, $additional_tax_identifier);
         return $response;
     }
 
@@ -957,13 +956,13 @@ class AdditionalTaxIdentifiersApi
      *
      * Update AdditionalTaxIdentifier
      *
-     * @param  int  $legal_entity_id  The id of the LegalEntity the AdditionalTaxIdentifier belongs to (required)
-     * @param  int  $id  The id of the AdditionalTaxIdentifier to be updated (required)
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\AdditionalTaxIdentifierUpdate  $additional_tax_identifier  AdditionalTaxIdentifier to update (required)
-     * @return array of \Deegitalbe\LaravelTrustupIoStorecove\Model\AdditionalTaxIdentifier, HTTP status code, HTTP response headers (array of strings)
+     * @param  int $legal_entity_id The id of the LegalEntity the AdditionalTaxIdentifier belongs to (required)
+     * @param  int $id The id of the AdditionalTaxIdentifier to be updated (required)
+     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\AdditionalTaxIdentifierUpdate $additional_tax_identifier AdditionalTaxIdentifier to update (required)
      *
      * @throws \Deegitalbe\LaravelTrustupIoStorecove\ApiException on non-2xx response
      * @throws \InvalidArgumentException
+     * @return array of \Deegitalbe\LaravelTrustupIoStorecove\Model\AdditionalTaxIdentifier, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateAdditionalTaxIdentifierWithHttpInfo($legal_entity_id, $id, $additional_tax_identifier)
     {
@@ -1011,7 +1010,7 @@ class AdditionalTaxIdentifiersApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders(),
+                $response->getHeaders()
             ];
 
         } catch (ApiException $e) {
@@ -1034,12 +1033,12 @@ class AdditionalTaxIdentifiersApi
      *
      * Update AdditionalTaxIdentifier
      *
-     * @param  int  $legal_entity_id  The id of the LegalEntity the AdditionalTaxIdentifier belongs to (required)
-     * @param  int  $id  The id of the AdditionalTaxIdentifier to be updated (required)
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\AdditionalTaxIdentifierUpdate  $additional_tax_identifier  AdditionalTaxIdentifier to update (required)
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @param  int $legal_entity_id The id of the LegalEntity the AdditionalTaxIdentifier belongs to (required)
+     * @param  int $id The id of the AdditionalTaxIdentifier to be updated (required)
+     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\AdditionalTaxIdentifierUpdate $additional_tax_identifier AdditionalTaxIdentifier to update (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateAdditionalTaxIdentifierAsync($legal_entity_id, $id, $additional_tax_identifier)
     {
@@ -1056,12 +1055,12 @@ class AdditionalTaxIdentifiersApi
      *
      * Update AdditionalTaxIdentifier
      *
-     * @param  int  $legal_entity_id  The id of the LegalEntity the AdditionalTaxIdentifier belongs to (required)
-     * @param  int  $id  The id of the AdditionalTaxIdentifier to be updated (required)
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\AdditionalTaxIdentifierUpdate  $additional_tax_identifier  AdditionalTaxIdentifier to update (required)
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @param  int $legal_entity_id The id of the LegalEntity the AdditionalTaxIdentifier belongs to (required)
+     * @param  int $id The id of the AdditionalTaxIdentifier to be updated (required)
+     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\AdditionalTaxIdentifierUpdate $additional_tax_identifier AdditionalTaxIdentifier to update (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateAdditionalTaxIdentifierAsyncWithHttpInfo($legal_entity_id, $id, $additional_tax_identifier)
     {
@@ -1085,7 +1084,7 @@ class AdditionalTaxIdentifiersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders(),
+                        $response->getHeaders()
                     ];
                 },
                 function ($exception) {
@@ -1108,12 +1107,12 @@ class AdditionalTaxIdentifiersApi
     /**
      * Create request for operation 'updateAdditionalTaxIdentifier'
      *
-     * @param  int  $legal_entity_id  The id of the LegalEntity the AdditionalTaxIdentifier belongs to (required)
-     * @param  int  $id  The id of the AdditionalTaxIdentifier to be updated (required)
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\AdditionalTaxIdentifierUpdate  $additional_tax_identifier  AdditionalTaxIdentifier to update (required)
-     * @return \GuzzleHttp\Psr7\Request
+     * @param  int $legal_entity_id The id of the LegalEntity the AdditionalTaxIdentifier belongs to (required)
+     * @param  int $id The id of the AdditionalTaxIdentifier to be updated (required)
+     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\AdditionalTaxIdentifierUpdate $additional_tax_identifier AdditionalTaxIdentifier to update (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
      */
     protected function updateAdditionalTaxIdentifierRequest($legal_entity_id, $id, $additional_tax_identifier)
     {
@@ -1143,10 +1142,11 @@ class AdditionalTaxIdentifiersApi
         $httpBody = '';
         $multipart = false;
 
+
         // path params
         if ($legal_entity_id !== null) {
             $resourcePath = str_replace(
-                '{'.'legal_entity_id'.'}',
+                '{' . 'legal_entity_id' . '}',
                 ObjectSerializer::toPathValue($legal_entity_id),
                 $resourcePath
             );
@@ -1154,7 +1154,7 @@ class AdditionalTaxIdentifiersApi
         // path params
         if ($id !== null) {
             $resourcePath = str_replace(
-                '{'.'id'.'}',
+                '{' . 'id' . '}',
                 ObjectSerializer::toPathValue($id),
                 $resourcePath
             );
@@ -1181,14 +1181,14 @@ class AdditionalTaxIdentifiersApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-
-            if ($headers['Content-Type'] === 'application/json') {
+            
+            if($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
+                if(is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -1198,7 +1198,7 @@ class AdditionalTaxIdentifiersApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue,
+                        'contents' => $formParamValue
                     ];
                 }
                 // for HTTP post (form)
@@ -1231,10 +1231,9 @@ class AdditionalTaxIdentifiersApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
-
         return new Request(
             'PATCH',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1243,17 +1242,16 @@ class AdditionalTaxIdentifiersApi
     /**
      * Create http client option
      *
-     * @return array of http client options
-     *
      * @throws \RuntimeException on file opening failure
+     * @return array of http client options
      */
     protected function createHttpClientOption()
     {
         $options = [];
         if ($this->config->getDebug()) {
             $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
-            if (! $options[RequestOptions::DEBUG]) {
-                throw new \RuntimeException('Failed to open the debug file: '.$this->config->getDebugFile());
+            if (!$options[RequestOptions::DEBUG]) {
+                throw new \RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
             }
         }
 

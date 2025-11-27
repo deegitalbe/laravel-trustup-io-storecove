@@ -4,9 +4,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -44,9 +43,8 @@ use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
  * InvoiceSubmissionsApi Class Doc Comment
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 class InvoiceSubmissionsApi
@@ -66,10 +64,15 @@ class InvoiceSubmissionsApi
      */
     protected $headerSelector;
 
+    /**
+     * @param ClientInterface $client
+     * @param Configuration   $config
+     * @param HeaderSelector  $selector
+     */
     public function __construct(
-        ?ClientInterface $client = null,
-        ?Configuration $config = null,
-        ?HeaderSelector $selector = null
+        ClientInterface $client = null,
+        Configuration $config = null,
+        HeaderSelector $selector = null
     ) {
         $this->client = $client ?: new Client();
         $this->config = $config ?: new Configuration();
@@ -89,16 +92,15 @@ class InvoiceSubmissionsApi
      *
      * DEPRECATED. Submit a new invoice
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\InvoiceSubmission  $invoice_submission  Invoice to submit (required)
-     * @return \Deegitalbe\LaravelTrustupIoStorecove\Model\InvoiceSubmissionResult
+     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\InvoiceSubmission $invoice_submission Invoice to submit (required)
      *
      * @throws \Deegitalbe\LaravelTrustupIoStorecove\ApiException on non-2xx response
      * @throws \InvalidArgumentException
+     * @return \Deegitalbe\LaravelTrustupIoStorecove\Model\InvoiceSubmissionResult
      */
     public function createInvoiceSubmission($invoice_submission)
     {
-        [$response] = $this->createInvoiceSubmissionWithHttpInfo($invoice_submission);
-
+        list($response) = $this->createInvoiceSubmissionWithHttpInfo($invoice_submission);
         return $response;
     }
 
@@ -107,11 +109,11 @@ class InvoiceSubmissionsApi
      *
      * DEPRECATED. Submit a new invoice
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\InvoiceSubmission  $invoice_submission  Invoice to submit (required)
-     * @return array of \Deegitalbe\LaravelTrustupIoStorecove\Model\InvoiceSubmissionResult, HTTP status code, HTTP response headers (array of strings)
+     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\InvoiceSubmission $invoice_submission Invoice to submit (required)
      *
      * @throws \Deegitalbe\LaravelTrustupIoStorecove\ApiException on non-2xx response
      * @throws \InvalidArgumentException
+     * @return array of \Deegitalbe\LaravelTrustupIoStorecove\Model\InvoiceSubmissionResult, HTTP status code, HTTP response headers (array of strings)
      */
     public function createInvoiceSubmissionWithHttpInfo($invoice_submission)
     {
@@ -159,7 +161,7 @@ class InvoiceSubmissionsApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders(),
+                $response->getHeaders()
             ];
 
         } catch (ApiException $e) {
@@ -190,10 +192,10 @@ class InvoiceSubmissionsApi
      *
      * DEPRECATED. Submit a new invoice
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\InvoiceSubmission  $invoice_submission  Invoice to submit (required)
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\InvoiceSubmission $invoice_submission Invoice to submit (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createInvoiceSubmissionAsync($invoice_submission)
     {
@@ -210,10 +212,10 @@ class InvoiceSubmissionsApi
      *
      * DEPRECATED. Submit a new invoice
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\InvoiceSubmission  $invoice_submission  Invoice to submit (required)
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\InvoiceSubmission $invoice_submission Invoice to submit (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createInvoiceSubmissionAsyncWithHttpInfo($invoice_submission)
     {
@@ -237,7 +239,7 @@ class InvoiceSubmissionsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders(),
+                        $response->getHeaders()
                     ];
                 },
                 function ($exception) {
@@ -260,10 +262,10 @@ class InvoiceSubmissionsApi
     /**
      * Create request for operation 'createInvoiceSubmission'
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\InvoiceSubmission  $invoice_submission  Invoice to submit (required)
-     * @return \GuzzleHttp\Psr7\Request
+     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\InvoiceSubmission $invoice_submission Invoice to submit (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
      */
     protected function createInvoiceSubmissionRequest($invoice_submission)
     {
@@ -280,6 +282,8 @@ class InvoiceSubmissionsApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
+
+
 
         // body params
         $_tempBody = null;
@@ -302,14 +306,14 @@ class InvoiceSubmissionsApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-
-            if ($headers['Content-Type'] === 'application/json') {
+            
+            if($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
+                if(is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -319,7 +323,7 @@ class InvoiceSubmissionsApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue,
+                        'contents' => $formParamValue
                     ];
                 }
                 // for HTTP post (form)
@@ -352,10 +356,9 @@ class InvoiceSubmissionsApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
-
         return new Request(
             'POST',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -366,16 +369,15 @@ class InvoiceSubmissionsApi
      *
      * DEPRECATED. Preflight an invoice recipient
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\InvoiceRecipientPreflight  $invoice_recipient_preflight  The invoice recipient to preflight (required)
-     * @return \Deegitalbe\LaravelTrustupIoStorecove\Model\PreflightInvoiceRecipientResult
+     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\InvoiceRecipientPreflight $invoice_recipient_preflight The invoice recipient to preflight (required)
      *
      * @throws \Deegitalbe\LaravelTrustupIoStorecove\ApiException on non-2xx response
      * @throws \InvalidArgumentException
+     * @return \Deegitalbe\LaravelTrustupIoStorecove\Model\PreflightInvoiceRecipientResult
      */
     public function preflightInvoiceRecipient($invoice_recipient_preflight)
     {
-        [$response] = $this->preflightInvoiceRecipientWithHttpInfo($invoice_recipient_preflight);
-
+        list($response) = $this->preflightInvoiceRecipientWithHttpInfo($invoice_recipient_preflight);
         return $response;
     }
 
@@ -384,11 +386,11 @@ class InvoiceSubmissionsApi
      *
      * DEPRECATED. Preflight an invoice recipient
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\InvoiceRecipientPreflight  $invoice_recipient_preflight  The invoice recipient to preflight (required)
-     * @return array of \Deegitalbe\LaravelTrustupIoStorecove\Model\PreflightInvoiceRecipientResult, HTTP status code, HTTP response headers (array of strings)
+     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\InvoiceRecipientPreflight $invoice_recipient_preflight The invoice recipient to preflight (required)
      *
      * @throws \Deegitalbe\LaravelTrustupIoStorecove\ApiException on non-2xx response
      * @throws \InvalidArgumentException
+     * @return array of \Deegitalbe\LaravelTrustupIoStorecove\Model\PreflightInvoiceRecipientResult, HTTP status code, HTTP response headers (array of strings)
      */
     public function preflightInvoiceRecipientWithHttpInfo($invoice_recipient_preflight)
     {
@@ -436,7 +438,7 @@ class InvoiceSubmissionsApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders(),
+                $response->getHeaders()
             ];
 
         } catch (ApiException $e) {
@@ -467,10 +469,10 @@ class InvoiceSubmissionsApi
      *
      * DEPRECATED. Preflight an invoice recipient
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\InvoiceRecipientPreflight  $invoice_recipient_preflight  The invoice recipient to preflight (required)
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\InvoiceRecipientPreflight $invoice_recipient_preflight The invoice recipient to preflight (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function preflightInvoiceRecipientAsync($invoice_recipient_preflight)
     {
@@ -487,10 +489,10 @@ class InvoiceSubmissionsApi
      *
      * DEPRECATED. Preflight an invoice recipient
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\InvoiceRecipientPreflight  $invoice_recipient_preflight  The invoice recipient to preflight (required)
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\InvoiceRecipientPreflight $invoice_recipient_preflight The invoice recipient to preflight (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function preflightInvoiceRecipientAsyncWithHttpInfo($invoice_recipient_preflight)
     {
@@ -514,7 +516,7 @@ class InvoiceSubmissionsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders(),
+                        $response->getHeaders()
                     ];
                 },
                 function ($exception) {
@@ -537,10 +539,10 @@ class InvoiceSubmissionsApi
     /**
      * Create request for operation 'preflightInvoiceRecipient'
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\InvoiceRecipientPreflight  $invoice_recipient_preflight  The invoice recipient to preflight (required)
-     * @return \GuzzleHttp\Psr7\Request
+     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\InvoiceRecipientPreflight $invoice_recipient_preflight The invoice recipient to preflight (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
      */
     protected function preflightInvoiceRecipientRequest($invoice_recipient_preflight)
     {
@@ -557,6 +559,8 @@ class InvoiceSubmissionsApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
+
+
 
         // body params
         $_tempBody = null;
@@ -579,14 +583,14 @@ class InvoiceSubmissionsApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-
-            if ($headers['Content-Type'] === 'application/json') {
+            
+            if($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
+                if(is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -596,7 +600,7 @@ class InvoiceSubmissionsApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue,
+                        'contents' => $formParamValue
                     ];
                 }
                 // for HTTP post (form)
@@ -629,10 +633,9 @@ class InvoiceSubmissionsApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
-
         return new Request(
             'POST',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -643,16 +646,15 @@ class InvoiceSubmissionsApi
      *
      * DEPRECATED. Get InvoiceSubmission Evidence
      *
-     * @param  string  $guid  InvoiceSubmission GUID (required)
-     * @return \Deegitalbe\LaravelTrustupIoStorecove\Model\InvoiceSubmissionEvidence
+     * @param  string $guid InvoiceSubmission GUID (required)
      *
      * @throws \Deegitalbe\LaravelTrustupIoStorecove\ApiException on non-2xx response
      * @throws \InvalidArgumentException
+     * @return \Deegitalbe\LaravelTrustupIoStorecove\Model\InvoiceSubmissionEvidence
      */
     public function showInvoiceSubmissionEvidence($guid)
     {
-        [$response] = $this->showInvoiceSubmissionEvidenceWithHttpInfo($guid);
-
+        list($response) = $this->showInvoiceSubmissionEvidenceWithHttpInfo($guid);
         return $response;
     }
 
@@ -661,11 +663,11 @@ class InvoiceSubmissionsApi
      *
      * DEPRECATED. Get InvoiceSubmission Evidence
      *
-     * @param  string  $guid  InvoiceSubmission GUID (required)
-     * @return array of \Deegitalbe\LaravelTrustupIoStorecove\Model\InvoiceSubmissionEvidence, HTTP status code, HTTP response headers (array of strings)
+     * @param  string $guid InvoiceSubmission GUID (required)
      *
      * @throws \Deegitalbe\LaravelTrustupIoStorecove\ApiException on non-2xx response
      * @throws \InvalidArgumentException
+     * @return array of \Deegitalbe\LaravelTrustupIoStorecove\Model\InvoiceSubmissionEvidence, HTTP status code, HTTP response headers (array of strings)
      */
     public function showInvoiceSubmissionEvidenceWithHttpInfo($guid)
     {
@@ -713,7 +715,7 @@ class InvoiceSubmissionsApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders(),
+                $response->getHeaders()
             ];
 
         } catch (ApiException $e) {
@@ -736,10 +738,10 @@ class InvoiceSubmissionsApi
      *
      * DEPRECATED. Get InvoiceSubmission Evidence
      *
-     * @param  string  $guid  InvoiceSubmission GUID (required)
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @param  string $guid InvoiceSubmission GUID (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function showInvoiceSubmissionEvidenceAsync($guid)
     {
@@ -756,10 +758,10 @@ class InvoiceSubmissionsApi
      *
      * DEPRECATED. Get InvoiceSubmission Evidence
      *
-     * @param  string  $guid  InvoiceSubmission GUID (required)
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @param  string $guid InvoiceSubmission GUID (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function showInvoiceSubmissionEvidenceAsyncWithHttpInfo($guid)
     {
@@ -783,7 +785,7 @@ class InvoiceSubmissionsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders(),
+                        $response->getHeaders()
                     ];
                 },
                 function ($exception) {
@@ -806,10 +808,10 @@ class InvoiceSubmissionsApi
     /**
      * Create request for operation 'showInvoiceSubmissionEvidence'
      *
-     * @param  string  $guid  InvoiceSubmission GUID (required)
-     * @return \GuzzleHttp\Psr7\Request
+     * @param  string $guid InvoiceSubmission GUID (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
      */
     protected function showInvoiceSubmissionEvidenceRequest($guid)
     {
@@ -827,10 +829,11 @@ class InvoiceSubmissionsApi
         $httpBody = '';
         $multipart = false;
 
+
         // path params
         if ($guid !== null) {
             $resourcePath = str_replace(
-                '{'.'guid'.'}',
+                '{' . 'guid' . '}',
                 ObjectSerializer::toPathValue($guid),
                 $resourcePath
             );
@@ -854,14 +857,14 @@ class InvoiceSubmissionsApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-
-            if ($headers['Content-Type'] === 'application/json') {
+            
+            if($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
+                if(is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -871,7 +874,7 @@ class InvoiceSubmissionsApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue,
+                        'contents' => $formParamValue
                     ];
                 }
                 // for HTTP post (form)
@@ -904,10 +907,9 @@ class InvoiceSubmissionsApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
-
         return new Request(
             'GET',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -916,17 +918,16 @@ class InvoiceSubmissionsApi
     /**
      * Create http client option
      *
-     * @return array of http client options
-     *
      * @throws \RuntimeException on file opening failure
+     * @return array of http client options
      */
     protected function createHttpClientOption()
     {
         $options = [];
         if ($this->config->getDebug()) {
             $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
-            if (! $options[RequestOptions::DEBUG]) {
-                throw new \RuntimeException('Failed to open the debug file: '.$this->config->getDebugFile());
+            if (!$options[RequestOptions::DEBUG]) {
+                throw new \RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
             }
         }
 

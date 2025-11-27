@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,36 +29,34 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * DocumentSubmission Class Doc Comment
  *
  * @category Class
- *
  * @description The document you want Storecove to send, with some meta-data.
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class DocumentSubmission implements ArrayAccess, ModelInterface
+class DocumentSubmission implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'DocumentSubmission';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'routing' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\Routing',
         'legal_entity_id' => 'int',
@@ -67,14 +64,14 @@ class DocumentSubmission implements ArrayAccess, ModelInterface
         'idempotency_guid' => 'string',
         'create_primary_image' => 'bool',
         'attachments' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\Attachment[]',
-        'document' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\SendableDocument',
+        'document' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\SendableDocument'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'routing' => null,
         'legal_entity_id' => null,
@@ -82,7 +79,7 @@ class DocumentSubmission implements ArrayAccess, ModelInterface
         'idempotency_guid' => null,
         'create_primary_image' => null,
         'attachments' => null,
-        'document' => null,
+        'document' => null
     ];
 
     /**
@@ -118,7 +115,7 @@ class DocumentSubmission implements ArrayAccess, ModelInterface
         'idempotency_guid' => 'idempotencyGuid',
         'create_primary_image' => 'createPrimaryImage',
         'attachments' => 'attachments',
-        'document' => 'document',
+        'document' => 'document'
     ];
 
     /**
@@ -133,7 +130,7 @@ class DocumentSubmission implements ArrayAccess, ModelInterface
         'idempotency_guid' => 'setIdempotencyGuid',
         'create_primary_image' => 'setCreatePrimaryImage',
         'attachments' => 'setAttachments',
-        'document' => 'setDocument',
+        'document' => 'setDocument'
     ];
 
     /**
@@ -148,7 +145,7 @@ class DocumentSubmission implements ArrayAccess, ModelInterface
         'idempotency_guid' => 'getIdempotencyGuid',
         'create_primary_image' => 'getCreatePrimaryImage',
         'attachments' => 'getAttachments',
-        'document' => 'getDocument',
+        'document' => 'getDocument'
     ];
 
     /**
@@ -192,6 +189,10 @@ class DocumentSubmission implements ArrayAccess, ModelInterface
         return self::$swaggerModelName;
     }
 
+    
+
+    
+
     /**
      * Associative array for storing property values
      *
@@ -202,10 +203,10 @@ class DocumentSubmission implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['routing'] = isset($data['routing']) ? $data['routing'] : null;
         $this->container['legal_entity_id'] = isset($data['legal_entity_id']) ? $data['legal_entity_id'] : null;
@@ -225,11 +226,11 @@ class DocumentSubmission implements ArrayAccess, ModelInterface
     {
         $invalidProperties = [];
 
-        if (! is_null($this->container['idempotency_guid']) && (mb_strlen($this->container['idempotency_guid']) > 36)) {
+        if (!is_null($this->container['idempotency_guid']) && (mb_strlen($this->container['idempotency_guid']) > 36)) {
             $invalidProperties[] = "invalid value for 'idempotency_guid', the character length must be smaller than or equal to 36.";
         }
 
-        if (! is_null($this->container['idempotency_guid']) && (mb_strlen($this->container['idempotency_guid']) < 36)) {
+        if (!is_null($this->container['idempotency_guid']) && (mb_strlen($this->container['idempotency_guid']) < 36)) {
             $invalidProperties[] = "invalid value for 'idempotency_guid', the character length must be bigger than or equal to 36.";
         }
 
@@ -247,6 +248,7 @@ class DocumentSubmission implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets routing
      *
@@ -260,7 +262,8 @@ class DocumentSubmission implements ArrayAccess, ModelInterface
     /**
      * Sets routing
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\Routing  $routing  Specifies where the document is to be sent. Can be electronic identifiers or email addresses.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\Routing $routing Specifies where the document is to be sent. Can be electronic identifiers or email addresses.
+     *
      * @return $this
      */
     public function setRouting($routing)
@@ -283,7 +286,8 @@ class DocumentSubmission implements ArrayAccess, ModelInterface
     /**
      * Sets legal_entity_id
      *
-     * @param  int  $legal_entity_id  The id of the LegalEntity this document should be sent on behalf of. Either legalEntityId or receiveGuid is mandatory.
+     * @param int $legal_entity_id The id of the LegalEntity this document should be sent on behalf of. Either legalEntityId or receiveGuid is mandatory.
+     *
      * @return $this
      */
     public function setLegalEntityId($legal_entity_id)
@@ -306,7 +310,8 @@ class DocumentSubmission implements ArrayAccess, ModelInterface
     /**
      * Sets receive_guid
      *
-     * @param  string  $receive_guid  The GUID that was in the received_document webhook. Either legalEntityId or receiveGuid is mandatory. This field is used for sending response documents, such as InvoiceReponse and OrderResponse.
+     * @param string $receive_guid The GUID that was in the received_document webhook. Either legalEntityId or receiveGuid is mandatory. This field is used for sending response documents, such as InvoiceResponse and OrderResponse.
+     *
      * @return $this
      */
     public function setReceiveGuid($receive_guid)
@@ -329,15 +334,16 @@ class DocumentSubmission implements ArrayAccess, ModelInterface
     /**
      * Sets idempotency_guid
      *
-     * @param  string  $idempotency_guid  A guid that you generated for this DocumentSubmission to achieve idempotency. If you submit multiple documents with the same idempotencyGuid, only the first one will be processed and any subsequent ones will trigger an HTTP 422 Unprocessable Entity response.
+     * @param string $idempotency_guid A guid that you generated for this DocumentSubmission to achieve idempotency. If you submit multiple documents with the same idempotencyGuid, only the first one will be processed and any subsequent ones will trigger an HTTP 422 Unprocessable Entity response.
+     *
      * @return $this
      */
     public function setIdempotencyGuid($idempotency_guid)
     {
-        if (! is_null($idempotency_guid) && (mb_strlen($idempotency_guid) > 36)) {
+        if (!is_null($idempotency_guid) && (mb_strlen($idempotency_guid) > 36)) {
             throw new \InvalidArgumentException('invalid length for $idempotency_guid when calling DocumentSubmission., must be smaller than or equal to 36.');
         }
-        if (! is_null($idempotency_guid) && (mb_strlen($idempotency_guid) < 36)) {
+        if (!is_null($idempotency_guid) && (mb_strlen($idempotency_guid) < 36)) {
             throw new \InvalidArgumentException('invalid length for $idempotency_guid when calling DocumentSubmission., must be bigger than or equal to 36.');
         }
 
@@ -359,7 +365,8 @@ class DocumentSubmission implements ArrayAccess, ModelInterface
     /**
      * Sets create_primary_image
      *
-     * @param  bool  $create_primary_image  DEPRECATED. In the future we will no longer support creating PDF invoices. Whether or not to create a primary image (PDF) if one is not provided. For customers who started from April 1st 2023, the default is false. For customers who started before that, the default is true.
+     * @param bool $create_primary_image DEPRECATED. In the future we will no longer support creating PDF invoices. Whether or not to create a primary image (PDF) if one is not provided. For customers who started from April 1st 2023, the default is false. For customers who started before that, the default is true.
+     *
      * @return $this
      */
     public function setCreatePrimaryImage($create_primary_image)
@@ -382,7 +389,8 @@ class DocumentSubmission implements ArrayAccess, ModelInterface
     /**
      * Sets attachments
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\Attachment[]  $attachments  DEPRECATED. Use the attachments array inside the 'document' property. An array of attachments. You may provide up to 10 attchments, but the total size must not exceed 100MB after Base64 encoding.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\Attachment[] $attachments DEPRECATED. Use the attachments array inside the 'document' property. An array of attachments. You may provide up to 10 attchments, but the total size must not exceed 100MB after Base64 encoding.
+     *
      * @return $this
      */
     public function setAttachments($attachments)
@@ -405,7 +413,8 @@ class DocumentSubmission implements ArrayAccess, ModelInterface
     /**
      * Sets document
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\SendableDocument  $document  document
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\SendableDocument $document document
+     *
      * @return $this
      */
     public function setDocument($document)
@@ -414,12 +423,12 @@ class DocumentSubmission implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -429,7 +438,8 @@ class DocumentSubmission implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -440,8 +450,9 @@ class DocumentSubmission implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -456,7 +467,8 @@ class DocumentSubmission implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -481,3 +493,5 @@ class DocumentSubmission implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

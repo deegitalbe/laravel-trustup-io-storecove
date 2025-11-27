@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,57 +29,55 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * Address Class Doc Comment
  *
  * @category Class
- *
  * @description The address
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Address implements ArrayAccess, ModelInterface
+class Address implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'Address';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'street1' => 'string',
         'street2' => 'string',
         'city' => 'string',
         'zip' => 'string',
         'county' => 'string',
-        'country' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\Country',
+        'country' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\Country'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'street1' => null,
         'street2' => null,
         'city' => null,
         'zip' => null,
         'county' => null,
-        'country' => null,
+        'country' => null
     ];
 
     /**
@@ -115,7 +112,7 @@ class Address implements ArrayAccess, ModelInterface
         'city' => 'city',
         'zip' => 'zip',
         'county' => 'county',
-        'country' => 'country',
+        'country' => 'country'
     ];
 
     /**
@@ -129,7 +126,7 @@ class Address implements ArrayAccess, ModelInterface
         'city' => 'setCity',
         'zip' => 'setZip',
         'county' => 'setCounty',
-        'country' => 'setCountry',
+        'country' => 'setCountry'
     ];
 
     /**
@@ -143,7 +140,7 @@ class Address implements ArrayAccess, ModelInterface
         'city' => 'getCity',
         'zip' => 'getZip',
         'county' => 'getCounty',
-        'country' => 'getCountry',
+        'country' => 'getCountry'
     ];
 
     /**
@@ -187,6 +184,10 @@ class Address implements ArrayAccess, ModelInterface
         return self::$swaggerModelName;
     }
 
+    
+
+    
+
     /**
      * Associative array for storing property values
      *
@@ -197,10 +198,10 @@ class Address implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['street1'] = isset($data['street1']) ? $data['street1'] : null;
         $this->container['street2'] = isset($data['street2']) ? $data['street2'] : null;
@@ -219,22 +220,21 @@ class Address implements ArrayAccess, ModelInterface
     {
         $invalidProperties = [];
 
-        if (! is_null($this->container['street1']) && (mb_strlen($this->container['street1']) < 2)) {
+        if (!is_null($this->container['street1']) && (mb_strlen($this->container['street1']) < 2)) {
             $invalidProperties[] = "invalid value for 'street1', the character length must be bigger than or equal to 2.";
         }
 
-        if (! is_null($this->container['city']) && (mb_strlen($this->container['city']) < 2)) {
+        if (!is_null($this->container['city']) && (mb_strlen($this->container['city']) < 2)) {
             $invalidProperties[] = "invalid value for 'city', the character length must be bigger than or equal to 2.";
         }
 
-        if (! is_null($this->container['zip']) && (mb_strlen($this->container['zip']) < 2)) {
+        if (!is_null($this->container['zip']) && (mb_strlen($this->container['zip']) < 2)) {
             $invalidProperties[] = "invalid value for 'zip', the character length must be bigger than or equal to 2.";
         }
 
         if ($this->container['country'] === null) {
             $invalidProperties[] = "'country' can't be null";
         }
-
         return $invalidProperties;
     }
 
@@ -249,6 +249,7 @@ class Address implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets street1
      *
@@ -262,13 +263,14 @@ class Address implements ArrayAccess, ModelInterface
     /**
      * Sets street1
      *
-     * @param  string  $street1  The street name and number. Mandatory in most countries.
+     * @param string $street1 The street name and number. Mandatory in most countries.
+     *
      * @return $this
      */
     public function setStreet1($street1)
     {
 
-        if (! is_null($street1) && (mb_strlen($street1) < 2)) {
+        if (!is_null($street1) && (mb_strlen($street1) < 2)) {
             throw new \InvalidArgumentException('invalid length for $street1 when calling Address., must be bigger than or equal to 2.');
         }
 
@@ -290,7 +292,8 @@ class Address implements ArrayAccess, ModelInterface
     /**
      * Sets street2
      *
-     * @param  string  $street2  The second street field. Use this if you used the first field for the building name.
+     * @param string $street2 The second street field. Use this if you used the first field for the building name.
+     *
      * @return $this
      */
     public function setStreet2($street2)
@@ -313,13 +316,14 @@ class Address implements ArrayAccess, ModelInterface
     /**
      * Sets city
      *
-     * @param  string  $city  The name of the city. Mandatory in most countries.
+     * @param string $city The name of the city. Mandatory in most countries.
+     *
      * @return $this
      */
     public function setCity($city)
     {
 
-        if (! is_null($city) && (mb_strlen($city) < 2)) {
+        if (!is_null($city) && (mb_strlen($city) < 2)) {
             throw new \InvalidArgumentException('invalid length for $city when calling Address., must be bigger than or equal to 2.');
         }
 
@@ -341,13 +345,14 @@ class Address implements ArrayAccess, ModelInterface
     /**
      * Sets zip
      *
-     * @param  string  $zip  The zipcode/postalzone. Mandatory unless the country does not have zip codes.
+     * @param string $zip The zipcode/postalzone. Mandatory unless the country does not have zip codes.
+     *
      * @return $this
      */
     public function setZip($zip)
     {
 
-        if (! is_null($zip) && (mb_strlen($zip) < 2)) {
+        if (!is_null($zip) && (mb_strlen($zip) < 2)) {
             throw new \InvalidArgumentException('invalid length for $zip when calling Address., must be bigger than or equal to 2.');
         }
 
@@ -369,7 +374,8 @@ class Address implements ArrayAccess, ModelInterface
     /**
      * Sets county
      *
-     * @param  string  $county  An optional county name.
+     * @param string $county An optional county name.
+     *
      * @return $this
      */
     public function setCounty($county)
@@ -392,7 +398,8 @@ class Address implements ArrayAccess, ModelInterface
     /**
      * Sets country
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\Country  $country  country
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\Country $country country
+     *
      * @return $this
      */
     public function setCountry($country)
@@ -401,12 +408,12 @@ class Address implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -416,7 +423,8 @@ class Address implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -427,8 +435,9 @@ class Address implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -443,7 +452,8 @@ class Address implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -468,3 +478,5 @@ class Address implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,34 +29,33 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * PurchaseInvoicePaymentMeans Class Doc Comment
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PurchaseInvoicePaymentMeans implements ArrayAccess, ModelInterface
+class PurchaseInvoicePaymentMeans implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'PurchaseInvoicePaymentMeans';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'type' => 'string',
         'account' => 'string',
@@ -65,14 +63,14 @@ class PurchaseInvoicePaymentMeans implements ArrayAccess, ModelInterface
         'branch_code' => 'string',
         'mandate' => 'string',
         'network' => 'string',
-        'payment_id' => 'string',
+        'payment_id' => 'string'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'type' => null,
         'account' => null,
@@ -80,7 +78,7 @@ class PurchaseInvoicePaymentMeans implements ArrayAccess, ModelInterface
         'branch_code' => null,
         'mandate' => null,
         'network' => null,
-        'payment_id' => null,
+        'payment_id' => null
     ];
 
     /**
@@ -116,7 +114,7 @@ class PurchaseInvoicePaymentMeans implements ArrayAccess, ModelInterface
         'branch_code' => 'branch_code',
         'mandate' => 'mandate',
         'network' => 'network',
-        'payment_id' => 'payment_id',
+        'payment_id' => 'payment_id'
     ];
 
     /**
@@ -131,7 +129,7 @@ class PurchaseInvoicePaymentMeans implements ArrayAccess, ModelInterface
         'branch_code' => 'setBranchCode',
         'mandate' => 'setMandate',
         'network' => 'setNetwork',
-        'payment_id' => 'setPaymentId',
+        'payment_id' => 'setPaymentId'
     ];
 
     /**
@@ -146,7 +144,7 @@ class PurchaseInvoicePaymentMeans implements ArrayAccess, ModelInterface
         'branch_code' => 'getBranchCode',
         'mandate' => 'getMandate',
         'network' => 'getNetwork',
-        'payment_id' => 'getPaymentId',
+        'payment_id' => 'getPaymentId'
     ];
 
     /**
@@ -191,43 +189,27 @@ class PurchaseInvoicePaymentMeans implements ArrayAccess, ModelInterface
     }
 
     const TYPE_BANK_PAYMENT_MEAN = 'BankPaymentMean';
-
     const TYPE_DIRECT_DEBIT_PAYMENT_MEAN = 'DirectDebitPaymentMean';
-
     const TYPE_CARD_PAYMENT_MEAN = 'CardPaymentMean';
-
     const TYPE_NPP_PAYMENT_MEAN = 'NppPaymentMean';
-
     const TYPE_SE_BANK_GIRO_PAYMENT_MEAN = 'SeBankGiroPaymentMean';
-
     const TYPE_SE_PLUSGIRO_PAYMENT_MEAN = 'SePlusgiroPaymentMean';
-
     const TYPE_SG_CARD_PAYMENT_MEAN = 'SgCardPaymentMean';
-
     const TYPE_SG_GIRO_PAYMENT_MEAN = 'SgGiroPaymentMean';
-
     const TYPE_SG_PAYNOW_PAYMENT_MEAN = 'SgPaynowPaymentMean';
-
     const TYPE_CREDIT_TRANSFER_PAYMENT_MEAN = 'CreditTransferPaymentMean';
-
     const TYPE_CREDIT_CARD_PAYMENT_MEAN = 'CreditCardPaymentMean';
-
     const TYPE_SE_BANKGIRO_PAYMENT_MEAN = 'SeBankgiroPaymentMean';
-
     const TYPE_AUNZ_NPP_PAYID_PAYMENT_MEAN = 'AunzNppPayidPaymentMean';
-
     const TYPE_ONLINE_PAYMENT_SERVICE_PAYMENT_MEAN = 'OnlinePaymentServicePaymentMean';
-
     const TYPE_STANDING_AGREEMENT_PAYMENT_MEAN = 'StandingAgreementPaymentMean';
-
     const TYPE_AUNZ_NPP_PAYTO_PAYMENT_MEAN = 'AunzNppPaytoPaymentMean';
-
     const TYPE_AUNZ_BPAY_PAYMENT_MEAN = 'AunzBpayPaymentMean';
-
     const TYPE_AUNZ_POSTBILLPAY_PAYMENT_MEAN = 'AunzPostbillpayPaymentMean';
-
     const TYPE_AUNZ_URI_PAYMENT_MEAN = 'AunzUriPaymentMean';
+    
 
+    
     /**
      * Gets allowable values of the enum
      *
@@ -257,6 +239,7 @@ class PurchaseInvoicePaymentMeans implements ArrayAccess, ModelInterface
             self::TYPE_AUNZ_URI_PAYMENT_MEAN,
         ];
     }
+    
 
     /**
      * Associative array for storing property values
@@ -268,10 +251,10 @@ class PurchaseInvoicePaymentMeans implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['account'] = isset($data['account']) ? $data['account'] : null;
@@ -292,7 +275,7 @@ class PurchaseInvoicePaymentMeans implements ArrayAccess, ModelInterface
         $invalidProperties = [];
 
         $allowedValues = $this->getTypeAllowableValues();
-        if (! is_null($this->container['type']) && ! in_array($this->container['type'], $allowedValues, true)) {
+        if (!is_null($this->container['type']) && !in_array($this->container['type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'type', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -313,6 +296,7 @@ class PurchaseInvoicePaymentMeans implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets type
      *
@@ -326,13 +310,14 @@ class PurchaseInvoicePaymentMeans implements ArrayAccess, ModelInterface
     /**
      * Sets type
      *
-     * @param  string  $type  The type of payment means. Which type are returned is determined by the &pmv= query parameter. For details see documentation for that field.
+     * @param string $type The type of payment means. Which type are returned is determined by the &pmv= query parameter. For details see documentation for that field.
+     *
      * @return $this
      */
     public function setType($type)
     {
         $allowedValues = $this->getTypeAllowableValues();
-        if (! is_null($type) && ! in_array($type, $allowedValues, true)) {
+        if (!is_null($type) && !in_array($type, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'type', must be one of '%s'",
@@ -358,7 +343,8 @@ class PurchaseInvoicePaymentMeans implements ArrayAccess, ModelInterface
     /**
      * Sets account
      *
-     * @param  string  $account  The account number to which to transfer.
+     * @param string $account The account number to which to transfer.
+     *
      * @return $this
      */
     public function setAccount($account)
@@ -381,7 +367,8 @@ class PurchaseInvoicePaymentMeans implements ArrayAccess, ModelInterface
     /**
      * Sets holder
      *
-     * @param  string  $holder  The account holder name to which to transfer.
+     * @param string $holder The account holder name to which to transfer.
+     *
      * @return $this
      */
     public function setHolder($holder)
@@ -404,7 +391,8 @@ class PurchaseInvoicePaymentMeans implements ArrayAccess, ModelInterface
     /**
      * Sets branch_code
      *
-     * @param  string  $branch_code  The code identifying the bank branch. May contain a BIC/SWIFT or something appropriate for the payment method, such as \"NPP\" for type NppPaymentMean.
+     * @param string $branch_code The code identifying the bank branch. May contain a BIC/SWIFT or something appropriate for the payment method, such as \"NPP\" for type NppPaymentMean.
+     *
      * @return $this
      */
     public function setBranchCode($branch_code)
@@ -427,7 +415,8 @@ class PurchaseInvoicePaymentMeans implements ArrayAccess, ModelInterface
     /**
      * Sets mandate
      *
-     * @param  string  $mandate  The mandate, used only for type DirectDebitPaymentMean.
+     * @param string $mandate The mandate, used only for type DirectDebitPaymentMean.
+     *
      * @return $this
      */
     public function setMandate($mandate)
@@ -450,7 +439,8 @@ class PurchaseInvoicePaymentMeans implements ArrayAccess, ModelInterface
     /**
      * Sets network
      *
-     * @param  string  $network  The payment network. Used only for type CardPaymentType.
+     * @param string $network The payment network. Used only for type CardPaymentType.
+     *
      * @return $this
      */
     public function setNetwork($network)
@@ -473,7 +463,8 @@ class PurchaseInvoicePaymentMeans implements ArrayAccess, ModelInterface
     /**
      * Sets payment_id
      *
-     * @param  string  $payment_id  The payment id to use when making the payment. The invoice sender will use this to match the received funds to the invoice.
+     * @param string $payment_id The payment id to use when making the payment. The invoice sender will use this to match the received funds to the invoice.
+     *
      * @return $this
      */
     public function setPaymentId($payment_id)
@@ -482,12 +473,12 @@ class PurchaseInvoicePaymentMeans implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -497,7 +488,8 @@ class PurchaseInvoicePaymentMeans implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -508,8 +500,9 @@ class PurchaseInvoicePaymentMeans implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -524,7 +517,8 @@ class PurchaseInvoicePaymentMeans implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -549,3 +543,5 @@ class PurchaseInvoicePaymentMeans implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

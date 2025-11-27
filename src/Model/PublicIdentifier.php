@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,49 +29,47 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * PublicIdentifier Class Doc Comment
  *
  * @category Class
- *
  * @description A public identifier for this customer.
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PublicIdentifier implements ArrayAccess, ModelInterface
+class PublicIdentifier implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'PublicIdentifier';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'scheme' => 'string',
-        'id' => 'string',
+        'id' => 'string'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'scheme' => null,
-        'id' => null,
+        'id' => null
     ];
 
     /**
@@ -103,7 +100,7 @@ class PublicIdentifier implements ArrayAccess, ModelInterface
      */
     protected static $attributeMap = [
         'scheme' => 'scheme',
-        'id' => 'id',
+        'id' => 'id'
     ];
 
     /**
@@ -113,7 +110,7 @@ class PublicIdentifier implements ArrayAccess, ModelInterface
      */
     protected static $setters = [
         'scheme' => 'setScheme',
-        'id' => 'setId',
+        'id' => 'setId'
     ];
 
     /**
@@ -123,7 +120,7 @@ class PublicIdentifier implements ArrayAccess, ModelInterface
      */
     protected static $getters = [
         'scheme' => 'getScheme',
-        'id' => 'getId',
+        'id' => 'getId'
     ];
 
     /**
@@ -167,6 +164,10 @@ class PublicIdentifier implements ArrayAccess, ModelInterface
         return self::$swaggerModelName;
     }
 
+    
+
+    
+
     /**
      * Associative array for storing property values
      *
@@ -177,10 +178,10 @@ class PublicIdentifier implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['scheme'] = isset($data['scheme']) ? $data['scheme'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
@@ -223,6 +224,7 @@ class PublicIdentifier implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets scheme
      *
@@ -236,7 +238,8 @@ class PublicIdentifier implements ArrayAccess, ModelInterface
     /**
      * Sets scheme
      *
-     * @param  string  $scheme  The scheme of the identifier. See <<_receiver_identifiers_list>> for a list.
+     * @param string $scheme The scheme of the identifier. See <<_receiver_identifiers_list>> for a list.
+     *
      * @return $this
      */
     public function setScheme($scheme)
@@ -264,7 +267,8 @@ class PublicIdentifier implements ArrayAccess, ModelInterface
     /**
      * Sets id
      *
-     * @param  string  $id  The actual identifier.
+     * @param string $id The actual identifier.
+     *
      * @return $this
      */
     public function setId($id)
@@ -278,12 +282,12 @@ class PublicIdentifier implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -293,7 +297,8 @@ class PublicIdentifier implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -304,8 +309,9 @@ class PublicIdentifier implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -320,7 +326,8 @@ class PublicIdentifier implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -345,3 +352,5 @@ class PublicIdentifier implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

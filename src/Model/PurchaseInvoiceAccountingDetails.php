@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,51 +29,50 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * PurchaseInvoiceAccountingDetails Class Doc Comment
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PurchaseInvoiceAccountingDetails implements ArrayAccess, ModelInterface
+class PurchaseInvoiceAccountingDetails implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'PurchaseInvoiceAccountingDetails';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'code' => 'string',
         'name' => 'string',
         'list' => 'string',
-        'list_version' => 'string',
+        'list_version' => 'string'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'code' => null,
         'name' => null,
         'list' => null,
-        'list_version' => null,
+        'list_version' => null
     ];
 
     /**
@@ -107,7 +105,7 @@ class PurchaseInvoiceAccountingDetails implements ArrayAccess, ModelInterface
         'code' => 'code',
         'name' => 'name',
         'list' => 'list',
-        'list_version' => 'list_version',
+        'list_version' => 'list_version'
     ];
 
     /**
@@ -119,7 +117,7 @@ class PurchaseInvoiceAccountingDetails implements ArrayAccess, ModelInterface
         'code' => 'setCode',
         'name' => 'setName',
         'list' => 'setList',
-        'list_version' => 'setListVersion',
+        'list_version' => 'setListVersion'
     ];
 
     /**
@@ -131,7 +129,7 @@ class PurchaseInvoiceAccountingDetails implements ArrayAccess, ModelInterface
         'code' => 'getCode',
         'name' => 'getName',
         'list' => 'getList',
-        'list_version' => 'getListVersion',
+        'list_version' => 'getListVersion'
     ];
 
     /**
@@ -175,6 +173,10 @@ class PurchaseInvoiceAccountingDetails implements ArrayAccess, ModelInterface
         return self::$swaggerModelName;
     }
 
+    
+
+    
+
     /**
      * Associative array for storing property values
      *
@@ -185,10 +187,10 @@ class PurchaseInvoiceAccountingDetails implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['code'] = isset($data['code']) ? $data['code'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
@@ -219,6 +221,7 @@ class PurchaseInvoiceAccountingDetails implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets code
      *
@@ -232,7 +235,8 @@ class PurchaseInvoiceAccountingDetails implements ArrayAccess, ModelInterface
     /**
      * Sets code
      *
-     * @param  string  $code  The the code of the general ledger account.
+     * @param string $code The the code of the general ledger account.
+     *
      * @return $this
      */
     public function setCode($code)
@@ -255,7 +259,8 @@ class PurchaseInvoiceAccountingDetails implements ArrayAccess, ModelInterface
     /**
      * Sets name
      *
-     * @param  string  $name  A textual description of the code.
+     * @param string $name A textual description of the code.
+     *
      * @return $this
      */
     public function setName($name)
@@ -278,7 +283,8 @@ class PurchaseInvoiceAccountingDetails implements ArrayAccess, ModelInterface
     /**
      * Sets list
      *
-     * @param  string  $list  The name of the list for the code, e.g. \"RGS\".
+     * @param string $list The name of the list for the code, e.g. \"RGS\".
+     *
      * @return $this
      */
     public function setList($list)
@@ -301,7 +307,8 @@ class PurchaseInvoiceAccountingDetails implements ArrayAccess, ModelInterface
     /**
      * Sets list_version
      *
-     * @param  string  $list_version  The version of the list for the code, e.g. \"1.1\".
+     * @param string $list_version The version of the list for the code, e.g. \"1.1\".
+     *
      * @return $this
      */
     public function setListVersion($list_version)
@@ -310,12 +317,12 @@ class PurchaseInvoiceAccountingDetails implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -325,7 +332,8 @@ class PurchaseInvoiceAccountingDetails implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -336,8 +344,9 @@ class PurchaseInvoiceAccountingDetails implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -352,7 +361,8 @@ class PurchaseInvoiceAccountingDetails implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -377,3 +387,5 @@ class PurchaseInvoiceAccountingDetails implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

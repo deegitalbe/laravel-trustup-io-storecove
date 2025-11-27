@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,34 +29,33 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * PurchaseInvoice Class Doc Comment
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PurchaseInvoice implements ArrayAccess, ModelInterface
+class PurchaseInvoice implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'PurchaseInvoice';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'external_user_id' => 'string',
         'external_key' => 'string',
@@ -98,14 +96,14 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
         'invoice_lines' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoiceInvoiceLine[]',
         'allowance_charges' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoiceAllowanceCharge[]',
         'document_totals' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoiceDocumentTotals',
-        'tax_subtotals' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoiceTaxSubtotal[]',
+        'tax_subtotals' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoiceTaxSubtotal[]'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'external_user_id' => null,
         'external_key' => null,
@@ -146,7 +144,7 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
         'invoice_lines' => null,
         'allowance_charges' => null,
         'document_totals' => null,
-        'tax_subtotals' => null,
+        'tax_subtotals' => null
     ];
 
     /**
@@ -215,7 +213,7 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
         'invoice_lines' => 'invoice_lines',
         'allowance_charges' => 'allowance_charges',
         'document_totals' => 'document_totals',
-        'tax_subtotals' => 'tax_subtotals',
+        'tax_subtotals' => 'tax_subtotals'
     ];
 
     /**
@@ -263,7 +261,7 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
         'invoice_lines' => 'setInvoiceLines',
         'allowance_charges' => 'setAllowanceCharges',
         'document_totals' => 'setDocumentTotals',
-        'tax_subtotals' => 'setTaxSubtotals',
+        'tax_subtotals' => 'setTaxSubtotals'
     ];
 
     /**
@@ -311,7 +309,7 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
         'invoice_lines' => 'getInvoiceLines',
         'allowance_charges' => 'getAllowanceCharges',
         'document_totals' => 'getDocumentTotals',
-        'tax_subtotals' => 'getTaxSubtotals',
+        'tax_subtotals' => 'getTaxSubtotals'
     ];
 
     /**
@@ -356,27 +354,19 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
     }
 
     const INVOICE_TYPE_INVOICE = 'invoice';
-
     const INVOICE_TYPE_CREDITNOTE = 'creditnote';
-
     const INVOICE_TYPE_CORRECTIONINVOICE = 'correctioninvoice';
-
     const DOCUMENT_TYPE_INVOICE = 'invoice';
-
     const SUB_TYPE_INVOICE = 'invoice';
-
     const SUB_TYPE_CREDITNOTE = 'creditnote';
-
     const SUB_TYPE_CORRECTIONINVOICE = 'correctioninvoice';
-
     const SOURCE_PEPPOL = 'peppol';
-
     const SOURCE_SCRIPT = 'script';
-
     const SOURCE_SUPPLIER = 'supplier';
-
     const SOURCE_EMAIL = 'email';
+    
 
+    
     /**
      * Gets allowable values of the enum
      *
@@ -390,7 +380,7 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
             self::INVOICE_TYPE_CORRECTIONINVOICE,
         ];
     }
-
+    
     /**
      * Gets allowable values of the enum
      *
@@ -402,7 +392,7 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
             self::DOCUMENT_TYPE_INVOICE,
         ];
     }
-
+    
     /**
      * Gets allowable values of the enum
      *
@@ -416,7 +406,7 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
             self::SUB_TYPE_CORRECTIONINVOICE,
         ];
     }
-
+    
     /**
      * Gets allowable values of the enum
      *
@@ -431,6 +421,7 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
             self::SOURCE_EMAIL,
         ];
     }
+    
 
     /**
      * Associative array for storing property values
@@ -442,10 +433,10 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['external_user_id'] = isset($data['external_user_id']) ? $data['external_user_id'] : null;
         $this->container['external_key'] = isset($data['external_key']) ? $data['external_key'] : null;
@@ -499,7 +490,7 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
         $invalidProperties = [];
 
         $allowedValues = $this->getInvoiceTypeAllowableValues();
-        if (! is_null($this->container['invoice_type']) && ! in_array($this->container['invoice_type'], $allowedValues, true)) {
+        if (!is_null($this->container['invoice_type']) && !in_array($this->container['invoice_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'invoice_type', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -507,7 +498,7 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
         }
 
         $allowedValues = $this->getDocumentTypeAllowableValues();
-        if (! is_null($this->container['document_type']) && ! in_array($this->container['document_type'], $allowedValues, true)) {
+        if (!is_null($this->container['document_type']) && !in_array($this->container['document_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'document_type', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -515,7 +506,7 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
         }
 
         $allowedValues = $this->getSubTypeAllowableValues();
-        if (! is_null($this->container['sub_type']) && ! in_array($this->container['sub_type'], $allowedValues, true)) {
+        if (!is_null($this->container['sub_type']) && !in_array($this->container['sub_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'sub_type', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -523,7 +514,7 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
         }
 
         $allowedValues = $this->getSourceAllowableValues();
-        if (! is_null($this->container['source']) && ! in_array($this->container['source'], $allowedValues, true)) {
+        if (!is_null($this->container['source']) && !in_array($this->container['source'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'source', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -544,6 +535,7 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets external_user_id
      *
@@ -557,7 +549,8 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
     /**
      * Sets external_user_id
      *
-     * @param  string  $external_user_id  Deprecated. Used for the embedded portal retrieval service. The external_user_id you provided when the ShopAccount was created.
+     * @param string $external_user_id Deprecated. Used for the embedded portal retrieval service. The external_user_id you provided when the ShopAccount was created.
+     *
      * @return $this
      */
     public function setExternalUserId($external_user_id)
@@ -580,7 +573,8 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
     /**
      * Sets external_key
      *
-     * @param  string  $external_key  Deprecated. Used for accountants. The id you specified for the organization.
+     * @param string $external_key Deprecated. Used for accountants. The id you specified for the organization.
+     *
      * @return $this
      */
     public function setExternalKey($external_key)
@@ -603,7 +597,8 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
     /**
      * Sets document
      *
-     * @param  string  $document  DEPRECATED. Use the new atatchments array.
+     * @param string $document DEPRECATED. Use the new atatchments array.
+     *
      * @return $this
      */
     public function setDocument($document)
@@ -626,13 +621,14 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
     /**
      * Sets invoice_type
      *
-     * @param  string  $invoice_type  The type of invoice.
+     * @param string $invoice_type The type of invoice.
+     *
      * @return $this
      */
     public function setInvoiceType($invoice_type)
     {
         $allowedValues = $this->getInvoiceTypeAllowableValues();
-        if (! is_null($invoice_type) && ! in_array($invoice_type, $allowedValues, true)) {
+        if (!is_null($invoice_type) && !in_array($invoice_type, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'invoice_type', must be one of '%s'",
@@ -658,7 +654,8 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
     /**
      * Sets vat_reverse_charge
      *
-     * @param  bool  $vat_reverse_charge  DEPRECATED - This is now part of each invoice line.
+     * @param bool $vat_reverse_charge DEPRECATED - This is now part of each invoice line.
+     *
      * @return $this
      */
     public function setVatReverseCharge($vat_reverse_charge)
@@ -681,7 +678,8 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
     /**
      * Sets amount_including_vat
      *
-     * @param  float  $amount_including_vat  DEPRECATED - Use amount_including_tax.
+     * @param float $amount_including_vat DEPRECATED - Use amount_including_tax.
+     *
      * @return $this
      */
     public function setAmountIncludingVat($amount_including_vat)
@@ -704,7 +702,8 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
     /**
      * Sets allowance_charge
      *
-     * @param  float  $allowance_charge  DEPRECATED - Use the allowance_charges array.
+     * @param float $allowance_charge DEPRECATED - Use the allowance_charges array.
+     *
      * @return $this
      */
     public function setAllowanceCharge($allowance_charge)
@@ -727,7 +726,8 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
     /**
      * Sets payment_means
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\PaymentMeansDEPRECATED  $payment_means  payment_means
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\PaymentMeansDEPRECATED $payment_means payment_means
+     *
      * @return $this
      */
     public function setPaymentMeans($payment_means)
@@ -750,7 +750,8 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
     /**
      * Sets accounting
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoiceAccountingDetails  $accounting  DEPRECATED - The accounting details for the invoice. Will only evern contain null properties.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoiceAccountingDetails $accounting DEPRECATED - The accounting details for the invoice. Will only evern contain null properties.
+     *
      * @return $this
      */
     public function setAccounting($accounting)
@@ -773,7 +774,8 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
     /**
      * Sets payment_means_payment_id
      *
-     * @param  string  $payment_means_payment_id  DEPRECATED - use the payment_id property in the payment_means_array
+     * @param string $payment_means_payment_id DEPRECATED - use the payment_id property in the payment_means_array
+     *
      * @return $this
      */
     public function setPaymentMeansPaymentId($payment_means_payment_id)
@@ -796,7 +798,8 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
     /**
      * Sets guid
      *
-     * @param  string  $guid  The GUID of the invoice
+     * @param string $guid The GUID of the invoice
+     *
      * @return $this
      */
     public function setGuid($guid)
@@ -819,7 +822,8 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
     /**
      * Sets legal_entity_id
      *
-     * @param  int  $legal_entity_id  The id of the LegalEntity the invoice was received for.
+     * @param int $legal_entity_id The id of the LegalEntity the invoice was received for.
+     *
      * @return $this
      */
     public function setLegalEntityId($legal_entity_id)
@@ -842,7 +846,8 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
     /**
      * Sets system_generated_primary_image
      *
-     * @param  bool  $system_generated_primary_image  Whether or not the document image (PDF) was generated by Storecove. If true, it means the invoice was received without any attachments and Storecove generated one for you. If false, the invoice will contain at least one attachment, which was received from the invoice sender.
+     * @param bool $system_generated_primary_image Whether or not the document image (PDF) was generated by Storecove. If true, it means the invoice was received without any attachments and Storecove generated one for you. If false, the invoice will contain at least one attachment, which was received from the invoice sender.
+     *
      * @return $this
      */
     public function setSystemGeneratedPrimaryImage($system_generated_primary_image)
@@ -865,13 +870,14 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
     /**
      * Sets document_type
      *
-     * @param  string  $document_type  The type of document. Only \"invoice\" for now.
+     * @param string $document_type The type of document. Only \"invoice\" for now.
+     *
      * @return $this
      */
     public function setDocumentType($document_type)
     {
         $allowedValues = $this->getDocumentTypeAllowableValues();
-        if (! is_null($document_type) && ! in_array($document_type, $allowedValues, true)) {
+        if (!is_null($document_type) && !in_array($document_type, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'document_type', must be one of '%s'",
@@ -897,13 +903,14 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
     /**
      * Sets sub_type
      *
-     * @param  string  $sub_type  The subtype of document.
+     * @param string $sub_type The subtype of document.
+     *
      * @return $this
      */
     public function setSubType($sub_type)
     {
         $allowedValues = $this->getSubTypeAllowableValues();
-        if (! is_null($sub_type) && ! in_array($sub_type, $allowedValues, true)) {
+        if (!is_null($sub_type) && !in_array($sub_type, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'sub_type', must be one of '%s'",
@@ -929,13 +936,14 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
     /**
      * Sets source
      *
-     * @param  string  $source  The source the invoice was received from.
+     * @param string $source The source the invoice was received from.
+     *
      * @return $this
      */
     public function setSource($source)
     {
         $allowedValues = $this->getSourceAllowableValues();
-        if (! is_null($source) && ! in_array($source, $allowedValues, true)) {
+        if (!is_null($source) && !in_array($source, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'source', must be one of '%s'",
@@ -961,7 +969,8 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
     /**
      * Sets tax_system
      *
-     * @param  string  $tax_system  The tax system of the invoice. Either tax_line_percentages or tax_line_amounts. The first tax system means the invoice lines contain only the tax percentages and the tax amounts are included only in the tax subtotals at the invoice level and so are only calculated at the invoice level. The tax system tax_line_amounts means that in addition to the percentage, each invoice line also contains the tax amount. The tax subtotals at the invoice level are calculated as the sum of the tax of the invoice lines. The distinction between the two tax systems has has implications for rounding.
+     * @param string $tax_system The tax system of the invoice. Either tax_line_percentages or tax_line_amounts. The first tax system means the invoice lines contain only the tax percentages and the tax amounts are included only in the tax subtotals at the invoice level and so are only calculated at the invoice level. The tax system tax_line_amounts means that in addition to the percentage, each invoice line also contains the tax amount. The tax subtotals at the invoice level are calculated as the sum of the tax of the invoice lines. The distinction between the two tax systems has has implications for rounding.
+     *
      * @return $this
      */
     public function setTaxSystem($tax_system)
@@ -984,7 +993,8 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
     /**
      * Sets invoice_number
      *
-     * @param  string  $invoice_number  The invoicenumber.
+     * @param string $invoice_number The invoicenumber.
+     *
      * @return $this
      */
     public function setInvoiceNumber($invoice_number)
@@ -1007,7 +1017,8 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
     /**
      * Sets issue_date
      *
-     * @param  string  $issue_date  The date the invoice was issued. Format \"YYYY-MM-DD\".
+     * @param string $issue_date The date the invoice was issued. Format \"YYYY-MM-DD\".
+     *
      * @return $this
      */
     public function setIssueDate($issue_date)
@@ -1030,7 +1041,8 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
     /**
      * Sets tax_point_date
      *
-     * @param  string  $tax_point_date  The date the invoice was issued for tax purposes. In most countries MUST match the issue_date. Format \"YYYY-MM-DD\".
+     * @param string $tax_point_date The date the invoice was issued for tax purposes. In most countries MUST match the issue_date. Format \"YYYY-MM-DD\".
+     *
      * @return $this
      */
     public function setTaxPointDate($tax_point_date)
@@ -1053,7 +1065,8 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
     /**
      * Sets due_date
      *
-     * @param  string  $due_date  The date the invoice must be payed by. Format \"YYYY-MM-DD\".
+     * @param string $due_date The date the invoice must be payed by. Format \"YYYY-MM-DD\".
+     *
      * @return $this
      */
     public function setDueDate($due_date)
@@ -1076,7 +1089,8 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
     /**
      * Sets document_currency_code
      *
-     * @param  string  $document_currency_code  The ISO 4217 currency for the invoice.
+     * @param string $document_currency_code The ISO 4217 currency for the invoice.
+     *
      * @return $this
      */
     public function setDocumentCurrencyCode($document_currency_code)
@@ -1099,7 +1113,8 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
     /**
      * Sets period_start
      *
-     * @param  string  $period_start  The start date of the period this invoice relates to. Format \"YYYY-MM-DD\".
+     * @param string $period_start The start date of the period this invoice relates to. Format \"YYYY-MM-DD\".
+     *
      * @return $this
      */
     public function setPeriodStart($period_start)
@@ -1122,7 +1137,8 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
     /**
      * Sets period_end
      *
-     * @param  string  $period_end  The end date of the period this invoice relates to. Format \"YYYY-MM-DD\".
+     * @param string $period_end The end date of the period this invoice relates to. Format \"YYYY-MM-DD\".
+     *
      * @return $this
      */
     public function setPeriodEnd($period_end)
@@ -1145,7 +1161,8 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
     /**
      * Sets note
      *
-     * @param  string  $note  The invoice level note.
+     * @param string $note The invoice level note.
+     *
      * @return $this
      */
     public function setNote($note)
@@ -1168,7 +1185,8 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
     /**
      * Sets buyer_reference
      *
-     * @param  string  $buyer_reference  Reference provided by the buyer. Used for routing.
+     * @param string $buyer_reference Reference provided by the buyer. Used for routing.
+     *
      * @return $this
      */
     public function setBuyerReference($buyer_reference)
@@ -1191,7 +1209,8 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
     /**
      * Sets billing_reference
      *
-     * @param  string  $billing_reference  Reference to the previous invoice this invoice relates to.
+     * @param string $billing_reference Reference to the previous invoice this invoice relates to.
+     *
      * @return $this
      */
     public function setBillingReference($billing_reference)
@@ -1214,7 +1233,8 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
     /**
      * Sets contract_document_reference
      *
-     * @param  string  $contract_document_reference  Reference to the contract.
+     * @param string $contract_document_reference Reference to the contract.
+     *
      * @return $this
      */
     public function setContractDocumentReference($contract_document_reference)
@@ -1237,7 +1257,8 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
     /**
      * Sets order_reference
      *
-     * @param  string  $order_reference  Reference to the order. Used for matching the invoice to an order.
+     * @param string $order_reference Reference to the order. Used for matching the invoice to an order.
+     *
      * @return $this
      */
     public function setOrderReference($order_reference)
@@ -1260,7 +1281,8 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
     /**
      * Sets project_reference
      *
-     * @param  string  $project_reference  Reference to the project.
+     * @param string $project_reference Reference to the project.
+     *
      * @return $this
      */
     public function setProjectReference($project_reference)
@@ -1283,7 +1305,8 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
     /**
      * Sets accounting_cost
      *
-     * @param  string  $accounting_cost  The accounting cost code.
+     * @param string $accounting_cost The accounting cost code.
+     *
      * @return $this
      */
     public function setAccountingCost($accounting_cost)
@@ -1306,7 +1329,8 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
     /**
      * Sets attachments
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoiceAttachment[]  $attachments  attachments
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoiceAttachment[] $attachments attachments
+     *
      * @return $this
      */
     public function setAttachments($attachments)
@@ -1329,7 +1353,8 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
     /**
      * Sets sender
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoiceSender  $sender  The organzation that sent the invoice.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoiceSender $sender The organzation that sent the invoice.
+     *
      * @return $this
      */
     public function setSender($sender)
@@ -1352,7 +1377,8 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
     /**
      * Sets payment_terms_note
      *
-     * @param  string  $payment_terms_note  A textual description of the payment terms.
+     * @param string $payment_terms_note A textual description of the payment terms.
+     *
      * @return $this
      */
     public function setPaymentTermsNote($payment_terms_note)
@@ -1375,7 +1401,8 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
     /**
      * Sets payment_means_array
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoicePaymentMeans[]  $payment_means_array  The different payment means that can be used to pay the invoice.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoicePaymentMeans[] $payment_means_array The different payment means that can be used to pay the invoice.
+     *
      * @return $this
      */
     public function setPaymentMeansArray($payment_means_array)
@@ -1398,7 +1425,8 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
     /**
      * Sets delivery
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoiceDelivery  $delivery  delivery
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoiceDelivery $delivery delivery
+     *
      * @return $this
      */
     public function setDelivery($delivery)
@@ -1421,7 +1449,8 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
     /**
      * Sets invoice_lines
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoiceInvoiceLine[]  $invoice_lines  invoice_lines
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoiceInvoiceLine[] $invoice_lines invoice_lines
+     *
      * @return $this
      */
     public function setInvoiceLines($invoice_lines)
@@ -1444,7 +1473,8 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
     /**
      * Sets allowance_charges
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoiceAllowanceCharge[]  $allowance_charges  allowance_charges
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoiceAllowanceCharge[] $allowance_charges allowance_charges
+     *
      * @return $this
      */
     public function setAllowanceCharges($allowance_charges)
@@ -1467,7 +1497,8 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
     /**
      * Sets document_totals
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoiceDocumentTotals  $document_totals  The total amounts for this document.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoiceDocumentTotals $document_totals The total amounts for this document.
+     *
      * @return $this
      */
     public function setDocumentTotals($document_totals)
@@ -1490,7 +1521,8 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
     /**
      * Sets tax_subtotals
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoiceTaxSubtotal[]  $tax_subtotals  tax_subtotals
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoiceTaxSubtotal[] $tax_subtotals tax_subtotals
+     *
      * @return $this
      */
     public function setTaxSubtotals($tax_subtotals)
@@ -1499,12 +1531,12 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -1514,7 +1546,8 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -1525,8 +1558,9 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -1541,7 +1575,8 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -1566,3 +1601,5 @@ class PurchaseInvoice implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

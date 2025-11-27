@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,34 +29,33 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * LegalEntityCreate Class Doc Comment
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class LegalEntityCreate implements ArrayAccess, ModelInterface
+class LegalEntityCreate implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'LegalEntityCreate';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'party_name' => 'string',
         'line1' => 'string',
@@ -75,13 +73,14 @@ class LegalEntityCreate implements ArrayAccess, ModelInterface
         'acts_as_sender' => 'bool',
         'acts_as_receiver' => 'bool',
         'tax_registered' => 'bool',
+        'override_own_credentials' => 'bool'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'party_name' => null,
         'line1' => null,
@@ -99,6 +98,7 @@ class LegalEntityCreate implements ArrayAccess, ModelInterface
         'acts_as_sender' => null,
         'acts_as_receiver' => null,
         'tax_registered' => null,
+        'override_own_credentials' => null
     ];
 
     /**
@@ -144,6 +144,7 @@ class LegalEntityCreate implements ArrayAccess, ModelInterface
         'acts_as_sender' => 'acts_as_sender',
         'acts_as_receiver' => 'acts_as_receiver',
         'tax_registered' => 'tax_registered',
+        'override_own_credentials' => 'override_own_credentials'
     ];
 
     /**
@@ -168,6 +169,7 @@ class LegalEntityCreate implements ArrayAccess, ModelInterface
         'acts_as_sender' => 'setActsAsSender',
         'acts_as_receiver' => 'setActsAsReceiver',
         'tax_registered' => 'setTaxRegistered',
+        'override_own_credentials' => 'setOverrideOwnCredentials'
     ];
 
     /**
@@ -192,6 +194,7 @@ class LegalEntityCreate implements ArrayAccess, ModelInterface
         'acts_as_sender' => 'getActsAsSender',
         'acts_as_receiver' => 'getActsAsReceiver',
         'tax_registered' => 'getTaxRegistered',
+        'override_own_credentials' => 'getOverrideOwnCredentials'
     ];
 
     /**
@@ -236,17 +239,17 @@ class LegalEntityCreate implements ArrayAccess, ModelInterface
     }
 
     const ADVERTISEMENTS_INVOICE = 'invoice';
-
     const ADVERTISEMENTS_INVOICE_RESPONSE = 'invoice_response';
-
-    const ADVERTISEMENTS_ORDER = 'order';
-
-    const ADVERTISEMENTS_ORDERING = 'ordering';
-
-    const ADVERTISEMENTS_ORDER_RESPONSE = 'order_response';
-
     const ADVERTISEMENTS_SELFBILLING = 'selfbilling';
+    const ADVERTISEMENTS_ORDER = 'order';
+    const ADVERTISEMENTS_ORDERING = 'ordering';
+    const ADVERTISEMENTS_ADVANCED_ORDERING = 'advanced_ordering';
+    const ADVERTISEMENTS_ADVANCED_ORDERING_SG_ORDER_BALANCE = 'advanced_ordering_sg_order_balance';
+    const ADVERTISEMENTS_REMITTANCE_ADVICE = 'remittance_advice';
+    const ADVERTISEMENTS_PIDX_INVOICING_ORDERING = 'pidx_invoicing_ordering';
+    
 
+    
     /**
      * Gets allowable values of the enum
      *
@@ -257,12 +260,16 @@ class LegalEntityCreate implements ArrayAccess, ModelInterface
         return [
             self::ADVERTISEMENTS_INVOICE,
             self::ADVERTISEMENTS_INVOICE_RESPONSE,
+            self::ADVERTISEMENTS_SELFBILLING,
             self::ADVERTISEMENTS_ORDER,
             self::ADVERTISEMENTS_ORDERING,
-            self::ADVERTISEMENTS_ORDER_RESPONSE,
-            self::ADVERTISEMENTS_SELFBILLING,
+            self::ADVERTISEMENTS_ADVANCED_ORDERING,
+            self::ADVERTISEMENTS_ADVANCED_ORDERING_SG_ORDER_BALANCE,
+            self::ADVERTISEMENTS_REMITTANCE_ADVICE,
+            self::ADVERTISEMENTS_PIDX_INVOICING_ORDERING,
         ];
     }
+    
 
     /**
      * Associative array for storing property values
@@ -274,10 +281,10 @@ class LegalEntityCreate implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['party_name'] = isset($data['party_name']) ? $data['party_name'] : null;
         $this->container['line1'] = isset($data['line1']) ? $data['line1'] : null;
@@ -295,6 +302,7 @@ class LegalEntityCreate implements ArrayAccess, ModelInterface
         $this->container['acts_as_sender'] = isset($data['acts_as_sender']) ? $data['acts_as_sender'] : true;
         $this->container['acts_as_receiver'] = isset($data['acts_as_receiver']) ? $data['acts_as_receiver'] : true;
         $this->container['tax_registered'] = isset($data['tax_registered']) ? $data['tax_registered'] : true;
+        $this->container['override_own_credentials'] = isset($data['override_own_credentials']) ? $data['override_own_credentials'] : false;
     }
 
     /**
@@ -328,7 +336,7 @@ class LegalEntityCreate implements ArrayAccess, ModelInterface
             $invalidProperties[] = "invalid value for 'line1', the character length must be bigger than or equal to 2.";
         }
 
-        if (! is_null($this->container['line2']) && (mb_strlen($this->container['line2']) > 192)) {
+        if (!is_null($this->container['line2']) && (mb_strlen($this->container['line2']) > 192)) {
             $invalidProperties[] = "invalid value for 'line2', the character length must be smaller than or equal to 192.";
         }
 
@@ -354,30 +362,30 @@ class LegalEntityCreate implements ArrayAccess, ModelInterface
             $invalidProperties[] = "invalid value for 'zip', the character length must be bigger than or equal to 2.";
         }
 
-        if (! is_null($this->container['county']) && (mb_strlen($this->container['county']) > 64)) {
+        if (!is_null($this->container['county']) && (mb_strlen($this->container['county']) > 64)) {
             $invalidProperties[] = "invalid value for 'county', the character length must be smaller than or equal to 64.";
         }
 
         if ($this->container['country'] === null) {
             $invalidProperties[] = "'country' can't be null";
         }
-        if (! is_null($this->container['tenant_id']) && (mb_strlen($this->container['tenant_id']) > 64)) {
+        if (!is_null($this->container['tenant_id']) && (mb_strlen($this->container['tenant_id']) > 64)) {
             $invalidProperties[] = "invalid value for 'tenant_id', the character length must be smaller than or equal to 64.";
         }
 
-        if (! is_null($this->container['third_party_username']) && (mb_strlen($this->container['third_party_username']) > 64)) {
+        if (!is_null($this->container['third_party_username']) && (mb_strlen($this->container['third_party_username']) > 64)) {
             $invalidProperties[] = "invalid value for 'third_party_username', the character length must be smaller than or equal to 64.";
         }
 
-        if (! is_null($this->container['third_party_username']) && (mb_strlen($this->container['third_party_username']) < 2)) {
+        if (!is_null($this->container['third_party_username']) && (mb_strlen($this->container['third_party_username']) < 2)) {
             $invalidProperties[] = "invalid value for 'third_party_username', the character length must be bigger than or equal to 2.";
         }
 
-        if (! is_null($this->container['third_party_password']) && (mb_strlen($this->container['third_party_password']) > 64)) {
+        if (!is_null($this->container['third_party_password']) && (mb_strlen($this->container['third_party_password']) > 64)) {
             $invalidProperties[] = "invalid value for 'third_party_password', the character length must be smaller than or equal to 64.";
         }
 
-        if (! is_null($this->container['third_party_password']) && (mb_strlen($this->container['third_party_password']) < 2)) {
+        if (!is_null($this->container['third_party_password']) && (mb_strlen($this->container['third_party_password']) < 2)) {
             $invalidProperties[] = "invalid value for 'third_party_password', the character length must be bigger than or equal to 2.";
         }
 
@@ -395,6 +403,7 @@ class LegalEntityCreate implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets party_name
      *
@@ -408,7 +417,8 @@ class LegalEntityCreate implements ArrayAccess, ModelInterface
     /**
      * Sets party_name
      *
-     * @param  string  $party_name  The name of the company.
+     * @param string $party_name The name of the company.
+     *
      * @return $this
      */
     public function setPartyName($party_name)
@@ -438,7 +448,8 @@ class LegalEntityCreate implements ArrayAccess, ModelInterface
     /**
      * Sets line1
      *
-     * @param  string  $line1  The first address line.
+     * @param string $line1 The first address line.
+     *
      * @return $this
      */
     public function setLine1($line1)
@@ -468,12 +479,13 @@ class LegalEntityCreate implements ArrayAccess, ModelInterface
     /**
      * Sets line2
      *
-     * @param  string  $line2  The second address line, if applicable
+     * @param string $line2 The second address line, if applicable
+     *
      * @return $this
      */
     public function setLine2($line2)
     {
-        if (! is_null($line2) && (mb_strlen($line2) > 192)) {
+        if (!is_null($line2) && (mb_strlen($line2) > 192)) {
             throw new \InvalidArgumentException('invalid length for $line2 when calling LegalEntityCreate., must be smaller than or equal to 192.');
         }
 
@@ -495,7 +507,8 @@ class LegalEntityCreate implements ArrayAccess, ModelInterface
     /**
      * Sets city
      *
-     * @param  string  $city  The city.
+     * @param string $city The city.
+     *
      * @return $this
      */
     public function setCity($city)
@@ -525,7 +538,8 @@ class LegalEntityCreate implements ArrayAccess, ModelInterface
     /**
      * Sets zip
      *
-     * @param  string  $zip  The zipcode.
+     * @param string $zip The zipcode.
+     *
      * @return $this
      */
     public function setZip($zip)
@@ -555,12 +569,13 @@ class LegalEntityCreate implements ArrayAccess, ModelInterface
     /**
      * Sets county
      *
-     * @param  string  $county  County, if applicable
+     * @param string $county County, if applicable
+     *
      * @return $this
      */
     public function setCounty($county)
     {
-        if (! is_null($county) && (mb_strlen($county) > 64)) {
+        if (!is_null($county) && (mb_strlen($county) > 64)) {
             throw new \InvalidArgumentException('invalid length for $county when calling LegalEntityCreate., must be smaller than or equal to 64.');
         }
 
@@ -582,7 +597,8 @@ class LegalEntityCreate implements ArrayAccess, ModelInterface
     /**
      * Sets country
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\Country  $country  country
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\Country $country country
+     *
      * @return $this
      */
     public function setCountry($country)
@@ -605,12 +621,13 @@ class LegalEntityCreate implements ArrayAccess, ModelInterface
     /**
      * Sets tenant_id
      *
-     * @param  string  $tenant_id  The id of the tenant, to be used in case of single-tenant solutions that share webhook URLs. This property will included in webhook events.
+     * @param string $tenant_id The id of the tenant, to be used in case of single-tenant solutions that share webhook URLs. This property will included in webhook events.
+     *
      * @return $this
      */
     public function setTenantId($tenant_id)
     {
-        if (! is_null($tenant_id) && (mb_strlen($tenant_id) > 64)) {
+        if (!is_null($tenant_id) && (mb_strlen($tenant_id) > 64)) {
             throw new \InvalidArgumentException('invalid length for $tenant_id when calling LegalEntityCreate., must be smaller than or equal to 64.');
         }
 
@@ -632,7 +649,8 @@ class LegalEntityCreate implements ArrayAccess, ModelInterface
     /**
      * Sets public
      *
-     * @param  bool  $public  Whether or not this LegalEntity is public. Public means it will be entered into the PEPPOL directory at https://directory.peppol.eu/
+     * @param bool $public Whether or not this LegalEntity is public. Public means it will be entered into the PEPPOL directory at https://directory.peppol.eu/
+     *
      * @return $this
      */
     public function setPublic($public)
@@ -655,13 +673,14 @@ class LegalEntityCreate implements ArrayAccess, ModelInterface
     /**
      * Sets advertisements
      *
-     * @param  string[]  $advertisements  A list of document types to advertise. Use if this LegalEntity needs the ability to receive more than only invoice documents.
+     * @param string[] $advertisements A list of document groups to advertise. ++++ <ul>    <li>        <strong>invoice</strong><br/>        Gives Invoice and where applicable CreditNote under the Billing process.<br/>    </li>    <li>        <strong>invoice_response</strong><br/>        Gives InvoiceResponse under the Invoice Response process.<br/>    </li>    <li>        <strong>selfbilling</strong><br/>        Gives Invoice and where applicable CreditNote under the Selfbilling process.<br/>    </li>    <li>        <strong>order</strong><br/>        Gives Order under the Order Only process.<br/>    </li>    <li>        <strong>ordering</strong><br/>        Gives Order and OrderResponse under the Ordering process.<br/>    </li>    <li>        <strong>advanced_ordering</strong><br/>        Gives Order, AdvancedOrderResponse, OrderChange and OrderCancellation under the Advanced Ordering process.<br/>    </li>    <li>        <strong>advanced_ordering_sg_order_balance</strong><br/>        Gives OrderBalance under the Advanced Ordering SG Order Balance process.<br/>    </li>    <li>        <strong>remittance_advice</strong><br/>        Gives RemittanceAdvice (DBNAlliance only).<br/>    </li>    <li>        <strong>pidx_invoicing_ordering</strong><br/>        Gives PIDX Invoice, InvoiceResponse, OrderChange, OrderCreate and OrderResponse (DBNAlliance only).<br/>    </li></ul> ++++
+     *
      * @return $this
      */
     public function setAdvertisements($advertisements)
     {
         $allowedValues = $this->getAdvertisementsAllowableValues();
-        if (! is_null($advertisements) && array_diff($advertisements, $allowedValues)) {
+        if (!is_null($advertisements) && array_diff($advertisements, $allowedValues)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'advertisements', must be one of '%s'",
@@ -687,15 +706,16 @@ class LegalEntityCreate implements ArrayAccess, ModelInterface
     /**
      * Sets third_party_username
      *
-     * @param  string  $third_party_username  The username to use to authenticate to a system through which to send the document, or to obtain tax authority approval to send it. This field is currently relevant only for India and mandatory when creating an IN LegalEntity.
+     * @param string $third_party_username The username to use to authenticate to a system through which to send the document, or to obtain tax authority approval to send it. This field is currently relevant only for India and mandatory when creating an IN LegalEntity.
+     *
      * @return $this
      */
     public function setThirdPartyUsername($third_party_username)
     {
-        if (! is_null($third_party_username) && (mb_strlen($third_party_username) > 64)) {
+        if (!is_null($third_party_username) && (mb_strlen($third_party_username) > 64)) {
             throw new \InvalidArgumentException('invalid length for $third_party_username when calling LegalEntityCreate., must be smaller than or equal to 64.');
         }
-        if (! is_null($third_party_username) && (mb_strlen($third_party_username) < 2)) {
+        if (!is_null($third_party_username) && (mb_strlen($third_party_username) < 2)) {
             throw new \InvalidArgumentException('invalid length for $third_party_username when calling LegalEntityCreate., must be bigger than or equal to 2.');
         }
 
@@ -717,15 +737,16 @@ class LegalEntityCreate implements ArrayAccess, ModelInterface
     /**
      * Sets third_party_password
      *
-     * @param  string  $third_party_password  The password to use to authenticate to a system through which to send the document, or to obtain tax authority approval to send it. This field is currently relevant only for India and mandatory when creating an IN LegalEntity.
+     * @param string $third_party_password The password to use to authenticate to a system through which to send the document, or to obtain tax authority approval to send it. This field is currently relevant only for India and mandatory when creating an IN LegalEntity.
+     *
      * @return $this
      */
     public function setThirdPartyPassword($third_party_password)
     {
-        if (! is_null($third_party_password) && (mb_strlen($third_party_password) > 64)) {
+        if (!is_null($third_party_password) && (mb_strlen($third_party_password) > 64)) {
             throw new \InvalidArgumentException('invalid length for $third_party_password when calling LegalEntityCreate., must be smaller than or equal to 64.');
         }
-        if (! is_null($third_party_password) && (mb_strlen($third_party_password) < 2)) {
+        if (!is_null($third_party_password) && (mb_strlen($third_party_password) < 2)) {
             throw new \InvalidArgumentException('invalid length for $third_party_password when calling LegalEntityCreate., must be bigger than or equal to 2.');
         }
 
@@ -747,7 +768,8 @@ class LegalEntityCreate implements ArrayAccess, ModelInterface
     /**
      * Sets rea
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\Rea  $rea  The REA details for the LegalEntity. Only applies to IT LegalEntities.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\Rea $rea The REA details for the LegalEntity. Only applies to IT LegalEntities.
+     *
      * @return $this
      */
     public function setRea($rea)
@@ -770,7 +792,8 @@ class LegalEntityCreate implements ArrayAccess, ModelInterface
     /**
      * Sets acts_as_sender
      *
-     * @param  bool  $acts_as_sender  Whether or not this LegalEntity can act as a sender of documents.
+     * @param bool $acts_as_sender Whether or not this LegalEntity can act as a sender of documents.
+     *
      * @return $this
      */
     public function setActsAsSender($acts_as_sender)
@@ -793,7 +816,8 @@ class LegalEntityCreate implements ArrayAccess, ModelInterface
     /**
      * Sets acts_as_receiver
      *
-     * @param  bool  $acts_as_receiver  Whether or not this LegalEntity can act as a receiver of documents. If not, no identifiers will be provioned on any exchange network.
+     * @param bool $acts_as_receiver Whether or not this LegalEntity can act as a receiver of documents. If not, no identifiers will be provioned on any exchange network.
+     *
      * @return $this
      */
     public function setActsAsReceiver($acts_as_receiver)
@@ -816,7 +840,8 @@ class LegalEntityCreate implements ArrayAccess, ModelInterface
     /**
      * Sets tax_registered
      *
-     * @param  bool  $tax_registered  Whether or not this LegalEntity is tax registered. This influences the validation of the data presented when sending documents.
+     * @param bool $tax_registered Whether or not this LegalEntity is tax registered. This influences the validation of the data presented when sending documents.
+     *
      * @return $this
      */
     public function setTaxRegistered($tax_registered)
@@ -827,10 +852,34 @@ class LegalEntityCreate implements ArrayAccess, ModelInterface
     }
 
     /**
+     * Gets override_own_credentials
+     *
+     * @return bool
+     */
+    public function getOverrideOwnCredentials()
+    {
+        return $this->container['override_own_credentials'];
+    }
+
+    /**
+     * Sets override_own_credentials
+     *
+     * @param bool $override_own_credentials If true, Storecove will use default credentials/signing artifacts even if specific ones are configured for this LegalEntity. Defaults to false.
+     *
+     * @return $this
+     */
+    public function setOverrideOwnCredentials($override_own_credentials)
+    {
+        $this->container['override_own_credentials'] = $override_own_credentials;
+
+        return $this;
+    }
+    /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -840,7 +889,8 @@ class LegalEntityCreate implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -851,8 +901,9 @@ class LegalEntityCreate implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -867,7 +918,8 @@ class LegalEntityCreate implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -892,3 +944,5 @@ class LegalEntityCreate implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

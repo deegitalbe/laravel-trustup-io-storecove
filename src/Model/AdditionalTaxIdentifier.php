@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,55 +29,54 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * AdditionalTaxIdentifier Class Doc Comment
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class AdditionalTaxIdentifier implements ArrayAccess, ModelInterface
+class AdditionalTaxIdentifier implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'AdditionalTaxIdentifier';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'id' => 'int',
         'country' => 'string',
         'county' => 'string',
         'superscheme' => 'string',
         'scheme' => 'string',
-        'identifier' => 'string',
+        'identifier' => 'string'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'id' => 'int64',
         'country' => null,
         'county' => null,
         'superscheme' => null,
         'scheme' => null,
-        'identifier' => null,
+        'identifier' => null
     ];
 
     /**
@@ -113,7 +111,7 @@ class AdditionalTaxIdentifier implements ArrayAccess, ModelInterface
         'county' => 'county',
         'superscheme' => 'superscheme',
         'scheme' => 'scheme',
-        'identifier' => 'identifier',
+        'identifier' => 'identifier'
     ];
 
     /**
@@ -127,7 +125,7 @@ class AdditionalTaxIdentifier implements ArrayAccess, ModelInterface
         'county' => 'setCounty',
         'superscheme' => 'setSuperscheme',
         'scheme' => 'setScheme',
-        'identifier' => 'setIdentifier',
+        'identifier' => 'setIdentifier'
     ];
 
     /**
@@ -141,7 +139,7 @@ class AdditionalTaxIdentifier implements ArrayAccess, ModelInterface
         'county' => 'getCounty',
         'superscheme' => 'getSuperscheme',
         'scheme' => 'getScheme',
-        'identifier' => 'getIdentifier',
+        'identifier' => 'getIdentifier'
     ];
 
     /**
@@ -185,6 +183,10 @@ class AdditionalTaxIdentifier implements ArrayAccess, ModelInterface
         return self::$swaggerModelName;
     }
 
+    
+
+    
+
     /**
      * Associative array for storing property values
      *
@@ -195,10 +197,10 @@ class AdditionalTaxIdentifier implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['country'] = isset($data['country']) ? $data['country'] : null;
@@ -217,35 +219,35 @@ class AdditionalTaxIdentifier implements ArrayAccess, ModelInterface
     {
         $invalidProperties = [];
 
-        if (! is_null($this->container['country']) && (mb_strlen($this->container['country']) > 2)) {
+        if (!is_null($this->container['country']) && (mb_strlen($this->container['country']) > 2)) {
             $invalidProperties[] = "invalid value for 'country', the character length must be smaller than or equal to 2.";
         }
 
-        if (! is_null($this->container['country']) && (mb_strlen($this->container['country']) < 2)) {
+        if (!is_null($this->container['country']) && (mb_strlen($this->container['country']) < 2)) {
             $invalidProperties[] = "invalid value for 'country', the character length must be bigger than or equal to 2.";
         }
 
-        if (! is_null($this->container['county']) && (mb_strlen($this->container['county']) > 2)) {
+        if (!is_null($this->container['county']) && (mb_strlen($this->container['county']) > 2)) {
             $invalidProperties[] = "invalid value for 'county', the character length must be smaller than or equal to 2.";
         }
 
-        if (! is_null($this->container['county']) && (mb_strlen($this->container['county']) < 2)) {
+        if (!is_null($this->container['county']) && (mb_strlen($this->container['county']) < 2)) {
             $invalidProperties[] = "invalid value for 'county', the character length must be bigger than or equal to 2.";
         }
 
-        if (! is_null($this->container['superscheme']) && (mb_strlen($this->container['superscheme']) > 64)) {
+        if (!is_null($this->container['superscheme']) && (mb_strlen($this->container['superscheme']) > 64)) {
             $invalidProperties[] = "invalid value for 'superscheme', the character length must be smaller than or equal to 64.";
         }
 
-        if (! is_null($this->container['superscheme']) && (mb_strlen($this->container['superscheme']) < 2)) {
+        if (!is_null($this->container['superscheme']) && (mb_strlen($this->container['superscheme']) < 2)) {
             $invalidProperties[] = "invalid value for 'superscheme', the character length must be bigger than or equal to 2.";
         }
 
-        if (! is_null($this->container['scheme']) && (mb_strlen($this->container['scheme']) > 64)) {
+        if (!is_null($this->container['scheme']) && (mb_strlen($this->container['scheme']) > 64)) {
             $invalidProperties[] = "invalid value for 'scheme', the character length must be smaller than or equal to 64.";
         }
 
-        if (! is_null($this->container['scheme']) && (mb_strlen($this->container['scheme']) < 2)) {
+        if (!is_null($this->container['scheme']) && (mb_strlen($this->container['scheme']) < 2)) {
             $invalidProperties[] = "invalid value for 'scheme', the character length must be bigger than or equal to 2.";
         }
 
@@ -263,6 +265,7 @@ class AdditionalTaxIdentifier implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets id
      *
@@ -276,7 +279,8 @@ class AdditionalTaxIdentifier implements ArrayAccess, ModelInterface
     /**
      * Sets id
      *
-     * @param  int  $id  The Storecove assigned id for the AdditionalTaxIdentifier.
+     * @param int $id The Storecove assigned id for the AdditionalTaxIdentifier.
+     *
      * @return $this
      */
     public function setId($id)
@@ -299,15 +303,16 @@ class AdditionalTaxIdentifier implements ArrayAccess, ModelInterface
     /**
      * Sets country
      *
-     * @param  string  $country  The ISO3166 country code to use this identifier for in case of consumerTaxMode.
+     * @param string $country The ISO3166 country code to use this identifier for in case of consumerTaxMode.
+     *
      * @return $this
      */
     public function setCountry($country)
     {
-        if (! is_null($country) && (mb_strlen($country) > 2)) {
+        if (!is_null($country) && (mb_strlen($country) > 2)) {
             throw new \InvalidArgumentException('invalid length for $country when calling AdditionalTaxIdentifier., must be smaller than or equal to 2.');
         }
-        if (! is_null($country) && (mb_strlen($country) < 2)) {
+        if (!is_null($country) && (mb_strlen($country) < 2)) {
             throw new \InvalidArgumentException('invalid length for $country when calling AdditionalTaxIdentifier., must be bigger than or equal to 2.');
         }
 
@@ -329,15 +334,16 @@ class AdditionalTaxIdentifier implements ArrayAccess, ModelInterface
     /**
      * Sets county
      *
-     * @param  string  $county  The county/state inside the country code to use this identifier for in case of consumerTaxMode.
+     * @param string $county The county/state inside the country code to use this identifier for in case of consumerTaxMode.
+     *
      * @return $this
      */
     public function setCounty($county)
     {
-        if (! is_null($county) && (mb_strlen($county) > 2)) {
+        if (!is_null($county) && (mb_strlen($county) > 2)) {
             throw new \InvalidArgumentException('invalid length for $county when calling AdditionalTaxIdentifier., must be smaller than or equal to 2.');
         }
-        if (! is_null($county) && (mb_strlen($county) < 2)) {
+        if (!is_null($county) && (mb_strlen($county) < 2)) {
             throw new \InvalidArgumentException('invalid length for $county when calling AdditionalTaxIdentifier., must be bigger than or equal to 2.');
         }
 
@@ -359,15 +365,16 @@ class AdditionalTaxIdentifier implements ArrayAccess, ModelInterface
     /**
      * Sets superscheme
      *
-     * @param  string  $superscheme  The superscheme of the identifier.
+     * @param string $superscheme The superscheme of the identifier.
+     *
      * @return $this
      */
     public function setSuperscheme($superscheme)
     {
-        if (! is_null($superscheme) && (mb_strlen($superscheme) > 64)) {
+        if (!is_null($superscheme) && (mb_strlen($superscheme) > 64)) {
             throw new \InvalidArgumentException('invalid length for $superscheme when calling AdditionalTaxIdentifier., must be smaller than or equal to 64.');
         }
-        if (! is_null($superscheme) && (mb_strlen($superscheme) < 2)) {
+        if (!is_null($superscheme) && (mb_strlen($superscheme) < 2)) {
             throw new \InvalidArgumentException('invalid length for $superscheme when calling AdditionalTaxIdentifier., must be bigger than or equal to 2.');
         }
 
@@ -389,15 +396,16 @@ class AdditionalTaxIdentifier implements ArrayAccess, ModelInterface
     /**
      * Sets scheme
      *
-     * @param  string  $scheme  The scheme of the identifier.
+     * @param string $scheme The scheme of the identifier.
+     *
      * @return $this
      */
     public function setScheme($scheme)
     {
-        if (! is_null($scheme) && (mb_strlen($scheme) > 64)) {
+        if (!is_null($scheme) && (mb_strlen($scheme) > 64)) {
             throw new \InvalidArgumentException('invalid length for $scheme when calling AdditionalTaxIdentifier., must be smaller than or equal to 64.');
         }
-        if (! is_null($scheme) && (mb_strlen($scheme) < 2)) {
+        if (!is_null($scheme) && (mb_strlen($scheme) < 2)) {
             throw new \InvalidArgumentException('invalid length for $scheme when calling AdditionalTaxIdentifier., must be bigger than or equal to 2.');
         }
 
@@ -419,7 +427,8 @@ class AdditionalTaxIdentifier implements ArrayAccess, ModelInterface
     /**
      * Sets identifier
      *
-     * @param  string  $identifier  The identifier.
+     * @param string $identifier The identifier.
+     *
      * @return $this
      */
     public function setIdentifier($identifier)
@@ -428,12 +437,12 @@ class AdditionalTaxIdentifier implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -443,7 +452,8 @@ class AdditionalTaxIdentifier implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -454,8 +464,9 @@ class AdditionalTaxIdentifier implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -470,7 +481,8 @@ class AdditionalTaxIdentifier implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -495,3 +507,5 @@ class AdditionalTaxIdentifier implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

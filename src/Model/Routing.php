@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,53 +29,51 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * Routing Class Doc Comment
  *
  * @category Class
- *
  * @description The different ways to send the invoice to the recipient. The publicIdentifiers are used to send via the Peppol network, if the recipient is not registered on the Peppol network, the invoice will be sent to the email addresses in the emails property. This property is only mandatory when sending the invoice data using the &lt;&lt;_openapi_invoice&gt;&gt; property, not when sending using the &lt;&lt;_openapi_invoicedata&gt;&gt; property, in which case this information will be extracted from the &lt;&lt;_openapi_invoicedata&gt;&gt; object. If you do specify an &lt;&lt;_openapi_invoicerecipient&gt;&gt; object and an &lt;&lt;_openapi_invoicedata&gt;&gt; object, the data from the two will be merged.
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Routing implements ArrayAccess, ModelInterface
+class Routing implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'Routing';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'e_identifiers' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\EIdentifiers',
         'networks' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\RoutingNetwork[]',
         'emails' => 'string[]',
-        'clear_without_sending' => 'bool',
+        'clear_without_sending' => 'bool'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'e_identifiers' => null,
         'networks' => null,
         'emails' => 'email',
-        'clear_without_sending' => null,
+        'clear_without_sending' => null
     ];
 
     /**
@@ -109,7 +106,7 @@ class Routing implements ArrayAccess, ModelInterface
         'e_identifiers' => 'eIdentifiers',
         'networks' => 'networks',
         'emails' => 'emails',
-        'clear_without_sending' => 'clearWithoutSending',
+        'clear_without_sending' => 'clearWithoutSending'
     ];
 
     /**
@@ -121,7 +118,7 @@ class Routing implements ArrayAccess, ModelInterface
         'e_identifiers' => 'setEIdentifiers',
         'networks' => 'setNetworks',
         'emails' => 'setEmails',
-        'clear_without_sending' => 'setClearWithoutSending',
+        'clear_without_sending' => 'setClearWithoutSending'
     ];
 
     /**
@@ -133,7 +130,7 @@ class Routing implements ArrayAccess, ModelInterface
         'e_identifiers' => 'getEIdentifiers',
         'networks' => 'getNetworks',
         'emails' => 'getEmails',
-        'clear_without_sending' => 'getClearWithoutSending',
+        'clear_without_sending' => 'getClearWithoutSending'
     ];
 
     /**
@@ -177,6 +174,10 @@ class Routing implements ArrayAccess, ModelInterface
         return self::$swaggerModelName;
     }
 
+    
+
+    
+
     /**
      * Associative array for storing property values
      *
@@ -187,10 +188,10 @@ class Routing implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['e_identifiers'] = isset($data['e_identifiers']) ? $data['e_identifiers'] : null;
         $this->container['networks'] = isset($data['networks']) ? $data['networks'] : null;
@@ -221,6 +222,7 @@ class Routing implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets e_identifiers
      *
@@ -234,7 +236,8 @@ class Routing implements ArrayAccess, ModelInterface
     /**
      * Sets e_identifiers
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\EIdentifiers  $e_identifiers  The electronic identifiers for this invoice recipient. These are the identifiers used on the Peppol network.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\EIdentifiers $e_identifiers The electronic identifiers for this invoice recipient. These are the identifiers used on the Peppol network.
+     *
      * @return $this
      */
     public function setEIdentifiers($e_identifiers)
@@ -257,7 +260,8 @@ class Routing implements ArrayAccess, ModelInterface
     /**
      * Sets networks
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\RoutingNetwork[]  $networks  Any additional networks to consider for routing
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\RoutingNetwork[] $networks Any additional networks to consider for routing
+     *
      * @return $this
      */
     public function setNetworks($networks)
@@ -280,7 +284,8 @@ class Routing implements ArrayAccess, ModelInterface
     /**
      * Sets emails
      *
-     * @param  string[]  $emails  The email addresses the invoice should be sent to if none of the other identifiers can be used
+     * @param string[] $emails The email addresses the invoice should be sent to if none of the other identifiers can be used
+     *
      * @return $this
      */
     public function setEmails($emails)
@@ -303,7 +308,8 @@ class Routing implements ArrayAccess, ModelInterface
     /**
      * Sets clear_without_sending
      *
-     * @param  bool  $clear_without_sending  If you wish to send the document yourself in a Y-flow, use this flag. Wait for the 'cleared' webhook and use the <<_openapi_show_document_submission_evidence>> endpoint to retrieve the clearing evidence. This will include a sendable document.
+     * @param bool $clear_without_sending If you wish to send the document yourself in a Y-flow, use this flag. Wait for the 'cleared' webhook and use the <<_openapi_show_document_submission_evidence>> endpoint to retrieve the clearing evidence. This will include a sendable document.
+     *
      * @return $this
      */
     public function setClearWithoutSending($clear_without_sending)
@@ -312,12 +318,12 @@ class Routing implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -327,7 +333,8 @@ class Routing implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -338,8 +345,9 @@ class Routing implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -354,7 +362,8 @@ class Routing implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -379,3 +388,5 @@ class Routing implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

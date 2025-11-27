@@ -4,9 +4,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -44,9 +43,8 @@ use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
  * ReceivedDocumentsApi Class Doc Comment
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 class ReceivedDocumentsApi
@@ -66,10 +64,15 @@ class ReceivedDocumentsApi
      */
     protected $headerSelector;
 
+    /**
+     * @param ClientInterface $client
+     * @param Configuration   $config
+     * @param HeaderSelector  $selector
+     */
     public function __construct(
-        ?ClientInterface $client = null,
-        ?Configuration $config = null,
-        ?HeaderSelector $selector = null
+        ClientInterface $client = null,
+        Configuration $config = null,
+        HeaderSelector $selector = null
     ) {
         $this->client = $client ?: new Client();
         $this->config = $config ?: new Configuration();
@@ -89,18 +92,17 @@ class ReceivedDocumentsApi
      *
      * Get a new ReceivedDocument
      *
-     * @param  string  $guid  The guid of the document that was received. This is the \&quot;document_guid\&quot; property of the \&quot;received_document\&quot; webhook. (required)
-     * @param  string  $syntax  The syntax in which to receive the received document. (required)
-     * @param  string  $version  The JSON content version date. The default is &#39;1970-01-01&#39; meaning you get all deprecated elements since nothing was deprecated before that ;). If you do not want deprecated elements, use a later date. Do not use a dynamic date, because that means when we deprecate elements they will disappear from our responses. Only used for &#39;json&#39; packaging, not for &#39;original&#39;. Not currently used for invoices, only for orders. (optional, default to 1970-01-01)
-     * @return \Deegitalbe\LaravelTrustupIoStorecove\Model\Transportable
+     * @param  string $guid The guid of the document that was received. This is the \&quot;document_guid\&quot; property of the \&quot;received_document\&quot; webhook. (required)
+     * @param  string $format The format in which to receive the received document. (required)
+     * @param  string $version The JSON content version date. The default is &#39;1970-01-01&#39; meaning you get all deprecated elements since nothing was deprecated before that ;). If you do not want deprecated elements, use a later date. Do not use a dynamic date, because that means when we deprecate elements they will disappear from our responses. Only used for &#39;json&#39; packaging, not for &#39;original&#39;. Not currently used for invoices, only for orders. (optional, default to 1970-01-01)
      *
      * @throws \Deegitalbe\LaravelTrustupIoStorecove\ApiException on non-2xx response
      * @throws \InvalidArgumentException
+     * @return \Deegitalbe\LaravelTrustupIoStorecove\Model\Transportable
      */
-    public function getReceivedDocument($guid, $syntax, $version = '1970-01-01')
+    public function getReceivedDocument($guid, $format, $version = '1970-01-01')
     {
-        [$response] = $this->getReceivedDocumentWithHttpInfo($guid, $syntax, $version);
-
+        list($response) = $this->getReceivedDocumentWithHttpInfo($guid, $format, $version);
         return $response;
     }
 
@@ -109,18 +111,18 @@ class ReceivedDocumentsApi
      *
      * Get a new ReceivedDocument
      *
-     * @param  string  $guid  The guid of the document that was received. This is the \&quot;document_guid\&quot; property of the \&quot;received_document\&quot; webhook. (required)
-     * @param  string  $syntax  The syntax in which to receive the received document. (required)
-     * @param  string  $version  The JSON content version date. The default is &#39;1970-01-01&#39; meaning you get all deprecated elements since nothing was deprecated before that ;). If you do not want deprecated elements, use a later date. Do not use a dynamic date, because that means when we deprecate elements they will disappear from our responses. Only used for &#39;json&#39; packaging, not for &#39;original&#39;. Not currently used for invoices, only for orders. (optional, default to 1970-01-01)
-     * @return array of \Deegitalbe\LaravelTrustupIoStorecove\Model\Transportable, HTTP status code, HTTP response headers (array of strings)
+     * @param  string $guid The guid of the document that was received. This is the \&quot;document_guid\&quot; property of the \&quot;received_document\&quot; webhook. (required)
+     * @param  string $format The format in which to receive the received document. (required)
+     * @param  string $version The JSON content version date. The default is &#39;1970-01-01&#39; meaning you get all deprecated elements since nothing was deprecated before that ;). If you do not want deprecated elements, use a later date. Do not use a dynamic date, because that means when we deprecate elements they will disappear from our responses. Only used for &#39;json&#39; packaging, not for &#39;original&#39;. Not currently used for invoices, only for orders. (optional, default to 1970-01-01)
      *
      * @throws \Deegitalbe\LaravelTrustupIoStorecove\ApiException on non-2xx response
      * @throws \InvalidArgumentException
+     * @return array of \Deegitalbe\LaravelTrustupIoStorecove\Model\Transportable, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getReceivedDocumentWithHttpInfo($guid, $syntax, $version = '1970-01-01')
+    public function getReceivedDocumentWithHttpInfo($guid, $format, $version = '1970-01-01')
     {
         $returnType = '\Deegitalbe\LaravelTrustupIoStorecove\Model\Transportable';
-        $request = $this->getReceivedDocumentRequest($guid, $syntax, $version);
+        $request = $this->getReceivedDocumentRequest($guid, $format, $version);
 
         try {
             $options = $this->createHttpClientOption();
@@ -163,7 +165,7 @@ class ReceivedDocumentsApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders(),
+                $response->getHeaders()
             ];
 
         } catch (ApiException $e) {
@@ -186,16 +188,16 @@ class ReceivedDocumentsApi
      *
      * Get a new ReceivedDocument
      *
-     * @param  string  $guid  The guid of the document that was received. This is the \&quot;document_guid\&quot; property of the \&quot;received_document\&quot; webhook. (required)
-     * @param  string  $syntax  The syntax in which to receive the received document. (required)
-     * @param  string  $version  The JSON content version date. The default is &#39;1970-01-01&#39; meaning you get all deprecated elements since nothing was deprecated before that ;). If you do not want deprecated elements, use a later date. Do not use a dynamic date, because that means when we deprecate elements they will disappear from our responses. Only used for &#39;json&#39; packaging, not for &#39;original&#39;. Not currently used for invoices, only for orders. (optional, default to 1970-01-01)
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @param  string $guid The guid of the document that was received. This is the \&quot;document_guid\&quot; property of the \&quot;received_document\&quot; webhook. (required)
+     * @param  string $format The format in which to receive the received document. (required)
+     * @param  string $version The JSON content version date. The default is &#39;1970-01-01&#39; meaning you get all deprecated elements since nothing was deprecated before that ;). If you do not want deprecated elements, use a later date. Do not use a dynamic date, because that means when we deprecate elements they will disappear from our responses. Only used for &#39;json&#39; packaging, not for &#39;original&#39;. Not currently used for invoices, only for orders. (optional, default to 1970-01-01)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getReceivedDocumentAsync($guid, $syntax, $version = '1970-01-01')
+    public function getReceivedDocumentAsync($guid, $format, $version = '1970-01-01')
     {
-        return $this->getReceivedDocumentAsyncWithHttpInfo($guid, $syntax, $version)
+        return $this->getReceivedDocumentAsyncWithHttpInfo($guid, $format, $version)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -208,17 +210,17 @@ class ReceivedDocumentsApi
      *
      * Get a new ReceivedDocument
      *
-     * @param  string  $guid  The guid of the document that was received. This is the \&quot;document_guid\&quot; property of the \&quot;received_document\&quot; webhook. (required)
-     * @param  string  $syntax  The syntax in which to receive the received document. (required)
-     * @param  string  $version  The JSON content version date. The default is &#39;1970-01-01&#39; meaning you get all deprecated elements since nothing was deprecated before that ;). If you do not want deprecated elements, use a later date. Do not use a dynamic date, because that means when we deprecate elements they will disappear from our responses. Only used for &#39;json&#39; packaging, not for &#39;original&#39;. Not currently used for invoices, only for orders. (optional, default to 1970-01-01)
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @param  string $guid The guid of the document that was received. This is the \&quot;document_guid\&quot; property of the \&quot;received_document\&quot; webhook. (required)
+     * @param  string $format The format in which to receive the received document. (required)
+     * @param  string $version The JSON content version date. The default is &#39;1970-01-01&#39; meaning you get all deprecated elements since nothing was deprecated before that ;). If you do not want deprecated elements, use a later date. Do not use a dynamic date, because that means when we deprecate elements they will disappear from our responses. Only used for &#39;json&#39; packaging, not for &#39;original&#39;. Not currently used for invoices, only for orders. (optional, default to 1970-01-01)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getReceivedDocumentAsyncWithHttpInfo($guid, $syntax, $version = '1970-01-01')
+    public function getReceivedDocumentAsyncWithHttpInfo($guid, $format, $version = '1970-01-01')
     {
         $returnType = '\Deegitalbe\LaravelTrustupIoStorecove\Model\Transportable';
-        $request = $this->getReceivedDocumentRequest($guid, $syntax, $version);
+        $request = $this->getReceivedDocumentRequest($guid, $format, $version);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -237,7 +239,7 @@ class ReceivedDocumentsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders(),
+                        $response->getHeaders()
                     ];
                 },
                 function ($exception) {
@@ -260,14 +262,14 @@ class ReceivedDocumentsApi
     /**
      * Create request for operation 'getReceivedDocument'
      *
-     * @param  string  $guid  The guid of the document that was received. This is the \&quot;document_guid\&quot; property of the \&quot;received_document\&quot; webhook. (required)
-     * @param  string  $syntax  The syntax in which to receive the received document. (required)
-     * @param  string  $version  The JSON content version date. The default is &#39;1970-01-01&#39; meaning you get all deprecated elements since nothing was deprecated before that ;). If you do not want deprecated elements, use a later date. Do not use a dynamic date, because that means when we deprecate elements they will disappear from our responses. Only used for &#39;json&#39; packaging, not for &#39;original&#39;. Not currently used for invoices, only for orders. (optional, default to 1970-01-01)
-     * @return \GuzzleHttp\Psr7\Request
+     * @param  string $guid The guid of the document that was received. This is the \&quot;document_guid\&quot; property of the \&quot;received_document\&quot; webhook. (required)
+     * @param  string $format The format in which to receive the received document. (required)
+     * @param  string $version The JSON content version date. The default is &#39;1970-01-01&#39; meaning you get all deprecated elements since nothing was deprecated before that ;). If you do not want deprecated elements, use a later date. Do not use a dynamic date, because that means when we deprecate elements they will disappear from our responses. Only used for &#39;json&#39; packaging, not for &#39;original&#39;. Not currently used for invoices, only for orders. (optional, default to 1970-01-01)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getReceivedDocumentRequest($guid, $syntax, $version = '1970-01-01')
+    protected function getReceivedDocumentRequest($guid, $format, $version = '1970-01-01')
     {
         // verify the required parameter 'guid' is set
         if ($guid === null || (is_array($guid) && count($guid) === 0)) {
@@ -275,15 +277,16 @@ class ReceivedDocumentsApi
                 'Missing the required parameter $guid when calling getReceivedDocument'
             );
         }
-        // verify the required parameter 'syntax' is set
-        if ($syntax === null || (is_array($syntax) && count($syntax) === 0)) {
+        // verify the required parameter 'format' is set
+        if ($format === null || (is_array($format) && count($format) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $syntax when calling getReceivedDocument'
+                'Missing the required parameter $format when calling getReceivedDocument'
             );
         }
-        if ($version !== null && ! preg_match('/^d{4}-d{2}-d{2}$/', $version)) {
-            throw new \InvalidArgumentException('invalid value for "version" when calling ReceivedDocumentsApi.getReceivedDocument, must conform to the pattern /^d{4}-d{2}-d{2}$/.');
+        if ($version !== null && !preg_match("/^\d{4}-\d{2}-\d{2}$/", $version)) {
+            throw new \InvalidArgumentException("invalid value for \"version\" when calling ReceivedDocumentsApi.getReceivedDocument, must conform to the pattern /^d{4}-d{2}-d{2}$/.");
         }
+
 
         $resourcePath = '/received_documents/{guid}/{format}';
         $formParams = [];
@@ -300,16 +303,16 @@ class ReceivedDocumentsApi
         // path params
         if ($guid !== null) {
             $resourcePath = str_replace(
-                '{'.'guid'.'}',
+                '{' . 'guid' . '}',
                 ObjectSerializer::toPathValue($guid),
                 $resourcePath
             );
         }
         // path params
-        if ($syntax !== null) {
+        if ($format !== null) {
             $resourcePath = str_replace(
-                '{'.'syntax'.'}',
-                ObjectSerializer::toPathValue($syntax),
+                '{' . 'format' . '}',
+                ObjectSerializer::toPathValue($format),
                 $resourcePath
             );
         }
@@ -332,14 +335,14 @@ class ReceivedDocumentsApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-
-            if ($headers['Content-Type'] === 'application/json') {
+            
+            if($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
+                if(is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -349,7 +352,7 @@ class ReceivedDocumentsApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue,
+                        'contents' => $formParamValue
                     ];
                 }
                 // for HTTP post (form)
@@ -382,10 +385,9 @@ class ReceivedDocumentsApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
-
         return new Request(
             'GET',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -396,17 +398,16 @@ class ReceivedDocumentsApi
      *
      * Receive a new Document
      *
-     * @param  int  $legal_entity_id  The id of the LegalEntity for which the document was received. (required)
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\ReceivedDocumentCreate  $received_document  Received document to process. (required)
-     * @return \Deegitalbe\LaravelTrustupIoStorecove\Model\ReceivedDocument
+     * @param  int $legal_entity_id The id of the LegalEntity for which the document was received. (required)
+     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\ReceivedDocumentCreate $received_document Received document to process. (required)
      *
      * @throws \Deegitalbe\LaravelTrustupIoStorecove\ApiException on non-2xx response
      * @throws \InvalidArgumentException
+     * @return \Deegitalbe\LaravelTrustupIoStorecove\Model\ReceivedDocument
      */
     public function receiveDocument($legal_entity_id, $received_document)
     {
-        [$response] = $this->receiveDocumentWithHttpInfo($legal_entity_id, $received_document);
-
+        list($response) = $this->receiveDocumentWithHttpInfo($legal_entity_id, $received_document);
         return $response;
     }
 
@@ -415,12 +416,12 @@ class ReceivedDocumentsApi
      *
      * Receive a new Document
      *
-     * @param  int  $legal_entity_id  The id of the LegalEntity for which the document was received. (required)
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\ReceivedDocumentCreate  $received_document  Received document to process. (required)
-     * @return array of \Deegitalbe\LaravelTrustupIoStorecove\Model\ReceivedDocument, HTTP status code, HTTP response headers (array of strings)
+     * @param  int $legal_entity_id The id of the LegalEntity for which the document was received. (required)
+     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\ReceivedDocumentCreate $received_document Received document to process. (required)
      *
      * @throws \Deegitalbe\LaravelTrustupIoStorecove\ApiException on non-2xx response
      * @throws \InvalidArgumentException
+     * @return array of \Deegitalbe\LaravelTrustupIoStorecove\Model\ReceivedDocument, HTTP status code, HTTP response headers (array of strings)
      */
     public function receiveDocumentWithHttpInfo($legal_entity_id, $received_document)
     {
@@ -468,7 +469,7 @@ class ReceivedDocumentsApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders(),
+                $response->getHeaders()
             ];
 
         } catch (ApiException $e) {
@@ -499,11 +500,11 @@ class ReceivedDocumentsApi
      *
      * Receive a new Document
      *
-     * @param  int  $legal_entity_id  The id of the LegalEntity for which the document was received. (required)
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\ReceivedDocumentCreate  $received_document  Received document to process. (required)
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @param  int $legal_entity_id The id of the LegalEntity for which the document was received. (required)
+     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\ReceivedDocumentCreate $received_document Received document to process. (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function receiveDocumentAsync($legal_entity_id, $received_document)
     {
@@ -520,11 +521,11 @@ class ReceivedDocumentsApi
      *
      * Receive a new Document
      *
-     * @param  int  $legal_entity_id  The id of the LegalEntity for which the document was received. (required)
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\ReceivedDocumentCreate  $received_document  Received document to process. (required)
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @param  int $legal_entity_id The id of the LegalEntity for which the document was received. (required)
+     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\ReceivedDocumentCreate $received_document Received document to process. (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function receiveDocumentAsyncWithHttpInfo($legal_entity_id, $received_document)
     {
@@ -548,7 +549,7 @@ class ReceivedDocumentsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders(),
+                        $response->getHeaders()
                     ];
                 },
                 function ($exception) {
@@ -571,11 +572,11 @@ class ReceivedDocumentsApi
     /**
      * Create request for operation 'receiveDocument'
      *
-     * @param  int  $legal_entity_id  The id of the LegalEntity for which the document was received. (required)
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\ReceivedDocumentCreate  $received_document  Received document to process. (required)
-     * @return \GuzzleHttp\Psr7\Request
+     * @param  int $legal_entity_id The id of the LegalEntity for which the document was received. (required)
+     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\ReceivedDocumentCreate $received_document Received document to process. (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
      */
     protected function receiveDocumentRequest($legal_entity_id, $received_document)
     {
@@ -599,10 +600,11 @@ class ReceivedDocumentsApi
         $httpBody = '';
         $multipart = false;
 
+
         // path params
         if ($legal_entity_id !== null) {
             $resourcePath = str_replace(
-                '{'.'legal_entity_id'.'}',
+                '{' . 'legal_entity_id' . '}',
                 ObjectSerializer::toPathValue($legal_entity_id),
                 $resourcePath
             );
@@ -629,14 +631,14 @@ class ReceivedDocumentsApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-
-            if ($headers['Content-Type'] === 'application/json') {
+            
+            if($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
+                if(is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -646,7 +648,7 @@ class ReceivedDocumentsApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue,
+                        'contents' => $formParamValue
                     ];
                 }
                 // for HTTP post (form)
@@ -679,10 +681,9 @@ class ReceivedDocumentsApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
-
         return new Request(
             'POST',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -691,17 +692,16 @@ class ReceivedDocumentsApi
     /**
      * Create http client option
      *
-     * @return array of http client options
-     *
      * @throws \RuntimeException on file opening failure
+     * @return array of http client options
      */
     protected function createHttpClientOption()
     {
         $options = [];
         if ($this->config->getDebug()) {
             $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
-            if (! $options[RequestOptions::DEBUG]) {
-                throw new \RuntimeException('Failed to open the debug file: '.$this->config->getDebugFile());
+            if (!$options[RequestOptions::DEBUG]) {
+                throw new \RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
             }
         }
 

@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,49 +29,47 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * NetworkSettings Class Doc Comment
  *
  * @category Class
- *
  * @description Settings for an additional routing network.
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class NetworkSettings implements ArrayAccess, ModelInterface
+class NetworkSettings implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'NetworkSettings';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'scheme' => 'bool',
-        'mock' => 'bool',
+        'mock' => 'bool'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'scheme' => null,
-        'mock' => null,
+        'mock' => null
     ];
 
     /**
@@ -103,7 +100,7 @@ class NetworkSettings implements ArrayAccess, ModelInterface
      */
     protected static $attributeMap = [
         'scheme' => 'scheme',
-        'mock' => 'mock',
+        'mock' => 'mock'
     ];
 
     /**
@@ -113,7 +110,7 @@ class NetworkSettings implements ArrayAccess, ModelInterface
      */
     protected static $setters = [
         'scheme' => 'setScheme',
-        'mock' => 'setMock',
+        'mock' => 'setMock'
     ];
 
     /**
@@ -123,7 +120,7 @@ class NetworkSettings implements ArrayAccess, ModelInterface
      */
     protected static $getters = [
         'scheme' => 'getScheme',
-        'mock' => 'getMock',
+        'mock' => 'getMock'
     ];
 
     /**
@@ -167,6 +164,10 @@ class NetworkSettings implements ArrayAccess, ModelInterface
         return self::$swaggerModelName;
     }
 
+    
+
+    
+
     /**
      * Associative array for storing property values
      *
@@ -177,10 +178,10 @@ class NetworkSettings implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['scheme'] = isset($data['scheme']) ? $data['scheme'] : null;
         $this->container['mock'] = isset($data['mock']) ? $data['mock'] : false;
@@ -209,6 +210,7 @@ class NetworkSettings implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets scheme
      *
@@ -222,7 +224,8 @@ class NetworkSettings implements ArrayAccess, ModelInterface
     /**
      * Sets scheme
      *
-     * @param  bool  $scheme  Whether or not the network is enabled
+     * @param bool $scheme Whether or not the network is enabled
+     *
      * @return $this
      */
     public function setScheme($scheme)
@@ -245,7 +248,8 @@ class NetworkSettings implements ArrayAccess, ModelInterface
     /**
      * Sets mock
      *
-     * @param  bool  $mock  Whether or not to mock the network, if possible.
+     * @param bool $mock Whether or not to mock the network, if possible.
+     *
      * @return $this
      */
     public function setMock($mock)
@@ -254,12 +258,12 @@ class NetworkSettings implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -269,7 +273,8 @@ class NetworkSettings implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -280,8 +285,9 @@ class NetworkSettings implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -296,7 +302,8 @@ class NetworkSettings implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -321,3 +328,5 @@ class NetworkSettings implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

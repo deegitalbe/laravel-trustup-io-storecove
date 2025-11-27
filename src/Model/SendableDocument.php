@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,36 +29,34 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * SendableDocument Class Doc Comment
  *
  * @category Class
- *
  * @description The document to send.
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class SendableDocument implements ArrayAccess, ModelInterface
+class SendableDocument implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'SendableDocument';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'document_type' => 'string',
         'invoice' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\Invoice',
@@ -67,13 +64,14 @@ class SendableDocument implements ArrayAccess, ModelInterface
         'invoice_report' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\DocumentInvoiceReport',
         'order' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\DocumentOrder',
         'raw_document_data' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\RawDocumentData',
+        'enveloped_data' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\EnvelopedData'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'document_type' => null,
         'invoice' => null,
@@ -81,6 +79,7 @@ class SendableDocument implements ArrayAccess, ModelInterface
         'invoice_report' => null,
         'order' => null,
         'raw_document_data' => null,
+        'enveloped_data' => null
     ];
 
     /**
@@ -116,6 +115,7 @@ class SendableDocument implements ArrayAccess, ModelInterface
         'invoice_report' => 'invoiceReport',
         'order' => 'order',
         'raw_document_data' => 'rawDocumentData',
+        'enveloped_data' => 'envelopedData'
     ];
 
     /**
@@ -130,6 +130,7 @@ class SendableDocument implements ArrayAccess, ModelInterface
         'invoice_report' => 'setInvoiceReport',
         'order' => 'setOrder',
         'raw_document_data' => 'setRawDocumentData',
+        'enveloped_data' => 'setEnvelopedData'
     ];
 
     /**
@@ -144,6 +145,7 @@ class SendableDocument implements ArrayAccess, ModelInterface
         'invoice_report' => 'getInvoiceReport',
         'order' => 'getOrder',
         'raw_document_data' => 'getRawDocumentData',
+        'enveloped_data' => 'getEnvelopedData'
     ];
 
     /**
@@ -187,14 +189,14 @@ class SendableDocument implements ArrayAccess, ModelInterface
         return self::$swaggerModelName;
     }
 
+    const DOCUMENT_TYPE_ENVELOPED_DATA = 'enveloped_data';
     const DOCUMENT_TYPE_INVOICE = 'invoice';
-
     const DOCUMENT_TYPE_INVOICE_RESPONSE = 'invoice_response';
-
     const DOCUMENT_TYPE_INVOICE_REPORT = 'invoice_report';
-
     const DOCUMENT_TYPE_ORDER = 'order';
+    
 
+    
     /**
      * Gets allowable values of the enum
      *
@@ -203,12 +205,14 @@ class SendableDocument implements ArrayAccess, ModelInterface
     public function getDocumentTypeAllowableValues()
     {
         return [
+            self::DOCUMENT_TYPE_ENVELOPED_DATA,
             self::DOCUMENT_TYPE_INVOICE,
             self::DOCUMENT_TYPE_INVOICE_RESPONSE,
             self::DOCUMENT_TYPE_INVOICE_REPORT,
             self::DOCUMENT_TYPE_ORDER,
         ];
     }
+    
 
     /**
      * Associative array for storing property values
@@ -220,10 +224,10 @@ class SendableDocument implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['document_type'] = isset($data['document_type']) ? $data['document_type'] : null;
         $this->container['invoice'] = isset($data['invoice']) ? $data['invoice'] : null;
@@ -231,6 +235,7 @@ class SendableDocument implements ArrayAccess, ModelInterface
         $this->container['invoice_report'] = isset($data['invoice_report']) ? $data['invoice_report'] : null;
         $this->container['order'] = isset($data['order']) ? $data['order'] : null;
         $this->container['raw_document_data'] = isset($data['raw_document_data']) ? $data['raw_document_data'] : null;
+        $this->container['enveloped_data'] = isset($data['enveloped_data']) ? $data['enveloped_data'] : null;
     }
 
     /**
@@ -246,7 +251,7 @@ class SendableDocument implements ArrayAccess, ModelInterface
             $invalidProperties[] = "'document_type' can't be null";
         }
         $allowedValues = $this->getDocumentTypeAllowableValues();
-        if (! is_null($this->container['document_type']) && ! in_array($this->container['document_type'], $allowedValues, true)) {
+        if (!is_null($this->container['document_type']) && !in_array($this->container['document_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'document_type', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -267,6 +272,7 @@ class SendableDocument implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets document_type
      *
@@ -280,13 +286,14 @@ class SendableDocument implements ArrayAccess, ModelInterface
     /**
      * Sets document_type
      *
-     * @param  string  $document_type  The type of document to be sent.
+     * @param string $document_type The type of document to be sent.
+     *
      * @return $this
      */
     public function setDocumentType($document_type)
     {
         $allowedValues = $this->getDocumentTypeAllowableValues();
-        if (! in_array($document_type, $allowedValues, true)) {
+        if (!in_array($document_type, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'document_type', must be one of '%s'",
@@ -312,7 +319,8 @@ class SendableDocument implements ArrayAccess, ModelInterface
     /**
      * Sets invoice
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\Invoice  $invoice  An invoice or creditnote.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\Invoice $invoice An invoice or creditnote.
+     *
      * @return $this
      */
     public function setInvoice($invoice)
@@ -335,7 +343,8 @@ class SendableDocument implements ArrayAccess, ModelInterface
     /**
      * Sets invoice_response
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\DocumentInvoiceResponse  $invoice_response  An invoice response.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\DocumentInvoiceResponse $invoice_response An invoice response.
+     *
      * @return $this
      */
     public function setInvoiceResponse($invoice_response)
@@ -358,7 +367,8 @@ class SendableDocument implements ArrayAccess, ModelInterface
     /**
      * Sets invoice_report
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\DocumentInvoiceReport  $invoice_report  invoice_report
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\DocumentInvoiceReport $invoice_report invoice_report
+     *
      * @return $this
      */
     public function setInvoiceReport($invoice_report)
@@ -381,7 +391,8 @@ class SendableDocument implements ArrayAccess, ModelInterface
     /**
      * Sets order
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\DocumentOrder  $order  An order..
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\DocumentOrder $order An order..
+     *
      * @return $this
      */
     public function setOrder($order)
@@ -404,7 +415,8 @@ class SendableDocument implements ArrayAccess, ModelInterface
     /**
      * Sets raw_document_data
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\RawDocumentData  $raw_document_data  raw_document_data
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\RawDocumentData $raw_document_data raw_document_data
+     *
      * @return $this
      */
     public function setRawDocumentData($raw_document_data)
@@ -415,10 +427,34 @@ class SendableDocument implements ArrayAccess, ModelInterface
     }
 
     /**
+     * Gets enveloped_data
+     *
+     * @return \Deegitalbe\LaravelTrustupIoStorecove\Model\EnvelopedData
+     */
+    public function getEnvelopedData()
+    {
+        return $this->container['enveloped_data'];
+    }
+
+    /**
+     * Sets enveloped_data
+     *
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\EnvelopedData $enveloped_data enveloped_data
+     *
+     * @return $this
+     */
+    public function setEnvelopedData($enveloped_data)
+    {
+        $this->container['enveloped_data'] = $enveloped_data;
+
+        return $this;
+    }
+    /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -428,7 +464,8 @@ class SendableDocument implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -439,8 +476,9 @@ class SendableDocument implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -455,7 +493,8 @@ class SendableDocument implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -480,3 +519,5 @@ class SendableDocument implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

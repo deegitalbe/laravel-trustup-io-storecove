@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,49 +29,47 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * RoutingNetwork Class Doc Comment
  *
  * @category Class
- *
  * @description An additional network to consider for routing.
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class RoutingNetwork implements ArrayAccess, ModelInterface
+class RoutingNetwork implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'RoutingNetwork';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'scheme' => 'string',
-        'settings' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\NetworkSettings',
+        'settings' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\NetworkSettings'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'scheme' => null,
-        'settings' => null,
+        'settings' => null
     ];
 
     /**
@@ -103,7 +100,7 @@ class RoutingNetwork implements ArrayAccess, ModelInterface
      */
     protected static $attributeMap = [
         'scheme' => 'scheme',
-        'settings' => 'settings',
+        'settings' => 'settings'
     ];
 
     /**
@@ -113,7 +110,7 @@ class RoutingNetwork implements ArrayAccess, ModelInterface
      */
     protected static $setters = [
         'scheme' => 'setScheme',
-        'settings' => 'setSettings',
+        'settings' => 'setSettings'
     ];
 
     /**
@@ -123,7 +120,7 @@ class RoutingNetwork implements ArrayAccess, ModelInterface
      */
     protected static $getters = [
         'scheme' => 'getScheme',
-        'settings' => 'getSettings',
+        'settings' => 'getSettings'
     ];
 
     /**
@@ -167,6 +164,10 @@ class RoutingNetwork implements ArrayAccess, ModelInterface
         return self::$swaggerModelName;
     }
 
+    
+
+    
+
     /**
      * Associative array for storing property values
      *
@@ -177,10 +178,10 @@ class RoutingNetwork implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['scheme'] = isset($data['scheme']) ? $data['scheme'] : null;
         $this->container['settings'] = isset($data['settings']) ? $data['settings'] : null;
@@ -195,14 +196,13 @@ class RoutingNetwork implements ArrayAccess, ModelInterface
     {
         $invalidProperties = [];
 
-        if (! is_null($this->container['scheme']) && (mb_strlen($this->container['scheme']) < 3)) {
+        if (!is_null($this->container['scheme']) && (mb_strlen($this->container['scheme']) < 3)) {
             $invalidProperties[] = "invalid value for 'scheme', the character length must be bigger than or equal to 3.";
         }
 
         if ($this->container['settings'] === null) {
             $invalidProperties[] = "'settings' can't be null";
         }
-
         return $invalidProperties;
     }
 
@@ -217,6 +217,7 @@ class RoutingNetwork implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets scheme
      *
@@ -230,13 +231,14 @@ class RoutingNetwork implements ArrayAccess, ModelInterface
     /**
      * Sets scheme
      *
-     * @param  string  $scheme  The name of the network
+     * @param string $scheme The name of the network
+     *
      * @return $this
      */
     public function setScheme($scheme)
     {
 
-        if (! is_null($scheme) && (mb_strlen($scheme) < 3)) {
+        if (!is_null($scheme) && (mb_strlen($scheme) < 3)) {
             throw new \InvalidArgumentException('invalid length for $scheme when calling RoutingNetwork., must be bigger than or equal to 3.');
         }
 
@@ -258,7 +260,8 @@ class RoutingNetwork implements ArrayAccess, ModelInterface
     /**
      * Sets settings
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\NetworkSettings  $settings  The settings for the network.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\NetworkSettings $settings The settings for the network.
+     *
      * @return $this
      */
     public function setSettings($settings)
@@ -267,12 +270,12 @@ class RoutingNetwork implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -282,7 +285,8 @@ class RoutingNetwork implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -293,8 +297,9 @@ class RoutingNetwork implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -309,7 +314,8 @@ class RoutingNetwork implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -334,3 +340,5 @@ class RoutingNetwork implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

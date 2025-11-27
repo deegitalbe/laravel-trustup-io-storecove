@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,55 +29,54 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * PeppolIdentifierCreate Class Doc Comment
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PeppolIdentifierCreate implements ArrayAccess, ModelInterface
+class PeppolIdentifierCreate implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'PeppolIdentifierCreate';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'identifier' => 'string',
         'scheme' => 'string',
         'superscheme' => 'string',
         'networks' => 'string[]',
         'networks_specification' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\NetworkSpecification[]',
-        'corppass' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\CorpPassCreate',
+        'corppass' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\CorpPassCreate'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'identifier' => null,
         'scheme' => null,
         'superscheme' => null,
         'networks' => null,
         'networks_specification' => null,
-        'corppass' => null,
+        'corppass' => null
     ];
 
     /**
@@ -113,7 +111,7 @@ class PeppolIdentifierCreate implements ArrayAccess, ModelInterface
         'superscheme' => 'superscheme',
         'networks' => 'networks',
         'networks_specification' => 'networks_specification',
-        'corppass' => 'corppass',
+        'corppass' => 'corppass'
     ];
 
     /**
@@ -127,7 +125,7 @@ class PeppolIdentifierCreate implements ArrayAccess, ModelInterface
         'superscheme' => 'setSuperscheme',
         'networks' => 'setNetworks',
         'networks_specification' => 'setNetworksSpecification',
-        'corppass' => 'setCorppass',
+        'corppass' => 'setCorppass'
     ];
 
     /**
@@ -141,7 +139,7 @@ class PeppolIdentifierCreate implements ArrayAccess, ModelInterface
         'superscheme' => 'getSuperscheme',
         'networks' => 'getNetworks',
         'networks_specification' => 'getNetworksSpecification',
-        'corppass' => 'getCorppass',
+        'corppass' => 'getCorppass'
     ];
 
     /**
@@ -186,9 +184,10 @@ class PeppolIdentifierCreate implements ArrayAccess, ModelInterface
     }
 
     const NETWORKS_PEPPOL = 'peppol';
-
     const NETWORKS_DBNALLIANCE = 'dbnalliance';
+    
 
+    
     /**
      * Gets allowable values of the enum
      *
@@ -201,6 +200,7 @@ class PeppolIdentifierCreate implements ArrayAccess, ModelInterface
             self::NETWORKS_DBNALLIANCE,
         ];
     }
+    
 
     /**
      * Associative array for storing property values
@@ -212,10 +212,10 @@ class PeppolIdentifierCreate implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
         $this->container['scheme'] = isset($data['scheme']) ? $data['scheme'] : null;
@@ -281,6 +281,7 @@ class PeppolIdentifierCreate implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets identifier
      *
@@ -294,7 +295,8 @@ class PeppolIdentifierCreate implements ArrayAccess, ModelInterface
     /**
      * Sets identifier
      *
-     * @param  string  $identifier  The identifier.
+     * @param string $identifier The identifier.
+     *
      * @return $this
      */
     public function setIdentifier($identifier)
@@ -324,7 +326,8 @@ class PeppolIdentifierCreate implements ArrayAccess, ModelInterface
     /**
      * Sets scheme
      *
-     * @param  string  $scheme  The scheme of the identifier. See <<_receiver_identifiers_list>> for a list.
+     * @param string $scheme The scheme of the identifier. See <<_receiver_identifiers_list>> for a list.
+     *
      * @return $this
      */
     public function setScheme($scheme)
@@ -354,7 +357,8 @@ class PeppolIdentifierCreate implements ArrayAccess, ModelInterface
     /**
      * Sets superscheme
      *
-     * @param  string  $superscheme  The superscheme of the identifier. Should always be \"iso6523-actorid-upis\".
+     * @param string $superscheme The superscheme of the identifier. Should always be \"iso6523-actorid-upis\".
+     *
      * @return $this
      */
     public function setSuperscheme($superscheme)
@@ -384,13 +388,14 @@ class PeppolIdentifierCreate implements ArrayAccess, ModelInterface
     /**
      * Sets networks
      *
-     * @param  string[]  $networks  DEPRECATED. Use the new \"networks_specification\" property. The networks to advertise the identifier on. Note that \"dbnalliance\" currently requires manual provisioning in the DBNAlliance SML, so you need to contact us before using this.
+     * @param string[] $networks DEPRECATED. Use the new \"networks_specification\" property. The networks to advertise the identifier on. Note that \"dbnalliance\" currently requires manual provisioning in the DBNAlliance SML, so you need to contact us before using this.
+     *
      * @return $this
      */
     public function setNetworks($networks)
     {
         $allowedValues = $this->getNetworksAllowableValues();
-        if (! is_null($networks) && array_diff($networks, $allowedValues)) {
+        if (!is_null($networks) && array_diff($networks, $allowedValues)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'networks', must be one of '%s'",
@@ -416,7 +421,8 @@ class PeppolIdentifierCreate implements ArrayAccess, ModelInterface
     /**
      * Sets networks_specification
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\NetworkSpecification[]  $networks_specification  A specification of the networks to advertise the identifier on.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\NetworkSpecification[] $networks_specification A specification of the networks to advertise the identifier on.
+     *
      * @return $this
      */
     public function setNetworksSpecification($networks_specification)
@@ -439,7 +445,8 @@ class PeppolIdentifierCreate implements ArrayAccess, ModelInterface
     /**
      * Sets corppass
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\CorpPassCreate  $corppass  CorpPass details, used to create SG:UEN (numerical code: 0195) identifiers. For details, see <<_singapore_corppass_description>>.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\CorpPassCreate $corppass CorpPass details, used to create SG:UEN (numerical code: 0195) identifiers. For details, see <<_singapore_corppass_description>>.
+     *
      * @return $this
      */
     public function setCorppass($corppass)
@@ -448,12 +455,12 @@ class PeppolIdentifierCreate implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -463,7 +470,8 @@ class PeppolIdentifierCreate implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -474,8 +482,9 @@ class PeppolIdentifierCreate implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -490,7 +499,8 @@ class PeppolIdentifierCreate implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -515,3 +525,5 @@ class PeppolIdentifierCreate implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

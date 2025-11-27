@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,49 +29,47 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * InvoiceResponseCondition Class Doc Comment
  *
  * @category Class
- *
  * @description Specifies an error in the received invoice.
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class InvoiceResponseCondition implements ArrayAccess, ModelInterface
+class InvoiceResponseCondition implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'InvoiceResponseCondition';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'field_code' => 'string',
-        'field_value' => 'string',
+        'field_value' => 'string'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'field_code' => null,
-        'field_value' => null,
+        'field_value' => null
     ];
 
     /**
@@ -103,7 +100,7 @@ class InvoiceResponseCondition implements ArrayAccess, ModelInterface
      */
     protected static $attributeMap = [
         'field_code' => 'fieldCode',
-        'field_value' => 'fieldValue',
+        'field_value' => 'fieldValue'
     ];
 
     /**
@@ -113,7 +110,7 @@ class InvoiceResponseCondition implements ArrayAccess, ModelInterface
      */
     protected static $setters = [
         'field_code' => 'setFieldCode',
-        'field_value' => 'setFieldValue',
+        'field_value' => 'setFieldValue'
     ];
 
     /**
@@ -123,7 +120,7 @@ class InvoiceResponseCondition implements ArrayAccess, ModelInterface
      */
     protected static $getters = [
         'field_code' => 'getFieldCode',
-        'field_value' => 'getFieldValue',
+        'field_value' => 'getFieldValue'
     ];
 
     /**
@@ -167,6 +164,10 @@ class InvoiceResponseCondition implements ArrayAccess, ModelInterface
         return self::$swaggerModelName;
     }
 
+    
+
+    
+
     /**
      * Associative array for storing property values
      *
@@ -177,10 +178,10 @@ class InvoiceResponseCondition implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['field_code'] = isset($data['field_code']) ? $data['field_code'] : null;
         $this->container['field_value'] = isset($data['field_value']) ? $data['field_value'] : null;
@@ -201,7 +202,6 @@ class InvoiceResponseCondition implements ArrayAccess, ModelInterface
         if ($this->container['field_value'] === null) {
             $invalidProperties[] = "'field_value' can't be null";
         }
-
         return $invalidProperties;
     }
 
@@ -216,6 +216,7 @@ class InvoiceResponseCondition implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets field_code
      *
@@ -229,7 +230,8 @@ class InvoiceResponseCondition implements ArrayAccess, ModelInterface
     /**
      * Sets field_code
      *
-     * @param  string  $field_code  The code of the field with the error. Find the element here: https://docs.peppol.eu/poacc/billing/3.0/syntax/ubl-invoice/ and then get the field's Business term.
+     * @param string $field_code The code of the field with the error. Find the element here: https://docs.peppol.eu/poacc/billing/3.0/syntax/ubl-invoice/ and then get the field's Business term.
+     *
      * @return $this
      */
     public function setFieldCode($field_code)
@@ -252,7 +254,8 @@ class InvoiceResponseCondition implements ArrayAccess, ModelInterface
     /**
      * Sets field_value
      *
-     * @param  string  $field_value  The (error) value of the field.
+     * @param string $field_value The (error) value of the field.
+     *
      * @return $this
      */
     public function setFieldValue($field_value)
@@ -261,12 +264,12 @@ class InvoiceResponseCondition implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -276,7 +279,8 @@ class InvoiceResponseCondition implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -287,8 +291,9 @@ class InvoiceResponseCondition implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -303,7 +308,8 @@ class InvoiceResponseCondition implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -328,3 +334,5 @@ class InvoiceResponseCondition implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

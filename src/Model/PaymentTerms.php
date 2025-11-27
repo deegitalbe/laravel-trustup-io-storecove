@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,47 +29,47 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * PaymentTerms Class Doc Comment
  *
  * @category Class
- *
- * @description The payment terms of the document.
- *
+ * @description The payment terms of the document. Note that not all syntaxes support payment terms, so in some syntaxes they will converted into a payment terms note and it is even possible that they have to be omitted completely, for instance in many eReporting syntaxes (where they don&#39;t play a role anyway). ++++ &lt;br/&gt; ++++ Provide either the note or the terms, but not both.
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PaymentTerms implements ArrayAccess, ModelInterface
+class PaymentTerms implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'PaymentTerms';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'note' => 'string',
+        'terms' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\PaymentTerm[]'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'note' => null,
+        'terms' => null
     ];
 
     /**
@@ -101,6 +100,7 @@ class PaymentTerms implements ArrayAccess, ModelInterface
      */
     protected static $attributeMap = [
         'note' => 'note',
+        'terms' => 'terms'
     ];
 
     /**
@@ -110,6 +110,7 @@ class PaymentTerms implements ArrayAccess, ModelInterface
      */
     protected static $setters = [
         'note' => 'setNote',
+        'terms' => 'setTerms'
     ];
 
     /**
@@ -119,6 +120,7 @@ class PaymentTerms implements ArrayAccess, ModelInterface
      */
     protected static $getters = [
         'note' => 'getNote',
+        'terms' => 'getTerms'
     ];
 
     /**
@@ -162,6 +164,10 @@ class PaymentTerms implements ArrayAccess, ModelInterface
         return self::$swaggerModelName;
     }
 
+    
+
+    
+
     /**
      * Associative array for storing property values
      *
@@ -172,12 +178,13 @@ class PaymentTerms implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['note'] = isset($data['note']) ? $data['note'] : null;
+        $this->container['terms'] = isset($data['terms']) ? $data['terms'] : null;
     }
 
     /**
@@ -203,6 +210,7 @@ class PaymentTerms implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets note
      *
@@ -216,7 +224,8 @@ class PaymentTerms implements ArrayAccess, ModelInterface
     /**
      * Sets note
      *
-     * @param  string  $note  The note for the payment terms.
+     * @param string $note The note for the payment terms.
+     *
      * @return $this
      */
     public function setNote($note)
@@ -227,10 +236,34 @@ class PaymentTerms implements ArrayAccess, ModelInterface
     }
 
     /**
+     * Gets terms
+     *
+     * @return \Deegitalbe\LaravelTrustupIoStorecove\Model\PaymentTerm[]
+     */
+    public function getTerms()
+    {
+        return $this->container['terms'];
+    }
+
+    /**
+     * Sets terms
+     *
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\PaymentTerm[] $terms The terms for the payment terms.
+     *
+     * @return $this
+     */
+    public function setTerms($terms)
+    {
+        $this->container['terms'] = $terms;
+
+        return $this;
+    }
+    /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -240,7 +273,8 @@ class PaymentTerms implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -251,8 +285,9 @@ class PaymentTerms implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -267,7 +302,8 @@ class PaymentTerms implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -292,3 +328,5 @@ class PaymentTerms implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

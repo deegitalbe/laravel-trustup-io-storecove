@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,55 +29,54 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * Administration Class Doc Comment
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Administration implements ArrayAccess, ModelInterface
+class Administration implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'Administration';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'id' => 'int',
         'sender_email_identity_id' => 'int',
         'legal_entity_id' => 'int',
         'email' => 'string',
         'packaging' => 'string',
-        'package_version' => 'string',
+        'package_version' => 'string'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'id' => 'int64',
         'sender_email_identity_id' => 'int64',
         'legal_entity_id' => 'int64',
         'email' => null,
         'packaging' => null,
-        'package_version' => null,
+        'package_version' => null
     ];
 
     /**
@@ -113,7 +111,7 @@ class Administration implements ArrayAccess, ModelInterface
         'legal_entity_id' => 'legal_entity_id',
         'email' => 'email',
         'packaging' => 'packaging',
-        'package_version' => 'package_version',
+        'package_version' => 'package_version'
     ];
 
     /**
@@ -127,7 +125,7 @@ class Administration implements ArrayAccess, ModelInterface
         'legal_entity_id' => 'setLegalEntityId',
         'email' => 'setEmail',
         'packaging' => 'setPackaging',
-        'package_version' => 'setPackageVersion',
+        'package_version' => 'setPackageVersion'
     ];
 
     /**
@@ -141,7 +139,7 @@ class Administration implements ArrayAccess, ModelInterface
         'legal_entity_id' => 'getLegalEntityId',
         'email' => 'getEmail',
         'packaging' => 'getPackaging',
-        'package_version' => 'getPackageVersion',
+        'package_version' => 'getPackageVersion'
     ];
 
     /**
@@ -186,13 +184,12 @@ class Administration implements ArrayAccess, ModelInterface
     }
 
     const PACKAGING_UBL = 'ubl';
-
     const PACKAGE_VERSION_PEPPOL_BIS_V3 = 'peppol_bis_v3';
-
     const PACKAGE_VERSION_AUNZ = 'aunz';
-
     const PACKAGE_VERSION_SG = 'sg';
+    
 
+    
     /**
      * Gets allowable values of the enum
      *
@@ -204,7 +201,7 @@ class Administration implements ArrayAccess, ModelInterface
             self::PACKAGING_UBL,
         ];
     }
-
+    
     /**
      * Gets allowable values of the enum
      *
@@ -218,6 +215,7 @@ class Administration implements ArrayAccess, ModelInterface
             self::PACKAGE_VERSION_SG,
         ];
     }
+    
 
     /**
      * Associative array for storing property values
@@ -229,10 +227,10 @@ class Administration implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['sender_email_identity_id'] = isset($data['sender_email_identity_id']) ? $data['sender_email_identity_id'] : null;
@@ -251,16 +249,16 @@ class Administration implements ArrayAccess, ModelInterface
     {
         $invalidProperties = [];
 
-        if (! is_null($this->container['email']) && (mb_strlen($this->container['email']) > 128)) {
+        if (!is_null($this->container['email']) && (mb_strlen($this->container['email']) > 128)) {
             $invalidProperties[] = "invalid value for 'email', the character length must be smaller than or equal to 128.";
         }
 
-        if (! is_null($this->container['email']) && (mb_strlen($this->container['email']) < 5)) {
+        if (!is_null($this->container['email']) && (mb_strlen($this->container['email']) < 5)) {
             $invalidProperties[] = "invalid value for 'email', the character length must be bigger than or equal to 5.";
         }
 
         $allowedValues = $this->getPackagingAllowableValues();
-        if (! is_null($this->container['packaging']) && ! in_array($this->container['packaging'], $allowedValues, true)) {
+        if (!is_null($this->container['packaging']) && !in_array($this->container['packaging'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'packaging', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -268,7 +266,7 @@ class Administration implements ArrayAccess, ModelInterface
         }
 
         $allowedValues = $this->getPackageVersionAllowableValues();
-        if (! is_null($this->container['package_version']) && ! in_array($this->container['package_version'], $allowedValues, true)) {
+        if (!is_null($this->container['package_version']) && !in_array($this->container['package_version'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'package_version', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -289,6 +287,7 @@ class Administration implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets id
      *
@@ -302,7 +301,8 @@ class Administration implements ArrayAccess, ModelInterface
     /**
      * Sets id
      *
-     * @param  int  $id  The Storecove assigned id for the Administration.
+     * @param int $id The Storecove assigned id for the Administration.
+     *
      * @return $this
      */
     public function setId($id)
@@ -325,7 +325,8 @@ class Administration implements ArrayAccess, ModelInterface
     /**
      * Sets sender_email_identity_id
      *
-     * @param  int  $sender_email_identity_id  The id of the SenderEmailIdentity. If not provided, the Storecove default sender will be used
+     * @param int $sender_email_identity_id The id of the SenderEmailIdentity. If not provided, the Storecove default sender will be used
+     *
      * @return $this
      */
     public function setSenderEmailIdentityId($sender_email_identity_id)
@@ -348,7 +349,8 @@ class Administration implements ArrayAccess, ModelInterface
     /**
      * Sets legal_entity_id
      *
-     * @param  int  $legal_entity_id  The LegalEntity the Administration belongs to.
+     * @param int $legal_entity_id The LegalEntity the Administration belongs to.
+     *
      * @return $this
      */
     public function setLegalEntityId($legal_entity_id)
@@ -371,15 +373,16 @@ class Administration implements ArrayAccess, ModelInterface
     /**
      * Sets email
      *
-     * @param  string  $email  The email address to send the received document to
+     * @param string $email The email address to send the received document to
+     *
      * @return $this
      */
     public function setEmail($email)
     {
-        if (! is_null($email) && (mb_strlen($email) > 128)) {
+        if (!is_null($email) && (mb_strlen($email) > 128)) {
             throw new \InvalidArgumentException('invalid length for $email when calling Administration., must be smaller than or equal to 128.');
         }
-        if (! is_null($email) && (mb_strlen($email) < 5)) {
+        if (!is_null($email) && (mb_strlen($email) < 5)) {
             throw new \InvalidArgumentException('invalid length for $email when calling Administration., must be bigger than or equal to 5.');
         }
 
@@ -401,13 +404,14 @@ class Administration implements ArrayAccess, ModelInterface
     /**
      * Sets packaging
      *
-     * @param  string  $packaging  How to package the purchase invoice.
+     * @param string $packaging How to package the purchase invoice.
+     *
      * @return $this
      */
     public function setPackaging($packaging)
     {
         $allowedValues = $this->getPackagingAllowableValues();
-        if (! is_null($packaging) && ! in_array($packaging, $allowedValues, true)) {
+        if (!is_null($packaging) && !in_array($packaging, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'packaging', must be one of '%s'",
@@ -433,13 +437,14 @@ class Administration implements ArrayAccess, ModelInterface
     /**
      * Sets package_version
      *
-     * @param  string  $package_version  The version of the package.
+     * @param string $package_version The version of the package.
+     *
      * @return $this
      */
     public function setPackageVersion($package_version)
     {
         $allowedValues = $this->getPackageVersionAllowableValues();
-        if (! is_null($package_version) && ! in_array($package_version, $allowedValues, true)) {
+        if (!is_null($package_version) && !in_array($package_version, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'package_version', must be one of '%s'",
@@ -451,12 +456,12 @@ class Administration implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -466,7 +471,8 @@ class Administration implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -477,8 +483,9 @@ class Administration implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -493,7 +500,8 @@ class Administration implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -518,3 +526,5 @@ class Administration implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

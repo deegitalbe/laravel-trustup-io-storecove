@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -29,45 +28,43 @@
  */
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
-
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * LegalEntity Class Doc Comment
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class LegalEntity extends LegalEntityUpdate
+class LegalEntity extends LegalEntityUpdate 
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'LegalEntity';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
-        'api_keys' => 'string[]',
+        'api_keys' => 'string[]'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
-        'api_keys' => null,
+        'api_keys' => null
     ];
 
     /**
@@ -97,7 +94,7 @@ class LegalEntity extends LegalEntityUpdate
      * @var string[]
      */
     protected static $attributeMap = [
-        'api_keys' => 'api_keys',
+        'api_keys' => 'api_keys'
     ];
 
     /**
@@ -106,7 +103,7 @@ class LegalEntity extends LegalEntityUpdate
      * @var string[]
      */
     protected static $setters = [
-        'api_keys' => 'setApiKeys',
+        'api_keys' => 'setApiKeys'
     ];
 
     /**
@@ -115,7 +112,7 @@ class LegalEntity extends LegalEntityUpdate
      * @var string[]
      */
     protected static $getters = [
-        'api_keys' => 'getApiKeys',
+        'api_keys' => 'getApiKeys'
     ];
 
     /**
@@ -159,13 +156,18 @@ class LegalEntity extends LegalEntityUpdate
         return self::$swaggerModelName;
     }
 
+    
+
+    
+
+
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         parent::__construct($data);
 
@@ -195,6 +197,7 @@ class LegalEntity extends LegalEntityUpdate
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets api_keys
      *
@@ -208,7 +211,8 @@ class LegalEntity extends LegalEntityUpdate
     /**
      * Sets api_keys
      *
-     * @param  string[]  $api_keys  api_keys
+     * @param string[] $api_keys api_keys
+     *
      * @return $this
      */
     public function setApiKeys($api_keys)
@@ -217,12 +221,12 @@ class LegalEntity extends LegalEntityUpdate
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -232,7 +236,8 @@ class LegalEntity extends LegalEntityUpdate
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -243,8 +248,9 @@ class LegalEntity extends LegalEntityUpdate
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -259,7 +265,8 @@ class LegalEntity extends LegalEntityUpdate
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -284,3 +291,5 @@ class LegalEntity extends LegalEntityUpdate
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,47 +29,46 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * WebhookInstance Class Doc Comment
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class WebhookInstance implements ArrayAccess, ModelInterface
+class WebhookInstance implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'WebhookInstance';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'guid' => 'string',
-        'body' => 'string',
+        'body' => 'string'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'guid' => 'uuid',
-        'body' => null,
+        'body' => null
     ];
 
     /**
@@ -101,7 +99,7 @@ class WebhookInstance implements ArrayAccess, ModelInterface
      */
     protected static $attributeMap = [
         'guid' => 'guid',
-        'body' => 'body',
+        'body' => 'body'
     ];
 
     /**
@@ -111,7 +109,7 @@ class WebhookInstance implements ArrayAccess, ModelInterface
      */
     protected static $setters = [
         'guid' => 'setGuid',
-        'body' => 'setBody',
+        'body' => 'setBody'
     ];
 
     /**
@@ -121,7 +119,7 @@ class WebhookInstance implements ArrayAccess, ModelInterface
      */
     protected static $getters = [
         'guid' => 'getGuid',
-        'body' => 'getBody',
+        'body' => 'getBody'
     ];
 
     /**
@@ -165,6 +163,10 @@ class WebhookInstance implements ArrayAccess, ModelInterface
         return self::$swaggerModelName;
     }
 
+    
+
+    
+
     /**
      * Associative array for storing property values
      *
@@ -175,10 +177,10 @@ class WebhookInstance implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['guid'] = isset($data['guid']) ? $data['guid'] : null;
         $this->container['body'] = isset($data['body']) ? $data['body'] : null;
@@ -207,6 +209,7 @@ class WebhookInstance implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets guid
      *
@@ -220,7 +223,8 @@ class WebhookInstance implements ArrayAccess, ModelInterface
     /**
      * Sets guid
      *
-     * @param  string  $guid  The GUID of the WebhookInstance. Use this to delete it.
+     * @param string $guid The GUID of the WebhookInstance. Use this to delete it.
+     *
      * @return $this
      */
     public function setGuid($guid)
@@ -243,7 +247,8 @@ class WebhookInstance implements ArrayAccess, ModelInterface
     /**
      * Sets body
      *
-     * @param  string  $body  The webhook body that would have been pushed if this were a push-mode webhook.
+     * @param string $body The webhook body that would have been pushed if this were a push-mode webhook.
+     *
      * @return $this
      */
     public function setBody($body)
@@ -252,12 +257,12 @@ class WebhookInstance implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -267,7 +272,8 @@ class WebhookInstance implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -278,8 +284,9 @@ class WebhookInstance implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -294,7 +301,8 @@ class WebhookInstance implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -319,3 +327,5 @@ class WebhookInstance implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

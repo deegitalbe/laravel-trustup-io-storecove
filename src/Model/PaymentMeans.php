@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,36 +29,34 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * PaymentMeans Class Doc Comment
  *
  * @category Class
- *
  * @description A PaymentMeans is a way to pay the invoice.
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PaymentMeans implements ArrayAccess, ModelInterface
+class PaymentMeans implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'PaymentMeans';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'code' => 'string',
         'account' => 'string',
@@ -67,15 +64,16 @@ class PaymentMeans implements ArrayAccess, ModelInterface
         'holder' => 'string',
         'network' => 'string',
         'mandate' => 'string',
+        'sepa_creditor_reference' => 'string',
         'payment_id' => 'string',
-        'amount' => 'float',
+        'amount' => 'float'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'code' => null,
         'account' => null,
@@ -83,8 +81,9 @@ class PaymentMeans implements ArrayAccess, ModelInterface
         'holder' => null,
         'network' => null,
         'mandate' => null,
+        'sepa_creditor_reference' => null,
         'payment_id' => null,
-        'amount' => null,
+        'amount' => null
     ];
 
     /**
@@ -120,8 +119,9 @@ class PaymentMeans implements ArrayAccess, ModelInterface
         'holder' => 'holder',
         'network' => 'network',
         'mandate' => 'mandate',
+        'sepa_creditor_reference' => 'sepa_creditor_reference',
         'payment_id' => 'paymentId',
-        'amount' => 'amount',
+        'amount' => 'amount'
     ];
 
     /**
@@ -136,8 +136,9 @@ class PaymentMeans implements ArrayAccess, ModelInterface
         'holder' => 'setHolder',
         'network' => 'setNetwork',
         'mandate' => 'setMandate',
+        'sepa_creditor_reference' => 'setSepaCreditorReference',
         'payment_id' => 'setPaymentId',
-        'amount' => 'setAmount',
+        'amount' => 'setAmount'
     ];
 
     /**
@@ -152,8 +153,9 @@ class PaymentMeans implements ArrayAccess, ModelInterface
         'holder' => 'getHolder',
         'network' => 'getNetwork',
         'mandate' => 'getMandate',
+        'sepa_creditor_reference' => 'getSepaCreditorReference',
         'payment_id' => 'getPaymentId',
-        'amount' => 'getAmount',
+        'amount' => 'getAmount'
     ];
 
     /**
@@ -198,63 +200,37 @@ class PaymentMeans implements ArrayAccess, ModelInterface
     }
 
     const CODE_CREDIT_TRANSFER = 'credit_transfer';
-
     const CODE_SEPA_CREDIT_TRANSFER = 'sepa_credit_transfer';
-
     const CODE_DEBIT_TRANSFER = 'debit_transfer';
-
     const CODE_DIRECT_DEBIT = 'direct_debit';
-
     const CODE_SEPA_DIRECT_DEBIT = 'sepa_direct_debit';
-
     const CODE_CARD = 'card';
-
     const CODE_BANK_CARD = 'bank_card';
-
     const CODE_CREDIT_CARD = 'credit_card';
-
     const CODE_ONLINE_PAYMENT_SERVICE = 'online_payment_service';
-
     const CODE_CASH = 'cash';
-
     const CODE_BANK_CHEQUE = 'bank_cheque';
-
     const CODE_CASHIERS_CHEQUE = 'cashiers_cheque';
-
     const CODE_STANDING_AGREEMENT = 'standing_agreement';
-
     const CODE_AUNZ_NPP = 'aunz_npp';
-
     const CODE_AUNZ_NPP_PAYID = 'aunz_npp_payid';
-
     const CODE_AUNZ_NPP_PAYTO = 'aunz_npp_payto';
-
     const CODE_AUNZ_BPAY = 'aunz_bpay';
-
     const CODE_AUNZ_POSTBILLPAY = 'aunz_postbillpay';
-
     const CODE_AUNZ_URI = 'aunz_uri';
-
     const CODE_SE_BANKGIRO = 'se_bankgiro';
-
     const CODE_SE_PLUSGIRO = 'se_plusgiro';
-
     const CODE_SG_GIRO = 'sg_giro';
-
     const CODE_SG_CARD = 'sg_card';
-
     const CODE_SG_PAYNOW = 'sg_paynow';
-
     const CODE_IT_MAV = 'it_mav';
-
     const CODE_IT_PAGOPA = 'it_pagopa';
-
     const CODE_NL_GA_BENEFICIARY = 'nl_ga_beneficiary';
-
     const CODE_NL_GA_GACCOUNT = 'nl_ga_gaccount';
-
     const CODE_UNDEFINED = 'undefined';
+    
 
+    
     /**
      * Gets allowable values of the enum
      *
@@ -294,6 +270,7 @@ class PaymentMeans implements ArrayAccess, ModelInterface
             self::CODE_UNDEFINED,
         ];
     }
+    
 
     /**
      * Associative array for storing property values
@@ -305,10 +282,10 @@ class PaymentMeans implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['code'] = isset($data['code']) ? $data['code'] : null;
         $this->container['account'] = isset($data['account']) ? $data['account'] : null;
@@ -316,6 +293,7 @@ class PaymentMeans implements ArrayAccess, ModelInterface
         $this->container['holder'] = isset($data['holder']) ? $data['holder'] : null;
         $this->container['network'] = isset($data['network']) ? $data['network'] : null;
         $this->container['mandate'] = isset($data['mandate']) ? $data['mandate'] : null;
+        $this->container['sepa_creditor_reference'] = isset($data['sepa_creditor_reference']) ? $data['sepa_creditor_reference'] : null;
         $this->container['payment_id'] = isset($data['payment_id']) ? $data['payment_id'] : null;
         $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
     }
@@ -333,7 +311,7 @@ class PaymentMeans implements ArrayAccess, ModelInterface
             $invalidProperties[] = "'code' can't be null";
         }
         $allowedValues = $this->getCodeAllowableValues();
-        if (! is_null($this->container['code']) && ! in_array($this->container['code'], $allowedValues, true)) {
+        if (!is_null($this->container['code']) && !in_array($this->container['code'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'code', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -354,6 +332,7 @@ class PaymentMeans implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets code
      *
@@ -367,13 +346,14 @@ class PaymentMeans implements ArrayAccess, ModelInterface
     /**
      * Sets code
      *
-     * @param  string  $code  How the invoice has been / will be paid. The code determines which type of PaymentMeans is used and which fields are mandatory. ++++ <ul>    <li>        <strong>cash</strong><br/>        The invoice was/is paid in cash.<br/>    </li>    <li>        <strong>bank_cheque</strong><br/>        The invoice was/is paid via a bank cheque.<br/>    </li>    <li>        <strong>cashiers_cheque</strong><br/>        The invoice was/is paid via a cashiers cheque.<br/>    </li>    <li>        <strong>credit_transfer, sepa_credit_transfer</strong><br/>        The amount is to be transfered into a bank account. Relevant additional fields:<br/>        <ul>            <li>                <strong>account</strong><br/>                The account number. For New Zealand, this should hold the full 16 digit bank account number. <strong>Mandatory</strong>.            </li>            <li>                <strong>branche_code</strong><br/>                In case of an IBAN, the account alone number is sufficient. In other cases, like a BBAN, a BIC code or other additional identifier is required. For Australia, the BSB goes here. Optional.            </li>            <li>                <strong>holder</strong><br/>                The account holder name. Optional.            </li>        </ul>        Note that using 'sepa_credit_transfer' will result in the PaymentMeansCode of '58' being used in UBL documents. Otherwise, the more generic '30' will be used.    </li>    <li>        <strong>debit_transfer</strong><br/>        Used for CreditNotes. The amount is to be transfered by the sender of the document into the bank account of the receiver of the document. Relevant additional fields:<br/>        <ul>            <li>                <strong>account</strong><br/>                The account number. For New Zealand, this should hold the full 16 digit bank account number. <strong>Mandatory</strong>.            </li>            <li>                <strong>branche_code</strong><br/>                In case of an IBAN, the account alone number is sufficient. In other cases, like a BBAN, a BIC code or other additional identifier is required. For Australia, the BSB goes here. Optional.            </li>        </ul>    </li>    <li>        <strong>direct_debit, sepa_direct_debit</strong><br/>        Direct debit. Relevant additional fields:<br/>        <ul>            <li>                <strong>account</strong><br/>                The account number from which the funds will be debited. <strong>Mandatory</strong>.            </li>            <li>                <strong>mandate</strong><br/>                The direct debit mandate id. Mandatory.            </li>            <li>                <strong>holder</strong><br/>                The account holder name. Optional.            </li>        </ul>        Note that using 'sepa_direct_debit' will result in the PaymentMeansCode of '59' being used in UBL documents. Otherwise, the more generic '49' will be used.    </li>    <li>        <strong>card, credit_card, bank_card (credit_card, bank_card are deprecated)</strong><br/>        E.g. credit or debit card. Relevant additional fields:<br/>        <ul>            <li>                <strong>account</strong><br/>                The card number, but never more than the last four digits. <strong>Mandatory</strong>.            </li>            <li>                <strong>holder</strong><br/>                The account holder name. Optional.            </li>            <li>                <strong>network</strong><br/>                The payment network, e.g. VISA, SEPA. Optional, but recommended since a default of \"N/A\" may be used if not provided.            </li>        </ul>    </li>    <li>        <strong>online_payment_service</strong><br/>        An online payment service has been or will be used. Relevant additional fields:<br/>        <ul>            <li>                <strong>network</strong><br/>                The payment network, e.g. PayPal. <strong>Mandatory unless url is provided</strong>.            </li>            <li>                <strong>url</strong><br/>                The URL to execute the payment. <strong>Mandatory unless network is provided</strong>.            </li>        </ul>        It is possible to provide both url and network. Note that for UBL, in countries where this payment means is not allowed, this will translate into an AdditionalDocumentReference.Attachment.ExternalReference element.    </li>    <li>        <strong>standing_agreement</strong><br/>        The payment means has been agreed out of band. Relevant additional fields: none.    </li>    <li>        <strong>aunz_npp_payid, aunz_npp (aunz_npp is deprecated)</strong><br/>        Australia/New Zealand New Payments Platform. Relevant additional fields:<br/>        <ul>            <li>                <strong>account</strong><br/>                PayID. May be an email address, ABN, mobile phone number etc. <strong>Mandatory</strong>.            </li>        </ul>    </li>    <li>        <strong>aunz_npp_payto</strong><br/>        Australia/New Zealand New Payments Platform. Relevant additional fields:<br/>        <ul>            <li>                <strong>account</strong><br/>                Account number. <strong>Mandatory</strong>.            </li>            <li>                <strong>mandate</strong><br/>                Mandate/direct debit authority reference/PayTo Agreement. <strong>Mandatory</strong>.            </li>        </ul>    </li>    <li>        <strong>aunz_bpay</strong><br/>        Australia/New Zealand New Payments Platform. Relevant additional fields:<br/>        <ul>            <li>                <strong>account</strong><br/>                Biller code. <strong>Mandatory</strong>.            </li>            <li>                <strong>holder</strong><br/>                The account holder name. Optional.            </li>        </ul>    </li>    <li>        <strong>aunz_postbillpay</strong><br/>        Australia/New Zealand New Payments Platform. Relevant additional fields:<br/>        <ul>            <li>                <strong>account</strong><br/>                Biller code. <strong>Mandatory.</strong>.            </li>            <li>                <strong>holder</strong><br/>                The account holder name. Optional.            </li>        </ul>    </li>    <li>        <strong>aunz_uri</strong><br/>        Australia/New Zealand URI. Relevant additional fields:<br/>        <ul>            <li>                <strong>account</strong><br/>                Payment URI. <strong>Mandatory.</strong>.            </li>            <li>                <strong>holder</strong><br/>                The account holder name. Optional.            </li>        </ul>    </li>    <li>        <strong>se_bankgiro</strong><br/>        Swedish Bankgiro. Relevant additional fields:<br/>        <ul>            <li>                <strong>account</strong><br/>                The account number from which the funds will be debited, 7 or 8 digits. <strong>Mandatory</strong>.            </li>            <li>                <strong>holder</strong><br/>                The account holder name. Optional.            </li>        </ul>        <br/>    </li>    <li>        <strong>se_plusgiro</strong><br/>        Swedish Plusgiro. Relevant additional fields:<br/>        <ul>            <li>                <strong>account</strong><br/>                The account number from which the funds will be debited, 2 - 8 digits. <strong>Mandatory</strong>.            </li>            <li>                <strong>holder</strong><br/>                The account holder name. Optional.            </li>        </ul>        <br/>    </li>    <li>        <strong>sg_giro</strong><br/>        Singapore GIRO-system (direct debit). Relevant additional fields: none.    </li>    <li>        <strong>sg_card</strong><br/>        Singapore CreditCard payment. Relevant additional fields: none.    </li>    <li>        <strong>sg_paynow</strong><br/>        Singapore PayNow Corporate.  Relevant additional fields:<br/>        <ul>            <li>                <strong>account</strong><br/>                The UEN, format: UENxxxxxxxxxx. <strong>Mandatory</strong>.            </li>        </ul>    </li>    <li>        <strong>it_mav</strong><br/>        Italy MAV payment.    </li>    <li>        <strong>it_pagopa</strong><br/>        Italy PagoPA payment.    </li></ul> ++++
+     * @param string $code How the invoice has been / will be paid. The code determines which type of PaymentMeans is used and which fields are mandatory. ++++ <ul>    <li>        <strong>cash</strong><br/>        The invoice was/is paid in cash.<br/>    </li>    <li>        <strong>bank_cheque</strong><br/>        The invoice was/is paid via a bank cheque.<br/>    </li>    <li>        <strong>cashiers_cheque</strong><br/>        The invoice was/is paid via a cashiers cheque.<br/>    </li>    <li>        <strong>credit_transfer, sepa_credit_transfer</strong><br/>        The amount is to be transfered into a bank account. Relevant additional fields:<br/>        <ul>            <li>                <strong>account</strong><br/>                The account number. For New Zealand, this should hold the full 16 digit bank account number. <strong>Mandatory</strong>.            </li>            <li>                <strong>branche_code</strong><br/>                In case of an IBAN, the account alone number is sufficient. In other cases, like a BBAN, a BIC code or other additional identifier is required. For Australia, the BSB goes here. Optional.            </li>            <li>                <strong>holder</strong><br/>                The account holder name. Optional.            </li>        </ul>        Note that using 'sepa_credit_transfer' will result in the PaymentMeansCode of '58' being used in UBL documents. Otherwise, the more generic '30' will be used.    </li>    <li>        <strong>debit_transfer</strong><br/>        Used for CreditNotes. The amount is to be transfered by the sender of the document into the bank account of the receiver of the document. Relevant additional fields:<br/>        <ul>            <li>                <strong>account</strong><br/>                The account number. For New Zealand, this should hold the full 16 digit bank account number. <strong>Mandatory</strong>.            </li>            <li>                <strong>branche_code</strong><br/>                In case of an IBAN, the account alone number is sufficient. In other cases, like a BBAN, a BIC code or other additional identifier is required. For Australia, the BSB goes here. Optional.            </li>        </ul>    </li>    <li>        <strong>direct_debit, sepa_direct_debit</strong><br/>        Direct debit. Relevant additional fields:<br/>        <ul>            <li>                <strong>account</strong><br/>                The account number from which the funds will be debited. <strong>Mandatory</strong>.            </li>            <li>                <strong>mandate</strong><br/>                The direct debit mandate id. Mandatory.            </li>            <li>                <strong>holder</strong><br/>                The account holder name. Optional.            </li>        </ul>        Note that using 'sepa_direct_debit' will result in the PaymentMeansCode of '59' being used in UBL documents. Otherwise, the more generic '49' will be used.    </li>    <li>        <strong>card, credit_card, bank_card (credit_card, bank_card are deprecated)</strong><br/>        E.g. credit or debit card. Relevant additional fields:<br/>        <ul>            <li>                <strong>account</strong><br/>                The card number, but never more than the last four digits. <strong>Mandatory</strong>.            </li>            <li>                <strong>holder</strong><br/>                The account holder name. Optional.            </li>            <li>                <strong>network</strong><br/>                The payment network, e.g. VISA, SEPA. Optional, but recommended since a default of \"N/A\" may be used if not provided.            </li>        </ul>    </li>    <li>        <strong>online_payment_service</strong><br/>        An online payment service has been or will be used. Relevant additional fields:<br/>        <ul>            <li>                <strong>network</strong><br/>                The payment network, e.g. PayPal. <strong>Mandatory unless url is provided</strong>.            </li>            <li>                <strong>url</strong><br/>                The URL to execute the payment. <strong>Mandatory unless network is provided</strong>.            </li>        </ul>        It is possible to provide both url and network. Note that for UBL, in countries where this payment means is not allowed, this will translate into an AdditionalDocumentReference.Attachment.ExternalReference element.    </li>    <li>        <strong>standing_agreement</strong><br/>        The payment means has been agreed out of band. Relevant additional fields: none.    </li>    <li>        <strong>aunz_npp_payid, aunz_npp (aunz_npp is deprecated)</strong><br/>        Australia/New Zealand New Payments Platform. Relevant additional fields:<br/>        <ul>            <li>                <strong>account</strong><br/>                PayID. May be an email address, ABN, mobile phone number etc. <strong>Mandatory</strong>.            </li>        </ul>    </li>    <li>        <strong>aunz_npp_payto</strong><br/>        Australia/New Zealand New Payments Platform. Relevant additional fields:<br/>        <ul>            <li>                <strong>account</strong><br/>                Account number. <strong>Mandatory</strong>.            </li>            <li>                <strong>mandate</strong><br/>                Mandate/direct debit authority reference/PayTo Agreement. <strong>Mandatory</strong>.            </li>        </ul>    </li>    <li>        <strong>aunz_bpay</strong><br/>        Australia/New Zealand New Payments Platform. Relevant additional fields:<br/>        <ul>            <li>                <strong>account</strong><br/>                Biller code. <strong>Mandatory</strong>.            </li>            <li>                <strong>holder</strong><br/>                The account holder name. Optional.            </li>        </ul>    </li>    <li>        <strong>aunz_postbillpay</strong><br/>        Australia/New Zealand New Payments Platform. Relevant additional fields:<br/>        <ul>            <li>                <strong>account</strong><br/>                Biller code. <strong>Mandatory.</strong>.            </li>            <li>                <strong>holder</strong><br/>                The account holder name. Optional.            </li>        </ul>    </li>    <li>        <strong>aunz_uri</strong><br/>        Australia/New Zealand URI. Relevant additional fields:<br/>        <ul>            <li>                <strong>account</strong><br/>                Payment URI. <strong>Mandatory.</strong>.            </li>            <li>                <strong>holder</strong><br/>                The account holder name. Optional.            </li>        </ul>    </li>    <li>        <strong>se_bankgiro</strong><br/>        Swedish Bankgiro. Relevant additional fields:<br/>        <ul>            <li>                <strong>account</strong><br/>                The account number from which the funds will be debited, 7 or 8 digits. <strong>Mandatory</strong>.            </li>            <li>                <strong>holder</strong><br/>                The account holder name. Optional.            </li>        </ul>        <br/>    </li>    <li>        <strong>se_plusgiro</strong><br/>        Swedish Plusgiro. Relevant additional fields:<br/>        <ul>            <li>                <strong>account</strong><br/>                The account number from which the funds will be debited, 2 - 8 digits. <strong>Mandatory</strong>.            </li>            <li>                <strong>holder</strong><br/>                The account holder name. Optional.            </li>        </ul>        <br/>    </li>    <li>        <strong>sg_giro</strong><br/>        Singapore GIRO-system (direct debit). Relevant additional fields: none.    </li>    <li>        <strong>sg_card</strong><br/>        Singapore CreditCard payment. Relevant additional fields: none.    </li>    <li>        <strong>sg_paynow</strong><br/>        Singapore PayNow Corporate.  Relevant additional fields:<br/>        <ul>            <li>                <strong>account</strong><br/>                The UEN, format: UENxxxxxxxxxx. <strong>Mandatory</strong>.            </li>        </ul>    </li>    <li>        <strong>it_mav</strong><br/>        Italy MAV payment.    </li>    <li>        <strong>it_pagopa</strong><br/>        Italy PagoPA payment.    </li></ul> ++++
+     *
      * @return $this
      */
     public function setCode($code)
     {
         $allowedValues = $this->getCodeAllowableValues();
-        if (! in_array($code, $allowedValues, true)) {
+        if (!in_array($code, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'code', must be one of '%s'",
@@ -399,7 +379,8 @@ class PaymentMeans implements ArrayAccess, ModelInterface
     /**
      * Sets account
      *
-     * @param  string  $account  The account number.
+     * @param string $account The account number.
+     *
      * @return $this
      */
     public function setAccount($account)
@@ -422,7 +403,8 @@ class PaymentMeans implements ArrayAccess, ModelInterface
     /**
      * Sets branche_code
      *
-     * @param  string  $branche_code  The bank branch code. Not required for IBAN numbers. Often referred to as Swift or Bic code.
+     * @param string $branche_code The bank branch code. Not required for IBAN numbers. Often referred to as Swift or Bic code.
+     *
      * @return $this
      */
     public function setBrancheCode($branche_code)
@@ -445,7 +427,8 @@ class PaymentMeans implements ArrayAccess, ModelInterface
     /**
      * Sets holder
      *
-     * @param  string  $holder  The name of the account holder.
+     * @param string $holder The name of the account holder.
+     *
      * @return $this
      */
     public function setHolder($holder)
@@ -468,7 +451,8 @@ class PaymentMeans implements ArrayAccess, ModelInterface
     /**
      * Sets network
      *
-     * @param  string  $network  The name of the card network, e.g. VISA.
+     * @param string $network The name of the card network, e.g. VISA.
+     *
      * @return $this
      */
     public function setNetwork($network)
@@ -491,12 +475,37 @@ class PaymentMeans implements ArrayAccess, ModelInterface
     /**
      * Sets mandate
      *
-     * @param  string  $mandate  The direct debit mandate code.
+     * @param string $mandate The direct debit mandate code.
+     *
      * @return $this
      */
     public function setMandate($mandate)
     {
         $this->container['mandate'] = $mandate;
+
+        return $this;
+    }
+
+    /**
+     * Gets sepa_creditor_reference
+     *
+     * @return string
+     */
+    public function getSepaCreditorReference()
+    {
+        return $this->container['sepa_creditor_reference'];
+    }
+
+    /**
+     * Sets sepa_creditor_reference
+     *
+     * @param string $sepa_creditor_reference The SEPA creditor reference.
+     *
+     * @return $this
+     */
+    public function setSepaCreditorReference($sepa_creditor_reference)
+    {
+        $this->container['sepa_creditor_reference'] = $sepa_creditor_reference;
 
         return $this;
     }
@@ -514,7 +523,8 @@ class PaymentMeans implements ArrayAccess, ModelInterface
     /**
      * Sets payment_id
      *
-     * @param  string  $payment_id  The payment id that you will use to match the payment against the invoice.
+     * @param string $payment_id The payment id that you will use to match the payment against the invoice.
+     *
      * @return $this
      */
     public function setPaymentId($payment_id)
@@ -537,7 +547,8 @@ class PaymentMeans implements ArrayAccess, ModelInterface
     /**
      * Sets amount
      *
-     * @param  float  $amount  The amount to be paid for this category. Only used for Dutch G-Account invoices. The amount nl_ga_beneficiary + amount nl_ga_gaccount must add up to the amountExcludingVat
+     * @param float $amount The amount to be paid for this category. Only used for Dutch G-Account invoices. The amount nl_ga_beneficiary + amount nl_ga_gaccount must add up to the amountExcludingVat
+     *
      * @return $this
      */
     public function setAmount($amount)
@@ -546,12 +557,12 @@ class PaymentMeans implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -561,7 +572,8 @@ class PaymentMeans implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -572,8 +584,9 @@ class PaymentMeans implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -588,7 +601,8 @@ class PaymentMeans implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -613,3 +627,5 @@ class PaymentMeans implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,36 +29,34 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * Reference Class Doc Comment
  *
  * @category Class
- *
  * @description A reference to a document.
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Reference implements ArrayAccess, ModelInterface
+class Reference implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'Reference';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'document_type' => 'string',
         'document_type_code' => 'string',
@@ -73,14 +70,14 @@ class Reference implements ArrayAccess, ModelInterface
         'document_id_list_version_id' => 'string',
         'line_id' => 'string',
         'issue_date' => 'string',
-        'document_description' => 'string',
+        'document_description' => 'string'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'document_type' => null,
         'document_type_code' => null,
@@ -94,7 +91,7 @@ class Reference implements ArrayAccess, ModelInterface
         'document_id_list_version_id' => null,
         'line_id' => null,
         'issue_date' => null,
-        'document_description' => null,
+        'document_description' => null
     ];
 
     /**
@@ -136,7 +133,7 @@ class Reference implements ArrayAccess, ModelInterface
         'document_id_list_version_id' => 'documentIdListVersionId',
         'line_id' => 'lineId',
         'issue_date' => 'issueDate',
-        'document_description' => 'documentDescription',
+        'document_description' => 'documentDescription'
     ];
 
     /**
@@ -157,7 +154,7 @@ class Reference implements ArrayAccess, ModelInterface
         'document_id_list_version_id' => 'setDocumentIdListVersionId',
         'line_id' => 'setLineId',
         'issue_date' => 'setIssueDate',
-        'document_description' => 'setDocumentDescription',
+        'document_description' => 'setDocumentDescription'
     ];
 
     /**
@@ -178,7 +175,7 @@ class Reference implements ArrayAccess, ModelInterface
         'document_id_list_version_id' => 'getDocumentIdListVersionId',
         'line_id' => 'getLineId',
         'issue_date' => 'getIssueDate',
-        'document_description' => 'getDocumentDescription',
+        'document_description' => 'getDocumentDescription'
     ];
 
     /**
@@ -223,57 +220,34 @@ class Reference implements ArrayAccess, ModelInterface
     }
 
     const DOCUMENT_TYPE_PURCHASE_ORDER = 'purchase_order';
-
     const DOCUMENT_TYPE_REPLACED_ORDER = 'replaced_order';
-
     const DOCUMENT_TYPE_BUYER_REFERENCE = 'buyer_reference';
-
     const DOCUMENT_TYPE_BILLING = 'billing';
-
     const DOCUMENT_TYPE_BILLING_UUID = 'billing_uuid';
-
     const DOCUMENT_TYPE_SALES_ORDER = 'sales_order';
-
     const DOCUMENT_TYPE_CONTRACT = 'contract';
-
     const DOCUMENT_TYPE_DESPATCH_ADVICE = 'despatch_advice';
-
     const DOCUMENT_TYPE_ORIGINATOR = 'originator';
-
     const DOCUMENT_TYPE_RECEIPT = 'receipt';
-
     const DOCUMENT_TYPE_PROJECT = 'project';
-
     const DOCUMENT_TYPE_QUOTATION = 'quotation';
-
     const DOCUMENT_TYPE_PAYMENT_URL = 'payment_url';
-
     const DOCUMENT_TYPE_ADDITIONAL = 'additional';
-
     const DOCUMENT_TYPE_CERTIFIED_EXPORTER_AUTHORIZATION = 'certified_exporter_authorization';
-
     const DOCUMENT_TYPE_FREE_TRADE_AGREEMENT = 'free_trade_agreement';
-
     const DOCUMENT_TYPE_MY_CUSTOMS_FORM_1_9 = 'my_customs_form_1_9';
-
     const DOCUMENT_TYPE_MY_CUSTOMS_FORM_2 = 'my_customs_form_2';
-
     const DOCUMENT_TYPE_ITEM_CLASSIFICATION_CODE = 'item_classification_code';
-
     const DOCUMENT_TYPE_ITEM_COMMODITY_CODE = 'item_commodity_code';
-
     const DOCUMENT_TYPE_ITEM_SPECIFICATION = 'item_specification';
-
     const DOCUMENT_TYPE_LINE_DOCUMENT_REFERENCE = 'line_document_reference';
-
     const DOCUMENT_TYPE_LINE_STANDARD_ITEM_IDENTIFICATION = 'line_standard_item_identification';
-
     const DOCUMENT_TYPE_LINE_SELLERS_ITEM_IDENTIFICATION = 'line_sellers_item_identification';
-
     const DOCUMENT_TYPE_LINE_BUYERS_ITEM_IDENTIFICATION = 'line_buyers_item_identification';
-
     const DOCUMENT_TYPE_LINE_PURCHASE_ORDER = 'line_purchase_order';
+    
 
+    
     /**
      * Gets allowable values of the enum
      *
@@ -310,6 +284,7 @@ class Reference implements ArrayAccess, ModelInterface
             self::DOCUMENT_TYPE_LINE_PURCHASE_ORDER,
         ];
     }
+    
 
     /**
      * Associative array for storing property values
@@ -321,10 +296,10 @@ class Reference implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['document_type'] = isset($data['document_type']) ? $data['document_type'] : null;
         $this->container['document_type_code'] = isset($data['document_type_code']) ? $data['document_type_code'] : null;
@@ -354,26 +329,26 @@ class Reference implements ArrayAccess, ModelInterface
             $invalidProperties[] = "'document_type' can't be null";
         }
         $allowedValues = $this->getDocumentTypeAllowableValues();
-        if (! is_null($this->container['document_type']) && ! in_array($this->container['document_type'], $allowedValues, true)) {
+        if (!is_null($this->container['document_type']) && !in_array($this->container['document_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'document_type', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
 
-        if (! is_null($this->container['document_type_code']) && ! preg_match('/^uncl1001_[0-9]{1,3}$/', $this->container['document_type_code'])) {
+        if (!is_null($this->container['document_type_code']) && !preg_match("/^uncl1001_[0-9]{1,3}$/", $this->container['document_type_code'])) {
             $invalidProperties[] = "invalid value for 'document_type_code', must be conform to the pattern /^uncl1001_[0-9]{1,3}$/.";
         }
 
-        if (! is_null($this->container['issue_date']) && ! preg_match('/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/', $this->container['issue_date'])) {
+        if (!is_null($this->container['issue_date']) && !preg_match("/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/", $this->container['issue_date'])) {
             $invalidProperties[] = "invalid value for 'issue_date', must be conform to the pattern /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/.";
         }
 
-        if (! is_null($this->container['document_description']) && (mb_strlen($this->container['document_description']) > 1024)) {
+        if (!is_null($this->container['document_description']) && (mb_strlen($this->container['document_description']) > 1024)) {
             $invalidProperties[] = "invalid value for 'document_description', the character length must be smaller than or equal to 1024.";
         }
 
-        if (! is_null($this->container['document_description']) && (mb_strlen($this->container['document_description']) < 2)) {
+        if (!is_null($this->container['document_description']) && (mb_strlen($this->container['document_description']) < 2)) {
             $invalidProperties[] = "invalid value for 'document_description', the character length must be bigger than or equal to 2.";
         }
 
@@ -391,6 +366,7 @@ class Reference implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets document_type
      *
@@ -404,13 +380,14 @@ class Reference implements ArrayAccess, ModelInterface
     /**
      * Sets document_type
      *
-     * @param  string  $document_type  The type of the referenced document. The following types are supported: ++++ <ul>    <li>        <b>purchase_order</b> (document level, Invoice)        <p>A reference to an order for this document, assigned by the buyer. Note that this often is a key field, since many receivers of invoices will use this field to automatically match the invoice to an order they placed. Many receivers refuse invoices that cannot be automatically matched, in particular government agencies. So it is highly recommended to fill this field whenever possible.</p>    </li>    <li>        <b>billing</b> (document level, Invoice)        <p>A reference to a billing document. For instance, credit notes may refer to an invoice they are a credit note for.</p>    </li>    <li>        <b>billing_uuid</b> (document level, Invoice)        <p>DEPRECATED. Use the billingUuid property of the 'billing' reference. A UUID reference to a billing document. For instance, credit notes may refer to an invoice they are a credit note for.</p>    </li>    <li>        <b>sales_order</b> (document level, Invoice + Order)        <p>A reference to an order for this document, assigned by the seller.</p>    </li>    <li>        <b>buyer_reference</b> (document level, Invoice, Order)        <p>The buyer's reference. Used for internal routing by the receiver. For orders, this becomes the customer reference which the receiver of the order should put back in the buyer reference field in the invoice.</p>    </li>    <li>        <b>additional</b> (document level, Invoice, Order)        <p>An additional reference. For UBL, this translates into an AdditionalDocumentReference without a EmbeddedDocumentBinaryObject. For the latter, use the attachments array.</p>    </li>    <li>        <b>contract</b> (document level, Invoice + Order)        <p>A reference to a contract or framework agreement that this document relates to.</p>    </li>    <li>        <b>despatch_advice</b> (document level, Invoice)        <p>A reference to a despatch advice for this document. In the FatturaPA, this is what will become the DDT.</p>    </li>    <li>        <b>originator</b> (document level, Invoice + Order)        <p>A reference to an originator document for this invoice.</p>    </li>    <li>        <b>receipt</b> (document level, Invoice)        <p>A reference to a receipt document for this document.</p>    </li>    <li>        <b>project</b> (document level, Invoice)        <p>A reference to a project document for this document.</p>    </li>    <li>        <b>quotation</b> (document level, Order)        <p>A reference to a quotation document for this document.</p>    </li>    <li>        <b>replaced_order</b> (document level, Order)        <p>A reference to the initial order that was rejected and a new order is issued.        </p>    </li>    <li>        <b>payment_url</b> (document level, Invoice)        <p>A to a payment URL for the invoice.</p>    </li>    <li>        <b>item_classification_code</b> (line level)        <p>A reference to a commodity classification / item classification code for this line. Note that in combination with the documentIdListId these can be used for Malaysia LHDNM to provide the product classification code (documentIdListId=CLASS) and the product tariff code (documentIdListId=PTC)</p>    </li>    <li>        <b>item_commodity_code</b> (line level)        <p>A reference to a commodity classification / commodity code for this line.</p>    </li>    <li>        <b>item_specification</b> (line level)        <p>A referece to an item specification document</p>    </li>    <li>        <b>line_document_reference</b> (line level)        <p>A reference to another document for this line.</p>    </li>    <li>        <b>line_standard_item_identification</b> (line level)        <p>A standard item identification.</p>    </li>    <li>        <b>line_sellers_item_identification</b> (line level)        <p>The seller's item identification.</p>    </li>    <li>        <b>line_buyers_item_identification</b> (line level)        <p>The buyer's item identification.</p>    </li>    <li>        <b>line_purchase_order</b> (line level)        <p>A reference to an order for this line, assigned by the buyer. Note not all outgoing document formats support this, so they may end up concatenated at the invoice level.</p>    </li></ul> ++++
+     * @param string $document_type The type of the referenced document. The following types are supported: ++++ <ul>    <li>        <b>purchase_order</b> (document level, Invoice)        <p>A reference to an order for this document, assigned by the buyer. Note that this often is a key field, since many receivers of invoices will use this field to automatically match the invoice to an order they placed. Many receivers refuse invoices that cannot be automatically matched, in particular government agencies. So it is highly recommended to fill this field whenever possible.</p>    </li>    <li>        <b>billing</b> (document level, Invoice)        <p>A reference to a billing document. For instance, credit notes may refer to an invoice they are a credit note for.</p>    </li>    <li>        <b>billing_uuid</b> (document level, Invoice)        <p>DEPRECATED. Use the billingUuid property of the 'billing' reference. A UUID reference to a billing document. For instance, credit notes may refer to an invoice they are a credit note for.</p>    </li>    <li>        <b>sales_order</b> (document level, Invoice + Order)        <p>A reference to an order for this document, assigned by the seller.</p>    </li>    <li>        <b>buyer_reference</b> (document level, Invoice, Order)        <p>The buyer's reference. Used for internal routing by the receiver. For orders, this becomes the customer reference which the receiver of the order should put back in the buyer reference field in the invoice.</p>    </li>    <li>        <b>additional</b> (document level, Invoice, Order)        <p>An additional reference. For UBL, this translates into an AdditionalDocumentReference without a EmbeddedDocumentBinaryObject. For the latter, use the attachments array.</p>    </li>    <li>        <b>contract</b> (document level, Invoice + Order)        <p>A reference to a contract or framework agreement that this document relates to.</p>    </li>    <li>        <b>despatch_advice</b> (document level, Invoice)        <p>A reference to a despatch advice for this document. In the FatturaPA, this is what will become the DDT.</p>    </li>    <li>        <b>originator</b> (document level, Invoice + Order)        <p>A reference to an originator document for this invoice.</p>    </li>    <li>        <b>receipt</b> (document level, Invoice)        <p>A reference to a receipt document for this document.</p>    </li>    <li>        <b>project</b> (document level, Invoice)        <p>A reference to a project document for this document.</p>    </li>    <li>        <b>quotation</b> (document level, Order)        <p>A reference to a quotation document for this document.</p>    </li>    <li>        <b>replaced_order</b> (document level, Order)        <p>A reference to the initial order that was rejected and a new order is issued.        </p>    </li>    <li>        <b>payment_url</b> (document level, Invoice)        <p>A to a payment URL for the invoice.</p>    </li>    <li>        <b>item_classification_code</b> (line level)        <p>A reference to a commodity classification / item classification code for this line. Note that in combination with the documentIdListId these can be used for Malaysia LHDNM to provide the product classification code (documentIdListId=CLASS) and the product tariff code (documentIdListId=PTC)</p>    </li>    <li>        <b>item_commodity_code</b> (line level)        <p>A reference to a commodity classification / commodity code for this line.</p>    </li>    <li>        <b>item_specification</b> (line level)        <p>A referece to an item specification document</p>    </li>    <li>        <b>line_document_reference</b> (line level)        <p>A reference to another document for this line.</p>    </li>    <li>        <b>line_standard_item_identification</b> (line level)        <p>A standard item identification.</p>    </li>    <li>        <b>line_sellers_item_identification</b> (line level)        <p>The seller's item identification.</p>    </li>    <li>        <b>line_buyers_item_identification</b> (line level)        <p>The buyer's item identification.</p>    </li>    <li>        <b>line_purchase_order</b> (line level)        <p>A reference to an order for this line, assigned by the buyer. Note not all outgoing document formats support this, so they may end up concatenated at the invoice level.</p>    </li></ul> ++++
+     *
      * @return $this
      */
     public function setDocumentType($document_type)
     {
         $allowedValues = $this->getDocumentTypeAllowableValues();
-        if (! in_array($document_type, $allowedValues, true)) {
+        if (!in_array($document_type, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'document_type', must be one of '%s'",
@@ -436,13 +413,14 @@ class Reference implements ArrayAccess, ModelInterface
     /**
      * Sets document_type_code
      *
-     * @param  string  $document_type_code  The code of the referenced document type. Only used for documentType = 'line_document_reference'.
+     * @param string $document_type_code The code of the referenced document type. Only used for documentType = 'line_document_reference'.
+     *
      * @return $this
      */
     public function setDocumentTypeCode($document_type_code)
     {
 
-        if (! is_null($document_type_code) && (! preg_match('/^uncl1001_[0-9]{1,3}$/', $document_type_code))) {
+        if (!is_null($document_type_code) && (!preg_match("/^uncl1001_[0-9]{1,3}$/", $document_type_code))) {
             throw new \InvalidArgumentException("invalid value for $document_type_code when calling Reference., must conform to the pattern /^uncl1001_[0-9]{1,3}$/.");
         }
 
@@ -464,7 +442,8 @@ class Reference implements ArrayAccess, ModelInterface
     /**
      * Sets document_id
      *
-     * @param  string  $document_id  The id of the referenced document.
+     * @param string $document_id The id of the referenced document.
+     *
      * @return $this
      */
     public function setDocumentId($document_id)
@@ -487,7 +466,8 @@ class Reference implements ArrayAccess, ModelInterface
     /**
      * Sets document_uuid
      *
-     * @param  string  $document_uuid  The UUID of the referenced document.
+     * @param string $document_uuid The UUID of the referenced document.
+     *
      * @return $this
      */
     public function setDocumentUuid($document_uuid)
@@ -510,7 +490,8 @@ class Reference implements ArrayAccess, ModelInterface
     /**
      * Sets document_id_scheme_id
      *
-     * @param  string  $document_id_scheme_id  The scheme id of the id of the referenced document.
+     * @param string $document_id_scheme_id The scheme id of the id of the referenced document.
+     *
      * @return $this
      */
     public function setDocumentIdSchemeId($document_id_scheme_id)
@@ -533,7 +514,8 @@ class Reference implements ArrayAccess, ModelInterface
     /**
      * Sets document_id_scheme_agency_id
      *
-     * @param  string  $document_id_scheme_agency_id  The the agency id of the scheme id of the id of the referenced document.
+     * @param string $document_id_scheme_agency_id The the agency id of the scheme id of the id of the referenced document.
+     *
      * @return $this
      */
     public function setDocumentIdSchemeAgencyId($document_id_scheme_agency_id)
@@ -556,7 +538,8 @@ class Reference implements ArrayAccess, ModelInterface
     /**
      * Sets document_id_scheme_version_id
      *
-     * @param  string  $document_id_scheme_version_id  The version id of the scheme id of the id of the referenced document.
+     * @param string $document_id_scheme_version_id The version id of the scheme id of the id of the referenced document.
+     *
      * @return $this
      */
     public function setDocumentIdSchemeVersionId($document_id_scheme_version_id)
@@ -579,7 +562,8 @@ class Reference implements ArrayAccess, ModelInterface
     /**
      * Sets document_id_list_id
      *
-     * @param  string  $document_id_list_id  The list id of the id of the referenced document.
+     * @param string $document_id_list_id The list id of the id of the referenced document.
+     *
      * @return $this
      */
     public function setDocumentIdListId($document_id_list_id)
@@ -602,7 +586,8 @@ class Reference implements ArrayAccess, ModelInterface
     /**
      * Sets document_id_list_agency_id
      *
-     * @param  string  $document_id_list_agency_id  The agency id of the list id of the id of the referenced document.
+     * @param string $document_id_list_agency_id The agency id of the list id of the id of the referenced document.
+     *
      * @return $this
      */
     public function setDocumentIdListAgencyId($document_id_list_agency_id)
@@ -625,7 +610,8 @@ class Reference implements ArrayAccess, ModelInterface
     /**
      * Sets document_id_list_version_id
      *
-     * @param  string  $document_id_list_version_id  The version id of the list id of the id of the referenced document.
+     * @param string $document_id_list_version_id The version id of the list id of the id of the referenced document.
+     *
      * @return $this
      */
     public function setDocumentIdListVersionId($document_id_list_version_id)
@@ -648,7 +634,8 @@ class Reference implements ArrayAccess, ModelInterface
     /**
      * Sets line_id
      *
-     * @param  string  $line_id  The line in the referenced document.
+     * @param string $line_id The line in the referenced document.
+     *
      * @return $this
      */
     public function setLineId($line_id)
@@ -671,13 +658,14 @@ class Reference implements ArrayAccess, ModelInterface
     /**
      * Sets issue_date
      *
-     * @param  string  $issue_date  The issue date of the referenced document.
+     * @param string $issue_date The issue date of the referenced document.
+     *
      * @return $this
      */
     public function setIssueDate($issue_date)
     {
 
-        if (! is_null($issue_date) && (! preg_match('/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/', $issue_date))) {
+        if (!is_null($issue_date) && (!preg_match("/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/", $issue_date))) {
             throw new \InvalidArgumentException("invalid value for $issue_date when calling Reference., must conform to the pattern /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/.");
         }
 
@@ -699,15 +687,16 @@ class Reference implements ArrayAccess, ModelInterface
     /**
      * Sets document_description
      *
-     * @param  string  $document_description  A description for the referenced document.
+     * @param string $document_description A description for the referenced document.
+     *
      * @return $this
      */
     public function setDocumentDescription($document_description)
     {
-        if (! is_null($document_description) && (mb_strlen($document_description) > 1024)) {
+        if (!is_null($document_description) && (mb_strlen($document_description) > 1024)) {
             throw new \InvalidArgumentException('invalid length for $document_description when calling Reference., must be smaller than or equal to 1024.');
         }
-        if (! is_null($document_description) && (mb_strlen($document_description) < 2)) {
+        if (!is_null($document_description) && (mb_strlen($document_description) < 2)) {
             throw new \InvalidArgumentException('invalid length for $document_description when calling Reference., must be bigger than or equal to 2.');
         }
 
@@ -715,12 +704,12 @@ class Reference implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -730,7 +719,8 @@ class Reference implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -741,8 +731,9 @@ class Reference implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -757,7 +748,8 @@ class Reference implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -782,3 +774,5 @@ class Reference implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

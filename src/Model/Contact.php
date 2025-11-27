@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,55 +29,53 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * Contact Class Doc Comment
  *
  * @category Class
- *
  * @description Contact details for the invoice
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Contact implements ArrayAccess, ModelInterface
+class Contact implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'Contact';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'first_name' => 'string',
         'last_name' => 'string',
         'email' => 'string',
         'phone' => 'string',
-        'id' => 'string',
+        'id' => 'string'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'first_name' => null,
         'last_name' => null,
         'email' => 'email',
         'phone' => null,
-        'id' => null,
+        'id' => null
     ];
 
     /**
@@ -112,7 +109,7 @@ class Contact implements ArrayAccess, ModelInterface
         'last_name' => 'lastName',
         'email' => 'email',
         'phone' => 'phone',
-        'id' => 'id',
+        'id' => 'id'
     ];
 
     /**
@@ -125,7 +122,7 @@ class Contact implements ArrayAccess, ModelInterface
         'last_name' => 'setLastName',
         'email' => 'setEmail',
         'phone' => 'setPhone',
-        'id' => 'setId',
+        'id' => 'setId'
     ];
 
     /**
@@ -138,7 +135,7 @@ class Contact implements ArrayAccess, ModelInterface
         'last_name' => 'getLastName',
         'email' => 'getEmail',
         'phone' => 'getPhone',
-        'id' => 'getId',
+        'id' => 'getId'
     ];
 
     /**
@@ -182,6 +179,10 @@ class Contact implements ArrayAccess, ModelInterface
         return self::$swaggerModelName;
     }
 
+    
+
+    
+
     /**
      * Associative array for storing property values
      *
@@ -192,10 +193,10 @@ class Contact implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['first_name'] = isset($data['first_name']) ? $data['first_name'] : null;
         $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
@@ -213,11 +214,11 @@ class Contact implements ArrayAccess, ModelInterface
     {
         $invalidProperties = [];
 
-        if (! is_null($this->container['phone']) && (mb_strlen($this->container['phone']) > 24)) {
+        if (!is_null($this->container['phone']) && (mb_strlen($this->container['phone']) > 24)) {
             $invalidProperties[] = "invalid value for 'phone', the character length must be smaller than or equal to 24.";
         }
 
-        if (! is_null($this->container['id']) && (mb_strlen($this->container['id']) > 20)) {
+        if (!is_null($this->container['id']) && (mb_strlen($this->container['id']) > 20)) {
             $invalidProperties[] = "invalid value for 'id', the character length must be smaller than or equal to 20.";
         }
 
@@ -235,6 +236,7 @@ class Contact implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets first_name
      *
@@ -248,7 +250,8 @@ class Contact implements ArrayAccess, ModelInterface
     /**
      * Sets first_name
      *
-     * @param  string  $first_name  first_name
+     * @param string $first_name first_name
+     *
      * @return $this
      */
     public function setFirstName($first_name)
@@ -271,7 +274,8 @@ class Contact implements ArrayAccess, ModelInterface
     /**
      * Sets last_name
      *
-     * @param  string  $last_name  last_name
+     * @param string $last_name last_name
+     *
      * @return $this
      */
     public function setLastName($last_name)
@@ -294,7 +298,8 @@ class Contact implements ArrayAccess, ModelInterface
     /**
      * Sets email
      *
-     * @param  string  $email  email
+     * @param string $email email
+     *
      * @return $this
      */
     public function setEmail($email)
@@ -317,12 +322,13 @@ class Contact implements ArrayAccess, ModelInterface
     /**
      * Sets phone
      *
-     * @param  string  $phone  phone
+     * @param string $phone phone
+     *
      * @return $this
      */
     public function setPhone($phone)
     {
-        if (! is_null($phone) && (mb_strlen($phone) > 24)) {
+        if (!is_null($phone) && (mb_strlen($phone) > 24)) {
             throw new \InvalidArgumentException('invalid length for $phone when calling Contact., must be smaller than or equal to 24.');
         }
 
@@ -344,12 +350,13 @@ class Contact implements ArrayAccess, ModelInterface
     /**
      * Sets id
      *
-     * @param  string  $id  Only supported for AccountingCustomerParty.
+     * @param string $id Only supported for AccountingCustomerParty.
+     *
      * @return $this
      */
     public function setId($id)
     {
-        if (! is_null($id) && (mb_strlen($id) > 20)) {
+        if (!is_null($id) && (mb_strlen($id) > 20)) {
             throw new \InvalidArgumentException('invalid length for $id when calling Contact., must be smaller than or equal to 20.');
         }
 
@@ -357,12 +364,12 @@ class Contact implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -372,7 +379,8 @@ class Contact implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -383,8 +391,9 @@ class Contact implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -399,7 +408,8 @@ class Contact implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -424,3 +434,5 @@ class Contact implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

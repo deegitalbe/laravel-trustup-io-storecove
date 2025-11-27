@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,55 +29,53 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * TaxSubtotal Class Doc Comment
  *
  * @category Class
- *
  * @description The total amount of tax of this type in the invoice.
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class TaxSubtotal implements ArrayAccess, ModelInterface
+class TaxSubtotal implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'TaxSubtotal';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'taxable_amount' => 'float',
         'tax_amount' => 'float',
         'percentage' => 'float',
         'category' => 'string',
-        'country' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\Country',
+        'country' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\Country'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'taxable_amount' => null,
         'tax_amount' => null,
         'percentage' => null,
         'category' => null,
-        'country' => null,
+        'country' => null
     ];
 
     /**
@@ -112,7 +109,7 @@ class TaxSubtotal implements ArrayAccess, ModelInterface
         'tax_amount' => 'taxAmount',
         'percentage' => 'percentage',
         'category' => 'category',
-        'country' => 'country',
+        'country' => 'country'
     ];
 
     /**
@@ -125,7 +122,7 @@ class TaxSubtotal implements ArrayAccess, ModelInterface
         'tax_amount' => 'setTaxAmount',
         'percentage' => 'setPercentage',
         'category' => 'setCategory',
-        'country' => 'setCountry',
+        'country' => 'setCountry'
     ];
 
     /**
@@ -138,7 +135,7 @@ class TaxSubtotal implements ArrayAccess, ModelInterface
         'tax_amount' => 'getTaxAmount',
         'percentage' => 'getPercentage',
         'category' => 'getCategory',
-        'country' => 'getCountry',
+        'country' => 'getCountry'
     ];
 
     /**
@@ -183,103 +180,60 @@ class TaxSubtotal implements ArrayAccess, ModelInterface
     }
 
     const CATEGORY_STANDARD = 'standard';
-
     const CATEGORY_ZERO_RATED = 'zero_rated';
-
     const CATEGORY_REVERSE_CHARGE = 'reverse_charge';
-
     const CATEGORY_INTRA_COMMUNITY = 'intra_community';
-
     const CATEGORY_EXEMPT = 'exempt';
-
     const CATEGORY_EXPORT = 'export';
-
     const CATEGORY_OUTSIDE_SCOPE = 'outside_scope';
-
     const CATEGORY_REGULATION33_EXEMPT = 'regulation33_exempt';
-
     const CATEGORY_NONREGULATION33_EXEMPT = 'nonregulation33_exempt';
-
     const CATEGORY_DEEMED_SUPPLY = 'deemed_supply';
-
     const CATEGORY_SRCA_S = 'srca_s';
-
     const CATEGORY_SRCA_C = 'srca_c';
-
     const CATEGORY_NOT_REGISTERED = 'not_registered';
-
     const CATEGORY_IGST = 'igst';
-
     const CATEGORY_CGST = 'cgst';
-
     const CATEGORY_SGST = 'sgst';
-
     const CATEGORY_CESS = 'cess';
-
     const CATEGORY_STATE_CESS = 'state_cess';
-
     const CATEGORY_SROVR = 'srovr';
-
     const CATEGORY_SROVR_RS = 'srovr_rs';
-
     const CATEGORY_SROVR_LVG = 'srovr_lvg';
-
     const CATEGORY_SRLVG = 'srlvg';
-
     const CATEGORY_BOLLO_VIRTUALE = 'bollo_virtuale';
-
     const CATEGORY_EXEMPT_IT_N1 = 'exempt_it_n1';
-
     const CATEGORY_SALES = 'sales';
-
     const CATEGORY_SERVICE = 'service';
-
     const CATEGORY_TOURISM = 'tourism';
-
     const CATEGORY_HIGH_VALUE_GOODS = 'high_value_goods';
-
     const CATEGORY_LOW_VALUE_GOODS = 'low_value_goods';
-
     const CATEGORY_SALES_ZERO = 'sales_zero';
-
     const CATEGORY_SERVICE_ZERO = 'service_zero';
-
     const CATEGORY_NOT_APPLICABLE = 'not_applicable';
-
     const CATEGORY_STANDARD_CA = 'standard_ca';
-
     const CATEGORY_STANDARD_NA = 'standard_na';
-
     const CATEGORY_STANDARD_RE = 'standard_re';
-
     const CATEGORY_STANDARD_N33 = 'standard_n33';
-
     const CATEGORY_STANDARD_33 = 'standard_33';
-
     const CATEGORY_IMPORT_SERVICE = 'import_service';
-
     const CATEGORY_IMPORT_33_SERVICE = 'import_33_service';
-
     const CATEGORY_IMPORT_N33_SERVICE = 'import_n33_service';
-
     const CATEGORY_IMPORT_REVERSE_CHARGE_SERVICE = 'import_reverse_charge_service';
-
     const CATEGORY_IMPORT_GOODS = 'import_goods';
-
     const CATEGORY_IMPORT_33_GOODS = 'import_33_goods';
-
     const CATEGORY_IMPORT_N33_GOODS = 'import_n33_goods';
-
     const CATEGORY_IMPORT_REVERSE_CHARGE_GOODS = 'import_reverse_charge_goods';
-
     const CATEGORY_IMPORT_MES = 'import_mes';
-
     const CATEGORY_IMPORT_GST_DS = 'import_gst_ds';
-
     const CATEGORY_BLOCKED = 'blocked';
-
     const CATEGORY_EXEMPT_PURCHASE = 'exempt_purchase';
+    const CATEGORY_STANDARD_ADDITIONAL = 'standard_additional';
+    const CATEGORY_IEPS = 'ieps';
+    const CATEGORY_WHT = 'wht';
+    
 
+    
     /**
      * Gets allowable values of the enum
      *
@@ -337,8 +291,12 @@ class TaxSubtotal implements ArrayAccess, ModelInterface
             self::CATEGORY_IMPORT_GST_DS,
             self::CATEGORY_BLOCKED,
             self::CATEGORY_EXEMPT_PURCHASE,
+            self::CATEGORY_STANDARD_ADDITIONAL,
+            self::CATEGORY_IEPS,
+            self::CATEGORY_WHT,
         ];
     }
+    
 
     /**
      * Associative array for storing property values
@@ -350,10 +308,10 @@ class TaxSubtotal implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['taxable_amount'] = isset($data['taxable_amount']) ? $data['taxable_amount'] : null;
         $this->container['tax_amount'] = isset($data['tax_amount']) ? $data['tax_amount'] : null;
@@ -375,7 +333,7 @@ class TaxSubtotal implements ArrayAccess, ModelInterface
             $invalidProperties[] = "'tax_amount' can't be null";
         }
         $allowedValues = $this->getCategoryAllowableValues();
-        if (! is_null($this->container['category']) && ! in_array($this->container['category'], $allowedValues, true)) {
+        if (!is_null($this->container['category']) && !in_array($this->container['category'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'category', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -385,7 +343,6 @@ class TaxSubtotal implements ArrayAccess, ModelInterface
         if ($this->container['country'] === null) {
             $invalidProperties[] = "'country' can't be null";
         }
-
         return $invalidProperties;
     }
 
@@ -400,6 +357,7 @@ class TaxSubtotal implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets taxable_amount
      *
@@ -413,7 +371,8 @@ class TaxSubtotal implements ArrayAccess, ModelInterface
     /**
      * Sets taxable_amount
      *
-     * @param  float  $taxable_amount  The amount on which the tax is levied.
+     * @param float $taxable_amount The amount on which the tax is levied.
+     *
      * @return $this
      */
     public function setTaxableAmount($taxable_amount)
@@ -436,7 +395,8 @@ class TaxSubtotal implements ArrayAccess, ModelInterface
     /**
      * Sets tax_amount
      *
-     * @param  float  $tax_amount  The amount of tax.
+     * @param float $tax_amount The amount of tax.
+     *
      * @return $this
      */
     public function setTaxAmount($tax_amount)
@@ -459,7 +419,8 @@ class TaxSubtotal implements ArrayAccess, ModelInterface
     /**
      * Sets percentage
      *
-     * @param  float  $percentage  The tax percentage. This should be a valid tax percentage in the country at the time of the taxpointDate of this invoice.
+     * @param float $percentage The tax percentage. This should be a valid tax percentage in the country at the time of the taxpointDate of this invoice.
+     *
      * @return $this
      */
     public function setPercentage($percentage)
@@ -482,13 +443,14 @@ class TaxSubtotal implements ArrayAccess, ModelInterface
     /**
      * Sets category
      *
-     * @param  string  $category  The tax category. For a description see <<_openapi_tax>>
+     * @param string $category The tax category. For a description see <<_openapi_tax>>
+     *
      * @return $this
      */
     public function setCategory($category)
     {
         $allowedValues = $this->getCategoryAllowableValues();
-        if (! is_null($category) && ! in_array($category, $allowedValues, true)) {
+        if (!is_null($category) && !in_array($category, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'category', must be one of '%s'",
@@ -514,7 +476,8 @@ class TaxSubtotal implements ArrayAccess, ModelInterface
     /**
      * Sets country
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\Country  $country  The country levying the tax.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\Country $country The country levying the tax.
+     *
      * @return $this
      */
     public function setCountry($country)
@@ -523,12 +486,12 @@ class TaxSubtotal implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -538,7 +501,8 @@ class TaxSubtotal implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -549,8 +513,9 @@ class TaxSubtotal implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -565,7 +530,8 @@ class TaxSubtotal implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -590,3 +556,5 @@ class TaxSubtotal implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

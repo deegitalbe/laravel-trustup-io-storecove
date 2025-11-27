@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,47 +29,46 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * PurchaseInvoiceInvoiceLineItem Class Doc Comment
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PurchaseInvoiceInvoiceLineItem implements ArrayAccess, ModelInterface
+class PurchaseInvoiceInvoiceLineItem implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'PurchaseInvoiceInvoiceLineItem';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'quantity' => 'float',
-        'unit_code' => 'string',
+        'unit_code' => 'string'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'quantity' => null,
-        'unit_code' => null,
+        'unit_code' => null
     ];
 
     /**
@@ -101,7 +99,7 @@ class PurchaseInvoiceInvoiceLineItem implements ArrayAccess, ModelInterface
      */
     protected static $attributeMap = [
         'quantity' => 'quantity',
-        'unit_code' => 'unit_code',
+        'unit_code' => 'unit_code'
     ];
 
     /**
@@ -111,7 +109,7 @@ class PurchaseInvoiceInvoiceLineItem implements ArrayAccess, ModelInterface
      */
     protected static $setters = [
         'quantity' => 'setQuantity',
-        'unit_code' => 'setUnitCode',
+        'unit_code' => 'setUnitCode'
     ];
 
     /**
@@ -121,7 +119,7 @@ class PurchaseInvoiceInvoiceLineItem implements ArrayAccess, ModelInterface
      */
     protected static $getters = [
         'quantity' => 'getQuantity',
-        'unit_code' => 'getUnitCode',
+        'unit_code' => 'getUnitCode'
     ];
 
     /**
@@ -165,6 +163,10 @@ class PurchaseInvoiceInvoiceLineItem implements ArrayAccess, ModelInterface
         return self::$swaggerModelName;
     }
 
+    
+
+    
+
     /**
      * Associative array for storing property values
      *
@@ -175,10 +177,10 @@ class PurchaseInvoiceInvoiceLineItem implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
         $this->container['unit_code'] = isset($data['unit_code']) ? $data['unit_code'] : null;
@@ -207,6 +209,7 @@ class PurchaseInvoiceInvoiceLineItem implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets quantity
      *
@@ -220,7 +223,8 @@ class PurchaseInvoiceInvoiceLineItem implements ArrayAccess, ModelInterface
     /**
      * Sets quantity
      *
-     * @param  float  $quantity  The quantity of the item. Can have up to digits.
+     * @param float $quantity The quantity of the item. Can have up to digits.
+     *
      * @return $this
      */
     public function setQuantity($quantity)
@@ -243,7 +247,8 @@ class PurchaseInvoiceInvoiceLineItem implements ArrayAccess, ModelInterface
     /**
      * Sets unit_code
      *
-     * @param  string  $unit_code  The unit code of the quantity.
+     * @param string $unit_code The unit code of the quantity.
+     *
      * @return $this
      */
     public function setUnitCode($unit_code)
@@ -252,12 +257,12 @@ class PurchaseInvoiceInvoiceLineItem implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -267,7 +272,8 @@ class PurchaseInvoiceInvoiceLineItem implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -278,8 +284,9 @@ class PurchaseInvoiceInvoiceLineItem implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -294,7 +301,8 @@ class PurchaseInvoiceInvoiceLineItem implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -319,3 +327,5 @@ class PurchaseInvoiceInvoiceLineItem implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

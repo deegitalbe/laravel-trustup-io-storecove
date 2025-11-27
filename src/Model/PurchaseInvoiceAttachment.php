@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,47 +29,46 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * PurchaseInvoiceAttachment Class Doc Comment
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PurchaseInvoiceAttachment implements ArrayAccess, ModelInterface
+class PurchaseInvoiceAttachment implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'PurchaseInvoiceAttachment';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'document' => 'string',
-        'content_type' => 'string',
+        'content_type' => 'string'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'document' => null,
-        'content_type' => null,
+        'content_type' => null
     ];
 
     /**
@@ -101,7 +99,7 @@ class PurchaseInvoiceAttachment implements ArrayAccess, ModelInterface
      */
     protected static $attributeMap = [
         'document' => 'document',
-        'content_type' => 'content_type',
+        'content_type' => 'content_type'
     ];
 
     /**
@@ -111,7 +109,7 @@ class PurchaseInvoiceAttachment implements ArrayAccess, ModelInterface
      */
     protected static $setters = [
         'document' => 'setDocument',
-        'content_type' => 'setContentType',
+        'content_type' => 'setContentType'
     ];
 
     /**
@@ -121,7 +119,7 @@ class PurchaseInvoiceAttachment implements ArrayAccess, ModelInterface
      */
     protected static $getters = [
         'document' => 'getDocument',
-        'content_type' => 'getContentType',
+        'content_type' => 'getContentType'
     ];
 
     /**
@@ -165,6 +163,10 @@ class PurchaseInvoiceAttachment implements ArrayAccess, ModelInterface
         return self::$swaggerModelName;
     }
 
+    
+
+    
+
     /**
      * Associative array for storing property values
      *
@@ -175,10 +177,10 @@ class PurchaseInvoiceAttachment implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['document'] = isset($data['document']) ? $data['document'] : null;
         $this->container['content_type'] = isset($data['content_type']) ? $data['content_type'] : null;
@@ -207,6 +209,7 @@ class PurchaseInvoiceAttachment implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets document
      *
@@ -220,7 +223,8 @@ class PurchaseInvoiceAttachment implements ArrayAccess, ModelInterface
     /**
      * Sets document
      *
-     * @param  string  $document  The Base64 encoded document attachment.
+     * @param string $document The Base64 encoded document attachment.
+     *
      * @return $this
      */
     public function setDocument($document)
@@ -243,7 +247,8 @@ class PurchaseInvoiceAttachment implements ArrayAccess, ModelInterface
     /**
      * Sets content_type
      *
-     * @param  string  $content_type  The attachment content type (mime type).
+     * @param string $content_type The attachment content type (mime type).
+     *
      * @return $this
      */
     public function setContentType($content_type)
@@ -252,12 +257,12 @@ class PurchaseInvoiceAttachment implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -267,7 +272,8 @@ class PurchaseInvoiceAttachment implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -278,8 +284,9 @@ class PurchaseInvoiceAttachment implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -294,7 +301,8 @@ class PurchaseInvoiceAttachment implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -319,3 +327,5 @@ class PurchaseInvoiceAttachment implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

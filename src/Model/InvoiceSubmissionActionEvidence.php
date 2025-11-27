@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,53 +29,52 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * InvoiceSubmissionActionEvidence Class Doc Comment
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class InvoiceSubmissionActionEvidence implements ArrayAccess, ModelInterface
+class InvoiceSubmissionActionEvidence implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'InvoiceSubmissionActionEvidence';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'transmission_datetime' => 'string',
         'transmission_type' => 'string',
         'transmission_result' => 'string',
         'transmitted_document' => 'string',
-        'receiver_response' => 'string',
+        'receiver_response' => 'string'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'transmission_datetime' => null,
         'transmission_type' => null,
         'transmission_result' => null,
         'transmitted_document' => null,
-        'receiver_response' => null,
+        'receiver_response' => null
     ];
 
     /**
@@ -110,7 +108,7 @@ class InvoiceSubmissionActionEvidence implements ArrayAccess, ModelInterface
         'transmission_type' => 'transmission_type',
         'transmission_result' => 'transmission_result',
         'transmitted_document' => 'transmitted_document',
-        'receiver_response' => 'receiver_response',
+        'receiver_response' => 'receiver_response'
     ];
 
     /**
@@ -123,7 +121,7 @@ class InvoiceSubmissionActionEvidence implements ArrayAccess, ModelInterface
         'transmission_type' => 'setTransmissionType',
         'transmission_result' => 'setTransmissionResult',
         'transmitted_document' => 'setTransmittedDocument',
-        'receiver_response' => 'setReceiverResponse',
+        'receiver_response' => 'setReceiverResponse'
     ];
 
     /**
@@ -136,7 +134,7 @@ class InvoiceSubmissionActionEvidence implements ArrayAccess, ModelInterface
         'transmission_type' => 'getTransmissionType',
         'transmission_result' => 'getTransmissionResult',
         'transmitted_document' => 'getTransmittedDocument',
-        'receiver_response' => 'getReceiverResponse',
+        'receiver_response' => 'getReceiverResponse'
     ];
 
     /**
@@ -181,25 +179,18 @@ class InvoiceSubmissionActionEvidence implements ArrayAccess, ModelInterface
     }
 
     const TRANSMISSION_TYPE_EMAIL = 'email';
-
     const TRANSMISSION_TYPE_EDI = 'edi';
-
     const TRANSMISSION_TYPE_AS2 = 'as2';
-
     const TRANSMISSION_TYPE_PEPPOL = 'peppol';
-
     const TRANSMISSION_TYPE_SANDBOX = 'sandbox';
-
     const TRANSMISSION_RESULT_UNKNOWN = 'unknown';
-
     const TRANSMISSION_RESULT_ACCEPTED = 'accepted';
-
     const TRANSMISSION_RESULT_REJECTED = 'rejected';
-
     const TRANSMISSION_RESULT_SEND_ERROR = 'send_error';
-
     const TRANSMISSION_RESULT_INTERNAL_ERROR = 'internal_error';
+    
 
+    
     /**
      * Gets allowable values of the enum
      *
@@ -215,7 +206,7 @@ class InvoiceSubmissionActionEvidence implements ArrayAccess, ModelInterface
             self::TRANSMISSION_TYPE_SANDBOX,
         ];
     }
-
+    
     /**
      * Gets allowable values of the enum
      *
@@ -231,6 +222,7 @@ class InvoiceSubmissionActionEvidence implements ArrayAccess, ModelInterface
             self::TRANSMISSION_RESULT_INTERNAL_ERROR,
         ];
     }
+    
 
     /**
      * Associative array for storing property values
@@ -242,10 +234,10 @@ class InvoiceSubmissionActionEvidence implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['transmission_datetime'] = isset($data['transmission_datetime']) ? $data['transmission_datetime'] : null;
         $this->container['transmission_type'] = isset($data['transmission_type']) ? $data['transmission_type'] : null;
@@ -264,7 +256,7 @@ class InvoiceSubmissionActionEvidence implements ArrayAccess, ModelInterface
         $invalidProperties = [];
 
         $allowedValues = $this->getTransmissionTypeAllowableValues();
-        if (! is_null($this->container['transmission_type']) && ! in_array($this->container['transmission_type'], $allowedValues, true)) {
+        if (!is_null($this->container['transmission_type']) && !in_array($this->container['transmission_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'transmission_type', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -272,7 +264,7 @@ class InvoiceSubmissionActionEvidence implements ArrayAccess, ModelInterface
         }
 
         $allowedValues = $this->getTransmissionResultAllowableValues();
-        if (! is_null($this->container['transmission_result']) && ! in_array($this->container['transmission_result'], $allowedValues, true)) {
+        if (!is_null($this->container['transmission_result']) && !in_array($this->container['transmission_result'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'transmission_result', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -293,6 +285,7 @@ class InvoiceSubmissionActionEvidence implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets transmission_datetime
      *
@@ -306,7 +299,8 @@ class InvoiceSubmissionActionEvidence implements ArrayAccess, ModelInterface
     /**
      * Sets transmission_datetime
      *
-     * @param  string  $transmission_datetime  The DateTime of the transmission, as defined by RFC 3339, section 5.6, for example, 2017-07-21T17:32:28Z.
+     * @param string $transmission_datetime The DateTime of the transmission, as defined by RFC 3339, section 5.6, for example, 2017-07-21T17:32:28Z.
+     *
      * @return $this
      */
     public function setTransmissionDatetime($transmission_datetime)
@@ -329,13 +323,14 @@ class InvoiceSubmissionActionEvidence implements ArrayAccess, ModelInterface
     /**
      * Sets transmission_type
      *
-     * @param  string  $transmission_type  How the document was transmitted.
+     * @param string $transmission_type How the document was transmitted.
+     *
      * @return $this
      */
     public function setTransmissionType($transmission_type)
     {
         $allowedValues = $this->getTransmissionTypeAllowableValues();
-        if (! is_null($transmission_type) && ! in_array($transmission_type, $allowedValues, true)) {
+        if (!is_null($transmission_type) && !in_array($transmission_type, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'transmission_type', must be one of '%s'",
@@ -361,13 +356,14 @@ class InvoiceSubmissionActionEvidence implements ArrayAccess, ModelInterface
     /**
      * Sets transmission_result
      *
-     * @param  string  $transmission_result  The result of this transmission.
+     * @param string $transmission_result The result of this transmission.
+     *
      * @return $this
      */
     public function setTransmissionResult($transmission_result)
     {
         $allowedValues = $this->getTransmissionResultAllowableValues();
-        if (! is_null($transmission_result) && ! in_array($transmission_result, $allowedValues, true)) {
+        if (!is_null($transmission_result) && !in_array($transmission_result, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'transmission_result', must be one of '%s'",
@@ -393,7 +389,8 @@ class InvoiceSubmissionActionEvidence implements ArrayAccess, ModelInterface
     /**
      * Sets transmitted_document
      *
-     * @param  string  $transmitted_document  The document that was transmitted.
+     * @param string $transmitted_document The document that was transmitted.
+     *
      * @return $this
      */
     public function setTransmittedDocument($transmitted_document)
@@ -416,7 +413,8 @@ class InvoiceSubmissionActionEvidence implements ArrayAccess, ModelInterface
     /**
      * Sets receiver_response
      *
-     * @param  string  $receiver_response  The response the receiver sent.
+     * @param string $receiver_response The response the receiver sent.
+     *
      * @return $this
      */
     public function setReceiverResponse($receiver_response)
@@ -425,12 +423,12 @@ class InvoiceSubmissionActionEvidence implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -440,7 +438,8 @@ class InvoiceSubmissionActionEvidence implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -451,8 +450,9 @@ class InvoiceSubmissionActionEvidence implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -467,7 +467,8 @@ class InvoiceSubmissionActionEvidence implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -492,3 +493,5 @@ class InvoiceSubmissionActionEvidence implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

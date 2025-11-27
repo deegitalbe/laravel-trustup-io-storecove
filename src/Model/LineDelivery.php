@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,45 +29,44 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * LineDelivery Class Doc Comment
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class LineDelivery implements ArrayAccess, ModelInterface
+class LineDelivery implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'LineDelivery';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
-        'delivery_location' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\LineDeliveryDeliveryLocation',
+        'delivery_location' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\LineDeliveryDeliveryLocation'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
-        'delivery_location' => null,
+        'delivery_location' => null
     ];
 
     /**
@@ -98,7 +96,7 @@ class LineDelivery implements ArrayAccess, ModelInterface
      * @var string[]
      */
     protected static $attributeMap = [
-        'delivery_location' => 'deliveryLocation',
+        'delivery_location' => 'deliveryLocation'
     ];
 
     /**
@@ -107,7 +105,7 @@ class LineDelivery implements ArrayAccess, ModelInterface
      * @var string[]
      */
     protected static $setters = [
-        'delivery_location' => 'setDeliveryLocation',
+        'delivery_location' => 'setDeliveryLocation'
     ];
 
     /**
@@ -116,7 +114,7 @@ class LineDelivery implements ArrayAccess, ModelInterface
      * @var string[]
      */
     protected static $getters = [
-        'delivery_location' => 'getDeliveryLocation',
+        'delivery_location' => 'getDeliveryLocation'
     ];
 
     /**
@@ -160,6 +158,10 @@ class LineDelivery implements ArrayAccess, ModelInterface
         return self::$swaggerModelName;
     }
 
+    
+
+    
+
     /**
      * Associative array for storing property values
      *
@@ -170,10 +172,10 @@ class LineDelivery implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['delivery_location'] = isset($data['delivery_location']) ? $data['delivery_location'] : null;
     }
@@ -201,6 +203,7 @@ class LineDelivery implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets delivery_location
      *
@@ -214,7 +217,8 @@ class LineDelivery implements ArrayAccess, ModelInterface
     /**
      * Sets delivery_location
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\LineDeliveryDeliveryLocation  $delivery_location  delivery_location
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\LineDeliveryDeliveryLocation $delivery_location delivery_location
+     *
      * @return $this
      */
     public function setDeliveryLocation($delivery_location)
@@ -223,12 +227,12 @@ class LineDelivery implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -238,7 +242,8 @@ class LineDelivery implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -249,8 +254,9 @@ class LineDelivery implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -265,7 +271,8 @@ class LineDelivery implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -290,3 +297,5 @@ class LineDelivery implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

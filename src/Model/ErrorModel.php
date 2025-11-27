@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,47 +29,46 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * ErrorModel Class Doc Comment
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ErrorModel implements ArrayAccess, ModelInterface
+class ErrorModel implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'ErrorModel';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'source' => 'string',
-        'details' => 'string',
+        'details' => 'string'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'source' => null,
-        'details' => null,
+        'details' => null
     ];
 
     /**
@@ -101,7 +99,7 @@ class ErrorModel implements ArrayAccess, ModelInterface
      */
     protected static $attributeMap = [
         'source' => 'source',
-        'details' => 'details',
+        'details' => 'details'
     ];
 
     /**
@@ -111,7 +109,7 @@ class ErrorModel implements ArrayAccess, ModelInterface
      */
     protected static $setters = [
         'source' => 'setSource',
-        'details' => 'setDetails',
+        'details' => 'setDetails'
     ];
 
     /**
@@ -121,7 +119,7 @@ class ErrorModel implements ArrayAccess, ModelInterface
      */
     protected static $getters = [
         'source' => 'getSource',
-        'details' => 'getDetails',
+        'details' => 'getDetails'
     ];
 
     /**
@@ -165,6 +163,10 @@ class ErrorModel implements ArrayAccess, ModelInterface
         return self::$swaggerModelName;
     }
 
+    
+
+    
+
     /**
      * Associative array for storing property values
      *
@@ -175,10 +177,10 @@ class ErrorModel implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['source'] = isset($data['source']) ? $data['source'] : null;
         $this->container['details'] = isset($data['details']) ? $data['details'] : null;
@@ -207,6 +209,7 @@ class ErrorModel implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets source
      *
@@ -220,7 +223,8 @@ class ErrorModel implements ArrayAccess, ModelInterface
     /**
      * Sets source
      *
-     * @param  string  $source  source
+     * @param string $source source
+     *
      * @return $this
      */
     public function setSource($source)
@@ -243,7 +247,8 @@ class ErrorModel implements ArrayAccess, ModelInterface
     /**
      * Sets details
      *
-     * @param  string  $details  details
+     * @param string $details details
+     *
      * @return $this
      */
     public function setDetails($details)
@@ -252,12 +257,12 @@ class ErrorModel implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -267,7 +272,8 @@ class ErrorModel implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -278,8 +284,9 @@ class ErrorModel implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -294,7 +301,8 @@ class ErrorModel implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -319,3 +327,5 @@ class ErrorModel implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

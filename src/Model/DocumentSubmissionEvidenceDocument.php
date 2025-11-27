@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,49 +29,48 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * DocumentSubmissionEvidenceDocument Class Doc Comment
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class DocumentSubmissionEvidenceDocument implements ArrayAccess, ModelInterface
+class DocumentSubmissionEvidenceDocument implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'DocumentSubmissionEvidenceDocument';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'document' => 'string',
         'expires_at' => 'string',
-        'mime_type' => 'string',
+        'mime_type' => 'string'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'document' => null,
         'expires_at' => null,
-        'mime_type' => null,
+        'mime_type' => null
     ];
 
     /**
@@ -104,7 +102,7 @@ class DocumentSubmissionEvidenceDocument implements ArrayAccess, ModelInterface
     protected static $attributeMap = [
         'document' => 'document',
         'expires_at' => 'expires_at',
-        'mime_type' => 'mime_type',
+        'mime_type' => 'mime_type'
     ];
 
     /**
@@ -115,7 +113,7 @@ class DocumentSubmissionEvidenceDocument implements ArrayAccess, ModelInterface
     protected static $setters = [
         'document' => 'setDocument',
         'expires_at' => 'setExpiresAt',
-        'mime_type' => 'setMimeType',
+        'mime_type' => 'setMimeType'
     ];
 
     /**
@@ -126,7 +124,7 @@ class DocumentSubmissionEvidenceDocument implements ArrayAccess, ModelInterface
     protected static $getters = [
         'document' => 'getDocument',
         'expires_at' => 'getExpiresAt',
-        'mime_type' => 'getMimeType',
+        'mime_type' => 'getMimeType'
     ];
 
     /**
@@ -171,15 +169,13 @@ class DocumentSubmissionEvidenceDocument implements ArrayAccess, ModelInterface
     }
 
     const MIME_TYPE_MESSAGERFC822 = 'message/rfc822';
-
     const MIME_TYPE_APPLICATIONXML = 'application/xml';
-
     const MIME_TYPE_APPLICATIONJSON = 'application/json';
-
     const MIME_TYPE_APPLICATIONPDF = 'application/pdf';
-
     const MIME_TYPE_APPLICATIONPKCS7_MIME = 'application/pkcs7-mime';
+    
 
+    
     /**
      * Gets allowable values of the enum
      *
@@ -195,6 +191,7 @@ class DocumentSubmissionEvidenceDocument implements ArrayAccess, ModelInterface
             self::MIME_TYPE_APPLICATIONPKCS7_MIME,
         ];
     }
+    
 
     /**
      * Associative array for storing property values
@@ -206,10 +203,10 @@ class DocumentSubmissionEvidenceDocument implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['document'] = isset($data['document']) ? $data['document'] : null;
         $this->container['expires_at'] = isset($data['expires_at']) ? $data['expires_at'] : null;
@@ -226,7 +223,7 @@ class DocumentSubmissionEvidenceDocument implements ArrayAccess, ModelInterface
         $invalidProperties = [];
 
         $allowedValues = $this->getMimeTypeAllowableValues();
-        if (! is_null($this->container['mime_type']) && ! in_array($this->container['mime_type'], $allowedValues, true)) {
+        if (!is_null($this->container['mime_type']) && !in_array($this->container['mime_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'mime_type', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -247,6 +244,7 @@ class DocumentSubmissionEvidenceDocument implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets document
      *
@@ -260,7 +258,8 @@ class DocumentSubmissionEvidenceDocument implements ArrayAccess, ModelInterface
     /**
      * Sets document
      *
-     * @param  string  $document  The URL where the document can be retrieved.
+     * @param string $document The URL where the document can be retrieved.
+     *
      * @return $this
      */
     public function setDocument($document)
@@ -283,7 +282,8 @@ class DocumentSubmissionEvidenceDocument implements ArrayAccess, ModelInterface
     /**
      * Sets expires_at
      *
-     * @param  string  $expires_at  The datetime the URL expires. Format: 'YYYY-MM-DD HH:mm:ss.'
+     * @param string $expires_at The datetime the URL expires. Format: 'YYYY-MM-DD HH:mm:ss.'
+     *
      * @return $this
      */
     public function setExpiresAt($expires_at)
@@ -306,13 +306,14 @@ class DocumentSubmissionEvidenceDocument implements ArrayAccess, ModelInterface
     /**
      * Sets mime_type
      *
-     * @param  string  $mime_type  The mime type of the document.
+     * @param string $mime_type The mime type of the document.
+     *
      * @return $this
      */
     public function setMimeType($mime_type)
     {
         $allowedValues = $this->getMimeTypeAllowableValues();
-        if (! is_null($mime_type) && ! in_array($mime_type, $allowedValues, true)) {
+        if (!is_null($mime_type) && !in_array($mime_type, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'mime_type', must be one of '%s'",
@@ -324,12 +325,12 @@ class DocumentSubmissionEvidenceDocument implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -339,7 +340,8 @@ class DocumentSubmissionEvidenceDocument implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -350,8 +352,9 @@ class DocumentSubmissionEvidenceDocument implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -366,7 +369,8 @@ class DocumentSubmissionEvidenceDocument implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -391,3 +395,5 @@ class DocumentSubmissionEvidenceDocument implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,47 +29,46 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * NetworkSpecification Class Doc Comment
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class NetworkSpecification implements ArrayAccess, ModelInterface
+class NetworkSpecification implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'NetworkSpecification';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'name' => 'string',
-        'sub_networks' => 'string[]',
+        'sub_networks' => 'string[]'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'name' => null,
-        'sub_networks' => null,
+        'sub_networks' => null
     ];
 
     /**
@@ -101,7 +99,7 @@ class NetworkSpecification implements ArrayAccess, ModelInterface
      */
     protected static $attributeMap = [
         'name' => 'name',
-        'sub_networks' => 'sub_networks',
+        'sub_networks' => 'sub_networks'
     ];
 
     /**
@@ -111,7 +109,7 @@ class NetworkSpecification implements ArrayAccess, ModelInterface
      */
     protected static $setters = [
         'name' => 'setName',
-        'sub_networks' => 'setSubNetworks',
+        'sub_networks' => 'setSubNetworks'
     ];
 
     /**
@@ -121,7 +119,7 @@ class NetworkSpecification implements ArrayAccess, ModelInterface
      */
     protected static $getters = [
         'name' => 'getName',
-        'sub_networks' => 'getSubNetworks',
+        'sub_networks' => 'getSubNetworks'
     ];
 
     /**
@@ -166,15 +164,13 @@ class NetworkSpecification implements ArrayAccess, ModelInterface
     }
 
     const NAME_PEPPOL = 'peppol';
-
     const NAME_DBNALLIANCE = 'dbnalliance';
-
     const SUB_NETWORKS_MAIN = 'main';
-
     const SUB_NETWORKS_FRANCE = 'france';
-
     const SUB_NETWORKS_EB2B = 'eb2b';
+    
 
+    
     /**
      * Gets allowable values of the enum
      *
@@ -187,7 +183,7 @@ class NetworkSpecification implements ArrayAccess, ModelInterface
             self::NAME_DBNALLIANCE,
         ];
     }
-
+    
     /**
      * Gets allowable values of the enum
      *
@@ -201,6 +197,7 @@ class NetworkSpecification implements ArrayAccess, ModelInterface
             self::SUB_NETWORKS_EB2B,
         ];
     }
+    
 
     /**
      * Associative array for storing property values
@@ -212,10 +209,10 @@ class NetworkSpecification implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['sub_networks'] = isset($data['sub_networks']) ? $data['sub_networks'] : null;
@@ -231,7 +228,7 @@ class NetworkSpecification implements ArrayAccess, ModelInterface
         $invalidProperties = [];
 
         $allowedValues = $this->getNameAllowableValues();
-        if (! is_null($this->container['name']) && ! in_array($this->container['name'], $allowedValues, true)) {
+        if (!is_null($this->container['name']) && !in_array($this->container['name'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'name', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -252,6 +249,7 @@ class NetworkSpecification implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets name
      *
@@ -265,13 +263,14 @@ class NetworkSpecification implements ArrayAccess, ModelInterface
     /**
      * Sets name
      *
-     * @param  string  $name  A network to advertise the identifier on.
+     * @param string $name A network to advertise the identifier on.
+     *
      * @return $this
      */
     public function setName($name)
     {
         $allowedValues = $this->getNameAllowableValues();
-        if (! is_null($name) && ! in_array($name, $allowedValues, true)) {
+        if (!is_null($name) && !in_array($name, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'name', must be one of '%s'",
@@ -297,13 +296,14 @@ class NetworkSpecification implements ArrayAccess, ModelInterface
     /**
      * Sets sub_networks
      *
-     * @param  string[]  $sub_networks  A list of sub_networks to advertise documents for. The Peppol network has two sub_networks: \"france\" (for the upcoming French reform) and \"eb2b\" (enhanced B2B). Use \"main\" to advertise on the main Peppol network.
+     * @param string[] $sub_networks A list of sub_networks to advertise documents for. The Peppol network has two sub_networks: \"france\" (for the upcoming French reform) and \"eb2b\" (enhanced B2B). Use \"main\" to advertise on the main Peppol network.
+     *
      * @return $this
      */
     public function setSubNetworks($sub_networks)
     {
         $allowedValues = $this->getSubNetworksAllowableValues();
-        if (! is_null($sub_networks) && array_diff($sub_networks, $allowedValues)) {
+        if (!is_null($sub_networks) && array_diff($sub_networks, $allowedValues)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'sub_networks', must be one of '%s'",
@@ -315,12 +315,12 @@ class NetworkSpecification implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -330,7 +330,8 @@ class NetworkSpecification implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -341,8 +342,9 @@ class NetworkSpecification implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -357,7 +359,8 @@ class NetworkSpecification implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -382,3 +385,5 @@ class NetworkSpecification implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

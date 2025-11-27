@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,53 +29,51 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * ReceivableDocument Class Doc Comment
  *
  * @category Class
- *
  * @description The received document.
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ReceivableDocument implements ArrayAccess, ModelInterface
+class ReceivableDocument implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'ReceivableDocument';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'document_type' => 'string',
         'source' => 'string',
         'invoice' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\Invoice',
-        'order' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\DocumentOrder',
+        'order' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\DocumentOrder'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'document_type' => null,
         'source' => null,
         'invoice' => null,
-        'order' => null,
+        'order' => null
     ];
 
     /**
@@ -109,7 +106,7 @@ class ReceivableDocument implements ArrayAccess, ModelInterface
         'document_type' => 'documentType',
         'source' => 'source',
         'invoice' => 'invoice',
-        'order' => 'order',
+        'order' => 'order'
     ];
 
     /**
@@ -121,7 +118,7 @@ class ReceivableDocument implements ArrayAccess, ModelInterface
         'document_type' => 'setDocumentType',
         'source' => 'setSource',
         'invoice' => 'setInvoice',
-        'order' => 'setOrder',
+        'order' => 'setOrder'
     ];
 
     /**
@@ -133,7 +130,7 @@ class ReceivableDocument implements ArrayAccess, ModelInterface
         'document_type' => 'getDocumentType',
         'source' => 'getSource',
         'invoice' => 'getInvoice',
-        'order' => 'getOrder',
+        'order' => 'getOrder'
     ];
 
     /**
@@ -178,21 +175,16 @@ class ReceivableDocument implements ArrayAccess, ModelInterface
     }
 
     const DOCUMENT_TYPE_INVOICE = 'invoice';
-
     const DOCUMENT_TYPE_ORDER = 'order';
-
     const SOURCE_SELF = 'self';
-
     const SOURCE_PEPPOL = 'peppol';
-
     const SOURCE_DBNALLIANCE = 'dbnalliance';
-
     const SOURCE_RO_ANAF = 'ro-anaf';
-
     const SOURCE_FINVOICE = 'finvoice';
-
     const SOURCE_IT_SDI = 'it-sdi';
+    
 
+    
     /**
      * Gets allowable values of the enum
      *
@@ -205,7 +197,7 @@ class ReceivableDocument implements ArrayAccess, ModelInterface
             self::DOCUMENT_TYPE_ORDER,
         ];
     }
-
+    
     /**
      * Gets allowable values of the enum
      *
@@ -222,6 +214,7 @@ class ReceivableDocument implements ArrayAccess, ModelInterface
             self::SOURCE_IT_SDI,
         ];
     }
+    
 
     /**
      * Associative array for storing property values
@@ -233,10 +226,10 @@ class ReceivableDocument implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['document_type'] = isset($data['document_type']) ? $data['document_type'] : null;
         $this->container['source'] = isset($data['source']) ? $data['source'] : null;
@@ -257,7 +250,7 @@ class ReceivableDocument implements ArrayAccess, ModelInterface
             $invalidProperties[] = "'document_type' can't be null";
         }
         $allowedValues = $this->getDocumentTypeAllowableValues();
-        if (! is_null($this->container['document_type']) && ! in_array($this->container['document_type'], $allowedValues, true)) {
+        if (!is_null($this->container['document_type']) && !in_array($this->container['document_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'document_type', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -268,7 +261,7 @@ class ReceivableDocument implements ArrayAccess, ModelInterface
             $invalidProperties[] = "'source' can't be null";
         }
         $allowedValues = $this->getSourceAllowableValues();
-        if (! is_null($this->container['source']) && ! in_array($this->container['source'], $allowedValues, true)) {
+        if (!is_null($this->container['source']) && !in_array($this->container['source'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'source', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -289,6 +282,7 @@ class ReceivableDocument implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets document_type
      *
@@ -302,13 +296,14 @@ class ReceivableDocument implements ArrayAccess, ModelInterface
     /**
      * Sets document_type
      *
-     * @param  string  $document_type  The type of document received.
+     * @param string $document_type The type of document received.
+     *
      * @return $this
      */
     public function setDocumentType($document_type)
     {
         $allowedValues = $this->getDocumentTypeAllowableValues();
-        if (! in_array($document_type, $allowedValues, true)) {
+        if (!in_array($document_type, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'document_type', must be one of '%s'",
@@ -334,13 +329,14 @@ class ReceivableDocument implements ArrayAccess, ModelInterface
     /**
      * Sets source
      *
-     * @param  string  $source  The source of the document.
+     * @param string $source The source of the document.
+     *
      * @return $this
      */
     public function setSource($source)
     {
         $allowedValues = $this->getSourceAllowableValues();
-        if (! in_array($source, $allowedValues, true)) {
+        if (!in_array($source, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'source', must be one of '%s'",
@@ -366,7 +362,8 @@ class ReceivableDocument implements ArrayAccess, ModelInterface
     /**
      * Sets invoice
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\Invoice  $invoice  An invoice or creditnote.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\Invoice $invoice An invoice or creditnote.
+     *
      * @return $this
      */
     public function setInvoice($invoice)
@@ -389,7 +386,8 @@ class ReceivableDocument implements ArrayAccess, ModelInterface
     /**
      * Sets order
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\DocumentOrder  $order  An order.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\DocumentOrder $order An order.
+     *
      * @return $this
      */
     public function setOrder($order)
@@ -398,12 +396,12 @@ class ReceivableDocument implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -413,7 +411,8 @@ class ReceivableDocument implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -424,8 +423,9 @@ class ReceivableDocument implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -440,7 +440,8 @@ class ReceivableDocument implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -465,3 +466,5 @@ class ReceivableDocument implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

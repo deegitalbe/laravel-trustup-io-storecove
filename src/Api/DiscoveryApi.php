@@ -4,9 +4,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -44,9 +43,8 @@ use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
  * DiscoveryApi Class Doc Comment
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 class DiscoveryApi
@@ -66,10 +64,15 @@ class DiscoveryApi
      */
     protected $headerSelector;
 
+    /**
+     * @param ClientInterface $client
+     * @param Configuration   $config
+     * @param HeaderSelector  $selector
+     */
     public function __construct(
-        ?ClientInterface $client = null,
-        ?Configuration $config = null,
-        ?HeaderSelector $selector = null
+        ClientInterface $client = null,
+        Configuration $config = null,
+        HeaderSelector $selector = null
     ) {
         $this->client = $client ?: new Client();
         $this->config = $config ?: new Configuration();
@@ -89,16 +92,15 @@ class DiscoveryApi
      *
      * Discover Network Participant Existence
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\DiscoverableParticipant  $discoverable_participant  The participant to check (required)
-     * @return \Deegitalbe\LaravelTrustupIoStorecove\Model\DiscoveredParticipant
+     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\DiscoverableParticipant $discoverable_participant The participant to check (required)
      *
      * @throws \Deegitalbe\LaravelTrustupIoStorecove\ApiException on non-2xx response
      * @throws \InvalidArgumentException
+     * @return \Deegitalbe\LaravelTrustupIoStorecove\Model\DiscoveredParticipant
      */
     public function discoveryExists($discoverable_participant)
     {
-        [$response] = $this->discoveryExistsWithHttpInfo($discoverable_participant);
-
+        list($response) = $this->discoveryExistsWithHttpInfo($discoverable_participant);
         return $response;
     }
 
@@ -107,11 +109,11 @@ class DiscoveryApi
      *
      * Discover Network Participant Existence
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\DiscoverableParticipant  $discoverable_participant  The participant to check (required)
-     * @return array of \Deegitalbe\LaravelTrustupIoStorecove\Model\DiscoveredParticipant, HTTP status code, HTTP response headers (array of strings)
+     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\DiscoverableParticipant $discoverable_participant The participant to check (required)
      *
      * @throws \Deegitalbe\LaravelTrustupIoStorecove\ApiException on non-2xx response
      * @throws \InvalidArgumentException
+     * @return array of \Deegitalbe\LaravelTrustupIoStorecove\Model\DiscoveredParticipant, HTTP status code, HTTP response headers (array of strings)
      */
     public function discoveryExistsWithHttpInfo($discoverable_participant)
     {
@@ -159,7 +161,7 @@ class DiscoveryApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders(),
+                $response->getHeaders()
             ];
 
         } catch (ApiException $e) {
@@ -190,10 +192,10 @@ class DiscoveryApi
      *
      * Discover Network Participant Existence
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\DiscoverableParticipant  $discoverable_participant  The participant to check (required)
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\DiscoverableParticipant $discoverable_participant The participant to check (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function discoveryExistsAsync($discoverable_participant)
     {
@@ -210,10 +212,10 @@ class DiscoveryApi
      *
      * Discover Network Participant Existence
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\DiscoverableParticipant  $discoverable_participant  The participant to check (required)
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\DiscoverableParticipant $discoverable_participant The participant to check (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function discoveryExistsAsyncWithHttpInfo($discoverable_participant)
     {
@@ -237,7 +239,7 @@ class DiscoveryApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders(),
+                        $response->getHeaders()
                     ];
                 },
                 function ($exception) {
@@ -260,10 +262,10 @@ class DiscoveryApi
     /**
      * Create request for operation 'discoveryExists'
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\DiscoverableParticipant  $discoverable_participant  The participant to check (required)
-     * @return \GuzzleHttp\Psr7\Request
+     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\DiscoverableParticipant $discoverable_participant The participant to check (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
      */
     protected function discoveryExistsRequest($discoverable_participant)
     {
@@ -280,6 +282,8 @@ class DiscoveryApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
+
+
 
         // body params
         $_tempBody = null;
@@ -302,14 +306,14 @@ class DiscoveryApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-
-            if ($headers['Content-Type'] === 'application/json') {
+            
+            if($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
+                if(is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -319,7 +323,7 @@ class DiscoveryApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue,
+                        'contents' => $formParamValue
                     ];
                 }
                 // for HTTP post (form)
@@ -352,10 +356,9 @@ class DiscoveryApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
-
         return new Request(
             'POST',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -367,15 +370,13 @@ class DiscoveryApi
      * Discover Country Identifiers ** EXPERIMENTAL
      *
      *
-     * @return \Deegitalbe\LaravelTrustupIoStorecove\Model\CountrySpecifications
-     *
      * @throws \Deegitalbe\LaravelTrustupIoStorecove\ApiException on non-2xx response
      * @throws \InvalidArgumentException
+     * @return \Deegitalbe\LaravelTrustupIoStorecove\Model\CountrySpecifications
      */
     public function discoveryIdentifiers()
     {
-        [$response] = $this->discoveryIdentifiersWithHttpInfo();
-
+        list($response) = $this->discoveryIdentifiersWithHttpInfo();
         return $response;
     }
 
@@ -385,10 +386,9 @@ class DiscoveryApi
      * Discover Country Identifiers ** EXPERIMENTAL
      *
      *
-     * @return array of \Deegitalbe\LaravelTrustupIoStorecove\Model\CountrySpecifications, HTTP status code, HTTP response headers (array of strings)
-     *
      * @throws \Deegitalbe\LaravelTrustupIoStorecove\ApiException on non-2xx response
      * @throws \InvalidArgumentException
+     * @return array of \Deegitalbe\LaravelTrustupIoStorecove\Model\CountrySpecifications, HTTP status code, HTTP response headers (array of strings)
      */
     public function discoveryIdentifiersWithHttpInfo()
     {
@@ -436,7 +436,7 @@ class DiscoveryApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders(),
+                $response->getHeaders()
             ];
 
         } catch (ApiException $e) {
@@ -460,9 +460,8 @@ class DiscoveryApi
      * Discover Country Identifiers ** EXPERIMENTAL
      *
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function discoveryIdentifiersAsync()
     {
@@ -480,9 +479,8 @@ class DiscoveryApi
      * Discover Country Identifiers ** EXPERIMENTAL
      *
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function discoveryIdentifiersAsyncWithHttpInfo()
     {
@@ -506,7 +504,7 @@ class DiscoveryApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders(),
+                        $response->getHeaders()
                     ];
                 },
                 function ($exception) {
@@ -530,9 +528,8 @@ class DiscoveryApi
      * Create request for operation 'discoveryIdentifiers'
      *
      *
-     * @return \GuzzleHttp\Psr7\Request
-     *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
      */
     protected function discoveryIdentifiersRequest()
     {
@@ -543,6 +540,8 @@ class DiscoveryApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
+
+
 
         // body params
         $_tempBody = null;
@@ -562,14 +561,14 @@ class DiscoveryApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-
-            if ($headers['Content-Type'] === 'application/json') {
+            
+            if($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
+                if(is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -579,7 +578,7 @@ class DiscoveryApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue,
+                        'contents' => $formParamValue
                     ];
                 }
                 // for HTTP post (form)
@@ -612,10 +611,9 @@ class DiscoveryApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
-
         return new Request(
             'GET',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -626,16 +624,15 @@ class DiscoveryApi
      *
      * Discover Network Participant Capabilites
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\DiscoverableParticipant  $discoverable_participant  The participant to check (required)
-     * @return \Deegitalbe\LaravelTrustupIoStorecove\Model\DiscoveredParticipant
+     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\DiscoverableParticipant $discoverable_participant The participant to check (required)
      *
      * @throws \Deegitalbe\LaravelTrustupIoStorecove\ApiException on non-2xx response
      * @throws \InvalidArgumentException
+     * @return \Deegitalbe\LaravelTrustupIoStorecove\Model\DiscoveredParticipant
      */
     public function discoveryReceives($discoverable_participant)
     {
-        [$response] = $this->discoveryReceivesWithHttpInfo($discoverable_participant);
-
+        list($response) = $this->discoveryReceivesWithHttpInfo($discoverable_participant);
         return $response;
     }
 
@@ -644,11 +641,11 @@ class DiscoveryApi
      *
      * Discover Network Participant Capabilites
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\DiscoverableParticipant  $discoverable_participant  The participant to check (required)
-     * @return array of \Deegitalbe\LaravelTrustupIoStorecove\Model\DiscoveredParticipant, HTTP status code, HTTP response headers (array of strings)
+     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\DiscoverableParticipant $discoverable_participant The participant to check (required)
      *
      * @throws \Deegitalbe\LaravelTrustupIoStorecove\ApiException on non-2xx response
      * @throws \InvalidArgumentException
+     * @return array of \Deegitalbe\LaravelTrustupIoStorecove\Model\DiscoveredParticipant, HTTP status code, HTTP response headers (array of strings)
      */
     public function discoveryReceivesWithHttpInfo($discoverable_participant)
     {
@@ -696,7 +693,7 @@ class DiscoveryApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders(),
+                $response->getHeaders()
             ];
 
         } catch (ApiException $e) {
@@ -727,10 +724,10 @@ class DiscoveryApi
      *
      * Discover Network Participant Capabilites
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\DiscoverableParticipant  $discoverable_participant  The participant to check (required)
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\DiscoverableParticipant $discoverable_participant The participant to check (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function discoveryReceivesAsync($discoverable_participant)
     {
@@ -747,10 +744,10 @@ class DiscoveryApi
      *
      * Discover Network Participant Capabilites
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\DiscoverableParticipant  $discoverable_participant  The participant to check (required)
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\DiscoverableParticipant $discoverable_participant The participant to check (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function discoveryReceivesAsyncWithHttpInfo($discoverable_participant)
     {
@@ -774,7 +771,7 @@ class DiscoveryApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders(),
+                        $response->getHeaders()
                     ];
                 },
                 function ($exception) {
@@ -797,10 +794,10 @@ class DiscoveryApi
     /**
      * Create request for operation 'discoveryReceives'
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\DiscoverableParticipant  $discoverable_participant  The participant to check (required)
-     * @return \GuzzleHttp\Psr7\Request
+     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\DiscoverableParticipant $discoverable_participant The participant to check (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
      */
     protected function discoveryReceivesRequest($discoverable_participant)
     {
@@ -817,6 +814,8 @@ class DiscoveryApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
+
+
 
         // body params
         $_tempBody = null;
@@ -839,14 +838,14 @@ class DiscoveryApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-
-            if ($headers['Content-Type'] === 'application/json') {
+            
+            if($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
+                if(is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -856,7 +855,7 @@ class DiscoveryApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue,
+                        'contents' => $formParamValue
                     ];
                 }
                 // for HTTP post (form)
@@ -889,10 +888,9 @@ class DiscoveryApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
-
         return new Request(
             'POST',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -901,17 +899,16 @@ class DiscoveryApi
     /**
      * Create http client option
      *
-     * @return array of http client options
-     *
      * @throws \RuntimeException on file opening failure
+     * @return array of http client options
      */
     protected function createHttpClientOption()
     {
         $options = [];
         if ($this->config->getDebug()) {
             $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
-            if (! $options[RequestOptions::DEBUG]) {
-                throw new \RuntimeException('Failed to open the debug file: '.$this->config->getDebugFile());
+            if (!$options[RequestOptions::DEBUG]) {
+                throw new \RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
             }
         }
 

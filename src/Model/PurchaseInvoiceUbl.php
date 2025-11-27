@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,34 +29,33 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * PurchaseInvoiceUbl Class Doc Comment
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PurchaseInvoiceUbl implements ArrayAccess, ModelInterface
+class PurchaseInvoiceUbl implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'PurchaseInvoiceUbl';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'guid' => 'string',
         'tax_system' => 'string',
@@ -65,14 +63,14 @@ class PurchaseInvoiceUbl implements ArrayAccess, ModelInterface
         'external_user_id' => 'string',
         'external_key' => 'string',
         'system_generated_primary_image' => 'bool',
-        'ubl' => 'string',
+        'ubl' => 'string'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'guid' => 'uuid',
         'tax_system' => null,
@@ -80,7 +78,7 @@ class PurchaseInvoiceUbl implements ArrayAccess, ModelInterface
         'external_user_id' => null,
         'external_key' => null,
         'system_generated_primary_image' => null,
-        'ubl' => null,
+        'ubl' => null
     ];
 
     /**
@@ -116,7 +114,7 @@ class PurchaseInvoiceUbl implements ArrayAccess, ModelInterface
         'external_user_id' => 'external_user_id',
         'external_key' => 'external_key',
         'system_generated_primary_image' => 'system_generated_primary_image',
-        'ubl' => 'ubl',
+        'ubl' => 'ubl'
     ];
 
     /**
@@ -131,7 +129,7 @@ class PurchaseInvoiceUbl implements ArrayAccess, ModelInterface
         'external_user_id' => 'setExternalUserId',
         'external_key' => 'setExternalKey',
         'system_generated_primary_image' => 'setSystemGeneratedPrimaryImage',
-        'ubl' => 'setUbl',
+        'ubl' => 'setUbl'
     ];
 
     /**
@@ -146,7 +144,7 @@ class PurchaseInvoiceUbl implements ArrayAccess, ModelInterface
         'external_user_id' => 'getExternalUserId',
         'external_key' => 'getExternalKey',
         'system_generated_primary_image' => 'getSystemGeneratedPrimaryImage',
-        'ubl' => 'getUbl',
+        'ubl' => 'getUbl'
     ];
 
     /**
@@ -190,6 +188,10 @@ class PurchaseInvoiceUbl implements ArrayAccess, ModelInterface
         return self::$swaggerModelName;
     }
 
+    
+
+    
+
     /**
      * Associative array for storing property values
      *
@@ -200,10 +202,10 @@ class PurchaseInvoiceUbl implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['guid'] = isset($data['guid']) ? $data['guid'] : null;
         $this->container['tax_system'] = isset($data['tax_system']) ? $data['tax_system'] : null;
@@ -237,6 +239,7 @@ class PurchaseInvoiceUbl implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets guid
      *
@@ -250,7 +253,8 @@ class PurchaseInvoiceUbl implements ArrayAccess, ModelInterface
     /**
      * Sets guid
      *
-     * @param  string  $guid  The GUID of the invoice
+     * @param string $guid The GUID of the invoice
+     *
      * @return $this
      */
     public function setGuid($guid)
@@ -273,7 +277,8 @@ class PurchaseInvoiceUbl implements ArrayAccess, ModelInterface
     /**
      * Sets tax_system
      *
-     * @param  string  $tax_system  The tax system of the invoice. Either tax_line_percentages or tax_line_amounts. The first tax system means the invoice lines contain only the tax percentages and the tax amounts are included only in the tax subtotals at the invoice level and so are only calculated at the invoice level. The tax system tax_line_amounts means that in addition to the percentage, each invoice line also contains the tax amount. The tax subtotals at the invoice level are calculated as the sum of the tax of the invoice lines. The distinction between the two tax systems has has implications for rounding.
+     * @param string $tax_system The tax system of the invoice. Either tax_line_percentages or tax_line_amounts. The first tax system means the invoice lines contain only the tax percentages and the tax amounts are included only in the tax subtotals at the invoice level and so are only calculated at the invoice level. The tax system tax_line_amounts means that in addition to the percentage, each invoice line also contains the tax amount. The tax subtotals at the invoice level are calculated as the sum of the tax of the invoice lines. The distinction between the two tax systems has has implications for rounding.
+     *
      * @return $this
      */
     public function setTaxSystem($tax_system)
@@ -296,7 +301,8 @@ class PurchaseInvoiceUbl implements ArrayAccess, ModelInterface
     /**
      * Sets legal_entity_id
      *
-     * @param  int  $legal_entity_id  The id of the LegalEntity the invoice was received for.
+     * @param int $legal_entity_id The id of the LegalEntity the invoice was received for.
+     *
      * @return $this
      */
     public function setLegalEntityId($legal_entity_id)
@@ -319,7 +325,8 @@ class PurchaseInvoiceUbl implements ArrayAccess, ModelInterface
     /**
      * Sets external_user_id
      *
-     * @param  string  $external_user_id  Used for the embedded portal retrieval service. The external_user_id you provided when the ShopAccount was created.
+     * @param string $external_user_id Used for the embedded portal retrieval service. The external_user_id you provided when the ShopAccount was created.
+     *
      * @return $this
      */
     public function setExternalUserId($external_user_id)
@@ -342,7 +349,8 @@ class PurchaseInvoiceUbl implements ArrayAccess, ModelInterface
     /**
      * Sets external_key
      *
-     * @param  string  $external_key  Used for accountants. The id you specified for the organization.
+     * @param string $external_key Used for accountants. The id you specified for the organization.
+     *
      * @return $this
      */
     public function setExternalKey($external_key)
@@ -365,7 +373,8 @@ class PurchaseInvoiceUbl implements ArrayAccess, ModelInterface
     /**
      * Sets system_generated_primary_image
      *
-     * @param  bool  $system_generated_primary_image  Whether or not the document image (PDF) was generated by Storecove. If true, it means the invoice was received without any attachments and Storecove generated one for you. If false, the invoice will contain at least one attachment, which was received from the invoice sender.
+     * @param bool $system_generated_primary_image Whether or not the document image (PDF) was generated by Storecove. If true, it means the invoice was received without any attachments and Storecove generated one for you. If false, the invoice will contain at least one attachment, which was received from the invoice sender.
+     *
      * @return $this
      */
     public function setSystemGeneratedPrimaryImage($system_generated_primary_image)
@@ -388,7 +397,8 @@ class PurchaseInvoiceUbl implements ArrayAccess, ModelInterface
     /**
      * Sets ubl
      *
-     * @param  string  $ubl  The Base64 encoded UBL invoice.
+     * @param string $ubl The Base64 encoded UBL invoice.
+     *
      * @return $this
      */
     public function setUbl($ubl)
@@ -397,12 +407,12 @@ class PurchaseInvoiceUbl implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -412,7 +422,8 @@ class PurchaseInvoiceUbl implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -423,8 +434,9 @@ class PurchaseInvoiceUbl implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -439,7 +451,8 @@ class PurchaseInvoiceUbl implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -464,3 +477,5 @@ class PurchaseInvoiceUbl implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

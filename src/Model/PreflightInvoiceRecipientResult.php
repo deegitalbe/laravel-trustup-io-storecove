@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,47 +29,45 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * PreflightInvoiceRecipientResult Class Doc Comment
  *
  * @category Class
- *
  * @description The result of preflighting an invoice recipient
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PreflightInvoiceRecipientResult implements ArrayAccess, ModelInterface
+class PreflightInvoiceRecipientResult implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'PreflightInvoiceRecipientResult';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
-        'code' => 'string',
+        'code' => 'string'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
-        'code' => null,
+        'code' => null
     ];
 
     /**
@@ -100,7 +97,7 @@ class PreflightInvoiceRecipientResult implements ArrayAccess, ModelInterface
      * @var string[]
      */
     protected static $attributeMap = [
-        'code' => 'code',
+        'code' => 'code'
     ];
 
     /**
@@ -109,7 +106,7 @@ class PreflightInvoiceRecipientResult implements ArrayAccess, ModelInterface
      * @var string[]
      */
     protected static $setters = [
-        'code' => 'setCode',
+        'code' => 'setCode'
     ];
 
     /**
@@ -118,7 +115,7 @@ class PreflightInvoiceRecipientResult implements ArrayAccess, ModelInterface
      * @var string[]
      */
     protected static $getters = [
-        'code' => 'getCode',
+        'code' => 'getCode'
     ];
 
     /**
@@ -163,9 +160,10 @@ class PreflightInvoiceRecipientResult implements ArrayAccess, ModelInterface
     }
 
     const CODE_OK = 'ok';
-
     const CODE_NOK = 'nok';
+    
 
+    
     /**
      * Gets allowable values of the enum
      *
@@ -178,6 +176,7 @@ class PreflightInvoiceRecipientResult implements ArrayAccess, ModelInterface
             self::CODE_NOK,
         ];
     }
+    
 
     /**
      * Associative array for storing property values
@@ -189,10 +188,10 @@ class PreflightInvoiceRecipientResult implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['code'] = isset($data['code']) ? $data['code'] : null;
     }
@@ -207,7 +206,7 @@ class PreflightInvoiceRecipientResult implements ArrayAccess, ModelInterface
         $invalidProperties = [];
 
         $allowedValues = $this->getCodeAllowableValues();
-        if (! is_null($this->container['code']) && ! in_array($this->container['code'], $allowedValues, true)) {
+        if (!is_null($this->container['code']) && !in_array($this->container['code'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'code', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -228,6 +227,7 @@ class PreflightInvoiceRecipientResult implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets code
      *
@@ -241,13 +241,14 @@ class PreflightInvoiceRecipientResult implements ArrayAccess, ModelInterface
     /**
      * Sets code
      *
-     * @param  string  $code  The result code of the preflight request
+     * @param string $code The result code of the preflight request
+     *
      * @return $this
      */
     public function setCode($code)
     {
         $allowedValues = $this->getCodeAllowableValues();
-        if (! is_null($code) && ! in_array($code, $allowedValues, true)) {
+        if (!is_null($code) && !in_array($code, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'code', must be one of '%s'",
@@ -259,12 +260,12 @@ class PreflightInvoiceRecipientResult implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -274,7 +275,8 @@ class PreflightInvoiceRecipientResult implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -285,8 +287,9 @@ class PreflightInvoiceRecipientResult implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -301,7 +304,8 @@ class PreflightInvoiceRecipientResult implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -326,3 +330,5 @@ class PreflightInvoiceRecipientResult implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

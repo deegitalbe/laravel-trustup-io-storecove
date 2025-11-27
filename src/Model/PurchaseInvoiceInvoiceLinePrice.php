@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,47 +29,46 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * PurchaseInvoiceInvoiceLinePrice Class Doc Comment
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PurchaseInvoiceInvoiceLinePrice implements ArrayAccess, ModelInterface
+class PurchaseInvoiceInvoiceLinePrice implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'PurchaseInvoiceInvoiceLinePrice';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'price_amount' => 'float',
-        'base_quantity' => 'float',
+        'base_quantity' => 'float'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'price_amount' => null,
-        'base_quantity' => null,
+        'base_quantity' => null
     ];
 
     /**
@@ -101,7 +99,7 @@ class PurchaseInvoiceInvoiceLinePrice implements ArrayAccess, ModelInterface
      */
     protected static $attributeMap = [
         'price_amount' => 'price_amount',
-        'base_quantity' => 'base_quantity',
+        'base_quantity' => 'base_quantity'
     ];
 
     /**
@@ -111,7 +109,7 @@ class PurchaseInvoiceInvoiceLinePrice implements ArrayAccess, ModelInterface
      */
     protected static $setters = [
         'price_amount' => 'setPriceAmount',
-        'base_quantity' => 'setBaseQuantity',
+        'base_quantity' => 'setBaseQuantity'
     ];
 
     /**
@@ -121,7 +119,7 @@ class PurchaseInvoiceInvoiceLinePrice implements ArrayAccess, ModelInterface
      */
     protected static $getters = [
         'price_amount' => 'getPriceAmount',
-        'base_quantity' => 'getBaseQuantity',
+        'base_quantity' => 'getBaseQuantity'
     ];
 
     /**
@@ -165,6 +163,10 @@ class PurchaseInvoiceInvoiceLinePrice implements ArrayAccess, ModelInterface
         return self::$swaggerModelName;
     }
 
+    
+
+    
+
     /**
      * Associative array for storing property values
      *
@@ -175,10 +177,10 @@ class PurchaseInvoiceInvoiceLinePrice implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['price_amount'] = isset($data['price_amount']) ? $data['price_amount'] : null;
         $this->container['base_quantity'] = isset($data['base_quantity']) ? $data['base_quantity'] : null;
@@ -207,6 +209,7 @@ class PurchaseInvoiceInvoiceLinePrice implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets price_amount
      *
@@ -220,7 +223,8 @@ class PurchaseInvoiceInvoiceLinePrice implements ArrayAccess, ModelInterface
     /**
      * Sets price_amount
      *
-     * @param  float  $price_amount  The price for one item, excluding VAT. Can have up to digits.
+     * @param float $price_amount The price for one item, excluding VAT. Can have up to digits.
+     *
      * @return $this
      */
     public function setPriceAmount($price_amount)
@@ -243,7 +247,8 @@ class PurchaseInvoiceInvoiceLinePrice implements ArrayAccess, ModelInterface
     /**
      * Sets base_quantity
      *
-     * @param  float  $base_quantity  The number of items the price is for. Can have up to digits.
+     * @param float $base_quantity The number of items the price is for. Can have up to digits.
+     *
      * @return $this
      */
     public function setBaseQuantity($base_quantity)
@@ -252,12 +257,12 @@ class PurchaseInvoiceInvoiceLinePrice implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -267,7 +272,8 @@ class PurchaseInvoiceInvoiceLinePrice implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -278,8 +284,9 @@ class PurchaseInvoiceInvoiceLinePrice implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -294,7 +301,8 @@ class PurchaseInvoiceInvoiceLinePrice implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -319,3 +327,5 @@ class PurchaseInvoiceInvoiceLinePrice implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

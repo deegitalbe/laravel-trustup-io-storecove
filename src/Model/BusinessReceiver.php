@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,51 +29,49 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * BusinessReceiver Class Doc Comment
  *
  * @category Class
- *
  * @description The business receiver of the document.
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class BusinessReceiver implements ArrayAccess, ModelInterface
+class BusinessReceiver implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'Business Receiver';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'legal' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\CountrySpecificationIdentifier',
         'tax' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\CountrySpecificationIdentifier',
-        'routing' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\CountrySpecificationIdentifier',
+        'routing' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\CountrySpecificationIdentifier'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'legal' => null,
         'tax' => null,
-        'routing' => null,
+        'routing' => null
     ];
 
     /**
@@ -106,7 +103,7 @@ class BusinessReceiver implements ArrayAccess, ModelInterface
     protected static $attributeMap = [
         'legal' => 'legal',
         'tax' => 'tax',
-        'routing' => 'routing',
+        'routing' => 'routing'
     ];
 
     /**
@@ -117,7 +114,7 @@ class BusinessReceiver implements ArrayAccess, ModelInterface
     protected static $setters = [
         'legal' => 'setLegal',
         'tax' => 'setTax',
-        'routing' => 'setRouting',
+        'routing' => 'setRouting'
     ];
 
     /**
@@ -128,7 +125,7 @@ class BusinessReceiver implements ArrayAccess, ModelInterface
     protected static $getters = [
         'legal' => 'getLegal',
         'tax' => 'getTax',
-        'routing' => 'getRouting',
+        'routing' => 'getRouting'
     ];
 
     /**
@@ -172,6 +169,10 @@ class BusinessReceiver implements ArrayAccess, ModelInterface
         return self::$swaggerModelName;
     }
 
+    
+
+    
+
     /**
      * Associative array for storing property values
      *
@@ -182,10 +183,10 @@ class BusinessReceiver implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['legal'] = isset($data['legal']) ? $data['legal'] : null;
         $this->container['tax'] = isset($data['tax']) ? $data['tax'] : null;
@@ -215,6 +216,7 @@ class BusinessReceiver implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets legal
      *
@@ -228,7 +230,8 @@ class BusinessReceiver implements ArrayAccess, ModelInterface
     /**
      * Sets legal
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\CountrySpecificationIdentifier  $legal  The legal identifier of the business receiver.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\CountrySpecificationIdentifier $legal The legal identifier of the business receiver.
+     *
      * @return $this
      */
     public function setLegal($legal)
@@ -251,7 +254,8 @@ class BusinessReceiver implements ArrayAccess, ModelInterface
     /**
      * Sets tax
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\CountrySpecificationIdentifier  $tax  The tax identifier of the business receiver.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\CountrySpecificationIdentifier $tax The tax identifier of the business receiver.
+     *
      * @return $this
      */
     public function setTax($tax)
@@ -274,7 +278,8 @@ class BusinessReceiver implements ArrayAccess, ModelInterface
     /**
      * Sets routing
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\CountrySpecificationIdentifier  $routing  The routing identifier of the business receiver.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\CountrySpecificationIdentifier $routing The routing identifier of the business receiver.
+     *
      * @return $this
      */
     public function setRouting($routing)
@@ -283,12 +288,12 @@ class BusinessReceiver implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -298,7 +303,8 @@ class BusinessReceiver implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -309,8 +315,9 @@ class BusinessReceiver implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -325,7 +332,8 @@ class BusinessReceiver implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -350,3 +358,5 @@ class BusinessReceiver implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

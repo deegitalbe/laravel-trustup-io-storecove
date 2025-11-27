@@ -4,9 +4,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -44,9 +43,8 @@ use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
  * PeppolIdentifiersApi Class Doc Comment
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 class PeppolIdentifiersApi
@@ -66,10 +64,15 @@ class PeppolIdentifiersApi
      */
     protected $headerSelector;
 
+    /**
+     * @param ClientInterface $client
+     * @param Configuration   $config
+     * @param HeaderSelector  $selector
+     */
     public function __construct(
-        ?ClientInterface $client = null,
-        ?Configuration $config = null,
-        ?HeaderSelector $selector = null
+        ClientInterface $client = null,
+        Configuration $config = null,
+        HeaderSelector $selector = null
     ) {
         $this->client = $client ?: new Client();
         $this->config = $config ?: new Configuration();
@@ -89,17 +92,16 @@ class PeppolIdentifiersApi
      *
      * Create a new PeppolIdentifier
      *
-     * @param  int  $legal_entity_id  The id of the LegalEntity for which to create the PeppolIdentifier (required)
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\PeppolIdentifierCreate  $peppol_identifier  PeppolIdentifier to create (required)
-     * @return \Deegitalbe\LaravelTrustupIoStorecove\Model\PeppolIdentifier
+     * @param  int $legal_entity_id The id of the LegalEntity for which to create the PeppolIdentifier (required)
+     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\PeppolIdentifierCreate $peppol_identifier PeppolIdentifier to create (required)
      *
      * @throws \Deegitalbe\LaravelTrustupIoStorecove\ApiException on non-2xx response
      * @throws \InvalidArgumentException
+     * @return \Deegitalbe\LaravelTrustupIoStorecove\Model\PeppolIdentifier
      */
     public function createPeppolIdentifier($legal_entity_id, $peppol_identifier)
     {
-        [$response] = $this->createPeppolIdentifierWithHttpInfo($legal_entity_id, $peppol_identifier);
-
+        list($response) = $this->createPeppolIdentifierWithHttpInfo($legal_entity_id, $peppol_identifier);
         return $response;
     }
 
@@ -108,12 +110,12 @@ class PeppolIdentifiersApi
      *
      * Create a new PeppolIdentifier
      *
-     * @param  int  $legal_entity_id  The id of the LegalEntity for which to create the PeppolIdentifier (required)
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\PeppolIdentifierCreate  $peppol_identifier  PeppolIdentifier to create (required)
-     * @return array of \Deegitalbe\LaravelTrustupIoStorecove\Model\PeppolIdentifier, HTTP status code, HTTP response headers (array of strings)
+     * @param  int $legal_entity_id The id of the LegalEntity for which to create the PeppolIdentifier (required)
+     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\PeppolIdentifierCreate $peppol_identifier PeppolIdentifier to create (required)
      *
      * @throws \Deegitalbe\LaravelTrustupIoStorecove\ApiException on non-2xx response
      * @throws \InvalidArgumentException
+     * @return array of \Deegitalbe\LaravelTrustupIoStorecove\Model\PeppolIdentifier, HTTP status code, HTTP response headers (array of strings)
      */
     public function createPeppolIdentifierWithHttpInfo($legal_entity_id, $peppol_identifier)
     {
@@ -161,7 +163,7 @@ class PeppolIdentifiersApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders(),
+                $response->getHeaders()
             ];
 
         } catch (ApiException $e) {
@@ -192,11 +194,11 @@ class PeppolIdentifiersApi
      *
      * Create a new PeppolIdentifier
      *
-     * @param  int  $legal_entity_id  The id of the LegalEntity for which to create the PeppolIdentifier (required)
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\PeppolIdentifierCreate  $peppol_identifier  PeppolIdentifier to create (required)
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @param  int $legal_entity_id The id of the LegalEntity for which to create the PeppolIdentifier (required)
+     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\PeppolIdentifierCreate $peppol_identifier PeppolIdentifier to create (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createPeppolIdentifierAsync($legal_entity_id, $peppol_identifier)
     {
@@ -213,11 +215,11 @@ class PeppolIdentifiersApi
      *
      * Create a new PeppolIdentifier
      *
-     * @param  int  $legal_entity_id  The id of the LegalEntity for which to create the PeppolIdentifier (required)
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\PeppolIdentifierCreate  $peppol_identifier  PeppolIdentifier to create (required)
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @param  int $legal_entity_id The id of the LegalEntity for which to create the PeppolIdentifier (required)
+     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\PeppolIdentifierCreate $peppol_identifier PeppolIdentifier to create (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createPeppolIdentifierAsyncWithHttpInfo($legal_entity_id, $peppol_identifier)
     {
@@ -241,7 +243,7 @@ class PeppolIdentifiersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders(),
+                        $response->getHeaders()
                     ];
                 },
                 function ($exception) {
@@ -264,11 +266,11 @@ class PeppolIdentifiersApi
     /**
      * Create request for operation 'createPeppolIdentifier'
      *
-     * @param  int  $legal_entity_id  The id of the LegalEntity for which to create the PeppolIdentifier (required)
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\PeppolIdentifierCreate  $peppol_identifier  PeppolIdentifier to create (required)
-     * @return \GuzzleHttp\Psr7\Request
+     * @param  int $legal_entity_id The id of the LegalEntity for which to create the PeppolIdentifier (required)
+     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\PeppolIdentifierCreate $peppol_identifier PeppolIdentifier to create (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
      */
     protected function createPeppolIdentifierRequest($legal_entity_id, $peppol_identifier)
     {
@@ -292,10 +294,11 @@ class PeppolIdentifiersApi
         $httpBody = '';
         $multipart = false;
 
+
         // path params
         if ($legal_entity_id !== null) {
             $resourcePath = str_replace(
-                '{'.'legal_entity_id'.'}',
+                '{' . 'legal_entity_id' . '}',
                 ObjectSerializer::toPathValue($legal_entity_id),
                 $resourcePath
             );
@@ -322,14 +325,14 @@ class PeppolIdentifiersApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-
-            if ($headers['Content-Type'] === 'application/json') {
+            
+            if($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
+                if(is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -339,7 +342,7 @@ class PeppolIdentifiersApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue,
+                        'contents' => $formParamValue
                     ];
                 }
                 // for HTTP post (form)
@@ -372,10 +375,9 @@ class PeppolIdentifiersApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
-
         return new Request(
             'POST',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -386,14 +388,14 @@ class PeppolIdentifiersApi
      *
      * Delete PeppolIdentifier
      *
-     * @param  int  $legal_entity_id  The id of the LegalEntity this PeppolIdentifier belongs to (required)
-     * @param  string  $superscheme  The superscheme of the identifier. Should always be \&quot;iso6523-actorid-upis\&quot;. (required)
-     * @param  string  $scheme  PEPPOL identifier scheme id, e.g. \&quot;DE:VAT\&quot;. For a full list see &lt;&lt;_receiver_identifiers_list&gt;&gt;. (required)
-     * @param  string  $identifier  PEPPOL identifier (required)
-     * @return void
+     * @param  int $legal_entity_id The id of the LegalEntity this PeppolIdentifier belongs to (required)
+     * @param  string $superscheme The superscheme of the identifier. Should always be \&quot;iso6523-actorid-upis\&quot;. (required)
+     * @param  string $scheme PEPPOL identifier scheme id, e.g. \&quot;DE:VAT\&quot;. For a full list see &lt;&lt;_receiver_identifiers_list&gt;&gt;. (required)
+     * @param  string $identifier PEPPOL identifier (required)
      *
      * @throws \Deegitalbe\LaravelTrustupIoStorecove\ApiException on non-2xx response
      * @throws \InvalidArgumentException
+     * @return void
      */
     public function deletePeppolIdentifier($legal_entity_id, $superscheme, $scheme, $identifier)
     {
@@ -405,14 +407,14 @@ class PeppolIdentifiersApi
      *
      * Delete PeppolIdentifier
      *
-     * @param  int  $legal_entity_id  The id of the LegalEntity this PeppolIdentifier belongs to (required)
-     * @param  string  $superscheme  The superscheme of the identifier. Should always be \&quot;iso6523-actorid-upis\&quot;. (required)
-     * @param  string  $scheme  PEPPOL identifier scheme id, e.g. \&quot;DE:VAT\&quot;. For a full list see &lt;&lt;_receiver_identifiers_list&gt;&gt;. (required)
-     * @param  string  $identifier  PEPPOL identifier (required)
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @param  int $legal_entity_id The id of the LegalEntity this PeppolIdentifier belongs to (required)
+     * @param  string $superscheme The superscheme of the identifier. Should always be \&quot;iso6523-actorid-upis\&quot;. (required)
+     * @param  string $scheme PEPPOL identifier scheme id, e.g. \&quot;DE:VAT\&quot;. For a full list see &lt;&lt;_receiver_identifiers_list&gt;&gt;. (required)
+     * @param  string $identifier PEPPOL identifier (required)
      *
      * @throws \Deegitalbe\LaravelTrustupIoStorecove\ApiException on non-2xx response
      * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deletePeppolIdentifierWithHttpInfo($legal_entity_id, $superscheme, $scheme, $identifier)
     {
@@ -461,13 +463,13 @@ class PeppolIdentifiersApi
      *
      * Delete PeppolIdentifier
      *
-     * @param  int  $legal_entity_id  The id of the LegalEntity this PeppolIdentifier belongs to (required)
-     * @param  string  $superscheme  The superscheme of the identifier. Should always be \&quot;iso6523-actorid-upis\&quot;. (required)
-     * @param  string  $scheme  PEPPOL identifier scheme id, e.g. \&quot;DE:VAT\&quot;. For a full list see &lt;&lt;_receiver_identifiers_list&gt;&gt;. (required)
-     * @param  string  $identifier  PEPPOL identifier (required)
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @param  int $legal_entity_id The id of the LegalEntity this PeppolIdentifier belongs to (required)
+     * @param  string $superscheme The superscheme of the identifier. Should always be \&quot;iso6523-actorid-upis\&quot;. (required)
+     * @param  string $scheme PEPPOL identifier scheme id, e.g. \&quot;DE:VAT\&quot;. For a full list see &lt;&lt;_receiver_identifiers_list&gt;&gt;. (required)
+     * @param  string $identifier PEPPOL identifier (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deletePeppolIdentifierAsync($legal_entity_id, $superscheme, $scheme, $identifier)
     {
@@ -484,13 +486,13 @@ class PeppolIdentifiersApi
      *
      * Delete PeppolIdentifier
      *
-     * @param  int  $legal_entity_id  The id of the LegalEntity this PeppolIdentifier belongs to (required)
-     * @param  string  $superscheme  The superscheme of the identifier. Should always be \&quot;iso6523-actorid-upis\&quot;. (required)
-     * @param  string  $scheme  PEPPOL identifier scheme id, e.g. \&quot;DE:VAT\&quot;. For a full list see &lt;&lt;_receiver_identifiers_list&gt;&gt;. (required)
-     * @param  string  $identifier  PEPPOL identifier (required)
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @param  int $legal_entity_id The id of the LegalEntity this PeppolIdentifier belongs to (required)
+     * @param  string $superscheme The superscheme of the identifier. Should always be \&quot;iso6523-actorid-upis\&quot;. (required)
+     * @param  string $scheme PEPPOL identifier scheme id, e.g. \&quot;DE:VAT\&quot;. For a full list see &lt;&lt;_receiver_identifiers_list&gt;&gt;. (required)
+     * @param  string $identifier PEPPOL identifier (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deletePeppolIdentifierAsyncWithHttpInfo($legal_entity_id, $superscheme, $scheme, $identifier)
     {
@@ -500,7 +502,7 @@ class PeppolIdentifiersApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) {
+                function ($response) use ($returnType) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -523,13 +525,13 @@ class PeppolIdentifiersApi
     /**
      * Create request for operation 'deletePeppolIdentifier'
      *
-     * @param  int  $legal_entity_id  The id of the LegalEntity this PeppolIdentifier belongs to (required)
-     * @param  string  $superscheme  The superscheme of the identifier. Should always be \&quot;iso6523-actorid-upis\&quot;. (required)
-     * @param  string  $scheme  PEPPOL identifier scheme id, e.g. \&quot;DE:VAT\&quot;. For a full list see &lt;&lt;_receiver_identifiers_list&gt;&gt;. (required)
-     * @param  string  $identifier  PEPPOL identifier (required)
-     * @return \GuzzleHttp\Psr7\Request
+     * @param  int $legal_entity_id The id of the LegalEntity this PeppolIdentifier belongs to (required)
+     * @param  string $superscheme The superscheme of the identifier. Should always be \&quot;iso6523-actorid-upis\&quot;. (required)
+     * @param  string $scheme PEPPOL identifier scheme id, e.g. \&quot;DE:VAT\&quot;. For a full list see &lt;&lt;_receiver_identifiers_list&gt;&gt;. (required)
+     * @param  string $identifier PEPPOL identifier (required)
      *
      * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
      */
     protected function deletePeppolIdentifierRequest($legal_entity_id, $superscheme, $scheme, $identifier)
     {
@@ -565,10 +567,11 @@ class PeppolIdentifiersApi
         $httpBody = '';
         $multipart = false;
 
+
         // path params
         if ($legal_entity_id !== null) {
             $resourcePath = str_replace(
-                '{'.'legal_entity_id'.'}',
+                '{' . 'legal_entity_id' . '}',
                 ObjectSerializer::toPathValue($legal_entity_id),
                 $resourcePath
             );
@@ -576,7 +579,7 @@ class PeppolIdentifiersApi
         // path params
         if ($superscheme !== null) {
             $resourcePath = str_replace(
-                '{'.'superscheme'.'}',
+                '{' . 'superscheme' . '}',
                 ObjectSerializer::toPathValue($superscheme),
                 $resourcePath
             );
@@ -584,7 +587,7 @@ class PeppolIdentifiersApi
         // path params
         if ($scheme !== null) {
             $resourcePath = str_replace(
-                '{'.'scheme'.'}',
+                '{' . 'scheme' . '}',
                 ObjectSerializer::toPathValue($scheme),
                 $resourcePath
             );
@@ -592,7 +595,7 @@ class PeppolIdentifiersApi
         // path params
         if ($identifier !== null) {
             $resourcePath = str_replace(
-                '{'.'identifier'.'}',
+                '{' . 'identifier' . '}',
                 ObjectSerializer::toPathValue($identifier),
                 $resourcePath
             );
@@ -616,14 +619,14 @@ class PeppolIdentifiersApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-
-            if ($headers['Content-Type'] === 'application/json') {
+            
+            if($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
                     $httpBody = \GuzzleHttp\json_encode($httpBody);
                 }
                 // array has no __toString(), so we should encode it manually
-                if (is_array($httpBody)) {
+                if(is_array($httpBody)) {
                     $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
                 }
             }
@@ -633,7 +636,7 @@ class PeppolIdentifiersApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue,
+                        'contents' => $formParamValue
                     ];
                 }
                 // for HTTP post (form)
@@ -666,10 +669,9 @@ class PeppolIdentifiersApi
         );
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
-
         return new Request(
             'DELETE',
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -678,17 +680,16 @@ class PeppolIdentifiersApi
     /**
      * Create http client option
      *
-     * @return array of http client options
-     *
      * @throws \RuntimeException on file opening failure
+     * @return array of http client options
      */
     protected function createHttpClientOption()
     {
         $options = [];
         if ($this->config->getDebug()) {
             $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
-            if (! $options[RequestOptions::DEBUG]) {
-                throw new \RuntimeException('Failed to open the debug file: '.$this->config->getDebugFile());
+            if (!$options[RequestOptions::DEBUG]) {
+                throw new \RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
             }
         }
 

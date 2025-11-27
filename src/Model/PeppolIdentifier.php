@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,51 +29,50 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * PeppolIdentifier Class Doc Comment
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PeppolIdentifier implements ArrayAccess, ModelInterface
+class PeppolIdentifier implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'PeppolIdentifier';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'identifier' => 'string',
         'scheme' => 'string',
         'superscheme' => 'string',
-        'corppass' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\CorpPass',
+        'corppass' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\CorpPass'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'identifier' => null,
         'scheme' => null,
         'superscheme' => null,
-        'corppass' => null,
+        'corppass' => null
     ];
 
     /**
@@ -107,7 +105,7 @@ class PeppolIdentifier implements ArrayAccess, ModelInterface
         'identifier' => 'identifier',
         'scheme' => 'scheme',
         'superscheme' => 'superscheme',
-        'corppass' => 'corppass',
+        'corppass' => 'corppass'
     ];
 
     /**
@@ -119,7 +117,7 @@ class PeppolIdentifier implements ArrayAccess, ModelInterface
         'identifier' => 'setIdentifier',
         'scheme' => 'setScheme',
         'superscheme' => 'setSuperscheme',
-        'corppass' => 'setCorppass',
+        'corppass' => 'setCorppass'
     ];
 
     /**
@@ -131,7 +129,7 @@ class PeppolIdentifier implements ArrayAccess, ModelInterface
         'identifier' => 'getIdentifier',
         'scheme' => 'getScheme',
         'superscheme' => 'getSuperscheme',
-        'corppass' => 'getCorppass',
+        'corppass' => 'getCorppass'
     ];
 
     /**
@@ -175,6 +173,10 @@ class PeppolIdentifier implements ArrayAccess, ModelInterface
         return self::$swaggerModelName;
     }
 
+    
+
+    
+
     /**
      * Associative array for storing property values
      *
@@ -185,10 +187,10 @@ class PeppolIdentifier implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
         $this->container['scheme'] = isset($data['scheme']) ? $data['scheme'] : null;
@@ -205,27 +207,27 @@ class PeppolIdentifier implements ArrayAccess, ModelInterface
     {
         $invalidProperties = [];
 
-        if (! is_null($this->container['identifier']) && (mb_strlen($this->container['identifier']) > 64)) {
+        if (!is_null($this->container['identifier']) && (mb_strlen($this->container['identifier']) > 64)) {
             $invalidProperties[] = "invalid value for 'identifier', the character length must be smaller than or equal to 64.";
         }
 
-        if (! is_null($this->container['identifier']) && (mb_strlen($this->container['identifier']) < 2)) {
+        if (!is_null($this->container['identifier']) && (mb_strlen($this->container['identifier']) < 2)) {
             $invalidProperties[] = "invalid value for 'identifier', the character length must be bigger than or equal to 2.";
         }
 
-        if (! is_null($this->container['scheme']) && (mb_strlen($this->container['scheme']) > 64)) {
+        if (!is_null($this->container['scheme']) && (mb_strlen($this->container['scheme']) > 64)) {
             $invalidProperties[] = "invalid value for 'scheme', the character length must be smaller than or equal to 64.";
         }
 
-        if (! is_null($this->container['scheme']) && (mb_strlen($this->container['scheme']) < 2)) {
+        if (!is_null($this->container['scheme']) && (mb_strlen($this->container['scheme']) < 2)) {
             $invalidProperties[] = "invalid value for 'scheme', the character length must be bigger than or equal to 2.";
         }
 
-        if (! is_null($this->container['superscheme']) && (mb_strlen($this->container['superscheme']) > 64)) {
+        if (!is_null($this->container['superscheme']) && (mb_strlen($this->container['superscheme']) > 64)) {
             $invalidProperties[] = "invalid value for 'superscheme', the character length must be smaller than or equal to 64.";
         }
 
-        if (! is_null($this->container['superscheme']) && (mb_strlen($this->container['superscheme']) < 2)) {
+        if (!is_null($this->container['superscheme']) && (mb_strlen($this->container['superscheme']) < 2)) {
             $invalidProperties[] = "invalid value for 'superscheme', the character length must be bigger than or equal to 2.";
         }
 
@@ -243,6 +245,7 @@ class PeppolIdentifier implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets identifier
      *
@@ -256,15 +259,16 @@ class PeppolIdentifier implements ArrayAccess, ModelInterface
     /**
      * Sets identifier
      *
-     * @param  string  $identifier  The identifier.
+     * @param string $identifier The identifier.
+     *
      * @return $this
      */
     public function setIdentifier($identifier)
     {
-        if (! is_null($identifier) && (mb_strlen($identifier) > 64)) {
+        if (!is_null($identifier) && (mb_strlen($identifier) > 64)) {
             throw new \InvalidArgumentException('invalid length for $identifier when calling PeppolIdentifier., must be smaller than or equal to 64.');
         }
-        if (! is_null($identifier) && (mb_strlen($identifier) < 2)) {
+        if (!is_null($identifier) && (mb_strlen($identifier) < 2)) {
             throw new \InvalidArgumentException('invalid length for $identifier when calling PeppolIdentifier., must be bigger than or equal to 2.');
         }
 
@@ -286,15 +290,16 @@ class PeppolIdentifier implements ArrayAccess, ModelInterface
     /**
      * Sets scheme
      *
-     * @param  string  $scheme  The scheme of the identifier. See <<_receiver_identifiers_list>> for a list.
+     * @param string $scheme The scheme of the identifier. See <<_receiver_identifiers_list>> for a list.
+     *
      * @return $this
      */
     public function setScheme($scheme)
     {
-        if (! is_null($scheme) && (mb_strlen($scheme) > 64)) {
+        if (!is_null($scheme) && (mb_strlen($scheme) > 64)) {
             throw new \InvalidArgumentException('invalid length for $scheme when calling PeppolIdentifier., must be smaller than or equal to 64.');
         }
-        if (! is_null($scheme) && (mb_strlen($scheme) < 2)) {
+        if (!is_null($scheme) && (mb_strlen($scheme) < 2)) {
             throw new \InvalidArgumentException('invalid length for $scheme when calling PeppolIdentifier., must be bigger than or equal to 2.');
         }
 
@@ -316,15 +321,16 @@ class PeppolIdentifier implements ArrayAccess, ModelInterface
     /**
      * Sets superscheme
      *
-     * @param  string  $superscheme  The superscheme of the identifier. Should always be \"iso6523-actorid-upis\".
+     * @param string $superscheme The superscheme of the identifier. Should always be \"iso6523-actorid-upis\".
+     *
      * @return $this
      */
     public function setSuperscheme($superscheme)
     {
-        if (! is_null($superscheme) && (mb_strlen($superscheme) > 64)) {
+        if (!is_null($superscheme) && (mb_strlen($superscheme) > 64)) {
             throw new \InvalidArgumentException('invalid length for $superscheme when calling PeppolIdentifier., must be smaller than or equal to 64.');
         }
-        if (! is_null($superscheme) && (mb_strlen($superscheme) < 2)) {
+        if (!is_null($superscheme) && (mb_strlen($superscheme) < 2)) {
             throw new \InvalidArgumentException('invalid length for $superscheme when calling PeppolIdentifier., must be bigger than or equal to 2.');
         }
 
@@ -346,7 +352,8 @@ class PeppolIdentifier implements ArrayAccess, ModelInterface
     /**
      * Sets corppass
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\CorpPass  $corppass  CorpPass details, if applicable.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\CorpPass $corppass CorpPass details, if applicable.
+     *
      * @return $this
      */
     public function setCorppass($corppass)
@@ -355,12 +362,12 @@ class PeppolIdentifier implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -370,7 +377,8 @@ class PeppolIdentifier implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -381,8 +389,9 @@ class PeppolIdentifier implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -397,7 +406,8 @@ class PeppolIdentifier implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -422,3 +432,5 @@ class PeppolIdentifier implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

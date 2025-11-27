@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,57 +29,55 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * PurchaseInvoiceTaxElement Class Doc Comment
  *
  * @category Class
- *
  * @description The tax element.
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PurchaseInvoiceTaxElement implements ArrayAccess, ModelInterface
+class PurchaseInvoiceTaxElement implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'PurchaseInvoiceTaxElement';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'category_code' => 'string',
         'amount' => 'float',
         'percentage' => 'float',
         'country' => 'string',
         'category' => 'string',
-        'type' => 'string',
+        'type' => 'string'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'category_code' => null,
         'amount' => null,
         'percentage' => null,
         'country' => null,
         'category' => null,
-        'type' => null,
+        'type' => null
     ];
 
     /**
@@ -115,7 +112,7 @@ class PurchaseInvoiceTaxElement implements ArrayAccess, ModelInterface
         'percentage' => 'percentage',
         'country' => 'country',
         'category' => 'category',
-        'type' => 'type',
+        'type' => 'type'
     ];
 
     /**
@@ -129,7 +126,7 @@ class PurchaseInvoiceTaxElement implements ArrayAccess, ModelInterface
         'percentage' => 'setPercentage',
         'country' => 'setCountry',
         'category' => 'setCategory',
-        'type' => 'setType',
+        'type' => 'setType'
     ];
 
     /**
@@ -143,7 +140,7 @@ class PurchaseInvoiceTaxElement implements ArrayAccess, ModelInterface
         'percentage' => 'getPercentage',
         'country' => 'getCountry',
         'category' => 'getCategory',
-        'type' => 'getType',
+        'type' => 'getType'
     ];
 
     /**
@@ -188,65 +185,38 @@ class PurchaseInvoiceTaxElement implements ArrayAccess, ModelInterface
     }
 
     const CATEGORY_STANDARD = 'standard';
-
     const CATEGORY_ZERO_RATED = 'zero_rated';
-
     const CATEGORY_REVERSE_CHARGE = 'reverse_charge';
-
     const CATEGORY_INTRA_COMMUNITY = 'intra_community';
-
     const CATEGORY_EXEMPT = 'exempt';
-
     const CATEGORY_EXPORT = 'export';
-
     const CATEGORY_OUTSIDE_SCOPE = 'outside_scope';
-
     const CATEGORY_REGULATION33_EXEMPT = 'regulation33_exempt';
-
     const CATEGORY_NONREGULATION33_EXEMPT = 'nonregulation33_exempt';
-
     const CATEGORY_DEEMED_SUPPLY = 'deemed_supply';
-
     const CATEGORY_SRCA_S = 'srca_s';
-
     const CATEGORY_SRCA_C = 'srca_c';
-
     const CATEGORY_NOT_REGISTERED = 'not_registered';
-
     const CATEGORY_IGST = 'igst';
-
     const CATEGORY_CGST = 'cgst';
-
     const CATEGORY_SGST = 'sgst';
-
     const CATEGORY_CESS = 'cess';
-
     const CATEGORY_STATE_CESS = 'state_cess';
-
     const CATEGORY_SROVR = 'srovr';
-
     const CATEGORY_SROVR_RS = 'srovr_rs';
-
     const CATEGORY_SROVR_LVG = 'srovr_lvg';
-
     const CATEGORY_SRLVG = 'srlvg';
-
     const CATEGORY_SALES = 'sales';
-
     const CATEGORY_SERVICE = 'service';
-
     const CATEGORY_TOURISM = 'tourism';
-
     const CATEGORY_HIGH_VALUE_GOODS = 'high_value_goods';
-
     const CATEGORY_LOW_VALUE_GOODS = 'low_value_goods';
-
     const CATEGORY_NOT_APPLICABLE = 'not_applicable';
-
     const TYPE_VAT = 'VAT';
-
     const TYPE_GST = 'GST';
+    
 
+    
     /**
      * Gets allowable values of the enum
      *
@@ -285,7 +255,7 @@ class PurchaseInvoiceTaxElement implements ArrayAccess, ModelInterface
             self::CATEGORY_NOT_APPLICABLE,
         ];
     }
-
+    
     /**
      * Gets allowable values of the enum
      *
@@ -298,6 +268,7 @@ class PurchaseInvoiceTaxElement implements ArrayAccess, ModelInterface
             self::TYPE_GST,
         ];
     }
+    
 
     /**
      * Associative array for storing property values
@@ -309,10 +280,10 @@ class PurchaseInvoiceTaxElement implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['category_code'] = isset($data['category_code']) ? $data['category_code'] : null;
         $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
@@ -332,7 +303,7 @@ class PurchaseInvoiceTaxElement implements ArrayAccess, ModelInterface
         $invalidProperties = [];
 
         $allowedValues = $this->getCategoryAllowableValues();
-        if (! is_null($this->container['category']) && ! in_array($this->container['category'], $allowedValues, true)) {
+        if (!is_null($this->container['category']) && !in_array($this->container['category'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'category', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -340,7 +311,7 @@ class PurchaseInvoiceTaxElement implements ArrayAccess, ModelInterface
         }
 
         $allowedValues = $this->getTypeAllowableValues();
-        if (! is_null($this->container['type']) && ! in_array($this->container['type'], $allowedValues, true)) {
+        if (!is_null($this->container['type']) && !in_array($this->container['type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'type', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -361,6 +332,7 @@ class PurchaseInvoiceTaxElement implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets category_code
      *
@@ -374,7 +346,8 @@ class PurchaseInvoiceTaxElement implements ArrayAccess, ModelInterface
     /**
      * Sets category_code
      *
-     * @param  string  $category_code  Deprecated. The tax category code.
+     * @param string $category_code Deprecated. The tax category code.
+     *
      * @return $this
      */
     public function setCategoryCode($category_code)
@@ -397,7 +370,8 @@ class PurchaseInvoiceTaxElement implements ArrayAccess, ModelInterface
     /**
      * Sets amount
      *
-     * @param  float  $amount  The tax amount.
+     * @param float $amount The tax amount.
+     *
      * @return $this
      */
     public function setAmount($amount)
@@ -420,7 +394,8 @@ class PurchaseInvoiceTaxElement implements ArrayAccess, ModelInterface
     /**
      * Sets percentage
      *
-     * @param  float  $percentage  The tax percentage.
+     * @param float $percentage The tax percentage.
+     *
      * @return $this
      */
     public function setPercentage($percentage)
@@ -443,7 +418,8 @@ class PurchaseInvoiceTaxElement implements ArrayAccess, ModelInterface
     /**
      * Sets country
      *
-     * @param  string  $country  The tax country.
+     * @param string $country The tax country.
+     *
      * @return $this
      */
     public function setCountry($country)
@@ -466,13 +442,14 @@ class PurchaseInvoiceTaxElement implements ArrayAccess, ModelInterface
     /**
      * Sets category
      *
-     * @param  string  $category  The tax category.
+     * @param string $category The tax category.
+     *
      * @return $this
      */
     public function setCategory($category)
     {
         $allowedValues = $this->getCategoryAllowableValues();
-        if (! is_null($category) && ! in_array($category, $allowedValues, true)) {
+        if (!is_null($category) && !in_array($category, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'category', must be one of '%s'",
@@ -498,13 +475,14 @@ class PurchaseInvoiceTaxElement implements ArrayAccess, ModelInterface
     /**
      * Sets type
      *
-     * @param  string  $type  The tax type.
+     * @param string $type The tax type.
+     *
      * @return $this
      */
     public function setType($type)
     {
         $allowedValues = $this->getTypeAllowableValues();
-        if (! is_null($type) && ! in_array($type, $allowedValues, true)) {
+        if (!is_null($type) && !in_array($type, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'type', must be one of '%s'",
@@ -516,12 +494,12 @@ class PurchaseInvoiceTaxElement implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -531,7 +509,8 @@ class PurchaseInvoiceTaxElement implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -542,8 +521,9 @@ class PurchaseInvoiceTaxElement implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -558,7 +538,8 @@ class PurchaseInvoiceTaxElement implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -583,3 +564,5 @@ class PurchaseInvoiceTaxElement implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

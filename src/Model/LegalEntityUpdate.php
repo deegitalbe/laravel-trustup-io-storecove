@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,34 +29,33 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * LegalEntityUpdate Class Doc Comment
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class LegalEntityUpdate implements ArrayAccess, ModelInterface
+class LegalEntityUpdate implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'LegalEntityUpdate';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'id' => 'int',
         'party_name' => 'string',
@@ -77,14 +75,15 @@ class LegalEntityUpdate implements ArrayAccess, ModelInterface
         'acts_as_sender' => 'bool',
         'acts_as_receiver' => 'bool',
         'tax_registered' => 'bool',
-        'classification_code' => 'string',
+        'override_own_credentials' => 'bool',
+        'classification_code' => 'string'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'id' => 'int64',
         'party_name' => null,
@@ -104,7 +103,8 @@ class LegalEntityUpdate implements ArrayAccess, ModelInterface
         'acts_as_sender' => null,
         'acts_as_receiver' => null,
         'tax_registered' => null,
-        'classification_code' => null,
+        'override_own_credentials' => null,
+        'classification_code' => null
     ];
 
     /**
@@ -152,7 +152,8 @@ class LegalEntityUpdate implements ArrayAccess, ModelInterface
         'acts_as_sender' => 'acts_as_sender',
         'acts_as_receiver' => 'acts_as_receiver',
         'tax_registered' => 'tax_registered',
-        'classification_code' => 'classification_code',
+        'override_own_credentials' => 'override_own_credentials',
+        'classification_code' => 'classification_code'
     ];
 
     /**
@@ -179,7 +180,8 @@ class LegalEntityUpdate implements ArrayAccess, ModelInterface
         'acts_as_sender' => 'setActsAsSender',
         'acts_as_receiver' => 'setActsAsReceiver',
         'tax_registered' => 'setTaxRegistered',
-        'classification_code' => 'setClassificationCode',
+        'override_own_credentials' => 'setOverrideOwnCredentials',
+        'classification_code' => 'setClassificationCode'
     ];
 
     /**
@@ -206,7 +208,8 @@ class LegalEntityUpdate implements ArrayAccess, ModelInterface
         'acts_as_sender' => 'getActsAsSender',
         'acts_as_receiver' => 'getActsAsReceiver',
         'tax_registered' => 'getTaxRegistered',
-        'classification_code' => 'getClassificationCode',
+        'override_own_credentials' => 'getOverrideOwnCredentials',
+        'classification_code' => 'getClassificationCode'
     ];
 
     /**
@@ -251,17 +254,18 @@ class LegalEntityUpdate implements ArrayAccess, ModelInterface
     }
 
     const ADVERTISEMENTS_INVOICE = 'invoice';
-
     const ADVERTISEMENTS_INVOICE_RESPONSE = 'invoice_response';
-
-    const ADVERTISEMENTS_ORDER = 'order';
-
-    const ADVERTISEMENTS_ORDERING = 'ordering';
-
-    const ADVERTISEMENTS_ORDER_RESPONSE = 'order_response';
-
     const ADVERTISEMENTS_SELFBILLING = 'selfbilling';
+    const ADVERTISEMENTS_ORDER = 'order';
+    const ADVERTISEMENTS_ORDERING = 'ordering';
+    const ADVERTISEMENTS_ADVANCED_ORDERING = 'advanced_ordering';
+    const ADVERTISEMENTS_ADVANCED_ORDERING_SG_ORDER_BALANCE = 'advanced_ordering_sg_order_balance';
+    const ADVERTISEMENTS_REMITTANCE_ADVICE = 'remittance_advice';
+    const ADVERTISEMENTS_DESPATCH_ADVICE = 'despatch_advice';
+    const ADVERTISEMENTS_PIDX_INVOICING_ORDERING = 'pidx_invoicing_ordering';
+    
 
+    
     /**
      * Gets allowable values of the enum
      *
@@ -272,12 +276,17 @@ class LegalEntityUpdate implements ArrayAccess, ModelInterface
         return [
             self::ADVERTISEMENTS_INVOICE,
             self::ADVERTISEMENTS_INVOICE_RESPONSE,
+            self::ADVERTISEMENTS_SELFBILLING,
             self::ADVERTISEMENTS_ORDER,
             self::ADVERTISEMENTS_ORDERING,
-            self::ADVERTISEMENTS_ORDER_RESPONSE,
-            self::ADVERTISEMENTS_SELFBILLING,
+            self::ADVERTISEMENTS_ADVANCED_ORDERING,
+            self::ADVERTISEMENTS_ADVANCED_ORDERING_SG_ORDER_BALANCE,
+            self::ADVERTISEMENTS_REMITTANCE_ADVICE,
+            self::ADVERTISEMENTS_DESPATCH_ADVICE,
+            self::ADVERTISEMENTS_PIDX_INVOICING_ORDERING,
         ];
     }
+    
 
     /**
      * Associative array for storing property values
@@ -289,10 +298,10 @@ class LegalEntityUpdate implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['party_name'] = isset($data['party_name']) ? $data['party_name'] : null;
@@ -312,6 +321,7 @@ class LegalEntityUpdate implements ArrayAccess, ModelInterface
         $this->container['acts_as_sender'] = isset($data['acts_as_sender']) ? $data['acts_as_sender'] : true;
         $this->container['acts_as_receiver'] = isset($data['acts_as_receiver']) ? $data['acts_as_receiver'] : true;
         $this->container['tax_registered'] = isset($data['tax_registered']) ? $data['tax_registered'] : true;
+        $this->container['override_own_credentials'] = isset($data['override_own_credentials']) ? $data['override_own_credentials'] : false;
         $this->container['classification_code'] = isset($data['classification_code']) ? $data['classification_code'] : null;
     }
 
@@ -324,63 +334,63 @@ class LegalEntityUpdate implements ArrayAccess, ModelInterface
     {
         $invalidProperties = [];
 
-        if (! is_null($this->container['party_name']) && (mb_strlen($this->container['party_name']) > 64)) {
+        if (!is_null($this->container['party_name']) && (mb_strlen($this->container['party_name']) > 64)) {
             $invalidProperties[] = "invalid value for 'party_name', the character length must be smaller than or equal to 64.";
         }
 
-        if (! is_null($this->container['party_name']) && (mb_strlen($this->container['party_name']) < 2)) {
+        if (!is_null($this->container['party_name']) && (mb_strlen($this->container['party_name']) < 2)) {
             $invalidProperties[] = "invalid value for 'party_name', the character length must be bigger than or equal to 2.";
         }
 
-        if (! is_null($this->container['line1']) && (mb_strlen($this->container['line1']) > 192)) {
+        if (!is_null($this->container['line1']) && (mb_strlen($this->container['line1']) > 192)) {
             $invalidProperties[] = "invalid value for 'line1', the character length must be smaller than or equal to 192.";
         }
 
-        if (! is_null($this->container['line1']) && (mb_strlen($this->container['line1']) < 2)) {
+        if (!is_null($this->container['line1']) && (mb_strlen($this->container['line1']) < 2)) {
             $invalidProperties[] = "invalid value for 'line1', the character length must be bigger than or equal to 2.";
         }
 
-        if (! is_null($this->container['line2']) && (mb_strlen($this->container['line2']) > 192)) {
+        if (!is_null($this->container['line2']) && (mb_strlen($this->container['line2']) > 192)) {
             $invalidProperties[] = "invalid value for 'line2', the character length must be smaller than or equal to 192.";
         }
 
-        if (! is_null($this->container['city']) && (mb_strlen($this->container['city']) > 64)) {
+        if (!is_null($this->container['city']) && (mb_strlen($this->container['city']) > 64)) {
             $invalidProperties[] = "invalid value for 'city', the character length must be smaller than or equal to 64.";
         }
 
-        if (! is_null($this->container['city']) && (mb_strlen($this->container['city']) < 2)) {
+        if (!is_null($this->container['city']) && (mb_strlen($this->container['city']) < 2)) {
             $invalidProperties[] = "invalid value for 'city', the character length must be bigger than or equal to 2.";
         }
 
-        if (! is_null($this->container['zip']) && (mb_strlen($this->container['zip']) > 32)) {
+        if (!is_null($this->container['zip']) && (mb_strlen($this->container['zip']) > 32)) {
             $invalidProperties[] = "invalid value for 'zip', the character length must be smaller than or equal to 32.";
         }
 
-        if (! is_null($this->container['zip']) && (mb_strlen($this->container['zip']) < 2)) {
+        if (!is_null($this->container['zip']) && (mb_strlen($this->container['zip']) < 2)) {
             $invalidProperties[] = "invalid value for 'zip', the character length must be bigger than or equal to 2.";
         }
 
-        if (! is_null($this->container['county']) && (mb_strlen($this->container['county']) > 64)) {
+        if (!is_null($this->container['county']) && (mb_strlen($this->container['county']) > 64)) {
             $invalidProperties[] = "invalid value for 'county', the character length must be smaller than or equal to 64.";
         }
 
-        if (! is_null($this->container['tenant_id']) && (mb_strlen($this->container['tenant_id']) > 64)) {
+        if (!is_null($this->container['tenant_id']) && (mb_strlen($this->container['tenant_id']) > 64)) {
             $invalidProperties[] = "invalid value for 'tenant_id', the character length must be smaller than or equal to 64.";
         }
 
-        if (! is_null($this->container['third_party_username']) && (mb_strlen($this->container['third_party_username']) > 64)) {
+        if (!is_null($this->container['third_party_username']) && (mb_strlen($this->container['third_party_username']) > 64)) {
             $invalidProperties[] = "invalid value for 'third_party_username', the character length must be smaller than or equal to 64.";
         }
 
-        if (! is_null($this->container['third_party_username']) && (mb_strlen($this->container['third_party_username']) < 2)) {
+        if (!is_null($this->container['third_party_username']) && (mb_strlen($this->container['third_party_username']) < 2)) {
             $invalidProperties[] = "invalid value for 'third_party_username', the character length must be bigger than or equal to 2.";
         }
 
-        if (! is_null($this->container['third_party_password']) && (mb_strlen($this->container['third_party_password']) > 64)) {
+        if (!is_null($this->container['third_party_password']) && (mb_strlen($this->container['third_party_password']) > 64)) {
             $invalidProperties[] = "invalid value for 'third_party_password', the character length must be smaller than or equal to 64.";
         }
 
-        if (! is_null($this->container['third_party_password']) && (mb_strlen($this->container['third_party_password']) < 2)) {
+        if (!is_null($this->container['third_party_password']) && (mb_strlen($this->container['third_party_password']) < 2)) {
             $invalidProperties[] = "invalid value for 'third_party_password', the character length must be bigger than or equal to 2.";
         }
 
@@ -398,6 +408,7 @@ class LegalEntityUpdate implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets id
      *
@@ -411,7 +422,8 @@ class LegalEntityUpdate implements ArrayAccess, ModelInterface
     /**
      * Sets id
      *
-     * @param  int  $id  The Storecove assigned id for the LegalEntity.
+     * @param int $id The Storecove assigned id for the LegalEntity.
+     *
      * @return $this
      */
     public function setId($id)
@@ -434,15 +446,16 @@ class LegalEntityUpdate implements ArrayAccess, ModelInterface
     /**
      * Sets party_name
      *
-     * @param  string  $party_name  The name of the company.
+     * @param string $party_name The name of the company.
+     *
      * @return $this
      */
     public function setPartyName($party_name)
     {
-        if (! is_null($party_name) && (mb_strlen($party_name) > 64)) {
+        if (!is_null($party_name) && (mb_strlen($party_name) > 64)) {
             throw new \InvalidArgumentException('invalid length for $party_name when calling LegalEntityUpdate., must be smaller than or equal to 64.');
         }
-        if (! is_null($party_name) && (mb_strlen($party_name) < 2)) {
+        if (!is_null($party_name) && (mb_strlen($party_name) < 2)) {
             throw new \InvalidArgumentException('invalid length for $party_name when calling LegalEntityUpdate., must be bigger than or equal to 2.');
         }
 
@@ -464,15 +477,16 @@ class LegalEntityUpdate implements ArrayAccess, ModelInterface
     /**
      * Sets line1
      *
-     * @param  string  $line1  The first address line.
+     * @param string $line1 The first address line.
+     *
      * @return $this
      */
     public function setLine1($line1)
     {
-        if (! is_null($line1) && (mb_strlen($line1) > 192)) {
+        if (!is_null($line1) && (mb_strlen($line1) > 192)) {
             throw new \InvalidArgumentException('invalid length for $line1 when calling LegalEntityUpdate., must be smaller than or equal to 192.');
         }
-        if (! is_null($line1) && (mb_strlen($line1) < 2)) {
+        if (!is_null($line1) && (mb_strlen($line1) < 2)) {
             throw new \InvalidArgumentException('invalid length for $line1 when calling LegalEntityUpdate., must be bigger than or equal to 2.');
         }
 
@@ -494,12 +508,13 @@ class LegalEntityUpdate implements ArrayAccess, ModelInterface
     /**
      * Sets line2
      *
-     * @param  string  $line2  The second address line, if applicable
+     * @param string $line2 The second address line, if applicable
+     *
      * @return $this
      */
     public function setLine2($line2)
     {
-        if (! is_null($line2) && (mb_strlen($line2) > 192)) {
+        if (!is_null($line2) && (mb_strlen($line2) > 192)) {
             throw new \InvalidArgumentException('invalid length for $line2 when calling LegalEntityUpdate., must be smaller than or equal to 192.');
         }
 
@@ -521,15 +536,16 @@ class LegalEntityUpdate implements ArrayAccess, ModelInterface
     /**
      * Sets city
      *
-     * @param  string  $city  The city.
+     * @param string $city The city.
+     *
      * @return $this
      */
     public function setCity($city)
     {
-        if (! is_null($city) && (mb_strlen($city) > 64)) {
+        if (!is_null($city) && (mb_strlen($city) > 64)) {
             throw new \InvalidArgumentException('invalid length for $city when calling LegalEntityUpdate., must be smaller than or equal to 64.');
         }
-        if (! is_null($city) && (mb_strlen($city) < 2)) {
+        if (!is_null($city) && (mb_strlen($city) < 2)) {
             throw new \InvalidArgumentException('invalid length for $city when calling LegalEntityUpdate., must be bigger than or equal to 2.');
         }
 
@@ -551,15 +567,16 @@ class LegalEntityUpdate implements ArrayAccess, ModelInterface
     /**
      * Sets zip
      *
-     * @param  string  $zip  The zipcode.
+     * @param string $zip The zipcode.
+     *
      * @return $this
      */
     public function setZip($zip)
     {
-        if (! is_null($zip) && (mb_strlen($zip) > 32)) {
+        if (!is_null($zip) && (mb_strlen($zip) > 32)) {
             throw new \InvalidArgumentException('invalid length for $zip when calling LegalEntityUpdate., must be smaller than or equal to 32.');
         }
-        if (! is_null($zip) && (mb_strlen($zip) < 2)) {
+        if (!is_null($zip) && (mb_strlen($zip) < 2)) {
             throw new \InvalidArgumentException('invalid length for $zip when calling LegalEntityUpdate., must be bigger than or equal to 2.');
         }
 
@@ -581,12 +598,13 @@ class LegalEntityUpdate implements ArrayAccess, ModelInterface
     /**
      * Sets county
      *
-     * @param  string  $county  County, if applicable
+     * @param string $county County, if applicable
+     *
      * @return $this
      */
     public function setCounty($county)
     {
-        if (! is_null($county) && (mb_strlen($county) > 64)) {
+        if (!is_null($county) && (mb_strlen($county) > 64)) {
             throw new \InvalidArgumentException('invalid length for $county when calling LegalEntityUpdate., must be smaller than or equal to 64.');
         }
 
@@ -608,7 +626,8 @@ class LegalEntityUpdate implements ArrayAccess, ModelInterface
     /**
      * Sets country
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\Country  $country  country
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\Country $country country
+     *
      * @return $this
      */
     public function setCountry($country)
@@ -631,12 +650,13 @@ class LegalEntityUpdate implements ArrayAccess, ModelInterface
     /**
      * Sets tenant_id
      *
-     * @param  string  $tenant_id  The id of the tenant, to be used in case of multi-tenant solutions. This property will included in webhook events.
+     * @param string $tenant_id The id of the tenant, to be used in case of multi-tenant solutions. This property will included in webhook events.
+     *
      * @return $this
      */
     public function setTenantId($tenant_id)
     {
-        if (! is_null($tenant_id) && (mb_strlen($tenant_id) > 64)) {
+        if (!is_null($tenant_id) && (mb_strlen($tenant_id) > 64)) {
             throw new \InvalidArgumentException('invalid length for $tenant_id when calling LegalEntityUpdate., must be smaller than or equal to 64.');
         }
 
@@ -658,7 +678,8 @@ class LegalEntityUpdate implements ArrayAccess, ModelInterface
     /**
      * Sets public
      *
-     * @param  bool  $public  Whether or not this LegalEntity is public. Public means it will be listed in the PEPPOL directory at https://directory.peppol.eu/ which is normally what you want. If you have a good reason to not want the LegalEntity listed, provide false. This property is ignored when for country SG, where it is always true.
+     * @param bool $public Whether or not this LegalEntity is public. Public means it will be listed in the PEPPOL directory at https://directory.peppol.eu/ which is normally what you want. If you have a good reason to not want the LegalEntity listed, provide false. This property is ignored when for country SG, where it is always true.
+     *
      * @return $this
      */
     public function setPublic($public)
@@ -681,13 +702,14 @@ class LegalEntityUpdate implements ArrayAccess, ModelInterface
     /**
      * Sets advertisements
      *
-     * @param  string[]  $advertisements  A list of document types to advertise. Use if this LegalEntity needs the ability to receive more than only invoice documents.
+     * @param string[] $advertisements A list of document groups to advertise. ++++ <ul>    <li>        <strong>invoice</strong><br/>        Gives Invoice and where applicable CreditNote under the Billing process.<br/>    </li>    <li>        <strong>invoice_response</strong><br/>        Gives InvoiceResponse under the Invoice Response process.<br/>    </li>    <li>        <strong>selfbilling</strong><br/>        Gives Invoice and where applicable CreditNote under the Selfbilling process.<br/>    </li>    <li>        <strong>order</strong><br/>        Gives Order under the Order Only process.<br/>    </li>    <li>        <strong>ordering</strong><br/>        Gives Order and OrderResponse under the Ordering process.<br/>    </li>    <li>        <strong>advanced_ordering</strong><br/>        Gives Order, AdvancedOrderResponse, OrderChange and OrderCancellation under the Advanced Ordering process.<br/>    </li>    <li>        <strong>despatch_advice</strong><br/>        Gives DespatchAdvice under the Despatch Advice process.<br/>    </li>    <li>        <strong>advanced_ordering_sg_order_balance</strong><br/>        Gives OrderBalance under the Advanced Ordering SG Order Balance process.<br/>    </li>    <li>        <strong>remittance_advice</strong><br/>        Gives RemittanceAdvice (DBNAlliance only).<br/>    </li>    <li>        <strong>pidx_invoicing_ordering</strong><br/>        Gives PIDX Invoice, InvoiceResponse, OrderChange, OrderCreate and OrderResponse (DBNAlliance only).<br/>    </li></ul> ++++
+     *
      * @return $this
      */
     public function setAdvertisements($advertisements)
     {
         $allowedValues = $this->getAdvertisementsAllowableValues();
-        if (! is_null($advertisements) && array_diff($advertisements, $allowedValues)) {
+        if (!is_null($advertisements) && array_diff($advertisements, $allowedValues)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'advertisements', must be one of '%s'",
@@ -713,15 +735,16 @@ class LegalEntityUpdate implements ArrayAccess, ModelInterface
     /**
      * Sets third_party_username
      *
-     * @param  string  $third_party_username  The username to use to authenticate to a system through which to send the document, or to obtain tax authority approval to send it. This field is currently relevant only for India and mandatory when creating an IN LegalEntity.
+     * @param string $third_party_username The username to use to authenticate to a system through which to send the document, or to obtain tax authority approval to send it. This field is currently relevant only for India and mandatory when creating an IN LegalEntity.
+     *
      * @return $this
      */
     public function setThirdPartyUsername($third_party_username)
     {
-        if (! is_null($third_party_username) && (mb_strlen($third_party_username) > 64)) {
+        if (!is_null($third_party_username) && (mb_strlen($third_party_username) > 64)) {
             throw new \InvalidArgumentException('invalid length for $third_party_username when calling LegalEntityUpdate., must be smaller than or equal to 64.');
         }
-        if (! is_null($third_party_username) && (mb_strlen($third_party_username) < 2)) {
+        if (!is_null($third_party_username) && (mb_strlen($third_party_username) < 2)) {
             throw new \InvalidArgumentException('invalid length for $third_party_username when calling LegalEntityUpdate., must be bigger than or equal to 2.');
         }
 
@@ -743,15 +766,16 @@ class LegalEntityUpdate implements ArrayAccess, ModelInterface
     /**
      * Sets third_party_password
      *
-     * @param  string  $third_party_password  The password to use to authenticate to a system through which to send the document, or to obtain tax authority approval to send it. This field is currently relevant only for India and mandatory when creating an IN LegalEntity.
+     * @param string $third_party_password The password to use to authenticate to a system through which to send the document, or to obtain tax authority approval to send it. This field is currently relevant only for India and mandatory when creating an IN LegalEntity.
+     *
      * @return $this
      */
     public function setThirdPartyPassword($third_party_password)
     {
-        if (! is_null($third_party_password) && (mb_strlen($third_party_password) > 64)) {
+        if (!is_null($third_party_password) && (mb_strlen($third_party_password) > 64)) {
             throw new \InvalidArgumentException('invalid length for $third_party_password when calling LegalEntityUpdate., must be smaller than or equal to 64.');
         }
-        if (! is_null($third_party_password) && (mb_strlen($third_party_password) < 2)) {
+        if (!is_null($third_party_password) && (mb_strlen($third_party_password) < 2)) {
             throw new \InvalidArgumentException('invalid length for $third_party_password when calling LegalEntityUpdate., must be bigger than or equal to 2.');
         }
 
@@ -773,7 +797,8 @@ class LegalEntityUpdate implements ArrayAccess, ModelInterface
     /**
      * Sets rea
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\Rea  $rea  The REA details for the LegalEntity. Only applies to IT LegalEntities.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\Rea $rea The REA details for the LegalEntity. Only applies to IT LegalEntities.
+     *
      * @return $this
      */
     public function setRea($rea)
@@ -796,7 +821,8 @@ class LegalEntityUpdate implements ArrayAccess, ModelInterface
     /**
      * Sets smart_inbox
      *
-     * @param  string  $smart_inbox  DEPRECATED. Use the <<_openapi_receiveddocuments_resource>> endpoint. The email address of the Smart Inbox for this LegalEntity.
+     * @param string $smart_inbox DEPRECATED. Use the <<_openapi_receiveddocuments_resource>> endpoint. The email address of the Smart Inbox for this LegalEntity.
+     *
      * @return $this
      */
     public function setSmartInbox($smart_inbox)
@@ -819,7 +845,8 @@ class LegalEntityUpdate implements ArrayAccess, ModelInterface
     /**
      * Sets acts_as_sender
      *
-     * @param  bool  $acts_as_sender  Whether or not this LegalEntity can act as a sender of documents.
+     * @param bool $acts_as_sender Whether or not this LegalEntity can act as a sender of documents.
+     *
      * @return $this
      */
     public function setActsAsSender($acts_as_sender)
@@ -842,7 +869,8 @@ class LegalEntityUpdate implements ArrayAccess, ModelInterface
     /**
      * Sets acts_as_receiver
      *
-     * @param  bool  $acts_as_receiver  Whether or not this LegalEntity can act as a receiver of documents. If not, no identifiers will be provioned on any exchange network.
+     * @param bool $acts_as_receiver Whether or not this LegalEntity can act as a receiver of documents. If not, no identifiers will be provioned on any exchange network.
+     *
      * @return $this
      */
     public function setActsAsReceiver($acts_as_receiver)
@@ -865,12 +893,37 @@ class LegalEntityUpdate implements ArrayAccess, ModelInterface
     /**
      * Sets tax_registered
      *
-     * @param  bool  $tax_registered  Whether or not this LegalEntity is tax registered. This influences the validation of the data presented when sending documents.
+     * @param bool $tax_registered Whether or not this LegalEntity is tax registered. This influences the validation of the data presented when sending documents.
+     *
      * @return $this
      */
     public function setTaxRegistered($tax_registered)
     {
         $this->container['tax_registered'] = $tax_registered;
+
+        return $this;
+    }
+
+    /**
+     * Gets override_own_credentials
+     *
+     * @return bool
+     */
+    public function getOverrideOwnCredentials()
+    {
+        return $this->container['override_own_credentials'];
+    }
+
+    /**
+     * Sets override_own_credentials
+     *
+     * @param bool $override_own_credentials If true, Storecove will use default credentials/signing artifacts even if specific ones are configured for this LegalEntity. Defaults to false.
+     *
+     * @return $this
+     */
+    public function setOverrideOwnCredentials($override_own_credentials)
+    {
+        $this->container['override_own_credentials'] = $override_own_credentials;
 
         return $this;
     }
@@ -888,7 +941,8 @@ class LegalEntityUpdate implements ArrayAccess, ModelInterface
     /**
      * Sets classification_code
      *
-     * @param  string  $classification_code  The classification code for this LegalEntity. For Malaysia, this is the MSIC code. It is mandatory for MY legal entities.
+     * @param string $classification_code The classification code for this LegalEntity. For Malaysia, this is the MSIC code. It is mandatory for MY legal entities.
+     *
      * @return $this
      */
     public function setClassificationCode($classification_code)
@@ -897,12 +951,12 @@ class LegalEntityUpdate implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -912,7 +966,8 @@ class LegalEntityUpdate implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -923,8 +978,9 @@ class LegalEntityUpdate implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -939,7 +995,8 @@ class LegalEntityUpdate implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -964,3 +1021,5 @@ class LegalEntityUpdate implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

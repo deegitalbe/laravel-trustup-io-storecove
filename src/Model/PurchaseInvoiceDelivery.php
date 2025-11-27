@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,51 +29,49 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * PurchaseInvoiceDelivery Class Doc Comment
  *
  * @category Class
- *
  * @description The details of the delivery associated with this invoice.
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PurchaseInvoiceDelivery implements ArrayAccess, ModelInterface
+class PurchaseInvoiceDelivery implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'PurchaseInvoice Delivery';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'actual_date' => 'string',
         'party' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoiceParty',
-        'location' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\Location',
+        'location' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\Location'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'actual_date' => null,
         'party' => null,
-        'location' => null,
+        'location' => null
     ];
 
     /**
@@ -106,7 +103,7 @@ class PurchaseInvoiceDelivery implements ArrayAccess, ModelInterface
     protected static $attributeMap = [
         'actual_date' => 'actual_date',
         'party' => 'party',
-        'location' => 'location',
+        'location' => 'location'
     ];
 
     /**
@@ -117,7 +114,7 @@ class PurchaseInvoiceDelivery implements ArrayAccess, ModelInterface
     protected static $setters = [
         'actual_date' => 'setActualDate',
         'party' => 'setParty',
-        'location' => 'setLocation',
+        'location' => 'setLocation'
     ];
 
     /**
@@ -128,7 +125,7 @@ class PurchaseInvoiceDelivery implements ArrayAccess, ModelInterface
     protected static $getters = [
         'actual_date' => 'getActualDate',
         'party' => 'getParty',
-        'location' => 'getLocation',
+        'location' => 'getLocation'
     ];
 
     /**
@@ -172,6 +169,10 @@ class PurchaseInvoiceDelivery implements ArrayAccess, ModelInterface
         return self::$swaggerModelName;
     }
 
+    
+
+    
+
     /**
      * Associative array for storing property values
      *
@@ -182,10 +183,10 @@ class PurchaseInvoiceDelivery implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['actual_date'] = isset($data['actual_date']) ? $data['actual_date'] : null;
         $this->container['party'] = isset($data['party']) ? $data['party'] : null;
@@ -215,6 +216,7 @@ class PurchaseInvoiceDelivery implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets actual_date
      *
@@ -228,7 +230,8 @@ class PurchaseInvoiceDelivery implements ArrayAccess, ModelInterface
     /**
      * Sets actual_date
      *
-     * @param  string  $actual_date  The actual delivery date.
+     * @param string $actual_date The actual delivery date.
+     *
      * @return $this
      */
     public function setActualDate($actual_date)
@@ -251,7 +254,8 @@ class PurchaseInvoiceDelivery implements ArrayAccess, ModelInterface
     /**
      * Sets party
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoiceParty  $party  party
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\PurchaseInvoiceParty $party party
+     *
      * @return $this
      */
     public function setParty($party)
@@ -274,7 +278,8 @@ class PurchaseInvoiceDelivery implements ArrayAccess, ModelInterface
     /**
      * Sets location
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\Location  $location  location
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\Location $location location
+     *
      * @return $this
      */
     public function setLocation($location)
@@ -283,12 +288,12 @@ class PurchaseInvoiceDelivery implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -298,7 +303,8 @@ class PurchaseInvoiceDelivery implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -309,8 +315,9 @@ class PurchaseInvoiceDelivery implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -325,7 +332,8 @@ class PurchaseInvoiceDelivery implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -350,3 +358,5 @@ class PurchaseInvoiceDelivery implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

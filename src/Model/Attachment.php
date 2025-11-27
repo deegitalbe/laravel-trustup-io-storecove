@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,59 +29,55 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * Attachment Class Doc Comment
  *
  * @category Class
- *
  * @description A document attachment to the invoice.
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Attachment implements ArrayAccess, ModelInterface
+class Attachment implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'Attachment';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'document' => 'string',
         'mime_type' => 'string',
         'filename' => 'string',
         'description' => 'string',
         'document_id' => 'string',
-        'document_type_code' => 'string',
-        'primary_image' => 'bool',
+        'primary_image' => 'bool'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'document' => null,
         'mime_type' => null,
         'filename' => null,
         'description' => null,
         'document_id' => null,
-        'document_type_code' => null,
-        'primary_image' => null,
+        'primary_image' => null
     ];
 
     /**
@@ -117,8 +112,7 @@ class Attachment implements ArrayAccess, ModelInterface
         'filename' => 'filename',
         'description' => 'description',
         'document_id' => 'documentId',
-        'document_type_code' => 'documentTypeCode',
-        'primary_image' => 'primaryImage',
+        'primary_image' => 'primaryImage'
     ];
 
     /**
@@ -132,8 +126,7 @@ class Attachment implements ArrayAccess, ModelInterface
         'filename' => 'setFilename',
         'description' => 'setDescription',
         'document_id' => 'setDocumentId',
-        'document_type_code' => 'setDocumentTypeCode',
-        'primary_image' => 'setPrimaryImage',
+        'primary_image' => 'setPrimaryImage'
     ];
 
     /**
@@ -147,8 +140,7 @@ class Attachment implements ArrayAccess, ModelInterface
         'filename' => 'getFilename',
         'description' => 'getDescription',
         'document_id' => 'getDocumentId',
-        'document_type_code' => 'getDocumentTypeCode',
-        'primary_image' => 'getPrimaryImage',
+        'primary_image' => 'getPrimaryImage'
     ];
 
     /**
@@ -193,9 +185,10 @@ class Attachment implements ArrayAccess, ModelInterface
     }
 
     const MIME_TYPE_PDF = 'application/pdf';
-
     const MIME_TYPE_XML = 'application/xml';
+    
 
+    
     /**
      * Gets allowable values of the enum
      *
@@ -208,6 +201,7 @@ class Attachment implements ArrayAccess, ModelInterface
             self::MIME_TYPE_XML,
         ];
     }
+    
 
     /**
      * Associative array for storing property values
@@ -219,17 +213,16 @@ class Attachment implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['document'] = isset($data['document']) ? $data['document'] : null;
         $this->container['mime_type'] = isset($data['mime_type']) ? $data['mime_type'] : null;
         $this->container['filename'] = isset($data['filename']) ? $data['filename'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['document_id'] = isset($data['document_id']) ? $data['document_id'] : null;
-        $this->container['document_type_code'] = isset($data['document_type_code']) ? $data['document_type_code'] : null;
         $this->container['primary_image'] = isset($data['primary_image']) ? $data['primary_image'] : false;
     }
 
@@ -253,27 +246,23 @@ class Attachment implements ArrayAccess, ModelInterface
             $invalidProperties[] = "'mime_type' can't be null";
         }
         $allowedValues = $this->getMimeTypeAllowableValues();
-        if (! is_null($this->container['mime_type']) && ! in_array($this->container['mime_type'], $allowedValues, true)) {
+        if (!is_null($this->container['mime_type']) && !in_array($this->container['mime_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'mime_type', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
 
-        if (! is_null($this->container['filename']) && ! preg_match('/^[a-zA-Z0-9]([a-zA-Z0-9._-]*[a-zA-Z0-9])?\\.[a-zA-Z0-9_-]+$/', $this->container['filename'])) {
-            $invalidProperties[] = "invalid value for 'filename', must be conform to the pattern /^[a-zA-Z0-9]([a-zA-Z0-9._-]*[a-zA-Z0-9])?\\.[a-zA-Z0-9_-]+$/.";
+        if (!is_null($this->container['filename']) && !preg_match("/^[\\p{L}\\p{N}\\p{M}_](?:[\\p{L}\\p{N}\\p{M}\\._-]*[\\p{L}\\p{N}\\p{M}_])?\\.[\\p{L}\\p{N}\\p{M}_-]+$/", $this->container['filename'])) {
+            $invalidProperties[] = "invalid value for 'filename', must be conform to the pattern /^[\\p{L}\\p{N}\\p{M}_](?:[\\p{L}\\p{N}\\p{M}\\._-]*[\\p{L}\\p{N}\\p{M}_])?\\.[\\p{L}\\p{N}\\p{M}_-]+$/.";
         }
 
-        if (! is_null($this->container['description']) && (mb_strlen($this->container['description']) > 1024)) {
+        if (!is_null($this->container['description']) && (mb_strlen($this->container['description']) > 1024)) {
             $invalidProperties[] = "invalid value for 'description', the character length must be smaller than or equal to 1024.";
         }
 
-        if (! is_null($this->container['document_id']) && (mb_strlen($this->container['document_id']) > 64)) {
+        if (!is_null($this->container['document_id']) && (mb_strlen($this->container['document_id']) > 64)) {
             $invalidProperties[] = "invalid value for 'document_id', the character length must be smaller than or equal to 64.";
-        }
-
-        if (! is_null($this->container['document_type_code']) && (mb_strlen($this->container['document_type_code']) > 128)) {
-            $invalidProperties[] = "invalid value for 'document_type_code', the character length must be smaller than or equal to 128.";
         }
 
         return $invalidProperties;
@@ -290,6 +279,7 @@ class Attachment implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets document
      *
@@ -303,7 +293,8 @@ class Attachment implements ArrayAccess, ModelInterface
     /**
      * Sets document
      *
-     * @param  string  $document  The base64 encoded version of the document attachment.
+     * @param string $document The base64 encoded version of the document attachment.
+     *
      * @return $this
      */
     public function setDocument($document)
@@ -331,13 +322,14 @@ class Attachment implements ArrayAccess, ModelInterface
     /**
      * Sets mime_type
      *
-     * @param  string  $mime_type  The document attachment mime type. The mime type 'application/xml' can only be used when routing via Peppol to DE:LWID identifier '99661-PEPPOLVERIFIKATION-25' or identifier '991-55555PEPPO-82'
+     * @param string $mime_type The document attachment mime type. The mime type 'application/xml' can only be used when routing via Peppol to DE:LWID identifier '99661-PEPPOLVERIFIKATION-25' or identifier '991-55555PEPPO-82'
+     *
      * @return $this
      */
     public function setMimeType($mime_type)
     {
         $allowedValues = $this->getMimeTypeAllowableValues();
-        if (! in_array($mime_type, $allowedValues, true)) {
+        if (!in_array($mime_type, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'mime_type', must be one of '%s'",
@@ -363,14 +355,15 @@ class Attachment implements ArrayAccess, ModelInterface
     /**
      * Sets filename
      *
-     * @param  string  $filename  The name of the file attachment.
+     * @param string $filename The name of the file attachment.
+     *
      * @return $this
      */
     public function setFilename($filename)
     {
 
-        if (! is_null($filename) && (! preg_match('/^[a-zA-Z0-9]([a-zA-Z0-9._-]*[a-zA-Z0-9])?\\.[a-zA-Z0-9_-]+$/', $filename))) {
-            throw new \InvalidArgumentException("invalid value for $filename when calling Attachment., must conform to the pattern /^[a-zA-Z0-9]([a-zA-Z0-9._-]*[a-zA-Z0-9])?\\.[a-zA-Z0-9_-]+$/.");
+        if (!is_null($filename) && (!preg_match("/^[\\p{L}\\p{N}\\p{M}_](?:[\\p{L}\\p{N}\\p{M}\\._-]*[\\p{L}\\p{N}\\p{M}_])?\\.[\\p{L}\\p{N}\\p{M}_-]+$/", $filename))) {
+            throw new \InvalidArgumentException("invalid value for $filename when calling Attachment., must conform to the pattern /^[\\p{L}\\p{N}\\p{M}_](?:[\\p{L}\\p{N}\\p{M}\\._-]*[\\p{L}\\p{N}\\p{M}_])?\\.[\\p{L}\\p{N}\\p{M}_-]+$/.");
         }
 
         $this->container['filename'] = $filename;
@@ -391,12 +384,13 @@ class Attachment implements ArrayAccess, ModelInterface
     /**
      * Sets description
      *
-     * @param  string  $description  A description for the file attachment.
+     * @param string $description A description for the file attachment.
+     *
      * @return $this
      */
     public function setDescription($description)
     {
-        if (! is_null($description) && (mb_strlen($description) > 1024)) {
+        if (!is_null($description) && (mb_strlen($description) > 1024)) {
             throw new \InvalidArgumentException('invalid length for $description when calling Attachment., must be smaller than or equal to 1024.');
         }
 
@@ -418,43 +412,17 @@ class Attachment implements ArrayAccess, ModelInterface
     /**
      * Sets document_id
      *
-     * @param  string  $document_id  An id for the file attachment.
+     * @param string $document_id An id for the file attachment.
+     *
      * @return $this
      */
     public function setDocumentId($document_id)
     {
-        if (! is_null($document_id) && (mb_strlen($document_id) > 64)) {
+        if (!is_null($document_id) && (mb_strlen($document_id) > 64)) {
             throw new \InvalidArgumentException('invalid length for $document_id when calling Attachment., must be smaller than or equal to 64.');
         }
 
         $this->container['document_id'] = $document_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets document_type_code
-     *
-     * @return string
-     */
-    public function getDocumentTypeCode()
-    {
-        return $this->container['document_type_code'];
-    }
-
-    /**
-     * Sets document_type_code
-     *
-     * @param  string  $document_type_code  A document type code for the file attachment. Currently used only for SG-IRAS to support the 'sgdtotal-excl-gst' attachment.
-     * @return $this
-     */
-    public function setDocumentTypeCode($document_type_code)
-    {
-        if (! is_null($document_type_code) && (mb_strlen($document_type_code) > 128)) {
-            throw new \InvalidArgumentException('invalid length for $document_type_code when calling Attachment., must be smaller than or equal to 128.');
-        }
-
-        $this->container['document_type_code'] = $document_type_code;
 
         return $this;
     }
@@ -472,7 +440,8 @@ class Attachment implements ArrayAccess, ModelInterface
     /**
      * Sets primary_image
      *
-     * @param  bool  $primary_image  DEPRECATED. Whether or not this document is a visual representation of the invoice data. Note that using value 'true' is discouraged, since the invoice data itself is leading, not the image, and including an image may lead to confusion. Peppol no longer allows including primary images.
+     * @param bool $primary_image DEPRECATED. Whether or not this document is a visual representation of the invoice data. Note that using value 'true' is discouraged, since the invoice data itself is leading, not the image, and including an image may lead to confusion. Peppol no longer allows including primary images.
+     *
      * @return $this
      */
     public function setPrimaryImage($primary_image)
@@ -481,12 +450,12 @@ class Attachment implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -496,7 +465,8 @@ class Attachment implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -507,8 +477,9 @@ class Attachment implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -523,7 +494,8 @@ class Attachment implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -548,3 +520,5 @@ class Attachment implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

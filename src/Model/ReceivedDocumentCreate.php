@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,47 +29,46 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * ReceivedDocumentCreate Class Doc Comment
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ReceivedDocumentCreate implements ArrayAccess, ModelInterface
+class ReceivedDocumentCreate implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'ReceivedDocumentCreate';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'document' => 'string',
-        'parse_strategy' => 'string',
+        'parse_strategy' => 'string'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'document' => null,
-        'parse_strategy' => null,
+        'parse_strategy' => null
     ];
 
     /**
@@ -101,7 +99,7 @@ class ReceivedDocumentCreate implements ArrayAccess, ModelInterface
      */
     protected static $attributeMap = [
         'document' => 'document',
-        'parse_strategy' => 'parseStrategy',
+        'parse_strategy' => 'parseStrategy'
     ];
 
     /**
@@ -111,7 +109,7 @@ class ReceivedDocumentCreate implements ArrayAccess, ModelInterface
      */
     protected static $setters = [
         'document' => 'setDocument',
-        'parse_strategy' => 'setParseStrategy',
+        'parse_strategy' => 'setParseStrategy'
     ];
 
     /**
@@ -121,7 +119,7 @@ class ReceivedDocumentCreate implements ArrayAccess, ModelInterface
      */
     protected static $getters = [
         'document' => 'getDocument',
-        'parse_strategy' => 'getParseStrategy',
+        'parse_strategy' => 'getParseStrategy'
     ];
 
     /**
@@ -166,7 +164,9 @@ class ReceivedDocumentCreate implements ArrayAccess, ModelInterface
     }
 
     const PARSE_STRATEGY_RFC822 = 'rfc822';
+    
 
+    
     /**
      * Gets allowable values of the enum
      *
@@ -178,6 +178,7 @@ class ReceivedDocumentCreate implements ArrayAccess, ModelInterface
             self::PARSE_STRATEGY_RFC822,
         ];
     }
+    
 
     /**
      * Associative array for storing property values
@@ -189,10 +190,10 @@ class ReceivedDocumentCreate implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['document'] = isset($data['document']) ? $data['document'] : null;
         $this->container['parse_strategy'] = isset($data['parse_strategy']) ? $data['parse_strategy'] : null;
@@ -214,7 +215,7 @@ class ReceivedDocumentCreate implements ArrayAccess, ModelInterface
             $invalidProperties[] = "'parse_strategy' can't be null";
         }
         $allowedValues = $this->getParseStrategyAllowableValues();
-        if (! is_null($this->container['parse_strategy']) && ! in_array($this->container['parse_strategy'], $allowedValues, true)) {
+        if (!is_null($this->container['parse_strategy']) && !in_array($this->container['parse_strategy'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'parse_strategy', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -235,6 +236,7 @@ class ReceivedDocumentCreate implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets document
      *
@@ -248,7 +250,8 @@ class ReceivedDocumentCreate implements ArrayAccess, ModelInterface
     /**
      * Sets document
      *
-     * @param  string  $document  The Base64 encoded document.
+     * @param string $document The Base64 encoded document.
+     *
      * @return $this
      */
     public function setDocument($document)
@@ -271,13 +274,14 @@ class ReceivedDocumentCreate implements ArrayAccess, ModelInterface
     /**
      * Sets parse_strategy
      *
-     * @param  string  $parse_strategy  The attachment content type (mime type).
+     * @param string $parse_strategy The attachment content type (mime type).
+     *
      * @return $this
      */
     public function setParseStrategy($parse_strategy)
     {
         $allowedValues = $this->getParseStrategyAllowableValues();
-        if (! in_array($parse_strategy, $allowedValues, true)) {
+        if (!in_array($parse_strategy, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'parse_strategy', must be one of '%s'",
@@ -289,12 +293,12 @@ class ReceivedDocumentCreate implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -304,7 +308,8 @@ class ReceivedDocumentCreate implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -315,8 +320,9 @@ class ReceivedDocumentCreate implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -331,7 +337,8 @@ class ReceivedDocumentCreate implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -356,3 +363,5 @@ class ReceivedDocumentCreate implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

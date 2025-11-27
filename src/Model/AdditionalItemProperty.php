@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,49 +29,47 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * AdditionalItemProperty Class Doc Comment
  *
  * @category Class
- *
  * @description An additional property for the item
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class AdditionalItemProperty implements ArrayAccess, ModelInterface
+class AdditionalItemProperty implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'AdditionalItemProperty';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'name' => 'string',
-        'value' => 'string',
+        'value' => 'string'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'name' => null,
-        'value' => null,
+        'value' => null
     ];
 
     /**
@@ -103,7 +100,7 @@ class AdditionalItemProperty implements ArrayAccess, ModelInterface
      */
     protected static $attributeMap = [
         'name' => 'name',
-        'value' => 'value',
+        'value' => 'value'
     ];
 
     /**
@@ -113,7 +110,7 @@ class AdditionalItemProperty implements ArrayAccess, ModelInterface
      */
     protected static $setters = [
         'name' => 'setName',
-        'value' => 'setValue',
+        'value' => 'setValue'
     ];
 
     /**
@@ -123,7 +120,7 @@ class AdditionalItemProperty implements ArrayAccess, ModelInterface
      */
     protected static $getters = [
         'name' => 'getName',
-        'value' => 'getValue',
+        'value' => 'getValue'
     ];
 
     /**
@@ -167,6 +164,10 @@ class AdditionalItemProperty implements ArrayAccess, ModelInterface
         return self::$swaggerModelName;
     }
 
+    
+
+    
+
     /**
      * Associative array for storing property values
      *
@@ -177,10 +178,10 @@ class AdditionalItemProperty implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['value'] = isset($data['value']) ? $data['value'] : null;
@@ -205,7 +206,6 @@ class AdditionalItemProperty implements ArrayAccess, ModelInterface
         if ($this->container['value'] === null) {
             $invalidProperties[] = "'value' can't be null";
         }
-
         return $invalidProperties;
     }
 
@@ -220,6 +220,7 @@ class AdditionalItemProperty implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets name
      *
@@ -233,7 +234,8 @@ class AdditionalItemProperty implements ArrayAccess, ModelInterface
     /**
      * Sets name
      *
-     * @param  string  $name  The name of the property.
+     * @param string $name The name of the property.
+     *
      * @return $this
      */
     public function setName($name)
@@ -261,7 +263,8 @@ class AdditionalItemProperty implements ArrayAccess, ModelInterface
     /**
      * Sets value
      *
-     * @param  string  $value  The value of the property.
+     * @param string $value The value of the property.
+     *
      * @return $this
      */
     public function setValue($value)
@@ -270,12 +273,12 @@ class AdditionalItemProperty implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -285,7 +288,8 @@ class AdditionalItemProperty implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -296,8 +300,9 @@ class AdditionalItemProperty implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -312,7 +317,8 @@ class AdditionalItemProperty implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -337,3 +343,5 @@ class AdditionalItemProperty implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

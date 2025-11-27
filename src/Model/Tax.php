@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,53 +29,52 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * Tax Class Doc Comment
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Tax implements ArrayAccess, ModelInterface
+class Tax implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'Tax';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'amount' => 'float',
         'percentage' => 'float',
         'country' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\Country',
         'category' => 'string',
-        'type' => 'string',
+        'type' => 'string'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'amount' => null,
         'percentage' => null,
         'country' => null,
         'category' => null,
-        'type' => null,
+        'type' => null
     ];
 
     /**
@@ -110,7 +108,7 @@ class Tax implements ArrayAccess, ModelInterface
         'percentage' => 'percentage',
         'country' => 'country',
         'category' => 'category',
-        'type' => 'type',
+        'type' => 'type'
     ];
 
     /**
@@ -123,7 +121,7 @@ class Tax implements ArrayAccess, ModelInterface
         'percentage' => 'setPercentage',
         'country' => 'setCountry',
         'category' => 'setCategory',
-        'type' => 'setType',
+        'type' => 'setType'
     ];
 
     /**
@@ -136,7 +134,7 @@ class Tax implements ArrayAccess, ModelInterface
         'percentage' => 'getPercentage',
         'country' => 'getCountry',
         'category' => 'getCategory',
-        'type' => 'getType',
+        'type' => 'getType'
     ];
 
     /**
@@ -181,107 +179,62 @@ class Tax implements ArrayAccess, ModelInterface
     }
 
     const CATEGORY_STANDARD = 'standard';
-
     const CATEGORY_ZERO_RATED = 'zero_rated';
-
     const CATEGORY_REVERSE_CHARGE = 'reverse_charge';
-
     const CATEGORY_INTRA_COMMUNITY = 'intra_community';
-
     const CATEGORY_EXEMPT = 'exempt';
-
     const CATEGORY_EXPORT = 'export';
-
     const CATEGORY_OUTSIDE_SCOPE = 'outside_scope';
-
     const CATEGORY_REGULATION33_EXEMPT = 'regulation33_exempt';
-
     const CATEGORY_NONREGULATION33_EXEMPT = 'nonregulation33_exempt';
-
     const CATEGORY_DEEMED_SUPPLY = 'deemed_supply';
-
     const CATEGORY_SRCA_S = 'srca_s';
-
     const CATEGORY_SRCA_C = 'srca_c';
-
     const CATEGORY_NOT_REGISTERED = 'not_registered';
-
     const CATEGORY_IGST = 'igst';
-
     const CATEGORY_CGST = 'cgst';
-
     const CATEGORY_SGST = 'sgst';
-
     const CATEGORY_CESS = 'cess';
-
     const CATEGORY_STATE_CESS = 'state_cess';
-
     const CATEGORY_SROVR = 'srovr';
-
     const CATEGORY_SROVR_RS = 'srovr_rs';
-
     const CATEGORY_SROVR_LVG = 'srovr_lvg';
-
     const CATEGORY_SRLVG = 'srlvg';
-
     const CATEGORY_BOLLO_VIRTUALE = 'bollo_virtuale';
-
     const CATEGORY_EXEMPT_IT_N1 = 'exempt_it_n1';
-
     const CATEGORY_SALES = 'sales';
-
     const CATEGORY_SERVICE = 'service';
-
     const CATEGORY_TOURISM = 'tourism';
-
     const CATEGORY_HIGH_VALUE_GOODS = 'high_value_goods';
-
     const CATEGORY_LOW_VALUE_GOODS = 'low_value_goods';
-
     const CATEGORY_SALES_ZERO = 'sales_zero';
-
     const CATEGORY_SERVICE_ZERO = 'service_zero';
-
     const CATEGORY_NOT_APPLICABLE = 'not_applicable';
-
     const CATEGORY_STANDARD_CA = 'standard_ca';
-
     const CATEGORY_STANDARD_NA = 'standard_na';
-
     const CATEGORY_STANDARD_RE = 'standard_re';
-
     const CATEGORY_STANDARD_N33 = 'standard_n33';
-
     const CATEGORY_STANDARD_33 = 'standard_33';
-
     const CATEGORY_IMPORT_SERVICE = 'import_service';
-
     const CATEGORY_IMPORT_33_SERVICE = 'import_33_service';
-
     const CATEGORY_IMPORT_N33_SERVICE = 'import_n33_service';
-
     const CATEGORY_IMPORT_REVERSE_CHARGE_SERVICE = 'import_reverse_charge_service';
-
     const CATEGORY_IMPORT_GOODS = 'import_goods';
-
     const CATEGORY_IMPORT_33_GOODS = 'import_33_goods';
-
     const CATEGORY_IMPORT_N33_GOODS = 'import_n33_goods';
-
     const CATEGORY_IMPORT_REVERSE_CHARGE_GOODS = 'import_reverse_charge_goods';
-
     const CATEGORY_IMPORT_MES = 'import_mes';
-
     const CATEGORY_IMPORT_GST_DS = 'import_gst_ds';
-
     const CATEGORY_BLOCKED = 'blocked';
-
     const CATEGORY_EXEMPT_PURCHASE = 'exempt_purchase';
-
+    const CATEGORY_STANDARD_ADDITIONAL = 'standard_additional';
+    const CATEGORY_IEPS = 'ieps';
+    const CATEGORY_WHT = 'wht';
     const TYPE_VAT = 'VAT';
-
     const TYPE_GST = 'GST';
+    
 
+    
     /**
      * Gets allowable values of the enum
      *
@@ -339,9 +292,12 @@ class Tax implements ArrayAccess, ModelInterface
             self::CATEGORY_IMPORT_GST_DS,
             self::CATEGORY_BLOCKED,
             self::CATEGORY_EXEMPT_PURCHASE,
+            self::CATEGORY_STANDARD_ADDITIONAL,
+            self::CATEGORY_IEPS,
+            self::CATEGORY_WHT,
         ];
     }
-
+    
     /**
      * Gets allowable values of the enum
      *
@@ -354,6 +310,7 @@ class Tax implements ArrayAccess, ModelInterface
             self::TYPE_GST,
         ];
     }
+    
 
     /**
      * Associative array for storing property values
@@ -365,10 +322,10 @@ class Tax implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
         $this->container['percentage'] = isset($data['percentage']) ? $data['percentage'] : null;
@@ -390,7 +347,7 @@ class Tax implements ArrayAccess, ModelInterface
             $invalidProperties[] = "'country' can't be null";
         }
         $allowedValues = $this->getCategoryAllowableValues();
-        if (! is_null($this->container['category']) && ! in_array($this->container['category'], $allowedValues, true)) {
+        if (!is_null($this->container['category']) && !in_array($this->container['category'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'category', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -398,7 +355,7 @@ class Tax implements ArrayAccess, ModelInterface
         }
 
         $allowedValues = $this->getTypeAllowableValues();
-        if (! is_null($this->container['type']) && ! in_array($this->container['type'], $allowedValues, true)) {
+        if (!is_null($this->container['type']) && !in_array($this->container['type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'type', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -419,6 +376,7 @@ class Tax implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets amount
      *
@@ -432,7 +390,8 @@ class Tax implements ArrayAccess, ModelInterface
     /**
      * Sets amount
      *
-     * @param  float  $amount  The amount of tax. Mandatory if taxSystem == 'tax_line_amounts'. However, it is best to use taxSystem tax_line_percentages and provide only the percentage, not the actual amount. The amount is then provided at the invoice level, in the taxSubtotals element.
+     * @param float $amount The amount of tax. Mandatory if taxSystem == 'tax_line_amounts'. However, it is best to use taxSystem tax_line_percentages and provide only the percentage, not the actual amount. The amount is then provided at the invoice level, in the taxSubtotals element.
+     *
      * @return $this
      */
     public function setAmount($amount)
@@ -455,7 +414,8 @@ class Tax implements ArrayAccess, ModelInterface
     /**
      * Sets percentage
      *
-     * @param  float  $percentage  The percentage Tax. This should be a valid Tax percentage in the country at the time of the issueDate of this invoice. Mandatory if taxSystem == 'tax_line_percentages'
+     * @param float $percentage The percentage Tax. This should be a valid Tax percentage in the country at the time of the issueDate of this invoice. Mandatory if taxSystem == 'tax_line_percentages'
+     *
      * @return $this
      */
     public function setPercentage($percentage)
@@ -478,7 +438,8 @@ class Tax implements ArrayAccess, ModelInterface
     /**
      * Sets country
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\Country  $country  country
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\Country $country country
+     *
      * @return $this
      */
     public function setCountry($country)
@@ -501,13 +462,14 @@ class Tax implements ArrayAccess, ModelInterface
     /**
      * Sets category
      *
-     * @param  string  $category  The allowed values depend on the country of the tax: ++++ <ul>    <li>        AU:        <ul>            <li>standard (10%, 5.5%)</li>            <li>zero_rated (0%)</li>            <li>export (0%)</li>            <li>exempt (0%)</li>            <li>outside_scope (0%)</li>        </ul>    </li>    <li>        EU:        <ul>            <li>standard (percentages country dependent)</li>            <li>zero_rated (0%)</li>            <li>reverse_charge (0%)</li>            <li>intra_community (0%)</li>            <li>export (0%)</li>            <li>exempt (0%)</li>            <li>outside_scope (0%)</li>        </ul>    </li>    <li>        EU/IT:        <ul>            <li>standard</li>            <li>zero_rated (0%)</li>            <li>reverse_charge (0%)</li>            <li>intra_community (0%)</li>            <li>export (0%)</li>            <li>exempt (0%)</li>            <li>outside_scope (0%)</li>            <li>bollo_virtuale (only at the invoice level and with mandatory amount: €2.00)</li>        </ul>    </li>    <li>        IN:        <ul>            <li>igst (28%, 18%, 12%, 5%, 3%, 0.25%)</li>            <li>sgst (14%, 9%, 6%, 2.5%, 1.5%</li>            <li>cgst (14%, 9%, 6%, 2.5%, 1.5%</li>            <li>cess (any percentage)</li>            <li>state_cess (any percentage)</li>            <li>reverse_charge (0%)</li>            <li>export (0%)</li>            <li>exempt (0%)</li>            <li>outside_scope (0%)</li>            <li>zero_rated (0%)</li>        </ul>    </li>    <li>        JP:        <ul>            <li>standard (10%, 8%)</li>            <li>export (0%)</li>            <li>exempt (0%)</li>            <li>outside_scope (0%)</li>        </ul>    </li>    <li>        MY:        <ul>            <li>sales (5%, 10%) ⮕ LHDNM \"01\", Peppol \"T\"            <li>sales_zero (0%) ⮕ LHDNM \"01\", Peppol \"E\"            <li>service (6%, 8%) ⮕ LHDNM \"02\", Peppol \"T\"            <li>service_zero (0%) ⮕ LHDNM \"02\", Peppol \"E\"            <li>tourism (any amount) ⮕ LHDNM \"03\", Peppol \"T\"            <li>high_value_goods (any percentage) ⮕ LHDNM \"04\", Peppol \"T\"            <li>low_value_goods (10%) ⮕ LHDNM \"05\", Peppol \"T\"            <li>zero_rated (0%) ⮕ LHDNM \"06\", Peppol \"E\"            <li>export (0%) ⮕ LHDNM \"E\", Peppol \"E\"            <li>exempt (0%) ⮕ LHDNM \"E\", Peppol \"E\"            <li>outside_scope (0%) ⮕ LHDNM \"06\", Peppol \"O\"        </ul>    </li>    <li>        NZ:        <ul>            <li>standard (15%)</li>            <li>zero_rated (0%)</li>            <li>export (0%)</li>            <li>exempt (0%)</li>            <li>outside_scope (0%)</li>        </ul>    </li>    <li>        SG:        <table>            <tr>                <th>category</th>                <th>percentage</th>                <th>sales invoice</th>                <th>purchase invoice</th>            </tr>            <tr>                <td>standard</td>                <td>9%</td>                <td>SR</td>                <td>TX</td>            </tr>            <tr>                <td>outside_scope</td>                <td>0%</td>                <td>OS</td>                <td>OP</td>            </tr>            <tr>                <td>zero_rated</td>                <td>0%</td>                <td>ZR</td>                <td>ZP</td>            </tr>            <tr>                <td>not_registered</td>                <td>0%</td>                <td>NG</td>                <td>NR</td>            </tr>            <tr>                <td>deemed_supply</td>                <td>9%</td>                <td>DS</td>                <td></td>            </tr>            <tr>                <td>srca_c</td>                <td>9%</td>                <td>SRCA-C</td>                <td></td>            </tr>            <tr>                <td>srovr_rs</td>                <td>9%</td>                <td>SROVR-RS</td>                <td></td>            </tr>            <tr>                <td>srovr_lvg</td>                <td>9%</td>                <td>SROVR-LVG</td>                <td></td>            </tr>            <tr>                <td>srlvg</td>                <td>9%</td>                <td>SRLVG</td>                <td></td>            </tr>            <tr>                <td>srca_s</td>                <td>0%</td>                <td>SRCA-S</td>                <td></td>            </tr>            <tr>                <td>regulation33_exempt</td>                <td>0%</td>                <td>ES33</td>                <td></td>            </tr>            <tr>                <td>nonregulation33_exempt</td>                <td>0%</td>                <td>ESN33</td>                <td></td>            </tr>            <tr>                <td>export</td>                <td>0%</td>                <td>ZR</td>                <td></td>            </tr>            <tr>                <td>not_applicable</td>                <td>0%</td>                <td>NA</td>                <td></td>            </tr>            <tr>                <td>standard_ca (experimental)</td>                <td>9%</td>                <td></td>                <td>TXCA</td>            </tr>            <tr>                <td>standard_na (experimental)</td>                <td>9%</td>                <td></td>                <td>TXNA</td>            </tr>            <tr>                <td>standard_re (experimental)</td>                <td>9%</td>                <td></td>                <td>TX-RE</td>            </tr>            <tr>                <td>standard_n33 (experimental)</td>                <td>9%</td>                <td></td>                <td>TX-N33</td>            </tr>            <tr>                <td>standard_33 (experimental)</td>                <td>9%</td>                <td></td>                <td>TX-ESS</td>            </tr>            <tr>                <td>import_service (experimental)</td>                <td>9%</td>                <td></td>                <td>TXRC-TS</td>            </tr>            <tr>                <td>import_33_service (experimental)</td>                <td>9%</td>                <td></td>                <td>TXRC-ESS</td>            </tr>            <tr>                <td>import_n33_service (experimental)</td>                <td>9%</td>                <td></td>                <td>TXRC-N33</td>            </tr>            <tr>                <td>import_reverse_charge_service (experimental)</td>                <td>9%</td>                <td></td>                <td>TXRC-RE</td>            </tr>            <tr>                <td>import_goods (experimental)</td>                <td>9%</td>                <td></td>                <td>IM</td>            </tr>            <tr>                <td>import_33_goods (experimental)</td>                <td>9%</td>                <td></td>                <td>IM-ESS</td>            </tr>            <tr>                <td>import_n33_goods (experimental)</td>                <td>9%</td>                <td></td>                <td>IM-N33</td>            </tr>            <tr>                <td>import_reverse_charge_goods (experimental)</td>                <td>9%</td>                <td></td>                <td>IM-RE</td>            </tr>            <tr>                <td>import_mes (experimental)</td>                <td>9%</td>                <td></td>                <td>ME</td>            </tr>            <tr>                <td>import_gst_ds (experimental)</td>                <td>9%</td>                <td></td>                <td>IGDS</td>            </tr>            <tr>                <td>blocked (experimental)</td>                <td>9%</td>                <td></td>                <td>BL</td>            </tr>            <tr>                <td>exempt_purchase (experimental)</td>                <td>0%</td>                <td></td>                <td>EP</td>            </tr>        </table>    </li>    <li>        US:        <ul>            <li>standard (any percentage)</li>            <li>export (0%)</li>            <li>exempt (0%)</li>            <li>outside_scope (0%)</li>        </ul>    </li></ul> ++++
+     * @param string $category The allowed values depend on the country of the tax: ++++ <ul>    <li>        AE:        <ul>            <li>standard (5%)</li>            <li>standard_additional(5%)</li>            <li>reverse_charge (0%)</li>            <li>zero_rated (0%)</li>            <li>exempt (0%)</li>            <li>export (0%)</li>            <li>outside_scope (0%)</li>        </ul>    </li>    <li>        AU:        <ul>            <li>standard (10%, 5.5%)</li>            <li>zero_rated (0%)</li>            <li>exempt (0%)</li>            <li>export (0%)</li>            <li>outside_scope (0%)</li>        </ul>    </li>    <li>        EU:        <ul>            <li>standard (percentages country dependent)</li>            <li>zero_rated (0%)</li>            <li>reverse_charge (0%)</li>            <li>intra_community (0%)</li>            <li>exempt (0%)</li>            <li>export (0%)</li>            <li>outside_scope (0%)</li>        </ul>    </li>    <li>        EU/IT:        <ul>            <li>standard</li>            <li>zero_rated (0%)</li>            <li>reverse_charge (0%)</li>            <li>intra_community (0%)</li>            <li>exempt (0%)</li>            <li>export (0%)</li>            <li>outside_scope (0%)</li>            <li>bollo_virtuale (only at the invoice level and with mandatory amount: €2.00)</li>        </ul>    </li>    <li>        IN:        <ul>            <li>igst (28%, 18%, 12%, 5%, 3%, 0.25%)</li>            <li>sgst (14%, 9%, 6%, 2.5%, 1.5%)</li>            <li>cgst (14%, 9%, 6%, 2.5%, 1.5%)</li>            <li>cess (any percentage)</li>            <li>state_cess (any percentage)</li>            <li>reverse_charge (0%)</li>            <li>exempt (0%)</li>            <li>export (0%)</li>            <li>outside_scope (0%)</li>            <li>zero_rated (0%)</li>        </ul>    </li>    <li>        JP:        <ul>            <li>standard (10%, 8%)</li>            <li>exempt (0%)</li>            <li>export (0%)</li>            <li>outside_scope (0%)</li>        </ul>    </li>    <li>        MX:        <ul>            <li>standard (16%)</li>            <li>exempt (0%)</li>            <li>export (0%)</li>            <li>outside_scope (0%)</li>            <li>ieps</li>            <li>wht</li>        </ul>    </li>    <li>        MY:        <ul>            <li>sales (5%, 10%) ⮕ LHDNM '01', Peppol 'T'            <li>sales_zero (0%) ⮕ LHDNM '01', Peppol 'E'            <li>service (6%, 8%) ⮕ LHDNM '02', Peppol 'T'            <li>service_zero (0%) ⮕ LHDNM '02', Peppol 'E'            <li>tourism (any amount) ⮕ LHDNM '03', Peppol 'T'            <li>high_value_goods (any percentage) ⮕ LHDNM '04', Peppol 'T'            <li>low_value_goods (10%) ⮕ LHDNM '05', Peppol 'T'            <li>zero_rated (0%) ⮕ LHDNM '06', Peppol 'E'            <li>exempt (0%) ⮕ LHDNM 'E', Peppol 'E'            <li>export (0%) ⮕ LHDNM 'E', Peppol 'E'            <li>outside_scope (0%) ⮕ LHDNM '06', Peppol 'O'        </ul>    </li>    <li>        NZ:        <ul>            <li>standard (15%)</li>            <li>zero_rated (0%)</li>            <li>exempt (0%)</li>            <li>export (0%)</li>            <li>outside_scope (0%)</li>        </ul>    </li>    <li>        SG:        <table>            <tr>                <th>category</th>                <th>percentage</th>                <th>sales invoice</th>                <th>purchase invoice</th>            </tr>            <tr>                <td>standard</td>                <td>9%</td>                <td>SR</td>                <td>TX</td>            </tr>            <tr>                <td>outside_scope</td>                <td>0%</td>                <td>OS</td>                <td>OP</td>            </tr>            <tr>                <td>zero_rated</td>                <td>0%</td>                <td>ZR</td>                <td>ZP</td>            </tr>            <tr>                <td>not_registered</td>                <td>0%</td>                <td>NG</td>                <td>NR</td>            </tr>            <tr>                <td>deemed_supply</td>                <td>9%</td>                <td>DS</td>                <td></td>            </tr>            <tr>                <td>srca_c</td>                <td>9%</td>                <td>SRCA-C</td>                <td></td>            </tr>            <tr>                <td>srovr_rs</td>                <td>9%</td>                <td>SROVR-RS</td>                <td></td>            </tr>            <tr>                <td>srovr_lvg</td>                <td>9%</td>                <td>SROVR-LVG</td>                <td></td>            </tr>            <tr>                <td>srlvg</td>                <td>9%</td>                <td>SRLVG</td>                <td></td>            </tr>            <tr>                <td>srca_s</td>                <td>0%</td>                <td>SRCA-S</td>                <td></td>            </tr>            <tr>                <td>regulation33_exempt</td>                <td>0%</td>                <td>ES33</td>                <td></td>            </tr>            <tr>                <td>nonregulation33_exempt</td>                <td>0%</td>                <td>ESN33</td>                <td></td>            </tr>            <tr>                <td>export</td>                <td>0%</td>                <td>ZR</td>                <td></td>            </tr>            <tr>                <td>not_applicable</td>                <td>0%</td>                <td>NA</td>                <td></td>            </tr>            <tr>                <td>standard_ca (experimental)</td>                <td>9%</td>                <td></td>                <td>TXCA</td>            </tr>            <tr>                <td>standard_na (experimental)</td>                <td>9%</td>                <td></td>                <td>TXNA</td>            </tr>            <tr>                <td>standard_re (experimental)</td>                <td>9%</td>                <td></td>                <td>TX-RE</td>            </tr>            <tr>                <td>standard_n33 (experimental)</td>                <td>9%</td>                <td></td>                <td>TX-N33</td>            </tr>            <tr>                <td>standard_33 (experimental)</td>                <td>9%</td>                <td></td>                <td>TX-ESS</td>            </tr>            <tr>                <td>import_service (experimental)</td>                <td>9%</td>                <td></td>                <td>TXRC-TS</td>            </tr>            <tr>                <td>import_33_service (experimental)</td>                <td>9%</td>                <td></td>                <td>TXRC-ESS</td>            </tr>            <tr>                <td>import_n33_service (experimental)</td>                <td>9%</td>                <td></td>                <td>TXRC-N33</td>            </tr>            <tr>                <td>import_reverse_charge_service (experimental)</td>                <td>9%</td>                <td></td>                <td>TXRC-RE</td>            </tr>            <tr>                <td>import_goods (experimental)</td>                <td>9%</td>                <td></td>                <td>IM</td>            </tr>            <tr>                <td>import_33_goods (experimental)</td>                <td>9%</td>                <td></td>                <td>IM-ESS</td>            </tr>            <tr>                <td>import_n33_goods (experimental)</td>                <td>9%</td>                <td></td>                <td>IM-N33</td>            </tr>            <tr>                <td>import_reverse_charge_goods (experimental)</td>                <td>9%</td>                <td></td>                <td>IM-RE</td>            </tr>            <tr>                <td>import_mes (experimental)</td>                <td>9%</td>                <td></td>                <td>ME</td>            </tr>            <tr>                <td>import_gst_ds (experimental)</td>                <td>9%</td>                <td></td>                <td>IGDS</td>            </tr>            <tr>                <td>blocked (experimental)</td>                <td>9%</td>                <td></td>                <td>BL</td>            </tr>            <tr>                <td>exempt_purchase (experimental)</td>                <td>0%</td>                <td></td>                <td>EP</td>            </tr>        </table>    </li>    <li>        US:        <ul>            <li>standard (any percentage)</li>            <li>exempt (0%)</li>            <li>export (0%)</li>            <li>outside_scope (0%)</li>        </ul>    </li></ul> ++++
+     *
      * @return $this
      */
     public function setCategory($category)
     {
         $allowedValues = $this->getCategoryAllowableValues();
-        if (! is_null($category) && ! in_array($category, $allowedValues, true)) {
+        if (!is_null($category) && !in_array($category, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'category', must be one of '%s'",
@@ -533,13 +495,14 @@ class Tax implements ArrayAccess, ModelInterface
     /**
      * Sets type
      *
-     * @param  string  $type  The type of tax. This field is only used for receiving. For sending, the type is automatically determined from the country code and should not be supplied.
+     * @param string $type The type of tax. This field is only used for receiving. For sending, the type is automatically determined from the country code and should not be supplied.
+     *
      * @return $this
      */
     public function setType($type)
     {
         $allowedValues = $this->getTypeAllowableValues();
-        if (! is_null($type) && ! in_array($type, $allowedValues, true)) {
+        if (!is_null($type) && !in_array($type, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'type', must be one of '%s'",
@@ -551,12 +514,12 @@ class Tax implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -566,7 +529,8 @@ class Tax implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -577,8 +541,9 @@ class Tax implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -593,7 +558,8 @@ class Tax implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -618,3 +584,5 @@ class Tax implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

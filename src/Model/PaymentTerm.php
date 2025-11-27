@@ -1,6 +1,6 @@
 <?php
 /**
- * InvoiceData
+ * PaymentTerm
  *
  * PHP version 5
  *
@@ -33,15 +33,15 @@ use \ArrayAccess;
 use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
- * InvoiceData Class Doc Comment
+ * PaymentTerm Class Doc Comment
  *
  * @category Class
- * @description DEPRECATED. Use RawDocumentData. The invoice to send, in base64 encoded format. Provide either invoice, or invoiceData, but not both.
+ * @description A PaymentTerm is a single term for the payment terms. Each term consists of the number of days within which the invoice must be settled and a discount percentage that applies if the invoice is settled within those days. If the amount to be calculated is based only on part of the amount due, the base amount for calculating the cash discount or late-payment interest must be specified as the baseAmount.
  * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class InvoiceData implements ModelInterface, ArrayAccess
+class PaymentTerm implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class InvoiceData implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'InvoiceData';
+    protected static $swaggerModelName = 'PaymentTerm';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,8 +58,11 @@ class InvoiceData implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'conversion_strategy' => 'string',
-        'document' => 'string'
+        'settlement_days' => 'int',
+        'discount_percentage' => 'float',
+        'surcharge_percentage' => 'float',
+        'base_amount' => 'float',
+        'note' => 'string'
     ];
 
     /**
@@ -68,8 +71,11 @@ class InvoiceData implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'conversion_strategy' => null,
-        'document' => null
+        'settlement_days' => null,
+        'discount_percentage' => null,
+        'surcharge_percentage' => null,
+        'base_amount' => null,
+        'note' => null
     ];
 
     /**
@@ -99,8 +105,11 @@ class InvoiceData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'conversion_strategy' => 'conversionStrategy',
-        'document' => 'document'
+        'settlement_days' => 'settlementDays',
+        'discount_percentage' => 'discountPercentage',
+        'surcharge_percentage' => 'surchargePercentage',
+        'base_amount' => 'baseAmount',
+        'note' => 'note'
     ];
 
     /**
@@ -109,8 +118,11 @@ class InvoiceData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'conversion_strategy' => 'setConversionStrategy',
-        'document' => 'setDocument'
+        'settlement_days' => 'setSettlementDays',
+        'discount_percentage' => 'setDiscountPercentage',
+        'surcharge_percentage' => 'setSurchargePercentage',
+        'base_amount' => 'setBaseAmount',
+        'note' => 'setNote'
     ];
 
     /**
@@ -119,8 +131,11 @@ class InvoiceData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'conversion_strategy' => 'getConversionStrategy',
-        'document' => 'getDocument'
+        'settlement_days' => 'getSettlementDays',
+        'discount_percentage' => 'getDiscountPercentage',
+        'surcharge_percentage' => 'getSurchargePercentage',
+        'base_amount' => 'getBaseAmount',
+        'note' => 'getNote'
     ];
 
     /**
@@ -164,27 +179,8 @@ class InvoiceData implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const CONVERSION_STRATEGY_UBL = 'ubl';
-    const CONVERSION_STRATEGY_CII = 'cii';
-    const CONVERSION_STRATEGY_IDOC = 'idoc';
-    const CONVERSION_STRATEGY_SETU14 = 'setu14';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getConversionStrategyAllowableValues()
-    {
-        return [
-            self::CONVERSION_STRATEGY_UBL,
-            self::CONVERSION_STRATEGY_CII,
-            self::CONVERSION_STRATEGY_IDOC,
-            self::CONVERSION_STRATEGY_SETU14,
-        ];
-    }
     
 
     /**
@@ -202,8 +198,11 @@ class InvoiceData implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['conversion_strategy'] = isset($data['conversion_strategy']) ? $data['conversion_strategy'] : null;
-        $this->container['document'] = isset($data['document']) ? $data['document'] : null;
+        $this->container['settlement_days'] = isset($data['settlement_days']) ? $data['settlement_days'] : null;
+        $this->container['discount_percentage'] = isset($data['discount_percentage']) ? $data['discount_percentage'] : null;
+        $this->container['surcharge_percentage'] = isset($data['surcharge_percentage']) ? $data['surcharge_percentage'] : null;
+        $this->container['base_amount'] = isset($data['base_amount']) ? $data['base_amount'] : null;
+        $this->container['note'] = isset($data['note']) ? $data['note'] : null;
     }
 
     /**
@@ -215,16 +214,11 @@ class InvoiceData implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        $allowedValues = $this->getConversionStrategyAllowableValues();
-        if (!is_null($this->container['conversion_strategy']) && !in_array($this->container['conversion_strategy'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'conversion_strategy', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
+        if ($this->container['settlement_days'] === null) {
+            $invalidProperties[] = "'settlement_days' can't be null";
         }
-
-        if (!is_null($this->container['document']) && (mb_strlen($this->container['document']) < 5)) {
-            $invalidProperties[] = "invalid value for 'document', the character length must be bigger than or equal to 5.";
+        if (!is_null($this->container['note']) && (mb_strlen($this->container['note']) > 1024)) {
+            $invalidProperties[] = "invalid value for 'note', the character length must be smaller than or equal to 1024.";
         }
 
         return $invalidProperties;
@@ -243,63 +237,125 @@ class InvoiceData implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets conversion_strategy
+     * Gets settlement_days
      *
-     * @return string
+     * @return int
      */
-    public function getConversionStrategy()
+    public function getSettlementDays()
     {
-        return $this->container['conversion_strategy'];
+        return $this->container['settlement_days'];
     }
 
     /**
-     * Sets conversion_strategy
+     * Sets settlement_days
      *
-     * @param string $conversion_strategy How to interpret the document.
+     * @param int $settlement_days The number of days within which the invoice must be settled for the term to apply.
      *
      * @return $this
      */
-    public function setConversionStrategy($conversion_strategy)
+    public function setSettlementDays($settlement_days)
     {
-        $allowedValues = $this->getConversionStrategyAllowableValues();
-        if (!is_null($conversion_strategy) && !in_array($conversion_strategy, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'conversion_strategy', must be one of '%s'",
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['conversion_strategy'] = $conversion_strategy;
+        $this->container['settlement_days'] = $settlement_days;
 
         return $this;
     }
 
     /**
-     * Gets document
+     * Gets discount_percentage
      *
-     * @return string
+     * @return float
      */
-    public function getDocument()
+    public function getDiscountPercentage()
     {
-        return $this->container['document'];
+        return $this->container['discount_percentage'];
     }
 
     /**
-     * Sets document
+     * Sets discount_percentage
      *
-     * @param string $document The base64 encoded version of the document.
+     * @param float $discount_percentage The discount percentage that applies if the invoice is settled within the required number of days. Provide only one of discountPercentage or surchargePercentage.
      *
      * @return $this
      */
-    public function setDocument($document)
+    public function setDiscountPercentage($discount_percentage)
     {
+        $this->container['discount_percentage'] = $discount_percentage;
 
-        if (!is_null($document) && (mb_strlen($document) < 5)) {
-            throw new \InvalidArgumentException('invalid length for $document when calling InvoiceData., must be bigger than or equal to 5.');
+        return $this;
+    }
+
+    /**
+     * Gets surcharge_percentage
+     *
+     * @return float
+     */
+    public function getSurchargePercentage()
+    {
+        return $this->container['surcharge_percentage'];
+    }
+
+    /**
+     * Sets surcharge_percentage
+     *
+     * @param float $surcharge_percentage The surcharge percentage that applies if the invoice is settled after the required number of days. Provide only one of discountPercentage or surchargePercentage.
+     *
+     * @return $this
+     */
+    public function setSurchargePercentage($surcharge_percentage)
+    {
+        $this->container['surcharge_percentage'] = $surcharge_percentage;
+
+        return $this;
+    }
+
+    /**
+     * Gets base_amount
+     *
+     * @return float
+     */
+    public function getBaseAmount()
+    {
+        return $this->container['base_amount'];
+    }
+
+    /**
+     * Sets base_amount
+     *
+     * @param float $base_amount The base amount on which the discount percentage is applied.
+     *
+     * @return $this
+     */
+    public function setBaseAmount($base_amount)
+    {
+        $this->container['base_amount'] = $base_amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets note
+     *
+     * @return string
+     */
+    public function getNote()
+    {
+        return $this->container['note'];
+    }
+
+    /**
+     * Sets note
+     *
+     * @param string $note The note for this payment term.
+     *
+     * @return $this
+     */
+    public function setNote($note)
+    {
+        if (!is_null($note) && (mb_strlen($note) > 1024)) {
+            throw new \InvalidArgumentException('invalid length for $note when calling PaymentTerm., must be smaller than or equal to 1024.');
         }
 
-        $this->container['document'] = $document;
+        $this->container['note'] = $note;
 
         return $this;
     }

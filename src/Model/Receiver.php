@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,51 +29,49 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * Receiver Class Doc Comment
  *
  * @category Class
- *
  * @description The receiver of the document.
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Receiver implements ArrayAccess, ModelInterface
+class Receiver implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'Receiver';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'business' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\BusinessReceiver',
         'government' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\GovernmentReceiver',
-        'consumer' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\ConsumerReceiver',
+        'consumer' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\ConsumerReceiver'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'business' => null,
         'government' => null,
-        'consumer' => null,
+        'consumer' => null
     ];
 
     /**
@@ -106,7 +103,7 @@ class Receiver implements ArrayAccess, ModelInterface
     protected static $attributeMap = [
         'business' => 'business',
         'government' => 'government',
-        'consumer' => 'consumer',
+        'consumer' => 'consumer'
     ];
 
     /**
@@ -117,7 +114,7 @@ class Receiver implements ArrayAccess, ModelInterface
     protected static $setters = [
         'business' => 'setBusiness',
         'government' => 'setGovernment',
-        'consumer' => 'setConsumer',
+        'consumer' => 'setConsumer'
     ];
 
     /**
@@ -128,7 +125,7 @@ class Receiver implements ArrayAccess, ModelInterface
     protected static $getters = [
         'business' => 'getBusiness',
         'government' => 'getGovernment',
-        'consumer' => 'getConsumer',
+        'consumer' => 'getConsumer'
     ];
 
     /**
@@ -172,6 +169,10 @@ class Receiver implements ArrayAccess, ModelInterface
         return self::$swaggerModelName;
     }
 
+    
+
+    
+
     /**
      * Associative array for storing property values
      *
@@ -182,10 +183,10 @@ class Receiver implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['business'] = isset($data['business']) ? $data['business'] : null;
         $this->container['government'] = isset($data['government']) ? $data['government'] : null;
@@ -215,6 +216,7 @@ class Receiver implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets business
      *
@@ -228,7 +230,8 @@ class Receiver implements ArrayAccess, ModelInterface
     /**
      * Sets business
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\BusinessReceiver  $business  business
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\BusinessReceiver $business business
+     *
      * @return $this
      */
     public function setBusiness($business)
@@ -251,7 +254,8 @@ class Receiver implements ArrayAccess, ModelInterface
     /**
      * Sets government
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\GovernmentReceiver  $government  government
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\GovernmentReceiver $government government
+     *
      * @return $this
      */
     public function setGovernment($government)
@@ -274,7 +278,8 @@ class Receiver implements ArrayAccess, ModelInterface
     /**
      * Sets consumer
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\ConsumerReceiver  $consumer  consumer
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\ConsumerReceiver $consumer consumer
+     *
      * @return $this
      */
     public function setConsumer($consumer)
@@ -283,12 +288,12 @@ class Receiver implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -298,7 +303,8 @@ class Receiver implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -309,8 +315,9 @@ class Receiver implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -325,7 +332,8 @@ class Receiver implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -350,3 +358,5 @@ class Receiver implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,49 +29,48 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * LineDeliveryDeliveryLocation Class Doc Comment
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class LineDeliveryDeliveryLocation implements ArrayAccess, ModelInterface
+class LineDeliveryDeliveryLocation implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'LineDelivery_deliveryLocation';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'id' => 'string',
         'scheme_id' => 'string',
-        'requested_delivery_period' => 'string',
+        'requested_delivery_period' => 'string'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'id' => null,
         'scheme_id' => null,
-        'requested_delivery_period' => null,
+        'requested_delivery_period' => null
     ];
 
     /**
@@ -104,7 +102,7 @@ class LineDeliveryDeliveryLocation implements ArrayAccess, ModelInterface
     protected static $attributeMap = [
         'id' => 'id',
         'scheme_id' => 'schemeId',
-        'requested_delivery_period' => 'requestedDeliveryPeriod',
+        'requested_delivery_period' => 'requestedDeliveryPeriod'
     ];
 
     /**
@@ -115,7 +113,7 @@ class LineDeliveryDeliveryLocation implements ArrayAccess, ModelInterface
     protected static $setters = [
         'id' => 'setId',
         'scheme_id' => 'setSchemeId',
-        'requested_delivery_period' => 'setRequestedDeliveryPeriod',
+        'requested_delivery_period' => 'setRequestedDeliveryPeriod'
     ];
 
     /**
@@ -126,7 +124,7 @@ class LineDeliveryDeliveryLocation implements ArrayAccess, ModelInterface
     protected static $getters = [
         'id' => 'getId',
         'scheme_id' => 'getSchemeId',
-        'requested_delivery_period' => 'getRequestedDeliveryPeriod',
+        'requested_delivery_period' => 'getRequestedDeliveryPeriod'
     ];
 
     /**
@@ -170,6 +168,10 @@ class LineDeliveryDeliveryLocation implements ArrayAccess, ModelInterface
         return self::$swaggerModelName;
     }
 
+    
+
+    
+
     /**
      * Associative array for storing property values
      *
@@ -180,10 +182,10 @@ class LineDeliveryDeliveryLocation implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['scheme_id'] = isset($data['scheme_id']) ? $data['scheme_id'] : null;
@@ -199,11 +201,11 @@ class LineDeliveryDeliveryLocation implements ArrayAccess, ModelInterface
     {
         $invalidProperties = [];
 
-        if (! is_null($this->container['id']) && (mb_strlen($this->container['id']) < 2)) {
+        if (!is_null($this->container['id']) && (mb_strlen($this->container['id']) < 2)) {
             $invalidProperties[] = "invalid value for 'id', the character length must be bigger than or equal to 2.";
         }
 
-        if (! is_null($this->container['requested_delivery_period']) && ! preg_match('/^[0-9]{4}-[0-9]{2}-[0-9]{2} - [0-9]{4}-[0-9]{2}-[0-9]{2}$/', $this->container['requested_delivery_period'])) {
+        if (!is_null($this->container['requested_delivery_period']) && !preg_match("/^[0-9]{4}-[0-9]{2}-[0-9]{2} - [0-9]{4}-[0-9]{2}-[0-9]{2}$/", $this->container['requested_delivery_period'])) {
             $invalidProperties[] = "invalid value for 'requested_delivery_period', must be conform to the pattern /^[0-9]{4}-[0-9]{2}-[0-9]{2} - [0-9]{4}-[0-9]{2}-[0-9]{2}$/.";
         }
 
@@ -221,6 +223,7 @@ class LineDeliveryDeliveryLocation implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets id
      *
@@ -234,13 +237,14 @@ class LineDeliveryDeliveryLocation implements ArrayAccess, ModelInterface
     /**
      * Sets id
      *
-     * @param  string  $id  The location identifier.
+     * @param string $id The location identifier.
+     *
      * @return $this
      */
     public function setId($id)
     {
 
-        if (! is_null($id) && (mb_strlen($id) < 2)) {
+        if (!is_null($id) && (mb_strlen($id) < 2)) {
             throw new \InvalidArgumentException('invalid length for $id when calling LineDeliveryDeliveryLocation., must be bigger than or equal to 2.');
         }
 
@@ -262,7 +266,8 @@ class LineDeliveryDeliveryLocation implements ArrayAccess, ModelInterface
     /**
      * Sets scheme_id
      *
-     * @param  string  $scheme_id  The schemeId of the location identifier (e.g. '0088')
+     * @param string $scheme_id The schemeId of the location identifier (e.g. '0088')
+     *
      * @return $this
      */
     public function setSchemeId($scheme_id)
@@ -285,13 +290,14 @@ class LineDeliveryDeliveryLocation implements ArrayAccess, ModelInterface
     /**
      * Sets requested_delivery_period
      *
-     * @param  string  $requested_delivery_period  The requested delivery period. If not present, will be taken from the document level. If that is not present, this field is mandatory.
+     * @param string $requested_delivery_period The requested delivery period. If not present, will be taken from the document level. If that is not present, this field is mandatory.
+     *
      * @return $this
      */
     public function setRequestedDeliveryPeriod($requested_delivery_period)
     {
 
-        if (! is_null($requested_delivery_period) && (! preg_match('/^[0-9]{4}-[0-9]{2}-[0-9]{2} - [0-9]{4}-[0-9]{2}-[0-9]{2}$/', $requested_delivery_period))) {
+        if (!is_null($requested_delivery_period) && (!preg_match("/^[0-9]{4}-[0-9]{2}-[0-9]{2} - [0-9]{4}-[0-9]{2}-[0-9]{2}$/", $requested_delivery_period))) {
             throw new \InvalidArgumentException("invalid value for $requested_delivery_period when calling LineDeliveryDeliveryLocation., must conform to the pattern /^[0-9]{4}-[0-9]{2}-[0-9]{2} - [0-9]{4}-[0-9]{2}-[0-9]{2}$/.");
         }
 
@@ -299,12 +305,12 @@ class LineDeliveryDeliveryLocation implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -314,7 +320,8 @@ class LineDeliveryDeliveryLocation implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -325,8 +332,9 @@ class LineDeliveryDeliveryLocation implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -341,7 +349,8 @@ class LineDeliveryDeliveryLocation implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -366,3 +375,5 @@ class LineDeliveryDeliveryLocation implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

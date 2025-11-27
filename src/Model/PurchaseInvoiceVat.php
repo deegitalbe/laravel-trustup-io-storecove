@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,49 +29,47 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * PurchaseInvoiceVat Class Doc Comment
  *
  * @category Class
- *
  * @description DEPRECATED - Use tax.
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PurchaseInvoiceVat implements ArrayAccess, ModelInterface
+class PurchaseInvoiceVat implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'PurchaseInvoiceVat';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'amount' => 'string',
-        'percentage' => 'string',
+        'percentage' => 'string'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'amount' => null,
-        'percentage' => null,
+        'percentage' => null
     ];
 
     /**
@@ -103,7 +100,7 @@ class PurchaseInvoiceVat implements ArrayAccess, ModelInterface
      */
     protected static $attributeMap = [
         'amount' => 'amount',
-        'percentage' => 'percentage',
+        'percentage' => 'percentage'
     ];
 
     /**
@@ -113,7 +110,7 @@ class PurchaseInvoiceVat implements ArrayAccess, ModelInterface
      */
     protected static $setters = [
         'amount' => 'setAmount',
-        'percentage' => 'setPercentage',
+        'percentage' => 'setPercentage'
     ];
 
     /**
@@ -123,7 +120,7 @@ class PurchaseInvoiceVat implements ArrayAccess, ModelInterface
      */
     protected static $getters = [
         'amount' => 'getAmount',
-        'percentage' => 'getPercentage',
+        'percentage' => 'getPercentage'
     ];
 
     /**
@@ -167,6 +164,10 @@ class PurchaseInvoiceVat implements ArrayAccess, ModelInterface
         return self::$swaggerModelName;
     }
 
+    
+
+    
+
     /**
      * Associative array for storing property values
      *
@@ -177,10 +178,10 @@ class PurchaseInvoiceVat implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
         $this->container['percentage'] = isset($data['percentage']) ? $data['percentage'] : null;
@@ -209,6 +210,7 @@ class PurchaseInvoiceVat implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets amount
      *
@@ -222,7 +224,8 @@ class PurchaseInvoiceVat implements ArrayAccess, ModelInterface
     /**
      * Sets amount
      *
-     * @param  string  $amount  The VAT country.
+     * @param string $amount The VAT country.
+     *
      * @return $this
      */
     public function setAmount($amount)
@@ -245,7 +248,8 @@ class PurchaseInvoiceVat implements ArrayAccess, ModelInterface
     /**
      * Sets percentage
      *
-     * @param  string  $percentage  The VAT percentage.
+     * @param string $percentage The VAT percentage.
+     *
      * @return $this
      */
     public function setPercentage($percentage)
@@ -254,12 +258,12 @@ class PurchaseInvoiceVat implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -269,7 +273,8 @@ class PurchaseInvoiceVat implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -280,8 +285,9 @@ class PurchaseInvoiceVat implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -296,7 +302,8 @@ class PurchaseInvoiceVat implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -321,3 +328,5 @@ class PurchaseInvoiceVat implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

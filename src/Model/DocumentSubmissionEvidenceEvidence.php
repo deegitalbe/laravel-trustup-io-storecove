@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,34 +29,33 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * DocumentSubmissionEvidenceEvidence Class Doc Comment
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class DocumentSubmissionEvidenceEvidence implements ArrayAccess, ModelInterface
+class DocumentSubmissionEvidenceEvidence implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'DocumentSubmissionEvidenceEvidence';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'smtp_response' => 'string',
         'timestamp' => 'string',
@@ -75,14 +73,14 @@ class DocumentSubmissionEvidenceEvidence implements ArrayAccess, ModelInterface
         'signature' => 'string',
         'signature_date_time' => 'string',
         'signature_number' => 'string',
-        'qr_code' => 'string',
+        'qr_code' => 'string'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'smtp_response' => null,
         'timestamp' => null,
@@ -100,7 +98,7 @@ class DocumentSubmissionEvidenceEvidence implements ArrayAccess, ModelInterface
         'signature' => null,
         'signature_date_time' => null,
         'signature_number' => null,
-        'qr_code' => null,
+        'qr_code' => null
     ];
 
     /**
@@ -146,7 +144,7 @@ class DocumentSubmissionEvidenceEvidence implements ArrayAccess, ModelInterface
         'signature' => 'signature',
         'signature_date_time' => 'signature_date_time',
         'signature_number' => 'signature_number',
-        'qr_code' => 'qr_code',
+        'qr_code' => 'qr_code'
     ];
 
     /**
@@ -171,7 +169,7 @@ class DocumentSubmissionEvidenceEvidence implements ArrayAccess, ModelInterface
         'signature' => 'setSignature',
         'signature_date_time' => 'setSignatureDateTime',
         'signature_number' => 'setSignatureNumber',
-        'qr_code' => 'setQrCode',
+        'qr_code' => 'setQrCode'
     ];
 
     /**
@@ -196,7 +194,7 @@ class DocumentSubmissionEvidenceEvidence implements ArrayAccess, ModelInterface
         'signature' => 'getSignature',
         'signature_date_time' => 'getSignatureDateTime',
         'signature_number' => 'getSignatureNumber',
-        'qr_code' => 'getQrCode',
+        'qr_code' => 'getQrCode'
     ];
 
     /**
@@ -240,6 +238,10 @@ class DocumentSubmissionEvidenceEvidence implements ArrayAccess, ModelInterface
         return self::$swaggerModelName;
     }
 
+    
+
+    
+
     /**
      * Associative array for storing property values
      *
@@ -250,10 +252,10 @@ class DocumentSubmissionEvidenceEvidence implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['smtp_response'] = isset($data['smtp_response']) ? $data['smtp_response'] : null;
         $this->container['timestamp'] = isset($data['timestamp']) ? $data['timestamp'] : null;
@@ -297,6 +299,7 @@ class DocumentSubmissionEvidenceEvidence implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets smtp_response
      *
@@ -310,7 +313,8 @@ class DocumentSubmissionEvidenceEvidence implements ArrayAccess, ModelInterface
     /**
      * Sets smtp_response
      *
-     * @param  string  $smtp_response  The response of the receiving SMTP server. Only used for network \"email\".
+     * @param string $smtp_response The response of the receiving SMTP server. Only used for network \"email\".
+     *
      * @return $this
      */
     public function setSmtpResponse($smtp_response)
@@ -333,7 +337,8 @@ class DocumentSubmissionEvidenceEvidence implements ArrayAccess, ModelInterface
     /**
      * Sets timestamp
      *
-     * @param  string  $timestamp  The timestamp of the delivery to the receiving SMTP server. Only used for network \"email\".
+     * @param string $timestamp The timestamp of the delivery to the receiving SMTP server. Only used for network \"email\".
+     *
      * @return $this
      */
     public function setTimestamp($timestamp)
@@ -356,7 +361,8 @@ class DocumentSubmissionEvidenceEvidence implements ArrayAccess, ModelInterface
     /**
      * Sets reporting_mta
      *
-     * @param  string  $reporting_mta  An identification for the sending SMTP. Only used for network \"email\".
+     * @param string $reporting_mta An identification for the sending SMTP. Only used for network \"email\".
+     *
      * @return $this
      */
     public function setReportingMta($reporting_mta)
@@ -379,7 +385,8 @@ class DocumentSubmissionEvidenceEvidence implements ArrayAccess, ModelInterface
     /**
      * Sets remote_mta_ip
      *
-     * @param  string  $remote_mta_ip  The IP address of the sending SMTP server. Only used for network \"email\".
+     * @param string $remote_mta_ip The IP address of the sending SMTP server. Only used for network \"email\".
+     *
      * @return $this
      */
     public function setRemoteMtaIp($remote_mta_ip)
@@ -402,7 +409,8 @@ class DocumentSubmissionEvidenceEvidence implements ArrayAccess, ModelInterface
     /**
      * Sets transmission_id
      *
-     * @param  string  $transmission_id  The unique id for this transmission. The meaning of this field varies, depending on the network.
+     * @param string $transmission_id The unique id for this transmission. The meaning of this field varies, depending on the network.
+     *
      * @return $this
      */
     public function setTransmissionId($transmission_id)
@@ -425,7 +433,8 @@ class DocumentSubmissionEvidenceEvidence implements ArrayAccess, ModelInterface
     /**
      * Sets message_id
      *
-     * @param  string  $message_id  The meaning of this field varies, depending on the network. For peppol and dbnaliance, this is the message id of the envelope. For sdi, this is the filename assigned to the document.
+     * @param string $message_id The meaning of this field varies, depending on the network. For peppol and dbnaliance, this is the message id of the envelope. For sdi, this is the filename assigned to the document.
+     *
      * @return $this
      */
     public function setMessageId($message_id)
@@ -448,7 +457,8 @@ class DocumentSubmissionEvidenceEvidence implements ArrayAccess, ModelInterface
     /**
      * Sets partner_key
      *
-     * @param  string  $partner_key  The meaning of this field varies, depending on the network. For my-lhdnm, it is the UUID.
+     * @param string $partner_key The meaning of this field varies, depending on the network. For my-lhdnm, it is the UUID.
+     *
      * @return $this
      */
     public function setPartnerKey($partner_key)
@@ -471,7 +481,8 @@ class DocumentSubmissionEvidenceEvidence implements ArrayAccess, ModelInterface
     /**
      * Sets long_id
      *
-     * @param  string  $long_id  Only used for application my-lhdnm.
+     * @param string $long_id Only used for application my-lhdnm.
+     *
      * @return $this
      */
     public function setLongId($long_id)
@@ -494,7 +505,8 @@ class DocumentSubmissionEvidenceEvidence implements ArrayAccess, ModelInterface
     /**
      * Sets acknowledgement_id
      *
-     * @param  string  $acknowledgement_id  Only used for application sg-iras.
+     * @param string $acknowledgement_id Only used for application sg-iras.
+     *
      * @return $this
      */
     public function setAcknowledgementId($acknowledgement_id)
@@ -517,7 +529,8 @@ class DocumentSubmissionEvidenceEvidence implements ArrayAccess, ModelInterface
     /**
      * Sets correlation_id
      *
-     * @param  string  $correlation_id  Only used for application sg-iras.
+     * @param string $correlation_id Only used for application sg-iras.
+     *
      * @return $this
      */
     public function setCorrelationId($correlation_id)
@@ -540,7 +553,8 @@ class DocumentSubmissionEvidenceEvidence implements ArrayAccess, ModelInterface
     /**
      * Sets document_id
      *
-     * @param  string  $document_id  The UUID in the generated XML document. Only used for application my-lhdnm and sg-iras.
+     * @param string $document_id The UUID in the generated XML document. Only used for application my-lhdnm and sg-iras.
+     *
      * @return $this
      */
     public function setDocumentId($document_id)
@@ -563,7 +577,8 @@ class DocumentSubmissionEvidenceEvidence implements ArrayAccess, ModelInterface
     /**
      * Sets receiving_accesspoint
      *
-     * @param  string  $receiving_accesspoint  An identification of the OpenPeppol accesspoint that the invoice was sent to. Only used for exchange networks like peppol and dbnalliance.
+     * @param string $receiving_accesspoint An identification of the OpenPeppol accesspoint that the invoice was sent to. Only used for exchange networks like peppol and dbnalliance.
+     *
      * @return $this
      */
     public function setReceivingAccesspoint($receiving_accesspoint)
@@ -586,7 +601,8 @@ class DocumentSubmissionEvidenceEvidence implements ArrayAccess, ModelInterface
     /**
      * Sets xml
      *
-     * @param  string  $xml  The XML evidence for the transmission. This is the XML returned by the receiving accesspoint, either OpenPeppol or DBNAlliance.
+     * @param string $xml The XML evidence for the transmission. This is the XML returned by the receiving accesspoint, either OpenPeppol or DBNAlliance.
+     *
      * @return $this
      */
     public function setXml($xml)
@@ -609,7 +625,8 @@ class DocumentSubmissionEvidenceEvidence implements ArrayAccess, ModelInterface
     /**
      * Sets signature
      *
-     * @param  string  $signature  The signature assiged by the tax authority or its authorized partner. Used for network india.
+     * @param string $signature The signature assiged by the tax authority or its authorized partner. Used for network india.
+     *
      * @return $this
      */
     public function setSignature($signature)
@@ -632,7 +649,8 @@ class DocumentSubmissionEvidenceEvidence implements ArrayAccess, ModelInterface
     /**
      * Sets signature_date_time
      *
-     * @param  string  $signature_date_time  The datetime of the signature assiged by the tax authority or its authorized partner. Used for network india.
+     * @param string $signature_date_time The datetime of the signature assiged by the tax authority or its authorized partner. Used for network india.
+     *
      * @return $this
      */
     public function setSignatureDateTime($signature_date_time)
@@ -655,7 +673,8 @@ class DocumentSubmissionEvidenceEvidence implements ArrayAccess, ModelInterface
     /**
      * Sets signature_number
      *
-     * @param  string  $signature_number  The sequence number of the signature assiged by the tax authority or its authorized partner. Used for network india.
+     * @param string $signature_number The sequence number of the signature assiged by the tax authority or its authorized partner. Used for network india.
+     *
      * @return $this
      */
     public function setSignatureNumber($signature_number)
@@ -678,7 +697,8 @@ class DocumentSubmissionEvidenceEvidence implements ArrayAccess, ModelInterface
     /**
      * Sets qr_code
      *
-     * @param  string  $qr_code  The QR Code assiged by the tax authority or its authorized partner. Used for networks india and pt-b2b.
+     * @param string $qr_code The QR Code assiged by the tax authority or its authorized partner. Used for networks india and pt-b2b.
+     *
      * @return $this
      */
     public function setQrCode($qr_code)
@@ -687,12 +707,12 @@ class DocumentSubmissionEvidenceEvidence implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -702,7 +722,8 @@ class DocumentSubmissionEvidenceEvidence implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -713,8 +734,9 @@ class DocumentSubmissionEvidenceEvidence implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -729,7 +751,8 @@ class DocumentSubmissionEvidenceEvidence implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -754,3 +777,5 @@ class DocumentSubmissionEvidenceEvidence implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

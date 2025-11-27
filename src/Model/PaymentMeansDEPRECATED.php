@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,49 +29,47 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * PaymentMeansDEPRECATED Class Doc Comment
  *
  * @category Class
- *
  * @description DEPRECATED - Use the new payment_means_array array.
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PaymentMeansDEPRECATED implements ArrayAccess, ModelInterface
+class PaymentMeansDEPRECATED implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'Payment Means  DEPRECATED';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'iban' => 'string',
-        'id' => 'string',
+        'id' => 'string'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'iban' => null,
-        'id' => null,
+        'id' => null
     ];
 
     /**
@@ -103,7 +100,7 @@ class PaymentMeansDEPRECATED implements ArrayAccess, ModelInterface
      */
     protected static $attributeMap = [
         'iban' => 'iban',
-        'id' => 'id',
+        'id' => 'id'
     ];
 
     /**
@@ -113,7 +110,7 @@ class PaymentMeansDEPRECATED implements ArrayAccess, ModelInterface
      */
     protected static $setters = [
         'iban' => 'setIban',
-        'id' => 'setId',
+        'id' => 'setId'
     ];
 
     /**
@@ -123,7 +120,7 @@ class PaymentMeansDEPRECATED implements ArrayAccess, ModelInterface
      */
     protected static $getters = [
         'iban' => 'getIban',
-        'id' => 'getId',
+        'id' => 'getId'
     ];
 
     /**
@@ -167,6 +164,10 @@ class PaymentMeansDEPRECATED implements ArrayAccess, ModelInterface
         return self::$swaggerModelName;
     }
 
+    
+
+    
+
     /**
      * Associative array for storing property values
      *
@@ -177,10 +178,10 @@ class PaymentMeansDEPRECATED implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['iban'] = isset($data['iban']) ? $data['iban'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
@@ -209,6 +210,7 @@ class PaymentMeansDEPRECATED implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets iban
      *
@@ -222,7 +224,8 @@ class PaymentMeansDEPRECATED implements ArrayAccess, ModelInterface
     /**
      * Sets iban
      *
-     * @param  string  $iban  The IBAN to which to transfer.
+     * @param string $iban The IBAN to which to transfer.
+     *
      * @return $this
      */
     public function setIban($iban)
@@ -245,7 +248,8 @@ class PaymentMeansDEPRECATED implements ArrayAccess, ModelInterface
     /**
      * Sets id
      *
-     * @param  string  $id  An id to mention in the transfer.
+     * @param string $id An id to mention in the transfer.
+     *
      * @return $this
      */
     public function setId($id)
@@ -254,12 +258,12 @@ class PaymentMeansDEPRECATED implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -269,7 +273,8 @@ class PaymentMeansDEPRECATED implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -280,8 +285,9 @@ class PaymentMeansDEPRECATED implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -296,7 +302,8 @@ class PaymentMeansDEPRECATED implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -321,3 +328,5 @@ class PaymentMeansDEPRECATED implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

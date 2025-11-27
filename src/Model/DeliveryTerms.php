@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,49 +29,48 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * DeliveryTerms Class Doc Comment
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class DeliveryTerms implements ArrayAccess, ModelInterface
+class DeliveryTerms implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'DeliveryTerms';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'incoterms' => 'string',
         'special_terms' => 'string',
-        'delivery_location_id' => 'string',
+        'delivery_location_id' => 'string'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'incoterms' => null,
         'special_terms' => null,
-        'delivery_location_id' => null,
+        'delivery_location_id' => null
     ];
 
     /**
@@ -104,7 +102,7 @@ class DeliveryTerms implements ArrayAccess, ModelInterface
     protected static $attributeMap = [
         'incoterms' => 'incoterms',
         'special_terms' => 'specialTerms',
-        'delivery_location_id' => 'deliveryLocationId',
+        'delivery_location_id' => 'deliveryLocationId'
     ];
 
     /**
@@ -115,7 +113,7 @@ class DeliveryTerms implements ArrayAccess, ModelInterface
     protected static $setters = [
         'incoterms' => 'setIncoterms',
         'special_terms' => 'setSpecialTerms',
-        'delivery_location_id' => 'setDeliveryLocationId',
+        'delivery_location_id' => 'setDeliveryLocationId'
     ];
 
     /**
@@ -126,7 +124,7 @@ class DeliveryTerms implements ArrayAccess, ModelInterface
     protected static $getters = [
         'incoterms' => 'getIncoterms',
         'special_terms' => 'getSpecialTerms',
-        'delivery_location_id' => 'getDeliveryLocationId',
+        'delivery_location_id' => 'getDeliveryLocationId'
     ];
 
     /**
@@ -171,27 +169,19 @@ class DeliveryTerms implements ArrayAccess, ModelInterface
     }
 
     const INCOTERMS_EXW = 'EXW';
-
     const INCOTERMS_FCA = 'FCA';
-
     const INCOTERMS_CPT = 'CPT';
-
     const INCOTERMS_CIP = 'CIP';
-
     const INCOTERMS_DAP = 'DAP';
-
     const INCOTERMS_DPU = 'DPU';
-
     const INCOTERMS_DDP = 'DDP';
-
     const INCOTERMS_FAS = 'FAS';
-
     const INCOTERMS_FOB = 'FOB';
-
     const INCOTERMS_CFR = 'CFR';
-
     const INCOTERMS_CIF = 'CIF';
+    
 
+    
     /**
      * Gets allowable values of the enum
      *
@@ -213,6 +203,7 @@ class DeliveryTerms implements ArrayAccess, ModelInterface
             self::INCOTERMS_CIF,
         ];
     }
+    
 
     /**
      * Associative array for storing property values
@@ -224,10 +215,10 @@ class DeliveryTerms implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['incoterms'] = isset($data['incoterms']) ? $data['incoterms'] : null;
         $this->container['special_terms'] = isset($data['special_terms']) ? $data['special_terms'] : null;
@@ -244,18 +235,18 @@ class DeliveryTerms implements ArrayAccess, ModelInterface
         $invalidProperties = [];
 
         $allowedValues = $this->getIncotermsAllowableValues();
-        if (! is_null($this->container['incoterms']) && ! in_array($this->container['incoterms'], $allowedValues, true)) {
+        if (!is_null($this->container['incoterms']) && !in_array($this->container['incoterms'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'incoterms', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
 
-        if (! is_null($this->container['special_terms']) && (mb_strlen($this->container['special_terms']) > 512)) {
+        if (!is_null($this->container['special_terms']) && (mb_strlen($this->container['special_terms']) > 512)) {
             $invalidProperties[] = "invalid value for 'special_terms', the character length must be smaller than or equal to 512.";
         }
 
-        if (! is_null($this->container['delivery_location_id']) && (mb_strlen($this->container['delivery_location_id']) > 128)) {
+        if (!is_null($this->container['delivery_location_id']) && (mb_strlen($this->container['delivery_location_id']) > 128)) {
             $invalidProperties[] = "invalid value for 'delivery_location_id', the character length must be smaller than or equal to 128.";
         }
 
@@ -273,6 +264,7 @@ class DeliveryTerms implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets incoterms
      *
@@ -286,13 +278,14 @@ class DeliveryTerms implements ArrayAccess, ModelInterface
     /**
      * Sets incoterms
      *
-     * @param  string  $incoterms  The incoterms: ++++ <ul>    <li>        <strong>EXW – Ex Works</strong><br/>        The seller must give the buyer access to goods at an agreed location. From that moment, the buyer bears almost all costs and risks during the entire shipping process.<br/>    </li>    <li>        <strong>FCA – Free Carrier</strong><br/>        The seller must make the goods available at his own risk and expense at his own premises or at an agreed place. In both cases, the seller is responsible for the clearance of the goods for export. It can be agreed that the buyer must instruct the carrier to transfer a “Bill of Lading (BL)” with a note on board to the seller.    </li>    <li>        <strong>CPT – Carriage Paid To</strong><br/>        The seller has the same responsibilities as with FCA, but in this case also pays the delivery costs.    </li>    <li>        <strong>CIP – Carriage Insurance Paid To</strong><br/>        The same seller responsibilities as with CPT, only in this case the seller is obliged to pay the insurance with a high coverage ratio. Parties can agree separately to apply limited coverage.    </li>    <li>        <strong>DAP – Delivered At Place</strong><br/>        The seller bears the costs and risks during the transport of the goods to an agreed address. As soon as the goods have arrived at this address and are ready for unloading, the risk passes to the buyer.    </li>    <li>        <strong>DPU – Delivered at Place Unloaded</strong><br/>        The seller is responsible for the costs and risks of delivering goods to an agreed destination where goods can be unloaded for further transport. The selling party arranges customs and unloads the goods at the agreed place. The buyer arranges the customs clearance and any associated rights.    </li>    <li>        <strong>DDP – Delivered Duty Paid</strong><br/>        The seller bears the costs and risks of transport, carries out the export and import responsibilities and pays any import duties. As soon as the goods have arrived at the address and are ready for unloading, the risk passes to the buyer.    </li>    <li>        <strong>FAS – Free Alongside Ship</strong><br/>        The seller bears all costs and risks until the goods are delivered next to the ship. From that point, the risk is for the buyer and he also arranges the export clearance and import clearance.    </li>    <li>        <strong>FOB – Free On Board</strong><br/>        The seller bears all costs and risks until the goods are on board the ship and also arranges the export clearance. As soon as the goods have been delivered to the ship, the buyer bears all responsibilities.    </li>    <li>        <strong>CFR – Cost And Freight</strong><br/>        The same applies to the seller and buyer as with FOB, but in this case, the seller must also pay for the transport of the goods to the port.    </li>    <li>        <strong>CIF – Cost, Insurance, and Freight</strong><br/>        The seller has the same obligations as with CFR but also pays the (minimum) insurance costs. The buyer must pay for more comprehensive insurance.    </li></ul> ++++
+     * @param string $incoterms The incoterms: ++++ <ul>    <li>        <strong>EXW – Ex Works</strong><br/>        The seller must give the buyer access to goods at an agreed location. From that moment, the buyer bears almost all costs and risks during the entire shipping process.<br/>    </li>    <li>        <strong>FCA – Free Carrier</strong><br/>        The seller must make the goods available at his own risk and expense at his own premises or at an agreed place. In both cases, the seller is responsible for the clearance of the goods for export. It can be agreed that the buyer must instruct the carrier to transfer a “Bill of Lading (BL)” with a note on board to the seller.    </li>    <li>        <strong>CPT – Carriage Paid To</strong><br/>        The seller has the same responsibilities as with FCA, but in this case also pays the delivery costs.    </li>    <li>        <strong>CIP – Carriage Insurance Paid To</strong><br/>        The same seller responsibilities as with CPT, only in this case the seller is obliged to pay the insurance with a high coverage ratio. Parties can agree separately to apply limited coverage.    </li>    <li>        <strong>DAP – Delivered At Place</strong><br/>        The seller bears the costs and risks during the transport of the goods to an agreed address. As soon as the goods have arrived at this address and are ready for unloading, the risk passes to the buyer.    </li>    <li>        <strong>DPU – Delivered at Place Unloaded</strong><br/>        The seller is responsible for the costs and risks of delivering goods to an agreed destination where goods can be unloaded for further transport. The selling party arranges customs and unloads the goods at the agreed place. The buyer arranges the customs clearance and any associated rights.    </li>    <li>        <strong>DDP – Delivered Duty Paid</strong><br/>        The seller bears the costs and risks of transport, carries out the export and import responsibilities and pays any import duties. As soon as the goods have arrived at the address and are ready for unloading, the risk passes to the buyer.    </li>    <li>        <strong>FAS – Free Alongside Ship</strong><br/>        The seller bears all costs and risks until the goods are delivered next to the ship. From that point, the risk is for the buyer and he also arranges the export clearance and import clearance.    </li>    <li>        <strong>FOB – Free On Board</strong><br/>        The seller bears all costs and risks until the goods are on board the ship and also arranges the export clearance. As soon as the goods have been delivered to the ship, the buyer bears all responsibilities.    </li>    <li>        <strong>CFR – Cost And Freight</strong><br/>        The same applies to the seller and buyer as with FOB, but in this case, the seller must also pay for the transport of the goods to the port.    </li>    <li>        <strong>CIF – Cost, Insurance, and Freight</strong><br/>        The seller has the same obligations as with CFR but also pays the (minimum) insurance costs. The buyer must pay for more comprehensive insurance.    </li></ul> ++++
+     *
      * @return $this
      */
     public function setIncoterms($incoterms)
     {
         $allowedValues = $this->getIncotermsAllowableValues();
-        if (! is_null($incoterms) && ! in_array($incoterms, $allowedValues, true)) {
+        if (!is_null($incoterms) && !in_array($incoterms, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'incoterms', must be one of '%s'",
@@ -318,12 +311,13 @@ class DeliveryTerms implements ArrayAccess, ModelInterface
     /**
      * Sets special_terms
      *
-     * @param  string  $special_terms  A description of special conditions relating to the delivery terms.
+     * @param string $special_terms A description of special conditions relating to the delivery terms.
+     *
      * @return $this
      */
     public function setSpecialTerms($special_terms)
     {
-        if (! is_null($special_terms) && (mb_strlen($special_terms) > 512)) {
+        if (!is_null($special_terms) && (mb_strlen($special_terms) > 512)) {
             throw new \InvalidArgumentException('invalid length for $special_terms when calling DeliveryTerms., must be smaller than or equal to 512.');
         }
 
@@ -345,12 +339,13 @@ class DeliveryTerms implements ArrayAccess, ModelInterface
     /**
      * Sets delivery_location_id
      *
-     * @param  string  $delivery_location_id  The location to which the delivery terms refer.
+     * @param string $delivery_location_id The location to which the delivery terms refer.
+     *
      * @return $this
      */
     public function setDeliveryLocationId($delivery_location_id)
     {
-        if (! is_null($delivery_location_id) && (mb_strlen($delivery_location_id) > 128)) {
+        if (!is_null($delivery_location_id) && (mb_strlen($delivery_location_id) > 128)) {
             throw new \InvalidArgumentException('invalid length for $delivery_location_id when calling DeliveryTerms., must be smaller than or equal to 128.');
         }
 
@@ -358,12 +353,12 @@ class DeliveryTerms implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -373,7 +368,8 @@ class DeliveryTerms implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -384,8 +380,9 @@ class DeliveryTerms implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -400,7 +397,8 @@ class DeliveryTerms implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -425,3 +423,5 @@ class DeliveryTerms implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

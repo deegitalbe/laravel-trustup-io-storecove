@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,47 +29,45 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * InvoiceRecipientPreflight Class Doc Comment
  *
  * @category Class
- *
  * @description Identifies the invoice recipient to preflight
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class InvoiceRecipientPreflight implements ArrayAccess, ModelInterface
+class InvoiceRecipientPreflight implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'InvoiceRecipientPreflight';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
-        'public_identifiers' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\PublicIdentifiers',
+        'public_identifiers' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\PublicIdentifiers'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
-        'public_identifiers' => null,
+        'public_identifiers' => null
     ];
 
     /**
@@ -100,7 +97,7 @@ class InvoiceRecipientPreflight implements ArrayAccess, ModelInterface
      * @var string[]
      */
     protected static $attributeMap = [
-        'public_identifiers' => 'publicIdentifiers',
+        'public_identifiers' => 'publicIdentifiers'
     ];
 
     /**
@@ -109,7 +106,7 @@ class InvoiceRecipientPreflight implements ArrayAccess, ModelInterface
      * @var string[]
      */
     protected static $setters = [
-        'public_identifiers' => 'setPublicIdentifiers',
+        'public_identifiers' => 'setPublicIdentifiers'
     ];
 
     /**
@@ -118,7 +115,7 @@ class InvoiceRecipientPreflight implements ArrayAccess, ModelInterface
      * @var string[]
      */
     protected static $getters = [
-        'public_identifiers' => 'getPublicIdentifiers',
+        'public_identifiers' => 'getPublicIdentifiers'
     ];
 
     /**
@@ -162,6 +159,10 @@ class InvoiceRecipientPreflight implements ArrayAccess, ModelInterface
         return self::$swaggerModelName;
     }
 
+    
+
+    
+
     /**
      * Associative array for storing property values
      *
@@ -172,10 +173,10 @@ class InvoiceRecipientPreflight implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['public_identifiers'] = isset($data['public_identifiers']) ? $data['public_identifiers'] : null;
     }
@@ -203,6 +204,7 @@ class InvoiceRecipientPreflight implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets public_identifiers
      *
@@ -216,7 +218,8 @@ class InvoiceRecipientPreflight implements ArrayAccess, ModelInterface
     /**
      * Sets public_identifiers
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\PublicIdentifiers  $public_identifiers  The public identifiers for this invoice recipient.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\PublicIdentifiers $public_identifiers The public identifiers for this invoice recipient.
+     *
      * @return $this
      */
     public function setPublicIdentifiers($public_identifiers)
@@ -225,12 +228,12 @@ class InvoiceRecipientPreflight implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -240,7 +243,8 @@ class InvoiceRecipientPreflight implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -251,8 +255,9 @@ class InvoiceRecipientPreflight implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -267,7 +272,8 @@ class InvoiceRecipientPreflight implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -292,3 +298,5 @@ class InvoiceRecipientPreflight implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,49 +29,48 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * Shipment Class Doc Comment
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Shipment implements ArrayAccess, ModelInterface
+class Shipment implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'Shipment';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'shipping_marks' => 'string',
         'origin_address' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\Address',
-        'allowance_charges' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\AllowanceCharge[]',
+        'allowance_charges' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\AllowanceCharge[]'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'shipping_marks' => null,
         'origin_address' => null,
-        'allowance_charges' => null,
+        'allowance_charges' => null
     ];
 
     /**
@@ -104,7 +102,7 @@ class Shipment implements ArrayAccess, ModelInterface
     protected static $attributeMap = [
         'shipping_marks' => 'shippingMarks',
         'origin_address' => 'originAddress',
-        'allowance_charges' => 'allowanceCharges',
+        'allowance_charges' => 'allowanceCharges'
     ];
 
     /**
@@ -115,7 +113,7 @@ class Shipment implements ArrayAccess, ModelInterface
     protected static $setters = [
         'shipping_marks' => 'setShippingMarks',
         'origin_address' => 'setOriginAddress',
-        'allowance_charges' => 'setAllowanceCharges',
+        'allowance_charges' => 'setAllowanceCharges'
     ];
 
     /**
@@ -126,7 +124,7 @@ class Shipment implements ArrayAccess, ModelInterface
     protected static $getters = [
         'shipping_marks' => 'getShippingMarks',
         'origin_address' => 'getOriginAddress',
-        'allowance_charges' => 'getAllowanceCharges',
+        'allowance_charges' => 'getAllowanceCharges'
     ];
 
     /**
@@ -170,6 +168,10 @@ class Shipment implements ArrayAccess, ModelInterface
         return self::$swaggerModelName;
     }
 
+    
+
+    
+
     /**
      * Associative array for storing property values
      *
@@ -180,10 +182,10 @@ class Shipment implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['shipping_marks'] = isset($data['shipping_marks']) ? $data['shipping_marks'] : null;
         $this->container['origin_address'] = isset($data['origin_address']) ? $data['origin_address'] : null;
@@ -199,7 +201,7 @@ class Shipment implements ArrayAccess, ModelInterface
     {
         $invalidProperties = [];
 
-        if (! is_null($this->container['shipping_marks']) && (mb_strlen($this->container['shipping_marks']) > 128)) {
+        if (!is_null($this->container['shipping_marks']) && (mb_strlen($this->container['shipping_marks']) > 128)) {
             $invalidProperties[] = "invalid value for 'shipping_marks', the character length must be smaller than or equal to 128.";
         }
 
@@ -217,6 +219,7 @@ class Shipment implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets shipping_marks
      *
@@ -230,12 +233,13 @@ class Shipment implements ArrayAccess, ModelInterface
     /**
      * Sets shipping_marks
      *
-     * @param  string  $shipping_marks  A text that the buyer requests to be printed on the packing labels. Used only for DocumentOrder.
+     * @param string $shipping_marks A text that the buyer requests to be printed on the packing labels. Used only for DocumentOrder.
+     *
      * @return $this
      */
     public function setShippingMarks($shipping_marks)
     {
-        if (! is_null($shipping_marks) && (mb_strlen($shipping_marks) > 128)) {
+        if (!is_null($shipping_marks) && (mb_strlen($shipping_marks) > 128)) {
             throw new \InvalidArgumentException('invalid length for $shipping_marks when calling Shipment., must be smaller than or equal to 128.');
         }
 
@@ -257,7 +261,8 @@ class Shipment implements ArrayAccess, ModelInterface
     /**
      * Sets origin_address
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\Address  $origin_address  The address from which the shipment is being sent. Currently supports country only.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\Address $origin_address The address from which the shipment is being sent. Currently supports country only.
+     *
      * @return $this
      */
     public function setOriginAddress($origin_address)
@@ -280,7 +285,8 @@ class Shipment implements ArrayAccess, ModelInterface
     /**
      * Sets allowance_charges
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\AllowanceCharge[]  $allowance_charges  A list of charges
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\AllowanceCharge[] $allowance_charges A list of charges
+     *
      * @return $this
      */
     public function setAllowanceCharges($allowance_charges)
@@ -289,12 +295,12 @@ class Shipment implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -304,7 +310,8 @@ class Shipment implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -315,8 +322,9 @@ class Shipment implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -331,7 +339,8 @@ class Shipment implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -356,3 +365,5 @@ class Shipment implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

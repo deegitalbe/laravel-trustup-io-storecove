@@ -5,9 +5,8 @@
  * PHP version 5
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -30,49 +29,48 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Model;
 
-use ArrayAccess;
-use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
+use \ArrayAccess;
+use \Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 
 /**
  * InvoiceSubmissionEvidence Class Doc Comment
  *
  * @category Class
- *
+ * @package  Deegitalbe\LaravelTrustupIoStorecove
  * @author   Swagger Codegen team
- *
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class InvoiceSubmissionEvidence implements ArrayAccess, ModelInterface
+class InvoiceSubmissionEvidence implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
+      * The original name of the model.
+      *
+      * @var string
+      */
     protected static $swaggerModelName = 'InvoiceSubmissionEvidence';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerTypes = [
         'guid' => 'string',
         'status' => 'string',
-        'actions' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\InvoiceSubmissionActionEvidence[]',
+        'actions' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\InvoiceSubmissionActionEvidence[]'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $swaggerFormats = [
         'guid' => null,
         'status' => null,
-        'actions' => null,
+        'actions' => null
     ];
 
     /**
@@ -104,7 +102,7 @@ class InvoiceSubmissionEvidence implements ArrayAccess, ModelInterface
     protected static $attributeMap = [
         'guid' => 'guid',
         'status' => 'status',
-        'actions' => 'actions',
+        'actions' => 'actions'
     ];
 
     /**
@@ -115,7 +113,7 @@ class InvoiceSubmissionEvidence implements ArrayAccess, ModelInterface
     protected static $setters = [
         'guid' => 'setGuid',
         'status' => 'setStatus',
-        'actions' => 'setActions',
+        'actions' => 'setActions'
     ];
 
     /**
@@ -126,7 +124,7 @@ class InvoiceSubmissionEvidence implements ArrayAccess, ModelInterface
     protected static $getters = [
         'guid' => 'getGuid',
         'status' => 'getStatus',
-        'actions' => 'getActions',
+        'actions' => 'getActions'
     ];
 
     /**
@@ -170,6 +168,10 @@ class InvoiceSubmissionEvidence implements ArrayAccess, ModelInterface
         return self::$swaggerModelName;
     }
 
+    
+
+    
+
     /**
      * Associative array for storing property values
      *
@@ -180,10 +182,10 @@ class InvoiceSubmissionEvidence implements ArrayAccess, ModelInterface
     /**
      * Constructor
      *
-     * @param  mixed[]  $data  Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->container['guid'] = isset($data['guid']) ? $data['guid'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
@@ -213,6 +215,7 @@ class InvoiceSubmissionEvidence implements ArrayAccess, ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets guid
      *
@@ -226,7 +229,8 @@ class InvoiceSubmissionEvidence implements ArrayAccess, ModelInterface
     /**
      * Sets guid
      *
-     * @param  string  $guid  The guid for the InvoiceSubmission.
+     * @param string $guid The guid for the InvoiceSubmission.
+     *
      * @return $this
      */
     public function setGuid($guid)
@@ -249,7 +253,8 @@ class InvoiceSubmissionEvidence implements ArrayAccess, ModelInterface
     /**
      * Sets status
      *
-     * @param  string  $status  The overall status for this InvoiceSubmission.
+     * @param string $status The overall status for this InvoiceSubmission.
+     *
      * @return $this
      */
     public function setStatus($status)
@@ -272,7 +277,8 @@ class InvoiceSubmissionEvidence implements ArrayAccess, ModelInterface
     /**
      * Sets actions
      *
-     * @param  \Deegitalbe\LaravelTrustupIoStorecove\Model\InvoiceSubmissionActionEvidence[]  $actions  An array of actions taken to deliver the document.
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\InvoiceSubmissionActionEvidence[] $actions An array of actions taken to deliver the document.
+     *
      * @return $this
      */
     public function setActions($actions)
@@ -281,12 +287,12 @@ class InvoiceSubmissionEvidence implements ArrayAccess, ModelInterface
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param  int  $offset  Offset
-     * @return bool
+     * @param integer $offset Offset
+     *
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -296,7 +302,8 @@ class InvoiceSubmissionEvidence implements ArrayAccess, ModelInterface
     /**
      * Gets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return mixed
      */
     public function offsetGet($offset)
@@ -307,8 +314,9 @@ class InvoiceSubmissionEvidence implements ArrayAccess, ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param  int  $offset  Offset
-     * @param  mixed  $value  Value to be set
+     * @param integer $offset Offset
+     * @param mixed   $value  Value to be set
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -323,7 +331,8 @@ class InvoiceSubmissionEvidence implements ArrayAccess, ModelInterface
     /**
      * Unsets offset.
      *
-     * @param  int  $offset  Offset
+     * @param integer $offset Offset
+     *
      * @return void
      */
     public function offsetUnset($offset)
@@ -348,3 +357,5 @@ class InvoiceSubmissionEvidence implements ArrayAccess, ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

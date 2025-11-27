@@ -1,5 +1,11 @@
 # @deegitalbe/laravel-trustup-io-storecove
 
+## 1.0.0
+
+### Major Changes
+
+- 4319883: STORECON generation.
+
 ## 0.2.1
 
 ### Patch Changes

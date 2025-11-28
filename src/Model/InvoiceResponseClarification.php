@@ -103,8 +103,8 @@ class InvoiceResponseClarification implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'clarification_code_type' => 'clarificationCodeType',
-        'clarification_code' => 'clarificationCode',
+        'clarification_code_type' => 'clarification_code_type',
+        'clarification_code' => 'clarification_code',
         'clarification' => 'clarification',
         'conditions' => 'conditions'
     ];

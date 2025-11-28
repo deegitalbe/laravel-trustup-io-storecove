@@ -103,10 +103,10 @@ class Routing implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'e_identifiers' => 'eIdentifiers',
+        'e_identifiers' => 'e_identifiers',
         'networks' => 'networks',
         'emails' => 'emails',
-        'clear_without_sending' => 'clearWithoutSending'
+        'clear_without_sending' => 'clear_without_sending'
     ];
 
     /**

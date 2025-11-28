@@ -105,8 +105,8 @@ class Contact implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'first_name' => 'firstName',
-        'last_name' => 'lastName',
+        'first_name' => 'first_name',
+        'last_name' => 'last_name',
         'email' => 'email',
         'phone' => 'phone',
         'id' => 'id'

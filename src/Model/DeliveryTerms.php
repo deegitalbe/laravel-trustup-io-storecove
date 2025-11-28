@@ -101,8 +101,8 @@ class DeliveryTerms implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'incoterms' => 'incoterms',
-        'special_terms' => 'specialTerms',
-        'delivery_location_id' => 'deliveryLocationId'
+        'special_terms' => 'special_terms',
+        'delivery_location_id' => 'delivery_location_id'
     ];
 
     /**

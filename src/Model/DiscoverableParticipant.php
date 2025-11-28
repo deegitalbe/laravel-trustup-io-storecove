@@ -107,10 +107,10 @@ class DiscoverableParticipant implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'document_types' => 'documentTypes',
+        'document_types' => 'document_types',
         'network' => 'network',
         'flags' => 'flags',
-        'meta_scheme' => 'metaScheme',
+        'meta_scheme' => 'meta_scheme',
         'scheme' => 'scheme',
         'identifier' => 'identifier'
     ];

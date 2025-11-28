@@ -104,9 +104,9 @@ class DocumentInvoiceResponse implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'clarifications' => 'clarifications',
-        'effective_date' => 'effectiveDate',
+        'effective_date' => 'effective_date',
         'note' => 'note',
-        'response_code' => 'responseCode'
+        'response_code' => 'response_code'
     ];
 
     /**

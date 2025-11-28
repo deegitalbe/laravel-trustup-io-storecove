@@ -110,10 +110,10 @@ class DocumentSubmission implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'routing' => 'routing',
-        'legal_entity_id' => 'legalEntityId',
-        'receive_guid' => 'receiveGuid',
-        'idempotency_guid' => 'idempotencyGuid',
-        'create_primary_image' => 'createPrimaryImage',
+        'legal_entity_id' => 'legal_entity_id',
+        'receive_guid' => 'receive_guid',
+        'idempotency_guid' => 'idempotency_guid',
+        'create_primary_image' => 'create_primary_image',
         'attachments' => 'attachments',
         'document' => 'document'
     ];

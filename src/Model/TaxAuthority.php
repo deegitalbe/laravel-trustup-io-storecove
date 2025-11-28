@@ -103,7 +103,7 @@ class TaxAuthority implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'uuid' => 'uuid',
         'uri' => 'uri',
-        'validated_at' => 'validatedAt'
+        'validated_at' => 'validated_at'
     ];
 
     /**

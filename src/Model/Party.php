@@ -105,9 +105,9 @@ class Party implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'company_name' => 'companyName',
-        'registration_name' => 'registrationName',
-        'classification_code' => 'classificationCode',
+        'company_name' => 'company_name',
+        'registration_name' => 'registration_name',
+        'classification_code' => 'classification_code',
         'address' => 'address',
         'contact' => 'contact'
     ];

@@ -105,10 +105,10 @@ class PaymentTerm implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'settlement_days' => 'settlementDays',
-        'discount_percentage' => 'discountPercentage',
-        'surcharge_percentage' => 'surchargePercentage',
-        'base_amount' => 'baseAmount',
+        'settlement_days' => 'settlement_days',
+        'discount_percentage' => 'discount_percentage',
+        'surcharge_percentage' => 'surcharge_percentage',
+        'base_amount' => 'base_amount',
         'note' => 'note'
     ];
 

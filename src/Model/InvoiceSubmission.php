@@ -121,19 +121,19 @@ class InvoiceSubmission implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'create_primary_image' => 'createPrimaryImage',
+        'create_primary_image' => 'create_primary_image',
         'mode' => 'mode',
-        'supplier_id' => 'supplierId',
-        'legal_supplier_id' => 'legalSupplierId',
-        'legal_entity_id' => 'legalEntityId',
-        'idempotency_guid' => 'idempotencyGuid',
-        'invoice_recipient' => 'invoiceRecipient',
+        'supplier_id' => 'supplier_id',
+        'legal_supplier_id' => 'legal_supplier_id',
+        'legal_entity_id' => 'legal_entity_id',
+        'idempotency_guid' => 'idempotency_guid',
+        'invoice_recipient' => 'invoice_recipient',
         'routing' => 'routing',
         'attachments' => 'attachments',
         'document' => 'document',
-        'document_url' => 'documentUrl',
+        'document_url' => 'document_url',
         'invoice' => 'invoice',
-        'invoice_data' => 'invoiceData'
+        'invoice_data' => 'invoice_data'
     ];
 
     /**

@@ -97,7 +97,7 @@ class InvoiceRecipientPreflight implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'public_identifiers' => 'publicIdentifiers'
+        'public_identifiers' => 'public_identifiers'
     ];
 
     /**

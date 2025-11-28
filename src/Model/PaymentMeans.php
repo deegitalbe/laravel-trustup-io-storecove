@@ -120,7 +120,7 @@ class PaymentMeans implements ModelInterface, ArrayAccess
         'network' => 'network',
         'mandate' => 'mandate',
         'sepa_creditor_reference' => 'sepa_creditor_reference',
-        'payment_id' => 'paymentId',
+        'payment_id' => 'payment_id',
         'amount' => 'amount'
     ];
 

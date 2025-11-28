@@ -108,11 +108,11 @@ class Attachment implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'document' => 'document',
-        'mime_type' => 'mimeType',
+        'mime_type' => 'mime_type',
         'filename' => 'filename',
         'description' => 'description',
-        'document_id' => 'documentId',
-        'primary_image' => 'primaryImage'
+        'document_id' => 'document_id',
+        'primary_image' => 'primary_image'
     ];
 
     /**

@@ -100,9 +100,9 @@ class Shipment implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'shipping_marks' => 'shippingMarks',
-        'origin_address' => 'originAddress',
-        'allowance_charges' => 'allowanceCharges'
+        'shipping_marks' => 'shipping_marks',
+        'origin_address' => 'origin_address',
+        'allowance_charges' => 'allowance_charges'
     ];
 
     /**

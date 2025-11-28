@@ -99,7 +99,7 @@ class ReceivedDocumentCreate implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'document' => 'document',
-        'parse_strategy' => 'parseStrategy'
+        'parse_strategy' => 'parse_strategy'
     ];
 
     /**

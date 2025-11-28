@@ -103,7 +103,7 @@ class ReceivableDocument implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'document_type' => 'documentType',
+        'document_type' => 'document_type',
         'source' => 'source',
         'invoice' => 'invoice',
         'order' => 'order'

@@ -105,8 +105,8 @@ class TaxSubtotal implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'taxable_amount' => 'taxableAmount',
-        'tax_amount' => 'taxAmount',
+        'taxable_amount' => 'taxable_amount',
+        'tax_amount' => 'tax_amount',
         'percentage' => 'percentage',
         'category' => 'category',
         'country' => 'country'

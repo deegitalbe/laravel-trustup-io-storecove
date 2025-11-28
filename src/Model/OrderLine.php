@@ -128,22 +128,22 @@ class OrderLine implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'line_id' => 'lineId',
+        'line_id' => 'line_id',
         'quantity' => 'quantity',
-        'quantity_unit_code' => 'quantityUnitCode',
-        'item_price' => 'itemPrice',
-        'base_quantity' => 'baseQuantity',
-        'amount_excluding_tax' => 'amountExcludingTax',
-        'allowance_charges' => 'allowanceCharges',
-        'allow_partial_delivery' => 'allowPartialDelivery',
-        'accounting_cost' => 'accountingCost',
+        'quantity_unit_code' => 'quantity_unit_code',
+        'item_price' => 'item_price',
+        'base_quantity' => 'base_quantity',
+        'amount_excluding_tax' => 'amount_excluding_tax',
+        'allowance_charges' => 'allowance_charges',
+        'allow_partial_delivery' => 'allow_partial_delivery',
+        'accounting_cost' => 'accounting_cost',
         'delivery' => 'delivery',
         'description' => 'description',
         'name' => 'name',
         'references' => 'references',
-        'taxes_duties_fees' => 'taxesDutiesFees',
-        'additional_item_properties' => 'additionalItemProperties',
-        'lot_number_ids' => 'lotNumberIds',
+        'taxes_duties_fees' => 'taxes_duties_fees',
+        'additional_item_properties' => 'additional_item_properties',
+        'lot_number_ids' => 'lot_number_ids',
         'note' => 'note'
     ];
 

@@ -102,7 +102,7 @@ class RawDocumentData implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'parse' => 'parse',
-        'parse_strategy' => 'parseStrategy',
+        'parse_strategy' => 'parse_strategy',
         'document' => 'document'
     ];
 

@@ -112,15 +112,15 @@ class AllowanceCharge implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'amount_excluding_vat' => 'amountExcludingVat',
-        'amount_excluding_tax' => 'amountExcludingTax',
-        'base_amount_excluding_tax' => 'baseAmountExcludingTax',
-        'amount_including_tax' => 'amountIncludingTax',
-        'base_amount_including_tax' => 'baseAmountIncludingTax',
+        'amount_excluding_vat' => 'amount_excluding_vat',
+        'amount_excluding_tax' => 'amount_excluding_tax',
+        'base_amount_excluding_tax' => 'base_amount_excluding_tax',
+        'amount_including_tax' => 'amount_including_tax',
+        'base_amount_including_tax' => 'base_amount_including_tax',
         'tax' => 'tax',
-        'taxes_duties_fees' => 'taxesDutiesFees',
+        'taxes_duties_fees' => 'taxes_duties_fees',
         'reason' => 'reason',
-        'reason_code' => 'reasonCode'
+        'reason_code' => 'reason_code'
     ];
 
     /**

@@ -105,7 +105,7 @@ class Transportable implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'legal_entity_id' => 'legalEntityId',
+        'legal_entity_id' => 'legal_entity_id',
         'direction' => 'direction',
         'guid' => 'guid',
         'original' => 'original',

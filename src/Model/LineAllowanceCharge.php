@@ -102,10 +102,10 @@ class LineAllowanceCharge implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'amount_excluding_tax' => 'amountExcludingTax',
-        'base_amount_excluding_tax' => 'baseAmountExcludingTax',
+        'amount_excluding_tax' => 'amount_excluding_tax',
+        'base_amount_excluding_tax' => 'base_amount_excluding_tax',
         'reason' => 'reason',
-        'reason_code' => 'reasonCode'
+        'reason_code' => 'reason_code'
     ];
 
     /**

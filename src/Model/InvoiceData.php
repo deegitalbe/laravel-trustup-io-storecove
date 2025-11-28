@@ -99,7 +99,7 @@ class InvoiceData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'conversion_strategy' => 'conversionStrategy',
+        'conversion_strategy' => 'conversion_strategy',
         'document' => 'document'
     ];
 

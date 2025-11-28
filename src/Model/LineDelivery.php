@@ -96,7 +96,7 @@ class LineDelivery implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'delivery_location' => 'deliveryLocation'
+        'delivery_location' => 'delivery_location'
     ];
 
     /**

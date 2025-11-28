@@ -105,9 +105,9 @@ class DeliveryDeliveryLocation implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'scheme_id' => 'schemeId',
-        'scheme_agency_id' => 'schemeAgencyId',
-        'location_name' => 'locationName',
+        'scheme_id' => 'scheme_id',
+        'scheme_agency_id' => 'scheme_agency_id',
+        'location_name' => 'location_name',
         'address' => 'address'
     ];
 

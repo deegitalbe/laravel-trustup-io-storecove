@@ -101,8 +101,8 @@ class LineDeliveryDeliveryLocation implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'scheme_id' => 'schemeId',
-        'requested_delivery_period' => 'requestedDeliveryPeriod'
+        'scheme_id' => 'scheme_id',
+        'requested_delivery_period' => 'requested_delivery_period'
     ];
 
     /**

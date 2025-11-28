@@ -112,10 +112,10 @@ class EnvelopedData implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'application' => 'application',
-        'process_id' => 'processId',
-        'process_id_scheme_id' => 'processIdSchemeId',
-        'document_id' => 'documentId',
-        'document_id_scheme_id' => 'documentIdSchemeId',
+        'process_id' => 'process_id',
+        'process_id_scheme_id' => 'process_id_scheme_id',
+        'document_id' => 'document_id',
+        'document_id_scheme_id' => 'document_id_scheme_id',
         'document' => 'document',
         'envelope' => 'envelope',
         'metadata' => 'metadata'

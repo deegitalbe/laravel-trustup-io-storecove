@@ -105,8 +105,8 @@ class Envelope implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'sender' => 'sender',
         'receiver' => 'receiver',
-        'type_version' => 'typeVersion',
-        'mime_type' => 'mimeType'
+        'type_version' => 'type_version',
+        'mime_type' => 'mime_type'
     ];
 
     /**

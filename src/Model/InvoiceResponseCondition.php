@@ -99,8 +99,8 @@ class InvoiceResponseCondition implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'field_code' => 'fieldCode',
-        'field_value' => 'fieldValue'
+        'field_code' => 'field_code',
+        'field_value' => 'field_value'
     ];
 
     /**

@@ -110,14 +110,14 @@ class Delivery implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'delivery_location' => 'deliveryLocation',
-        'requested_delivery_period' => 'requestedDeliveryPeriod',
-        'actual_delivery_date' => 'actualDeliveryDate',
+        'delivery_location' => 'delivery_location',
+        'requested_delivery_period' => 'requested_delivery_period',
+        'actual_delivery_date' => 'actual_delivery_date',
         'quantity' => 'quantity',
-        'delivery_party_name' => 'deliveryPartyName',
-        'delivery_party' => 'deliveryParty',
+        'delivery_party_name' => 'delivery_party_name',
+        'delivery_party' => 'delivery_party',
         'shipment' => 'shipment',
-        'shipping_marks' => 'shippingMarks'
+        'shipping_marks' => 'shipping_marks'
     ];
 
     /**

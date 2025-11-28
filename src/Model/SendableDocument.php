@@ -109,13 +109,13 @@ class SendableDocument implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'document_type' => 'documentType',
+        'document_type' => 'document_type',
         'invoice' => 'invoice',
-        'invoice_response' => 'invoiceResponse',
-        'invoice_report' => 'invoiceReport',
+        'invoice_response' => 'invoice_response',
+        'invoice_report' => 'invoice_report',
         'order' => 'order',
-        'raw_document_data' => 'rawDocumentData',
-        'enveloped_data' => 'envelopedData'
+        'raw_document_data' => 'raw_document_data',
+        'enveloped_data' => 'enveloped_data'
     ];
 
     /**

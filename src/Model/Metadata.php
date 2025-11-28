@@ -105,11 +105,11 @@ class Metadata implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'document_number' => 'documentNumber',
-        'document_date' => 'documentDate',
-        'receiver_name' => 'receiverName',
-        'receiver_country' => 'receiverCountry',
-        'payload_type' => 'payloadType'
+        'document_number' => 'document_number',
+        'document_date' => 'document_date',
+        'receiver_name' => 'receiver_name',
+        'receiver_country' => 'receiver_country',
+        'payload_type' => 'payload_type'
     ];
 
     /**

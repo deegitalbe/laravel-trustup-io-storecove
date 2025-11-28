@@ -100,7 +100,7 @@ class AccountingCustomerParty implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'party' => 'party',
-        'public_identifiers' => 'publicIdentifiers'
+        'public_identifiers' => 'public_identifiers'
     ];
 
     /**

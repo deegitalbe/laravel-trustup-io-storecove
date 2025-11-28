@@ -121,19 +121,19 @@ class Reference implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'document_type' => 'documentType',
-        'document_type_code' => 'documentTypeCode',
-        'document_id' => 'documentId',
-        'document_uuid' => 'documentUuid',
-        'document_id_scheme_id' => 'documentIdSchemeId',
-        'document_id_scheme_agency_id' => 'documentIdSchemeAgencyId',
-        'document_id_scheme_version_id' => 'documentIdSchemeVersionId',
-        'document_id_list_id' => 'documentIdListId',
-        'document_id_list_agency_id' => 'documentIdListAgencyId',
-        'document_id_list_version_id' => 'documentIdListVersionId',
-        'line_id' => 'lineId',
-        'issue_date' => 'issueDate',
-        'document_description' => 'documentDescription'
+        'document_type' => 'document_type',
+        'document_type_code' => 'document_type_code',
+        'document_id' => 'document_id',
+        'document_uuid' => 'document_uuid',
+        'document_id_scheme_id' => 'document_id_scheme_id',
+        'document_id_scheme_agency_id' => 'document_id_scheme_agency_id',
+        'document_id_scheme_version_id' => 'document_id_scheme_version_id',
+        'document_id_list_id' => 'document_id_list_id',
+        'document_id_list_agency_id' => 'document_id_list_agency_id',
+        'document_id_list_version_id' => 'document_id_list_version_id',
+        'line_id' => 'line_id',
+        'issue_date' => 'issue_date',
+        'document_description' => 'document_description'
     ];
 
     /**

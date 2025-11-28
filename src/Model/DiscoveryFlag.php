@@ -97,7 +97,7 @@ class DiscoveryFlag implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'supports_self_billing' => 'supportsSelfBilling'
+        'supports_self_billing' => 'supports_self_billing'
     ];
 
     /**

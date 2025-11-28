@@ -1,5 +1,11 @@
 # @deegitalbe/laravel-trustup-io-storecove
 
+## 1.0.1
+
+### Patch Changes
+
+- b5fba39: Case issue.
+
 ## 1.0.0
 
 ### Major Changes

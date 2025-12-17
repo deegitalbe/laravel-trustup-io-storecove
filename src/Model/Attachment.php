@@ -361,11 +361,6 @@ class Attachment implements ModelInterface, ArrayAccess
      */
     public function setFilename($filename)
     {
-
-        if (!is_null($filename) && (!preg_match("/^[\\p{L}\\p{N}\\p{M}_](?:[\\p{L}\\p{N}\\p{M}\\._-]*[\\p{L}\\p{N}\\p{M}_])?\\.[\\p{L}\\p{N}\\p{M}_-]+$/", $filename))) {
-            throw new \InvalidArgumentException("invalid value for $filename when calling Attachment., must conform to the pattern /^[\\p{L}\\p{N}\\p{M}_](?:[\\p{L}\\p{N}\\p{M}\\._-]*[\\p{L}\\p{N}\\p{M}_])?\\.[\\p{L}\\p{N}\\p{M}_-]+$/.");
-        }
-
         $this->container['filename'] = $filename;
 
         return $this;

@@ -1,5 +1,11 @@
 # @deegitalbe/laravel-trustup-io-storecove
 
+## 1.0.2
+
+### Patch Changes
+
+- d6a2cc0: Remove the regex that validate the attachment filename.
+
 ## 1.0.1
 
 ### Patch Changes

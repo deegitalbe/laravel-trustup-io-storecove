@@ -1,5 +1,11 @@
 # @deegitalbe/laravel-trustup-io-storecove
 
+## 1.0.4
+
+### Patch Changes
+
+- 765aa63: Api exception error.
+
 ## 1.0.3
 
 ### Patch Changes

@@ -3,9 +3,11 @@ namespace Deegitalbe\LaravelTrustupIoStorecove\Tests\Feature;
 
 use Deegitalbe\LaravelTrustupIoStorecove\Api\DocumentSubmissionsApi;
 use Deegitalbe\LaravelTrustupIoStorecove\Api\StorecoveApiWrapper;
+use Deegitalbe\LaravelTrustupIoStorecove\ApiException;
 use Deegitalbe\LaravelTrustupIoStorecove\Exceptions\StorecoveApiWrapperException;
 use Deegitalbe\LaravelTrustupIoStorecove\Model\DocumentSubmission;
 use Deegitalbe\LaravelTrustupIoStorecove\Tests\TestCase;
+use stdClass;
 
 class ExampleFeatureTest extends TestCase
 {
@@ -17,10 +19,10 @@ class ExampleFeatureTest extends TestCase
         $expected = [
             'request' => [
                 'submission1' => [
-                    'legalEntityId' => $legalEntityId
+                    'legal_entity_id' => $legalEntityId
                 ],
                 'submission2' => [
-                    'legalEntityId' => $legalEntityId
+                    'legal_entity_id' => $legalEntityId
                 ]
             ],
             'exception' => [
@@ -38,14 +40,16 @@ class ExampleFeatureTest extends TestCase
             ...$additional
         ];
 
+        $test = new stdClass();
+
         /** @var StorecoveApiWrapper */
         $wrapper = $this->app->make(StorecoveApiWrapper::class);
         /** @var DocumentSubmission */
         $submission = $this->app->make(DocumentSubmission::class);
-        $submission->setLegalEntityId($expected['request']['submission1']['legalEntityId']);
+        $submission->setLegalEntityId($expected['request']['submission1']['legal_entity_id']);
         /** @var DocumentSubmission */
         $submission2 = $this->app->make(DocumentSubmission::class);
-        $submission2->setLegalEntityId($expected['request']['submission2']['legalEntityId']);
+        $submission2->setLegalEntityId($expected['request']['submission2']['legal_entity_id']);
         /** @var DocumentSubmissionsApi */
         $endpoint = $this->app->make(DocumentSubmissionsApi::class);
 
@@ -56,6 +60,7 @@ class ExampleFeatureTest extends TestCase
                     'submission1' => $submission,
                     'submission2' => $submission2
                 ])
+                ->setApiExceptionCallback(fn (ApiException $exception) => $test->yolo = true)
                 ->send(fn () => $endpoint->createDocumentSubmission($submission));
             
             // Fails on purpose since previous line is expected to throw.
@@ -63,6 +68,8 @@ class ExampleFeatureTest extends TestCase
         } catch (StorecoveApiWrapperException $exception) {
             $this->assertEquals($expected, $exception->context());
         }
+
+        $this->assertTrue($test->yolo);
     }
 
     public function test_wrappers_can_retrieve_response()

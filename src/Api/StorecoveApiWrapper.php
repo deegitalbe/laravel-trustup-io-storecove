@@ -18,18 +18,38 @@ class StorecoveApiWrapper
     private array $context = [];
 
     /**
+     * @var ?callable(ApiException)
+     */
+    private $apiExceptionCallback;
+
+    /**
      * @template TReturn
      *
      * @param  callable(): TReturn  $callback
      * @return TReturn
      */
-    public function send($callback) {
+    public function send($callback)
+    {
         try {
             return $callback();
         } catch (ApiException $exception) {
+            if (isset($this->apiExceptionCallback)) {
+                ($this->apiExceptionCallback)($exception);
+            }
+            
             $this->setException($exception)
                 ->throw();
         }
+    }
+
+    /**
+     * @param callable(ApiException) $callback
+     */
+    public function setApiExceptionCallback(callable $callback): self
+    {
+        $this->apiExceptionCallback = $callback;
+
+        return $this;
     }
 
     public function setMessage(string $message): self
@@ -39,8 +59,20 @@ class StorecoveApiWrapper
         return $this;
     }
 
+    public function getMessage(): string
+    {
+        return $this->message;
+    }
+
+    public function prependToMessage(string $prepend): self
+    {
+        $this->message = $prepend.$this->message;
+
+        return $this;
+    }
+
     /**
-     * @param Stringable|Stringable[] $request
+     * @param  Stringable|Stringable[]  $request
      */
     public function setRequest($request): self
     {
@@ -97,7 +129,7 @@ class StorecoveApiWrapper
                 'code' => $this->exception->getCode(),
                 'message' => $this->exception->getMessage(),
             ],
-            'response' => $this->getResponse()
+            'response' => $this->getResponse(),
         ])->addToContext($this->context);
 
         throw $exception;

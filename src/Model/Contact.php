@@ -328,9 +328,7 @@ class Contact implements ModelInterface, ArrayAccess
      */
     public function setPhone($phone)
     {
-        if (!is_null($phone) && (mb_strlen($phone) > 24)) {
-            throw new \InvalidArgumentException('invalid length for $phone when calling Contact., must be smaller than or equal to 24.');
-        }
+        $phone = $this->getValidString($phone);
 
         $this->container['phone'] = $phone;
 
@@ -432,6 +430,15 @@ class Contact implements ModelInterface, ArrayAccess
         }
 
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+    }
+
+        protected function getValidString(?string $value)
+    {
+        if ($value === '?') {
+            $value = null;
+        }
+
+        return $value;
     }
 }
 

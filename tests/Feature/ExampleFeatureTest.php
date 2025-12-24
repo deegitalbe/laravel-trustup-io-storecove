@@ -5,6 +5,7 @@ use Deegitalbe\LaravelTrustupIoStorecove\Api\DocumentSubmissionsApi;
 use Deegitalbe\LaravelTrustupIoStorecove\Api\StorecoveApiWrapper;
 use Deegitalbe\LaravelTrustupIoStorecove\ApiException;
 use Deegitalbe\LaravelTrustupIoStorecove\Exceptions\StorecoveApiWrapperException;
+use Deegitalbe\LaravelTrustupIoStorecove\Model\Contact;
 use Deegitalbe\LaravelTrustupIoStorecove\Model\DocumentSubmission;
 use Deegitalbe\LaravelTrustupIoStorecove\Tests\TestCase;
 use stdClass;
@@ -78,5 +79,19 @@ class ExampleFeatureTest extends TestCase
         $wrapper = $this->app->make(StorecoveApiWrapper::class);
 
         $this->assertTrue($wrapper->send(fn () => true));
+    }
+
+    public function test_contact_set_phone_with_null()
+    {
+        $contact = new Contact();
+        $contact->setPhone(null);
+        $this->assertNull($contact->getPhone());
+    }
+
+        public function test_contact_set_phone_with_fucked_up_string()
+    {
+        $contact = new Contact();
+        $contact->setPhone("0477/75 78 67 - 0497/322714");
+        $this->assertStringContainsString("0477/75 78 67 - 0497/322714",$contact->getPhone());
     }
 }

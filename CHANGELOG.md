@@ -1,5 +1,11 @@
 # @deegitalbe/laravel-trustup-io-storecove
 
+## 1.0.5
+
+### Patch Changes
+
+- be5961b: Removing str lenght check for phone on contact this will be handled in the tools api.
+
 ## 1.0.4
 
 ### Patch Changes

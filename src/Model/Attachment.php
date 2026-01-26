@@ -260,10 +260,10 @@ class Attachment implements ModelInterface, ArrayAccess
         if (!is_null($this->container['description']) && (mb_strlen($this->container['description']) > 1024)) {
             $invalidProperties[] = "invalid value for 'description', the character length must be smaller than or equal to 1024.";
         }
-
-        if (!is_null($this->container['document_id']) && (mb_strlen($this->container['document_id']) > 64)) {
-            $invalidProperties[] = "invalid value for 'document_id', the character length must be smaller than or equal to 64.";
-        }
+        // Goal here is to allow document_id to be null, as we might need to set it later in worksite-api i leaved it here for now and also untouched the validation for the setter setDocumentId 
+        // if (!is_null($this->container['document_id']) && (mb_strlen($this->container['document_id']) > 64)) {
+        //     $invalidProperties[] = "invalid value for 'document_id', the character length must be smaller than or equal to 64.";
+        // }
 
         return $invalidProperties;
     }

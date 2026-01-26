@@ -260,10 +260,6 @@ class Attachment implements ModelInterface, ArrayAccess
         if (!is_null($this->container['description']) && (mb_strlen($this->container['description']) > 1024)) {
             $invalidProperties[] = "invalid value for 'description', the character length must be smaller than or equal to 1024.";
         }
-        // Goal here is to allow document_id to be null, as we might need to set it later in worksite-api i leaved it here for now and also untouched the validation for the setter setDocumentId 
-        // if (!is_null($this->container['document_id']) && (mb_strlen($this->container['document_id']) > 64)) {
-        //     $invalidProperties[] = "invalid value for 'document_id', the character length must be smaller than or equal to 64.";
-        // }
 
         return $invalidProperties;
     }
@@ -413,9 +409,11 @@ class Attachment implements ModelInterface, ArrayAccess
      */
     public function setDocumentId($document_id)
     {
-        if (!is_null($document_id) && (mb_strlen($document_id) > 64)) {
-            throw new \InvalidArgumentException('invalid length for $document_id when calling Attachment., must be smaller than or equal to 64.');
-        }
+         // Goal here is to allow document_id to be null, as we might need to set it later in worksite-api i leaved it here for now and also untouched the validation for the setter setDocumentId 
+
+        // if (!is_null($document_id) && (mb_strlen($document_id) > 64)) {
+        //     throw new \InvalidArgumentException('invalid length for $document_id when calling Attachment., must be smaller than or equal to 64.');
+        // }
 
         $this->container['document_id'] = $document_id;
 

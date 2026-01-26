@@ -94,4 +94,27 @@ class ExampleFeatureTest extends TestCase
         $contact->setPhone("0477/75 78 67 - 0497/322714");
         $this->assertStringContainsString("0477/75 78 67 - 0497/322714",$contact->getPhone());
     }
+public function test_attachment_accepts_long_document_id()
+{
+    $attachment = new \Deegitalbe\LaravelTrustupIoStorecove\Model\Attachment();
+    
+    // A string longer than 64 characters
+    $longId = str_repeat("a", 100);
+    
+    $attachment->setDocumentId($longId);
+    
+    $this->assertEquals($longId, $attachment->getDocumentId());
+}
+
+
+public function test_attachment_accepts_null_document_id()
+{
+    $attachment = new \Deegitalbe\LaravelTrustupIoStorecove\Model\Attachment();
+
+    
+    $attachment->setDocumentId(null);
+    
+    $this->assertEquals(null, $attachment->getDocumentId());
+}
+    
 }

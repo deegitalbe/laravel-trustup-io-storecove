@@ -1,5 +1,11 @@
 # @deegitalbe/laravel-trustup-io-storecove
 
+## 1.0.6
+
+### Patch Changes
+
+- 81c5f84: removing useless validation for documentId
+
 ## 1.0.5
 
 ### Patch Changes

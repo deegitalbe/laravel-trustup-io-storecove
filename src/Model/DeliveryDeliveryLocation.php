@@ -255,15 +255,11 @@ class DeliveryDeliveryLocation implements ModelInterface, ArrayAccess
      */
     public function setId($id)
     {
-
-        if (!is_null($id) && (mb_strlen($id) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $id when calling DeliveryDeliveryLocation., must be bigger than or equal to 2.');
-        }
-
         $this->container['id'] = $id;
 
         return $this;
     }
+
 
     /**
      * Gets scheme_id

@@ -693,11 +693,8 @@ class Reference implements ModelInterface, ArrayAccess
      */
     public function setDocumentDescription($document_description)
     {
-        if (!is_null($document_description) && (mb_strlen($document_description) > 1024)) {
-            throw new \InvalidArgumentException('invalid length for $document_description when calling Reference., must be smaller than or equal to 1024.');
-        }
-        if (!is_null($document_description) && (mb_strlen($document_description) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $document_description when calling Reference., must be bigger than or equal to 2.');
+        if (!is_null($document_description)) {
+            $document_description = mb_substr($document_description, 0, 1024);
         }
 
         $this->container['document_description'] = $document_description;

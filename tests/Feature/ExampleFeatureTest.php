@@ -5,13 +5,19 @@ use Deegitalbe\LaravelTrustupIoStorecove\Api\DocumentSubmissionsApi;
 use Deegitalbe\LaravelTrustupIoStorecove\Api\StorecoveApiWrapper;
 use Deegitalbe\LaravelTrustupIoStorecove\ApiException;
 use Deegitalbe\LaravelTrustupIoStorecove\Exceptions\StorecoveApiWrapperException;
+use Deegitalbe\LaravelTrustupIoStorecove\Model\Address;
+use Deegitalbe\LaravelTrustupIoStorecove\Model\Attachment;
 use Deegitalbe\LaravelTrustupIoStorecove\Model\Contact;
+use Deegitalbe\LaravelTrustupIoStorecove\Model\DeliveryDeliveryLocation;
 use Deegitalbe\LaravelTrustupIoStorecove\Model\DocumentSubmission;
+use Deegitalbe\LaravelTrustupIoStorecove\Model\Reference;
 use Deegitalbe\LaravelTrustupIoStorecove\Tests\TestCase;
 use stdClass;
 
 class ExampleFeatureTest extends TestCase
 {
+    // ==================== StorecoveApiWrapper ====================
+
     public function test_wrapper_can_catch_storecove_api_error_and_format_properly()
     {
         $additional = ['test' => 'yup'];
@@ -63,7 +69,7 @@ class ExampleFeatureTest extends TestCase
                 ])
                 ->setApiExceptionCallback(fn (ApiException $exception) => $test->yolo = true)
                 ->send(fn () => $endpoint->createDocumentSubmission($submission));
-            
+
             // Fails on purpose since previous line is expected to throw.
             $this->assertFalse(true);
         } catch (StorecoveApiWrapperException $exception) {
@@ -81,6 +87,8 @@ class ExampleFeatureTest extends TestCase
         $this->assertTrue($wrapper->send(fn () => true));
     }
 
+    // ==================== Contact - phone ====================
+
     public function test_contact_set_phone_with_null()
     {
         $contact = new Contact();
@@ -88,102 +96,113 @@ class ExampleFeatureTest extends TestCase
         $this->assertNull($contact->getPhone());
     }
 
-        public function test_contact_set_phone_with_fucked_up_string()
+    public function test_contact_set_phone_with_fucked_up_string()
     {
         $contact = new Contact();
         $contact->setPhone("0477/75 78 67 - 0497/322714");
-        $this->assertStringContainsString("0477/75 78 67 - 0497/322714",$contact->getPhone());
+        $this->assertStringContainsString("0477/75 78 67 - 0497/322714", $contact->getPhone());
     }
-public function test_attachment_accepts_long_document_id()
-{
-    $attachment = new \Deegitalbe\LaravelTrustupIoStorecove\Model\Attachment();
-    
-    // A string longer than 64 characters
-    $longId = str_repeat("a", 100);
-    
-    $attachment->setDocumentId($longId);
-    
-    $this->assertEquals($longId, $attachment->getDocumentId());
-}
 
+    // ==================== Attachment - documentId ====================
 
-public function test_attachment_accepts_null_document_id()
-{
-    $attachment = new \Deegitalbe\LaravelTrustupIoStorecove\Model\Attachment();
-
-
-    $attachment->setDocumentId(null);
-
-    $this->assertEquals(null, $attachment->getDocumentId());
-}
-
-    // Address - short strings no longer throw
-
-    public function test_address_accepts_single_char_street1()
+    public function test_attachment_accepts_long_document_id()
     {
-        $address = new \Deegitalbe\LaravelTrustupIoStorecove\Model\Address();
+        $attachment = new Attachment();
+        $longId = str_repeat("a", 100);
+        $attachment->setDocumentId($longId);
+        $this->assertEquals($longId, $attachment->getDocumentId());
+    }
+
+    public function test_attachment_accepts_null_document_id()
+    {
+        $attachment = new Attachment();
+        $attachment->setDocumentId(null);
+        $this->assertEquals(null, $attachment->getDocumentId());
+    }
+
+    // ==================== Address - street1 ====================
+
+    public function test_address_street1_accepts_single_char()
+    {
+        $address = new Address();
         $address->setStreet1("A");
         $this->assertEquals("A", $address->getStreet1());
     }
 
-    public function test_address_accepts_single_char_city()
+    public function test_address_street1_trims_whitespace()
     {
-        $address = new \Deegitalbe\LaravelTrustupIoStorecove\Model\Address();
-        $address->setCity("A");
-        $this->assertEquals("A", $address->getCity());
-    }
-
-    public function test_address_accepts_single_char_zip()
-    {
-        $address = new \Deegitalbe\LaravelTrustupIoStorecove\Model\Address();
-        $address->setZip("A");
-        $this->assertEquals("A", $address->getZip());
-    }
-
-    // Address - getValidString trims and nullifies empty/? values
-
-    public function test_address_trims_street1()
-    {
-        $address = new \Deegitalbe\LaravelTrustupIoStorecove\Model\Address();
+        $address = new Address();
         $address->setStreet1("  Paris  ");
         $this->assertEquals("Paris", $address->getStreet1());
     }
 
-    public function test_address_sets_empty_string_to_null()
+    public function test_address_street1_sets_empty_string_to_null()
     {
-        $address = new \Deegitalbe\LaravelTrustupIoStorecove\Model\Address();
-        $address->setCity("");
-        $this->assertNull($address->getCity());
+        $address = new Address();
+        $address->setStreet1("");
+        $this->assertNull($address->getStreet1());
     }
 
-    public function test_address_sets_whitespace_only_to_null()
+    public function test_address_street1_sets_whitespace_only_to_null()
     {
-        $address = new \Deegitalbe\LaravelTrustupIoStorecove\Model\Address();
-        $address->setZip("   ");
-        $this->assertNull($address->getZip());
+        $address = new Address();
+        $address->setStreet1("   ");
+        $this->assertNull($address->getStreet1());
     }
 
-    public function test_address_sets_question_mark_to_null()
+    public function test_address_street1_sets_question_mark_to_null()
     {
-        $address = new \Deegitalbe\LaravelTrustupIoStorecove\Model\Address();
+        $address = new Address();
         $address->setStreet1("?");
         $this->assertNull($address->getStreet1());
     }
 
-    // DeliveryDeliveryLocation - short id no longer throws
+    // ==================== Address - city ====================
+
+    public function test_address_city_accepts_single_char()
+    {
+        $address = new Address();
+        $address->setCity("A");
+        $this->assertEquals("A", $address->getCity());
+    }
+
+    public function test_address_city_sets_empty_string_to_null()
+    {
+        $address = new Address();
+        $address->setCity("");
+        $this->assertNull($address->getCity());
+    }
+
+    // ==================== Address - zip ====================
+
+    public function test_address_zip_accepts_single_char()
+    {
+        $address = new Address();
+        $address->setZip("A");
+        $this->assertEquals("A", $address->getZip());
+    }
+
+    public function test_address_zip_sets_whitespace_only_to_null()
+    {
+        $address = new Address();
+        $address->setZip("   ");
+        $this->assertNull($address->getZip());
+    }
+
+    // ==================== DeliveryDeliveryLocation ====================
 
     public function test_delivery_location_accepts_single_char_id()
     {
-        $location = new \Deegitalbe\LaravelTrustupIoStorecove\Model\DeliveryDeliveryLocation();
+        $location = new DeliveryDeliveryLocation();
         $location->setId("A");
         $this->assertEquals("A", $location->getId());
     }
 
-    // Reference - truncation instead of exception
+    // ==================== Reference - documentDescription ====================
 
     public function test_reference_truncates_long_document_description()
     {
-        $reference = new \Deegitalbe\LaravelTrustupIoStorecove\Model\Reference();
+        $reference = new Reference();
         $longDescription = str_repeat("a", 2000);
         $reference->setDocumentDescription($longDescription);
         $this->assertEquals(1024, mb_strlen($reference->getDocumentDescription()));
@@ -191,14 +210,14 @@ public function test_attachment_accepts_null_document_id()
 
     public function test_reference_accepts_short_document_description()
     {
-        $reference = new \Deegitalbe\LaravelTrustupIoStorecove\Model\Reference();
+        $reference = new Reference();
         $reference->setDocumentDescription("A");
         $this->assertEquals("A", $reference->getDocumentDescription());
     }
 
     public function test_reference_accepts_null_document_description()
     {
-        $reference = new \Deegitalbe\LaravelTrustupIoStorecove\Model\Reference();
+        $reference = new Reference();
         $reference->setDocumentDescription(null);
         $this->assertNull($reference->getDocumentDescription());
     }

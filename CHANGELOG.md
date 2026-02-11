@@ -1,5 +1,11 @@
 # @deegitalbe/laravel-trustup-io-storecove
 
+## 1.0.7
+
+### Patch Changes
+
+- 67ccc05: Preventing package validation to throw for data we do no use.
+
 ## 1.0.6
 
 ### Patch Changes

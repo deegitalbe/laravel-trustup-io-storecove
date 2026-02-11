@@ -270,10 +270,6 @@ class Address implements ArrayAccess, ModelInterface
     {
         $street1 = $this->getValidString($street1);
 
-        if (! is_null($street1) && (mb_strlen($street1) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $street1 when calling Address., must be bigger than or equal to 2.');
-        }
-
         $this->container['street1'] = $street1;
 
         return $this;
@@ -322,10 +318,6 @@ class Address implements ArrayAccess, ModelInterface
     {
         $city = $this->getValidString($city);
 
-        if (! is_null($city) && (mb_strlen($city) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $city when calling Address., must be bigger than or equal to 2.');
-        }
-
         $this->container['city'] = $city;
 
         return $this;
@@ -350,11 +342,6 @@ class Address implements ArrayAccess, ModelInterface
     public function setZip($zip)
     {
         $zip = $this->getValidString($zip);
-
-        if (! is_null($zip) && (mb_strlen($zip) < 2)) {
-            var_dump($zip);
-            throw new \InvalidArgumentException('invalid length for $zip when calling Address., must be bigger than or equal to 2.');
-        }
 
         $this->container['zip'] = $zip;
 
@@ -475,7 +462,9 @@ class Address implements ArrayAccess, ModelInterface
 
     protected function getValidString(string $value)
     {
-        if ($value === '?') {
+        $value = trim($value);
+
+        if ($value === '' || $value === '?') {
             $value = null;
         }
 

@@ -7,3 +7,11 @@ services:
     image: "laravel-trustup-io-storecove-php-local"
     volumes:
       - ./:/opt/apps/app
+  bun:
+    build:
+      context: .
+      target: bun
+      dockerfile: Dockerfile
+    image: "laravel-trustup-io-storecove-bun-local"
+    volumes:
+      - ./:/opt/apps/app

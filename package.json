@@ -5,7 +5,12 @@
     "repository": "git@github.com:deegitalbe/laravel-trustup-io-storecove.git",
     "author": "Mathieu Henrotay <mathieu.henrotay@gmail.com>",
     "license": "MIT",
+    "private": true,
+    "devDependencies": {
+        "@changesets/cli": "^2.26.1"
+    },
     "scripts": {
+        "release": "changeset publish",
         "postversion": "git push && git push --tags"
     }
 }

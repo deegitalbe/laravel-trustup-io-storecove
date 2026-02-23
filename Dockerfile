@@ -1,8 +1,8 @@
-FROM php:8.2-cli-alpine
+FROM php:8.3-cli-alpine AS cli
 
 COPY --from=composer:2.5.8 /usr/bin/composer /usr/bin/composer
 
-WORKDIR /usr/src/app
+WORKDIR /opt/apps/app
 
 COPY composer.json composer.lock ./
 

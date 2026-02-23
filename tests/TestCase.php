@@ -12,7 +12,7 @@ class TestCase extends VersionablePackageTestCase
         return LaravelTrustupIoStorecove::class;
     }
 
-    public function getEnvironmentSetUp($app)
+    public function getEnvironmentSetUp($app): void
     {
         $this->loadMigrations();
     }

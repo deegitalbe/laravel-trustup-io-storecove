@@ -54,7 +54,8 @@ jobs:
           SLACK_MESSAGE: ":rotating_light: Linter failed\nAdversity leads to greatness :male_mage:\n${{ steps.slack_users.outputs.user_mention }}\n${{ github.event.head_commit.message }}"
           SLACK_COLOR: "#F8312F"
           SLACK_FOOTER: "Powered by automated github action"
-          SLACK_WEBHOOK: ${{ secrets.SLACK_DEPLOY_WEBHOOK_URL }}
+          SLACK_TOKEN: ${{ secrets.SLACK_TECH_APP_TOKEN }}
+          SLACK_CHANNEL: ${{ secrets.SLACK_CHANNEL_ID_DEPLOYMENTS }}
       - name: "Notify cancellation"
         if: ${{ cancelled() }}
         uses: rtCamp/action-slack-notify@v2
@@ -65,7 +66,8 @@ jobs:
           SLACK_MESSAGE: ":man-gesturing-no: Workflow cancelled\n${{ steps.slack_users.outputs.user_mention }}\n${{ github.event.head_commit.message }}"
           SLACK_COLOR: "#d1d5db"
           SLACK_FOOTER: "Powered by automated github action"
-          SLACK_WEBHOOK: ${{ secrets.SLACK_DEPLOY_WEBHOOK_URL }}
+          SLACK_TOKEN: ${{ secrets.SLACK_TECH_APP_TOKEN }}
+          SLACK_CHANNEL: ${{ secrets.SLACK_CHANNEL_ID_DEPLOYMENTS }}
       - name: "Notify publication"
         if: steps.changesets.outputs.published == 'true'
         uses: rtCamp/action-slack-notify@v2
@@ -75,7 +77,8 @@ jobs:
           SLACK_TITLE: "${{ steps.terraform_variables.outputs.trustup_app_key }} (package)"
           SLACK_MESSAGE: "🏷️ ${{fromJson(steps.changesets.outputs.publishedPackages)[0].version}} version published\n${{ steps.slack_users.outputs.user_mention }}\n${{ github.event.head_commit.message }}"
           SLACK_FOOTER: "Powered by automated github action"
-          SLACK_WEBHOOK: ${{ secrets.SLACK_DEPLOY_WEBHOOK_URL }}
+          SLACK_TOKEN: ${{ secrets.SLACK_TECH_APP_TOKEN }}
+          SLACK_CHANNEL: ${{ secrets.SLACK_CHANNEL_ID_DEPLOYMENTS }}
       - name: "Notify pull request"
         if: steps.changesets.outputs.pullRequestNumber >= '1'
         uses: rtCamp/action-slack-notify@v2
@@ -86,4 +89,5 @@ jobs:
           SLACK_MESSAGE: "Approve pull request to publish\n${{ steps.slack_users.outputs.user_mention }}\n${{ github.event.head_commit.message }}\n<${{ github.server_url }}/${{ github.repository }}/pull/${{ steps.changesets.outputs.pullRequestNumber }}|See details>"
           SLACK_COLOR: "#92dce5"
           SLACK_FOOTER: "Powered by automated github action"
-          SLACK_WEBHOOK: ${{ secrets.SLACK_DEPLOY_WEBHOOK_URL }}
+          SLACK_TOKEN: ${{ secrets.SLACK_TECH_APP_TOKEN }}
+          SLACK_CHANNEL: ${{ secrets.SLACK_CHANNEL_ID_DEPLOYMENTS }}

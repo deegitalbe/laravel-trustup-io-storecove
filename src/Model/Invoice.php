@@ -90,6 +90,8 @@ class Invoice implements ModelInterface, ArrayAccess
         'price_mode' => 'string',
         'references' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\Reference[]',
         'self_billing_mode' => 'bool',
+        'self_billing_supplier_party' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\AccountingSupplierParty',
+        'self_billing_buyer_party' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\AccountingCustomerParty',
         'sub_type' => 'string',
         'tax_point_date' => 'string',
         'tax_subtotals' => '\Deegitalbe\LaravelTrustupIoStorecove\Model\TaxSubtotal[]',
@@ -153,6 +155,8 @@ class Invoice implements ModelInterface, ArrayAccess
         'price_mode' => null,
         'references' => null,
         'self_billing_mode' => null,
+        'self_billing_supplier_party' => null,
+        'self_billing_buyer_party' => null,
         'sub_type' => null,
         'tax_point_date' => null,
         'tax_subtotals' => null,
@@ -237,6 +241,8 @@ class Invoice implements ModelInterface, ArrayAccess
         'price_mode' => 'price_mode',
         'references' => 'references',
         'self_billing_mode' => 'self_billing_mode',
+        'self_billing_supplier_party' => 'self_billing_supplier_party',
+        'self_billing_buyer_party' => 'self_billing_buyer_party',
         'sub_type' => 'sub_type',
         'tax_point_date' => 'tax_point_date',
         'tax_subtotals' => 'tax_subtotals',
@@ -300,6 +306,8 @@ class Invoice implements ModelInterface, ArrayAccess
         'price_mode' => 'setPriceMode',
         'references' => 'setReferences',
         'self_billing_mode' => 'setSelfBillingMode',
+        'self_billing_supplier_party' => 'setSelfBillingSupplierParty',
+        'self_billing_buyer_party' => 'setSelfBillingBuyerParty',
         'sub_type' => 'setSubType',
         'tax_point_date' => 'setTaxPointDate',
         'tax_subtotals' => 'setTaxSubtotals',
@@ -363,6 +371,8 @@ class Invoice implements ModelInterface, ArrayAccess
         'price_mode' => 'getPriceMode',
         'references' => 'getReferences',
         'self_billing_mode' => 'getSelfBillingMode',
+        'self_billing_supplier_party' => 'getSelfBillingSupplierParty',
+        'self_billing_buyer_party' => 'getSelfBillingBuyerParty',
         'sub_type' => 'getSubType',
         'tax_point_date' => 'getTaxPointDate',
         'tax_subtotals' => 'getTaxSubtotals',
@@ -445,6 +455,7 @@ class Invoice implements ModelInterface, ArrayAccess
     const SUB_TYPE_DEBITNOTE = 'debitnote';
     const SUB_TYPE_CORRECTIONINVOICE = 'correctioninvoice';
     const SUB_TYPE_SELFBILLING = 'selfbilling';
+    const SUB_TYPE_SELF_BILLED_INVOICE = 'self_billed_invoice';
     const TAX_SYSTEM_AMOUNTS = 'tax_line_amounts';
     const TAX_SYSTEM_PERCENTAGES = 'tax_line_percentages';
     const TRANSACTION_TYPE_B2B = 'b2b';
@@ -538,6 +549,7 @@ class Invoice implements ModelInterface, ArrayAccess
             self::SUB_TYPE_DEBITNOTE,
             self::SUB_TYPE_CORRECTIONINVOICE,
             self::SUB_TYPE_SELFBILLING,
+            self::SUB_TYPE_SELF_BILLED_INVOICE,
         ];
     }
     
@@ -699,6 +711,8 @@ class Invoice implements ModelInterface, ArrayAccess
         $this->container['price_mode'] = isset($data['price_mode']) ? $data['price_mode'] : 'price_mode_net';
         $this->container['references'] = isset($data['references']) ? $data['references'] : null;
         $this->container['self_billing_mode'] = isset($data['self_billing_mode']) ? $data['self_billing_mode'] : false;
+        $this->container['self_billing_supplier_party'] = isset($data['self_billing_supplier_party']) ? $data['self_billing_supplier_party'] : null;
+        $this->container['self_billing_buyer_party'] = isset($data['self_billing_buyer_party']) ? $data['self_billing_buyer_party'] : null;
         $this->container['sub_type'] = isset($data['sub_type']) ? $data['sub_type'] : null;
         $this->container['tax_point_date'] = isset($data['tax_point_date']) ? $data['tax_point_date'] : null;
         $this->container['tax_subtotals'] = isset($data['tax_subtotals']) ? $data['tax_subtotals'] : null;
@@ -1680,6 +1694,54 @@ class Invoice implements ModelInterface, ArrayAccess
     public function setSelfBillingMode($self_billing_mode)
     {
         $this->container['self_billing_mode'] = $self_billing_mode;
+
+        return $this;
+    }
+
+    /**
+     * Gets self_billing_supplier_party
+     *
+     * @return \Deegitalbe\LaravelTrustupIoStorecove\Model\AccountingSupplierParty
+     */
+    public function getSelfBillingSupplierParty()
+    {
+        return $this->container['self_billing_supplier_party'];
+    }
+
+    /**
+     * Sets self_billing_supplier_party
+     *
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\AccountingSupplierParty $self_billing_supplier_party The supplier party in a self-billing document.
+     *
+     * @return $this
+     */
+    public function setSelfBillingSupplierParty($self_billing_supplier_party)
+    {
+        $this->container['self_billing_supplier_party'] = $self_billing_supplier_party;
+
+        return $this;
+    }
+
+    /**
+     * Gets self_billing_buyer_party
+     *
+     * @return \Deegitalbe\LaravelTrustupIoStorecove\Model\AccountingCustomerParty
+     */
+    public function getSelfBillingBuyerParty()
+    {
+        return $this->container['self_billing_buyer_party'];
+    }
+
+    /**
+     * Sets self_billing_buyer_party
+     *
+     * @param \Deegitalbe\LaravelTrustupIoStorecove\Model\AccountingCustomerParty $self_billing_buyer_party The buyer party in a self-billing document.
+     *
+     * @return $this
+     */
+    public function setSelfBillingBuyerParty($self_billing_buyer_party)
+    {
+        $this->container['self_billing_buyer_party'] = $self_billing_buyer_party;
 
         return $this;
     }

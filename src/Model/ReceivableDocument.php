@@ -182,8 +182,7 @@ class ReceivableDocument implements ModelInterface, ArrayAccess
     const SOURCE_RO_ANAF = 'ro-anaf';
     const SOURCE_FINVOICE = 'finvoice';
     const SOURCE_IT_SDI = 'it-sdi';
-    const SOURCE_EMAIL = 'email';
-
+    
 
     
     /**
@@ -213,7 +212,6 @@ class ReceivableDocument implements ModelInterface, ArrayAccess
             self::SOURCE_RO_ANAF,
             self::SOURCE_FINVOICE,
             self::SOURCE_IT_SDI,
-            self::SOURCE_EMAIL,
         ];
     }
     

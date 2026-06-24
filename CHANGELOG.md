@@ -1,11 +1,5 @@
 # @deegitalbe/laravel-trustup-io-storecove
 
-## 2.1.0
-
-### Minor Changes
-
-- Support self-billing reception on the Invoice / ReceivableDocument models. Adds `self_billing_supplier_party` and `self_billing_buyer_party` to the Invoice model (with getters/setters, typed as AccountingSupplierParty / AccountingCustomerParty), and accepts the `self_billed_invoice` sub_type and `email` source on received documents so they deserialize without throwing.
-
 ## 1.0.7
 
 ### Patch Changes

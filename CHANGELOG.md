@@ -1,5 +1,11 @@
 # @deegitalbe/laravel-trustup-io-storecove
 
+## 2.2.0
+
+### Minor Changes
+
+- 0b93096: Add self_billing_supplier_party and self_billing_buyer_party getters, and accept the self_billed_invoice sub_type and email source on received documents
+
 ## 2.1.0
 
 ### Minor Changes

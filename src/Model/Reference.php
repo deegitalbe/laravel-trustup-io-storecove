@@ -245,6 +245,10 @@ class Reference implements ModelInterface, ArrayAccess
     const DOCUMENT_TYPE_LINE_SELLERS_ITEM_IDENTIFICATION = 'line_sellers_item_identification';
     const DOCUMENT_TYPE_LINE_BUYERS_ITEM_IDENTIFICATION = 'line_buyers_item_identification';
     const DOCUMENT_TYPE_LINE_PURCHASE_ORDER = 'line_purchase_order';
+    const DOCUMENT_TYPE_LINE_DESPATCH_DOCUMENT_REFERENCE = 'line_despatch_document_reference';
+    const DOCUMENT_TYPE_LINE_BILLING = 'line_billing';
+    const DOCUMENT_TYPE_LINE_DESPATCH_DOCUMENT = 'line_despatch_document';
+    const DOCUMENT_TYPE_LINE_RECEIPT_DOCUMENT = 'line_receipt_document';
     
 
     
@@ -282,6 +286,10 @@ class Reference implements ModelInterface, ArrayAccess
             self::DOCUMENT_TYPE_LINE_SELLERS_ITEM_IDENTIFICATION,
             self::DOCUMENT_TYPE_LINE_BUYERS_ITEM_IDENTIFICATION,
             self::DOCUMENT_TYPE_LINE_PURCHASE_ORDER,
+            self::DOCUMENT_TYPE_LINE_DESPATCH_DOCUMENT_REFERENCE,
+            self::DOCUMENT_TYPE_LINE_BILLING,
+            self::DOCUMENT_TYPE_LINE_DESPATCH_DOCUMENT,
+            self::DOCUMENT_TYPE_LINE_RECEIPT_DOCUMENT,
         ];
     }
     
@@ -336,8 +344,8 @@ class Reference implements ModelInterface, ArrayAccess
             );
         }
 
-        if (!is_null($this->container['document_type_code']) && !preg_match("/^uncl1001_[0-9]{1,3}$/", $this->container['document_type_code'])) {
-            $invalidProperties[] = "invalid value for 'document_type_code', must be conform to the pattern /^uncl1001_[0-9]{1,3}$/.";
+        if (!is_null($this->container['document_type_code']) && !preg_match("/^((uncl1001_)?[0-9]{1,3}|CONTRAT|MARCHE)$/", $this->container['document_type_code'])) {
+            $invalidProperties[] = "invalid value for 'document_type_code', must be conform to the pattern /^((uncl1001_)?[0-9]{1,3}|CONTRAT|MARCHE)$/.";
         }
 
         if (!is_null($this->container['issue_date']) && !preg_match("/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/", $this->container['issue_date'])) {
@@ -420,8 +428,8 @@ class Reference implements ModelInterface, ArrayAccess
     public function setDocumentTypeCode($document_type_code)
     {
 
-        if (!is_null($document_type_code) && (!preg_match("/^uncl1001_[0-9]{1,3}$/", $document_type_code))) {
-            throw new \InvalidArgumentException("invalid value for $document_type_code when calling Reference., must conform to the pattern /^uncl1001_[0-9]{1,3}$/.");
+        if (!is_null($document_type_code) && (!preg_match("/^((uncl1001_)?[0-9]{1,3}|CONTRAT|MARCHE)$/", $document_type_code))) {
+            throw new \InvalidArgumentException("invalid value for $document_type_code when calling Reference., must conform to the pattern /^((uncl1001_)?[0-9]{1,3}|CONTRAT|MARCHE)$/.");
         }
 
         $this->container['document_type_code'] = $document_type_code;

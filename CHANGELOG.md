@@ -1,5 +1,11 @@
 # @deegitalbe/laravel-trustup-io-storecove
 
+## 2.2.1
+
+### Patch Changes
+
+- d736972: Fix Reference model deserialization: add missing `line_despatch_document_reference` enum value and accept raw numeric codes in `documentTypeCode`
+
 ## 2.2.0
 
 ### Minor Changes

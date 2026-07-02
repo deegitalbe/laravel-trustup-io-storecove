@@ -456,6 +456,7 @@ class Invoice implements ModelInterface, ArrayAccess
     const SUB_TYPE_CORRECTIONINVOICE = 'correctioninvoice';
     const SUB_TYPE_SELFBILLING = 'selfbilling';
     const SUB_TYPE_SELF_BILLED_INVOICE = 'self_billed_invoice';
+    const SUB_TYPE_PREPAYMENT_INVOICE = 'prepayment_invoice';
     const TAX_SYSTEM_AMOUNTS = 'tax_line_amounts';
     const TAX_SYSTEM_PERCENTAGES = 'tax_line_percentages';
     const TRANSACTION_TYPE_B2B = 'b2b';
@@ -550,6 +551,7 @@ class Invoice implements ModelInterface, ArrayAccess
             self::SUB_TYPE_CORRECTIONINVOICE,
             self::SUB_TYPE_SELFBILLING,
             self::SUB_TYPE_SELF_BILLED_INVOICE,
+            self::SUB_TYPE_PREPAYMENT_INVOICE,
         ];
     }
     

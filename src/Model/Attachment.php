@@ -186,7 +186,8 @@ class Attachment implements ModelInterface, ArrayAccess
 
     const MIME_TYPE_PDF = 'application/pdf';
     const MIME_TYPE_XML = 'application/xml';
-    
+    const MIME_TYPE_CSV = 'text/csv';
+
 
     
     /**
@@ -199,6 +200,7 @@ class Attachment implements ModelInterface, ArrayAccess
         return [
             self::MIME_TYPE_PDF,
             self::MIME_TYPE_XML,
+            self::MIME_TYPE_CSV,
         ];
     }
     

@@ -1200,6 +1200,7 @@ class InvoiceLine implements ModelInterface, ArrayAccess
     const QUANTITY_UNIT_CODE_HPA = 'HPA';
     const QUANTITY_UNIT_CODE_HTZ = 'HTZ';
     const QUANTITY_UNIT_CODE_HUR = 'HUR';
+    const QUANTITY_UNIT_CODE_HWE = 'HWE';
     const QUANTITY_UNIT_CODE_IA = 'IA';
     const QUANTITY_UNIT_CODE_IE = 'IE';
     const QUANTITY_UNIT_CODE_INH = 'INH';
@@ -3690,6 +3691,7 @@ class InvoiceLine implements ModelInterface, ArrayAccess
             self::QUANTITY_UNIT_CODE_HPA,
             self::QUANTITY_UNIT_CODE_HTZ,
             self::QUANTITY_UNIT_CODE_HUR,
+            self::QUANTITY_UNIT_CODE_HWE,
             self::QUANTITY_UNIT_CODE_IA,
             self::QUANTITY_UNIT_CODE_IE,
             self::QUANTITY_UNIT_CODE_INH,

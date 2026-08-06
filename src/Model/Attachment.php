@@ -187,6 +187,7 @@ class Attachment implements ModelInterface, ArrayAccess
     const MIME_TYPE_PDF = 'application/pdf';
     const MIME_TYPE_XML = 'application/xml';
     const MIME_TYPE_CSV = 'text/csv';
+    const MIME_TYPE_XLSX = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
 
 
     
@@ -201,6 +202,7 @@ class Attachment implements ModelInterface, ArrayAccess
             self::MIME_TYPE_PDF,
             self::MIME_TYPE_XML,
             self::MIME_TYPE_CSV,
+            self::MIME_TYPE_XLSX,
         ];
     }
     

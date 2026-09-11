@@ -801,14 +801,6 @@ class Invoice implements ModelInterface, ArrayAccess
             );
         }
 
-        $allowedValues = $this->getSubTypeAllowableValues();
-        if (!is_null($this->container['sub_type']) && !in_array($this->container['sub_type'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'sub_type', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
         if (!is_null($this->container['tax_point_date']) && !preg_match("/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/", $this->container['tax_point_date'])) {
             $invalidProperties[] = "invalid value for 'tax_point_date', must be conform to the pattern /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/.";
         }
@@ -1761,21 +1753,16 @@ class Invoice implements ModelInterface, ArrayAccess
     /**
      * Sets sub_type
      *
+     * Deliberately unvalidated, unlike the other generated enums: sub_type is inbound-only, and
+     * the Peppol network keeps introducing UNCL1001 document types. Rejecting an unrecognised one
+     * discarded the entire received document. getSubTypeAllowableValues() still lists the known values.
+     *
      * @param string $sub_type The document subtype. Only used for received invoices, not for sending.
      *
      * @return $this
      */
     public function setSubType($sub_type)
     {
-        $allowedValues = $this->getSubTypeAllowableValues();
-        if (!is_null($sub_type) && !in_array($sub_type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'sub_type', must be one of '%s'",
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['sub_type'] = $sub_type;
 
         return $this;

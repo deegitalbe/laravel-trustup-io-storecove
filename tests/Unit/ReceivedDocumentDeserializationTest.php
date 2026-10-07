@@ -39,6 +39,9 @@ class ReceivedDocumentDeserializationTest extends TestCase
             'xml' => [Attachment::MIME_TYPE_XML],
             'csv' => [Attachment::MIME_TYPE_CSV],
             'xlsx' => [Attachment::MIME_TYPE_XLSX],
+            'ods' => [Attachment::MIME_TYPE_ODS],
+            'png' => [Attachment::MIME_TYPE_PNG],
+            'jpeg' => [Attachment::MIME_TYPE_JPEG],
         ];
     }
 

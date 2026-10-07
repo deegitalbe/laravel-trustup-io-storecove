@@ -188,9 +188,12 @@ class Attachment implements ModelInterface, ArrayAccess
     const MIME_TYPE_XML = 'application/xml';
     const MIME_TYPE_CSV = 'text/csv';
     const MIME_TYPE_XLSX = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
+    const MIME_TYPE_ODS = 'application/vnd.oasis.opendocument.spreadsheet';
+    const MIME_TYPE_PNG = 'image/png';
+    const MIME_TYPE_JPEG = 'image/jpeg';
 
 
-    
+
     /**
      * Gets allowable values of the enum
      *
@@ -203,6 +206,9 @@ class Attachment implements ModelInterface, ArrayAccess
             self::MIME_TYPE_XML,
             self::MIME_TYPE_CSV,
             self::MIME_TYPE_XLSX,
+            self::MIME_TYPE_ODS,
+            self::MIME_TYPE_PNG,
+            self::MIME_TYPE_JPEG,
         ];
     }
     

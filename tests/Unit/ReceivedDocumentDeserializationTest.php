@@ -2,12 +2,17 @@
 
 namespace Deegitalbe\LaravelTrustupIoStorecove\Tests\Unit;
 
+use Deegitalbe\LaravelTrustupIoStorecove\Api\ReceivedDocumentsApi;
 use Deegitalbe\LaravelTrustupIoStorecove\Model\Attachment;
 use Deegitalbe\LaravelTrustupIoStorecove\Model\Invoice;
 use Deegitalbe\LaravelTrustupIoStorecove\Model\InvoiceLine;
 use Deegitalbe\LaravelTrustupIoStorecove\Model\Transportable;
 use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 use Deegitalbe\LaravelTrustupIoStorecove\Tests\TestCase;
+use GuzzleHttp\Client;
+use GuzzleHttp\Handler\MockHandler;
+use GuzzleHttp\HandlerStack;
+use GuzzleHttp\Psr7\Response;
 use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\DataProvider;
 
@@ -20,6 +25,15 @@ use PHPUnit\Framework\Attributes\DataProvider;
  */
 class ReceivedDocumentDeserializationTest extends TestCase
 {
+    public function test_it_reads_a_received_document_whose_supplier_name_has_one_character(): void
+    {
+        $invoice = $this->receive($this->payload(supplierName: 'X'))
+            ->getDocument()
+            ->getInvoice();
+
+        $this->assertEquals('X', $invoice->getAccountingSupplierParty()->getParty()->getCompanyName());
+    }
+
     public function test_it_deserializes_a_labour_hour_unit_code(): void
     {
         $invoice = $this->deserialize($this->payload(unitCode: 'HWE'))
@@ -142,6 +156,18 @@ class ReceivedDocumentDeserializationTest extends TestCase
         );
     }
 
+    /**
+     * Reads a payload the way the application does: through the received-document call.
+     */
+    private function receive(string $json): Transportable
+    {
+        $api = new ReceivedDocumentsApi(
+            new Client(['handler' => HandlerStack::create(new MockHandler([new Response(200, [], $json)]))])
+        );
+
+        return $api->getReceivedDocument('00000000-0000-0000-0000-000000000000', 'json');
+    }
+
     private function deserialize(string $json): Transportable
     {
         return ObjectSerializer::deserialize(json_decode($json), '\\'.Transportable::class, []);
@@ -151,6 +177,7 @@ class ReceivedDocumentDeserializationTest extends TestCase
         string $unitCode = InvoiceLine::QUANTITY_UNIT_CODE_EA,
         string $mimeType = Attachment::MIME_TYPE_PDF,
         string $subType = 'invoice',
+        string $supplierName = 'Placeholder Supplier',
     ): string {
         return json_encode([
             'document' => [
@@ -158,6 +185,7 @@ class ReceivedDocumentDeserializationTest extends TestCase
                 'invoice' => [
                     'sub_type' => $subType,
                     'invoice_number' => 'TDD-3713',
+                    'accounting_supplier_party' => ['party' => ['company_name' => $supplierName]],
                     'issue_date' => '2026-07-22',
                     'invoice_lines' => [[
                         'description' => 'labour',

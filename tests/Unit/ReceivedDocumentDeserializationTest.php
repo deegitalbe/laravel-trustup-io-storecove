@@ -34,6 +34,24 @@ class ReceivedDocumentDeserializationTest extends TestCase
         $this->assertEquals('X', $invoice->getAccountingSupplierParty()->getParty()->getCompanyName());
     }
 
+    public function test_it_keeps_an_unknown_unit_code_as_delivered_on_a_received_document(): void
+    {
+        $invoice = $this->receive($this->payload(unitCode: 'NOT_A_CODE'))
+            ->getDocument()
+            ->getInvoice();
+
+        $this->assertEquals('NOT_A_CODE', $invoice->getInvoiceLines()[0]->getQuantityUnitCode());
+    }
+
+    public function test_it_keeps_an_unknown_mime_type_as_delivered_on_a_received_document(): void
+    {
+        $invoice = $this->receive($this->payload(mimeType: 'image/gif'))
+            ->getDocument()
+            ->getInvoice();
+
+        $this->assertEquals('image/gif', $invoice->getAttachments()[0]->getMimeType());
+    }
+
     public function test_it_deserializes_a_labour_hour_unit_code(): void
     {
         $invoice = $this->deserialize($this->payload(unitCode: 'HWE'))

@@ -61,6 +61,27 @@ class ReceivedDocumentDeserializationTest extends TestCase
         $this->assertEquals('ZZZ', $invoice->getDocumentCurrencyCode());
     }
 
+    /**
+     * @return array<string, array{0: string, 1: string|null}>
+     */
+    public static function streetsAsDelivered(): array
+    {
+        return [
+            'question mark' => ['?', null],
+            'surrounded by spaces' => ['  Placeholder Street 1  ', 'Placeholder Street 1'],
+        ];
+    }
+
+    #[DataProvider('streetsAsDelivered')]
+    public function test_it_keeps_normalizing_an_address_on_a_received_document(string $street, ?string $expected): void
+    {
+        $invoice = $this->receive($this->payload(street: $street))
+            ->getDocument()
+            ->getInvoice();
+
+        $this->assertSame($expected, $invoice->getAccountingSupplierParty()->getParty()->getAddress()->getStreet1());
+    }
+
     public function test_it_deserializes_a_labour_hour_unit_code(): void
     {
         $invoice = $this->deserialize($this->payload(unitCode: 'HWE'))
@@ -206,6 +227,7 @@ class ReceivedDocumentDeserializationTest extends TestCase
         string $subType = 'invoice',
         string $supplierName = 'Placeholder Supplier',
         string $currencyCode = 'EUR',
+        string $street = 'Placeholder Street 1',
     ): string {
         return json_encode([
             'document' => [
@@ -214,7 +236,7 @@ class ReceivedDocumentDeserializationTest extends TestCase
                     'sub_type' => $subType,
                     'invoice_number' => 'TDD-3713',
                     'document_currency_code' => $currencyCode,
-                    'accounting_supplier_party' => ['party' => ['company_name' => $supplierName]],
+                    'accounting_supplier_party' => ['party' => ['company_name' => $supplierName, 'address' => ['street1' => $street]]],
                     'issue_date' => '2026-07-22',
                     'invoice_lines' => [[
                         'description' => 'labour',

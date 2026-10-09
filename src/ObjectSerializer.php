@@ -230,7 +230,7 @@ class ObjectSerializer
      *
      * @return object|array|null an single or an array of $class instances
      */
-    public static function deserialize($data, $class, $httpHeaders = null)
+    public static function deserialize($data, $class, $httpHeaders = null, bool $validate = true)
     {
         if (is_string($data)) {
             $decoded = json_decode($data, true);
@@ -247,7 +247,7 @@ class ObjectSerializer
                 $subClass_array = explode(',', $inner, 2);
                 $subClass = $subClass_array[1];
                 foreach ($data as $key => $value) {
-                    $deserialized[$key] = self::deserialize($value, $subClass, null);
+                    $deserialized[$key] = self::deserialize($value, $subClass, null, $validate);
                 }
             }
             return $deserialized;
@@ -255,7 +255,7 @@ class ObjectSerializer
             $subClass = substr($class, 0, -2);
             $values = [];
             foreach ($data as $key => $value) {
-                $values[] = self::deserialize($value, $subClass, null);
+                $values[] = self::deserialize($value, $subClass, null, $validate);
             }
             return $values;
         } elseif ($class === 'object') {
@@ -319,10 +319,29 @@ class ObjectSerializer
 
                 $propertyValue = $data->{$instance::attributeMap()[$property]};
                 if (isset($propertyValue)) {
-                    $instance->$propertySetter(self::deserialize($propertyValue, $type, null));
+                    self::assign($instance, $property, $propertySetter, self::deserialize($propertyValue, $type, null, $validate), $validate);
                 }
             }
             return $instance;
+        }
+    }
+
+    /**
+     * Setters encode the provider's rules for what we send. A document we receive was already
+     * accepted by the network, so when reading one a refused value is kept as delivered.
+     */
+    private static function assign($instance, string $property, string $setter, $value, bool $validate): void
+    {
+        if ($validate) {
+            $instance->$setter($value);
+
+            return;
+        }
+
+        try {
+            $instance->$setter($value);
+        } catch (\InvalidArgumentException) {
+            $instance[$property] = $value;
         }
     }
 }

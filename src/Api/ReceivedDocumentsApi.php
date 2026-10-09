@@ -163,7 +163,7 @@ class ReceivedDocumentsApi
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize($content, $returnType, [], false),
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -237,7 +237,7 @@ class ReceivedDocumentsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $returnType, [], false),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];

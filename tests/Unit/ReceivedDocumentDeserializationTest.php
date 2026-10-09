@@ -7,6 +7,7 @@ use Deegitalbe\LaravelTrustupIoStorecove\Model\Attachment;
 use Deegitalbe\LaravelTrustupIoStorecove\Model\Invoice;
 use Deegitalbe\LaravelTrustupIoStorecove\Model\InvoiceLine;
 use Deegitalbe\LaravelTrustupIoStorecove\Model\Transportable;
+use Deegitalbe\LaravelTrustupIoStorecove\Model\Party;
 use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 use Deegitalbe\LaravelTrustupIoStorecove\Tests\TestCase;
 use GuzzleHttp\Client;
@@ -117,7 +118,7 @@ class ReceivedDocumentDeserializationTest extends TestCase
         $this->assertEquals($mimeType, $invoice->getAttachments()[0]->getMimeType());
     }
 
-    public function test_it_still_rejects_an_unknown_unit_code(): void
+    public function test_it_rejects_an_unknown_unit_code_in_the_default_mode(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessageMatches("/'quantity_unit_code'/");
@@ -125,12 +126,19 @@ class ReceivedDocumentDeserializationTest extends TestCase
         $this->deserialize($this->payload(unitCode: 'NOT_A_CODE'));
     }
 
-    public function test_it_still_rejects_an_unknown_mime_type(): void
+    public function test_it_rejects_an_unknown_mime_type_in_the_default_mode(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessageMatches("/'mime_type'/");
 
         $this->deserialize($this->payload(mimeType: 'image/gif'));
+    }
+
+    public function test_it_rejects_a_one_character_company_name_when_sending(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+
+        (new Party())->setCompanyName('X');
     }
 
     public function test_it_keeps_accepting_a_previously_allowed_unit_code(): void

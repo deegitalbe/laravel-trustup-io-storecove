@@ -52,6 +52,15 @@ class ReceivedDocumentDeserializationTest extends TestCase
         $this->assertEquals('image/gif', $invoice->getAttachments()[0]->getMimeType());
     }
 
+    public function test_it_keeps_an_unknown_currency_code_as_delivered_on_a_received_document(): void
+    {
+        $invoice = $this->receive($this->payload(currencyCode: 'ZZZ'))
+            ->getDocument()
+            ->getInvoice();
+
+        $this->assertEquals('ZZZ', $invoice->getDocumentCurrencyCode());
+    }
+
     public function test_it_deserializes_a_labour_hour_unit_code(): void
     {
         $invoice = $this->deserialize($this->payload(unitCode: 'HWE'))
@@ -196,6 +205,7 @@ class ReceivedDocumentDeserializationTest extends TestCase
         string $mimeType = Attachment::MIME_TYPE_PDF,
         string $subType = 'invoice',
         string $supplierName = 'Placeholder Supplier',
+        string $currencyCode = 'EUR',
     ): string {
         return json_encode([
             'document' => [
@@ -203,6 +213,7 @@ class ReceivedDocumentDeserializationTest extends TestCase
                 'invoice' => [
                     'sub_type' => $subType,
                     'invoice_number' => 'TDD-3713',
+                    'document_currency_code' => $currencyCode,
                     'accounting_supplier_party' => ['party' => ['company_name' => $supplierName]],
                     'issue_date' => '2026-07-22',
                     'invoice_lines' => [[

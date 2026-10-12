@@ -6,8 +6,8 @@ use Deegitalbe\LaravelTrustupIoStorecove\Api\ReceivedDocumentsApi;
 use Deegitalbe\LaravelTrustupIoStorecove\Model\Attachment;
 use Deegitalbe\LaravelTrustupIoStorecove\Model\Invoice;
 use Deegitalbe\LaravelTrustupIoStorecove\Model\InvoiceLine;
-use Deegitalbe\LaravelTrustupIoStorecove\Model\Transportable;
 use Deegitalbe\LaravelTrustupIoStorecove\Model\Party;
+use Deegitalbe\LaravelTrustupIoStorecove\Model\Transportable;
 use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 use Deegitalbe\LaravelTrustupIoStorecove\Tests\TestCase;
 use GuzzleHttp\Client;
@@ -29,6 +29,20 @@ class ReceivedDocumentDeserializationTest extends TestCase
     public function test_it_reads_a_received_document_whose_supplier_name_has_one_character(): void
     {
         $invoice = $this->receive($this->payload(supplierName: 'X'))
+            ->getDocument()
+            ->getInvoice();
+
+        $this->assertEquals('X', $invoice->getAccountingSupplierParty()->getParty()->getCompanyName());
+    }
+
+    public function test_it_reads_a_received_document_asynchronously_whose_supplier_name_has_one_character(): void
+    {
+        $api = new ReceivedDocumentsApi(
+            new Client(['handler' => HandlerStack::create(new MockHandler([new Response(200, [], $this->payload(supplierName: 'X'))]))])
+        );
+
+        $invoice = $api->getReceivedDocumentAsync('00000000-0000-0000-0000-000000000000', 'json')
+            ->wait()
             ->getDocument()
             ->getInvoice();
 

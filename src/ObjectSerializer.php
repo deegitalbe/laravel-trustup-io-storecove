@@ -227,6 +227,7 @@ class ObjectSerializer
      * @param string   $class         class name is passed as a string
      * @param string[] $httpHeaders   HTTP headers
      * @param string   $discriminator discriminator if polymorphism is used
+     * @param bool     $validate      false keeps a value a setter refuses, for reading a received document
      *
      * @return object|array|null an single or an array of $class instances
      */

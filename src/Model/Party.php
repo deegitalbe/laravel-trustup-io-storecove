@@ -250,14 +250,17 @@ class Party implements ModelInterface, ArrayAccess
     /**
      * Sets company_name
      *
+     * The 2-character minimum is Storecove's limit for documents TrustUp sends. A received
+     * document is read with $fromStorecove = true and keeps a shorter name as its sender wrote it.
+     *
      * @param string $company_name The name of the company transporting the invoice
+     * @param bool $fromStorecove True when the value is read from a Storecove response.
      *
      * @return $this
      */
-    public function setCompanyName($company_name)
+    public function setCompanyName($company_name, bool $fromStorecove = false)
     {
-
-        if (!is_null($company_name) && (mb_strlen($company_name) < 2)) {
+        if (!$fromStorecove && !is_null($company_name) && (mb_strlen($company_name) < 2)) {
             throw new \InvalidArgumentException('invalid length for $company_name when calling Party., must be bigger than or equal to 2.');
         }
 

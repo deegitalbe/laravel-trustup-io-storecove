@@ -5452,14 +5452,17 @@ class InvoiceLine implements ModelInterface, ArrayAccess
     /**
      * Sets name
      *
+     * The non-empty rule is Storecove's limit for documents TrustUp sends. A received document
+     * is read with $fromStorecove = true and keeps an empty name as its sender wrote it.
+     *
      * @param string $name A short name for this invoice line. If not provided, it will be taken from description and description will be set to an emtpy string.
+     * @param bool $fromStorecove True when the value is read from a Storecove response.
      *
      * @return $this
      */
-    public function setName($name)
+    public function setName($name, bool $fromStorecove = false)
     {
-
-        if (!is_null($name) && (mb_strlen($name) < 1)) {
+        if (!$fromStorecove && !is_null($name) && (mb_strlen($name) < 1)) {
             throw new \InvalidArgumentException('invalid length for $name when calling InvoiceLine., must be bigger than or equal to 1.');
         }
 

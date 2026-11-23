@@ -16,8 +16,9 @@ use PHPUnit\Framework\Attributes\DataProvider;
  * Deserialization of received documents through the same path as
  * ReceivedDocumentsApi::getReceivedDocument(), whose returnType is Transportable.
  *
- * A rejected enum value anywhere in the payload aborts the whole document, so these
- * cases are about not losing an invoice over one unrecognised code.
+ * A rejected enum value or length anywhere in the payload aborts the whole document, so
+ * these cases are about not losing an invoice over one unrecognised code or one value
+ * outside a limit Storecove only sets for documents TrustUp sends.
  */
 class ReceivedDocumentDeserializationTest extends TestCase
 {

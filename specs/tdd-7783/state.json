@@ -7,21 +7,23 @@
   },
   "spec_dir": "specs/tdd-7783",
   "created_at": "2026-11-23T16:26:00Z",
-  "updated_at": "2026-11-23T16:26:19Z",
-  "cursor": 0,
+  "updated_at": "2026-11-23T16:28:54Z",
+  "cursor": 1,
   "steps": [
     {
       "id": "expand-slices",
-      "status": "pending",
+      "status": "done",
       "stage": "aggregate",
       "round": 1,
       "checker_group_index": 1
     },
     {
       "id": "tdd-implement",
+      "stage": "check",
+      "round": 1,
+      "slice": "slice-01",
       "status": "pending",
-      "stage": "produce",
-      "round": 1
+      "checker_group_index": 0
     },
     {
       "id": "global-review",
@@ -70,7 +72,9 @@
       "round": 1
     }
   ],
-  "sha_tracking": {},
+  "sha_tracking": {
+    "sha_before_slice_slice-01": "445e8eb30d45098af726896c1cd682200ce4f6b5"
+  },
   "baseline": {
     "current_version": 1,
     "path": null,
@@ -85,9 +89,12 @@
     "status": "not_needed"
   },
   "features_flags": {
-    "ac_count": 5
+    "ac_count": 5,
+    "slice_count": 1
   },
-  "phase_verdicts": {},
+  "phase_verdicts": {
+    "expand-slices": "GO"
+  },
   "user_validations": {},
   "rollbacks": []
 }

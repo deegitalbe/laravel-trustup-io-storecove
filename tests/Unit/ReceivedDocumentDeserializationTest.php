@@ -5,6 +5,7 @@ namespace Deegitalbe\LaravelTrustupIoStorecove\Tests\Unit;
 use Deegitalbe\LaravelTrustupIoStorecove\Model\Attachment;
 use Deegitalbe\LaravelTrustupIoStorecove\Model\Invoice;
 use Deegitalbe\LaravelTrustupIoStorecove\Model\InvoiceLine;
+use Deegitalbe\LaravelTrustupIoStorecove\Model\Party;
 use Deegitalbe\LaravelTrustupIoStorecove\Model\Transportable;
 use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 use Deegitalbe\LaravelTrustupIoStorecove\Tests\TestCase;
@@ -184,6 +185,86 @@ class ReceivedDocumentDeserializationTest extends TestCase
             ->getInvoiceLines()[0];
 
         $this->assertSame('', $line->getName());
+    }
+
+    public function test_it_deserializes_a_document_carrying_all_three_relaxed_values_at_once(): void
+    {
+        $lineId = str_repeat('L', 40);
+
+        $invoice = $this->deserialize($this->payload(lineId: $lineId, lineName: '', companyName: 'A'))
+            ->getDocument()
+            ->getInvoice();
+
+        $line = $invoice->getInvoiceLines()[0];
+        $this->assertSame($lineId, $line->getLineId());
+        $this->assertSame('', $line->getName());
+        $this->assertSame('A', $invoice->getAccountingSupplierParty()->getParty()->getCompanyName());
+    }
+
+    public function test_it_accepts_a_line_id_of_exactly_36_characters_on_read_and_on_a_direct_call(): void
+    {
+        $lineId = str_repeat('L', 36);
+
+        $read = $this->deserialize($this->payload(lineId: $lineId))
+            ->getDocument()
+            ->getInvoice()
+            ->getInvoiceLines()[0];
+
+        $this->assertSame($lineId, $read->getLineId());
+        $this->assertSame($lineId, (new InvoiceLine())->setLineId($lineId)->getLineId());
+    }
+
+    public function test_it_accepts_a_company_name_of_exactly_2_characters_on_read_and_on_a_direct_call(): void
+    {
+        $read = $this->deserialize($this->payload(companyName: 'AB'))
+            ->getDocument()
+            ->getInvoice()
+            ->getAccountingSupplierParty()
+            ->getParty();
+
+        $this->assertSame('AB', $read->getCompanyName());
+        $this->assertSame('AB', (new Party())->setCompanyName('AB')->getCompanyName());
+    }
+
+    public function test_it_still_refuses_a_line_id_over_36_characters_set_directly(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('must be smaller than or equal to 36');
+
+        (new InvoiceLine())->setLineId(str_repeat('L', 37));
+    }
+
+    public function test_it_still_refuses_an_empty_line_name_set_directly(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('$name');
+
+        (new InvoiceLine())->setName('');
+    }
+
+    public function test_it_still_refuses_a_company_name_of_one_character_set_directly(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('must be bigger than or equal to 2');
+
+        (new Party())->setCompanyName('A');
+    }
+
+    public function test_it_still_rejects_an_empty_line_id_on_a_received_document(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('$line_id');
+        $this->expectExceptionMessage('bigger than or equal to 1');
+
+        $this->deserialize($this->payload(lineId: ''));
+    }
+
+    public function test_it_still_rejects_an_empty_line_description_on_a_received_document(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('$description');
+
+        $this->deserialize($this->payload(lineDescription: ''));
     }
 
     private function deserialize(string $json): Transportable

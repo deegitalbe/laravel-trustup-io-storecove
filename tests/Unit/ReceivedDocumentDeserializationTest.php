@@ -154,6 +154,17 @@ class ReceivedDocumentDeserializationTest extends TestCase
         $this->assertSame($lineId, $line->getLineId());
     }
 
+    public function test_it_deserializes_a_company_name_of_one_character(): void
+    {
+        $party = $this->deserialize($this->payload(companyName: 'A'))
+            ->getDocument()
+            ->getInvoice()
+            ->getAccountingSupplierParty()
+            ->getParty();
+
+        $this->assertSame('A', $party->getCompanyName());
+    }
+
     private function deserialize(string $json): Transportable
     {
         return ObjectSerializer::deserialize(json_decode($json), '\\'.Transportable::class, []);

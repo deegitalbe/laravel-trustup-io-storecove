@@ -5388,13 +5388,17 @@ class InvoiceLine implements ModelInterface, ArrayAccess
     /**
      * Sets line_id
      *
+     * The 36-character maximum is Storecove's limit for documents TrustUp sends. A received
+     * document is read with $fromStorecove = true and keeps a longer id as its sender wrote it.
+     *
      * @param string $line_id The id for this invoice line.
+     * @param bool $fromStorecove True when the value is read from a Storecove response.
      *
      * @return $this
      */
-    public function setLineId($line_id)
+    public function setLineId($line_id, bool $fromStorecove = false)
     {
-        if (!is_null($line_id) && (mb_strlen($line_id) > 36)) {
+        if (!$fromStorecove && !is_null($line_id) && (mb_strlen($line_id) > 36)) {
             throw new \InvalidArgumentException('invalid length for $line_id when calling InvoiceLine., must be smaller than or equal to 36.');
         }
         if (!is_null($line_id) && (mb_strlen($line_id) < 1)) {

@@ -142,6 +142,18 @@ class ReceivedDocumentDeserializationTest extends TestCase
         );
     }
 
+    public function test_it_deserializes_a_line_id_longer_than_36_characters(): void
+    {
+        $lineId = str_repeat('L', 40);
+
+        $line = $this->deserialize($this->payload(lineId: $lineId))
+            ->getDocument()
+            ->getInvoice()
+            ->getInvoiceLines()[0];
+
+        $this->assertSame($lineId, $line->getLineId());
+    }
+
     private function deserialize(string $json): Transportable
     {
         return ObjectSerializer::deserialize(json_decode($json), '\\'.Transportable::class, []);
@@ -151,26 +163,43 @@ class ReceivedDocumentDeserializationTest extends TestCase
         string $unitCode = InvoiceLine::QUANTITY_UNIT_CODE_EA,
         string $mimeType = Attachment::MIME_TYPE_PDF,
         string $subType = 'invoice',
+        ?string $lineId = null,
+        ?string $lineName = null,
+        string $lineDescription = 'labour',
+        ?string $companyName = null,
     ): string {
+        $line = [
+            'description' => $lineDescription,
+            'quantity' => 1,
+            'quantity_unit_code' => $unitCode,
+            'amount_excluding_tax' => 100.0,
+        ];
+        if ($lineId !== null) {
+            $line['line_id'] = $lineId;
+        }
+        if ($lineName !== null) {
+            $line['name'] = $lineName;
+        }
+
+        $invoice = [
+            'sub_type' => $subType,
+            'invoice_number' => 'TDD-3713',
+            'issue_date' => '2026-07-22',
+            'invoice_lines' => [$line],
+            'attachments' => [[
+                'document' => base64_encode('placeholder-bytes'),
+                'mime_type' => $mimeType,
+                'filename' => 'annex.bin',
+            ]],
+        ];
+        if ($companyName !== null) {
+            $invoice['accounting_supplier_party'] = ['party' => ['company_name' => $companyName]];
+        }
+
         return json_encode([
             'document' => [
                 'document_type' => 'invoice',
-                'invoice' => [
-                    'sub_type' => $subType,
-                    'invoice_number' => 'TDD-3713',
-                    'issue_date' => '2026-07-22',
-                    'invoice_lines' => [[
-                        'description' => 'labour',
-                        'quantity' => 1,
-                        'quantity_unit_code' => $unitCode,
-                        'amount_excluding_tax' => 100.0,
-                    ]],
-                    'attachments' => [[
-                        'document' => base64_encode('placeholder-bytes'),
-                        'mime_type' => $mimeType,
-                        'filename' => 'annex.bin',
-                    ]],
-                ],
+                'invoice' => $invoice,
             ],
         ]);
     }

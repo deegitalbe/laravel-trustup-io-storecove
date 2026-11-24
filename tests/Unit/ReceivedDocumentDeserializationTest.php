@@ -5,6 +5,7 @@ namespace Deegitalbe\LaravelTrustupIoStorecove\Tests\Unit;
 use Deegitalbe\LaravelTrustupIoStorecove\Model\Attachment;
 use Deegitalbe\LaravelTrustupIoStorecove\Model\Invoice;
 use Deegitalbe\LaravelTrustupIoStorecove\Model\InvoiceLine;
+use Deegitalbe\LaravelTrustupIoStorecove\Model\Party;
 use Deegitalbe\LaravelTrustupIoStorecove\Model\Transportable;
 use Deegitalbe\LaravelTrustupIoStorecove\ObjectSerializer;
 use Deegitalbe\LaravelTrustupIoStorecove\Tests\TestCase;
@@ -15,8 +16,9 @@ use PHPUnit\Framework\Attributes\DataProvider;
  * Deserialization of received documents through the same path as
  * ReceivedDocumentsApi::getReceivedDocument(), whose returnType is Transportable.
  *
- * A rejected enum value anywhere in the payload aborts the whole document, so these
- * cases are about not losing an invoice over one unrecognised code.
+ * A rejected enum value or length anywhere in the payload aborts the whole document, so
+ * these cases are about not losing an invoice over one unrecognised code or one value
+ * outside a limit Storecove only sets for documents TrustUp sends.
  */
 class ReceivedDocumentDeserializationTest extends TestCase
 {
@@ -142,6 +144,130 @@ class ReceivedDocumentDeserializationTest extends TestCase
         );
     }
 
+    public function test_it_deserializes_a_line_id_longer_than_36_characters(): void
+    {
+        $lineId = str_repeat('L', 40);
+
+        $line = $this->deserialize($this->payload(lineId: $lineId))
+            ->getDocument()
+            ->getInvoice()
+            ->getInvoiceLines()[0];
+
+        $this->assertSame($lineId, $line->getLineId());
+    }
+
+    public function test_it_deserializes_a_company_name_of_one_character(): void
+    {
+        $party = $this->deserialize($this->payload(companyName: 'A'))
+            ->getDocument()
+            ->getInvoice()
+            ->getAccountingSupplierParty()
+            ->getParty();
+
+        $this->assertSame('A', $party->getCompanyName());
+    }
+
+    public function test_it_deserializes_an_empty_company_name_as_empty(): void
+    {
+        $party = $this->deserialize($this->payload(companyName: ''))
+            ->getDocument()
+            ->getInvoice()
+            ->getAccountingSupplierParty()
+            ->getParty();
+
+        $this->assertSame('', $party->getCompanyName());
+    }
+
+    public function test_it_deserializes_an_empty_line_name_as_empty(): void
+    {
+        $line = $this->deserialize($this->payload(lineName: ''))
+            ->getDocument()
+            ->getInvoice()
+            ->getInvoiceLines()[0];
+
+        $this->assertSame('', $line->getName());
+    }
+
+    public function test_it_deserializes_a_document_carrying_all_three_relaxed_values_at_once(): void
+    {
+        $lineId = str_repeat('L', 40);
+
+        $invoice = $this->deserialize($this->payload(lineId: $lineId, lineName: '', companyName: 'A'))
+            ->getDocument()
+            ->getInvoice();
+
+        $line = $invoice->getInvoiceLines()[0];
+        $this->assertSame($lineId, $line->getLineId());
+        $this->assertSame('', $line->getName());
+        $this->assertSame('A', $invoice->getAccountingSupplierParty()->getParty()->getCompanyName());
+    }
+
+    public function test_it_accepts_a_line_id_of_exactly_36_characters_on_read_and_on_a_direct_call(): void
+    {
+        $lineId = str_repeat('L', 36);
+
+        $read = $this->deserialize($this->payload(lineId: $lineId))
+            ->getDocument()
+            ->getInvoice()
+            ->getInvoiceLines()[0];
+
+        $this->assertSame($lineId, $read->getLineId());
+        $this->assertSame($lineId, (new InvoiceLine())->setLineId($lineId)->getLineId());
+    }
+
+    public function test_it_accepts_a_company_name_of_exactly_2_characters_on_read_and_on_a_direct_call(): void
+    {
+        $read = $this->deserialize($this->payload(companyName: 'AB'))
+            ->getDocument()
+            ->getInvoice()
+            ->getAccountingSupplierParty()
+            ->getParty();
+
+        $this->assertSame('AB', $read->getCompanyName());
+        $this->assertSame('AB', (new Party())->setCompanyName('AB')->getCompanyName());
+    }
+
+    public function test_it_still_refuses_a_line_id_over_36_characters_set_directly(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('must be smaller than or equal to 36');
+
+        (new InvoiceLine())->setLineId(str_repeat('L', 37));
+    }
+
+    public function test_it_still_refuses_an_empty_line_name_set_directly(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('$name');
+
+        (new InvoiceLine())->setName('');
+    }
+
+    public function test_it_still_refuses_a_company_name_of_one_character_set_directly(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('must be bigger than or equal to 2');
+
+        (new Party())->setCompanyName('A');
+    }
+
+    public function test_it_still_rejects_an_empty_line_id_on_a_received_document(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('$line_id');
+        $this->expectExceptionMessage('bigger than or equal to 1');
+
+        $this->deserialize($this->payload(lineId: ''));
+    }
+
+    public function test_it_still_rejects_an_empty_line_description_on_a_received_document(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('$description');
+
+        $this->deserialize($this->payload(lineDescription: ''));
+    }
+
     private function deserialize(string $json): Transportable
     {
         return ObjectSerializer::deserialize(json_decode($json), '\\'.Transportable::class, []);
@@ -151,26 +277,43 @@ class ReceivedDocumentDeserializationTest extends TestCase
         string $unitCode = InvoiceLine::QUANTITY_UNIT_CODE_EA,
         string $mimeType = Attachment::MIME_TYPE_PDF,
         string $subType = 'invoice',
+        ?string $lineId = null,
+        ?string $lineName = null,
+        string $lineDescription = 'labour',
+        ?string $companyName = null,
     ): string {
+        $line = [
+            'description' => $lineDescription,
+            'quantity' => 1,
+            'quantity_unit_code' => $unitCode,
+            'amount_excluding_tax' => 100.0,
+        ];
+        if ($lineId !== null) {
+            $line['line_id'] = $lineId;
+        }
+        if ($lineName !== null) {
+            $line['name'] = $lineName;
+        }
+
+        $invoice = [
+            'sub_type' => $subType,
+            'invoice_number' => 'TDD-3713',
+            'issue_date' => '2026-07-22',
+            'invoice_lines' => [$line],
+            'attachments' => [[
+                'document' => base64_encode('placeholder-bytes'),
+                'mime_type' => $mimeType,
+                'filename' => 'annex.bin',
+            ]],
+        ];
+        if ($companyName !== null) {
+            $invoice['accounting_supplier_party'] = ['party' => ['company_name' => $companyName]];
+        }
+
         return json_encode([
             'document' => [
                 'document_type' => 'invoice',
-                'invoice' => [
-                    'sub_type' => $subType,
-                    'invoice_number' => 'TDD-3713',
-                    'issue_date' => '2026-07-22',
-                    'invoice_lines' => [[
-                        'description' => 'labour',
-                        'quantity' => 1,
-                        'quantity_unit_code' => $unitCode,
-                        'amount_excluding_tax' => 100.0,
-                    ]],
-                    'attachments' => [[
-                        'document' => base64_encode('placeholder-bytes'),
-                        'mime_type' => $mimeType,
-                        'filename' => 'annex.bin',
-                    ]],
-                ],
+                'invoice' => $invoice,
             ],
         ]);
     }

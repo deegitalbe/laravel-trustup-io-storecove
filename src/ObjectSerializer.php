@@ -319,7 +319,8 @@ class ObjectSerializer
 
                 $propertyValue = $data->{$instance::attributeMap()[$property]};
                 if (isset($propertyValue)) {
-                    $instance->$propertySetter(self::deserialize($propertyValue, $type, null));
+                    // true: the value comes from Storecove; setters that relax a send-only limit declare it, the others drop it.
+                    $instance->$propertySetter(self::deserialize($propertyValue, $type, null), true);
                 }
             }
             return $instance;

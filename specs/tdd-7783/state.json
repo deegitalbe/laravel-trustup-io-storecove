@@ -1,0 +1,100 @@
+{
+  "feature": "tdd-7783",
+  "workflow": {
+    "id": "feature-implement",
+    "version": 1,
+    "path": "/home/trustup-dev/.claude/plugins/cache/trustup-claude/backend-workflow/1.6.0/workflows/feature-implement.json"
+  },
+  "spec_dir": "specs/tdd-7783",
+  "created_at": "2026-11-23T16:26:00Z",
+  "updated_at": "2026-11-23T16:28:54Z",
+  "cursor": 1,
+  "steps": [
+    {
+      "id": "expand-slices",
+      "status": "done",
+      "stage": "aggregate",
+      "round": 1,
+      "checker_group_index": 1
+    },
+    {
+      "id": "tdd-implement",
+      "stage": "check",
+      "round": 1,
+      "slice": "slice-01",
+      "status": "pending",
+      "checker_group_index": 0
+    },
+    {
+      "id": "global-review",
+      "status": "pending",
+      "stage": "check",
+      "round": 1,
+      "skip_unless": {
+        "min_slice_count": 2
+      }
+    },
+    {
+      "id": "scope-route",
+      "status": "pending",
+      "stage": "produce",
+      "round": 1,
+      "skip_unless": {
+        "min_slice_count": 2,
+        "phase_verdict": {
+          "phase_id": "global-review",
+          "verdict": "CHANGES_REQUESTED"
+        }
+      }
+    },
+    {
+      "id": "quality-gate",
+      "status": "pending",
+      "stage": "produce",
+      "round": 1
+    },
+    {
+      "id": "summary",
+      "status": "pending",
+      "stage": "produce",
+      "round": 1
+    },
+    {
+      "id": "changeset",
+      "status": "pending",
+      "stage": "produce",
+      "round": 1
+    },
+    {
+      "id": "pr",
+      "status": "pending",
+      "stage": "produce",
+      "round": 1
+    }
+  ],
+  "sha_tracking": {
+    "sha_before_slice_slice-01": "445e8eb30d45098af726896c1cd682200ce4f6b5"
+  },
+  "baseline": {
+    "current_version": 1,
+    "path": null,
+    "scope_globs": []
+  },
+  "analysts": {},
+  "slices": {
+    "completed": []
+  },
+  "spike": {
+    "required": false,
+    "status": "not_needed"
+  },
+  "features_flags": {
+    "ac_count": 5,
+    "slice_count": 1
+  },
+  "phase_verdicts": {
+    "expand-slices": "GO"
+  },
+  "user_validations": {},
+  "rollbacks": []
+}
